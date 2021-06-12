@@ -116,22 +116,22 @@ export default function footer(): JSX.Element {
 						})}
 					</UnorderedList>
 					<UnorderedList styleType="none" m="0" p="0">
-						{services.map((info) => {
+						{services.map((service) => {
 							return (
-								<ListItem key={info.name}>
-									<Link href={info.link}>
-										<a>{info.name}</a>
+								<ListItem key={service.name}>
+									<Link href={service.link}>
+										<a>{service.name}</a>
 									</Link>
 								</ListItem>
 							);
 						})}
 					</UnorderedList>
 					<UnorderedList styleType="none" m="0" p="0">
-						{socials.map((info) => {
+						{socials.map((social) => {
 							return (
-								<ListItem key={info.name}>
-									<Link href={info.link}>
-										<a>{info.name}</a>
+								<ListItem key={social.name}>
+									<Link href={social.link}>
+										<a>{social.name}</a>
 									</Link>
 								</ListItem>
 							);

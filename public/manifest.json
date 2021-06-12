@@ -1,0 +1,9 @@
+{
+	"name": "nextjs-template",
+	"short_name": "nextjs-template",
+	"icons": [],
+	"theme_color": "#000000",
+	"background_color": "#ffffff",
+	"display": "standalone",
+	"start_url": "/"
+}

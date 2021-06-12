@@ -1,0 +1,16 @@
+.codeclimate.json
+.env.example
+.eslintrc.js
+.gitignore
+.prettierrc
+.eslintignore
+.prettierignore
+.github/
+
+README.MD
+LICENSE
+
+.vscode/
+.next/
+.vercelignore/
+node_modules/

@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/no-identical-functions */
 import { Box, Flex, ListItem, Text, UnorderedList } from "@chakra-ui/react";
 import Link from "next/link";
 

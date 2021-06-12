@@ -5,8 +5,6 @@ body {
 	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
 		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 	text-align: center;
-	color: rgba(255, 255, 255, 0.897);
-	background-color: #171a23;
 }
 
 a {
@@ -16,5 +14,4 @@ a {
 
 ul {
 	list-style: none;
-	
 }

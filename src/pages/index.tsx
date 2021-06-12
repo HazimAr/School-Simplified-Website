@@ -1,10 +1,5 @@
-import { Container } from "@chakra-ui/react"
-
+import { Container } from "@chakra-ui/react";
 
 export default function Home(): JSX.Element {
-	return (
-		<Container>
-			
-		</Container>
-	);
+	return <Container />;
 }

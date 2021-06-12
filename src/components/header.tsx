@@ -1,5 +1,5 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { Link, Box, Flex } from "@chakra-ui/react";
+import { Link, Flex } from "@chakra-ui/react";
 import Container from "./container";
 
 // eslint-disable-next-line import/no-default-export

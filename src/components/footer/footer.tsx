@@ -1,4 +1,3 @@
-/* eslint-disable sonarjs/no-identical-functions */
 import {
 	Box,
 	Flex,
@@ -9,7 +8,7 @@ import {
 	Heading,
 } from "@chakra-ui/react";
 
-import styled from "styled-components";
+// import styled from "styled-components";
 
 const infos = [
 	{
@@ -99,9 +98,9 @@ const socials = [
 	},
 ];
 
-const Wave = styled.svg`
-	z-index: 10;
-`;
+// const Wave = styled.svg`
+// 	z-index: 10;
+// `;
 
 // eslint-disable-next-line import/no-default-export
 export default function footer(): JSX.Element {

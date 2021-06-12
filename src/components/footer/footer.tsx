@@ -103,6 +103,7 @@ export default function footer(): JSX.Element {
 					mx="50px"
 					textAlign="left"
 					flexWrap="wrap"
+					py="10px"
 				>
 					<UnorderedList styleType="none" m="0" p="0">
 						{infos.map((info) => {

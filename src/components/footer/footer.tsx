@@ -105,26 +105,8 @@ const socials = [
 // eslint-disable-next-line import/no-default-export
 export default function footer(): JSX.Element {
 	return (
-<<<<<<< Updated upstream
-		<Box as="footer" fontSize="sm">
-			{/* <Flex justify="center" align="center">
-				<Wave
-					className="wave"
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 1440 320"
-				>
-					<path
-						fill="#0099ff"
-						fillOpacity="1"
-						d="M0,256L120,256C240,256,480,256,720,261.3C960,267,1200,277,1320,282.7L1440,288L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
-					/>
-				</Wave>
-			</Flex> */}
-			<Flex bg="brand.400" justify="center" align="center">
-=======
 		<Box as="footer">
 			<Flex bg="green" justify="center" align="center">
->>>>>>> Stashed changes
 				<Flex
 					justify="space-between"
 					maxW="1200px"
@@ -193,11 +175,7 @@ export default function footer(): JSX.Element {
 					</Box>
 				</Flex>
 			</Flex>
-<<<<<<< Updated upstream
-			<Flex bg="brand.500" justify="center" align="center" py="10px">
-=======
-			<Flex bg="#45488e" justify="center" align="center">
->>>>>>> Stashed changes
+			<Flex bg="#45488e" justify="center" align="center" py="10px">
 				<Flex
 					justify="space-between"
 					align="center"

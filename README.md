@@ -16,7 +16,7 @@ Proper Readme will follow
 
 clone with
 `git clone https://github.com/HazimAr/School-Simplified`
-or use click open and open with github desktop
+or click on the green `code` button and open with github desktop
 
 install dependencies `npm i` or `yarn`
 

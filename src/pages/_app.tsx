@@ -1,5 +1,5 @@
 import "@styles/global.css";
-import Footer from "@components/footer/footer";
+import Footer from "@components/footer";
 import Header from "@components/header";
 import { pageview } from "@lib/gtag";
 import { Chakra } from "@styles/chakra";

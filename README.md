@@ -14,8 +14,9 @@ Proper Readme will follow
 - React Icons
 ## Setup
 
-Click use this template or clone with
-`git clone https://github.com/HazimAr/Nextjs-ChakraUI-Boilerplate`
+clone with
+`git clone https://github.com/HazimAr/School-Simplified`
+or click on the green `code` button and open with github desktop
 
 install dependencies `npm i` or `yarn`
 

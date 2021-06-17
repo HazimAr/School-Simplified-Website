@@ -106,7 +106,7 @@ const socials = [
 export default function footer(): JSX.Element {
 	return (
 		<Box as="footer">
-			<Flex bg="green" justify="center" align="center">
+			<Flex bg="#5a60ae" justify="center" align="center">
 				<Flex
 					justify="space-between"
 					maxW="1200px"
@@ -122,7 +122,7 @@ export default function footer(): JSX.Element {
 							styleType="none"
 							m="0"
 							p="0"
-							color="text.300"
+							color="#fcd270"
 						>
 							{infos.map((info) => {
 								return (
@@ -136,12 +136,12 @@ export default function footer(): JSX.Element {
 						</UnorderedList>
 					</Box>
 					<Box>
-						<Heading size="md">Information</Heading>
+						<Heading size="md">Services</Heading>
 						<UnorderedList
 							styleType="none"
 							m="0"
 							p="0"
-							color="text.300"
+							color="#fcd270"
 						>
 							{services.map((service) => {
 								return (
@@ -155,12 +155,12 @@ export default function footer(): JSX.Element {
 						</UnorderedList>
 					</Box>
 					<Box>
-						<Heading size="md">Information</Heading>
+						<Heading size="md">Join Us</Heading>
 						<UnorderedList
 							styleType="none"
 							m="0"
 							p="0"
-							color="text.300"
+							color="#fcd270"
 						>
 							{socials.map((social) => {
 								return (
@@ -175,7 +175,7 @@ export default function footer(): JSX.Element {
 					</Box>
 				</Flex>
 			</Flex>
-			<Flex bg="#45488e" justify="center" align="center" py="10px">
+			<Flex bg="#454a8a" justify="center" align="center" py="10px">
 				<Flex
 					justify="space-between"
 					align="center"

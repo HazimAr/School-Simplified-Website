@@ -1,5 +1,4 @@
-import { Link, Flex, Image, Box, Text } from "@chakra-ui/react";
-import Container from "./container";
+import { Flex, Image } from "@chakra-ui/react";
 
 // eslint-disable-next-line import/no-default-export
 export default function Main(): JSX.Element {

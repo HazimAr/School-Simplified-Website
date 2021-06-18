@@ -8,8 +8,6 @@ import {
 	Heading,
 } from "@chakra-ui/react";
 
-// import styled from "styled-components";
-
 const infos = [
 	{
 		name: "Home",

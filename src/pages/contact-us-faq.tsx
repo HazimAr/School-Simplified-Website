@@ -8,13 +8,6 @@ import {
 	Box
 } from "@chakra-ui/react";
 
-import {
-	FormControl,
-	FormLabel,
-	FormErrorMessage,
-	FormHelperText,
-  } from "@chakra-ui/react"
-
 export default function Contact(): JSX.Element {
 	return (
 		<Container>
@@ -108,12 +101,3 @@ export default function Contact(): JSX.Element {
 		</Container>
 	);
 }
-
-<FormControl id="name" isRequired>
-  <FormLabel>Name</FormLabel>
-  <Input placeholder="Name" />
-</FormControl>
-<FormControl id="email" isRequired>
-  <FormLabel>Email</FormLabel>
-  <Input placeholder="Email" />
-</FormControl>

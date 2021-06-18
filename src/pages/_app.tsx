@@ -1,8 +1,9 @@
 import "@styles/global.css";
+import { ChakraProvider } from "@chakra-ui/react";
 import Footer from "@components/footer";
 import Header from "@components/header";
 import { pageview } from "@lib/gtag";
-import { Chakra } from "@styles/chakra";
+import theme from "@styles/theme";
 import { META } from "config";
 import type { AppProps } from "next/app";
 import Head from "next/head";
@@ -27,13 +28,13 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<Chakra cookies={pageProps.cookies}>
+			<ChakraProvider theme={theme}>
 				<Header />
 
 				<Component {...pageProps} />
 
 				<Footer />
-			</Chakra>
+			</ChakraProvider>
 		</>
 	);
 }

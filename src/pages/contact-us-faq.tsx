@@ -7,6 +7,7 @@ import {
 	AccordionIcon,
 	Box
 } from "@chakra-ui/react";
+
 import {
 	FormControl,
 	FormLabel,
@@ -107,3 +108,12 @@ export default function Contact(): JSX.Element {
 		</Container>
 	);
 }
+
+<FormControl id="name" isRequired>
+  <FormLabel>Name</FormLabel>
+  <Input placeholder="Name" />
+</FormControl>
+<FormControl id="email" isRequired>
+  <FormLabel>Email</FormLabel>
+  <Input placeholder="Email" />
+</FormControl>

@@ -33,7 +33,7 @@ const infos = [
 	},
 	{
 		name: "FAQ",
-		link: "/faq",
+		link: "/contact-us-faq",
 	},
 ];
 

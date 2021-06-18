@@ -3,15 +3,16 @@ import { Flex, Image } from "@chakra-ui/react";
 // eslint-disable-next-line import/no-default-export
 export default function Main(): JSX.Element {
 	return (
-		<Flex bg="#5a60ad" py="30px">
+		<Flex bg="#5a60ad" py="20px" justify="center" align="center">
 			<Flex
 				maxW="1200px"
 				w="200%"
-				mx="500px"
 				as="header"
 				justify="space-between"
+				align="center"
+				mx="50px"
 			>
-				<Image src="/logo.png" h="46px" w="200px" />
+				<Image src="/logo.png" w="200px" />
 				<Flex>
 					<a>About Us &nbsp; </a>
 					<a>Join Us &nbsp; </a>

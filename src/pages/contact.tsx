@@ -55,9 +55,10 @@ export default function Contact(): JSX.Element {
 						</AccordionButton>
 					</h2>
 					<AccordionPanel>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-						veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+						sed do eiusmod tempor incididunt ut labore et dolore
+						magna aliqua. Ut enim ad minim veniam, quis nostrud
+						exercitation ullamco laboris nisi ut aliquip ex ea
 						commodo consequat.
 					</AccordionPanel>
 				</AccordionItem>
@@ -72,9 +73,10 @@ export default function Contact(): JSX.Element {
 						</AccordionButton>
 					</h2>
 					<AccordionPanel>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-						veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+						sed do eiusmod tempor incididunt ut labore et dolore
+						magna aliqua. Ut enim ad minim veniam, quis nostrud
+						exercitation ullamco laboris nisi ut aliquip ex ea
 						commodo consequat.
 					</AccordionPanel>
 				</AccordionItem>
@@ -89,9 +91,10 @@ export default function Contact(): JSX.Element {
 						</AccordionButton>
 					</h2>
 					<AccordionPanel>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-						veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+						sed do eiusmod tempor incididunt ut labore et dolore
+						magna aliqua. Ut enim ad minim veniam, quis nostrud
+						exercitation ullamco laboris nisi ut aliquip ex ea
 						commodo consequat.
 					</AccordionPanel>
 				</AccordionItem>
@@ -106,9 +109,10 @@ export default function Contact(): JSX.Element {
 						</AccordionButton>
 					</h2>
 					<AccordionPanel>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-						veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+						sed do eiusmod tempor incididunt ut labore et dolore
+						magna aliqua. Ut enim ad minim veniam, quis nostrud
+						exercitation ullamco laboris nisi ut aliquip ex ea
 						commodo consequat.
 					</AccordionPanel>
 				</AccordionItem>
@@ -123,13 +127,13 @@ export default function Contact(): JSX.Element {
 						</AccordionButton>
 					</h2>
 					<AccordionPanel>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-						veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+						sed do eiusmod tempor incididunt ut labore et dolore
+						magna aliqua. Ut enim ad minim veniam, quis nostrud
+						exercitation ullamco laboris nisi ut aliquip ex ea
 						commodo consequat.
 					</AccordionPanel>
 				</AccordionItem>
-
 			</Accordion>
 		</Container>
 	);

@@ -1,7 +1,7 @@
 import { Flex, Image, Link } from "@chakra-ui/react";
 
 // eslint-disable-next-line import/no-default-export
-export default function Main(): JSX.Element {
+export default function HEader(): JSX.Element {
 	return (
 		<Flex bg="#5a60ae" justify="center" align="center">
 			<Flex

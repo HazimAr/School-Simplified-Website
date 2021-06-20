@@ -6,6 +6,7 @@ import {
 	AccordionPanel,
 	AccordionIcon,
 	Box,
+	Flex
 	// FormControl,
 	// FormLabel,
 	// FormErrorMessage,
@@ -48,9 +49,7 @@ export default function Contact(): JSX.Element {
 				<AccordionItem borderRadius="md">
 					<h2>
 						<AccordionButton>
-							<Box flex="1" textAlign="left">
-								Who are you?
-							</Box>
+							<Flex textAlign="left">Who are you?</Flex>
 							<AccordionIcon />
 						</AccordionButton>
 					</h2>
@@ -66,9 +65,9 @@ export default function Contact(): JSX.Element {
 				<AccordionItem borderRadius="md">
 					<h2>
 						<AccordionButton>
-							<Box flex="1" textAlign="left">
+							<Flex textAlign="left">
 								Who started School Simplified
-							</Box>
+							</Flex>
 							<AccordionIcon />
 						</AccordionButton>
 					</h2>
@@ -84,9 +83,9 @@ export default function Contact(): JSX.Element {
 				<AccordionItem borderRadius="md">
 					<h2>
 						<AccordionButton>
-							<Box flex="1" textAlign="left">
+							<Flex textAlign="left">
 								Is School Simplified free to use?
-							</Box>
+							</Flex>
 							<AccordionIcon />
 						</AccordionButton>
 					</h2>
@@ -102,9 +101,9 @@ export default function Contact(): JSX.Element {
 				<AccordionItem borderRadius="md">
 					<h2>
 						<AccordionButton>
-							<Box flex="1" textAlign="left">
+							<Flex textAlign="left">
 								How can I get community service hours?
-							</Box>
+							</Flex>
 							<AccordionIcon />
 						</AccordionButton>
 					</h2>
@@ -120,9 +119,9 @@ export default function Contact(): JSX.Element {
 				<AccordionItem borderRadius="md">
 					<h2>
 						<AccordionButton>
-							<Box flex="1" textAlign="left">
+							<Flex textAlign="left">
 								How reliable is School Simplified?
-							</Box>
+							</Flex>
 							<AccordionIcon />
 						</AccordionButton>
 					</h2>

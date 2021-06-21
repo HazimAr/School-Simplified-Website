@@ -101,7 +101,7 @@ const socials = [
 // `;
 
 // eslint-disable-next-line import/no-default-export
-export default function footer(): JSX.Element {
+export default function Footer(): JSX.Element {
 	return (
 		<Box as="footer">
 			<Flex bg="#5a60ae" justify="center" align="center">

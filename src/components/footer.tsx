@@ -23,7 +23,7 @@ const infos = [
 	},
 	{
 		name: "Our Team",
-		link: "/ourteam",
+		link: "/team",
 	},
 	{
 		name: "Discord",
@@ -31,7 +31,7 @@ const infos = [
 	},
 	{
 		name: "FAQ",
-		link: "/contact-us-faq",
+		link: "/contact",
 	},
 ];
 
@@ -40,6 +40,7 @@ const services = [
 		name: "Resources",
 		link: "/resources",
 	},
+
 	{
 		name: "Volunteering",
 		link: "/volunteering",
@@ -54,6 +55,7 @@ const services = [
 		name: "Essay Revisions",
 		link: "/essay",
 	},
+
 	{
 		name: "College Prep",
 		link: "/cprep",
@@ -70,26 +72,17 @@ const socials = [
 		name: "Instagram",
 		link: "https://www.instagram.com/school.simplified/",
 	},
-	{
-		name: "Twitter",
-		link: "https://twitter.com/SchoolSimplify",
-	},
+
 	{
 		name: "Tiktok",
 		link: "https://www.tiktok.com/@schoolsimplified",
 	},
+
 	{
 		name: "Facebook",
 		link: "https://www.facebook.com/SchoolSimple/",
 	},
-	{
-		name: "Youtube",
-		link: "https://www.youtube.com/channel/UCYe1MR_EriUg_wNgrNTRU6w",
-	},
-	{
-		name: "Podcast",
-		link: "/",
-	},
+
 	{
 		name: "Blog",
 		link: "/",

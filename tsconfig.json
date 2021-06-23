@@ -34,5 +34,5 @@
 		"src/pages/_document.js",
 		"src/pages/_error.js",
 		"src/lib/gtag.js"
-, "src/pages/donate.js", "src/pages/donate.js"	]
+	]
 }

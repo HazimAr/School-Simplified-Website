@@ -15,7 +15,7 @@ export default function HEader(): JSX.Element {
 				align="center"
 				flexWrap="wrap"
 			>
-				<Image src="/logo.png" w="200px" />
+				<Image src="/logo.png" w="200px" mx="-15px" />
 				<Flex>
 					<Link href="/about">About Us </Link>
 					<Link href="/join" mx="15px">

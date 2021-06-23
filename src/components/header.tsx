@@ -17,11 +17,18 @@ export default function HEader(): JSX.Element {
 			>
 				<Image src="/logo.png" w="200px" mx="-15px" />
 				<Flex>
-					<Link href="/about">About Us </Link>
-					<Link href="/join" mx="15px">
+					<Link href="/about" mr="7px">
+						About Us{" "}
+					</Link>
+					<Link href="/join" mr="7px">
 						Join Us
 					</Link>
-					<Link href="/contact">Contact</Link>
+					<Link href="/contact" mr="7px">
+						Contact
+					</Link>
+					<Link href="/donate" mr="7px">
+						Donate
+					</Link>
 				</Flex>
 			</Flex>
 		</Container>

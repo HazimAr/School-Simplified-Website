@@ -4,17 +4,7 @@ import { extendTheme } from "@chakra-ui/react";
 const theme = extendTheme({
 	colors: {
 		brand: {
-			100: "#FFCDD2",
-			200: "#EF9A9A",
-			300: "#E57373",
-			400: "#EF5350",
-			500: "#f44336",
-			600: "#e53935",
-			700: "#d32f2f",
-			800: "#c62828",
-			900: "#b71c1c",
-			1000: "#911515",
-			1100: "#730c0c",
+""
 		},
 		text: {
 			50: "#FAFAFA",
@@ -40,9 +30,6 @@ const theme = extendTheme({
 				color: "white",
 				bg: "text.1000",
 				lineHeight: "base",
-			},
-			a: {
-				color: "white",
 			},
 		}),
 	},

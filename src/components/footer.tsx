@@ -7,6 +7,7 @@ import {
 	Link,
 	Heading,
 } from "@chakra-ui/react";
+import Container from "@components/container";
 
 const infos = [
 	{
@@ -23,7 +24,7 @@ const infos = [
 	},
 	{
 		name: "Our Team",
-		link: "/ourteam",
+		link: "/team",
 	},
 	{
 		name: "Discord",
@@ -31,7 +32,7 @@ const infos = [
 	},
 	{
 		name: "FAQ",
-		link: "/contact-us-faq",
+		link: "/contact",
 	},
 ];
 
@@ -40,6 +41,7 @@ const services = [
 		name: "Resources",
 		link: "/resources",
 	},
+
 	{
 		name: "Volunteering",
 		link: "/volunteering",
@@ -54,6 +56,7 @@ const services = [
 		name: "Essay Revisions",
 		link: "/essay",
 	},
+
 	{
 		name: "College Prep",
 		link: "/cprep",
@@ -70,26 +73,17 @@ const socials = [
 		name: "Instagram",
 		link: "https://www.instagram.com/school.simplified/",
 	},
-	{
-		name: "Twitter",
-		link: "https://twitter.com/SchoolSimplify",
-	},
+
 	{
 		name: "Tiktok",
 		link: "https://www.tiktok.com/@schoolsimplified",
 	},
+
 	{
 		name: "Facebook",
 		link: "https://www.facebook.com/SchoolSimple/",
 	},
-	{
-		name: "Youtube",
-		link: "https://www.youtube.com/channel/UCYe1MR_EriUg_wNgrNTRU6w",
-	},
-	{
-		name: "Podcast",
-		link: "/",
-	},
+
 	{
 		name: "Blog",
 		link: "/",
@@ -104,7 +98,7 @@ const socials = [
 export default function Footer(): JSX.Element {
 	return (
 		<Box as="footer">
-			<Flex bg="#5a60ae" justify="center" align="center">
+			<Container bg="brand.purple.light">
 				<Flex
 					justify="space-between"
 					maxW="1200px"
@@ -120,7 +114,7 @@ export default function Footer(): JSX.Element {
 							styleType="none"
 							m="0"
 							p="0"
-							color="#fcd270"
+							color="brand.gold"
 						>
 							{infos.map((info) => {
 								return (
@@ -139,7 +133,7 @@ export default function Footer(): JSX.Element {
 							styleType="none"
 							m="0"
 							p="0"
-							color="#fcd270"
+							color="brand.gold"
 						>
 							{services.map((service) => {
 								return (
@@ -158,7 +152,7 @@ export default function Footer(): JSX.Element {
 							styleType="none"
 							m="0"
 							p="0"
-							color="#fcd270"
+							color="brand.gold"
 						>
 							{socials.map((social) => {
 								return (
@@ -172,8 +166,8 @@ export default function Footer(): JSX.Element {
 						</UnorderedList>
 					</Box>
 				</Flex>
-			</Flex>
-			<Flex bg="#454a8a" justify="center" align="center" py="10px">
+			</Container>
+			<Container bg="brand.purple.dark" py="10px">
 				<Flex
 					justify="space-between"
 					align="center"
@@ -188,7 +182,7 @@ export default function Footer(): JSX.Element {
 						<Link href="/privacy">Privacy Policy</Link>
 					</Text>
 				</Flex>
-			</Flex>
+			</Container>
 		</Box>
 	);
 }

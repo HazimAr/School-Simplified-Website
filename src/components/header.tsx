@@ -1,9 +1,10 @@
 import { Flex, Image, Link } from "@chakra-ui/react";
+import Container from "@components/container";
 
 // eslint-disable-next-line import/no-default-export
 export default function HEader(): JSX.Element {
 	return (
-		<Flex bg="#5a60ae" justify="center" align="center">
+		<Container bg="#5a60ae">
 			<Flex
 				justify="space-between"
 				maxW="1200px"
@@ -23,6 +24,6 @@ export default function HEader(): JSX.Element {
 					<Link href="/contact">Contact</Link>
 				</Flex>
 			</Flex>
-		</Flex>
+		</Container>
 	);
 }

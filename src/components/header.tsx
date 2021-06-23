@@ -2,9 +2,9 @@ import { Flex, Image, Link } from "@chakra-ui/react";
 import Container from "@components/container";
 
 // eslint-disable-next-line import/no-default-export
-export default function HEader(): JSX.Element {
+export default function Header(): JSX.Element {
 	return (
-		<Container bg="#5a60ae" as="header">
+		<Container bg="brand.purple.light" as="header">
 			<Flex
 				justify="space-between"
 				maxW="1200px"

@@ -1,9 +1,9 @@
 /* eslint-disable import/no-default-export */
-import { Box, Text, Image } from "@chakra-ui/react";
+import { Box, Text, Image, Heading } from "@chakra-ui/react";
 
 type StaffCard = {
-	title: string;
 	name: string;
+	title: string;
 	img: string;
 };
 
@@ -13,10 +13,10 @@ export default function StaffCard({
 	img,
 }: StaffCard): JSX.Element {
 	return (
-		<Box>
+		<Box p={4} m={2}>
 			<Box
-				w="45vh"
-				h="45vh"
+				w="40vh"
+				h="40vh"
 				backgroundColor="whiteAlpha.400"
 				rounded="50px"
 				p={5}
@@ -25,8 +25,8 @@ export default function StaffCard({
 			>
 				<Image src={img} />
 			</Box>
-			<Text>{name}</Text>
-			<Text>{title}</Text>
+			<Heading size="md">{name}</Heading>
+			<Text size="sm">{title}</Text>
 		</Box>
 	);
 }

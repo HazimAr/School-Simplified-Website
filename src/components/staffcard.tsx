@@ -1,5 +1,5 @@
 /* eslint-disable import/no-default-export */
-import { Box, Text, Image, Heading } from "@chakra-ui/react";
+import { Box, Text, Image, Heading, Flex } from "@chakra-ui/react";
 
 type StaffCard = {
 	name: string;
@@ -13,20 +13,17 @@ export default function StaffCard({
 	img,
 }: StaffCard): JSX.Element {
 	return (
-		<Box p={4} m={2}>
-			<Box
-				w="40vh"
-				h="40vh"
+		<Flex flexDir="column" align="center" justify="center" p="10px" m="5px">
+			<Box	w="200px"
+				h="200px"
 				backgroundColor="whiteAlpha.400"
+				p="20px"
 				rounded="50px"
-				p={5}
-				alignContent="center"
-				justifyContent="center"
 			>
-				<Image src={img} />
+				<Image src={img} size="100px" />
 			</Box>
 			<Heading size="md">{name}</Heading>
 			<Text size="sm">{title}</Text>
-		</Box>
+		</Flex>
 	);
 }

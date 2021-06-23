@@ -15,7 +15,7 @@ export default function Header(): JSX.Element {
 				align="center"
 				flexWrap="wrap"
 			>
-				<Image src="/logo.png" w="200px" mx="-15px" />
+				<Image src="/logo.png" w="200px" mx="-18px" />
 				<Flex>
 					<Link href="/about" mr="7px">
 						About Us{" "}
@@ -26,7 +26,7 @@ export default function Header(): JSX.Element {
 					<Link href="/contact" mr="7px">
 						Contact
 					</Link>
-					<Link href="/donate" mr="7px">
+					<Link href="/donate" >
 						Donate
 					</Link>
 				</Flex>

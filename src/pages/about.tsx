@@ -2,6 +2,8 @@
 import Link from "next/link";
 import { Box, Flex, Text, Spacer, Divider, Heading } from "@chakra-ui/react";
 import StaffCard from "@components/staffcard";
+import Container from "@components/container";
+import ContainerInside from "@components/containerInside";
 
 const people = [
 	{
@@ -63,31 +65,40 @@ const people = [
 
 export default function About(): JSX.Element {
 	return (
-		<Box backgroundColor="purple.300">
-			<Box>
-				<Heading size="lg">Testing</Heading>
-				<Text size="md">Leqaders of School Simplified</Text>
-			</Box>
-			<Divider orientation="horizontal" size="md"/>
-			<Flex
-				p="2"
-				s={3}
-				align="stretch"
-				alignItems="center"
-				justifyContent="center"
-				flexWrap="wrap"
-			>
-				{people.map((staff, i: number) => {
-					return (
-						<StaffCard
-							title={staff.title}
-							name={staff.name}
-							img={staff.img}
-							key={i}
-						/>
-					);
-				})}
-			</Flex>
-		</Box>
+		<Container backgroundColor="purple.300">
+			<ContainerInside>
+				<Box>
+					<Box py="20px">
+						<Heading fontSize="35px">Leadership</Heading>
+						<Text fontSize="20px">
+							Leaders of School Simplified
+						</Text>
+					</Box>
+
+					<Divider bg="white" />
+
+					<Flex justifyContent="center" flexWrap="wrap">
+						{people.map((staff, i: number) => {
+							return (
+								<StaffCard
+									title={staff.title}
+									name={staff.name}
+									img={staff.img}
+									key={i}
+								/>
+							);
+						})}
+					</Flex>
+				</Box>
+				<Box backgroundColor="purple.100">
+					<Heading fontSize="35px">
+						Volunteering Opportunities
+					</Heading>
+					<Text fontSize="20px">
+						Over 300+ volunteers across the world
+					</Text>
+				</Box>
+			</ContainerInside>
+		</Container>
 	);
 }

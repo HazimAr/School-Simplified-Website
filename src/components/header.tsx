@@ -18,7 +18,7 @@ export default function Header(): JSX.Element {
 				<Image src="/logo.png" w="200px" mx="-18px" />
 				<Flex>
 					<Link href="/about" mr="7px">
-						About Us{" "}
+						About Us
 					</Link>
 					<Link href="/join" mr="7px">
 						Join Us

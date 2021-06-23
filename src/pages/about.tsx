@@ -1,19 +1,18 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable sonarjs/no-duplicate-string */
-import Link from "next/link";
 import {
 	Box,
 	Flex,
 	Text,
-	Spacer,
 	Divider,
 	Heading,
 	Image,
 	Button,
 } from "@chakra-ui/react";
-import StaffCard from "@components/staffcard";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import { useState, useEffect } from "react";
+import StaffCard from "@components/staffcard";
+// import { useState, useEffect } from "react";
 
 const people = [
 	{
@@ -73,29 +72,29 @@ const people = [
 	},
 ];
 
-const marketing = <Text>Marketing</Text>;
+// const marketing = <Text>Marketing</Text>;
 
-let body = marketing;
+// let body = marketing;
 export default function About(): JSX.Element {
-	const [panel, setPanel] = useState("");
+	// const [panel, setPanel] = useState("");
 
-	useEffect(() => {
-		if (panel === "m") {
-			body = <Text>Marketing</Text>;
-		}
-		if (panel === "a") {
-			body = <Text>Academics</Text>;
-		}
-		if (panel === "s") {
-			body = <Text>Secretary</Text>;
-		}
-		if (panel === "t") {
-			body = <Text>Technical</Text>;
-		}
-		if (panel === "h") {
-			body = <Text>HR</Text>;
-		}
-	}, [panel]);
+	// useEffect(() => {
+	// 	if (panel === "m") {
+	// 		body = <Text>Marketing</Text>;
+	// 	}
+	// 	if (panel === "a") {
+	// 		body = <Text>Academics</Text>;
+	// 	}
+	// 	if (panel === "s") {
+	// 		body = <Text>Secretary</Text>;
+	// 	}
+	// 	if (panel === "t") {
+	// 		body = <Text>Technical</Text>;
+	// 	}
+	// 	if (panel === "h") {
+	// 		body = <Text>HR</Text>;
+	// 	}
+	// }, [panel]);
 
 	return (
 		<Container backgroundColor="purple.300">
@@ -125,7 +124,7 @@ export default function About(): JSX.Element {
 						<Image src="/staff/default.png" boxSize="200px" />
 					</Flex>
 				</Box>
-				<Box></Box>
+
 				<Box>
 					<Box py="20px">
 						<Heading fontSize="35px">Leadership</Heading>
@@ -156,7 +155,12 @@ export default function About(): JSX.Element {
 					<Text fontSize="20px">
 						Over 300+ volunteers across the world
 					</Text>
-					<Flex mt="30px" bg="blue.200" justify="center" align="center">
+					<Flex
+						mt="30px"
+						bg="blue.200"
+						justify="center"
+						align="center"
+					>
 						<Button>Marketing</Button>
 						<Text>|</Text>
 						<Button>Academics</Button>
@@ -169,7 +173,7 @@ export default function About(): JSX.Element {
 					</Flex>
 				</Box>
 
-				{body}
+				{/* {body} */}
 			</ContainerInside>
 		</Container>
 	);

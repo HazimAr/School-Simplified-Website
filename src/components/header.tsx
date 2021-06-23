@@ -4,7 +4,7 @@ import Container from "@components/container";
 // eslint-disable-next-line import/no-default-export
 export default function HEader(): JSX.Element {
 	return (
-		<Container bg="#5a60ae">
+		<Container bg="#5a60ae" as="header">
 			<Flex
 				justify="space-between"
 				maxW="1200px"
@@ -24,7 +24,6 @@ export default function HEader(): JSX.Element {
 					<Link href="/contact">Contact</Link>
 				</Flex>
 			</Flex>
-			
 		</Container>
 	);
 }

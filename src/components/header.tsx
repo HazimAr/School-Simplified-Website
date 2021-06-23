@@ -26,9 +26,7 @@ export default function Header(): JSX.Element {
 					<Link href="/contact" mr="7px">
 						Contact
 					</Link>
-					<Link href="/donate" >
-						Donate
-					</Link>
+					<Link href="/donate">Donate</Link>
 				</Flex>
 			</Flex>
 		</Container>

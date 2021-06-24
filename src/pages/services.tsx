@@ -15,12 +15,16 @@ const items = ['Essay Proofreading', 'Free Tutoring', '24/7 Chat Helping', 'Coll
 
 export default function Services(): JSX.Element {
 	return (
-		<Box backgroundImage="url(/bg.svg)">
+		<Box backgroundImage="url(/bg.svg)" backgroundSize="cover">
 			<Container backgroundColor="#BEC6FDD6">
 				<ContainerInside p="20px">
 					<Heading textAlign="left" mb="15px" fontSize="28px">Our Services</Heading>
 					<Text textAlign="left">Although a non-profit organization, School Simplified offers the quality services of a profit-based company. With areas specifically dedicated to free tutoring, homework help, and essay proofreading, we can help guide you through your educational experience!</Text>
-					<Flex justifyContent="center" flexWrap="wrap">
+				</ContainerInside>
+			</Container>
+			<Container backgroundColor="#BEC6FDD6">
+				<ContainerInside pb="20px">
+					<Flex justifyContent="space-evenly" flexWrap="wrap">
 						{items.map((item, i: number) => {
 							return (
 								<Box rounded="30px" backgroundColor="#FFFFFF7A" key={'item_' + i} m="10px 5px" p="20px" w="175px" h="225px">
@@ -41,19 +45,21 @@ export default function Services(): JSX.Element {
 					</Flex>
 					<Flex justifyContent="space-between">
 						<Flex flexDirection="column-reverse" flex="2">
-							<Box p="15px" backgroundColor="#FFFFFF7A" rounded="40px" mr="20px">
-								<Flex flexDir="column" align="center" justify="center">
-									<Link href="https://example.com" isExternal="true">
-										<Image src="https://picsum.photos/200/200" p="5px" />
-									</Link>
-									<Text fontSize="12px">Join Here!</Text>
-								</Flex>
+							<Box mr="20px" maxW="258px"> {/* maxW is hard-coded, so I need to find a good way to dynamically determine it soon */}
+								<Link href="https://discord.gg/school" isExternal="true" textDecoration="none!important">
+									<Box p="15px" backgroundColor="#FFFFFF7A" rounded="40px">
+										<Flex flexDir="column" align="center" justify="center">
+												<Image src="https://picsum.photos/200/200" p="5px" />
+											<Text fontSize="12px">Join Here!</Text>
+										</Flex>
+									</Box>
+								</Link>
 							</Box>
 						</Flex>
 						<Box flex="1" />
 						<Flex flexDirection="column" justifyContent="space-between" textAlign="right" flex="3">
 							<Text fontSize="24px">How do I sign up?</Text>
-							<Text fontSize="21px">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidicunt.</Text>
+							<Text fontSize="21px">To receive our FREE services, first join our Discord on the link to the right!</Text>
 						</Flex>
 					</Flex>
 				</ContainerInside>

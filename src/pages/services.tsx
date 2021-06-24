@@ -11,7 +11,7 @@ import {
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 
-const items = ['Essay Proofreading', 'Free Tutoring', '24/7 Chat Helping', 'College + HS Prep', 'Life Skills', 'SAT/ACT Prep'];
+const items = ['Essay Proofreading', 'Free Tutoring', '24/7 Chat Helping', 'College + HS Prep', 'SAT/ACT Prep'];
 
 export default function Services(): JSX.Element {
 	return (

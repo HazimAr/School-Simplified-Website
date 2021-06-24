@@ -16,15 +16,15 @@ const items = ['Essay Proofreading', 'Free Tutoring', '24/7 Chat Helping', 'Coll
 export default function Services(): JSX.Element {
 	return (
 		<>
-			<Container backgroundColor="purple.300">
+			<Container backgroundColor="#BEC6FDD6">
 				<ContainerInside p="20px">
 					<Heading textAlign="left" mb="15px" fontSize="28px">Our Services</Heading>
 					<Text textAlign="left">Although a non-profit organization, School Simplified offers the quality services of a profit-based company. With areas specifically dedicated to free tutoring, homework help, and essay proofreading, we can help guide you through your educational experience!</Text>
 					<Flex justifyContent="center" flexWrap="wrap">
 						{items.map((item, i: number) => {
 							return (
-								<Box rounded="50px" backgroundColor="purple.200" key={'item_' + i} m="10px 5px" p="30px 20px" w="175px" h="225px">
-									<Text color="purple.500" fontSize="20px" textAlign="left">{item}</Text>
+								<Box rounded="50px" backgroundColor="#FFFFFF7A" key={'item_' + i} m="10px 5px" p="30px 20px" w="175px" h="225px">
+									<Text color="#5A60AD" fontSize="21px" textAlign="left">{item}</Text>
 								</Box>
 							);
 						})}
@@ -41,10 +41,10 @@ export default function Services(): JSX.Element {
 					</Flex>
 					<Flex justifyContent="space-between">
 						<Flex flexDirection="column-reverse" flex="2">
-							<Box p="15px 30px" backgroundColor="purple.200" rounded="20px" mr="20px">
+							<Box p="15px" backgroundColor="#FFFFFF7A" rounded="20px" mr="20px">
 								<Flex flexDir="column" align="center" justify="center">
-									<Image src="https://picsum.photos/200/200" />
-									<Text>Join Here!</Text>
+									<Image src="https://picsum.photos/200/200" p="5px" />
+									<Text fontSize="12px">Join Here!</Text>
 								</Flex>
 							</Box>
 						</Flex>
@@ -56,18 +56,19 @@ export default function Services(): JSX.Element {
 					</Flex>
 				</ContainerInside>
 			</Container>
-			<Container backgroundColor="purple.300">
+			<Container backgroundColor="#BEC6FDD6">
 				<ContainerInside px="20px" py="40px">
 					<Flex justifyContent="space-between">
-						<Box flex="3" textAlign="left">
+						<Box flex="19" textAlign="left">
 							<Heading fontSize="28px" mb="15px">About Our Services</Heading>
-							<Text>Lorem ipsum, whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever whatever</Text>
-						</Box>
-						<Box flex="1" />
-						<Box backgroundColor="gray.100" rounded="20px" w="100px" flex="3" />
+							<Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</Text>
+						</Box> {/* 184px */}
+						<Box flex="8" /> {/* 82px */}
+						<Box backgroundColor="#FFFFFF7A" rounded="20px" w="100px" flex="19" /> {/* 195px */}
 					</Flex>
 				</ContainerInside>
 			</Container>
+			<Container backgroundColor="#BEC6FDD6" h="150px" /> {/* accounting for extra space on the bottom*/ }
 		</>
 	);
 };

@@ -9,7 +9,6 @@ const theme = extendTheme({
 				light: "#5a60ae",
 				dark: "#454a8a",
 			},
-			background1: "#bbc1fb",
 		},
 		text: {
 			50: "#FAFAFA",

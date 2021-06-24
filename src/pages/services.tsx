@@ -23,7 +23,7 @@ export default function Services(): JSX.Element {
 					<Flex justifyContent="center" flexWrap="wrap">
 						{items.map((item, i: number) => {
 							return (
-								<Box rounded="50px" backgroundColor="#FFFFFF7A" key={'item_' + i} m="10px 5px" p="30px 20px" w="175px" h="225px">
+								<Box rounded="30px" backgroundColor="#FFFFFF7A" key={'item_' + i} m="10px 5px" p="20px" w="175px" h="225px">
 									<Text color="#5A60AD" fontSize="21px" textAlign="left">{item}</Text>
 								</Box>
 							);
@@ -41,9 +41,11 @@ export default function Services(): JSX.Element {
 					</Flex>
 					<Flex justifyContent="space-between">
 						<Flex flexDirection="column-reverse" flex="2">
-							<Box p="15px" backgroundColor="#FFFFFF7A" rounded="20px" mr="20px">
+							<Box p="15px" backgroundColor="#FFFFFF7A" rounded="40px" mr="20px">
 								<Flex flexDir="column" align="center" justify="center">
-									<Image src="https://picsum.photos/200/200" p="5px" />
+									<Link href="https://example.com" isExternal="true">
+										<Image src="https://picsum.photos/200/200" p="5px" />
+									</Link>
 									<Text fontSize="12px">Join Here!</Text>
 								</Flex>
 							</Box>
@@ -64,7 +66,7 @@ export default function Services(): JSX.Element {
 							<Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</Text>
 						</Box> {/* 184px */}
 						<Box flex="8" /> {/* 82px */}
-						<Box backgroundColor="#FFFFFF7A" rounded="20px" w="100px" flex="19" /> {/* 195px */}
+						<Box backgroundColor="#FFFFFF7A" rounded="40px" w="100px" flex="19" /> {/* 195px */}
 					</Flex>
 				</ContainerInside>
 			</Container>

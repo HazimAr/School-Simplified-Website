@@ -97,7 +97,7 @@ export default function About(): JSX.Element {
 	// }, [panel]);
 
 	return (
-		<Container backgroundColor="purple.300">
+		<Container>
 			<ContainerInside>
 				<Box py="20px">
 					<Flex
@@ -148,7 +148,7 @@ export default function About(): JSX.Element {
 						})}
 					</Flex>
 				</Box>
-				<Box backgroundColor="brand.background1" py="30px">
+				<Box py="30px">
 					<Heading fontSize="35px">
 						Volunteering Opportunities
 					</Heading>

@@ -15,7 +15,7 @@ const items = ['Essay Proofreading', 'Free Tutoring', '24/7 Chat Helping', 'Coll
 
 export default function Services(): JSX.Element {
 	return (
-		<>
+		<Box backgroundImage="url(/bg.svg)">
 			<Container backgroundColor="#BEC6FDD6">
 				<ContainerInside p="20px">
 					<Heading textAlign="left" mb="15px" fontSize="28px">Our Services</Heading>
@@ -69,6 +69,6 @@ export default function Services(): JSX.Element {
 				</ContainerInside>
 			</Container>
 			<Container backgroundColor="#BEC6FDD6" h="150px" /> {/* accounting for extra space on the bottom*/ }
-		</>
+		</Box>
 	);
 };

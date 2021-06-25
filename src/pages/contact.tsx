@@ -6,50 +6,49 @@ import {
 	AccordionPanel,
 	AccordionIcon,
 	Flex,
+	// Input, Stack, Icon, InputGroup, InputLeftElement, Button, FormControl
 	// FormControl,
 	// FormLabel,
 	// FormErrorMessage,
 	// FormHelperText,
 } from "@chakra-ui/react";
 
-import { Input, Stack, InputLeftAddon, Icon, InputGroup, InputLeftElement, Button, FormControl } from '@chakra-ui/core';
-
-const form = () => {
-	return ( 
-		<form action='submit'>
-			<Stack spacing={3} >
-				<FormControl isRequired>
-					<InputGroup>
-						<InputLeftElement children={<Icon name='info' />} />
-						<Input type='name' placeholder='Name' aria-lable='Name' />
-					</InputGroup>
-				</FormControl>
-				<FormControl isRequired>
-					<InputGroup>
-						<InputLeftElement children={<Icon name='email' />} />
-						<Input type='email' placeholder='Email' aria-lable='Email' />
-					</InputGroup>
-				</FormControl>
-				<FormControl isRequired>
-					<InputGroup>
-						<InputLeftElement children={<Icon name='info' />} />
-						<Input type='name' placeholder='Subject' aria-lable='Subject' />
-					</InputGroup>
-				</FormControl>
-				<FormControl isRequired>
-					<InputGroup>
-						<InputLeftElement children={<Icon name='info' />} />
-						<Input type='name' placeholder='Your Message' aria-lable='Your Message' />
-					</InputGroup>
-				</FormControl>
-				<Button type='submit' boxShadow='sm' _hover={{boxShadow: 'md' }} _active={{boxShadow: 'lg' }} >Send</Button>
-				<FormHelperText textAlign='center'>
-					By clicking 'Send' I agree to the Privacy Policy
-				</FormHelperText>
-			</Stack>
-		</form>
-	);	
-}
+// const form = () => {
+// 	return ( 
+// 		<form action='submit'>
+// 			<Stack spacing={3} >
+// 				<FormControl isRequired>
+// 					<InputGroup>
+// 						<InputLeftElement children={<Icon name='info' />} />
+// 						<Input type='name' placeholder='Name' aria-lable='Name' />
+// 					</InputGroup>
+// 				</FormControl>
+// 				<FormControl isRequired>
+// 					<InputGroup>
+// 						<InputLeftElement children={<Icon name='email' />} />
+// 						<Input type='email' placeholder='Email' aria-lable='Email' />
+// 					</InputGroup>
+// 				</FormControl>
+// 				<FormControl isRequired>
+// 					<InputGroup>
+// 						<InputLeftElement children={<Icon name='info' />} />
+// 						<Input type='name' placeholder='Subject' aria-lable='Subject' />
+// 					</InputGroup>
+// 				</FormControl>
+// 				<FormControl isRequired>
+// 					<InputGroup>
+// 						<InputLeftElement children={<Icon name='info' />} />
+// 						<Input type='name' placeholder='Your Message' aria-lable='Your Message' />
+// 					</InputGroup>
+// 				</FormControl>
+// 				<Button type='submit' boxShadow='sm' _hover={{boxShadow: 'md' }} _active={{boxShadow: 'lg' }} >Send</Button>
+// 				<FormHelperText textAlign='center'>
+// 					By clicking 'Send' I agree to the Privacy Policy
+// 				</FormHelperText>
+// 			</Stack>
+// 		</form>
+// 	);	
+// }
 
 // <FormControl id="email">
 //   <FormLabel>Email address</FormLabel>

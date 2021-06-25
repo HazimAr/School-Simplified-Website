@@ -57,29 +57,6 @@ const form = () => {
 //   <FormHelperText>We'll never share your email.</FormHelperText>
 // </FormControl>
 
-// export default function Form() {
-// 	<FormControl id="name">
-// 		<FormLabel>Name</FormLabel>
-// 		<Input type="name" />
-// 		<FormHelperText>Name</FormHelperText>
-// 	</FormControl>
-// 	<FormControl id="email">
-// 		<FormLabel>Email</FormLabel>
-// 		<Input type="email" />
-// 		<FormHelperText>Email</FormHelperText>
-// 	</FormControl>
-// 	<FormControl id="subject">
-// 		<FormLabel>Subject</FormLabel>
-// 		<Input type="subject" />
-// 		<FormHelperText>Subject</FormHelperText>
-// 	</FormControl>
-// 	<FormControl id="message">
-// 		<FormLabel>Message</FormLabel>
-// 		<Input type="message" />
-// 		<FormHelperText>Message</FormHelperText>
-// 	</FormControl>
-// }
-
 export default function Contact(): JSX.Element {
 	return (
 		<Container>

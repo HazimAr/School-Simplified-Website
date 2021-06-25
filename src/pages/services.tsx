@@ -1,9 +1,9 @@
 import {
-	Link, 
-	Flex, 
-	Image, 
-	Box, 
-	Heading, 
+	Link,
+	Flex,
+	Image,
+	Box,
+	Heading,
 	Text,
 	Divider,
 	Button
@@ -46,10 +46,10 @@ export default function Services(): JSX.Element {
 					<Flex justifyContent="space-between">
 						<Flex flexDirection="column-reverse" flex="2">
 							<Box mr="20px" maxW="258px"> {/* maxW is hard-coded, so I need to find a good way to dynamically determine it soon */}
-								<Link href="https://discord.gg/school" isExternal="true" textDecoration="none!important">
+								<Link href="https://discord.gg/school" isExternal={true} textDecoration="none!important">
 									<Box p="15px" backgroundColor="#FFFFFF7A" rounded="40px">
 										<Flex flexDir="column" align="center" justify="center">
-												<Image src="https://picsum.photos/200/200" p="5px" />
+											<Image src="https://picsum.photos/200/200" p="5px" />
 											<Text fontSize="12px">Join Here!</Text>
 										</Flex>
 									</Box>
@@ -76,7 +76,7 @@ export default function Services(): JSX.Element {
 					</Flex>
 				</ContainerInside>
 			</Container>
-			<Container backgroundColor="#BEC6FDD6" h="150px" /> {/* accounting for extra space on the bottom*/ }
+			<Container backgroundColor="#BEC6FDD6" h="150px" /> {/* accounting for extra space on the bottom*/}
 		</Box>
 	);
 };

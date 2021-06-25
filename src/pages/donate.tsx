@@ -5,7 +5,7 @@ import ContainerInside from "@components/containerInside";
 export default function Donate(): JSX.Element {
 	return (
 		<>
-			<Container bg="brand.purple.dark">
+			<Container >
 				<ContainerInside>
 					<Flex
 						justify="space-between"

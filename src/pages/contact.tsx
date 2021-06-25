@@ -12,7 +12,7 @@ import {
 	// FormHelperText,
 } from "@chakra-ui/react";
 
-import { Input, Stack, InputLeftAddon, Icon, InputGroup, InputLeftElement, Button, FormControl } from "@chakra-ui/core";
+import { Input, Stack, InputLeftAddon, Icon, InputGroup, InputLeftElement, Button, FormControl } from '@chakra-ui/core';
 
 const form = () => {
 	return ( 
@@ -50,8 +50,6 @@ const form = () => {
 		</form>
 	);	
 }
-
-export default form;
 
 // <FormControl id="email">
 //   <FormLabel>Email address</FormLabel>

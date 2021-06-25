@@ -3,7 +3,7 @@ import { Box, Image, Container, Flex, Heading, Text } from "@chakra-ui/react";
 export default function Home(): JSX.Element {
 	return (
 		<Box>
-			<Flex  padding="90px">
+			<Flex padding="90px">
 				<Container w="1200px" maxW="1000px">
 					<Flex
 						w="100%"

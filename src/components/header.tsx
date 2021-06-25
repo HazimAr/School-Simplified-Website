@@ -16,7 +16,7 @@ export default function Header(): JSX.Element {
 				flexWrap="wrap"
 			>
 				<Link href="/">
-					<Image src="/logo.png" w="200px" />
+					<Image src="/longLogo.png" w="200px" />
 				</Link>
 				<Flex>
 					<Link href="/about" mr="7px">

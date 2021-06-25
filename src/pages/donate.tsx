@@ -21,13 +21,12 @@ export default function Donate(): JSX.Element {
 								Support Us
 							</Heading>
 							<Text>
-								Your donation helps us as a small teen run ...
-								Lorem ipsum dolor sit amet, consectetur
-								adipiscing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua. Ut
-								enim ad minim veniam, quis nostrud exercitation
-								ullamco laboris nisi ut aliquip ex ea commodo
-								consequat.
+								Your donation helps us as a small teen run
+								non-profit continue to support thousands of
+								teens and young adults throughout the world.
+								Through your help, we are able to bring School
+								Simplified to more people, bringing educational
+								equity and success to to teenagers alike!
 							</Text>
 						</Box>
 						<Box bg="red" boxSize="300px" borderRadius="25px" />
@@ -36,7 +35,7 @@ export default function Donate(): JSX.Element {
 			</Container>
 			<Container>
 				<ContainerInside py="25px">
-					<Heading size="lg">Why support us?</Heading>
+					<Heading size="lg" py="10px">Why support us?</Heading>
 					<Flex
 						justify="space-between"
 						maxW="1200px"
@@ -46,7 +45,7 @@ export default function Donate(): JSX.Element {
 					>
 						<Box
 							p="20px"
-							bg="red.500"
+							bg="rgb(255,0,0,0.5)"
 							mr="20px"
 							borderRadius="25px"
 						>
@@ -54,18 +53,15 @@ export default function Donate(): JSX.Element {
 								Services
 							</Heading>
 							<Text>
-								Lorem ipsum dolor sit amet, consectetur
-								adipiscing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua. Ut
-								enim ad minim veniam, quis nostrud exercitation
-								ullamco laboris nisi ut aliquip ex ea commodo
-								consequat.
+								Our services are all free but some expenses are
+								unavoidable for us. Your donation helps fund us,
+								allowing us to improve our services.
 							</Text>
 						</Box>
 						<Spacer />
 						<Box
 							p="20px"
-							bg="green.500"
+							bg="rgb(255,0,0,0.5)"
 							mr="20px"
 							borderRadius="25px"
 						>
@@ -73,26 +69,23 @@ export default function Donate(): JSX.Element {
 								Community
 							</Heading>
 							<Text>
-								Lorem ipsum dolor sit amet, consectetur
-								adipiscing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua. Ut
-								enim ad minim veniam, quis nostrud exercitation
-								ullamco laboris nisi ut aliquip ex ea commodo
-								consequat.
+								Your donation helps us pay for resources our
+								team uses to provide you with events, giveaways,
+								and things to improve the community.
 							</Text>
 						</Box>
 						<Spacer />
-						<Box p="20px" bg="red.500" borderRadius="25px">
+						<Box p="20px" 
+							bg="rgb(255,0,0,0.5)" 
+							borderRadius="25px"
+						>
 							<Heading size="md" py="15px">
 								Team
 							</Heading>
 							<Text>
-								Lorem ipsum dolor sit amet, consectetur
-								adipiscing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua. Ut
-								enim ad minim veniam, quis nostrud exercitation
-								ullamco laboris nisi ut aliquip ex ea commodo
-								consequat.
+								Our team consists solely of teenage volunteers.
+								Donations help us provide our team with what
+								they need so we can continue to help you.
 							</Text>
 						</Box>
 					</Flex>

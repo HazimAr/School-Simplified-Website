@@ -20,25 +20,25 @@ import {
 // 				<FormControl isRequired>
 // 					<InputGroup>
 // 						<InputLeftElement children={<Icon name='info' />} />
-// 						<Input type='name' placeholder='Name' aria-lable='Name' />
+// 						<Input type='name' placeholder='Name' aria-label='Name' />
 // 					</InputGroup>
 // 				</FormControl>
 // 				<FormControl isRequired>
 // 					<InputGroup>
 // 						<InputLeftElement children={<Icon name='email' />} />
-// 						<Input type='email' placeholder='Email' aria-lable='Email' />
+// 						<Input type='email' placeholder='Email' aria-label='Email' />
 // 					</InputGroup>
 // 				</FormControl>
 // 				<FormControl isRequired>
 // 					<InputGroup>
 // 						<InputLeftElement children={<Icon name='info' />} />
-// 						<Input type='name' placeholder='Subject' aria-lable='Subject' />
+// 						<Input type='name' placeholder='Subject' aria-label='Subject' />
 // 					</InputGroup>
 // 				</FormControl>
 // 				<FormControl isRequired>
 // 					<InputGroup>
 // 						<InputLeftElement children={<Icon name='info' />} />
-// 						<Input type='name' placeholder='Your Message' aria-lable='Your Message' />
+// 						<Input type='name' placeholder='Your Message' aria-label='Your Message' />
 // 					</InputGroup>
 // 				</FormControl>
 // 				<Button type='submit' boxShadow='sm' _hover={{boxShadow: 'md' }} _active={{boxShadow: 'lg' }} >Send</Button>

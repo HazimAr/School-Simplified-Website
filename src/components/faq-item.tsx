@@ -22,7 +22,7 @@ export default function FaqItem({ question, answer, open }: FaqItemProps): JSX.E
       py={1}
       mb={5}
     >
-      <AccordionButton _hover={{ backgroundColor:"white" }}>
+      <AccordionButton _hover={{ backgroundColor: "transparent" }}>
         <Flex textAlign="left" flex="1">{question}</Flex>
         {open
           ? <TriangleUpIcon color="#424242" />

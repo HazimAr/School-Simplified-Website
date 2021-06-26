@@ -1,4 +1,5 @@
 import { Container, Heading } from "@chakra-ui/react";
+import ContactForm from "@components/contact-form";
 import FaqList from "@components/faq-list";
 
 export default function Contact(): JSX.Element {
@@ -26,9 +27,14 @@ export default function Contact(): JSX.Element {
 	]
 
 	return (
-		<Container>
-			<Heading as="h1" size="xl" mb={3}>FAQ</Heading>
-			<FaqList list={qaPairs} />
-		</Container>
+		<>
+			<Container>
+				<ContactForm />
+			</Container>
+			<Container>
+				<Heading as="h1" size="xl" mb={3}>FAQ</Heading>
+				<FaqList list={qaPairs} />
+			</Container>
+		</>
 	);
 }

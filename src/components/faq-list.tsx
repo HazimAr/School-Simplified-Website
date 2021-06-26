@@ -15,7 +15,7 @@ export default function FaqList({ list }: FaqListProps) :JSX.Element {
   return (
     <Accordion allowMultiple onChange={(newExpanded: number[]) => setExpanded(newExpanded)}>
       {
-        list.map(({ question, answer }, index) => {
+        list.map(({ question, answer }, index) :JSX.Element => {
           return (
             <FaqItem 
               question={question} 

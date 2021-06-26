@@ -34,9 +34,9 @@ export default function ContactForm(): JSX.Element {
       p={10}
     >
       <FormLabel>First Name</FormLabel>
-      <StyledInput placeholder="FirstName" type=""/>
+      <StyledInput placeholder="First Name" type=""/>
       <FormLabel>Last Name</FormLabel>
-      <StyledInput placeholder="LastName" type=""/>
+      <StyledInput placeholder="Last Name" type=""/>
       <FormLabel>Email</FormLabel>
       <StyledInput placeholder="Email" type="email"/>
       <FormLabel>Your Message</FormLabel>

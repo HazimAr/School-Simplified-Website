@@ -2,12 +2,12 @@
 /* eslint-disable sonarjs/no-duplicate-string */
 import {
 	Box,
-	Flex,
-	Text,
+	Button,
 	Divider,
+	Flex,
 	Heading,
 	Image,
-	Button,
+	Text
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";

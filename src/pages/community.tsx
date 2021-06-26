@@ -10,11 +10,13 @@ import {
     Container,
     Grid,
     GridItem,
-    Image,
 	Center,
 	Link,
 
+
 } from "@chakra-ui/react";
+
+import {FaDiscord} from 'react-icons/fa';
 
 export default function Home(): JSX.Element {
 	return (
@@ -118,12 +120,7 @@ export default function Home(): JSX.Element {
 					>
 						<Center>
 							<Link href='https://discord.com/invite/ghUAx6AQU4' isExternal>
-								<Image
-									src="./discord.png"
-									boxSize='215px'
-									objectFit="cover"
-									alt="Discord"
-								/>
+								<FaDiscord size='8vh' />
 							</Link> 
 						</Center>
 

@@ -1,3 +1,4 @@
+import { ColorModeScript } from "@chakra-ui/react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
@@ -74,7 +75,14 @@ export default class MyDocument extends Document {
 						}}
 					/>
 				</Head>
-				<body>
+				<body
+					style={{
+						backgroundImage: `url(/bg.svg)`,
+						backgroundRepeat: "no-repeat",
+						backgroundSize: "cover",
+					}}
+				>
+					<ColorModeScript initialColorMode="dark" />
 					<Main />
 					<NextScript />
 				</body>

@@ -1,40 +1,29 @@
+/* eslint-disable import/no-default-export */
 import { extendTheme } from "@chakra-ui/react";
-import { createBreakpoints } from "@chakra-ui/theme-tools";
-
-const fonts = { mono: `'Menlo', monospace` };
-
-const breakpoints = createBreakpoints({
-	sm: "40em",
-	md: "52em",
-	lg: "64em",
-	xl: "80em",
-});
 
 const theme = extendTheme({
 	colors: {
-		black: "#16161D",
-		bg: {
-			100: "#0B0C10",
-			200: "#1F2833",
-		},
 		brand: {
-			100: "#E2CDF5",
-			200: "#C59FEB",
-			300: "#9165C5",
-			400: "#5A378B",
-			500: "#1F0C3E",
-			600: "#170835",
-			700: "#11062C",
-			800: "#0C0323",
-			900: "#08021D",
+			transparent: "rgba(255,255,255,0.3)",
+			transparent2: "rgba(255,255,255,0.6)",
+			purple: {
+				light: "rgb(90, 96, 174)",
+				dark: "rgb(69, 74, 138)",
+			},
+			gold: "#fcd270",
 		},
 		text: {
-			100: "white",
-			200: "#E4E4E4",
-			300: "#afafaf",
-			400: "#949494",
-			500: "#737373",
-			600: "#616161",
+			50: "#FAFAFA",
+			100: "#F5F5F5",
+			200: "#EEEEEE",
+			300: "#E0E0E0",
+			400: "#BDBDBD",
+			500: "#9E9E9E",
+			600: "#757575",
+			700: "#616161",
+			800: "#424242",
+			900: "#212121",
+			1000: "#161616",
 		},
 	},
 	styles: {
@@ -45,18 +34,11 @@ const theme = extendTheme({
 			body: {
 				fontFamily: "body",
 				color: "white",
-				bg: "brand.900",
+				bg: "text.1000",
 				lineHeight: "base",
-			},
-			a: {
-				color: "white",
 			},
 		}),
 	},
-	initialColorMode: "dark",
-	useSystemColorMode: true,
-	fonts,
-	breakpoints,
 });
 
 export default theme;

@@ -1,17 +1,15 @@
 import {
 	Container,
 	Accordion,
-	AccordionItem,
-	AccordionButton,
-	AccordionPanel,
-	AccordionIcon,
-	Flex,
+	Heading,
 	// Input, Stack, Icon, InputGroup, InputLeftElement, Button, FormControl
 	// FormControl,
 	// FormLabel,
 	// FormErrorMessage,
 	// FormHelperText,
 } from "@chakra-ui/react";
+
+import FaqList from "@components/faq-list";
 
 // const form = () => {
 // 	return ( 
@@ -57,97 +55,34 @@ import {
 // </FormControl>
 
 export default function Contact(): JSX.Element {
+	
+	const qaPairs = [
+		{
+			"question": "Who are you?",
+			"answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+		},
+		{
+			"question": "Who started School Simplified?",
+			"answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+		},
+		{
+			"question": "Is School Simplified free to use?",
+			"answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+		},
+		{
+			"question": "How can I get community service hours?",
+			"answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+		},
+		{
+			"question": "How reliable is School Simplified?",
+			"answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+		},
+	]
+
 	return (
 		<Container>
-			<Accordion allowMultiple>
-				<AccordionItem borderRadius="md">
-					<h2>
-						<AccordionButton>
-							<Flex textAlign="left">Who are you?</Flex>
-							<AccordionIcon />
-						</AccordionButton>
-					</h2>
-					<AccordionPanel>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-						sed do eiusmod tempor incididunt ut labore et dolore
-						magna aliqua. Ut enim ad minim veniam, quis nostrud
-						exercitation ullamco laboris nisi ut aliquip ex ea
-						commodo consequat.
-					</AccordionPanel>
-				</AccordionItem>
-
-				<AccordionItem borderRadius="md">
-					<h2>
-						<AccordionButton>
-							<Flex textAlign="left">
-								Who started School Simplified
-							</Flex>
-							<AccordionIcon />
-						</AccordionButton>
-					</h2>
-					<AccordionPanel>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-						sed do eiusmod tempor incididunt ut labore et dolore
-						magna aliqua. Ut enim ad minim veniam, quis nostrud
-						exercitation ullamco laboris nisi ut aliquip ex ea
-						commodo consequat.
-					</AccordionPanel>
-				</AccordionItem>
-
-				<AccordionItem borderRadius="md">
-					<h2>
-						<AccordionButton>
-							<Flex textAlign="left">
-								Is School Simplified free to use?
-							</Flex>
-							<AccordionIcon />
-						</AccordionButton>
-					</h2>
-					<AccordionPanel>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-						sed do eiusmod tempor incididunt ut labore et dolore
-						magna aliqua. Ut enim ad minim veniam, quis nostrud
-						exercitation ullamco laboris nisi ut aliquip ex ea
-						commodo consequat.
-					</AccordionPanel>
-				</AccordionItem>
-
-				<AccordionItem borderRadius="md">
-					<h2>
-						<AccordionButton>
-							<Flex textAlign="left">
-								How can I get community service hours?
-							</Flex>
-							<AccordionIcon />
-						</AccordionButton>
-					</h2>
-					<AccordionPanel>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-						sed do eiusmod tempor incididunt ut labore et dolore
-						magna aliqua. Ut enim ad minim veniam, quis nostrud
-						exercitation ullamco laboris nisi ut aliquip ex ea
-						commodo consequat.
-					</AccordionPanel>
-				</AccordionItem>
-
-				<AccordionItem borderRadius="md">
-					<h2>
-						<AccordionButton>
-							<Flex textAlign="left">
-								How reliable is School Simplified?
-							</Flex>
-							<AccordionIcon />
-						</AccordionButton>
-					</h2>
-					<AccordionPanel>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-						sed do eiusmod tempor incididunt ut labore et dolore
-						magna aliqua. Ut enim ad minim veniam, quis nostrud
-						exercitation ullamco laboris nisi ut aliquip ex ea
-						commodo consequat.
-					</AccordionPanel>
-				</AccordionItem>
-			</Accordion>
+			<Heading as="h1" size="xl" mb={3}>FAQ</Heading>
+			<FaqList list={qaPairs} />
 		</Container>
 	);
 }

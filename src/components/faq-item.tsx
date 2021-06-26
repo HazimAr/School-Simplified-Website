@@ -1,8 +1,8 @@
 import {
-	AccordionItem,
-	AccordionButton,
-	AccordionPanel,
-	Flex,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  Flex,
 } from "@chakra-ui/react";
 import { TriangleDownIcon, TriangleUpIcon } from "@chakra-ui/icons";
 
@@ -14,11 +14,11 @@ type FaqItemProps = {
 
 export default function FaqItem({ question, answer, open }: FaqItemProps): JSX.Element {
   return (
-    <AccordionItem 
-      borderRadius="3xl" 
-      backgroundColor="white" 
-      color="#5a60ad" 
-      pl={5} 
+    <AccordionItem
+      borderRadius="3xl"
+      backgroundColor="white"
+      color="#5a60ad"
+      px={2}
       py={1}
       mb={5}
     >

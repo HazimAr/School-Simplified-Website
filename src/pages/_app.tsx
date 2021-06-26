@@ -1,3 +1,4 @@
+import "focus-visible/dist/focus-visible";
 import "@styles/global.css";
 import { ChakraProvider } from "@chakra-ui/react";
 import Footer from "@components/footer";

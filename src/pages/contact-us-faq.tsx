@@ -5,7 +5,11 @@ import {
 	AccordionButton,
 	AccordionPanel,
 	AccordionIcon,
-	Box
+	Box,
+	FormControl,
+	FormLabel,
+	FormErrorMessage,
+	FormHelperText
 } from "@chakra-ui/react";
 
 export default function Contact(): JSX.Element {

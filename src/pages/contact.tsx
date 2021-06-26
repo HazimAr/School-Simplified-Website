@@ -1,6 +1,7 @@
-import { Container, Heading } from "@chakra-ui/react";
+import { Heading, Flex } from "@chakra-ui/react";
 import ContactForm from "@components/contact-form";
 import FaqList from "@components/faq-list";
+import Container from "@components/container";
 
 export default function Contact(): JSX.Element {
 	const qaPairs = [
@@ -28,10 +29,11 @@ export default function Contact(): JSX.Element {
 
 	return (
 		<>
-			<Container>
+			<Container flexDirection="row">
+				<Heading as="h1" size="xl" mb={3}>Get in Touch</Heading>
 				<ContactForm />
 			</Container>
-			<Container>
+			<Container flexDirection="column">
 				<Heading as="h1" size="xl" mb={3}>FAQ</Heading>
 				<FaqList list={qaPairs} />
 			</Container>

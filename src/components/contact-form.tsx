@@ -22,7 +22,7 @@ function StyledInput({
 	);
 }
 
-function Button({ text }: { text: string }): JSX.Element {
+function Button({ children }: { children: any }): JSX.Element {
 	return (
 		<Box
 			as="button"
@@ -44,9 +44,8 @@ function Button({ text }: { text: string }): JSX.Element {
 				boxShadow: "none",
 				backgroundColor: "#5a60ad",
 			}}
-			onClick={() => {}}
 		>
-			{text}
+			{children}
 		</Box>
 	);
 }
@@ -80,7 +79,7 @@ export default function ContactForm(): JSX.Element {
 				_hover={{ backgroundColor: "transparent" }}
 				mb={4}
 			/>
-			<Button text="Send" />
+			<Button>Send</Button>
 		</FormControl>
 	);
 }

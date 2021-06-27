@@ -1,4 +1,5 @@
 import { Box, FormControl, FormLabel, Input, Textarea } from "@chakra-ui/react";
+import { None } from "framer-motion";
 
 function StyledInput({
 	placeholder,
@@ -22,7 +23,12 @@ function StyledInput({
 	);
 }
 
-function Button({ children }: { children: any }): JSX.Element {
+type ButtonProps = {
+	children: any,
+	onClick: () => void
+}
+
+function Button({ children, onClick }: ButtonProps): JSX.Element {
 	return (
 		<Box
 			as="button"
@@ -44,6 +50,7 @@ function Button({ children }: { children: any }): JSX.Element {
 				boxShadow: "none",
 				backgroundColor: "#5a60ad",
 			}}
+			onClick={onClick}
 		>
 			{children}
 		</Box>
@@ -79,7 +86,7 @@ export default function ContactForm(): JSX.Element {
 				_hover={{ backgroundColor: "transparent" }}
 				mb={4}
 			/>
-			<Button>Send</Button>
+			<Button onClick={() => console.log('send')}>Send</Button>
 		</FormControl>
 	);
 }

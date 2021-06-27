@@ -1,7 +1,6 @@
-import { Box, Image, Flex, Heading, Text, Icon } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import { FaDiscord } from "react-icons/fa";
 
 export default function Home(): JSX.Element {
 	return (

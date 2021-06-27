@@ -1,17 +1,17 @@
 import {
 	Box,
-	Text,
-	Heading,
-	Wrap,
-	VStack,
-	Flex,
-	Spacer,
+	Center,
 	Divider,
+	Flex,
 	Grid,
 	GridItem,
-	Center,
+	Heading,
 	Icon,
 	Link,
+	Spacer,
+	Text,
+	VStack,
+	Wrap,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";

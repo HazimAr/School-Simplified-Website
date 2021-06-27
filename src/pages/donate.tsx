@@ -1,11 +1,11 @@
-import { Text, Box, Flex, Heading, Spacer } from "@chakra-ui/react";
+import { Box, Flex, Heading, Spacer, Text } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 
 export default function Donate(): JSX.Element {
 	return (
 		<>
-			<Container >
+			<Container>
 				<ContainerInside>
 					<Flex
 						justify="space-between"
@@ -35,7 +35,9 @@ export default function Donate(): JSX.Element {
 			</Container>
 			<Container>
 				<ContainerInside py="25px">
-					<Heading size="lg" py="10px">Why support us?</Heading>
+					<Heading size="lg" py="10px">
+						Why support us?
+					</Heading>
 					<Flex
 						justify="space-between"
 						maxW="1200px"
@@ -75,10 +77,7 @@ export default function Donate(): JSX.Element {
 							</Text>
 						</Box>
 						<Spacer />
-						<Box p="20px" 
-							bg="rgb(255,0,0,0.5)" 
-							borderRadius="25px"
-						>
+						<Box p="20px" bg="rgb(255,0,0,0.5)" borderRadius="25px">
 							<Heading size="md" py="15px">
 								Team
 							</Heading>

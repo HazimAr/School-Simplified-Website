@@ -1,4 +1,4 @@
-import { Heading, Flex } from "@chakra-ui/react";
+import { Heading, Flex, Image } from "@chakra-ui/react";
 import ContactForm from "@components/contact-form";
 import FaqList from "@components/faq-list";
 import Container from "@components/container";
@@ -29,11 +29,21 @@ export default function Contact(): JSX.Element {
 
 	return (
 		<>
-			<Container flexDirection="row">
-				<Heading as="h1" size="xl" mb={3}>Get in Touch</Heading>
-				<ContactForm />
+			<Container 
+				flexDirection={{ sm: "column", lg: "row" }} 
+				justify="space-between"
+				px={{ sm: 10, md: 100, lg: 200}}
+			>
+				<Container flexDirection="column" flex={1} py={10}>
+					<Heading as="h1" size="xl" mb={3}>Get in Touch</Heading>
+					<Heading as="h2" size="md" mb={3}>Have a Question? Comment? Concern?</Heading>
+					<Image src="/contactPerson.png" w="200px" />
+				</Container>
+				<Container flex={2} py={10}>
+					<ContactForm />
+				</Container>
 			</Container>
-			<Container flexDirection="column">
+			<Container flexDirection="column" align="stretch" >
 				<Heading as="h1" size="xl" mb={3}>FAQ</Heading>
 				<FaqList list={qaPairs} />
 			</Container>

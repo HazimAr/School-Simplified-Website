@@ -13,7 +13,11 @@ export default function FaqList({ list }: FaqListProps) :JSX.Element {
   const [expanded, setExpanded] = useState<number[]>([]);
 
   return (
-    <Accordion allowMultiple onChange={(newExpanded: number[]) => setExpanded(newExpanded)}>
+    <Accordion 
+      allowMultiple 
+      onChange={(newExpanded: number[]) => setExpanded(newExpanded)} 
+      px={{ sm: 10, md: 100, lg: 200}}
+    >
       {
         list.map(({ question, answer }, index) :JSX.Element => {
           return (

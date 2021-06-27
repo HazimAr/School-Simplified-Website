@@ -4,7 +4,7 @@ import {
 	AccordionButton,
 	AccordionItem,
 	AccordionPanel,
-	Flex,
+	Flex
 } from "@chakra-ui/react";
 
 type FaqItemProps = {

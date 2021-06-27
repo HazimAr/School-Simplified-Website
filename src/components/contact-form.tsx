@@ -33,15 +33,15 @@ function Button({ text }: { text: string }): JSX.Element {
 			fontWeight="semibold"
 			backgroundColor="#5a60ad"
 			color="white"
-			_hover={{ bg: "#ebedf0" }}
+			_hover={{ bg: "#ebedf0", boxShadow: "none" }}
 			_active={{
 				bg: "#dddfe2",
 				transform: "scale(0.98)",
 				backgroundColor: "#5a60ad",
+        boxShadow: "none"
 			}}
 			_focus={{
-				boxShadow:
-					"0 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15)",
+				boxShadow: "none",
 				backgroundColor: "#5a60ad",
 			}}
 			onClick={() => {}}

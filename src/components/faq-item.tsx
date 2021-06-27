@@ -4,7 +4,7 @@ import {
 	AccordionButton,
 	AccordionItem,
 	AccordionPanel,
-	Flex,
+	Flex
 } from "@chakra-ui/react";
 
 type FaqItemProps = {
@@ -27,7 +27,11 @@ export default function FaqItem({
 			py={1}
 			mb={5}
 		>
-			<AccordionButton _hover={{ backgroundColor: "transparent" }}>
+			<AccordionButton 
+        _hover={{ backgroundColor: "transparent", boxShadow: "none" }}
+        _active={{ boxShadow: "none" }}
+        _focus={{ boxShadow: "none "}}
+      >
 				<Flex textAlign="left" flex="1">
 					{question}
 				</Flex>

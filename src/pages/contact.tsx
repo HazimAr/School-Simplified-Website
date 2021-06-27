@@ -63,6 +63,7 @@ export default function Contact(): JSX.Element {
 					</Flex>
 				</ContainerInside>
 			</Container>
+			<Container py={10} />
 		</>
 	);
 }

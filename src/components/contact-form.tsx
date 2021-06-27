@@ -1,13 +1,11 @@
 import { Box, FormControl, FormLabel, Input, Textarea } from "@chakra-ui/react";
-import { None } from "framer-motion";
 
-function StyledInput({
-	placeholder,
-	type,
-}: {
-	placeholder: string;
-	type: string;
-}): JSX.Element {
+type StyledInputProps = {
+	placeholder: string,
+	type: string
+}
+
+function StyledInput({ placeholder, type }: StyledInputProps): JSX.Element {
 	return (
 		<Input
 			borderWidth="xl"

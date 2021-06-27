@@ -30,40 +30,34 @@ export default function Contact(): JSX.Element {
 	];
 
 	return (
-		<>
-			<Container>
-				<ContainerInside>
-					<Flex
-						flexDirection={{ sm: "column", lg: "row" }}
-						justify="space-between"
-						px={{ sm: 10, md: 100, lg: 200 }}
-					>
-						<Box flexDirection="column" flex={1} py={10}>
-							<Heading as="h1" size="xl" mb={3}>
-								Get in Touch
-							</Heading>
-							<Heading as="h2" size="md" mb={3}>
-								Have a Question? Comment? Concern?
-							</Heading>
-							<Image src="/contactPerson.png" w="200px" />
-						</Box>
-						<Box flex={2} py={10}>
-							<ContactForm />
-						</Box>
-					</Flex>
-				</ContainerInside>
-			</Container>
-			<Container>
-				<ContainerInside>
-					<Flex flexDirection="column" align="stretch">
+		<Container>
+			<ContainerInside>
+				<Flex
+					flexDirection={{ sm: "column", lg: "row" }}
+					justify="space-between"
+					px={{ sm: 10, md: 100, lg: 200 }}
+				>
+					<Box flexDirection="column" flex={1} py={10}>
 						<Heading as="h1" size="xl" mb={3}>
-							FAQ
+							Get in Touch
 						</Heading>
-						<FaqList list={qaPairs} />
-					</Flex>
-				</ContainerInside>
-			</Container>
-			<Container py={10} />
-		</>
+						<Heading as="h2" size="md" mb={3}>
+							Have a Question? Comment? Concern?
+						</Heading>
+						<Image src="/contactPerson.png" w="200px" />
+					</Box>
+					<Box flex={2} py={10}>
+						<ContactForm />
+					</Box>
+				</Flex>
+
+				<Flex flexDirection="column" align="stretch">
+					<Heading as="h1" size="xl" mb={3}>
+						FAQ
+					</Heading>
+					<FaqList list={qaPairs} />
+				</Flex>
+			</ContainerInside>
+		</Container>
 	);
 }

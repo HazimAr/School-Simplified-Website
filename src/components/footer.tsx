@@ -2,89 +2,37 @@ import {
 	Box,
 	Flex,
 	Heading,
-	Icon,
 	Link,
 	ListItem,
 	Text,
 	UnorderedList,
 } from "@chakra-ui/react";
 import Container from "@components/container";
-import {
-	FaDiscord,
-	FaFacebook,
-	FaInstagram,
-	FaLinkedinIn,
-	FaTwitter,
-} from "react-icons/fa";
-import { SiTiktok } from "react-icons/si";
-
-const size = "25px";
-
-const socials1 = [
-	{
-		name: "Instagram",
-		link: "https://www.instagram.com/school.simplified/",
-		icon: <FaInstagram size={size} />,
-	},
-	{
-		name: "Tiktok",
-		link: "https://www.tiktok.com/@schoolsimplified",
-		icon: <SiTiktok size={size} />,
-	},
-	{
-		name: "Facebook",
-		link: "https://www.facebook.com/SchoolSimple/",
-		icon: <FaFacebook size={size} />,
-	},
-];
-
-const socials2 = [
-	{
-		name: "Discord",
-		link: "https://discord.gg/school",
-		icon: <FaDiscord size={size} />,
-	},
-	{
-		name: "Linkedin",
-		link: "https://www.linkedin.com/company/school-simplified",
-		icon: <FaLinkedinIn size={size} />,
-	},
-	{
-		name: "Twitter",
-		link: "https://twitter.com/schoolsimplify/",
-		icon: <FaTwitter size={size} />,
-	},
-];
 
 const infos = [
 	{
 		name: "Home",
 		link: "/",
 	},
-
 	{
 		name: "Contact Us",
 		link: "/contact",
 	},
-
 	{
 		name: "About Us",
 		link: "/about",
 	},
-
 	{
 		name: "Our Team",
 		link: "/team",
 	},
-
+	{
+		name: "Discord",
+		link: "https://discord.gg/school",
+	},
 	{
 		name: "FAQ",
 		link: "/contact",
-	},
-
-	{
-		name: "Blog",
-		link: "/",
 	},
 ];
 
@@ -120,6 +68,34 @@ const services = [
 	},
 ];
 
+const socials = [
+	{
+		name: "Instagram",
+		link: "https://www.instagram.com/school.simplified/",
+	},
+	{
+		name: "Tiktok",
+		link: "https://www.tiktok.com/@schoolsimplified",
+	},
+	{
+		name: "Facebook",
+		link: "https://www.facebook.com/SchoolSimple/",
+	},
+
+	{
+		name: "Discord",
+		link: "https://discord.gg/school",
+	},
+	{
+		name: "Linkedin",
+		link: "https://www.linkedin.com/company/school-simplified",
+	},
+	{
+		name: "Twitter",
+		link: "https://twitter.com/schoolsimplify/",
+	},
+];
+
 // const Wave = styled.svg`
 // 	z-index: 10;
 // `;
@@ -131,7 +107,7 @@ export default function Footer(): JSX.Element {
 			<Container bg="brand.purple.light">
 				<Flex
 					justify="space-between"
-					maxW="900px"
+					maxW="1200px"
 					w="100%"
 					mx="50px"
 					textAlign="left"
@@ -183,23 +159,12 @@ export default function Footer(): JSX.Element {
 							m="0"
 							p="0"
 							color="brand.gold"
-							
 						>
-							{socials1.map((social) => {
+							{socials.map((social) => {
 								return (
 									<ListItem key={social.name}>
 										<Link href={social.link} isExternal>
-											<Icon as={() => social.icon} />
-										</Link>
-									</ListItem>
-								);
-							})}
-
-							{socials2.map((social) => {
-								return (
-									<ListItem key={social.name}>
-										<Link href={social.link} isExternal>
-											<Icon as={() => social.icon} />
+											{social.name}
 										</Link>
 									</ListItem>
 								);

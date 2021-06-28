@@ -1,5 +1,5 @@
 /* eslint-disable import/no-default-export */
-import { Box, Text, Image, Heading, Flex } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 
 type StaffCard = {
 	name: string;

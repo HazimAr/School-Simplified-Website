@@ -5,6 +5,20 @@ body {
 	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
 		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 	text-align: center;
+	background-color: #9a81e2;
+}
+
+body::-webkit-scrollbar {
+	width: 0.6em;
+}
+
+body::-webkit-scrollbar-track {
+	border-radius: 0px;
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: rgb(69, 74, 138);
+	border-radius: 80px;
 }
 
 a {

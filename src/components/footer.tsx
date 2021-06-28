@@ -1,11 +1,11 @@
 import {
 	Box,
 	Flex,
+	Heading,
+	Link,
 	ListItem,
 	Text,
 	UnorderedList,
-	Link,
-	Heading,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 
@@ -73,20 +73,26 @@ const socials = [
 		name: "Instagram",
 		link: "https://www.instagram.com/school.simplified/",
 	},
-
 	{
 		name: "Tiktok",
 		link: "https://www.tiktok.com/@schoolsimplified",
 	},
-
 	{
 		name: "Facebook",
 		link: "https://www.facebook.com/SchoolSimple/",
 	},
 
 	{
-		name: "Blog",
-		link: "/",
+		name: "Discord",
+		link: "https://discord.gg/school",
+	},
+	{
+		name: "Linkedin",
+		link: "https://www.linkedin.com/company/school-simplified",
+	},
+	{
+		name: "Twitter",
+		link: "https://twitter.com/schoolsimplify/",
 	},
 ];
 

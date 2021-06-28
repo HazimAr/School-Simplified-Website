@@ -2,12 +2,12 @@
 /* eslint-disable sonarjs/no-duplicate-string */
 import {
 	Box,
-	Flex,
-	Text,
+	Button,
 	Divider,
+	Flex,
 	Heading,
 	Image,
-	Button,
+	Text
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -15,21 +15,21 @@ import StaffCard from "@components/staffcard";
 // import { useState, useEffect } from "react";
 
 const people = [
-	{
-		name: "Ethan Wu",
-		title: "Chairman + Founder",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Ethan Hsu",
-		title: "CEO + Director",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Nathanael Ma",
-		title: "Vice Chairman",
-		img: "/staff/default.png",
-	},
+{
+	name: "Ethan Wu",
+	title: "Chairman + Founder",
+	img: "/staff/default.png",
+},
+{
+	name: "Ethan Hsu",
+	title: "CEO + Director",
+	img: "/staff/default.png",
+},
+{
+	name: "Nathanael Ma",
+	title: "Vice Chairman",
+	img: "/staff/default.png",
+},
 	{
 		name: "Jason Mei",
 		title: "CAO",
@@ -97,7 +97,7 @@ export default function About(): JSX.Element {
 	// }, [panel]);
 
 	return (
-		<Container backgroundColor="purple.300">
+		<Container>
 			<ContainerInside>
 				<Box py="20px">
 					<Flex
@@ -148,7 +148,7 @@ export default function About(): JSX.Element {
 						})}
 					</Flex>
 				</Box>
-				<Box backgroundColor="brand.background1" py="30px">
+				<Box py="30px">
 					<Heading fontSize="35px">
 						Volunteering Opportunities
 					</Heading>

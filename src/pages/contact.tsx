@@ -1,138 +1,69 @@
-import {
-	Container,
-	Accordion,
-	AccordionItem,
-	AccordionButton,
-	AccordionPanel,
-	AccordionIcon,
-	Flex
-	// FormControl,
-	// FormLabel,
-	// FormErrorMessage,
-	// FormHelperText,
-} from "@chakra-ui/react";
-
-// <FormControl id="email">
-//   <FormLabel>Email address</FormLabel>
-//   <Input type="email" />
-//   <FormHelperText>We'll never share your email.</FormHelperText>
-// </FormControl>
-
-// export default function Form() {
-// 	<FormControl id="name">
-// 		<FormLabel>Name</FormLabel>
-// 		<Input type="name" />
-// 		<FormHelperText>Name</FormHelperText>
-// 	</FormControl>
-// 	<FormControl id="email">
-// 		<FormLabel>Email</FormLabel>
-// 		<Input type="email" />
-// 		<FormHelperText>Email</FormHelperText>
-// 	</FormControl>
-// 	<FormControl id="subject">
-// 		<FormLabel>Subject</FormLabel>
-// 		<Input type="subject" />
-// 		<FormHelperText>Subject</FormHelperText>
-// 	</FormControl>
-// 	<FormControl id="message">
-// 		<FormLabel>Message</FormLabel>
-// 		<Input type="message" />
-// 		<FormHelperText>Message</FormHelperText>
-// 	</FormControl>
-// }
+import { Box, Flex, Heading, Image } from "@chakra-ui/react";
+import ContactForm from "@components/contact-form";
+import Container from "@components/container";
+import ContainerInside from "@components/containerInside";
+import FaqList from "@components/faq-list";
+import React from "react";
 
 export default function Contact(): JSX.Element {
+	const qaPairs = [
+		{
+			question: "Who are you?",
+			answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		},
+		{
+			question: "Who started School Simplified?",
+			answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		},
+		{
+			question: "Is School Simplified free to use?",
+			answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		},
+		{
+			question: "How can I get community service hours?",
+			answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		},
+		{
+			question: "How reliable is School Simplified?",
+			answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		},
+	];
+
 	return (
 		<Container>
-			<Accordion allowMultiple>
-				<AccordionItem borderRadius="md">
-					<h2>
-						<AccordionButton>
-							<Flex textAlign="left">Who are you?</Flex>
-							<AccordionIcon />
-						</AccordionButton>
-					</h2>
-					<AccordionPanel>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-						sed do eiusmod tempor incididunt ut labore et dolore
-						magna aliqua. Ut enim ad minim veniam, quis nostrud
-						exercitation ullamco laboris nisi ut aliquip ex ea
-						commodo consequat.
-					</AccordionPanel>
-				</AccordionItem>
+			<ContainerInside>
+				<Flex
+					flexDirection={{ sm: "column", lg: "row" }}
+					justify="center"
+					align="stretch"
+					px={{ sm: 10, md: 100, lg: 200 }}
+					pb={10}
+				>
+					<Box flexDirection="column" flex={1} py={10} align="center">
+						<Heading as="h1" size="xl" mb={3}>
+							Get in Touch
+						</Heading>
+						<Heading as="h2" size="md" mb={3}>
+							Have a Question? Comment? Concern?
+						</Heading>
+						<Image
+							src="/contactPerson.png" 
+							alt="Contact Person" 
+							w="200px"
+						/>
+					</Box>
+					<Box flex={2} py={10}>
+						<ContactForm />
+					</Box>
+				</Flex>
 
-				<AccordionItem borderRadius="md">
-					<h2>
-						<AccordionButton>
-							<Flex textAlign="left">
-								Who started School Simplified
-							</Flex>
-							<AccordionIcon />
-						</AccordionButton>
-					</h2>
-					<AccordionPanel>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-						sed do eiusmod tempor incididunt ut labore et dolore
-						magna aliqua. Ut enim ad minim veniam, quis nostrud
-						exercitation ullamco laboris nisi ut aliquip ex ea
-						commodo consequat.
-					</AccordionPanel>
-				</AccordionItem>
-
-				<AccordionItem borderRadius="md">
-					<h2>
-						<AccordionButton>
-							<Flex textAlign="left">
-								Is School Simplified free to use?
-							</Flex>
-							<AccordionIcon />
-						</AccordionButton>
-					</h2>
-					<AccordionPanel>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-						sed do eiusmod tempor incididunt ut labore et dolore
-						magna aliqua. Ut enim ad minim veniam, quis nostrud
-						exercitation ullamco laboris nisi ut aliquip ex ea
-						commodo consequat.
-					</AccordionPanel>
-				</AccordionItem>
-
-				<AccordionItem borderRadius="md">
-					<h2>
-						<AccordionButton>
-							<Flex textAlign="left">
-								How can I get community service hours?
-							</Flex>
-							<AccordionIcon />
-						</AccordionButton>
-					</h2>
-					<AccordionPanel>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-						sed do eiusmod tempor incididunt ut labore et dolore
-						magna aliqua. Ut enim ad minim veniam, quis nostrud
-						exercitation ullamco laboris nisi ut aliquip ex ea
-						commodo consequat.
-					</AccordionPanel>
-				</AccordionItem>
-
-				<AccordionItem borderRadius="md">
-					<h2>
-						<AccordionButton>
-							<Flex textAlign="left">
-								How reliable is School Simplified?
-							</Flex>
-							<AccordionIcon />
-						</AccordionButton>
-					</h2>
-					<AccordionPanel>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-						sed do eiusmod tempor incididunt ut labore et dolore
-						magna aliqua. Ut enim ad minim veniam, quis nostrud
-						exercitation ullamco laboris nisi ut aliquip ex ea
-						commodo consequat.
-					</AccordionPanel>
-				</AccordionItem>
-			</Accordion>
+				<Flex flexDirection="column" align="stretch" pb={10}>
+					<Heading as="h1" size="xl" mb={3}>
+						FAQ
+					</Heading>
+					<FaqList list={qaPairs} />
+				</Flex>
+			</ContainerInside>
 		</Container>
 	);
 }

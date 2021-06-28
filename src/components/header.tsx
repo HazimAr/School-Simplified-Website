@@ -1,4 +1,4 @@
-import { Flex, Image, Link } from "@chakra-ui/react";
+import { Flex, Image, Link, Text } from "@chakra-ui/react";
 import Container from "@components/container";
 
 // eslint-disable-next-line import/no-default-export
@@ -15,13 +15,15 @@ export default function Header(): JSX.Element {
 				align="center"
 				flexWrap="wrap"
 			>
-				<Image src="/logo.png" w="200px" mx="-18px" />
+				<Link href="/" _hover={{}}>
+					<Flex justify="center" align="center">
+						<Image src="/logo.png" w="30px" />
+						<Text ml="5px">School Simplified</Text>
+					</Flex>
+				</Link>
 				<Flex>
 					<Link href="/about" mr="7px">
 						About Us
-					</Link>
-					<Link href="/join" mr="7px">
-						Join Us
 					</Link>
 					<Link href="/contact" mr="7px">
 						Contact

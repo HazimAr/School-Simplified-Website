@@ -7,6 +7,7 @@ type MetaType = {
 	lang: string;
 	description: string;
 	url: string;
+	img: string;
 };
 
 const META: MetaType = {
@@ -15,6 +16,7 @@ const META: MetaType = {
 	description:
 		"Boilerplate built to scale containing Typescript + NextJS + ChakraUI + Google Analytics + ESLint + Jest + Styled Components + Icons",
 	url: "https://boilerplate.hazimarafa.tech",
+	img: "/logo.png",
 };
 
 export { GA_TRACKING_ID, IS_PRODUCTION, META };

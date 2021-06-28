@@ -1,140 +1,192 @@
 import {
 	Box,
-	Text,
-	Heading,
-	Wrap,
-	VStack,
-	Flex,
-	Spacer,
+	Center,
 	Divider,
+	Flex,
+	Grid,
+	GridItem,
+	Heading,
+	Icon,
+	Link,
+	Spacer,
+	Text,
+	VStack,
+	Wrap,
 } from "@chakra-ui/react";
+import Container from "@components/container";
+import ContainerInside from "@components/containerInside";
+import { FaDiscord } from "react-icons/fa";
 
 export default function Home(): JSX.Element {
 	return (
-		<Box>
+		<>
+			<Container bg="brand.purple.dark" maxW="xlg">
+				<ContainerInside>
+					<Text fontSize="6xl">X</Text>
+				</ContainerInside>
+			</Container>
 			{/* art box */}
-			<Flex textAlign="left">
-				<Wrap spacing="40px" justify="left" margin="25px">
-					<VStack spacing={4}>
-						<Heading size="md">Our Community</Heading>
+			<Container>
+				<ContainerInside>
+					<Flex textAlign="left">
+						<Wrap spacing="40px" justify="left" margin="20px">
+							<VStack spacing={4}>
+								<Heading size="md">Our Community</Heading>
+								<Container maxW="container.sm">
+									<Heading size="sm">
+										{" "}
+										Our organization features a global
+										community of over 60,000 teenagers!
+										Diverse, open-minded, and inclusive, our
+										students enjoy conversing in an
+										equitable environment where every new
+										acquaintance becomes a longtime friend!
+									</Heading>
+								</Container>
 
-						<Text noOfLines={6}>
-							{" "}
-							Our organization features a global community of over
-							60,000 teenagers! Diverse, open-minded, and
-							inclusive, our students enjoy conversing in an
-							equitable environment where every new acquaintance
-							becomes a longtime friend!
-						</Text>
+								<Box
+									boxSize="500px"
+									backgroundColor="#e0d5ff"
+									padding="5px"
+									rounded="50px"
+								>
+									{/* community art goes here */}
+								</Box>
 
-						<Box
-							w="43vh"
-							h="48vh"
-							backgroundColor="#e0d5ff"
-							padding="5px"
-							rounded="40px"
-						>
-							{/* community art goes here */}
-						</Box>
+								<Text fontSize="sm">
+									Artwork from our event winners.
+								</Text>
+							</VStack>
+						</Wrap>
 
-						<Text fontSize="sm">
-							{" "}
-							Artwork from our event winners.{" "}
-						</Text>
-					</VStack>
-				</Wrap>
+						<Spacer />
 
-				<Spacer />
+						<Wrap margin="30px" spacing="40px">
+							<VStack spacing={6}>
+								{/* info boxes */}
+								<Flex
+									boxSize="500px"
+									backgroundColor="brand.transparent"
+									padding="7px"
+									rounded="40px"
+									alignContent="left"
+								>
+									<Text fontSize="3xl">Events</Text>
+								</Flex>
 
-				<Wrap margin="15px" spacing="40px">
-					<VStack spacing={6}>
-						{/* info boxes */}
-						<Box
-							w="32vh"
-							h="32vh"
-							backgroundColor="#e0d5ff"
-							padding="7px"
-							pl="3vh"
-							rounded="40px"
-							d="flex"
-							alignContent="left"
-						>
-							<Text fontSize="3xl">Events</Text>
-						</Box>
+								<Flex
+									boxSize="500px"
+									backgroundColor="brand.transparent"
+									padding="7px"
+									rounded="40px"
+									alignContent="left"
+								>
+									<Text fontSize="3xl">Music</Text>
+								</Flex>
 
-						<Box
-							w="32vh"
-							h="32vh"
-							backgroundColor="#e0d5ff"
-							padding="7px"
-							pl="3vh"
-							rounded="40px"
-							d="flex"
-							alignContent="left"
-						>
-							<Text fontSize="3xl">Music</Text>
-						</Box>
-
-						<Box
-							w="32vh"
-							h="32vh"
-							backgroundColor="#e0d5ff"
-							padding="7px"
-							pl="3vh"
-							rounded="40px"
-							d="flex"
-							alignContent="left"
-						>
-							<Text fontSize="3xl"> Friends </Text>
-						</Box>
-					</VStack>
-				</Wrap>
-			</Flex>
+								<Flex
+									boxSize="500px"
+									backgroundColor="brand.transparent"
+									padding="7px"
+									rounded="40px"
+									alignContent="left"
+								>
+									<Heading fontSize="3xl"> Friends </Heading>
+								</Flex>
+							</VStack>
+						</Wrap>
+					</Flex>
+				</ContainerInside>
+			</Container>
 
 			<Divider orientation="horizontal" borderColor="white" />
+			<Container>
+				<ContainerInside>
+					<Flex textAlign="left">
+						<Wrap spacing="40px" justify="left" margin="25px">
+							{/* disc box */}
+							<Box
+								boxSize="500px"
+								bg="brand.transparent"
+								padding="13px"
+								rounded="50px"
+							>
+								<Center>
+									<Link
+										href="https://discord.com/invite/ghUAx6AQU4"
+										isExternal
+									>
+										<Icon
+											as={FaDiscord}
+											boxSize="200px"
+											color="brand.transparent2"
+										/>
+									</Link>
+								</Center>
 
-			<Flex textAlign="left">
-				<Wrap spacing="40px" justify="left" margin="25px">
-					{/* disc box */}
-					<Box
-						w="43vh"
-						h="48vh"
-						backgroundColor="#d8b2fb"
-						padding="5px"
-						rounded="40px"
-					>
-						{/* photo goes here */}
-						<Text>
-							{" "}
-							Join our Discord. Come for the academic help, stay
-							for the events, live music, and friends!{" "}
-						</Text>
-					</Box>
-				</Wrap>
+								<Text fontSize="2.9vh" color="#5A60AD">
+									Join our Discord. Come for the academic
+									help, stay for the events, live music, and
+									friends!
+								</Text>
+							</Box>
+						</Wrap>
 
-				<Spacer />
-				<Wrap spacing="30px" margin="20px">
-					{/* members box */}
-					<Box>
-						<Heading mb="8vh"> Our Members </Heading>
-						<Text>
-							Our community consists of members ranging from
-							teenagers to teachers alike.{" "}
-						</Text>
-					</Box>
-				</Wrap>
-			</Flex>
+						<Spacer />
+						<Wrap spacing="30px" margin="20px">
+							{/* members box */}
+							<Box>
+								<Heading mb="5vh"> Our Members </Heading>
+								<Heading size="sm">
+									Our community consists of members ranging
+									from teenagers to teachers alike.
+								</Heading>
+							</Box>
+						</Wrap>
+					</Flex>
 
-			<Divider orientation="horizontal" borderColor="white" />
-			<Flex textAlign="left">
-				<Wrap spacing="30px" margin="20px">
+					<Divider orientation="horizontal" borderColor="white" />
 					{/* staff box */}
-					<Box>
-						<Heading mb="5vh"> Our Staff </Heading>
-						<Text>School Simplified staff</Text>
-					</Box>
-				</Wrap>
-			</Flex>
-		</Box>
+					<Grid
+						templateColumns="repeat(5, 1fr)"
+						gap={5}
+						margin="15px"
+					>
+						<GridItem colSpan={1} h="10" mb="8vh">
+							<Heading mb="3vh"> Our Staff </Heading>
+
+							<Heading size="sm">
+								School Simplified staff{" "}
+							</Heading>
+						</GridItem>
+
+						<GridItem colStart={4} colEnd={6} h="10">
+							<Heading as="h1" size="4xl">
+								X
+							</Heading>
+						</GridItem>
+					</Grid>
+
+					<Divider orientation="horizontal" borderColor="white" />
+					<Flex textAlign="left">
+						<Wrap spacing="40px" justify="left" margin="20px">
+							<VStack spacing={4}>
+								<Heading>Our Socials</Heading>
+								<Container maxW="container.sm">
+									<Heading size="sm">
+										Our organization features a global
+										community of over 60,000 teenagers!
+										Diverse, open-minded, and inclusive, our
+										students enjoy conversing in an
+										equitable environment where every new
+										acquaintance becomes a longtime friend!
+									</Heading>
+								</Container>
+							</VStack>
+						</Wrap>
+					</Flex>
+				</ContainerInside>
+			</Container>
+		</>
 	);
 }

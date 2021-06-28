@@ -183,29 +183,27 @@ export default function Footer(): JSX.Element {
 							m="0"
 							p="0"
 							color="brand.gold"
+							
 						>
-							<Flex justify="space-between">
-								{socials1.map((social) => {
-									return (
-										<ListItem key={social.name}>
-											<Link href={social.link} isExternal>
-												<Icon as={() => social.icon} />
-											</Link>
-										</ListItem>
-									);
-								})}
-							</Flex>
-							<Flex justify="space-between">
-								{socials2.map((social) => {
-									return (
-										<ListItem key={social.name}>
-											<Link href={social.link} isExternal>
-												<Icon as={() => social.icon} />
-											</Link>
-										</ListItem>
-									);
-								})}
-							</Flex>
+							{socials1.map((social) => {
+								return (
+									<ListItem key={social.name}>
+										<Link href={social.link} isExternal>
+											<Icon as={() => social.icon} />
+										</Link>
+									</ListItem>
+								);
+							})}
+
+							{socials2.map((social) => {
+								return (
+									<ListItem key={social.name}>
+										<Link href={social.link} isExternal>
+											<Icon as={() => social.icon} />
+										</Link>
+									</ListItem>
+								);
+							})}
 						</UnorderedList>
 					</Box>
 				</Flex>

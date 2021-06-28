@@ -8,7 +8,6 @@ import {
 	UnorderedList,
 } from "@chakra-ui/react";
 import Container from "@components/container";
-import ContainerInside from "@components/containerInside";
 
 const infos = [
 	{
@@ -74,20 +73,26 @@ const socials = [
 		name: "Instagram",
 		link: "https://www.instagram.com/school.simplified/",
 	},
-
 	{
 		name: "Tiktok",
 		link: "https://www.tiktok.com/@schoolsimplified",
 	},
-
 	{
 		name: "Facebook",
 		link: "https://www.facebook.com/SchoolSimple/",
 	},
 
 	{
-		name: "Blog",
-		link: "/",
+		name: "Discord",
+		link: "https://discord.gg/school",
+	},
+	{
+		name: "Linkedin",
+		link: "https://www.linkedin.com/company/school-simplified",
+	},
+	{
+		name: "Twitter",
+		link: "https://twitter.com/schoolsimplify/",
 	},
 ];
 
@@ -100,95 +105,89 @@ export default function Footer(): JSX.Element {
 	return (
 		<Box as="footer">
 			<Container bg="brand.purple.light">
-				<ContainerInside>
-					<Flex
-						justify="space-between"
-						maxW="1200px"
-						w="100%"
-						mx="50px"
-						textAlign="left"
-						flexWrap="wrap"
-						py="10px"
-					>
-						<Box>
-							<Heading size="md">Information</Heading>
-							<UnorderedList
-								styleType="none"
-								m="0"
-								p="0"
-								color="brand.gold"
-							>
-								{infos.map((info) => {
-									return (
-										<ListItem key={info.name}>
-											<Link href={info.link}>
-												{info.name}
-											</Link>
-										</ListItem>
-									);
-								})}
-							</UnorderedList>
-						</Box>
-						<Box>
-							<Heading size="md">Services</Heading>
-							<UnorderedList
-								styleType="none"
-								m="0"
-								p="0"
-								color="brand.gold"
-							>
-								{services.map((service) => {
-									return (
-										<ListItem key={service.name}>
-											<Link href={service.link}>
-												{service.name}
-											</Link>
-										</ListItem>
-									);
-								})}
-							</UnorderedList>
-						</Box>
-						<Box>
-							<Heading size="md">Join Us</Heading>
-							<UnorderedList
-								styleType="none"
-								m="0"
-								p="0"
-								color="brand.gold"
-							>
-								{socials.map((social) => {
-									return (
-										<ListItem key={social.name}>
-											<Link href={social.link} isExternal>
-												{social.name}
-											</Link>
-										</ListItem>
-									);
-								})}
-							</UnorderedList>
-						</Box>
-					</Flex>
-				</ContainerInside>
+				<Flex
+					justify="space-between"
+					maxW="1200px"
+					w="100%"
+					mx="50px"
+					textAlign="left"
+					flexWrap="wrap"
+					py="10px"
+				>
+					<Box>
+						<Heading size="md">Information</Heading>
+						<UnorderedList
+							styleType="none"
+							m="0"
+							p="0"
+							color="brand.gold"
+						>
+							{infos.map((info) => {
+								return (
+									<ListItem key={info.name}>
+										<Link href={info.link}>
+											{info.name}
+										</Link>
+									</ListItem>
+								);
+							})}
+						</UnorderedList>
+					</Box>
+					<Box>
+						<Heading size="md">Services</Heading>
+						<UnorderedList
+							styleType="none"
+							m="0"
+							p="0"
+							color="brand.gold"
+						>
+							{services.map((service) => {
+								return (
+									<ListItem key={service.name}>
+										<Link href={service.link}>
+											{service.name}
+										</Link>
+									</ListItem>
+								);
+							})}
+						</UnorderedList>
+					</Box>
+					<Box>
+						<Heading size="md">Join Us</Heading>
+						<UnorderedList
+							styleType="none"
+							m="0"
+							p="0"
+							color="brand.gold"
+						>
+							{socials.map((social) => {
+								return (
+									<ListItem key={social.name}>
+										<Link href={social.link} isExternal>
+											{social.name}
+										</Link>
+									</ListItem>
+								);
+							})}
+						</UnorderedList>
+					</Box>
+				</Flex>
 			</Container>
 			<Container bg="brand.purple.dark" py="10px">
-				<ContainerInside>
-					<Flex
-						justify="space-between"
-						align="center"
-						maxW="1200px"
-						w="100%"
-						mx="50px"
-						color="text.200"
-					>
-						<Text>
-							School Simplified © 2021 All Rights Reserved
-						</Text>
-						<Text>
-							<Link href="/terms">Terms of Service</Link> |{" "}
-							<Link href="/privacy">Privacy Policy</Link>
-						</Text>
-					</Flex>
-				</ContainerInside>
+				<Flex
+					justify="space-between"
+					align="center"
+					maxW="1200px"
+					w="100%"
+					mx="50px"
+					color="text.200"
+				>
+					<Text>School Simplified © 2021 All Rights Reserved</Text>
+					<Text>
+						<Link href="/terms">Terms of Service</Link> |{" "}
+						<Link href="/privacy">Privacy Policy</Link>
+					</Text>
+				</Flex>
 			</Container>
 		</Box>
 	);

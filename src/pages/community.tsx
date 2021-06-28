@@ -48,7 +48,7 @@ export default function Home(): JSX.Element {
 									boxSize="500px"
 									backgroundColor="#e0d5ff"
 									padding="5px"
-									rounded="50px"
+									rounded="65px"
 								>
 									{/* community art goes here */}
 								</Box>
@@ -65,33 +65,33 @@ export default function Home(): JSX.Element {
 							<VStack spacing={6}>
 								{/* info boxes */}
 								<Flex
-									boxSize="500px"
+									boxSize="300px"
 									backgroundColor="brand.transparent"
-									padding="7px"
+									padding="20px"
 									rounded="40px"
 									alignContent="left"
 								>
-									<Text fontSize="3xl">Events</Text>
+									<Heading >Events</Heading>
 								</Flex>
 
 								<Flex
-									boxSize="500px"
+									boxSize="300px"
 									backgroundColor="brand.transparent"
-									padding="7px"
+									padding="20px"
 									rounded="40px"
 									alignContent="left"
 								>
-									<Text fontSize="3xl">Music</Text>
+									<Heading >Music</Heading>
 								</Flex>
 
 								<Flex
-									boxSize="500px"
+									boxSize="300px"
 									backgroundColor="brand.transparent"
-									padding="7px"
+									padding="20px"
 									rounded="40px"
 									alignContent="left"
 								>
-									<Heading fontSize="3xl"> Friends </Heading>
+									<Heading > Friends </Heading>
 								</Flex>
 							</VStack>
 						</Wrap>
@@ -109,7 +109,7 @@ export default function Home(): JSX.Element {
 								boxSize="500px"
 								bg="brand.transparent"
 								padding="13px"
-								rounded="50px"
+								rounded="60px"
 							>
 								<Center>
 									<Link
@@ -118,13 +118,13 @@ export default function Home(): JSX.Element {
 									>
 										<Icon
 											as={FaDiscord}
-											boxSize="200px"
+											boxSize="210px"
 											color="brand.transparent2"
 										/>
 									</Link>
 								</Center>
 
-								<Text fontSize="2.9vh" color="#5A60AD">
+								<Text fontSize="21px" color="#5A60AD">
 									Join our Discord. Come for the academic
 									help, stay for the events, live music, and
 									friends!
@@ -136,7 +136,7 @@ export default function Home(): JSX.Element {
 						<Wrap spacing="30px" margin="20px">
 							{/* members box */}
 							<Box>
-								<Heading mb="5vh"> Our Members </Heading>
+								<Heading mb="36px"> Our Members </Heading>
 								<Heading size="sm">
 									Our community consists of members ranging
 									from teenagers to teachers alike.
@@ -152,8 +152,8 @@ export default function Home(): JSX.Element {
 						gap={5}
 						margin="15px"
 					>
-						<GridItem colSpan={1} h="10" mb="8vh">
-							<Heading mb="3vh"> Our Staff </Heading>
+						<GridItem colSpan={1} h="10" mb="58px">
+							<Heading mb="22px"> Our Staff </Heading>
 
 							<Heading size="sm">
 								School Simplified staff{" "}

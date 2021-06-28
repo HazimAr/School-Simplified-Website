@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useReducer } from 'react';
 import { Flex, Box, FormControl, FormLabel, Input, Textarea } from "@chakra-ui/react";
 
 type StyledInputProps = {
@@ -60,12 +60,52 @@ function Button({ children, onClick }: ButtonProps): JSX.Element {
 	);
 }
 
+type stateType = {
+	firstName: string,
+	lastName: string,
+	email: string,
+	subject: string,
+	message: string
+}
+
+type actionType = {
+	type: string,
+	payload: string
+}
+
+function reducer(state: stateType, action: actionType): stateType {
+	switch (action.type) {
+		case "firstName":
+			return {...state, firstName: action.payload};
+		case "lastName":
+			return {...state, lastName: action.payload};
+		case "email":
+			return {...state, email: action.payload};
+		case "subject":
+			return {...state, subject: action.payload};
+		case "message":
+			return {...state, message: action.payload};
+		default:
+			return state;
+	}
+}
+
 export default function ContactForm(): JSX.Element {
-	const [firstName, setFirstName] = useState<string>('');
-	const [lastName, setLastName] = useState<string>('');
-	const [email, setEmail] = useState<string>('');
-	const [subject, setSubject] = useState<string>('');
-	const [message, setMessage] = useState<string>('');
+	const [state, dispatch] = useReducer(reducer, {
+		firstName: "",
+		lastName: "",
+		email: "",
+		subject: "",
+		message: ""
+	})
+
+	const {
+		firstName,
+		lastName,
+		email,
+		subject,
+		message
+	} = state;
 
 	return (
 		<FormControl
@@ -83,7 +123,7 @@ export default function ContactForm(): JSX.Element {
 						placeholder="First Name" 
 						type="" 
 						value={firstName}
-						onChange={(text) => setFirstName(text.target.value)}
+						onChange={(text) => dispatch({ type: "firstName", payload: text.target.value })}
 					/>
 				</Flex>
 				<Flex flexDirection="column" >
@@ -92,7 +132,7 @@ export default function ContactForm(): JSX.Element {
 						placeholder="Last Name" 
 						type="" 
 						value={lastName}
-						onChange={(text) => setLastName(text.target.value)}
+						onChange={(text) => dispatch({ type: "lastName", payload: text.target.value })}
 					/>
 				</Flex>
 			</Flex>
@@ -101,14 +141,14 @@ export default function ContactForm(): JSX.Element {
 				placeholder="Email" 
 				type="email"
 				value={email}
-				onChange={(text) => setEmail(text.target.value)} 
+				onChange={(text) => dispatch({ type: "email", payload: text.target.value })}
 			/>
 			<FormLabel>Subject</FormLabel>
 			<StyledInput 
 				placeholder="Subject" 
 				type="" 
 				value={subject}
-				onChange={(text) => setSubject(text.target.value)}
+				onChange={(text) => dispatch({ type: "subject", payload: text.target.value })}
 			/>
 			<FormLabel>Your Message</FormLabel>
 			<Textarea
@@ -121,17 +161,9 @@ export default function ContactForm(): JSX.Element {
 				_hover={{ backgroundColor: "transparent" }}
 				mb={4}
 				value={message}
-				onChange={(text) => setMessage(text.target.value)}
+				onChange={(text) => dispatch({ type: "message", payload: text.target.value })}
 			/>
-			<Button 
-			onClick={() => console.log(
-				firstName,
-				lastName,
-				email,
-				subject,
-				message
-			)}
-			>
+			<Button onClick={() => console.log(state)}>
 				Send
 			</Button>
 		</FormControl>

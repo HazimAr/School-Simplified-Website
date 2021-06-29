@@ -100,7 +100,7 @@ export default function Services(): JSX.Element {
 								{/* maxW is hard-coded, so I need to find a good way to dynamically determine it soon */}
 								<Link
 									href="https://discord.gg/school"
-									isExternal={true}
+									isExternal
 									textDecoration="none!important"
 								>
 									<Box

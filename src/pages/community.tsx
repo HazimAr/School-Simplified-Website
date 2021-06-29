@@ -132,13 +132,13 @@ export default function Home(): JSX.Element {
 									>
 										<Icon
 											as={FaDiscord}
-											boxSize="400px"
+											boxSize="320px"
 											color="brand.transparent2"
 										/>
 									</Link>
 								</Center>
 
-								<Text fontSize="21px" color="#5A60AD">
+								<Text fontSize="27px" color="#5A60AD">
 									Join our Discord. Come for the academic
 									help, stay for the events, live music, and
 									friends!

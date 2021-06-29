@@ -6,7 +6,7 @@ import {
 	Heading,
 	Image,
 	Link,
-	Text
+	Text,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -21,7 +21,7 @@ const items = [
 
 export default function Services(): JSX.Element {
 	return (
-		<Box  >
+		<Box>
 			<Container backgroundColor="#BEC6FDD6">
 				<ContainerInside p="20px">
 					<Heading textAlign="left" mb="15px" fontSize="28px">

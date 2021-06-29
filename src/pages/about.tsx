@@ -15,21 +15,21 @@ import StaffCard from "@components/staffcard";
 // import { useState, useEffect } from "react";
 
 const people = [
-{
-	name: "Ethan Wu",
-	title: "Chairman + Founder",
-	img: "/staff/default.png",
-},
-{
-	name: "Ethan Hsu",
-	title: "CEO + Director",
-	img: "/staff/default.png",
-},
-{
-	name: "Nathanael Ma",
-	title: "Vice Chairman",
-	img: "/staff/default.png",
-},
+	{
+		name: "Ethan Wu",
+		title: "Chairman + Founder",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Ethan Hsu",
+		title: "CEO + Director",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Nathanael Ma",
+		title: "Vice Chairman",
+		img: "/staff/default.png",
+	},
 	{
 		name: "Jason Mei",
 		title: "CAO",

@@ -11,7 +11,7 @@ import {
 	Spacer,
 	Text,
 	VStack,
-	Wrap
+	Wrap,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -21,7 +21,7 @@ import {
 	RiInstagramLine,
 	RiLinkedinBoxLine,
 	RiSpotifyLine,
-	RiTwitterLine
+	RiTwitterLine,
 } from "react-icons/ri";
 import { SiTiktok } from "react-icons/si";
 
@@ -52,7 +52,11 @@ export default function Home(): JSX.Element {
 										acquaintance becomes a longtime friend!
 									</Heading>
 								</Container>
-								<Flex flexDir="column" justify="center" align="center">
+								<Flex
+									flexDir="column"
+									justify="center"
+									align="center"
+								>
 									<Box
 										boxSize="500px"
 										backgroundColor="brand.transparent"
@@ -116,7 +120,6 @@ export default function Home(): JSX.Element {
 						<Wrap spacing="40px" justify="left" margin="25px">
 							{/* disc box */}
 							<Box
-								
 								boxSize="500px"
 								bg="brand.transparent"
 								padding="13px"

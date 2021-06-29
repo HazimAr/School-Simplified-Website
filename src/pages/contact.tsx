@@ -47,8 +47,8 @@ export default function Contact(): JSX.Element {
 							Have a Question? Comment? Concern?
 						</Heading>
 						<Image
-							src="/contactPerson.png" 
-							alt="Contact Person" 
+							src="/contactPerson.png"
+							alt="Contact Person"
 							w="200px"
 						/>
 					</Box>

@@ -20,7 +20,7 @@ export default function FaqList({ list }: FaqListProps): JSX.Element {
 			onChange={(newExpanded: number[]) => {
 				setExpanded(newExpanded);
 			}}
-      px={{ sm: 10, md: 100, lg: 200}}
+			px={{ sm: 10, md: 100, lg: 200 }}
 		>
 			{list.map(({ question, answer }, index): JSX.Element => {
 				return (

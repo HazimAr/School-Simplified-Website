@@ -164,7 +164,7 @@ export default function Home(): JSX.Element {
 						<GridItem colSpan={1} h="10" mb="58px">
 							<Heading mb="22px"> Our Staff </Heading>
 
-							<Heading size="sm">
+							<Heading fontSize='18px'>
 								School Simplified staff{" "}
 							</Heading>
 						</GridItem>

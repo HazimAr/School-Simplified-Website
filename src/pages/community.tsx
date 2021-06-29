@@ -11,13 +11,19 @@ import {
 	Spacer,
 	Text,
 	VStack,
-	Wrap,
+	Wrap
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import { FaDiscord} from "react-icons/fa";
-import { RiSpotifyLine, RiInstagramLine, RiFacebookBoxLine, RiTwitterLine, RiLinkedinBoxLine} from "react-icons/ri";
-import { SiTiktok} from "react-icons/si";
+import { FaDiscord } from "react-icons/fa";
+import {
+	RiFacebookBoxLine,
+	RiInstagramLine,
+	RiLinkedinBoxLine,
+	RiSpotifyLine,
+	RiTwitterLine
+} from "react-icons/ri";
+import { SiTiktok } from "react-icons/si";
 
 export default function Home(): JSX.Element {
 	return (
@@ -27,18 +33,17 @@ export default function Home(): JSX.Element {
 					<Text fontSize="6xl">X</Text>
 				</ContainerInside>
 			</Container>
-			
+
 			{/* art box */}
 			<Container>
 				<ContainerInside>
 					<Flex textAlign="left">
-						<Wrap spacing="40px"  mt="20px">
-							<VStack spacing={4}>
+						<Wrap spacing="40px" mt="20px">
+							<VStack spacing={4} textAlign="left">
 								<Heading size="md">Our Community</Heading>
-								
+
 								<Container maxW="container.sm">
 									<Heading size="sm">
-										{" "}
 										Our organization features a global
 										community of over 60,000 teenagers!
 										Diverse, open-minded, and inclusive, our
@@ -47,19 +52,20 @@ export default function Home(): JSX.Element {
 										acquaintance becomes a longtime friend!
 									</Heading>
 								</Container>
+								<Flex flexDir="column" justify="center" align="center">
+									<Box
+										boxSize="500px"
+										backgroundColor="brand.transparent"
+										padding="5px"
+										rounded="65px"
+									>
+										{/* community art goes here */}
+									</Box>
 
-								<Box
-									boxSize="500px"
-									backgroundColor="#e0d5ff"
-									padding="5px"
-									rounded="65px"
-								>
-									{/* community art goes here */}
-								</Box>
-
-								<Text fontSize="sm">
-									Artwork from our event winners.
-								</Text>
+									<Text fontSize="sm">
+										Artwork from our event winners.
+									</Text>
+								</Flex>
 							</VStack>
 						</Wrap>
 
@@ -75,7 +81,7 @@ export default function Home(): JSX.Element {
 									rounded="40px"
 									alignContent="left"
 								>
-									<Heading >Events</Heading>
+									<Heading>Events</Heading>
 								</Flex>
 
 								<Flex
@@ -85,7 +91,7 @@ export default function Home(): JSX.Element {
 									rounded="40px"
 									alignContent="left"
 								>
-									<Heading >Music</Heading>
+									<Heading>Music</Heading>
 								</Flex>
 
 								<Flex
@@ -95,7 +101,7 @@ export default function Home(): JSX.Element {
 									rounded="40px"
 									alignContent="left"
 								>
-									<Heading > Friends </Heading>
+									<Heading> Friends </Heading>
 								</Flex>
 							</VStack>
 						</Wrap>
@@ -110,6 +116,7 @@ export default function Home(): JSX.Element {
 						<Wrap spacing="40px" justify="left" margin="25px">
 							{/* disc box */}
 							<Box
+								
 								boxSize="500px"
 								bg="brand.transparent"
 								padding="13px"
@@ -122,7 +129,7 @@ export default function Home(): JSX.Element {
 									>
 										<Icon
 											as={FaDiscord}
-											boxSize="210px"
+											boxSize="400px"
 											color="brand.transparent2"
 										/>
 									</Link>
@@ -164,7 +171,7 @@ export default function Home(): JSX.Element {
 						<GridItem colSpan={1} h="10" mb="58px">
 							<Heading mb="22px"> Our Staff </Heading>
 
-							<Heading fontSize='18px'>
+							<Heading fontSize="18px">
 								School Simplified staff{" "}
 							</Heading>
 						</GridItem>
@@ -183,11 +190,11 @@ export default function Home(): JSX.Element {
 			<Container>
 				<ContainerInside>
 					<Flex textAlign="left">
-						<Wrap spacing="40px"  margin="20px">
+						<Wrap spacing="40px" margin="20px">
 							<VStack spacing={8}>
 								<Heading>Our Socials</Heading>
 								<Container maxW="container.sm">
-									<Heading fontSize='18px'>
+									<Heading fontSize="18px">
 										Our organization features a global
 										community of over 60,000 teenagers!
 										Diverse, open-minded, and inclusive, our
@@ -203,80 +210,73 @@ export default function Home(): JSX.Element {
 
 						<Wrap margin="30px" spacing="40px">
 							<VStack spacing={3}>
-								<Link
-									href=""
-									isExternal
-								>
-									<Icon 
-									as = {RiSpotifyLine}
-									boxSize="90px"
-									color="white"
-									/>
-								</Link>
-
-								<Link 
-									href = 'https://www.instagram.com/school.simplified/'
-									isExternal
-								>
-									<Icon 
-									as = {RiInstagramLine}
-									boxSize="90px"
-									color="white"
-									/>
-								</Link>
-
-								<Link 
-									href= 'https://www.facebook.com/SchoolSimple/'
-									isExternal
-								>
-									<Icon 
-									as = {RiFacebookBoxLine}
-									boxSize="100px"
-									color="white"
+								<Link href="" isExternal>
+									<Icon
+										as={RiSpotifyLine}
+										boxSize="90px"
+										color="white"
 									/>
 								</Link>
 
 								<Link
-									href= 'https://www.tiktok.com/@schoolsimplified'
+									href="https://www.instagram.com/school.simplified/"
 									isExternal
 								>
-									<Icon 
-									as = {SiTiktok}
-									boxSize="80px"
-									color="white"
+									<Icon
+										as={RiInstagramLine}
+										boxSize="90px"
+										color="white"
 									/>
 								</Link>
 
 								<Link
-									href='https://twitter.com/schoolsimplify'
+									href="https://www.facebook.com/SchoolSimple/"
 									isExternal
 								>
-									<Icon 
-									as = {RiTwitterLine}
-									boxSize="100px"
-									color="white"
+									<Icon
+										as={RiFacebookBoxLine}
+										boxSize="100px"
+										color="white"
 									/>
 								</Link>
 
 								<Link
-									href='https://www.linkedin.com/company/school-simplified'
+									href="https://www.tiktok.com/@schoolsimplified"
 									isExternal
 								>
-									<Icon 
-									as = {RiLinkedinBoxLine}
-									boxSize="100px"
-									color="white"
+									<Icon
+										as={SiTiktok}
+										boxSize="80px"
+										color="white"
 									/>
 								</Link>
 
-						
+								<Link
+									href="https://twitter.com/schoolsimplify"
+									isExternal
+								>
+									<Icon
+										as={RiTwitterLine}
+										boxSize="100px"
+										color="white"
+									/>
+								</Link>
+
+								<Link
+									href="https://www.linkedin.com/company/school-simplified"
+									isExternal
+								>
+									<Icon
+										as={RiLinkedinBoxLine}
+										boxSize="100px"
+										color="white"
+									/>
+								</Link>
 							</VStack>
 						</Wrap>
 					</Flex>
-
 				</ContainerInside>
 			</Container>
-
 		</>
 	);
 }

@@ -15,7 +15,9 @@ import {
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import { FaDiscord } from "react-icons/fa";
+import { FaDiscord} from "react-icons/fa";
+import { RiSpotifyLine, RiInstagramLine, RiFacebookBoxLine, RiTwitterLine, RiLinkedinBoxLine} from "react-icons/ri";
+import { SiTiktok} from "react-icons/si";
 
 export default function Home(): JSX.Element {
 	return (
@@ -25,13 +27,15 @@ export default function Home(): JSX.Element {
 					<Text fontSize="6xl">X</Text>
 				</ContainerInside>
 			</Container>
+			
 			{/* art box */}
 			<Container>
 				<ContainerInside>
 					<Flex textAlign="left">
-						<Wrap spacing="40px" justify="left" margin="20px">
+						<Wrap spacing="40px"  mt="20px">
 							<VStack spacing={4}>
 								<Heading size="md">Our Community</Heading>
+								
 								<Container maxW="container.sm">
 									<Heading size="sm">
 										{" "}
@@ -113,7 +117,7 @@ export default function Home(): JSX.Element {
 							>
 								<Center>
 									<Link
-										href="https://discord.com/invite/ghUAx6AQU4"
+										href="https://discord.com/invite/school"
 										isExternal
 									>
 										<Icon
@@ -144,13 +148,18 @@ export default function Home(): JSX.Element {
 							</Box>
 						</Wrap>
 					</Flex>
+				</ContainerInside>
+			</Container>
 
-					<Divider orientation="horizontal" borderColor="white" />
+			<Divider orientation="horizontal" borderColor="white" />
+
+			<Container>
+				<ContainerInside>
 					{/* staff box */}
 					<Grid
 						templateColumns="repeat(5, 1fr)"
 						gap={5}
-						margin="15px"
+						margin="10px"
 					>
 						<GridItem colSpan={1} h="10" mb="58px">
 							<Heading mb="22px"> Our Staff </Heading>
@@ -166,14 +175,19 @@ export default function Home(): JSX.Element {
 							</Heading>
 						</GridItem>
 					</Grid>
+				</ContainerInside>
+			</Container>
 
-					<Divider orientation="horizontal" borderColor="white" />
+			<Divider orientation="horizontal" borderColor="white" />
+
+			<Container>
+				<ContainerInside>
 					<Flex textAlign="left">
-						<Wrap spacing="40px" justify="left" margin="20px">
-							<VStack spacing={4}>
+						<Wrap spacing="40px"  margin="20px">
+							<VStack spacing={8}>
 								<Heading>Our Socials</Heading>
 								<Container maxW="container.sm">
-									<Heading size="sm">
+									<Heading fontSize='18px'>
 										Our organization features a global
 										community of over 60,000 teenagers!
 										Diverse, open-minded, and inclusive, our
@@ -184,9 +198,85 @@ export default function Home(): JSX.Element {
 								</Container>
 							</VStack>
 						</Wrap>
+
+						<Spacer />
+
+						<Wrap margin="30px" spacing="40px">
+							<VStack spacing={3}>
+								<Link
+									href=""
+									isExternal
+								>
+									<Icon 
+									as = {RiSpotifyLine}
+									boxSize="90px"
+									color="white"
+									/>
+								</Link>
+
+								<Link 
+									href = 'https://www.instagram.com/school.simplified/'
+									isExternal
+								>
+									<Icon 
+									as = {RiInstagramLine}
+									boxSize="90px"
+									color="white"
+									/>
+								</Link>
+
+								<Link 
+									href= 'https://www.facebook.com/SchoolSimple/'
+									isExternal
+								>
+									<Icon 
+									as = {RiFacebookBoxLine}
+									boxSize="100px"
+									color="white"
+									/>
+								</Link>
+
+								<Link
+									href= 'https://www.tiktok.com/@schoolsimplified'
+									isExternal
+								>
+									<Icon 
+									as = {SiTiktok}
+									boxSize="80px"
+									color="white"
+									/>
+								</Link>
+
+								<Link
+									href='https://twitter.com/schoolsimplify'
+									isExternal
+								>
+									<Icon 
+									as = {RiTwitterLine}
+									boxSize="100px"
+									color="white"
+									/>
+								</Link>
+
+								<Link
+									href='https://www.linkedin.com/company/school-simplified'
+									isExternal
+								>
+									<Icon 
+									as = {RiLinkedinBoxLine}
+									boxSize="100px"
+									color="white"
+									/>
+								</Link>
+
+						
+							</VStack>
+						</Wrap>
 					</Flex>
+
 				</ContainerInside>
 			</Container>
+
 		</>
 	);
 }

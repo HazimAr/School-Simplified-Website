@@ -59,7 +59,7 @@ export default function Home(): JSX.Element {
 								>
 									<Box
 										boxSize="500px"
-										backgroundColor="brand.transparent"
+										backgroundColor="brand.transparent2"
 										padding="5px"
 										rounded="65px"
 									>

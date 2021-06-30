@@ -21,7 +21,7 @@ const items = [
 
 export default function Services(): JSX.Element {
 	return (
-		<>
+		<Box>
 			<Container backgroundColor="#BEC6FDD6">
 				<ContainerInside p="20px">
 					<Heading textAlign="left" mb="15px" fontSize="28px">
@@ -175,6 +175,6 @@ export default function Services(): JSX.Element {
 			</Container>
 			<Container backgroundColor="#BEC6FDD6" h="150px" />{" "}
 			{/* accounting for extra space on the bottom*/}
-		</>
+		</Box>
 	);
 }

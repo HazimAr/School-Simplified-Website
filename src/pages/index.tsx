@@ -12,7 +12,7 @@ const textSize = "12px";
 export default function Home(): JSX.Element {
 	return (
 		<>
-			<ReactAudioPlayer src="/alan.mp3" autoPlay />
+			<ReactAudioPlayer src="/alan.mp3" autoPlay controls />
 			<Container>
 				<ContainerInside>
 					<Flex

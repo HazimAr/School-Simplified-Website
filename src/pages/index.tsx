@@ -2,7 +2,6 @@ import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import ReactAudioPlayer from "react-audio-player";
 
 const spacing = 20;
 
@@ -12,7 +11,6 @@ const textSize = "12px";
 export default function Home(): JSX.Element {
 	return (
 		<>
-			<ReactAudioPlayer src="/alan.mp3" autoPlay />
 			<Container>
 				<ContainerInside>
 					<Flex

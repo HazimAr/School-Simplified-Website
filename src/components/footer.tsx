@@ -106,9 +106,9 @@ export default function Footer(): JSX.Element {
 				// paused
 				options={{
 					height: 130,
-					amplitude: 50,
-					speed: 10,
-					points: 20,
+					amplitude: 12,
+					speed: 100,
+					points: 7,
 				}}
 			/>
 			<Container bg="brand.purple.light" mt="-7px">

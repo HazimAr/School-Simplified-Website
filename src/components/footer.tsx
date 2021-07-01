@@ -8,6 +8,7 @@ import {
 	UnorderedList,
 } from "@chakra-ui/react";
 import Container from "@components/container";
+import Wave from "react-wavify";
 
 const infos = [
 	{
@@ -104,7 +105,16 @@ const socials = [
 export default function Footer(): JSX.Element {
 	return (
 		<Box as="footer">
-			<Container bg="brand.purple.light">
+			<Wave
+				fill="rgb(90, 96, 174)"
+				options={{
+					height: 100,
+					amplitude: 15,
+					speed: 0.2,
+					points: 5,
+				}}
+			/>
+			<Container bg="brand.purple.light" mt="-6px">
 				<Flex
 					justify="space-between"
 					maxW="1200px"

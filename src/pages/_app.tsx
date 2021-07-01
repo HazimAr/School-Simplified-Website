@@ -9,7 +9,6 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import ReactAudioPlayer from "react-audio-player";
 
 export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 	const router = useRouter();
@@ -30,7 +29,6 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 			</Head>
 
 			<ChakraProvider theme={theme}>
-				<ReactAudioPlayer src="/alan.mp3" autoPlay controls />
 				<Header />
 
 				<Component {...pageProps} />

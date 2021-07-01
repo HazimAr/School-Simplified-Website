@@ -3,20 +3,21 @@
 Proper Readme will follow
 
 ## Stack
-- Typescript
-- ChakraUI
-- NextJS
-- Styled Components
-- Lightweight
-- Google Analytics
-- ESLint
-- Jest
-- React Icons
+
+-   Typescript
+-   ChakraUI
+-   NextJS
+-   Styled Components
+-   Lightweight
+-   Google Analytics
+-   ESLint
+-   Jest
+-   React Icons
+
 ## Setup
 
-clone with
-`git clone https://github.com/HazimAr/School-Simplified`
-or click on the green `code` button and open with github desktop
+clone with `git clone https://github.com/HazimAr/School-Simplified` or click on
+the green `code` button and open with github desktop
 
 install dependencies `npm i` or `yarn`
 

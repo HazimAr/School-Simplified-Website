@@ -10,6 +10,7 @@ const theme = extendTheme({
 				light: "rgb(90, 96, 174)",
 				dark: "rgb(69, 74, 138)",
 			},
+
 			gold: "#fcd270",
 		},
 		text: {
@@ -34,7 +35,6 @@ const theme = extendTheme({
 			body: {
 				fontFamily: "body",
 				color: "white",
-				bg: "text.1000",
 				lineHeight: "base",
 			},
 		}),

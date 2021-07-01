@@ -97,24 +97,21 @@ const socials = [
 	},
 ];
 
-// const Wave = styled.svg`
-// 	z-index: 10;
-// `;
-
 // eslint-disable-next-line import/no-default-export
 export default function Footer(): JSX.Element {
 	return (
 		<Box as="footer">
 			<Wave
 				fill="rgb(90, 96, 174)"
+				// paused
 				options={{
 					height: 130,
-					amplitude: 10,
-					speed: 0.2,
-					points: 3,
+					amplitude: 12,
+					speed: 0.25,
+					points: 7,
 				}}
 			/>
-			<Container bg="brand.purple.light" mt="-6px">
+			<Container bg="brand.purple.light" mt="-7px">
 				<Flex
 					justify="space-between"
 					maxW="1200px"

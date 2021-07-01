@@ -3,7 +3,6 @@ import ContactForm from "@components/contact-form";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import FaqList from "@components/faq-list";
-import React from "react";
 
 export default function Contact(): JSX.Element {
 	const qaPairs = [
@@ -32,29 +31,29 @@ export default function Contact(): JSX.Element {
 	return (
 		<Container>
 			<ContainerInside>
+				<Box flexDirection="column" flex={1} py={10} align="center">
+					<Heading as="h1" size="xl" mb={3}>
+						Get in Touch
+					</Heading>
+					<Heading as="h2" size="md" mb={3}>
+						Have a Question? Comment? Concern?
+					</Heading>
+				</Box>
 				<Flex
 					flexDirection={{ sm: "column", lg: "row" }}
 					justify="center"
-					align="stretch"
+					align="center"
 					px={{ sm: 10, md: 100, lg: 200 }}
 					pb={10}
 				>
-					<Box flexDirection="column" flex={1} py={10} align="center">
-						<Heading as="h1" size="xl" mb={3}>
-							Get in Touch
-						</Heading>
-						<Heading as="h2" size="md" mb={3}>
-							Have a Question? Comment? Concern?
-						</Heading>
-						<Image
-							src="/contactPerson.png"
-							alt="Contact Person"
-							w="200px"
-						/>
-					</Box>
 					<Box flex={2} py={10}>
 						<ContactForm />
 					</Box>
+					<Image
+						src="/undraw/contact.svg"
+						alt="Contact Person"
+						h="200px"
+					/>
 				</Flex>
 
 				<Flex flexDirection="column" align="stretch" pb={10}>

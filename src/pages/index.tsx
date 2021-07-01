@@ -15,6 +15,7 @@ export default function Home(): JSX.Element {
 						justify="center"
 						align="center"
 						pt="50px"
+						pb="50px"
 						flexWrap="wrap"
 					>
 						<Box maxW="50ch" textAlign="left" my={`${spacing}px`}>

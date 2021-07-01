@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -28,15 +28,8 @@ export default function Home(): JSX.Element {
 							<Button>Learn More</Button>
 						</Box>
 
-						<Box maxW="50ch" textAlign="left" my={`${spacing}px`}>
-							<Heading>Need help with school?</Heading>
-							<Text my="10px">
-								Lorem ipsum dolor sit amet consectetur,
-								adipisicing elit. Culpa, ducimus inventore?
-								Maiores incidunt possimus corrupti provident
-								modi consequuntur
-							</Text>
-							<Button>Request Now</Button>
+						<Box textAlign="left" my={`${spacing}px`}>
+							<Image h="250px" src="/education.svg" />
 						</Box>
 					</Flex>
 				</ContainerInside>

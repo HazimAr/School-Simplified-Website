@@ -4,12 +4,14 @@ import { extendTheme } from "@chakra-ui/react";
 const theme = extendTheme({
 	colors: {
 		brand: {
+			// "rgb(108, 125, 254)"
 			transparent: "rgba(255,255,255,0.3)",
 			transparent2: "rgba(255,255,255,0.6)",
 			purple: {
 				light: "rgb(90, 96, 174)",
 				dark: "rgb(69, 74, 138)",
 			},
+
 			gold: "#fcd270",
 		},
 		text: {
@@ -34,7 +36,6 @@ const theme = extendTheme({
 			body: {
 				fontFamily: "body",
 				color: "white",
-				bg: "text.1000",
 				lineHeight: "base",
 			},
 		}),

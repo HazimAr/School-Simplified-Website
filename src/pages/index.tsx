@@ -29,7 +29,7 @@ export default function Home(): JSX.Element {
 						</Box>
 
 						<Box textAlign="left" my={`${spacing}px`}>
-							<Image h="250px" src="/education.svg" />
+							<Image h="300px" src="/education.svg" />
 						</Box>
 					</Flex>
 				</ContainerInside>
@@ -47,7 +47,21 @@ export default function Home(): JSX.Element {
 
 			<Container bg="brand.transparent">
 				<ContainerInside>
-					<Box py="100px" />
+					<Flex justify="center" textAlign="left">
+						<Box bg="green" maxW="50%">
+							<Image h="300px" src="/education.svg" />
+						</Box>
+						<Box maxW="50%" bg="red">
+							<Box>
+								<Heading size="md">Here's What You Get</Heading>
+								<Text>
+									Lorem ipsum dolor sit amet consectetur Lorem
+									ipsum dolor sit amet consectetur adipisicing
+									elit. Assumenda minima deleniti Lorem ipsum
+								</Text>
+							</Box>
+						</Box>
+					</Flex>
 				</ContainerInside>
 			</Container>
 		</>

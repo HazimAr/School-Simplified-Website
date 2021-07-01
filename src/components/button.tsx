@@ -5,10 +5,6 @@ import { Box } from "@chakra-ui/react";
 
 export default function StyledButton(props: any): JSX.Element {
 	return (
-		// <Button variant="solid" {...props}>
-		// 	{props.children}
-		// </Button>
-		// Button from facebook.com
 		<Box
 			{...props}
 			as="button"

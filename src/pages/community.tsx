@@ -12,6 +12,7 @@ import {
 	Text,
 	VStack,
 	Wrap,
+	Image, 
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -29,9 +30,16 @@ export default function Home(): JSX.Element {
 	return (
 		<>
 			<Container bg="brand.purple.dark" maxW="xlg">
-				<ContainerInside>
-					<Text fontSize="6xl">X</Text>
-				</ContainerInside>
+				<Wrap justify='center'  margin='15px' >
+					<ContainerInside>
+							<Image 
+							src = './duck_group_shot.png'
+							alt ='duck group shot'
+							objectFit="cover"
+							boxSize='350px'
+							/> 
+					</ContainerInside>
+				</Wrap>
 			</Container>
 
 			{/* art box */}

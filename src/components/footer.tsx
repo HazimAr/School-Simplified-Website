@@ -97,10 +97,6 @@ const socials = [
 	},
 ];
 
-// const Wave = styled.svg`
-// 	z-index: 10;
-// `;
-
 // eslint-disable-next-line import/no-default-export
 export default function Footer(): JSX.Element {
 	return (
@@ -114,7 +110,7 @@ export default function Footer(): JSX.Element {
 					points: 3,
 				}}
 			/>
-			<Container bg="brand.purple.light" mt="-6px">
+			<Container bg="brand.purple.light" mt="-7px">
 				<Flex
 					justify="space-between"
 					maxW="1200px"

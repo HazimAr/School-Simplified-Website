@@ -2,7 +2,6 @@ import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import Wave from "react-wavify";
 
 const spacing = 20;
 
@@ -42,7 +41,7 @@ export default function Home(): JSX.Element {
 					</Flex>
 				</ContainerInside>
 			</Container>
-
+			{/* 
 			<Wave
 				fill="rgba(255,255,255,0.3)"
 				options={{
@@ -51,9 +50,9 @@ export default function Home(): JSX.Element {
 					speed: 0.15,
 					points: 5,
 				}}
-			/>
+			/> */}
 
-			<Container bg="brand.transparent" mt="-6px">
+			<Container bg="brand.transparent">
 				<ContainerInside>
 					<Box py="100px" />
 				</ContainerInside>

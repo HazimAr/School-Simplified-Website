@@ -52,7 +52,7 @@ export default function Home(): JSX.Element {
 				<ContainerInside>
 					<Flex justify="center" textAlign="left">
 						<Flex
-							minW="50%"
+							w="100%"
 							mx="25px"
 							align="center"
 							justify="flex-end"
@@ -60,7 +60,7 @@ export default function Home(): JSX.Element {
 							<Image h="300px" src="/undraw/study.svg" />
 						</Flex>
 
-						<Box minW="50%" mx="25px">
+						<Box w="100%" mx="25px">
 							<Box maxW="450px">
 								<Box>
 									<Heading size="md">

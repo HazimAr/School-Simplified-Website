@@ -103,6 +103,7 @@ export default function Footer(): JSX.Element {
 		<Box as="footer">
 			<Wave
 				fill="rgb(90, 96, 174)"
+				// paused
 				options={{
 					height: 130,
 					amplitude: 12,

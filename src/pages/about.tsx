@@ -107,7 +107,7 @@ export default function About(): JSX.Element {
 						flexWrap="wrap"
 					>
 						<Box p="15px" maxW="500px" m="16px">
-							<Heading align="left" fontSize="23px">
+							<Heading align="left" fontSize="35px">
 								Why Us?
 							</Heading>
 							<Text align="left" fontSize="15px">

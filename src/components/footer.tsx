@@ -108,10 +108,10 @@ export default function Footer(): JSX.Element {
 			<Wave
 				fill="rgb(90, 96, 174)"
 				options={{
-					height: 100,
-					amplitude: 15,
+					height: 130,
+					amplitude: 10,
 					speed: 0.2,
-					points: 5,
+					points: 3,
 				}}
 			/>
 			<Container bg="brand.purple.light" mt="-6px">

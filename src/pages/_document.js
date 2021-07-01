@@ -80,7 +80,7 @@ export default class MyDocument extends Document {
 						// backgroundImage: `url(/bg.svg)`,
 						// backgroundRepeat: "no-repeat",
 						// backgroundSize: "cover",
-						backgroundColor: "#6C7DFE",
+						backgroundColor: "#7e96da",
 					}}
 				>
 					<ColorModeScript initialColorMode="dark" />

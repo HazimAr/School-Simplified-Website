@@ -9,6 +9,7 @@ export default function Contact(): JSX.Element {
 	const qaPairs = [
 		{
 			question: "Who are you?",
+			// eslint-disable-next-line sonarjs/no-duplicate-string
 			answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 		},
 		{

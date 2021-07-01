@@ -33,7 +33,7 @@ function StyledInput({
 			type={type}
 			mb={4}
 			value={value}
-			onChange={(text) => onChange(text)}
+			onChange={(text) => { onChange(text); }}
 		/>
 	);
 }
@@ -102,6 +102,7 @@ function reducer(state: stateType, action: actionType): stateType {
 	}
 }
 
+// eslint-disable-next-line import/no-default-export
 export default function ContactForm(): JSX.Element {
 	const [state, dispatch] = useReducer(reducer, {
 		firstName: "",
@@ -130,10 +131,10 @@ export default function ContactForm(): JSX.Element {
 						type=""
 						value={firstName}
 						onChange={(text) =>
-							dispatch({
+							{ dispatch({
 								type: "firstName",
 								payload: text.target.value,
-							})
+							}); }
 						}
 					/>
 				</Flex>
@@ -144,10 +145,10 @@ export default function ContactForm(): JSX.Element {
 						type=""
 						value={lastName}
 						onChange={(text) =>
-							dispatch({
+							{ dispatch({
 								type: "lastName",
 								payload: text.target.value,
-							})
+							}); }
 						}
 					/>
 				</Flex>
@@ -158,7 +159,7 @@ export default function ContactForm(): JSX.Element {
 				type="email"
 				value={email}
 				onChange={(text) =>
-					dispatch({ type: "email", payload: text.target.value })
+					{ dispatch({ type: "email", payload: text.target.value }); }
 				}
 			/>
 			<FormLabel>Subject</FormLabel>
@@ -167,7 +168,7 @@ export default function ContactForm(): JSX.Element {
 				type=""
 				value={subject}
 				onChange={(text) =>
-					dispatch({ type: "subject", payload: text.target.value })
+					{ dispatch({ type: "subject", payload: text.target.value }); }
 				}
 			/>
 			<FormLabel>Your Message</FormLabel>
@@ -182,10 +183,10 @@ export default function ContactForm(): JSX.Element {
 				mb={4}
 				value={message}
 				onChange={(text) =>
-					dispatch({ type: "message", payload: text.target.value })
+					{ dispatch({ type: "message", payload: text.target.value }); }
 				}
 			/>
-			<Button onClick={() => console.log(state)}>Send</Button>
+			<Button onClick={() => { console.log(state); }}>Send</Button>
 		</FormControl>
 	);
 }

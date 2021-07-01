@@ -1,4 +1,3 @@
-
 afterEach(() => {
 	window.localStorage.clear();
 

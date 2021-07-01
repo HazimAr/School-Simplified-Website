@@ -1,35 +1,35 @@
 version: 2
 updates:
-- package-ecosystem: npm
-  directory: "/"
-  schedule:
-    interval: daily
-    time: "11:00"
-  open-pull-requests-limit: 10
-  ignore:
-  - dependency-name: "@types/node"
-    versions:
-    - 14.14.32
-    - 14.14.36
-    - 15.0.0
-  - dependency-name: eslint-config-galex
-    versions:
-    - 2.10.6
-    - 2.12.0
-    - 2.12.1
-    - 2.15.1
-  - dependency-name: "@types/jest"
-    versions:
-    - 26.0.23
-  - dependency-name: "@babel/core"
-    versions:
-    - 7.13.10
-  - dependency-name: "@types/react"
-    versions:
-    - 17.0.2
-  - dependency-name: typescript
-    versions:
-    - 4.1.4
-  - dependency-name: eslint
-    versions:
-    - 7.19.0
+    - package-ecosystem: npm
+      directory: "/"
+      schedule:
+          interval: daily
+          time: "11:00"
+      open-pull-requests-limit: 10
+      ignore:
+          - dependency-name: "@types/node"
+            versions:
+                - 14.14.32
+                - 14.14.36
+                - 15.0.0
+          - dependency-name: eslint-config-galex
+            versions:
+                - 2.10.6
+                - 2.12.0
+                - 2.12.1
+                - 2.15.1
+          - dependency-name: "@types/jest"
+            versions:
+                - 26.0.23
+          - dependency-name: "@babel/core"
+            versions:
+                - 7.13.10
+          - dependency-name: "@types/react"
+            versions:
+                - 17.0.2
+          - dependency-name: typescript
+            versions:
+                - 4.1.4
+          - dependency-name: eslint
+            versions:
+                - 7.19.0

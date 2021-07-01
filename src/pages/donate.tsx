@@ -1,15 +1,17 @@
 import {
 	Box,
+	Center,
 	Flex,
 	Heading,
+	Icon,
+	Link,
 	Spacer,
 	Text,
-	Link,
-	Center,
 } from "@chakra-ui/react";
+import StyledButton from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import StyledButton from "@components/button";
+import { FaPaypal } from "react-icons/fa";
 
 export default function Donate(): JSX.Element {
 	return (
@@ -39,18 +41,24 @@ export default function Donate(): JSX.Element {
 							</Text>
 						</Box>
 						<Spacer />
-						<Box
-							bg="red"
-							boxSize="200px"
-							borderRadius="25px"
-							p="20px"
-						>
-							<Center>
-								<Link href="https://www.paypal.com/donate?token=NJtH7jwgJYMkVXNf_gRWpy6_ZTCwIeS5ipOzTutEI6nR8eqc_aucztFhJ19B_Wh_-rx9v4ieAP6j9qPL&Z3JncnB0=">
-									<StyledButton>PayPal</StyledButton>
-								</Link>
-							</Center>
-						</Box>
+						<Flex flexDir="column" justify="center" align="center">
+							<Box
+								bg="brand.transparent"
+								boxSize="200px"
+								borderRadius="25px"
+								p="20px"
+							>
+								<Center>
+									<Icon as={FaPaypal} boxSize="150px" />
+								</Center>
+							</Box>
+							<Link
+								href="https://www.paypal.com/donate?token=NJtH7jwgJYMkVXNf_gRWpy6_ZTCwIeS5ipOzTutEI6nR8eqc_aucztFhJ19B_Wh_-rx9v4ieAP6j9qPL&Z3JncnB0="
+								isExternal
+							>
+								<StyledButton>Donate Now</StyledButton>
+							</Link>
+						</Flex>
 					</Flex>
 				</ContainerInside>
 			</Container>

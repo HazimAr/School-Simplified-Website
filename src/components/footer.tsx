@@ -107,7 +107,7 @@ export default function Footer(): JSX.Element {
 				options={{
 					height: 130,
 					amplitude: 12,
-					speed: 0.25,
+					speed: 100,
 					points: 7,
 				}}
 			/>

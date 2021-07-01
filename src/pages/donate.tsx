@@ -1,6 +1,15 @@
-import { Box, Flex, Heading, Spacer, Text } from "@chakra-ui/react";
+import {
+	Box,
+	Flex,
+	Heading,
+	Spacer,
+	Text,
+	Link,
+	Center,
+} from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
+import StyledButton from "@components/button";
 
 export default function Donate(): JSX.Element {
 	return (
@@ -29,10 +38,23 @@ export default function Donate(): JSX.Element {
 								equity and success to to teenagers alike!
 							</Text>
 						</Box>
-						<Box bg="red" boxSize="300px" borderRadius="25px" />
+						<Spacer />
+						<Box
+							bg="red"
+							boxSize="200px"
+							borderRadius="25px"
+							p="20px"
+						>
+							<Center>
+								<Link href="https://www.paypal.com/donate?token=NJtH7jwgJYMkVXNf_gRWpy6_ZTCwIeS5ipOzTutEI6nR8eqc_aucztFhJ19B_Wh_-rx9v4ieAP6j9qPL&Z3JncnB0=">
+									<StyledButton>PayPal</StyledButton>
+								</Link>
+							</Center>
+						</Box>
 					</Flex>
 				</ContainerInside>
 			</Container>
+
 			<Container>
 				<ContainerInside py="25px">
 					<Heading size="lg" py="10px">

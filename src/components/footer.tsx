@@ -105,10 +105,10 @@ export default function Footer(): JSX.Element {
 				fill="rgb(90, 96, 174)"
 				// paused
 				options={{
-					height: 130,
-					amplitude: 12,
-					speed: 100,
-					points: 7,
+					height: 100,
+					amplitude: 20,
+					speed: 3,
+					points: 10,
 				}}
 			/>
 			<Container bg="brand.purple.light" mt="-7px">

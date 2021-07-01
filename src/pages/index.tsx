@@ -61,7 +61,7 @@ export default function Home(): JSX.Element {
 						</Flex>
 
 						<Box w="100%" mx="25px">
-							<Box maxW="450px">
+							<Box maxW="400px">
 								<Box>
 									<Heading size="md">
 										Here's What You Get

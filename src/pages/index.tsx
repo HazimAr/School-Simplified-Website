@@ -28,7 +28,7 @@ export default function Home(): JSX.Element {
 								Maiores incidunt possimus corrupti provident
 								modi consequuntur
 							</Text>
-							<Button>Learn More</Button>
+							<Button>Request Now</Button>
 						</Box>
 
 						<Box textAlign="left" my={`${spacing}px`}>

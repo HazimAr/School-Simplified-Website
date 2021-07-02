@@ -40,7 +40,7 @@
 		"@types/jest": "^26.0.23",
 		"@types/next": "^9.0.0",
 		"@types/node": "^15.12.5",
-		"@types/react": "^17.0.11",
+		"@types/react": "^17.0.13",
 		"@types/react-icons": "^3.0.0",
 		"@types/styled-components": "^5.1.10",
 		"babel-plugin-styled-components": "^1.13.1",

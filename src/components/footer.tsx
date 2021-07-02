@@ -105,7 +105,7 @@ export default function Footer(): JSX.Element {
 				fill="rgb(90, 96, 174)"
 				// paused
 				options={{
-					height: 130,
+					height: 120,
 					amplitude: 12,
 					speed: 0.25,
 					points: 5,

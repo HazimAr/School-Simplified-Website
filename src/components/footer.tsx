@@ -108,7 +108,7 @@ export default function Footer(): JSX.Element {
 					height: 130,
 					amplitude: 12,
 					speed: 0.25,
-					points: 7,
+					points: 5,
 				}}
 			/>
 			<Container bg="brand.purple.light" mt="-7px">

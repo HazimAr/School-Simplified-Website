@@ -32,32 +32,32 @@ export default function Contact(): JSX.Element {
 	return (
 		<Container>
 			<ContainerInside>
-				<Box flexDirection="column" flex={1} py={10} align="center">
+				<Box py={10} align="center">
 					<Heading as="h1" size="xl" mb={3}>
 						Get in Touch
 					</Heading>
-					<Heading as="h2" size="md" mb={3}>
+					<Heading as="h2" size="md">
 						Have a Question? Comment? Concern?
 					</Heading>
 				</Box>
 				<Flex
-					flexDirection={{ sm: "column", lg: "row" }}
-					justify="center"
+					flexDirection={{ sm: "column-reverse", lg: "row" }}
+					justify="space-between"
 					align="center"
-					px={{ sm: 10, md: 100, lg: 200 }}
+					// px={{ sm: 10, md: 100, lg: 200 }}
 					pb={10}
 				>
-					<Box flex={2} py={10}>
+					<Box>
 						<ContactForm />
-					</Box>
+					</Box>	
 					<Image
 						src="/undraw/contact.svg"
 						alt="Contact Person"
-						h="200px"
+						h="350px"
+						mb={{ sm: 5	, lg: 0 }}
 					/>
 				</Flex>
-
-				<Flex flexDirection="column" align="stretch" pb={10}>
+				<Flex flexDirection="column" align="stretch">
 					<Heading as="h1" size="xl" mb={3}>
 						FAQ
 					</Heading>

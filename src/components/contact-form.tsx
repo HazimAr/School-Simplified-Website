@@ -1,11 +1,11 @@
 import {
-	Box,
 	Flex,
 	FormControl,
 	FormLabel,
 	Input,
 	Textarea,
 } from "@chakra-ui/react";
+import Button from "@components/button";
 import { useReducer } from "react";
 
 type StyledInputProps = {
@@ -35,40 +35,6 @@ function StyledInput({
 			value={value}
 			onChange={(text) => { onChange(text); }}
 		/>
-	);
-}
-
-type ButtonProps = {
-	children: any;
-	onClick: () => void;
-};
-
-function Button({ children, onClick }: ButtonProps): JSX.Element {
-	return (
-		<Box
-			as="button"
-			height="3rem"
-			width="6rem"
-			lineHeight="1.2"
-			borderRadius="2xl"
-			fontWeight="semibold"
-			backgroundColor="#5a60ad"
-			color="white"
-			_hover={{ bg: "#ebedf0", boxShadow: "none" }}
-			_active={{
-				bg: "#dddfe2",
-				transform: "scale(0.98)",
-				backgroundColor: "#5a60ad",
-				boxShadow: "none",
-			}}
-			_focus={{
-				boxShadow: "none",
-				backgroundColor: "#5a60ad",
-			}}
-			onClick={onClick}
-		>
-			{children}
-		</Box>
 	);
 }
 
@@ -124,7 +90,7 @@ export default function ContactForm(): JSX.Element {
 			p={10}
 		>
 			<Flex flexDirection="row" justify="space-between">
-				<Flex flexDirection="column">
+				<Flex flexDirection="column" mr={2}>
 					<FormLabel>First Name</FormLabel>
 					<StyledInput
 						placeholder="First Name"
@@ -138,7 +104,7 @@ export default function ContactForm(): JSX.Element {
 						}
 					/>
 				</Flex>
-				<Flex flexDirection="column">
+				<Flex flexDirection="column" ml={2}>
 					<FormLabel>Last Name</FormLabel>
 					<StyledInput
 						placeholder="Last Name"
@@ -186,7 +152,7 @@ export default function ContactForm(): JSX.Element {
 					{ dispatch({ type: "message", payload: text.target.value }); }
 				}
 			/>
-			<Button onClick={() => { console.log(state); }}>Send</Button>
+			<Button onClick={() => { console.log(state); }} color="white">Send</Button>
 		</FormControl>
 	);
 }

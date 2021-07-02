@@ -8,12 +8,16 @@ export default function Here() {
 	return (
 		<Container bg="brand.transparent" py="50px" mb="25px">
 			<ContainerInside>
-				<Flex justify="center" textAlign="left">
-					<Flex w="100%" mx="25px" align="center" justify="flex-end">
+				<Flex
+					justify="center"
+					textAlign="left"
+					flexDir={{ sm: "column", lg: "row" }}
+				>
+					<Flex mx="25px" align="center" justify="center">
 						<Image h="300px" src="/undraw/exams.svg" />
 					</Flex>
 
-					<Box w="100%" mx="25px">
+					<Flex mx="25px" justify="center">
 						<Box maxW="400px">
 							<Box>
 								<Heading size="md">Here's What You Get</Heading>
@@ -62,7 +66,7 @@ export default function Here() {
 								</Box>
 							</Flex>
 						</Box>
-					</Box>
+					</Flex>
 				</Flex>
 			</ContainerInside>
 		</Container>

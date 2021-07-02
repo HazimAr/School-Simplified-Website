@@ -9,13 +9,7 @@ export default function Intro() {
 	return (
 		<Container>
 			<ContainerInside>
-				<Flex
-					justify="center"
-					align="center"
-					mt="50px"
-					mb="50px"
-					flexWrap="wrap"
-				>
+				<Flex justify="center" align="center" mt="50px" mb="50px">
 					<Box maxW="50ch" textAlign="left" my={`${spacing}px`}>
 						<Heading>The key to your future</Heading>
 						<Text my="10px">
@@ -27,7 +21,11 @@ export default function Intro() {
 					</Box>
 
 					<Box textAlign="left" my={`${spacing}px`}>
-						<Image h="300px" src="/undraw/education.svg" />
+						<Image
+							h="300px"
+							src="/undraw/education.svg"
+							display={{ sm: "none", lg: "block" }}
+						/>
 					</Box>
 				</Flex>
 			</ContainerInside>

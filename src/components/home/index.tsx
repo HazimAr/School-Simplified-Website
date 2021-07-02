@@ -1,5 +1,5 @@
 import Here from "./here";
 import Intro from "./intro";
-// import Sponsors from "./sponsors";
+import Testimonial from "./testimonial";
 
-export { Intro, Here };
+export { Intro, Here, Testimonial };

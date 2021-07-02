@@ -1,7 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable import/no-default-export */
 import { Accordion } from "@chakra-ui/react";
-import FaqItem from "@components/faq-item";
+import FaqItem from "@components/contact/faq-item";
 import { useState } from "react";
 
 type FaqListProps = {

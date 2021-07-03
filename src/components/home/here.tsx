@@ -18,7 +18,10 @@ export default function Here() {
 					</Flex>
 
 					<Flex mx="25px" justify="center">
-						<Box maxW="400px">
+						<Box
+							maxW="400px"
+							textAlign={{ sm: "center", md: "left" }}
+						>
 							<Box>
 								<Heading size="md">Here's What You Get</Heading>
 								<Text fontSize="14px">

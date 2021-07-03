@@ -15,15 +15,23 @@ export default function Intro() {
 	return (
 		<Container>
 			<ContainerInside>
-				<Flex justify="center" align="center" mt="50px" mb="50px">
-					<Box textAlign="left" my="">
+				<Flex
+					justify="center"
+					align="center"
+					mt="50px"
+					mb="50px"
+					flexDir={{ sm: "column-reverse", md: "row" }}
+				>
+					<Box textAlign="left" my="" mx="25px">
 						<Image
-							h="300px"
+							h="325px"
 							src="/undraw/team.svg"
-							display={{ sm: "none", md: "block" }}
+							// display={{ sm: "none", md: "block" }}
 						/>
 					</Box>
-					<Box maxW="40ch" textAlign="left" my="">
+
+                    <Box maxW="40ch" textAlign="left" my="" mx="25px"
+                    >
 						<Heading as="h1">
 							Join our student-based community
 						</Heading>
@@ -34,8 +42,8 @@ export default function Intro() {
 							<ListItem>Lorem Ipsum</ListItem>
 							<ListItem>Lorem Ipsum</ListItem>
 							<ListItem>Lorem Ipsum</ListItem>
-                        </UnorderedList>
-                        <Button mt={5}>Join Our Community</Button>
+						</UnorderedList>
+						<Button mt={5}>Join Our Community</Button>
 					</Box>
 				</Flex>
 			</ContainerInside>

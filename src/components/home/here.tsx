@@ -31,7 +31,7 @@ export default function Here() {
 								</Text>
 							</Box>
 							<Flex my="10px">
-								<Box maxW="50%">
+								<Box maxW="50%" mr={5}>
 									<Heading size={size}>Free Tutoring</Heading>
 									<Text fontSize={textSize}>
 										Lorem ipsum dolor sit amet consectetur
@@ -51,7 +51,7 @@ export default function Here() {
 								</Box>
 							</Flex>
 							<Flex my="10px">
-								<Box maxW="50%">
+								<Box maxW="50%" mr={5}>
 									<Heading size={size}>College Prep</Heading>
 									<Text fontSize={textSize}>
 										Lorem ipsum dolor sit amet consectetur

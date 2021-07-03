@@ -11,7 +11,7 @@ export default function Here() {
 				<Flex
 					justify="center"
 					textAlign="left"
-					flexDir={{ sm: "column-reverse", md: "row" }}
+					flexDir={["column-reverse", "column-reverse", "row"]}
 				>
 					<Flex mx="25px" align="center" justify="center">
 						<Image h="300px" src="/undraw/exams.svg" />
@@ -20,7 +20,7 @@ export default function Here() {
 					<Flex mx="25px" justify="center">
 						<Box
 							maxW="400px"
-							textAlign={{ sm: "center", md: "left" }}
+							textAlign={["center", "center", "left"]}
 						>
 							<Box>
 								<Heading size="md">Here's What You Get</Heading>

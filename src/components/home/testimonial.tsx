@@ -24,11 +24,13 @@ export default function Intro() {
 	return (
 		<Container>
 			<ContainerInside>
-				<Heading as="h1" mb={5}>Success Stories</Heading>
+				<Heading as="h1" mb={5}>
+					Success Stories
+				</Heading>
 				<Flex
 					justify="center"
 					textAlign="left"
-					flexDir={{ sm: "column", md: "row" }}
+					flexDir={["column", "column", "row"]}
 				>
 					<Box>
 						<Text>"{Reviews[0].review}"</Text>
@@ -45,12 +47,12 @@ export default function Intro() {
 					<Center
 						height={100}
 						mx={20}
-						display={{ sm: "none", md: "block" }}
+						display={["none", "none", "block"]}
 					>
 						<Divider orientation="vertical" bg="white" />
 					</Center>
 
-					<Box my={{ sm: 10, md: 0 }}>
+					<Box my={[10, 10, 0]}>
 						<Text>"{Reviews[1].review}"</Text>
 						<Box>
 							<Heading as="h2" size="md">
@@ -64,7 +66,7 @@ export default function Intro() {
 					<Center
 						height={100}
 						mx={20}
-						display={{ sm: "none", md: "block" }}
+						display={["none", "none", "block"]}
 					>
 						<Divider orientation="vertical" bg="white" />
 					</Center>

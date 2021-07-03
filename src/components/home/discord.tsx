@@ -20,7 +20,7 @@ export default function Intro() {
 					align="center"
 					mt="50px"
 					mb="50px"
-					flexDir={{ sm: "column-reverse", md: "row" }}
+					flexDir={["column-reverse", "column-reverse", "row"]}
 				>
 					<Box textAlign="left" my="" mx="25px">
 						<Image
@@ -30,8 +30,7 @@ export default function Intro() {
 						/>
 					</Box>
 
-                    <Box maxW="40ch" textAlign="left" my="" mx="25px"
-                    >
+					<Box maxW="40ch" textAlign="left" my="" mx="25px">
 						<Heading as="h1">
 							Join our student-based community
 						</Heading>

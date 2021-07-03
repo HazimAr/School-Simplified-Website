@@ -5,7 +5,13 @@ import ContainerInside from "@components/containerInside";
 // eslint-disable-next-line import/no-default-export
 export default function Header(): JSX.Element {
 	return (
-		<Container bg="brand.purple.light" as="header" py="10px">
+		<Container
+			bg="brand.purple.light"
+			as="header"
+			py="10px"
+			w="100%"
+			position="fixed"
+		>
 			<ContainerInside>
 				<Flex justify="space-between" align="center" flexWrap="wrap">
 					<Link href="/" _hover={{}}>

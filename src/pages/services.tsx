@@ -160,7 +160,7 @@ export default function Services(): JSX.Element {
 								occaecat cupidatat non proident, sunt in culpa
 								qui officia deserunt mollit anim id est laborum
 							</Text>
-						</Box>{" "}
+						</Box>
 						{/* 184px */}
 						<Box flex="8" /> {/* 82px */}
 						<Box
@@ -168,12 +168,12 @@ export default function Services(): JSX.Element {
 							rounded="40px"
 							w="100px"
 							flex="19"
-						/>{" "}
+						/>
 						{/* 195px */}
 					</Flex>
 				</ContainerInside>
 			</Container>
-			<Container backgroundColor="#BEC6FDD6" h="150px" />{" "}
+			<Container backgroundColor="#BEC6FDD6" h="150px" />
 			{/* accounting for extra space on the bottom*/}
 		</>
 	);

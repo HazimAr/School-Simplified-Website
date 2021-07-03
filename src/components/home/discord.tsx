@@ -30,18 +30,25 @@ export default function Intro() {
 						/>
 					</Box>
 
-					<Box maxW="40ch" textAlign="left" my="" mx="25px">
+					<Box
+						maxW="40ch"
+						textAlign={["center", "center", "left"]}
+						my=""
+						mx="25px"
+					>
 						<Heading as="h1">
 							Join our student-based community
 						</Heading>
 						<Text my="10px">
 							Benefits of joining are as follows
 						</Text>
-						<UnorderedList>
-							<ListItem>Lorem Ipsum</ListItem>
-							<ListItem>Lorem Ipsum</ListItem>
-							<ListItem>Lorem Ipsum</ListItem>
-						</UnorderedList>
+						<Flex justify={["center", "center", "flex-start"]}>
+							<UnorderedList>
+								<ListItem>Lorem Ipsum</ListItem>
+								<ListItem>Lorem Ipsum</ListItem>
+								<ListItem>Lorem Ipsum</ListItem>
+							</UnorderedList>
+						</Flex>
 						<Button mt={5}>Join Our Community</Button>
 					</Box>
 				</Flex>

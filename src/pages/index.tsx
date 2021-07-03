@@ -5,7 +5,7 @@ export default function Home(): JSX.Element {
 		<>
 			<Intro />
 			<Here />
-			{/* <Testimonial /> */}
+			<Testimonial />
 			<Discord />
 		</>
 	);

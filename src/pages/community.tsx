@@ -30,13 +30,13 @@ export default function Home(): JSX.Element {
 	return (
 		<>
 			<Container bg="brand.purple.dark" maxW="xlg">
-				<Wrap justify='center'  margin='15px' >
+				<Wrap justify='center' >
 					<ContainerInside>
 							<Image 
 							src = './duck_group_shot.png'
 							alt ='duck group shot'
 							objectFit="cover"
-							boxSize='350px'
+							boxSize='250px'
 							/> 
 					</ContainerInside>
 				</Wrap>
@@ -174,25 +174,13 @@ export default function Home(): JSX.Element {
 			<Container>
 				<ContainerInside>
 					{/* staff box */}
-					<Grid
-						templateColumns="repeat(5, 1fr)"
-						gap={5}
-						margin="10px"
-					>
-						<GridItem colSpan={1} h="10" mb="58px">
-							<Heading mb="22px"> Our Staff </Heading>
+					<Heading mb="22px"> Our Staff </Heading>
 
-							<Heading fontSize="18px">
-								School Simplified staff{" "}
-							</Heading>
-						</GridItem>
+					<Heading fontSize="18px">
+						School Simplified staff{" "}
+					</Heading>
 
-						<GridItem colStart={4} colEnd={6} h="10">
-							<Heading as="h1" size="4xl">
-								X
-							</Heading>
-						</GridItem>
-					</Grid>
+					
 				</ContainerInside>
 			</Container>
 
@@ -201,7 +189,7 @@ export default function Home(): JSX.Element {
 			<Container>
 				<ContainerInside>
 					<Flex textAlign="left">
-						<Wrap spacing="40px" margin="20px">
+						<Wrap spacing="40px" margin="20px" mt='250px'>
 							<VStack spacing={8}>
 								<Heading>Our Socials</Heading>
 								<Container maxW="container.sm">

@@ -11,13 +11,14 @@ export default function Intro() {
 			<ContainerInside>
 				<Flex justify="center" align="center" mt="50px" mb="50px">
 					<Box maxW="50ch" textAlign="left" my={`${spacing}px`}>
-						<Heading>The key to your future</Heading>
+						<Heading>The key to your educational success</Heading>
 						<Text my="10px">
-							Lorem ipsum dolor sit amet consectetur, adipisicing
-							elit. Culpa, ducimus inventore? Maiores incidunt
-							possimus corrupti provident modi consequuntur
+							School simplified is a student run non-profit
+							organization that aims to help students blah blah
+							blah blah blah blah blah blah blah blah blah blah
+							blah blah blah blah blah blah
 						</Text>
-						<Button>Request Now</Button>
+						<Button>Get Help Now</Button>
 					</Box>
 
 					<Box textAlign="left" my={`${spacing}px`}>

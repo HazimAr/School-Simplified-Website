@@ -37,46 +37,14 @@
 	"devDependencies": {
 		"@babel/preset-typescript": "^7.14.5",
 		"@types/babel__core": "^7.1.14",
-		"@types/jest": "^26.0.23",
 		"@types/next": "^9.0.0",
 		"@types/node": "^15.12.5",
 		"@types/react": "^17.0.13",
 		"@types/react-icons": "^3.0.0",
 		"@types/styled-components": "^5.1.10",
 		"babel-plugin-styled-components": "^1.13.1",
-		"jest": "^27.0.6",
-		"jest-watch-typeahead": "^0.6.4",
 		"prettier": "^2.3.2",
 		"typescript": "^4.3.5"
-	},
-	"jest": {
-		"collectCoverageFrom": [
-			"src/**/*.{js,jsx,ts,tsx}"
-		],
-		"setupFilesAfterEnv": [
-			"<rootDir>/scripts/jest/setupTests.js"
-		],
-		"transform": {
-			"^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
-			"^.+\\.css$": "<rootDir>/scripts/jest/cssTransform.js"
-		},
-		"transformIgnorePatterns": [
-			"/node_modules/",
-			"^.+\\.module\\.(css|sass|scss)$"
-		],
-		"moduleNameMapper": {
-			"^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
-		},
-		"modulePaths": [
-			"<rootDir>"
-		],
-		"coverageDirectory": "coverage",
-		"watchPlugins": [
-			"jest-watch-typeahead/filename",
-			"jest-watch-typeahead/testname"
-		],
-		"clearMocks": true,
-		"restoreMocks": true,
-		"resetMocks": true
 	}
+	
 }

@@ -1,4 +1,4 @@
-import { Here, Intro, Testimonial } from "@components/home/index";
+import { Discord, Here, Intro, Testimonial } from "@components/home/index";
 
 export default function Home(): JSX.Element {
 	return (
@@ -6,6 +6,7 @@ export default function Home(): JSX.Element {
 			<Intro />
 			<Here />
 			<Testimonial />
+			<Discord />
 		</>
 	);
 }

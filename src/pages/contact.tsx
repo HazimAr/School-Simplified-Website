@@ -3,12 +3,12 @@ import ContactForm from "@components/contact-form";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import FaqList from "@components/faq-list";
-import React from "react";
 
 export default function Contact(): JSX.Element {
 	const qaPairs = [
 		{
 			question: "Who are you?",
+			// eslint-disable-next-line sonarjs/no-duplicate-string
 			answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 		},
 		{
@@ -32,32 +32,32 @@ export default function Contact(): JSX.Element {
 	return (
 		<Container>
 			<ContainerInside>
+				<Box py={10} align="center">
+					<Heading as="h1" size="xl" mb={3}>
+						Get in Touch
+					</Heading>
+					<Heading as="h2" size="md">
+						Have a Question? Comment? Concern?
+					</Heading>
+				</Box>
 				<Flex
-					flexDirection={{ sm: "column", lg: "row" }}
-					justify="center"
-					align="stretch"
-					px={{ sm: 10, md: 100, lg: 200 }}
+					flexDirection={{ sm: "column-reverse", lg: "row" }}
+					justify="space-between"
+					align="center"
+					// px={{ sm: 10, md: 100, lg: 200 }}
 					pb={10}
 				>
-					<Box flexDirection="column" flex={1} py={10} align="center">
-						<Heading as="h1" size="xl" mb={3}>
-							Get in Touch
-						</Heading>
-						<Heading as="h2" size="md" mb={3}>
-							Have a Question? Comment? Concern?
-						</Heading>
-						<Image
-							src="/contactPerson.png"
-							alt="Contact Person"
-							w="200px"
-						/>
-					</Box>
-					<Box flex={2} py={10}>
+					<Box>
 						<ContactForm />
-					</Box>
+					</Box>	
+					<Image
+						src="/undraw/contact.svg"
+						alt="Contact Person"
+						h="350px"
+						mb={{ sm: 5	, lg: 0 }}
+					/>
 				</Flex>
-
-				<Flex flexDirection="column" align="stretch" pb={10}>
+				<Flex flexDirection="column" align="stretch">
 					<Heading as="h1" size="xl" mb={3}>
 						FAQ
 					</Heading>

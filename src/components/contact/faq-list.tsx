@@ -1,7 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable import/no-default-export */
 import { Accordion } from "@chakra-ui/react";
-import FaqItem from "@components/faq-item";
+import FaqItem from "@components/contact/faq-item";
 import { useState } from "react";
 
 type FaqListProps = {
@@ -20,7 +20,6 @@ export default function FaqList({ list }: FaqListProps): JSX.Element {
 			onChange={(newExpanded: number[]) => {
 				setExpanded(newExpanded);
 			}}
-			px={{ sm: 10, md: 100, lg: 200 }}
 		>
 			{list.map(({ question, answer }, index): JSX.Element => {
 				return (

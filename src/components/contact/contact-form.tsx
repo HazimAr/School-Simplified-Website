@@ -1,11 +1,11 @@
 import {
-	Box,
 	Flex,
 	FormControl,
 	FormLabel,
 	Input,
 	Textarea,
 } from "@chakra-ui/react";
+import Button from "@components/button";
 import { useReducer } from "react";
 
 type StyledInputProps = {
@@ -33,42 +33,8 @@ function StyledInput({
 			type={type}
 			mb={4}
 			value={value}
-			onChange={(text) => onChange(text)}
+			onChange={(text) => { onChange(text); }}
 		/>
-	);
-}
-
-type ButtonProps = {
-	children: any;
-	onClick: () => void;
-};
-
-function Button({ children, onClick }: ButtonProps): JSX.Element {
-	return (
-		<Box
-			as="button"
-			height="3rem"
-			width="6rem"
-			lineHeight="1.2"
-			borderRadius="2xl"
-			fontWeight="semibold"
-			backgroundColor="#5a60ad"
-			color="white"
-			_hover={{ bg: "#ebedf0", boxShadow: "none" }}
-			_active={{
-				bg: "#dddfe2",
-				transform: "scale(0.98)",
-				backgroundColor: "#5a60ad",
-				boxShadow: "none",
-			}}
-			_focus={{
-				boxShadow: "none",
-				backgroundColor: "#5a60ad",
-			}}
-			onClick={onClick}
-		>
-			{children}
-		</Box>
 	);
 }
 
@@ -102,6 +68,7 @@ function reducer(state: stateType, action: actionType): stateType {
 	}
 }
 
+// eslint-disable-next-line import/no-default-export
 export default function ContactForm(): JSX.Element {
 	const [state, dispatch] = useReducer(reducer, {
 		firstName: "",
@@ -123,31 +90,31 @@ export default function ContactForm(): JSX.Element {
 			p={10}
 		>
 			<Flex flexDirection="row" justify="space-between">
-				<Flex flexDirection="column">
+				<Flex flexDirection="column" mr={2}>
 					<FormLabel>First Name</FormLabel>
 					<StyledInput
 						placeholder="First Name"
 						type=""
 						value={firstName}
 						onChange={(text) =>
-							dispatch({
+							{ dispatch({
 								type: "firstName",
 								payload: text.target.value,
-							})
+							}); }
 						}
 					/>
 				</Flex>
-				<Flex flexDirection="column">
+				<Flex flexDirection="column" ml={2}>
 					<FormLabel>Last Name</FormLabel>
 					<StyledInput
 						placeholder="Last Name"
 						type=""
 						value={lastName}
 						onChange={(text) =>
-							dispatch({
+							{ dispatch({
 								type: "lastName",
 								payload: text.target.value,
-							})
+							}); }
 						}
 					/>
 				</Flex>
@@ -158,7 +125,7 @@ export default function ContactForm(): JSX.Element {
 				type="email"
 				value={email}
 				onChange={(text) =>
-					dispatch({ type: "email", payload: text.target.value })
+					{ dispatch({ type: "email", payload: text.target.value }); }
 				}
 			/>
 			<FormLabel>Subject</FormLabel>
@@ -167,7 +134,7 @@ export default function ContactForm(): JSX.Element {
 				type=""
 				value={subject}
 				onChange={(text) =>
-					dispatch({ type: "subject", payload: text.target.value })
+					{ dispatch({ type: "subject", payload: text.target.value }); }
 				}
 			/>
 			<FormLabel>Your Message</FormLabel>
@@ -182,10 +149,10 @@ export default function ContactForm(): JSX.Element {
 				mb={4}
 				value={message}
 				onChange={(text) =>
-					dispatch({ type: "message", payload: text.target.value })
+					{ dispatch({ type: "message", payload: text.target.value }); }
 				}
 			/>
-			<Button onClick={() => console.log(state)}>Send</Button>
+			<Button onClick={() => { console.log(state); }} color="white">Send</Button>
 		</FormControl>
 	);
 }

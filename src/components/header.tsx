@@ -21,7 +21,7 @@ export default function Header(): JSX.Element {
 						<Text ml="5px">School Simplified</Text>
 					</Flex>
 				</Link>
-				<Flex>
+				{/* <Flex>
 					<Link href="/about" mr="7px">
 						About Us
 					</Link>
@@ -29,7 +29,8 @@ export default function Header(): JSX.Element {
 						Contact
 					</Link>
 					<Link href="/donate">Donate</Link>
-				</Flex>
+				</Flex> */}
+				I will add this later, have a good idea
 			</Flex>
 		</Container>
 	);

@@ -3,16 +3,14 @@ import {
 	Center,
 	Divider,
 	Flex,
-	Grid,
-	GridItem,
 	Heading,
 	Icon,
+	Image,
 	Link,
 	Spacer,
 	Text,
 	VStack,
 	Wrap,
-	Image, 
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -30,14 +28,14 @@ export default function Home(): JSX.Element {
 	return (
 		<>
 			<Container bg="brand.purple.dark" maxW="xlg">
-				<Wrap justify='center' >
+				<Wrap justify="center">
 					<ContainerInside>
-							<Image 
-							src = './duck_group_shot.png'
-							alt ='duck group shot'
+						<Image
+							src="./duck_group_shot.png"
+							alt="duck group shot"
 							objectFit="cover"
-							boxSize='250px'
-							/> 
+							boxSize="250px"
+						/>
 					</ContainerInside>
 				</Wrap>
 			</Container>
@@ -176,11 +174,7 @@ export default function Home(): JSX.Element {
 					{/* staff box */}
 					<Heading mb="22px"> Our Staff </Heading>
 
-					<Heading fontSize="18px">
-						School Simplified staff{" "}
-					</Heading>
-
-					
+					<Heading fontSize="18px">School Simplified staff </Heading>
 				</ContainerInside>
 			</Container>
 
@@ -189,7 +183,7 @@ export default function Home(): JSX.Element {
 			<Container>
 				<ContainerInside>
 					<Flex textAlign="left">
-						<Wrap spacing="40px" margin="20px" mt='250px'>
+						<Wrap spacing="40px" margin="20px" mt="250px">
 							<VStack spacing={8}>
 								<Heading>Our Socials</Heading>
 								<Container maxW="container.sm">

@@ -22,7 +22,7 @@ const items = [
 export default function Services(): JSX.Element {
 	return (
 		<>
-			<Container backgroundColor="#BEC6FDD6">
+			<Container backgroundColor="brand.transparent">
 				<ContainerInside p="20px">
 					<Heading textAlign="left" mb="15px" fontSize="28px">
 						Our Services
@@ -36,7 +36,7 @@ export default function Services(): JSX.Element {
 					</Text>
 				</ContainerInside>
 			</Container>
-			<Container backgroundColor="#BEC6FDD6">
+			<Container backgroundColor="brand.transparent">
 				<ContainerInside pb="20px">
 					<Flex justifyContent="space-evenly" flexWrap="wrap">
 						{items.map((item, i: number) => {
@@ -105,7 +105,7 @@ export default function Services(): JSX.Element {
 								>
 									<Box
 										p="15px"
-										backgroundColor="#FFFFFF7A"
+										backgroundColor="brand.transparent2"
 										rounded="40px"
 									>
 										<Flex
@@ -141,7 +141,7 @@ export default function Services(): JSX.Element {
 					</Flex>
 				</ContainerInside>
 			</Container>
-			<Container backgroundColor="#BEC6FDD6">
+			<Container backgroundColor="brand.transparent">
 				<ContainerInside px="20px" py="40px">
 					<Flex justifyContent="space-between">
 						<Box flex="19" textAlign="left">
@@ -164,7 +164,7 @@ export default function Services(): JSX.Element {
 						{/* 184px */}
 						<Box flex="8" /> {/* 82px */}
 						<Box
-							backgroundColor="#FFFFFF7A"
+							backgroundColor="brand.transparent2"
 							rounded="40px"
 							w="100px"
 							flex="19"

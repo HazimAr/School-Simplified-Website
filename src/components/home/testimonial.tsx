@@ -27,60 +27,63 @@ export default function Intro() {
 				<Heading as="h1" mb={5}>
 					Success Stories
 				</Heading>
-				<Flex
-					justify="center"
-					textAlign="left"
-					flexDir={["column", "column", "row"]}
-				>
-					<Box>
-						<Text>"{Reviews[0].review}"</Text>
-						<Box>
-							<Heading as="h1" size="md">
-								{Reviews[0].name}
-							</Heading>
-							<Heading as="h2" size="xs">
-								{Reviews[0].title}
-							</Heading>
-						</Box>
-					</Box>
-
-					<Center
-						height={100}
-						mx={20}
-						display={["none", "none", "block"]}
+				<Flex justify="center">
+					<Flex
+						justify="center"
+						textAlign={["center", "center", "center", "left"]}
+						flexDir={["column", "column", "column", "row"]}
+						maxW={[300, 450, 600, 1200]}
 					>
-						<Divider orientation="vertical" bg="white" />
-					</Center>
+						<Box>
+							<Text>"{Reviews[0].review}"</Text>
+							<Box>
+								<Heading as="h1" size="md">
+									{Reviews[0].name}
+								</Heading>
+								<Heading as="h2" size="xs">
+									{Reviews[0].title}
+								</Heading>
+							</Box>
+						</Box>
 
-					<Box my={[10, 10, 0]}>
-						<Text>"{Reviews[1].review}"</Text>
-						<Box>
-							<Heading as="h2" size="md">
-								{Reviews[1].name}
-							</Heading>
-							<Heading as="h3" size="xs">
-								{Reviews[1].title}
-							</Heading>
+						<Center
+							height={100}
+							mx={20}
+							display={["none", "none", "none", "block"]}
+						>
+							<Divider orientation="vertical" bg="white" />
+						</Center>
+
+						<Box my={[10, 10, 10, 0]}>
+							<Text>"{Reviews[1].review}"</Text>
+							<Box>
+								<Heading as="h2" size="md">
+									{Reviews[1].name}
+								</Heading>
+								<Heading as="h3" size="xs">
+									{Reviews[1].title}
+								</Heading>
+							</Box>
 						</Box>
-					</Box>
-					<Center
-						height={100}
-						mx={20}
-						display={["none", "none", "block"]}
-					>
-						<Divider orientation="vertical" bg="white" />
-					</Center>
-					<Box>
-						<Text>"{Reviews[2].review}"</Text>
+						<Center
+							height={100}
+							mx={20}
+							display={["none", "none", "none", "block"]}
+						>
+							<Divider orientation="vertical" bg="white" />
+						</Center>
 						<Box>
-							<Heading as="h2" size="md">
-								{Reviews[2].name}
-							</Heading>
-							<Heading as="h3" size="xs">
-								{Reviews[2].title}
-							</Heading>
+							<Text>"{Reviews[2].review}"</Text>
+							<Box>
+								<Heading as="h2" size="md">
+									{Reviews[2].name}
+								</Heading>
+								<Heading as="h3" size="xs">
+									{Reviews[2].title}
+								</Heading>
+							</Box>
 						</Box>
-					</Box>
+					</Flex>
 				</Flex>
 			</ContainerInside>
 		</Container>

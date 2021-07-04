@@ -87,6 +87,6 @@ export default function Services(): JSX.Element {
 				</ContainerInside>
 			</Container>
 			
-		
+		</>
 	);
 }

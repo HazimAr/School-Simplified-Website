@@ -1,36 +1,34 @@
-import {
-	Box,
-	// Button,
-	// Divider,
-	Flex,
-	Heading,
-	// Image,
-	Text,
-} from "@chakra-ui/react";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
+import { Flex, Heading, Link, Text } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 
 const items = [
 	{
 		title: "Essay Proofreading",
-		link: "/essay"
+		link: "/essay",
+		external: false,
 	},
 	{
 		title: "Free Tutoring",
-		link: "/tutoring"
+		link: "/tutoring",
+		external: false,
 	},
 	{
 		title: "24/7 Chat Help",
-		link: "https://discord.gg/school"
+		link: "https://discord.gg/school",
+		external: true,
 	},
 	{
 		title: "College + HS Prep",
-		link: "/cprep"
+		link: "/cprep",
+		external: false,
 	},
 	{
 		title: "SAT/ACT Prep",
-		link: "/satprep"
-	}
+		link: "/satprep",
+		external: false,
+	},
 ];
 
 export default function Services(): JSX.Element {
@@ -77,6 +75,9 @@ export default function Services(): JSX.Element {
 											textAlign="left"
 										>
 											{item.title}
+											{item.external ? (
+												<ExternalLinkIcon mx={2} />
+											) : null}
 										</Text>
 									</Flex>
 								</Link>

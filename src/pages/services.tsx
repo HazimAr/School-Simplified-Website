@@ -1,10 +1,10 @@
 import {
 	Box,
-	Button,
-	Divider,
+	// Button,
+	// Divider,
 	Flex,
 	Heading,
-	Image,
+	// Image,
 	Link,
 	Text,
 } from "@chakra-ui/react";
@@ -14,17 +14,17 @@ import ContainerInside from "@components/containerInside";
 const items = [
 	"Essay Proofreading",
 	"Free Tutoring",
-	"24/7 Chat Helping",
+	"24/7 Chat Help",
 	"College + HS Prep",
-	"SAT/ACT Prep",
+	"SAT/ACT Prep"
 ];
 
 export default function Services(): JSX.Element {
 	return (
 		<>
 			<Container backgroundColor="brand.transparent">
-				<ContainerInside p="20px">
-					<Heading textAlign="left" mb="15px" fontSize="28px">
+				<ContainerInside py={8}>
+					<Heading textAlign="left" mb={5} size="lg">
 						Our Services
 					</Heading>
 					<Text textAlign="left">
@@ -37,22 +37,23 @@ export default function Services(): JSX.Element {
 				</ContainerInside>
 			</Container>
 			<Container backgroundColor="brand.transparent">
-				<ContainerInside pb="20px">
+				<ContainerInside pb={8}>
 					<Flex justifyContent="space-evenly" flexWrap="wrap">
 						{items.map((item, i: number) => {
 							return (
 								<Box
-									rounded="30px"
-									backgroundColor="#FFFFFF7A"
+									rounded={10}
+									backgroundColor="brand.transparent2"
 									key={"item_" + i}
-									m="10px 5px"
-									p="20px"
-									w="175px"
-									h="225px"
+									my={3}
+									mx={2}
+									p={7}
+									w={175}
+									h={225}
 								>
 									<Text
-										color="#5A60AD"
-										fontSize="21px"
+										color="brand.purple.light"
+										fontSize={22}
 										textAlign="left"
 									>
 										{item}
@@ -63,8 +64,9 @@ export default function Services(): JSX.Element {
 					</Flex>
 				</ContainerInside>
 			</Container>
-			<Container>
-				<ContainerInside p="30px 20px">
+			{/* cut the middle section */}
+			{/* <Container>
+				<ContainerInside py="30px">
 					<Divider bg="white" />
 					<Flex
 						flexDirection="row-reverse"
@@ -96,8 +98,6 @@ export default function Services(): JSX.Element {
 					<Flex justifyContent="space-between">
 						<Flex flexDirection="column-reverse" flex="2">
 							<Box mr="20px" maxW="258px">
-								{" "}
-								{/* maxW is hard-coded, so I need to find a good way to dynamically determine it soon */}
 								<Link
 									href="https://discord.gg/school"
 									isExternal
@@ -140,12 +140,12 @@ export default function Services(): JSX.Element {
 						</Flex>
 					</Flex>
 				</ContainerInside>
-			</Container>
-			<Container backgroundColor="brand.transparent">
-				<ContainerInside px="20px" py="40px">
+			</Container> */}
+			{/* <Container backgroundColor="brand.transparent">
+				<ContainerInside py={13}>
 					<Flex justifyContent="space-between">
 						<Box flex="19" textAlign="left">
-							<Heading fontSize="28px" mb="15px">
+							<Heading size="lg" mb={5}>
 								About Our Services
 							</Heading>
 							<Text>
@@ -161,20 +161,16 @@ export default function Services(): JSX.Element {
 								qui officia deserunt mollit anim id est laborum
 							</Text>
 						</Box>
-						{/* 184px */}
-						<Box flex="8" /> {/* 82px */}
+						<Box flex="8" />
 						<Box
 							backgroundColor="brand.transparent2"
-							rounded="40px"
-							w="100px"
+							rounded={14}
+							w={100}
 							flex="19"
 						/>
-						{/* 195px */}
 					</Flex>
 				</ContainerInside>
-			</Container>
-			<Container backgroundColor="#BEC6FDD6" h="150px" />
-			{/* accounting for extra space on the bottom*/}
+			</Container> */}
 		</>
 	);
 }

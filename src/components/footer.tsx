@@ -102,16 +102,18 @@ const socials = [
 export default function Footer(): JSX.Element {
 	return (
 		<Box as="footer">
-			<Wave
-				fill="rgb(90, 96, 174)"
-				// paused
-				options={{
-					height: 120,
-					amplitude: 12,
-					speed: 0.25,
-					points: 3,
-				}}
-			/>
+			<Box mt="-100px">
+				<Wave
+					fill="rgb(90, 96, 174)"
+					// paused
+					options={{
+						height: 120,
+						amplitude: 12,
+						speed: 0.25,
+						points: 3,
+					}}
+				/>
+			</Box>
 			<Container bg="brand.purple.light" mt="-7px">
 				<ContainerInside>
 					<Flex

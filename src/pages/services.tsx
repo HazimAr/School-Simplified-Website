@@ -72,7 +72,7 @@ export default function Services(): JSX.Element {
 										<Text
 											color="brand.purple.light"
 											fontSize={20}
-											textAlign="left"
+											textAlign="center"
 										>
 											{item.title}
 											{item.external ? (

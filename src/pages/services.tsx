@@ -12,11 +12,26 @@ import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 
 const items = [
-	"Essay Proofreading",
-	"Free Tutoring",
-	"24/7 Chat Help",
-	"College + HS Prep",
-	"SAT/ACT Prep"
+	{
+		title: "Essay Proofreading",
+		link: "/essay"
+	},
+	{
+		title: "Free Tutoring",
+		link: "/tutoring"
+	},
+	{
+		title: "24/7 Chat Help",
+		link: "https://discord.gg/school"
+	},
+	{
+		title: "College + HS Prep",
+		link: "/cprep"
+	},
+	{
+		title: "SAT/ACT Prep",
+		link: "/satprep"
+	}
 ];
 
 export default function Services(): JSX.Element {
@@ -41,24 +56,31 @@ export default function Services(): JSX.Element {
 					<Flex justifyContent="space-evenly" flexWrap="wrap">
 						{items.map((item, i: number) => {
 							return (
-								<Box
-									rounded={10}
-									backgroundColor="brand.transparent2"
-									key={"item_" + i}
-									my={3}
-									mx={2}
-									p={7}
-									w={175}
-									h={225}
+								<Link
+									href={item.link}
+									isExternal
+									textDecoration="none!important"
 								>
-									<Text
-										color="brand.purple.light"
-										fontSize={22}
-										textAlign="left"
+									<Flex
+										rounded={10}
+										backgroundColor="brand.transparent2"
+										key={"item_" + i}
+										my={3}
+										mx={2}
+										p={7}
+										w={175}
+										h={125}
+										alignItems="center"
 									>
-										{item}
-									</Text>
-								</Box>
+										<Text
+											color="brand.purple.light"
+											fontSize={20}
+											textAlign="left"
+										>
+											{item.title}
+										</Text>
+									</Flex>
+								</Link>
 							);
 						})}
 					</Flex>

@@ -5,7 +5,6 @@ import {
 	Flex,
 	Heading,
 	// Image,
-	Link,
 	Text,
 } from "@chakra-ui/react";
 import Container from "@components/container";

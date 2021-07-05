@@ -11,6 +11,15 @@ import {
 	Text,
 	VStack,
 	Wrap,
+	Modal,
+	ModalOverlay,
+	ModalContent,
+	ModalHeader,
+	ModalFooter,
+	ModalBody,
+	ModalCloseButton,
+	Button,
+	useDisclosure
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -25,6 +34,7 @@ import {
 import { SiTiktok } from "react-icons/si";
 
 export default function Home(): JSX.Element {
+	const { isOpen, onOpen, onClose } = useDisclosure()
 	return (
 		<>
 			<Container bg="brand.purple.dark" maxW="xlg">
@@ -63,18 +73,62 @@ export default function Home(): JSX.Element {
 									justify="center"
 									align="center"
 								>
-									<Box
-										boxSize="500px"
-										backgroundColor="brand.transparent2"
-										padding="5px"
-										rounded="65px"
-									>
-										{/* community art goes here */}
-									</Box>
+										<Box
+											boxSize="500px"
+											backgroundColor="brand.transparent2"
+											padding="5px"
+											rounded="65px"
+										>
+										
+										<Button onClick={onOpen} size ="450px" rounded ="60px">
+											<Image 
+											src = "june.jpg"
+											boxSize="450px"
+											alt = "Winner of June Art Contest!"
+											rounded = "50px"
+											objectFit="cover"
+											margin ='20px'
+											/>
+											
+										</Button>
+										<Modal isOpen={isOpen} onClose={onClose} isCentered>
+											<ModalOverlay />
+											<ModalContent>
+											<ModalHeader>June Art Contest Winner</ModalHeader>
+											<ModalCloseButton />
+											<ModalBody>
+												This months art contest prompt was: Embracement of Love and Identity. 
+												Our winner for June was <Heading size='sm'>aishi! (aishi🦋#1613)</Heading>
+												<Heading size='sm'>Artist Description:</Heading> 
+												"I thought it to be a pride month painting as you can see two female faces intertwined with each other... 
+												Like they are deeply connected mentally and physically
+												I just wanted to do an abstract painting actually, representing this form of love
+												and the closed eyes explain the satisfaction , sensuality and happiness she feels in love ... 
+												And the half opened eyes represent shyness ...
+												I used blue coz 1) it's my fav colour and 
+												2) to give it a hallucinated look ... Like both of them are so much in love that 
+												they feel like they are hallucinated ... They cannot think about anything else ... 
+												They're madly in love "
+												<Heading size='xsm'>Follow aishi on instagram: @aeishthetic </Heading>
 
-									<Text fontSize="sm">
-										Artwork from our event winners.
-									</Text>
+											</ModalBody>
+
+											<ModalFooter>
+												<Button colorScheme="purple" mr={3} onClick={onClose} variant ="outline">
+												Close
+												</Button>
+												<Button variant="ghost" onClick={onOpen}>Art Contest Info</Button>
+
+											</ModalFooter>
+											</ModalContent>
+										</Modal>
+			
+										</Box>
+
+										<Text fontSize="sm">
+											Artwork from our event winners!
+										</Text>
+
 								</Flex>
 							</VStack>
 						</Wrap>

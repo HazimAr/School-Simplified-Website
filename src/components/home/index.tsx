@@ -1,5 +1,6 @@
 import Here from "./here";
 import Intro from "./intro";
-import Sponsors from "./sponsors";
+import Testimonial from "./testimonial";
+import Discord from "./discord";
 
-export { Intro, Here, Sponsors };
+export { Intro, Here, Testimonial, Discord };

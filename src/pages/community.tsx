@@ -3,16 +3,26 @@ import {
 	Center,
 	Divider,
 	Flex,
-	Grid,
-	GridItem,
 	Heading,
 	Icon,
+	Image,
 	Link,
 	Spacer,
 	Text,
 	VStack,
+	HStack,
 	Wrap,
-	Image, 
+	Modal,
+	ModalOverlay,
+	ModalContent,
+	ModalHeader,
+	ModalFooter,
+	ModalBody,
+	ModalCloseButton,
+	Button,
+	useDisclosure,
+	UnorderedList,
+	ListItem,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -27,17 +37,18 @@ import {
 import { SiTiktok } from "react-icons/si";
 
 export default function Home(): JSX.Element {
+	const { isOpen, onOpen, onClose } = useDisclosure();
 	return (
 		<>
 			<Container bg="brand.purple.dark" maxW="xlg">
-				<Wrap justify='center'  margin='15px' >
+				<Wrap justify="center">
 					<ContainerInside>
-							<Image 
-							src = './duck_group_shot.png'
-							alt ='duck group shot'
+						<Image
+							src="duck_group_shot.png"
+							alt="duck group shot"
 							objectFit="cover"
-							boxSize='350px'
-							/> 
+							boxSize="220px"
+						/>
 					</ContainerInside>
 				</Wrap>
 			</Container>
@@ -71,11 +82,94 @@ export default function Home(): JSX.Element {
 										padding="5px"
 										rounded="65px"
 									>
-										{/* community art goes here */}
+										<Button
+											onClick={onOpen}
+											size="450px"
+											rounded="60px"
+										>
+											<Image
+												src="june.jpg"
+												boxSize="450px"
+												rounded="50px"
+												objectFit="cover"
+												margin="20px"
+											/>
+										</Button>
+										<Modal
+											isOpen={isOpen}
+											onClose={onClose}
+											isCentered
+											motionPreset="slideInRight"
+										>
+											<ModalOverlay />
+											<ModalContent>
+												<ModalHeader>
+													June Art Contest Winner
+												</ModalHeader>
+												<ModalCloseButton />
+												<ModalBody>
+													This months art contest
+													prompt was: Embracement of
+													Love and Identity. Our
+													winner for June was{" "}
+													<Heading size="sm">
+														aishi! (aishi🦋#1613)
+													</Heading>
+													<Heading size="sm">
+														Artist Description:
+													</Heading>
+													"I thought it to be a pride
+													month painting as you can
+													see two female faces
+													intertwined with each
+													other... Like they are
+													deeply connected mentally
+													and physically I just wanted
+													to do an abstract painting
+													actually, representing this
+													form of love and the closed
+													eyes explain the
+													satisfaction , sensuality
+													and happiness she feels in
+													love ... And the half opened
+													eyes represent shyness ... I
+													used blue coz 1: it's my fav
+													colour and 2: to give it a
+													hallucinated look ... Like
+													both of them are so much in
+													love that they feel like
+													they are hallucinated ...
+													They cannot think about
+													anything else ... They're
+													madly in love "
+													<Heading size="xsm">
+														Follow aishi on
+														instagram: @aeishthetic{" "}
+													</Heading>
+												</ModalBody>
+
+												<ModalFooter>
+													<Button
+														colorScheme="purple"
+														mr={3}
+														onClick={onClose}
+														variant="outline"
+													>
+														Close
+													</Button>
+													<Button
+														variant="ghost"
+														onClick={onOpen}
+													>
+														Art Contest Info
+													</Button>
+												</ModalFooter>
+											</ModalContent>
+										</Modal>
 									</Box>
 
 									<Text fontSize="sm">
-										Artwork from our event winners.
+										Artwork from our event winners!
 									</Text>
 								</Flex>
 							</VStack>
@@ -93,17 +187,86 @@ export default function Home(): JSX.Element {
 									rounded="40px"
 									alignContent="left"
 								>
-									<Heading>Events</Heading>
+									<VStack>
+										<Heading>Events</Heading>
+										<Heading color="#5A60AD" size="sm">
+											Our Event team works hard to put
+											together events and contests for our
+											community! They offer:
+										</Heading>
+										<UnorderedList color="#6670e3">
+											<ListItem>
+												{" "}
+												Monthly Art Contests{" "}
+											</ListItem>
+											<ListItem>
+												Music Talent Show
+											</ListItem>
+											<ListItem>Karaoke</ListItem>
+											<ListItem>Game Night</ListItem>
+										</UnorderedList>
+										<Heading color="#5A60AD" size="sm">
+											Join our discord server to
+											participate in these events!
+										</Heading>
+									</VStack>
 								</Flex>
 
 								<Flex
 									boxSize="300px"
 									backgroundColor="brand.transparent"
 									padding="20px"
+									pt="6px"
 									rounded="40px"
 									alignContent="left"
 								>
-									<Heading>Music</Heading>
+									<VStack>
+										<Heading pt="10px">Music</Heading>
+										<Heading color="#5A60AD" size="sm">
+											Our team has put together playlists
+											of music for you to enjoy!
+										</Heading>
+										<Link
+											href="https://open.spotify.com/playlist/5xy112KNO4WBzaxR1tioT9?si=cbf67fcfe567406b&nd=1"
+											isExternal
+										>
+											<Heading color="#6670e3" size="xsm">
+												Study Lofi
+											</Heading>
+										</Link>
+
+										<Link
+											href="https://open.spotify.com/playlist/2qfpV3Cv3LGASgLk5DDIwA?si=df83f8b734784065"
+											isExternal
+										>
+											<Heading color="#6670e3" size="xsm">
+												Jazz Lofi
+											</Heading>
+										</Link>
+
+										<Link
+											href="https://open.spotify.com/playlist/3KUCDUAke9JNCi3EC3DR4A?si=b84da9bd407d43f2"
+											isExternal
+										>
+											<Heading color="#6670e3" size="xsm">
+												90s Pop
+											</Heading>
+										</Link>
+
+										<Link
+											href="https://open.spotify.com/playlist/1lhX7W0NEvzMSsFCkQfxk4?si=5c16816fc6974f87"
+											isExternal
+										>
+											<Heading color="#6670e3" size="xsm">
+												2010-2015 Pop
+											</Heading>
+										</Link>
+
+										<Heading color="#5A60AD" size="5px">
+											Check out our Spotify for the
+											complete list of playlists!
+										</Heading>
+									</VStack>
 								</Flex>
 
 								<Flex
@@ -174,25 +337,9 @@ export default function Home(): JSX.Element {
 			<Container>
 				<ContainerInside>
 					{/* staff box */}
-					<Grid
-						templateColumns="repeat(5, 1fr)"
-						gap={5}
-						margin="10px"
-					>
-						<GridItem colSpan={1} h="10" mb="58px">
-							<Heading mb="22px"> Our Staff </Heading>
+					<Heading mb="22px"> Our Staff </Heading>
 
-							<Heading fontSize="18px">
-								School Simplified staff{" "}
-							</Heading>
-						</GridItem>
-
-						<GridItem colStart={4} colEnd={6} h="10">
-							<Heading as="h1" size="4xl">
-								X
-							</Heading>
-						</GridItem>
-					</Grid>
+					<Heading fontSize="18px">School Simplified staff </Heading>
 				</ContainerInside>
 			</Container>
 
@@ -200,9 +347,9 @@ export default function Home(): JSX.Element {
 
 			<Container>
 				<ContainerInside>
-					<Flex textAlign="left">
-						<Wrap spacing="40px" margin="20px">
-							<VStack spacing={8}>
+					<Flex>
+						<Wrap spacing="40px" margin="20px" mt="30px" ml="500px">
+							<VStack spacing={6}>
 								<Heading>Our Socials</Heading>
 								<Container maxW="container.sm">
 									<Heading fontSize="18px">
@@ -216,76 +363,78 @@ export default function Home(): JSX.Element {
 								</Container>
 							</VStack>
 						</Wrap>
-
-						<Spacer />
-
-						<Wrap margin="30px" spacing="40px">
-							<VStack spacing={3}>
-								<Link href="" isExternal>
-									<Icon
-										as={RiSpotifyLine}
-										boxSize="90px"
-										color="white"
-									/>
-								</Link>
-
-								<Link
-									href="https://www.instagram.com/school.simplified/"
-									isExternal
-								>
-									<Icon
-										as={RiInstagramLine}
-										boxSize="90px"
-										color="white"
-									/>
-								</Link>
-
-								<Link
-									href="https://www.facebook.com/SchoolSimple/"
-									isExternal
-								>
-									<Icon
-										as={RiFacebookBoxLine}
-										boxSize="100px"
-										color="white"
-									/>
-								</Link>
-
-								<Link
-									href="https://www.tiktok.com/@schoolsimplified"
-									isExternal
-								>
-									<Icon
-										as={SiTiktok}
-										boxSize="80px"
-										color="white"
-									/>
-								</Link>
-
-								<Link
-									href="https://twitter.com/schoolsimplify"
-									isExternal
-								>
-									<Icon
-										as={RiTwitterLine}
-										boxSize="100px"
-										color="white"
-									/>
-								</Link>
-
-								<Link
-									href="https://www.linkedin.com/company/school-simplified"
-									isExternal
-								>
-									<Icon
-										as={RiLinkedinBoxLine}
-										boxSize="100px"
-										color="white"
-									/>
-								</Link>
-							</VStack>
-						</Wrap>
 					</Flex>
+				</ContainerInside>
+			</Container>
+
+			<Container>
+				<ContainerInside>
+					<Wrap margin="30px" spacing="40px" ml="200px">
+						<HStack spacing={3}>
+							<Link href="" isExternal>
+								<Icon
+									as={RiSpotifyLine}
+									boxSize="90px"
+									color="white"
+								/>
+							</Link>
+
+							<Link
+								href="https://www.instagram.com/school.simplified/"
+								isExternal
+							>
+								<Icon
+									as={RiInstagramLine}
+									boxSize="90px"
+									color="white"
+								/>
+							</Link>
+
+							<Link
+								href="https://www.facebook.com/SchoolSimple/"
+								isExternal
+							>
+								<Icon
+									as={RiFacebookBoxLine}
+									boxSize="100px"
+									color="white"
+								/>
+							</Link>
+
+							<Link
+								href="https://www.tiktok.com/@schoolsimplified"
+								isExternal
+							>
+								<Icon
+									as={SiTiktok}
+									boxSize="80px"
+									color="white"
+								/>
+							</Link>
+
+							<Link
+								href="https://twitter.com/schoolsimplify"
+								isExternal
+							>
+								<Icon
+									as={RiTwitterLine}
+									boxSize="100px"
+									color="white"
+								/>
+							</Link>
+
+							<Link
+								href="https://www.linkedin.com/company/school-simplified"
+								isExternal
+							>
+								<Icon
+									as={RiLinkedinBoxLine}
+									boxSize="100px"
+									color="white"
+								/>
+							</Link>
+						</HStack>
+					</Wrap>
 				</ContainerInside>
 			</Container>
 		</>

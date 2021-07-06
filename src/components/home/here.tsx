@@ -8,13 +8,20 @@ export default function Here() {
 	return (
 		<Container bg="brand.transparent" py="50px" mb="25px">
 			<ContainerInside>
-				<Flex justify="center" textAlign="left">
-					<Flex w="100%" mx="25px" align="center" justify="flex-end">
+				<Flex
+					justify="center"
+					textAlign="left"
+					flexDir={["column-reverse", "column-reverse", "row"]}
+				>
+					<Flex mx="25px" align="center" justify="center">
 						<Image h="300px" src="/undraw/exams.svg" />
 					</Flex>
 
-					<Box w="100%" mx="25px">
-						<Box maxW="400px">
+					<Flex mx="25px" justify="center">
+						<Box
+							maxW="400px"
+							textAlign={["center", "center", "left"]}
+						>
 							<Box>
 								<Heading size="md">Here's What You Get</Heading>
 								<Text fontSize="14px">
@@ -24,7 +31,7 @@ export default function Here() {
 								</Text>
 							</Box>
 							<Flex my="10px">
-								<Box maxW="50%">
+								<Box maxW="50%" mr={5}>
 									<Heading size={size}>Free Tutoring</Heading>
 									<Text fontSize={textSize}>
 										Lorem ipsum dolor sit amet consectetur
@@ -44,7 +51,7 @@ export default function Here() {
 								</Box>
 							</Flex>
 							<Flex my="10px">
-								<Box maxW="50%">
+								<Box maxW="50%" mr={5}>
 									<Heading size={size}>College Prep</Heading>
 									<Text fontSize={textSize}>
 										Lorem ipsum dolor sit amet consectetur
@@ -62,7 +69,7 @@ export default function Here() {
 								</Box>
 							</Flex>
 						</Box>
-					</Box>
+					</Flex>
 				</Flex>
 			</ContainerInside>
 		</Container>

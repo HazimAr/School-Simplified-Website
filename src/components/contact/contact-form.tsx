@@ -33,7 +33,9 @@ function StyledInput({
 			type={type}
 			mb={4}
 			value={value}
-			onChange={(text) => { onChange(text); }}
+			onChange={(text) => {
+				onChange(text);
+			}}
 		/>
 	);
 }
@@ -96,12 +98,12 @@ export default function ContactForm(): JSX.Element {
 						placeholder="First Name"
 						type=""
 						value={firstName}
-						onChange={(text) =>
-							{ dispatch({
+						onChange={(text) => {
+							dispatch({
 								type: "firstName",
 								payload: text.target.value,
-							}); }
-						}
+							});
+						}}
 					/>
 				</Flex>
 				<Flex flexDirection="column" ml={2}>
@@ -110,12 +112,12 @@ export default function ContactForm(): JSX.Element {
 						placeholder="Last Name"
 						type=""
 						value={lastName}
-						onChange={(text) =>
-							{ dispatch({
+						onChange={(text) => {
+							dispatch({
 								type: "lastName",
 								payload: text.target.value,
-							}); }
-						}
+							});
+						}}
 					/>
 				</Flex>
 			</Flex>
@@ -124,18 +126,18 @@ export default function ContactForm(): JSX.Element {
 				placeholder="Email"
 				type="email"
 				value={email}
-				onChange={(text) =>
-					{ dispatch({ type: "email", payload: text.target.value }); }
-				}
+				onChange={(text) => {
+					dispatch({ type: "email", payload: text.target.value });
+				}}
 			/>
 			<FormLabel>Subject</FormLabel>
 			<StyledInput
 				placeholder="Subject"
 				type=""
 				value={subject}
-				onChange={(text) =>
-					{ dispatch({ type: "subject", payload: text.target.value }); }
-				}
+				onChange={(text) => {
+					dispatch({ type: "subject", payload: text.target.value });
+				}}
 			/>
 			<FormLabel>Your Message</FormLabel>
 			<Textarea
@@ -148,11 +150,18 @@ export default function ContactForm(): JSX.Element {
 				_hover={{ backgroundColor: "transparent" }}
 				mb={4}
 				value={message}
-				onChange={(text) =>
-					{ dispatch({ type: "message", payload: text.target.value }); }
-				}
+				onChange={(text) => {
+					dispatch({ type: "message", payload: text.target.value });
+				}}
 			/>
-			<Button onClick={() => { console.log(state); }} color="white">Send</Button>
+			<Button
+				onClick={() => {
+					console.log(state);
+				}}
+				color="white"
+			>
+				Send
+			</Button>
 		</FormControl>
 	);
 }

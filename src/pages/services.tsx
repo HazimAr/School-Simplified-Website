@@ -1,70 +1,108 @@
-import {
-	Box,
-	Button,
-	Divider,
-	Flex,
-	Heading,
-	Image,
-	Link,
-	Text,
-} from "@chakra-ui/react";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
+import { Flex, Heading, Link, Text, Image, Box } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 
 const items = [
-	"Essay Proofreading",
-	"Free Tutoring",
-	"24/7 Chat Helping",
-	"College + HS Prep",
-	"SAT/ACT Prep",
+	{
+		title: "Essay Proofreading",
+		link: "/essay",
+		external: false,
+	},
+	{
+		title: "Free Tutoring",
+		link: "/tutoring",
+		external: false,
+	},
+	{
+		title: "College + HS Prep",
+		link: "/cprep",
+		external: false,
+	},
+	{
+		title: "SAT/ACT Prep",
+		link: "/satprep",
+		external: false,
+	},
+	{
+		title: "24/7 Chat Help",
+		link: "https://discord.gg/school",
+		external: true,
+	},
 ];
 
 export default function Services(): JSX.Element {
 	return (
 		<>
-			<Container backgroundColor="#BEC6FDD6">
-				<ContainerInside p="20px">
-					<Heading textAlign="left" mb="15px" fontSize="28px">
-						Our Services
-					</Heading>
-					<Text textAlign="left">
-						Although a non-profit organization, School Simplified
-						offers the quality services of a profit-based company.
-						With areas specifically dedicated to free tutoring,
-						homework help, and essay proofreading, we can help guide
-						you through your educational experience!
-					</Text>
+			<Container bg="brand.transparent">
+				<ContainerInside py={8}>
+					<Flex alignItems="center">
+						<Box>
+							<Heading textAlign="left" mb={5} size="lg">
+								Our Services
+							</Heading>
+							<Text textAlign="left">
+								Although a non-profit organization, School
+								Simplified offers the quality services of a
+								profit-based company. With areas specifically
+								dedicated to free tutoring, homework help, and
+								essay proofreading, we can help guide you
+								through your educational experience!
+							</Text>
+						</Box>
+						<Image
+							src="/undraw/services.svg"
+							h={[0, 150, 200]}
+							float="right"
+							display={["none", "block", "block"]}
+							ml={7}
+						/>
+					</Flex>
 				</ContainerInside>
 			</Container>
-			<Container backgroundColor="#BEC6FDD6">
-				<ContainerInside pb="20px">
+			<Container bg="brand.transparent">
+				<ContainerInside pb={8}>
 					<Flex justifyContent="space-evenly" flexWrap="wrap">
 						{items.map((item, i: number) => {
 							return (
-								<Box
-									rounded="30px"
-									backgroundColor="#FFFFFF7A"
+								<Link
+									href={item.link}
+									isExternal={item.external}
+									_hover={{ textDecoration: "none" }}
 									key={"item_" + i}
-									m="10px 5px"
-									p="20px"
-									w="175px"
-									h="225px"
 								>
-									<Text
-										color="#5A60AD"
-										fontSize="21px"
-										textAlign="left"
+									<Flex
+										rounded={10}
+										bg="brand.transparent2"
+										my={3}
+										mx={2}
+										p={7}
+										w={175}
+										h={125}
+										alignItems="center"
+										_hover={{ transform: "scale(1.1)" }}
+										transition="all 0.15s ease"
 									>
-										{item}
-									</Text>
-								</Box>
+										<Text
+											color="brand.purple.light"
+											fontSize={20}
+											textAlign="center"
+										>
+											{item.title}
+											{item.external ? (
+												<ExternalLinkIcon mx={2} />
+											) : null}
+										</Text>
+									</Flex>
+								</Link>
 							);
 						})}
 					</Flex>
 				</ContainerInside>
 			</Container>
-			<Container>
-				<ContainerInside p="30px 20px">
+			{/* cut the middle section */}
+			{/* <Container>
+				<ContainerInside py="30px">
 					<Divider bg="white" />
 					<Flex
 						flexDirection="row-reverse"
@@ -72,7 +110,7 @@ export default function Services(): JSX.Element {
 						my="10px"
 					>
 						<Button
-							backgroundColor="transparent"
+							bg="transparent"
 							fontWeight="bold"
 							fontSize="28px"
 							minWidth="default"
@@ -82,7 +120,7 @@ export default function Services(): JSX.Element {
 							🠖
 						</Button>
 						<Button
-							backgroundColor="transparent"
+							bg="transparent"
 							fontWeight="bold"
 							fontSize="28px"
 							minWidth="default"
@@ -96,8 +134,6 @@ export default function Services(): JSX.Element {
 					<Flex justifyContent="space-between">
 						<Flex flexDirection="column-reverse" flex="2">
 							<Box mr="20px" maxW="258px">
-								{" "}
-								{/* maxW is hard-coded, so I need to find a good way to dynamically determine it soon */}
 								<Link
 									href="https://discord.gg/school"
 									isExternal
@@ -105,7 +141,7 @@ export default function Services(): JSX.Element {
 								>
 									<Box
 										p="15px"
-										backgroundColor="#FFFFFF7A"
+										bg="brand.transparent2"
 										rounded="40px"
 									>
 										<Flex
@@ -140,12 +176,12 @@ export default function Services(): JSX.Element {
 						</Flex>
 					</Flex>
 				</ContainerInside>
-			</Container>
-			<Container backgroundColor="#BEC6FDD6">
-				<ContainerInside px="20px" py="40px">
+			</Container> */}
+			{/* <Container bg="brand.transparent">
+				<ContainerInside py={13}>
 					<Flex justifyContent="space-between">
 						<Box flex="19" textAlign="left">
-							<Heading fontSize="28px" mb="15px">
+							<Heading size="lg" mb={5}>
 								About Our Services
 							</Heading>
 							<Text>
@@ -160,21 +196,17 @@ export default function Services(): JSX.Element {
 								occaecat cupidatat non proident, sunt in culpa
 								qui officia deserunt mollit anim id est laborum
 							</Text>
-						</Box>{" "}
-						{/* 184px */}
-						<Box flex="8" /> {/* 82px */}
+						</Box>
+						<Box flex="8" />
 						<Box
-							backgroundColor="#FFFFFF7A"
-							rounded="40px"
-							w="100px"
+							bg="brand.transparent2"
+							rounded={14}
+							w={100}
 							flex="19"
-						/>{" "}
-						{/* 195px */}
+						/>
 					</Flex>
 				</ContainerInside>
-			</Container>
-			<Container backgroundColor="#BEC6FDD6" h="150px" />{" "}
-			{/* accounting for extra space on the bottom*/}
+			</Container> */}
 		</>
 	);
 }

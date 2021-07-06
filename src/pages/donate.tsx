@@ -17,18 +17,10 @@ export default function Donate(): JSX.Element {
 	return (
 		<>
 			<Container>
-				<ContainerInside>
-					<Flex
-						justify="space-between"
-						align="center"
-						maxW="1200px"
-						w="100%"
-						textAlign="left"
-						flexWrap="wrap"
-						py="10px"
-					>
-						<Box maxW="400px">
-							<Heading size="md" py="15px">
+				<ContainerInside py="25px">
+					<Flex justify="center" maxW="1200px" flexWrap="wrap">
+						<Box maxW="400px" textAlign="center" mx="5%" my="20px">
+							<Heading size="md" pb="15px">
 								Support Us
 							</Heading>
 							<Text>
@@ -40,11 +32,10 @@ export default function Donate(): JSX.Element {
 								equity and success to to teenagers alike!
 							</Text>
 						</Box>
-						<Spacer />
 						<Flex flexDir="column" justify="center" align="center">
 							<Box
 								bg="brand.transparent"
-								boxSize="200px"
+								boxSize="175px"
 								borderRadius="25px"
 								p="20px"
 							>
@@ -56,30 +47,37 @@ export default function Donate(): JSX.Element {
 								href="https://www.paypal.com/donate?token=NJtH7jwgJYMkVXNf_gRWpy6_ZTCwIeS5ipOzTutEI6nR8eqc_aucztFhJ19B_Wh_-rx9v4ieAP6j9qPL&Z3JncnB0="
 								isExternal
 							>
-								<StyledButton>Donate Now</StyledButton>
+								<StyledButton my="15px">
+									Donate with PayPal
+								</StyledButton>
 							</Link>
 						</Flex>
 					</Flex>
 				</ContainerInside>
 			</Container>
 
-			<Container>
-				<ContainerInside py="25px">
-					<Heading size="lg" py="10px">
+			<Container
+				bg="brand.transparent"
+				pb="100px"
+				color="brand.purple.light"
+			>
+				<ContainerInside align="center">
+					<Heading size="lg" pt="20px">
 						Why support us?
 					</Heading>
 					<Flex
-						justify="space-between"
-						maxW="1200px"
-						w="100%"
+						justify="center"
+						align="center"
 						textAlign="left"
 						py="10px"
+						flexDir={{ base: "column", md: "row" }}
 					>
 						<Box
 							p="20px"
-							bg="rgb(255,0,0,0.5)"
-							mr="20px"
+							bg="brand.transparent2"
+							m="10px"
 							borderRadius="25px"
+							maxW="300px"
 						>
 							<Heading size="md" py="15px">
 								Services
@@ -93,9 +91,10 @@ export default function Donate(): JSX.Element {
 						<Spacer />
 						<Box
 							p="20px"
-							bg="rgb(255,0,0,0.5)"
-							mr="20px"
+							bg="brand.transparent2"
+							m="10px"
 							borderRadius="25px"
+							maxW="300px"
 						>
 							<Heading size="md" py="15px">
 								Community
@@ -107,7 +106,13 @@ export default function Donate(): JSX.Element {
 							</Text>
 						</Box>
 						<Spacer />
-						<Box p="20px" bg="rgb(255,0,0,0.5)" borderRadius="25px">
+						<Box
+							p="20px"
+							bg="brand.transparent2"
+							borderRadius="25px"
+							maxW="300px"
+							m="10px"
+						>
 							<Heading size="md" py="15px">
 								Team
 							</Heading>

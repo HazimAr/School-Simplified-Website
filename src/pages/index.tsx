@@ -1,11 +1,12 @@
-import { Here, Intro, Sponsors } from "@components/home/index";
+import { Discord, Here, Intro, Testimonial } from "@components/home/index";
 
 export default function Home(): JSX.Element {
 	return (
 		<>
 			<Intro />
-			<Sponsors />
 			<Here />
+			<Testimonial />
+			<Discord />
 		</>
 	);
 }

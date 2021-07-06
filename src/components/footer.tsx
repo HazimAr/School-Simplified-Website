@@ -8,6 +8,7 @@ import {
 	UnorderedList,
 } from "@chakra-ui/react";
 import Container from "@components/container";
+import ContainerInside from "@components/containerInside";
 import Wave from "react-wavify";
 
 const infos = [
@@ -101,84 +102,85 @@ const socials = [
 export default function Footer(): JSX.Element {
 	return (
 		<Box as="footer">
-			<Wave
-				fill="rgb(90, 96, 174)"
-				// paused
-				options={{
-					height: 130,
-					amplitude: 12,
-					speed: 0.25,
-					points: 7,
-				}}
-			/>
+			<Box mt="-100px">
+				<Wave
+					fill="rgb(90, 96, 174)"
+					// paused
+					options={{
+						height: 120,
+						amplitude: 12,
+						speed: 0.25,
+						points: 3,
+					}}
+				/>
+			</Box>
 			<Container bg="brand.purple.light" mt="-7px">
-				<Flex
-					justify="space-between"
-					maxW="1200px"
-					w="100%"
-					mx="50px"
-					textAlign="left"
-					flexWrap="wrap"
-					py="10px"
-				>
-					<Box>
-						<Heading size="md">Information</Heading>
-						<UnorderedList
-							styleType="none"
-							m="0"
-							p="0"
-							color="brand.gold"
-						>
-							{infos.map((info) => {
-								return (
-									<ListItem key={info.name}>
-										<Link href={info.link}>
-											{info.name}
-										</Link>
-									</ListItem>
-								);
-							})}
-						</UnorderedList>
-					</Box>
-					<Box>
-						<Heading size="md">Services</Heading>
-						<UnorderedList
-							styleType="none"
-							m="0"
-							p="0"
-							color="brand.gold"
-						>
-							{services.map((service) => {
-								return (
-									<ListItem key={service.name}>
-										<Link href={service.link}>
-											{service.name}
-										</Link>
-									</ListItem>
-								);
-							})}
-						</UnorderedList>
-					</Box>
-					<Box>
-						<Heading size="md">Join Us</Heading>
-						<UnorderedList
-							styleType="none"
-							m="0"
-							p="0"
-							color="brand.gold"
-						>
-							{socials.map((social) => {
-								return (
-									<ListItem key={social.name}>
-										<Link href={social.link} isExternal>
-											{social.name}
-										</Link>
-									</ListItem>
-								);
-							})}
-						</UnorderedList>
-					</Box>
-				</Flex>
+				<ContainerInside>
+					<Flex
+						justify="space-between"
+						textAlign="left"
+						flexWrap="wrap"
+						py="10px"
+					>
+						<Box>
+							<Heading size="md">Information</Heading>
+							<UnorderedList
+								styleType="none"
+								m="0"
+								p="0"
+								color="brand.gold"
+							>
+								{infos.map((info) => {
+									return (
+										<ListItem key={info.name}>
+											<Link href={info.link}>
+												{info.name}
+											</Link>
+										</ListItem>
+									);
+								})}
+							</UnorderedList>
+						</Box>
+						<Box>
+							<Heading size="md">Services</Heading>
+							<UnorderedList
+								styleType="none"
+								m="0"
+								p="0"
+								color="brand.gold"
+							>
+								{services.map((service) => {
+									return (
+										<ListItem key={service.name}>
+											<Link href={service.link}>
+												{service.name}
+											</Link>
+										</ListItem>
+									);
+								})}
+							</UnorderedList>
+						</Box>
+						<Box>
+							<Heading size="md">Follow Us</Heading>
+							<UnorderedList
+								styleType="none"
+								m="0"
+								p="0"
+								color="brand.gold"
+							>
+								{socials.map((social) => {
+									return (
+										<ListItem key={social.name}>
+											<Link href={social.link} isExternal>
+												{social.name}
+											</Link>
+										</ListItem>
+									);
+								})}
+							</UnorderedList>
+						</Box>
+					</Flex>
+				</ContainerInside>
 			</Container>
 			<Container bg="brand.purple.dark" py="10px">
 				<Flex

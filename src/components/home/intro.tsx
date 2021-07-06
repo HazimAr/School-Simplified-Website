@@ -9,25 +9,24 @@ export default function Intro() {
 	return (
 		<Container>
 			<ContainerInside>
-				<Flex
-					justify="center"
-					align="center"
-					mt="50px"
-					mb="50px"
-					flexWrap="wrap"
-				>
+				<Flex justify="center" align="center" mt={50} mb={50}>
 					<Box maxW="50ch" textAlign="left" my={`${spacing}px`}>
-						<Heading>The key to your future</Heading>
+						<Heading>The key to your educational success</Heading>
 						<Text my="10px">
-							Lorem ipsum dolor sit amet consectetur, adipisicing
-							elit. Culpa, ducimus inventore? Maiores incidunt
-							possimus corrupti provident modi consequuntur
+							School simplified is a student run non-profit
+							organization that aims to help students blah blah
+							blah blah blah blah blah blah blah blah blah blah
+							blah blah blah blah blah blah
 						</Text>
-						<Button>Request Now</Button>
+						<Button>Get Help Now</Button>
 					</Box>
 
 					<Box textAlign="left" my={`${spacing}px`}>
-						<Image h="300px" src="/undraw/education.svg" />
+						<Image
+							h="300px"
+							src="/undraw/education.svg"
+							display={["none", "none", "block"]}
+						/>
 					</Box>
 				</Flex>
 			</ContainerInside>

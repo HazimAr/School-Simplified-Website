@@ -49,12 +49,12 @@ export default function Contact(): JSX.Element {
 				>
 					<Box>
 						<ContactForm />
-					</Box>	
+					</Box>
 					<Image
 						src="/undraw/contact.svg"
 						alt="Contact Person"
 						h="350px"
-						mb={{ sm: 5	, lg: 0 }}
+						mb={{ sm: 5, lg: 0 }}
 					/>
 				</Flex>
 				<Flex flexDirection="column" align="stretch">

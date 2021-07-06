@@ -1,4 +1,4 @@
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, Box } from "@chakra-ui/react";
 import Footer from "@components/footer";
 import Header from "@components/header";
 import { pageview } from "@lib/gtag";
@@ -30,6 +30,7 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 
 			<ChakraProvider theme={theme}>
 				<Header />
+				<Box w="100vw" h="50px" />
 
 				<Component {...pageProps} />
 

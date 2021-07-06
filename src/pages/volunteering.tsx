@@ -1,6 +1,16 @@
-import { Heading, Text, Image, Flex, Box } from "@chakra-ui/react";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
+import {
+	Heading,
+	Text,
+	Image,
+	Flex,
+	Box,
+	Button,
+	Link,
+} from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
+import RotatingPanel from "@components/volunteering/rotating_panel";
 
 /**
  * The Volunteering page!
@@ -37,8 +47,24 @@ export default function Volunteering(): JSX.Element {
 					</Flex>
 				</ContainerInside>
 			</Container>
-			<Container bg="brand.transparent2">
-				<ContainerInside py={8}></ContainerInside>
+			<RotatingPanel />
+			<Container bg="brand.transparent">
+				<ContainerInside py={8}>
+					<Heading size="xl">Join Us Today!</Heading>
+					<Text my={3}>
+						Sign up to start helping fellow students for service
+						hours today!
+					</Text>
+					<Link
+						isExternal={true}
+						href="https://discord.gg/school"
+						_hover={{ textDecoration: "none" }}
+					>
+						<Button bg="brand.transparent">
+							Sign Up <ExternalLinkIcon mx={2} />
+						</Button>
+					</Link>
+				</ContainerInside>
 			</Container>
 		</>
 	);

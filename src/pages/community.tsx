@@ -10,6 +10,7 @@ import {
 	Spacer,
 	Text,
 	VStack,
+	HStack,
 	Wrap,
 	Modal,
 	ModalOverlay,
@@ -107,8 +108,8 @@ export default function Home(): JSX.Element {
 												I just wanted to do an abstract painting actually, representing this form of love
 												and the closed eyes explain the satisfaction , sensuality and happiness she feels in love ... 
 												And the half opened eyes represent shyness ...
-												I used blue coz 1) it's my fav colour and 
-												2) to give it a hallucinated look ... Like both of them are so much in love that 
+												I used blue coz 1: it's my fav colour and 
+												2: to give it a hallucinated look ... Like both of them are so much in love that 
 												they feel like they are hallucinated ... They cannot think about anything else ... 
 												They're madly in love "
 												<Heading size='xsm'>Follow aishi on instagram: @aeishthetic </Heading>
@@ -283,9 +284,9 @@ export default function Home(): JSX.Element {
 
 			<Container>
 				<ContainerInside>
-					<Flex textAlign="left">
-						<Wrap spacing="40px" margin="20px" mt="250px">
-							<VStack spacing={8}>
+					<Flex>
+						<Wrap spacing="40px" margin="20px" mt="30px" ml="500px">
+							<VStack spacing={6}>
 								<Heading>Our Socials</Heading>
 								<Container maxW="container.sm">
 									<Heading fontSize="18px">
@@ -299,76 +300,78 @@ export default function Home(): JSX.Element {
 								</Container>
 							</VStack>
 						</Wrap>
-
-						<Spacer />
-
-						<Wrap margin="30px" spacing="40px">
-							<VStack spacing={3}>
-								<Link href="" isExternal>
-									<Icon
-										as={RiSpotifyLine}
-										boxSize="90px"
-										color="white"
-									/>
-								</Link>
-
-								<Link
-									href="https://www.instagram.com/school.simplified/"
-									isExternal
-								>
-									<Icon
-										as={RiInstagramLine}
-										boxSize="90px"
-										color="white"
-									/>
-								</Link>
-
-								<Link
-									href="https://www.facebook.com/SchoolSimple/"
-									isExternal
-								>
-									<Icon
-										as={RiFacebookBoxLine}
-										boxSize="100px"
-										color="white"
-									/>
-								</Link>
-
-								<Link
-									href="https://www.tiktok.com/@schoolsimplified"
-									isExternal
-								>
-									<Icon
-										as={SiTiktok}
-										boxSize="80px"
-										color="white"
-									/>
-								</Link>
-
-								<Link
-									href="https://twitter.com/schoolsimplify"
-									isExternal
-								>
-									<Icon
-										as={RiTwitterLine}
-										boxSize="100px"
-										color="white"
-									/>
-								</Link>
-
-								<Link
-									href="https://www.linkedin.com/company/school-simplified"
-									isExternal
-								>
-									<Icon
-										as={RiLinkedinBoxLine}
-										boxSize="100px"
-										color="white"
-									/>
-								</Link>
-							</VStack>
-						</Wrap>
 					</Flex>
+				</ContainerInside>
+			</Container>
+
+			<Container>
+				<ContainerInside>
+					<Wrap margin="30px" spacing="40px" ml="200px">
+						<HStack spacing={3}>
+							<Link href="" isExternal>
+								<Icon
+									as={RiSpotifyLine}
+									boxSize="90px"
+									color="white"
+								/>
+							</Link>
+
+							<Link
+								href="https://www.instagram.com/school.simplified/"
+								isExternal
+							>
+								<Icon
+									as={RiInstagramLine}
+									boxSize="90px"
+									color="white"
+								/>
+							</Link>
+
+							<Link
+								href="https://www.facebook.com/SchoolSimple/"
+								isExternal
+							>
+								<Icon
+									as={RiFacebookBoxLine}
+									boxSize="100px"
+									color="white"
+								/>
+							</Link>
+
+							<Link
+								href="https://www.tiktok.com/@schoolsimplified"
+								isExternal
+							>
+								<Icon
+									as={SiTiktok}
+									boxSize="80px"
+									color="white"
+								/>
+							</Link>
+
+							<Link
+								href="https://twitter.com/schoolsimplify"
+								isExternal
+							>
+								<Icon
+									as={RiTwitterLine}
+									boxSize="100px"
+									color="white"
+								/>
+							</Link>
+
+							<Link
+								href="https://www.linkedin.com/company/school-simplified"
+								isExternal
+							>
+								<Icon
+									as={RiLinkedinBoxLine}
+									boxSize="100px"
+									color="white"
+								/>
+							</Link>
+						</HStack>
+					</Wrap>
 				</ContainerInside>
 			</Container>
 		</>

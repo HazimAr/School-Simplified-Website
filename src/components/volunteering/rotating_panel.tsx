@@ -70,6 +70,27 @@ export default class RotatingPanel extends React.Component<any, State> {
 						{this.state.innerPanels[this.state.index]}
 						<Button onClick={this.handleClickUp}>&gt;</Button>
 					</Flex>
+					{/* <Text>
+						({this.state.index + 1}&nbsp;/&nbsp;
+						{this.state.innerPanels.length})
+					</Text> */}
+					{teams.map((v, index: number) => {
+						const i = index;
+						return (
+							<Text
+								fontSize={15}
+								mx={2}
+								color={
+									i == this.state.index
+										? "white"
+										: "brand.purple.dark"
+								}
+								display="inline"
+							>
+								•
+							</Text>
+						);
+					})}
 				</ContainerInside>
 			</Container>
 		);

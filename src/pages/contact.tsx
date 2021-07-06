@@ -41,7 +41,7 @@ export default function Contact(): JSX.Element {
 					</Heading>
 				</Box>
 				<Flex
-					flexDirection={{ sm: "column-reverse", lg: "row" }}
+					flexDirection={{ base: "column-reverse", sm: "column-reverse", lg: "row" }}
 					justify="space-between"
 					align="center"
 					// px={{ sm: 10, md: 100, lg: 200 }}
@@ -54,7 +54,7 @@ export default function Contact(): JSX.Element {
 						src="/undraw/contact.svg"
 						alt="Contact Person"
 						h="350px"
-						mb={{ sm: 5, lg: 0 }}
+						mb={{ base: 5, sm: 5, lg: 0 }}
 					/>
 				</Flex>
 				<Flex flexDirection="column" align="stretch">

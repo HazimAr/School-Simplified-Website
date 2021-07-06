@@ -161,7 +161,7 @@ export default function Footer(): JSX.Element {
 							</UnorderedList>
 						</Box>
 						<Box>
-							<Heading size="md">Join Us</Heading>
+							<Heading size="md">Follow Us</Heading>
 							<UnorderedList
 								styleType="none"
 								m="0"

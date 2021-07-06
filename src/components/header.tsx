@@ -11,6 +11,7 @@ export default function Header(): JSX.Element {
 			py="10px"
 			w="100%"
 			position="fixed"
+			zIndex={1000}
 		>
 			<ContainerInside>
 				<Flex justify="space-between" align="center" flexWrap="wrap">

@@ -65,15 +65,15 @@ export default class RotatingPanel extends React.Component<any, State> {
 		return (
 			<Container bg="brand.transparent2" {...this.props}>
 				<ContainerInside py={8}>
-					<Flex alignItems="center" justifyContent="space-between">
+					<Flex
+						alignItems="center"
+						justifyContent="space-between"
+						mb={3}
+					>
 						<Button onClick={this.handleClickDown}>&lt;</Button>
 						{this.state.innerPanels[this.state.index]}
 						<Button onClick={this.handleClickUp}>&gt;</Button>
 					</Flex>
-					{/* <Text>
-						({this.state.index + 1}&nbsp;/&nbsp;
-						{this.state.innerPanels.length})
-					</Text> */}
 					{teams.map((_v, index: number) => {
 						const i = index;
 						return (
@@ -114,17 +114,28 @@ class Panel extends React.Component<PanelProps, any> {
 			<Flex
 				{...this.props}
 				justifyContent="space-between"
+				flexDir={["column", "column", "row"]}
 				alignItems="center"
 				overflow="auto"
 				flexGrow={1}
 				mx={3}
 			>
-				<Image src={this.props.src} h={[125, 175, 250]} />
+				<Image
+					src={this.props.src}
+					h={[125, 175, 250]}
+					mr={[0, 0, 3]}
+					mb={[3, 3, 0]}
+				/>
 				<Box>
-					<Heading size="lg" textAlign="right">
+					<Heading
+						size="lg"
+						textAlign={["center", "center", "right"]}
+					>
 						{this.props.teamname}
 					</Heading>
-					<Text textAlign="right">{this.props.teamdesc}</Text>
+					<Text textAlign={["center", "center", "right"]}>
+						{this.props.teamdesc}
+					</Text>
 				</Box>
 			</Flex>
 		);

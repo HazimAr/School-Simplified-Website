@@ -34,7 +34,7 @@ const items = [
 export default function Services(): JSX.Element {
 	return (
 		<>
-			<Container backgroundColor="brand.transparent">
+			<Container bg="brand.transparent">
 				<ContainerInside py={8}>
 					<Flex alignItems="center">
 						<Box>
@@ -60,7 +60,7 @@ export default function Services(): JSX.Element {
 					</Flex>
 				</ContainerInside>
 			</Container>
-			<Container backgroundColor="brand.transparent">
+			<Container bg="brand.transparent">
 				<ContainerInside pb={8}>
 					<Flex justifyContent="space-evenly" flexWrap="wrap">
 						{items.map((item, i: number) => {
@@ -73,7 +73,7 @@ export default function Services(): JSX.Element {
 								>
 									<Flex
 										rounded={10}
-										backgroundColor="brand.transparent2"
+										bg="brand.transparent2"
 										my={3}
 										mx={2}
 										p={7}
@@ -110,7 +110,7 @@ export default function Services(): JSX.Element {
 						my="10px"
 					>
 						<Button
-							backgroundColor="transparent"
+							bg="transparent"
 							fontWeight="bold"
 							fontSize="28px"
 							minWidth="default"
@@ -120,7 +120,7 @@ export default function Services(): JSX.Element {
 							🠖
 						</Button>
 						<Button
-							backgroundColor="transparent"
+							bg="transparent"
 							fontWeight="bold"
 							fontSize="28px"
 							minWidth="default"
@@ -141,7 +141,7 @@ export default function Services(): JSX.Element {
 								>
 									<Box
 										p="15px"
-										backgroundColor="brand.transparent2"
+										bg="brand.transparent2"
 										rounded="40px"
 									>
 										<Flex
@@ -177,7 +177,7 @@ export default function Services(): JSX.Element {
 					</Flex>
 				</ContainerInside>
 			</Container> */}
-			{/* <Container backgroundColor="brand.transparent">
+			{/* <Container bg="brand.transparent">
 				<ContainerInside py={13}>
 					<Flex justifyContent="space-between">
 						<Box flex="19" textAlign="left">
@@ -199,7 +199,7 @@ export default function Services(): JSX.Element {
 						</Box>
 						<Box flex="8" />
 						<Box
-							backgroundColor="brand.transparent2"
+							bg="brand.transparent2"
 							rounded={14}
 							w={100}
 							flex="19"

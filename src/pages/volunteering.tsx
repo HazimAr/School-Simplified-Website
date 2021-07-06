@@ -1,4 +1,6 @@
-import { Box } from "@chakra-ui/react";
+import { Heading, Text, Image, Flex, Box } from "@chakra-ui/react";
+import Container from "@components/container";
+import ContainerInside from "@components/containerInside";
 
 /**
  * The Volunteering page!
@@ -10,5 +12,34 @@ import { Box } from "@chakra-ui/react";
  * @returns
  */
 export default function Volunteering(): JSX.Element {
-	return <Box>404</Box>;
+	return (
+		<>
+			<Container bg="brand.transparent">
+				<ContainerInside py={8}>
+					<Flex alignItems="center">
+						<Box>
+							<Heading textAlign="left" size="lg" mb={3}>
+								Volunteering Opportunities
+							</Heading>
+							<Text textAlign="left">
+								htrcyg88u09j8hvhbm ngkhu8jj0vh gknhu9pgk vcgv
+								gvubh9byvug fghbuh gvh bvh hbi kjvhbn vh
+								gbhuiovj nbv
+							</Text>
+						</Box>
+						<Image
+							src="/undraw/community.svg"
+							h={[0, 100, 200]}
+							float="right"
+							display={["none", "block", "block"]}
+							ml={7}
+						/>
+					</Flex>
+				</ContainerInside>
+			</Container>
+			<Container bg="brand.transparent2">
+				<ContainerInside py={8}></ContainerInside>
+			</Container>
+		</>
+	);
 }

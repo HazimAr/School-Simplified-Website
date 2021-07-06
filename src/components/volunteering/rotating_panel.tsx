@@ -1,13 +1,28 @@
-import { Box, Image, Heading, Text } from "@chakra-ui/react";
+import { Box, Image, Heading, Text, Flex, Button } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import React, { ReactNode } from "react";
+import React, { ReactNode, MouseEvent } from "react";
 
 const teams: PanelProps[] = [
 	{
-		src: "https://picsum.photos/300/300",
-		teamName: "Example Team",
-		teamDesc: "alskjdfalkdsfj",
+		src: "https://picsum.photos/200/200",
+		teamname: "Example Team 1",
+		teamdesc: "alskjdfalkdsfj",
+	},
+	{
+		src: "https://picsum.photos/200/200",
+		teamname: "Example Team 2",
+		teamdesc: "grhdtxjcfkvyuhijko",
+	},
+	{
+		src: "https://picsum.photos/200/200",
+		teamname: "Example Team 3",
+		teamdesc: "fewgdtxhcgvnjm",
+	},
+	{
+		src: "https://picsum.photos/200/200",
+		teamname: "Example Team 4",
+		teamdesc: "dfsdgtxcfhujk",
 	},
 ];
 
@@ -24,20 +39,37 @@ export default class RotatingPanel extends React.Component<any, State> {
 			return (
 				<Panel
 					src={v.src}
-					teamName={v.teamName}
-					teamDesc={v.teamDesc}
+					teamname={v.teamname}
+					teamdesc={v.teamdesc}
 					key={"item_" + idx}
 				/>
 			);
 		});
 		this.state = { innerPanels: innerPanels, index: 0 };
+		this.handleClickUp = this.handleClickUp.bind(this);
+		this.handleClickDown = this.handleClickDown.bind(this);
+	}
+
+	handleClickUp(event: MouseEvent<HTMLButtonElement>) {
+		const newIdx = (this.state.index + 1) % this.state.innerPanels.length;
+		this.setState({ index: newIdx });
+	}
+
+	handleClickDown(event: MouseEvent<HTMLButtonElement>) {
+		let newIdx = this.state.index - 1;
+		if (newIdx < 0) newIdx += this.state.innerPanels.length;
+		this.setState({ index: newIdx });
 	}
 
 	render(): ReactNode {
 		return (
 			<Container bg="brand.transparent2" {...this.props}>
 				<ContainerInside py={8}>
-					{this.state.innerPanels[this.state.index]}
+					<Flex alignItems="center" justifyContent="space-between">
+						<Button onClick={this.handleClickDown}>&lt;</Button>
+						{this.state.innerPanels[this.state.index]}
+						<Button onClick={this.handleClickUp}>&gt;</Button>
+					</Flex>
 				</ContainerInside>
 			</Container>
 		);
@@ -47,8 +79,8 @@ export default class RotatingPanel extends React.Component<any, State> {
 interface PanelProps {
 	children?: any;
 	src: string;
-	teamName: string;
-	teamDesc: string;
+	teamname: string;
+	teamdesc: string;
 }
 
 class Panel extends React.Component<PanelProps, any> {
@@ -58,11 +90,22 @@ class Panel extends React.Component<PanelProps, any> {
 
 	render(): ReactNode {
 		return (
-			<Box {...this.props}>
-				<Image src={this.props.src} />
-				<Heading size="lg">{this.props.teamName}</Heading>
-				<Text>{this.props.teamDesc}</Text>
-			</Box>
+			<Flex
+				{...this.props}
+				justifyContent="space-between"
+				alignItems="center"
+				overflow="auto"
+				flexGrow={1}
+				mx={3}
+			>
+				<Image src={this.props.src} h={[125, 175, 250]} />
+				<Box>
+					<Heading size="lg" textAlign="right">
+						{this.props.teamname}
+					</Heading>
+					<Text textAlign="right">{this.props.teamdesc}</Text>
+				</Box>
+			</Flex>
 		);
 	}
 }

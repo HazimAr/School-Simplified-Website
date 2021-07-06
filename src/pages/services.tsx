@@ -67,8 +67,8 @@ export default function Services(): JSX.Element {
 							return (
 								<Link
 									href={item.link}
-									isExternal
-									textDecoration="none!important"
+									isExternal={item.external}
+									_hover={{ textDecoration: "none" }}
 									key={"item_" + i}
 								>
 									<Flex

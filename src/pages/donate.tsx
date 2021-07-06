@@ -18,11 +18,7 @@ export default function Donate(): JSX.Element {
 		<>
 			<Container>
 				<ContainerInside py="25px">
-					<Flex
-						justify="center"
-						maxW="1200px"
-						flexWrap="wrap"
-					>
+					<Flex justify="center" maxW="1200px" flexWrap="wrap">
 						<Box maxW="400px" textAlign="center" mx="5%" my="20px">
 							<Heading size="md" pb="15px">
 								Support Us

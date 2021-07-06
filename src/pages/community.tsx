@@ -23,7 +23,6 @@ import {
 	useDisclosure,
 	UnorderedList,
 	ListItem,
-
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -38,7 +37,7 @@ import {
 import { SiTiktok } from "react-icons/si";
 
 export default function Home(): JSX.Element {
-	const { isOpen, onOpen, onClose } = useDisclosure()
+	const { isOpen, onOpen, onClose } = useDisclosure();
 	return (
 		<>
 			<Container bg="brand.purple.dark" maxW="xlg">
@@ -77,62 +76,101 @@ export default function Home(): JSX.Element {
 									justify="center"
 									align="center"
 								>
-										<Box
-											boxSize="500px"
-											backgroundColor="brand.transparent2"
-											padding="5px"
-											rounded="65px"
+									<Box
+										boxSize="500px"
+										backgroundColor="brand.transparent2"
+										padding="5px"
+										rounded="65px"
+									>
+										<Button
+											onClick={onOpen}
+											size="450px"
+											rounded="60px"
 										>
-										
-										<Button onClick={onOpen} size ="450px" rounded ="60px">
-											<Image 
-											src = "june.jpg"
-											boxSize="450px"
-											rounded = "50px"
-											objectFit="cover"
-											margin ='20px'
+											<Image
+												src="june.jpg"
+												boxSize="450px"
+												rounded="50px"
+												objectFit="cover"
+												margin="20px"
 											/>
-											
 										</Button>
-										<Modal isOpen={isOpen} onClose={onClose} isCentered  motionPreset="slideInRight">
+										<Modal
+											isOpen={isOpen}
+											onClose={onClose}
+											isCentered
+											motionPreset="slideInRight"
+										>
 											<ModalOverlay />
 											<ModalContent>
-											<ModalHeader>June Art Contest Winner</ModalHeader>
-											<ModalCloseButton />
-											<ModalBody>
-												This months art contest prompt was: Embracement of Love and Identity. 
-												Our winner for June was <Heading size='sm'>aishi! (aishi🦋#1613)</Heading>
-												<Heading size='sm'>Artist Description:</Heading> 
-												"I thought it to be a pride month painting as you can see two female faces intertwined with each other... 
-												Like they are deeply connected mentally and physically
-												I just wanted to do an abstract painting actually, representing this form of love
-												and the closed eyes explain the satisfaction , sensuality and happiness she feels in love ... 
-												And the half opened eyes represent shyness ...
-												I used blue coz 1: it's my fav colour and 
-												2: to give it a hallucinated look ... Like both of them are so much in love that 
-												they feel like they are hallucinated ... They cannot think about anything else ... 
-												They're madly in love "
-												<Heading size='xsm'>Follow aishi on instagram: @aeishthetic </Heading>
+												<ModalHeader>
+													June Art Contest Winner
+												</ModalHeader>
+												<ModalCloseButton />
+												<ModalBody>
+													This months art contest
+													prompt was: Embracement of
+													Love and Identity. Our
+													winner for June was{" "}
+													<Heading size="sm">
+														aishi! (aishi🦋#1613)
+													</Heading>
+													<Heading size="sm">
+														Artist Description:
+													</Heading>
+													"I thought it to be a pride
+													month painting as you can
+													see two female faces
+													intertwined with each
+													other... Like they are
+													deeply connected mentally
+													and physically I just wanted
+													to do an abstract painting
+													actually, representing this
+													form of love and the closed
+													eyes explain the
+													satisfaction , sensuality
+													and happiness she feels in
+													love ... And the half opened
+													eyes represent shyness ... I
+													used blue coz 1: it's my fav
+													colour and 2: to give it a
+													hallucinated look ... Like
+													both of them are so much in
+													love that they feel like
+													they are hallucinated ...
+													They cannot think about
+													anything else ... They're
+													madly in love "
+													<Heading size="xsm">
+														Follow aishi on
+														instagram: @aeishthetic{" "}
+													</Heading>
+												</ModalBody>
 
-											</ModalBody>
-
-											<ModalFooter>
-												<Button colorScheme="purple" mr={3} onClick={onClose} variant ="outline">
-												Close
-												</Button>
-												<Button variant="ghost" onClick={onOpen}>Art Contest Info</Button>
-												
-
-											</ModalFooter>
+												<ModalFooter>
+													<Button
+														colorScheme="purple"
+														mr={3}
+														onClick={onClose}
+														variant="outline"
+													>
+														Close
+													</Button>
+													<Button
+														variant="ghost"
+														onClick={onOpen}
+													>
+														Art Contest Info
+													</Button>
+												</ModalFooter>
 											</ModalContent>
 										</Modal>
-			
-										</Box>
+									</Box>
 
-										<Text fontSize="sm">
-											Artwork from our event winners!
-										</Text>
-
+									<Text fontSize="sm">
+										Artwork from our event winners!
+									</Text>
 								</Flex>
 							</VStack>
 						</Wrap>
@@ -151,18 +189,26 @@ export default function Home(): JSX.Element {
 								>
 									<VStack>
 										<Heading>Events</Heading>
-										<Heading color="#5A60AD" size="sm" >Our Event team works hard to put together events and contests for our community!
-										They offer:
+										<Heading color="#5A60AD" size="sm">
+											Our Event team works hard to put
+											together events and contests for our
+											community! They offer:
 										</Heading>
 										<UnorderedList color="#6670e3">
-											<ListItem> Monthly Art Contests </ListItem>
-											<ListItem>Music Talent Show</ListItem>
+											<ListItem>
+												{" "}
+												Monthly Art Contests{" "}
+											</ListItem>
+											<ListItem>
+												Music Talent Show
+											</ListItem>
 											<ListItem>Karaoke</ListItem>
 											<ListItem>Game Night</ListItem>
 										</UnorderedList>
-										<Heading color="#5A60AD" size="sm">Join our discord server to participate in these events!</Heading>
-
-
+										<Heading color="#5A60AD" size="sm">
+											Join our discord server to
+											participate in these events!
+										</Heading>
 									</VStack>
 								</Flex>
 
@@ -175,34 +221,51 @@ export default function Home(): JSX.Element {
 									alignContent="left"
 								>
 									<VStack>
-										<Heading pt='10px'>Music</Heading>
-										<Heading color="#5A60AD" size="sm" >Our team has put together playlists of music for you to enjoy!</Heading>
-										<Link href="https://open.spotify.com/playlist/5xy112KNO4WBzaxR1tioT9?si=cbf67fcfe567406b&nd=1" isExternal>
-											<Heading color="#6670e3" size="xsm" >
-												Study Lofi 
+										<Heading pt="10px">Music</Heading>
+										<Heading color="#5A60AD" size="sm">
+											Our team has put together playlists
+											of music for you to enjoy!
+										</Heading>
+										<Link
+											href="https://open.spotify.com/playlist/5xy112KNO4WBzaxR1tioT9?si=cbf67fcfe567406b&nd=1"
+											isExternal
+										>
+											<Heading color="#6670e3" size="xsm">
+												Study Lofi
 											</Heading>
 										</Link>
 
-									<Link href ="https://open.spotify.com/playlist/2qfpV3Cv3LGASgLk5DDIwA?si=df83f8b734784065" isExternal>
-										<Heading color="#6670e3" size="xsm">
-											Jazz Lofi
+										<Link
+											href="https://open.spotify.com/playlist/2qfpV3Cv3LGASgLk5DDIwA?si=df83f8b734784065"
+											isExternal
+										>
+											<Heading color="#6670e3" size="xsm">
+												Jazz Lofi
+											</Heading>
+										</Link>
+
+										<Link
+											href="https://open.spotify.com/playlist/3KUCDUAke9JNCi3EC3DR4A?si=b84da9bd407d43f2"
+											isExternal
+										>
+											<Heading color="#6670e3" size="xsm">
+												90s Pop
+											</Heading>
+										</Link>
+
+										<Link
+											href="https://open.spotify.com/playlist/1lhX7W0NEvzMSsFCkQfxk4?si=5c16816fc6974f87"
+											isExternal
+										>
+											<Heading color="#6670e3" size="xsm">
+												2010-2015 Pop
+											</Heading>
+										</Link>
+
+										<Heading color="#5A60AD" size="5px">
+											Check out our Spotify for the
+											complete list of playlists!
 										</Heading>
-									</Link>
-
-									<Link href="https://open.spotify.com/playlist/3KUCDUAke9JNCi3EC3DR4A?si=b84da9bd407d43f2" isExternal>
-										<Heading color="#6670e3" size="xsm">
-											90s Pop
-										</Heading>
-									</Link>
-
-									<Link href="https://open.spotify.com/playlist/1lhX7W0NEvzMSsFCkQfxk4?si=5c16816fc6974f87" isExternal>
-										<Heading color="#6670e3" size="xsm">2010-2015 Pop</Heading>
-									</Link>
-
-									<Heading color="#5A60AD" size="5px">Check out our
-									Spotify for the complete list of playlists!
-									 </Heading>
-
 									</VStack>
 								</Flex>
 

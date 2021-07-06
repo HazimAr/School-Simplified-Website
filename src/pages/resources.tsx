@@ -17,7 +17,6 @@ export default function Resources(): JSX.Element {
 						</Text>
 					</Box>
 					<Box flex="2" bg="brand.purple.dark">
-					
 						hehe img here
 					</Box>
 				</Flex>

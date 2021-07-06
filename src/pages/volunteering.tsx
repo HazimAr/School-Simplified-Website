@@ -1,6 +1,7 @@
 import { Heading, Text, Image, Flex, Box } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
+import RotatingPanel from "@components/volunteering/rotating_panel";
 
 /**
  * The Volunteering page!
@@ -37,9 +38,7 @@ export default function Volunteering(): JSX.Element {
 					</Flex>
 				</ContainerInside>
 			</Container>
-			<Container bg="brand.transparent2">
-				<ContainerInside py={8}></ContainerInside>
-			</Container>
+			<RotatingPanel />
 		</>
 	);
 }

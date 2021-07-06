@@ -19,7 +19,10 @@ import {
 	ModalBody,
 	ModalCloseButton,
 	Button,
-	useDisclosure
+	useDisclosure,
+	UnorderedList,
+	ListItem,
+
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -41,10 +44,10 @@ export default function Home(): JSX.Element {
 				<Wrap justify="center">
 					<ContainerInside>
 						<Image
-							src="./duck_group_shot.png"
+							src="duck_group_shot.png"
 							alt="duck group shot"
 							objectFit="cover"
-							boxSize="250px"
+							boxSize="220px"
 						/>
 					</ContainerInside>
 				</Wrap>
@@ -84,14 +87,13 @@ export default function Home(): JSX.Element {
 											<Image 
 											src = "june.jpg"
 											boxSize="450px"
-											alt = "Winner of June Art Contest!"
 											rounded = "50px"
 											objectFit="cover"
 											margin ='20px'
 											/>
 											
 										</Button>
-										<Modal isOpen={isOpen} onClose={onClose} isCentered>
+										<Modal isOpen={isOpen} onClose={onClose} isCentered  motionPreset="slideInRight">
 											<ModalOverlay />
 											<ModalContent>
 											<ModalHeader>June Art Contest Winner</ModalHeader>
@@ -118,6 +120,7 @@ export default function Home(): JSX.Element {
 												Close
 												</Button>
 												<Button variant="ghost" onClick={onOpen}>Art Contest Info</Button>
+												
 
 											</ModalFooter>
 											</ModalContent>
@@ -145,17 +148,61 @@ export default function Home(): JSX.Element {
 									rounded="40px"
 									alignContent="left"
 								>
-									<Heading>Events</Heading>
+									<VStack>
+										<Heading>Events</Heading>
+										<Heading color="#5A60AD" size="sm" >Our Event team works hard to put together events and contests for our community!
+										They offer:
+										</Heading>
+										<UnorderedList color="#6670e3">
+											<ListItem> Monthly Art Contests </ListItem>
+											<ListItem>Music Talent Show</ListItem>
+											<ListItem>Karaoke</ListItem>
+											<ListItem>Game Night</ListItem>
+										</UnorderedList>
+										<Heading color="#5A60AD" size="sm">Join our discord server to participate in these events!</Heading>
+
+
+									</VStack>
 								</Flex>
 
 								<Flex
 									boxSize="300px"
 									backgroundColor="brand.transparent"
 									padding="20px"
+									pt="6px"
 									rounded="40px"
 									alignContent="left"
 								>
-									<Heading>Music</Heading>
+									<VStack>
+										<Heading pt='10px'>Music</Heading>
+										<Heading color="#5A60AD" size="sm" >Our team has put together playlists of music for you to enjoy!</Heading>
+										<Link href="https://open.spotify.com/playlist/5xy112KNO4WBzaxR1tioT9?si=cbf67fcfe567406b&nd=1" isExternal>
+											<Heading color="#6670e3" size="xsm" >
+												Study Lofi 
+											</Heading>
+										</Link>
+
+									<Link href ="https://open.spotify.com/playlist/2qfpV3Cv3LGASgLk5DDIwA?si=df83f8b734784065" isExternal>
+										<Heading color="#6670e3" size="xsm">
+											Jazz Lofi
+										</Heading>
+									</Link>
+
+									<Link href="https://open.spotify.com/playlist/3KUCDUAke9JNCi3EC3DR4A?si=b84da9bd407d43f2" isExternal>
+										<Heading color="#6670e3" size="xsm">
+											90s Pop
+										</Heading>
+									</Link>
+
+									<Link href="https://open.spotify.com/playlist/1lhX7W0NEvzMSsFCkQfxk4?si=5c16816fc6974f87" isExternal>
+										<Heading color="#6670e3" size="xsm">2010-2015 Pop</Heading>
+									</Link>
+
+									<Heading color="#5A60AD" size="5px">Check out our
+									Spotify for the complete list of playlists!
+									 </Heading>
+
+									</VStack>
 								</Flex>
 
 								<Flex

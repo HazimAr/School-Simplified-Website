@@ -22,10 +22,9 @@ export default function Donate(): JSX.Element {
 						justify="center"
 						maxW="1200px"
 						flexWrap="wrap"
-						py="10px"
 					>
-						<Box maxW="400px" textAlign="center" mr="5%" mt="10px">
-							<Heading size="md" py="15px">
+						<Box maxW="400px" textAlign="center" mx="5%" my="20px">
+							<Heading size="md" pb="15px">
 								Support Us
 							</Heading>
 							<Text>
@@ -67,19 +66,20 @@ export default function Donate(): JSX.Element {
 				color="brand.purple.light"
 			>
 				<ContainerInside align="center">
-					<Heading size="lg" py="20px">
+					<Heading size="lg" pt="20px">
 						Why support us?
 					</Heading>
 					<Flex
 						justify="center"
-						maxW="1000px"
+						align="center"
 						textAlign="left"
 						py="10px"
+						flexDir={{ base: "column", md: "row" }}
 					>
 						<Box
 							p="20px"
-							bg="rgb(230, 242, 255, 0.5)"
-							mr="20px"
+							bg="brand.transparent2"
+							m="10px"
 							borderRadius="25px"
 							maxW="300px"
 						>
@@ -95,8 +95,8 @@ export default function Donate(): JSX.Element {
 						<Spacer />
 						<Box
 							p="20px"
-							bg="rgb(230, 242, 255, 0.5)"
-							mr="20px"
+							bg="brand.transparent2"
+							m="10px"
 							borderRadius="25px"
 							maxW="300px"
 						>
@@ -112,9 +112,10 @@ export default function Donate(): JSX.Element {
 						<Spacer />
 						<Box
 							p="20px"
-							bg="rgb(230, 242, 255, 0.5)"
+							bg="brand.transparent2"
 							borderRadius="25px"
 							maxW="300px"
+							m="10px"
 						>
 							<Heading size="md" py="15px">
 								Team

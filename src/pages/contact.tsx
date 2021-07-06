@@ -1,8 +1,8 @@
 import { Box, Flex, Heading, Image } from "@chakra-ui/react";
-import ContactForm from "@components/contact-form";
+import ContactForm from "@components/contact/contact-form";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import FaqList from "@components/faq-list";
+import FaqList from "@components/contact/faq-list";
 
 export default function Contact(): JSX.Element {
 	const qaPairs = [

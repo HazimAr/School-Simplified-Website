@@ -50,12 +50,12 @@ export default class RotatingPanel extends React.Component<any, State> {
 		this.handleClickDown = this.handleClickDown.bind(this);
 	}
 
-	handleClickUp(event: MouseEvent<HTMLButtonElement>) {
+	handleClickUp(_event: MouseEvent<HTMLButtonElement>) {
 		const newIdx = (this.state.index + 1) % this.state.innerPanels.length;
 		this.setState({ index: newIdx });
 	}
 
-	handleClickDown(event: MouseEvent<HTMLButtonElement>) {
+	handleClickDown(_event: MouseEvent<HTMLButtonElement>) {
 		let newIdx = this.state.index - 1;
 		if (newIdx < 0) newIdx += this.state.innerPanels.length;
 		this.setState({ index: newIdx });
@@ -74,7 +74,7 @@ export default class RotatingPanel extends React.Component<any, State> {
 						({this.state.index + 1}&nbsp;/&nbsp;
 						{this.state.innerPanels.length})
 					</Text> */}
-					{teams.map((v, index: number) => {
+					{teams.map((_v, index: number) => {
 						const i = index;
 						return (
 							<Text

@@ -20,6 +20,7 @@ export default function FaqList({ list }: FaqListProps): JSX.Element {
 			onChange={(newExpanded: number[]) => {
 				setExpanded(newExpanded);
 			}}
+			zIndex={0}
 		>
 			{list.map(({ question, answer }, index): JSX.Element => {
 				return (

@@ -69,17 +69,19 @@ export default function Services(): JSX.Element {
 									href={item.link}
 									isExternal
 									textDecoration="none!important"
+									key={"item_" + i}
 								>
 									<Flex
 										rounded={10}
 										backgroundColor="brand.transparent2"
-										key={"item_" + i}
 										my={3}
 										mx={2}
 										p={7}
 										w={175}
 										h={125}
 										alignItems="center"
+										_hover={{ transform: "scale(1.1)" }}
+										transition="all 0.15s ease"
 									>
 										<Text
 											color="brand.purple.light"

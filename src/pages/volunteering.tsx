@@ -29,13 +29,13 @@ export default function Volunteering(): JSX.Element {
 				<ContainerInside py={8}>
 					<Flex alignItems="center">
 						<Box flex={1}>
-							<Heading textAlign="left" size="lg" mb={3}>
+							<Heading textAlign="left" size="xl" mb={3}>
 								Volunteering Opportunities
 							</Heading>
-							<Text textAlign="left">
-								htrcyg88u09j8hvhbm ngkhu8jj0vh gknhu9pgk vcgv
-								gvubh9byvug fghbuh gvh bvh hbi kjvhbn vh
-								gbhuiovj nbv
+							<Text textAlign="left" fontSize={21}>
+								We have a wide variety of positions available
+								that can fit any of a wide range of skills or
+								interests!
 							</Text>
 						</Box>
 						<Image
@@ -49,7 +49,7 @@ export default function Volunteering(): JSX.Element {
 					</Flex>
 					<Divider bg="white" my={5} />
 					<Heading size="lg" mb={3}>
-						Why Volunteer for Us?
+						Why volunteer for us?
 					</Heading>
 					<Flex
 						alignItems="stretch"

@@ -65,16 +65,36 @@ export default class RotatingPanel extends React.Component<any, State> {
 		return (
 			<Container bg="brand.transparent2" {...this.props}>
 				<ContainerInside py={8}>
+					<Heading size="lg" mb={3}>
+						What can I Volunteer For?
+					</Heading>
 					<Flex
 						alignItems="center"
 						justifyContent="space-between"
 						mb={3}
+						position="relative"
 					>
-						<Button onClick={this.handleClickDown} height="100%">
+						<Button
+							onClick={this.handleClickDown}
+							position="absolute"
+							height="100%"
+							left={0}
+							top={0}
+							bg="brand.transparent"
+						>
 							&lt;
 						</Button>
 						{this.state.innerPanels[this.state.index]}
-						<Button onClick={this.handleClickUp}>&gt;</Button>
+						<Button
+							onClick={this.handleClickUp}
+							position="absolute"
+							height="100%"
+							right={0}
+							top={0}
+							bg="brand.transparent"
+						>
+							&gt;
+						</Button>
 					</Flex>
 					{teams.map((_v, index: number) => {
 						return (
@@ -114,13 +134,12 @@ class Panel extends React.Component<PanelProps, any> {
 	render(): ReactNode {
 		return (
 			<Flex
-				{...this.props}
 				justifyContent="space-between"
 				flexDir={{ base: "column", md: "row" }}
 				alignItems="center"
 				overflow="auto"
 				flexGrow={1}
-				mx={3}
+				mx="60px"
 			>
 				<Image
 					src={this.props.src}

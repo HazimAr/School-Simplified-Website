@@ -29,7 +29,7 @@ export default function Volunteering(): JSX.Element {
 				<ContainerInside py={8}>
 					<Flex alignItems="center">
 						<Box flex={1}>
-							<Heading textAlign="left" size="lg" mb={3}>
+							<Heading textAlign="left" size="xl" mb={3}>
 								Volunteering Opportunities
 							</Heading>
 							<Text textAlign="left">

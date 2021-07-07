@@ -70,22 +70,24 @@ export default class RotatingPanel extends React.Component<any, State> {
 						justifyContent="space-between"
 						mb={3}
 					>
-						<Button onClick={this.handleClickDown}>&lt;</Button>
+						<Button onClick={this.handleClickDown} height="100%">
+							&lt;
+						</Button>
 						{this.state.innerPanels[this.state.index]}
 						<Button onClick={this.handleClickUp}>&gt;</Button>
 					</Flex>
 					{teams.map((_v, index: number) => {
-						const i = index;
 						return (
 							<Text
 								fontSize={15}
 								mx={2}
 								color={
-									i == this.state.index
+									index == this.state.index
 										? "white"
 										: "brand.purple.dark"
 								}
 								display="inline"
+								key={"text_" + index}
 							>
 								•
 							</Text>

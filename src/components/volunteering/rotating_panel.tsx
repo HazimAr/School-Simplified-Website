@@ -116,7 +116,7 @@ class Panel extends React.Component<PanelProps, any> {
 			<Flex
 				{...this.props}
 				justifyContent="space-between"
-				flexDir={["column", "column", "row"]}
+				flexDir={{ base: "column", md: "row" }}
 				alignItems="center"
 				overflow="auto"
 				flexGrow={1}
@@ -124,9 +124,10 @@ class Panel extends React.Component<PanelProps, any> {
 			>
 				<Image
 					src={this.props.src}
-					h={[125, 175, 250]}
-					mr={[0, 0, 3]}
-					mb={[3, 3, 0]}
+					h={{ base: 100, sm: 200, md: 175, lg: 250 }}
+					// h={[125, 175, 250]}
+					mr={{ base: 0, md: 3 }}
+					mb={{ base: 3, md: 0 }}
 				/>
 				<Box>
 					<Heading

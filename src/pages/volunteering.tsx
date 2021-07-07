@@ -7,6 +7,7 @@ import {
 	Box,
 	Button,
 	Link,
+	Divider,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -19,7 +20,7 @@ import RotatingPanel from "@components/volunteering/rotating_panel";
  * Needs information about the different positions (e.g. tutoring, technical, marketing, HR, etc.) (images from Mossa, alsdkfjadlskfj, aisdfhalj) [in one box, same layout for each]
  * Needs a clear button that lets users sign up, which takes them to the Discord to reinforce call to action
  * Needs a couple Undraw images
- * @returns
+ * @returns the Volunteering page
  */
 export default function Volunteering(): JSX.Element {
 	return (
@@ -40,11 +41,98 @@ export default function Volunteering(): JSX.Element {
 						<Image
 							flex={{ base: 1, sm: 0 }}
 							src="/undraw/community.svg"
-							h={{ base: 0, md: 200, lg: 275 }}
+							h={{ base: 0, md: 175, lg: 275 }}
 							float="right"
 							display={["none", "block"]}
 							ml={7}
 						/>
+					</Flex>
+					<Divider bg="white" my={5} />
+					<Heading size="lg" mb={3}>
+						Why Volunteer for Us?
+					</Heading>
+					<Flex
+						alignItems="stretch"
+						justifyContent="space-between"
+						flexDir={{ base: "column", lg: "row" }}
+					>
+						<Box flex={1} my={4}>
+							<Heading fontStyle="italic" size="md" mb={2}>
+								Earn Volunteer Hours
+							</Heading>
+							<Text>
+								All volunteers can earn community service hours
+								and build up their volunteering experience. Our
+								active community provides a friendly tutoring
+								environment for all students.
+							</Text>
+						</Box>
+						<Box flex={0} mx={5}>
+							<Divider orientation="vertical" bg="white" />
+						</Box>
+						<Box flex={1} my={4}>
+							<Heading fontStyle="italic" size="md" mb={2}>
+								Learn New Skills
+							</Heading>
+							<Text>
+								Tutoring allows volunteers to discover many
+								different skills and experiences outside of the
+								classroom, including leadership and critical
+								thinking.
+							</Text>
+						</Box>
+						<Box flex={0} mx={5}>
+							<Divider orientation="vertical" bg="white" />
+						</Box>
+						<Box flex={1} my={4}>
+							<Heading fontStyle="italic" size="md" mb={2}>
+								Tutor Other Students
+							</Heading>
+							<Text>
+								Help other students with various subjects and
+								classes, at many different grade levels.
+							</Text>
+						</Box>
+					</Flex>
+					<Flex
+						alignItems="stretch"
+						justifyContent="space-between"
+						flexDir={{ base: "column", lg: "row" }}
+					>
+						<Box flex={1} my={4}>
+							<Heading fontStyle="italic" size="md" mb={2}>
+								Join the Community
+							</Heading>
+							<Text>
+								Join an interactive community of enthusiastic
+								students that are committed to learning
+							</Text>
+						</Box>
+						<Box flex={0} mx={5}>
+							<Divider orientation="vertical" bg="white" />
+						</Box>
+						<Box flex={1} my={4}>
+							<Heading fontStyle="italic" size="md" mb={2}>
+								Share Resources
+							</Heading>
+							<Text>
+								Contribute to our resources that are shared by
+								other students for mutual learning.
+							</Text>
+						</Box>
+						<Box flex={0} mx={5}>
+							<Divider orientation="vertical" bg="white" />
+						</Box>
+						<Box flex={1} my={4}>
+							<Heading fontStyle="italic" size="md" mb={2}>
+								Remote Tutoring
+							</Heading>
+							<Text>
+								Our Discord server allows volunteers to tutor
+								wherever and wherever, with the capacity to
+								choose their own hours
+							</Text>
+						</Box>
 					</Flex>
 				</ContainerInside>
 			</Container>

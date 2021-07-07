@@ -27,7 +27,7 @@ export default function Volunteering(): JSX.Element {
 			<Container bg="brand.transparent">
 				<ContainerInside py={8}>
 					<Flex alignItems="center">
-						<Box>
+						<Box flex={1}>
 							<Heading textAlign="left" size="lg" mb={3}>
 								Volunteering Opportunities
 							</Heading>
@@ -38,10 +38,11 @@ export default function Volunteering(): JSX.Element {
 							</Text>
 						</Box>
 						<Image
+							flex={{ base: 1, sm: 0 }}
 							src="/undraw/community.svg"
-							h={[0, 100, 200]}
+							h={{ base: 0, md: 200, lg: 275 }}
 							float="right"
-							display={["none", "block", "block"]}
+							display={["none", "block"]}
 							ml={7}
 						/>
 					</Flex>

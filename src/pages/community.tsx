@@ -33,6 +33,7 @@ import {
 	RiLinkedinBoxLine,
 	RiSpotifyLine,
 	RiTwitterLine,
+	RiDiscordLine
 } from "react-icons/ri";
 import { SiTiktok } from "react-icons/si";
 
@@ -276,7 +277,17 @@ export default function Home(): JSX.Element {
 									rounded="40px"
 									alignContent="left"
 								>
-									<Heading> Friends </Heading>
+									<VStack>
+										<Heading> Friends </Heading>
+										<Heading size="xsm" color="#5A60AD">
+										Start making new freinds from all around the world 
+										by joining our server. You can chat, voice call, 
+										play games, or even enter events with others and form 
+										long lasting connections!
+										</Heading>
+
+									 </VStack>
+
 								</Flex>
 							</VStack>
 						</Wrap>
@@ -302,30 +313,34 @@ export default function Home(): JSX.Element {
 										isExternal
 									>
 										<Icon
-											as={FaDiscord}
+											as={RiDiscordLine}
 											boxSize="320px"
 											color="brand.transparent2"
 										/>
 									</Link>
 								</Center>
 
-								<Text fontSize="27px" color="#5A60AD">
+								<Heading size="sm" color="#5A60AD">
 									Join our Discord. Come for the academic
 									help, stay for the events, live music, and
 									friends!
-								</Text>
+								</Heading>
 							</Box>
 						</Wrap>
 
 						<Spacer />
 						<Wrap spacing="30px" margin="20px">
-							{/* members box */}
 							<Box>
-								<Heading mb="36px"> Our Members </Heading>
-								<Heading size="sm">
-									Our community consists of members ranging
-									from teenagers to teachers alike.
+								<Heading mb="25px" mt="20px"> Our Members </Heading>
+								<Heading size="50px">
+								Our organization features a global community of 
+								over 60,000 teenagers! Diverse, open-minded, 
+								and inclusive, our students enjoy conversing in an 
+								equitable environment where every new acquaintance 
+								becomes a longtime friend!
 								</Heading>
+
+								<Image src="/undraw/connections.svg" mt="25px" />
 							</Box>
 						</Wrap>
 					</Flex>
@@ -336,7 +351,6 @@ export default function Home(): JSX.Element {
 
 			<Container>
 				<ContainerInside>
-					{/* staff box */}
 					<Heading mb="22px"> Our Staff </Heading>
 
 					<Heading fontSize="18px">School Simplified staff </Heading>
@@ -348,17 +362,13 @@ export default function Home(): JSX.Element {
 			<Container>
 				<ContainerInside>
 					<Flex>
-						<Wrap spacing="40px" margin="20px" mt="30px" ml="500px">
+						<Wrap spacing="40px" margin="20px" mt="30px" ml="285px">
 							<VStack spacing={6}>
 								<Heading>Our Socials</Heading>
 								<Container maxW="container.sm">
 									<Heading fontSize="18px">
-										Our organization features a global
-										community of over 60,000 teenagers!
-										Diverse, open-minded, and inclusive, our
-										students enjoy conversing in an
-										equitable environment where every new
-										acquaintance becomes a longtime friend!
+										Check out our socials for school tips, entertainment, music, 
+										podcasts (coming soon), and more!
 									</Heading>
 								</Container>
 							</VStack>
@@ -369,8 +379,9 @@ export default function Home(): JSX.Element {
 
 			<Container>
 				<ContainerInside>
-					<Wrap margin="30px" spacing="40px" ml="200px">
-						<HStack spacing={3}>
+					<Wrap margin="30px" spacing="40px" ml="280px">
+						<HStack spacing={5}>
+
 							<Link href="" isExternal>
 								<Icon
 									as={RiSpotifyLine}

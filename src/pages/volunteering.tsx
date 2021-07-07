@@ -1,13 +1,13 @@
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import {
-	Heading,
-	Text,
-	Image,
-	Flex,
 	Box,
 	Button,
-	Link,
 	Divider,
+	Flex,
+	Heading,
+	Image,
+	Link,
+	Text,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -136,7 +136,9 @@ export default function Volunteering(): JSX.Element {
 					</Flex>
 				</ContainerInside>
 			</Container>
+
 			<RotatingPanel />
+
 			<Container bg="brand.transparent">
 				<ContainerInside py={8}>
 					<Heading size="xl">Join Us Today!</Heading>

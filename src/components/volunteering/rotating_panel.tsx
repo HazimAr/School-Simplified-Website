@@ -1,28 +1,41 @@
-import { Box, Image, Heading, Text, Flex, Button } from "@chakra-ui/react";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
+import {
+	Box,
+	Image,
+	Heading,
+	Text,
+	Flex,
+	Button,
+	Link,
+} from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import React, { ReactNode, MouseEvent } from "react";
 
 const teams: PanelProps[] = [
 	{
-		src: "https://picsum.photos/200/200",
-		teamname: "Example Team 1",
+		teamname: "Academics",
 		teamdesc: "alskjdfalkdsfj",
+		src: "/logos/aca_logo.png",
+		link: "https://example.com/",
 	},
 	{
-		src: "https://picsum.photos/200/200",
-		teamname: "Example Team 2",
+		teamname: "Tech",
 		teamdesc: "grhdtxjcfkvyuhijko",
+		src: "/logos/tech_logo.png",
+		link: "https://example.com/",
 	},
 	{
-		src: "https://picsum.photos/200/200",
-		teamname: "Example Team 3",
+		teamname: "Marketing",
 		teamdesc: "fewgdtxhcgvnjm",
+		src: "/logos/mkt_logo.png",
+		link: "https://example.com/",
 	},
 	{
-		src: "/logos/hr_logo.png",
 		teamname: "Human Resources",
 		teamdesc: "dfsdgtxcfhujk",
+		src: "/logos/hr_logo.png",
+		link: "https://example.com/",
 	},
 ];
 
@@ -41,6 +54,7 @@ export default class RotatingPanel extends React.Component<any, State> {
 					src={v.src}
 					teamname={v.teamname}
 					teamdesc={v.teamdesc}
+					link={v.link}
 					key={"item_" + idx}
 				/>
 			);
@@ -124,6 +138,7 @@ interface PanelProps {
 	src: string;
 	teamname: string;
 	teamdesc: string;
+	link: string;
 }
 
 class Panel extends React.Component<PanelProps, any> {
@@ -144,7 +159,6 @@ class Panel extends React.Component<PanelProps, any> {
 				<Image
 					src={this.props.src}
 					h={{ base: 100, sm: 200, md: 175, lg: 250 }}
-					// h={[125, 175, 250]}
 					mr={{ base: 0, md: 3 }}
 					mb={{ base: 3, md: 0 }}
 				/>
@@ -158,6 +172,18 @@ class Panel extends React.Component<PanelProps, any> {
 					<Text textAlign={["center", "center", "right"]}>
 						{this.props.teamdesc}
 					</Text>
+
+					<Flex flexDir={{ base: "column", md: "row-reverse" }}>
+						<Link
+							isExternal={true}
+							href={this.props.link}
+							_hover={{ textDecoration: "none" }}
+						>
+							<Button bg="brand.transparent" mt={5}>
+								Join <ExternalLinkIcon mx={2} />
+							</Button>
+						</Link>
+					</Flex>
 				</Box>
 			</Flex>
 		);

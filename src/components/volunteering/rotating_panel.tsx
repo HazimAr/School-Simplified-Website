@@ -20,8 +20,8 @@ const teams: PanelProps[] = [
 		teamdesc: "fewgdtxhcgvnjm",
 	},
 	{
-		src: "https://picsum.photos/200/200",
-		teamname: "Example Team 4",
+		src: "/logos/hr_logo.png",
+		teamname: "Human Resources",
 		teamdesc: "dfsdgtxcfhujk",
 	},
 ];

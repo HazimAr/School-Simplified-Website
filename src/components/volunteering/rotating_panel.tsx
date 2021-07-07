@@ -66,7 +66,7 @@ export default class RotatingPanel extends React.Component<any, State> {
 			<Container bg="brand.transparent2" {...this.props}>
 				<ContainerInside py={8}>
 					<Heading size="lg" mb={3}>
-						What can I Volunteer For?
+						What can I volunteer for?
 					</Heading>
 					<Flex
 						alignItems="center"

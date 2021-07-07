@@ -2,6 +2,8 @@ import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 
+// Got to make all of the tabs of Subjects using Chakra
+
 export default function Resources(): JSX.Element {
 	return (
 		<Container>

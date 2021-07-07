@@ -41,7 +41,7 @@ export default function Contact(): JSX.Element {
 					</Heading>
 				</Box>
 				<Flex
-					flexDirection={{ base: "column-reverse", sm: "column-reverse", lg: "row" }}
+					flexDirection={{ base: "column-reverse", md: "column-reverse", lg: "row" }}
 					justify="space-between"
 					align="center"
 					// px={{ sm: 10, md: 100, lg: 200 }}

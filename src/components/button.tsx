@@ -3,7 +3,7 @@
 /* eslint-disable import/no-default-export */
 import { Box } from "@chakra-ui/react";
 
-export default function StyledButton(props: any): JSX.Element {
+export default function Button(props: any): JSX.Element {
 	return (
 		<Box
 			{...props}

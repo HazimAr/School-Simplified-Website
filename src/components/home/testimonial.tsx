@@ -30,9 +30,9 @@ export default function Intro() {
 				<Flex justify="center">
 					<Flex
 						justify="center"
-						textAlign={["center", "center", "center", "left"]}
-						flexDir={["column", "column", "column", "row"]}
-						maxW={[300, 450, 600, 1200]}
+						textAlign={{ base: "center", lg: "left" }}
+						flexDir={{ base: "column", lg: "row" }}
+						maxW={{ base: 300, sm: 450, md: 600, lg: 1200 }}
 					>
 						<Box>
 							<Text>"{Reviews[0].review}"</Text>
@@ -54,7 +54,7 @@ export default function Intro() {
 							<Divider orientation="vertical" bg="white" />
 						</Center>
 
-						<Box my={[10, 10, 10, 0]}>
+						<Box my={{ base: 10, lg: 0 }}>
 							<Text>"{Reviews[1].review}"</Text>
 							<Box>
 								<Heading as="h2" size="md">
@@ -68,7 +68,7 @@ export default function Intro() {
 						<Center
 							height={100}
 							mx={20}
-							display={["none", "none", "none", "block"]}
+							display={{ base: "none", lg: "block" }}
 						>
 							<Divider orientation="vertical" bg="white" />
 						</Center>

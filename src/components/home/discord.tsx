@@ -20,7 +20,7 @@ export default function Intro() {
 					align="center"
 					mt="50px"
 					mb="50px"
-					flexDir={["column-reverse", "column-reverse", "row"]}
+					flexDir={{ base: "column-reverse", md: "row" }}
 				>
 					<Box textAlign="left" my="" mx="25px">
 						<Image
@@ -32,7 +32,7 @@ export default function Intro() {
 
 					<Box
 						maxW="40ch"
-						textAlign={["center", "center", "left"]}
+						textAlign={{ base: "center", md: "left" }}
 						my=""
 						mx="25px"
 					>
@@ -42,7 +42,7 @@ export default function Intro() {
 						<Text my="10px">
 							Benefits of joining are as follows
 						</Text>
-						<Flex justify={["center", "center", "flex-start"]}>
+						<Flex justify={{ base: "center", md: "flex-start" }}>
 							<UnorderedList>
 								<ListItem>Lorem Ipsum</ListItem>
 								<ListItem>Lorem Ipsum</ListItem>

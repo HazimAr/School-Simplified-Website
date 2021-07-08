@@ -25,7 +25,7 @@ export default function Intro() {
 						<Image
 							h="300px"
 							src="/undraw/education.svg"
-							display={["none", "none", "block"]}
+							display={{ base: "none", md: "block" }}
 						/>
 					</Box>
 				</Flex>

@@ -82,7 +82,7 @@ export default function RotatingPanel(): JSX.Element {
 	});
 
 	return (
-		<Container bg="brand.transparent2">
+		<Container>
 			<ContainerInside py={8}>
 				<Heading size="lg" mb={3}>
 					What can I volunteer for?

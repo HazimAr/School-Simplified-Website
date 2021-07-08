@@ -173,16 +173,19 @@ function Panel(props: PanelProps): JSX.Element {
 					<Box>
 						<Heading
 							size="lg"
-							textAlign={["center", "center", "right"]}
+							textAlign={{ base: "center", lg: "right" }}
 						>
 							{props.teamName}
 						</Heading>
-						<Text textAlign={["center", "center", "right"]} my={2}>
+						<Text
+							textAlign={{ base: "center", lg: "right" }}
+							my={2}
+						>
 							{props.teamDesc}
 						</Text>
 						{props.teams ? (
 							<Text
-								textAlign={["center", "center", "right"]}
+								textAlign={{ base: "center", lg: "right" }}
 								fontStyle="italic"
 							>
 								Teams include{" "}

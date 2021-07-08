@@ -1,14 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable sonarjs/no-duplicate-string */
-import {
-	Box,
-	Button,
-	Divider,
-	Flex,
-	Heading,
-	Image,
-	Text,
-} from "@chakra-ui/react";
+import { Box, Divider, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import StaffCard from "@components/staffcard";

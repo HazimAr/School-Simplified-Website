@@ -13,7 +13,7 @@
 		"Boilerplate"
 	],
 	"scripts": {
-		"dev": "next dev",
+		"dev": "next dev -p 6969",
 		"build": "next build",
 		"start": "next start",
 		"clean": "npx prettier --write .",

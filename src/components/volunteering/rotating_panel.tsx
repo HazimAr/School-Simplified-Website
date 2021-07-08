@@ -116,6 +116,8 @@ export default class RotatingPanel extends React.Component<any, State> {
 							left={0}
 							top={0}
 							bg="brand.transparent"
+							w={{ base: 3, sm: 5, md: 10 }}
+							minW="unset"
 						>
 							&lt;
 						</Button>
@@ -127,6 +129,8 @@ export default class RotatingPanel extends React.Component<any, State> {
 							right={0}
 							top={0}
 							bg="brand.transparent"
+							w={{ base: 3, sm: 5, md: 10 }}
+							minW="unset"
 						>
 							&gt;
 						</Button>
@@ -176,7 +180,8 @@ class Panel extends React.Component<PanelProps, any> {
 				alignItems="center"
 				overflow="auto"
 				flexGrow={1}
-				mx="60px"
+				mx={{ base: 10, sm: 12, md: 16 }}
+				py={5}
 			>
 				<Image
 					src={this.props.src}

@@ -55,7 +55,7 @@ export default function Volunteering(): JSX.Element {
 			<Container bg="brand.transparent">
 				<ContainerInside py={8}>
 					<Flex alignItems="center">
-						<Box flexGrow={1}>
+						<Box flex={1}>
 							<Heading textAlign="left" size="xl" mb={3}>
 								Volunteering Opportunities
 							</Heading>
@@ -66,7 +66,7 @@ export default function Volunteering(): JSX.Element {
 							</Text>
 						</Box>
 						<Image
-							flexGrow={{ base: 1, sm: 0 }}
+							flex={{ base: 1, sm: 0 }}
 							src="/undraw/community.svg"
 							h={{ base: 0, md: 175, lg: 275 }}
 							float="right"
@@ -83,25 +83,25 @@ export default function Volunteering(): JSX.Element {
 						justifyContent="space-between"
 						flexDir={{ base: "column", lg: "row" }}
 					>
-						<Box flexGrow={1} my={4}>
+						<Box flex={1} my={4}>
 							<Heading fontStyle="italic" size="md" mb={2}>
 								{reasons[0].title}
 							</Heading>
 							<Text>{reasons[0].text}</Text>
 						</Box>
-						<Box flexGrow={0} mx={5}>
+						<Box flex={0} mx={5}>
 							<Divider orientation="vertical" bg="white" />
 						</Box>
-						<Box flexGrow={1} my={4}>
+						<Box flex={1} my={4}>
 							<Heading fontStyle="italic" size="md" mb={2}>
 								{reasons[1].title}
 							</Heading>
 							<Text>{reasons[1].text}</Text>
 						</Box>
-						<Box flexGrow={0} mx={5}>
+						<Box flex={0} mx={5}>
 							<Divider orientation="vertical" bg="white" />
 						</Box>
-						<Box flexGrow={1} my={4}>
+						<Box flex={1} my={4}>
 							<Heading fontStyle="italic" size="md" mb={2}>
 								{reasons[2].title}
 							</Heading>
@@ -113,25 +113,25 @@ export default function Volunteering(): JSX.Element {
 						justifyContent="space-between"
 						flexDir={{ base: "column", lg: "row" }}
 					>
-						<Box flexGrow={1} my={4}>
+						<Box flex={1} my={4}>
 							<Heading fontStyle="italic" size="md" mb={2}>
 								{reasons[3].title}
 							</Heading>
 							<Text>{reasons[3].text}</Text>
 						</Box>
-						<Box flexGrow={0} mx={5}>
+						<Box flex={0} mx={5}>
 							<Divider orientation="vertical" bg="white" />
 						</Box>
-						<Box flexGrow={1} my={4}>
+						<Box flex={1} my={4}>
 							<Heading fontStyle="italic" size="md" mb={2}>
 								{reasons[4].title}
 							</Heading>
 							<Text>{reasons[4].text}</Text>
 						</Box>
-						<Box flexGrow={0} mx={5}>
+						<Box flex={0} mx={5}>
 							<Divider orientation="vertical" bg="white" />
 						</Box>
-						<Box flexGrow={1} my={4}>
+						<Box flex={1} my={4}>
 							<Heading fontStyle="italic" size="md" mb={2}>
 								{reasons[5].title}
 							</Heading>
@@ -155,8 +155,10 @@ export default function Volunteering(): JSX.Element {
 						href="https://discord.gg/school"
 						_hover={{ textDecoration: "none" }}
 					>
-						<Button bg="brand.transparent">
-							Sign Up <ExternalLinkIcon ml={2} />
+						<Button bg="brand.transparent" height="unset" py={3}>
+							<Heading size="2xl">
+								Sign Up <ExternalLinkIcon ml={2} />
+							</Heading>
 						</Button>
 					</Link>
 				</ContainerInside>

@@ -39,6 +39,8 @@ import {
 } from "react-icons/ri";
 import { SiTiktok } from "react-icons/si";
 
+const boxSize = 600;
+
 export default function Home(): JSX.Element {
 	const { isOpen, onOpen, onClose } = useDisclosure();
 	return (
@@ -57,12 +59,12 @@ export default function Home(): JSX.Element {
 			</Container>
 
 			{/* art box */}
-			<Container>
+			<Container my={5}>
 				<ContainerInside>
-					<Flex textAlign="left">
-						<VStack spacing={4} textAlign="left" mt="20px">
-							<VStack maxW="container.sm">
-								<Heading size="md">Our Community</Heading>
+					<VStack textAlign="left">
+						<VStack spacing={4} textAlign="left">
+							<VStack maxW="50ch">
+								<Heading size="lg">Our Community</Heading>
 
 								<Text size="sm">
 									Our organization features a global community
@@ -79,7 +81,7 @@ export default function Home(): JSX.Element {
 								align="center"
 							>
 								<Box
-									boxSize="500px"
+									boxSize={`${boxSize + 50}px`}
 									backgroundColor="brand.transparent2"
 									padding="5px"
 									rounded={rounded}
@@ -91,7 +93,7 @@ export default function Home(): JSX.Element {
 									>
 										<Image
 											src="june.jpg"
-											boxSize="450px"
+											boxSize={`${boxSize}px`}
 											rounded={rounded}
 											objectFit="cover"
 											margin="20px"
@@ -166,122 +168,115 @@ export default function Home(): JSX.Element {
 							</Flex>
 						</VStack>
 
-						<Spacer />
+						<HStack spacing={6}>
+							{/* info boxes */}
+							<Flex
+								boxSize="300px"
+								backgroundColor="brand.transparent"
+								padding="20px"
+								rounded={rounded}
+								alignContent="left"
+							>
+								<VStack>
+									<Heading>Events</Heading>
+									<Heading color="#5A60AD" size="sm">
+										Our Event team works hard to put
+										together events and contests for our
+										community! They offer:
+									</Heading>
+									<UnorderedList color="#6670e3">
+										<ListItem>
+											{" "}
+											Monthly Art Contests{" "}
+										</ListItem>
+										<ListItem>Music Talent Show</ListItem>
+										<ListItem>Karaoke</ListItem>
+										<ListItem>Game Night</ListItem>
+									</UnorderedList>
+									<Heading color="#5A60AD" size="sm">
+										Join our discord server to participate
+										in these events!
+									</Heading>
+								</VStack>
+							</Flex>
 
-						<Wrap margin="30px" spacing="40px">
-							<VStack spacing={6}>
-								{/* info boxes */}
-								<Flex
-									boxSize="300px"
-									backgroundColor="brand.transparent"
-									padding="20px"
-									rounded={rounded}
-									alignContent="left"
-								>
-									<VStack>
-										<Heading>Events</Heading>
-										<Heading color="#5A60AD" size="sm">
-											Our Event team works hard to put
-											together events and contests for our
-											community! They offer:
+							<Flex
+								boxSize="300px"
+								backgroundColor="brand.transparent"
+								padding="20px"
+								pt="6px"
+								rounded={rounded}
+								alignContent="left"
+							>
+								<VStack>
+									<Heading pt="10px">Music</Heading>
+									<Heading color="#5A60AD" size="sm">
+										Our team has put together playlists of
+										music for you to enjoy!
+									</Heading>
+									<Link
+										href="https://open.spotify.com/playlist/5xy112KNO4WBzaxR1tioT9?si=cbf67fcfe567406b&nd=1"
+										isExternal
+									>
+										<Heading color="#6670e3" size="xsm">
+											Study Lofi
 										</Heading>
-										<UnorderedList color="#6670e3">
-											<ListItem>
-												{" "}
-												Monthly Art Contests{" "}
-											</ListItem>
-											<ListItem>
-												Music Talent Show
-											</ListItem>
-											<ListItem>Karaoke</ListItem>
-											<ListItem>Game Night</ListItem>
-										</UnorderedList>
-										<Heading color="#5A60AD" size="sm">
-											Join our discord server to
-											participate in these events!
+									</Link>
+
+									<Link
+										href="https://open.spotify.com/playlist/2qfpV3Cv3LGASgLk5DDIwA?si=df83f8b734784065"
+										isExternal
+									>
+										<Heading color="#6670e3" size="xsm">
+											Jazz Lofi
 										</Heading>
-									</VStack>
-								</Flex>
+									</Link>
 
-								<Flex
-									boxSize="300px"
-									backgroundColor="brand.transparent"
-									padding="20px"
-									pt="6px"
-									rounded={rounded}
-									alignContent="left"
-								>
-									<VStack>
-										<Heading pt="10px">Music</Heading>
-										<Heading color="#5A60AD" size="sm">
-											Our team has put together playlists
-											of music for you to enjoy!
+									<Link
+										href="https://open.spotify.com/playlist/3KUCDUAke9JNCi3EC3DR4A?si=b84da9bd407d43f2"
+										isExternal
+									>
+										<Heading color="#6670e3" size="xsm">
+											90s Pop
 										</Heading>
-										<Link
-											href="https://open.spotify.com/playlist/5xy112KNO4WBzaxR1tioT9?si=cbf67fcfe567406b&nd=1"
-											isExternal
-										>
-											<Heading color="#6670e3" size="xsm">
-												Study Lofi
-											</Heading>
-										</Link>
+									</Link>
 
-										<Link
-											href="https://open.spotify.com/playlist/2qfpV3Cv3LGASgLk5DDIwA?si=df83f8b734784065"
-											isExternal
-										>
-											<Heading color="#6670e3" size="xsm">
-												Jazz Lofi
-											</Heading>
-										</Link>
-
-										<Link
-											href="https://open.spotify.com/playlist/3KUCDUAke9JNCi3EC3DR4A?si=b84da9bd407d43f2"
-											isExternal
-										>
-											<Heading color="#6670e3" size="xsm">
-												90s Pop
-											</Heading>
-										</Link>
-
-										<Link
-											href="https://open.spotify.com/playlist/1lhX7W0NEvzMSsFCkQfxk4?si=5c16816fc6974f87"
-											isExternal
-										>
-											<Heading color="#6670e3" size="xsm">
-												2010-2015 Pop
-											</Heading>
-										</Link>
-
-										<Heading color="#5A60AD" size="5px">
-											Check out our Spotify for the
-											complete list!
+									<Link
+										href="https://open.spotify.com/playlist/1lhX7W0NEvzMSsFCkQfxk4?si=5c16816fc6974f87"
+										isExternal
+									>
+										<Heading color="#6670e3" size="xsm">
+											2010-2015 Pop
 										</Heading>
-									</VStack>
-								</Flex>
+									</Link>
 
-								<Flex
-									boxSize="300px"
-									backgroundColor="brand.transparent"
-									padding="20px"
-									rounded={rounded}
-									alignContent="left"
-								>
-									<VStack>
-										<Heading> Friends </Heading>
-										<Heading size="xsm" color="#5A60AD">
-											Start making new freinds from all
-											around the world by joining our
-											server. You can chat, voice call,
-											play games, or even enter events
-											with others and form long lasting
-											connections!
-										</Heading>
-									</VStack>
-								</Flex>
-							</VStack>
-						</Wrap>
-					</Flex>
+									<Heading color="#5A60AD" size="5px">
+										Check out our Spotify for the complete
+										list!
+									</Heading>
+								</VStack>
+							</Flex>
+
+							<Flex
+								boxSize="300px"
+								backgroundColor="brand.transparent"
+								padding="20px"
+								rounded={rounded}
+								alignContent="left"
+							>
+								<VStack>
+									<Heading> Friends </Heading>
+									<Heading size="xsm" color="#5A60AD">
+										Start making new freinds from all around
+										the world by joining our server. You can
+										chat, voice call, play games, or even
+										enter events with others and form long
+										lasting connections!
+									</Heading>
+								</VStack>
+							</Flex>
+						</HStack>
+					</VStack>
 				</ContainerInside>
 			</Container>
 

@@ -137,14 +137,14 @@ export default function RotatingPanel(): JSX.Element {
 	);
 }
 
-interface PanelProps {
+type PanelProps = {
 	children?: any;
 	src: string;
 	teamname: string;
 	teamdesc: string;
 	link: string;
 	teams?: string[];
-}
+};
 
 function Panel(props: PanelProps): JSX.Element {
 	return (

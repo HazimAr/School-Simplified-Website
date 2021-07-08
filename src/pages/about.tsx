@@ -148,42 +148,6 @@ export default function About(): JSX.Element {
 						})}
 					</Flex>
 				</Box>
-				<Box py="30px">
-					<Heading fontSize="35px">
-						Volunteering Opportunities
-					</Heading>
-					<Text fontSize="20px">
-						Over 300+ volunteers across the world
-					</Text>
-					<Flex
-						mt="30px"
-						bg="blue.200"
-						justify="center"
-						align="center"
-					>
-						<Button borderRadius={0} bg="transparent">
-							Marketing
-						</Button>
-						<Text>|</Text>
-						<Button borderRadius={0} bg="transparent">
-							Academics
-						</Button>
-						<Text>|</Text>
-						<Button borderRadius={0} bg="transparent">
-							Secretary
-						</Button>
-						<Text>|</Text>
-						<Button borderRadius={0} bg="transparent">
-							Technical
-						</Button>
-						<Text>|</Text>
-						<Button borderRadius={0} bg="transparent">
-							HR
-						</Button>
-					</Flex>
-				</Box>
-
-				{/* {body} */}
 			</ContainerInside>
 		</Container>
 	);

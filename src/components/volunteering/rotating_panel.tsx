@@ -1,23 +1,23 @@
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import {
 	Box,
-	Image,
-	Heading,
-	Text,
-	Flex,
 	Button,
+	Flex,
+	Heading,
+	Image,
 	Link,
 	ScaleFade,
+	Text,
+	useControllableState,
 } from "@chakra-ui/react";
-import { useControllableState } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import React from "react";
 
 const teams: PanelProps[] = [
 	{
-		teamname: "Academics",
-		teamdesc:
+		teamName: "Academics",
+		teamDesc:
 			"Help other students in the School Simplified community with our Academics Team. Responsibilities include educational help, sharing resources, and tutoring.",
 		src: "/logos/aca_logo.png",
 		link: "https://example.com/",
@@ -30,16 +30,16 @@ const teams: PanelProps[] = [
 		],
 	},
 	{
-		teamname: "Tech",
-		teamdesc:
-			"The Tech Team is a good fit for volunteers that are handy with technology. Skills such as programming, quality management, development, and familiarity with Discord are all essential to maintain our website and Discord server; we encourage you to volunteer if you are knowledgable in any of these areas.",
+		teamName: "Tech",
+		teamDesc:
+			"The Tech Team is a good fit for volunteers that are handy with technology. Skills such as programming, quality management, development, and familiarity with Discord are all essential to maintain our website and Discord server; we encourage you to volunteer if you are knowledgeable in any of these areas.",
 		src: "/logos/tech_logo.png",
 		link: "https://example.com/",
 		teams: ["Website", "Developer", "Quality Assurance", "Discord"],
 	},
 	{
-		teamname: "Marketing",
-		teamdesc:
+		teamName: "Marketing",
+		teamDesc:
 			"Joining the Marketing Team is a great opportunity for volunteers with experience in social media, design, and marketing. If you are interested in working closely with different aspects of the School Simplified community, such as events, social media, and blog posts, volunteer with the Marketing Team!",
 		src: "/logos/mkt_logo.png",
 		link: "https://example.com/",
@@ -54,23 +54,24 @@ const teams: PanelProps[] = [
 		],
 	},
 	{
-		teamname: "Human Resources",
-		teamdesc: "dfsdgtxcfhujk",
+		teamName: "Human Resources",
+		teamDesc:
+			"Joining the Marketing Team is a great opportunity for volunteers with experience in social media, design, and marketing. If you are interested in working closely with different aspects of the School Simplified community, such as events, social media, and blog posts, volunteer with the Marketing Team!",
 		src: "/logos/hr_logo.png",
 		link: "https://example.com/",
 	},
 ];
 
 export default function RotatingPanel(): JSX.Element {
-	const innerPanels = teams.map((v, iindex: number) => {
+	const innerPanels = teams.map((v, index: number) => {
 		return (
 			<Panel
-				teamname={v.teamname}
-				teamdesc={v.teamdesc}
+				teamName={v.teamName}
+				teamDesc={v.teamDesc}
 				link={v.link}
 				src={v.src}
 				teams={v.teams}
-				key={"key_" + iindex}
+				key={"key_" + index}
 			/>
 		);
 	});
@@ -146,8 +147,8 @@ export default function RotatingPanel(): JSX.Element {
 type PanelProps = {
 	children?: any;
 	src: string;
-	teamname: string;
-	teamdesc: string;
+	teamName: string;
+	teamDesc: string;
 	link: string;
 	teams?: string[];
 };
@@ -167,17 +168,17 @@ function Panel(props: PanelProps): JSX.Element {
 						h={{ base: 100, sm: 200, md: 150, lg: 250 }}
 						mr={{ base: 0, md: 3 }}
 						mb={{ base: 3, md: 0 }}
-						alt={props.teamname + " team logo"}
+						alt={props.teamName + " team logo"}
 					/>
 					<Box>
 						<Heading
 							size="lg"
 							textAlign={["center", "center", "right"]}
 						>
-							{props.teamname}
+							{props.teamName}
 						</Heading>
 						<Text textAlign={["center", "center", "right"]} my={2}>
-							{props.teamdesc}
+							{props.teamDesc}
 						</Text>
 						{props.teams ? (
 							<Text

@@ -1,4 +1,4 @@
-import { Box, Divider, Flex, Heading, Text } from "@chakra-ui/react";
+import { Divider, Heading, Text, Grid, GridItem } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 
@@ -36,66 +36,71 @@ export default function Reasons(): JSX.Element {
 				<Heading size="lg" mb={3}>
 					Why volunteer for us?
 				</Heading>
-				<Flex
-					alignItems="stretch"
-					justifyContent="space-between"
-					flexDir={{ base: "column", lg: "row" }}
+				<Grid
+					templateColumns={{
+						base: "1fr",
+						md: "1fr auto 1fr",
+						lg: "1fr auto 1fr auto 1fr",
+					}}
 				>
-					<Box flex={1} my={4}>
+					<GridItem my={4}>
 						<Heading fontStyle="italic" size="md" mb={2}>
 							{reasons[0].title}
 						</Heading>
 						<Text>{reasons[0].text}</Text>
-					</Box>
-					<Box flex={0} mx={5}>
+					</GridItem>
+					<GridItem mx={5}>
 						<Divider orientation="vertical" bg="white" />
-					</Box>
-					<Box flex={1} my={4}>
+					</GridItem>
+					<GridItem my={4}>
 						<Heading fontStyle="italic" size="md" mb={2}>
 							{reasons[1].title}
 						</Heading>
 						<Text>{reasons[1].text}</Text>
-					</Box>
-					<Box flex={0} mx={5}>
+					</GridItem>
+					<GridItem
+						mx={5}
+						display={{ base: "block", md: "none", lg: "block" }}
+					>
 						<Divider orientation="vertical" bg="white" />
-					</Box>
-					<Box flex={1} my={4}>
+					</GridItem>
+					<GridItem my={4}>
 						<Heading fontStyle="italic" size="md" mb={2}>
 							{reasons[2].title}
 						</Heading>
 						<Text>{reasons[2].text}</Text>
-					</Box>
-				</Flex>
-				<Flex
-					alignItems="stretch"
-					justifyContent="space-between"
-					flexDir={{ base: "column", lg: "row" }}
-				>
-					<Box flex={1} my={4}>
+					</GridItem>
+					<GridItem mx={5} display={{ base: "block", lg: "none" }}>
+						<Divider orientation="vertical" bg="white" />
+					</GridItem>
+					<GridItem my={4}>
 						<Heading fontStyle="italic" size="md" mb={2}>
 							{reasons[3].title}
 						</Heading>
 						<Text>{reasons[3].text}</Text>
-					</Box>
-					<Box flex={0} mx={5}>
+					</GridItem>
+					<GridItem
+						mx={5}
+						display={{ base: "block", md: "none", lg: "block" }}
+					>
 						<Divider orientation="vertical" bg="white" />
-					</Box>
-					<Box flex={1} my={4}>
+					</GridItem>
+					<GridItem my={4}>
 						<Heading fontStyle="italic" size="md" mb={2}>
 							{reasons[4].title}
 						</Heading>
 						<Text>{reasons[4].text}</Text>
-					</Box>
-					<Box flex={0} mx={5}>
+					</GridItem>
+					<GridItem mx={5}>
 						<Divider orientation="vertical" bg="white" />
-					</Box>
-					<Box flex={1} my={4}>
+					</GridItem>
+					<GridItem my={4}>
 						<Heading fontStyle="italic" size="md" mb={2}>
 							{reasons[5].title}
 						</Heading>
 						<Text>{reasons[5].text}</Text>
-					</Box>
-				</Flex>
+					</GridItem>
+				</Grid>
 			</ContainerInside>
 		</Container>
 	);

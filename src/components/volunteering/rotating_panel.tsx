@@ -11,7 +11,7 @@ import {
 import { useControllableState } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import React, { ReactNode } from "react";
+import React from "react";
 
 const teams: PanelProps[] = [
 	{

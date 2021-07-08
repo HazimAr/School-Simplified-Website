@@ -26,14 +26,14 @@ import {
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import { FaDiscord } from "react-icons/fa";
+// import { FaDiscord } from "react-icons/fa";
 import {
 	RiFacebookBoxLine,
 	RiInstagramLine,
 	RiLinkedinBoxLine,
 	RiSpotifyLine,
 	RiTwitterLine,
-	RiDiscordLine
+	RiDiscordLine,
 } from "react-icons/ri";
 import { SiTiktok } from "react-icons/si";
 
@@ -280,14 +280,14 @@ export default function Home(): JSX.Element {
 									<VStack>
 										<Heading> Friends </Heading>
 										<Heading size="xsm" color="#5A60AD">
-										Start making new freinds from all around the world 
-										by joining our server. You can chat, voice call, 
-										play games, or even enter events with others and form 
-										long lasting connections!
+											Start making new freinds from all
+											around the world by joining our
+											server. You can chat, voice call,
+											play games, or even enter events
+											with others and form long lasting
+											connections!
 										</Heading>
-
-									 </VStack>
-
+									</VStack>
 								</Flex>
 							</VStack>
 						</Wrap>
@@ -331,16 +331,23 @@ export default function Home(): JSX.Element {
 						<Spacer />
 						<Wrap spacing="30px" margin="20px">
 							<Box>
-								<Heading mb="25px" mt="20px"> Our Members </Heading>
+								<Heading mb="25px" mt="20px">
+									{" "}
+									Our Members{" "}
+								</Heading>
 								<Heading size="50px">
-								Our organization features a global community of 
-								over 60,000 teenagers! Diverse, open-minded, 
-								and inclusive, our students enjoy conversing in an 
-								equitable environment where every new acquaintance 
-								becomes a longtime friend!
+									Our organization features a global community
+									of over 60,000 teenagers! Diverse,
+									open-minded, and inclusive, our students
+									enjoy conversing in an equitable environment
+									where every new acquaintance becomes a
+									longtime friend!
 								</Heading>
 
-								<Image src="/undraw/connections.svg" mt="25px" />
+								<Image
+									src="/undraw/connections.svg"
+									mt="25px"
+								/>
 							</Box>
 						</Wrap>
 					</Flex>
@@ -367,8 +374,9 @@ export default function Home(): JSX.Element {
 								<Heading>Our Socials</Heading>
 								<Container maxW="container.sm">
 									<Heading fontSize="18px">
-										Check out our socials for school tips, entertainment, music, 
-										podcasts (coming soon), and more!
+										Check out our socials for school tips,
+										entertainment, music, podcasts (coming
+										soon), and more!
 									</Heading>
 								</Container>
 							</VStack>
@@ -381,7 +389,6 @@ export default function Home(): JSX.Element {
 				<ContainerInside>
 					<Wrap margin="30px" spacing="40px" ml="280px">
 						<HStack spacing={5}>
-
 							<Link href="" isExternal>
 								<Icon
 									as={RiSpotifyLine}

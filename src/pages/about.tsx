@@ -161,15 +161,25 @@ export default function About(): JSX.Element {
 						justify="center"
 						align="center"
 					>
-						<Button>Marketing</Button>
+						<Button borderRadius={0} bg="transparent">
+							Marketing
+						</Button>
 						<Text>|</Text>
-						<Button>Academics</Button>
+						<Button borderRadius={0} bg="transparent">
+							Academics
+						</Button>
 						<Text>|</Text>
-						<Button>Secretary</Button>
+						<Button borderRadius={0} bg="transparent">
+							Secretary
+						</Button>
 						<Text>|</Text>
-						<Button>Technical</Button>
+						<Button borderRadius={0} bg="transparent">
+							Technical
+						</Button>
 						<Text>|</Text>
-						<Button>HR</Button>
+						<Button borderRadius={0} bg="transparent">
+							HR
+						</Button>
 					</Flex>
 				</Box>
 

@@ -37,11 +37,15 @@ export default function Contact(): JSX.Element {
 						Get in Touch
 					</Heading>
 					<Heading as="h2" size="md">
-						Have a Question? Comment? Concern?
+						Have Questions? Comments? Concerns?
 					</Heading>
 				</Box>
 				<Flex
-					flexDirection={{ base: "column-reverse", md: "column-reverse", lg: "row" }}
+					flexDirection={{
+						base: "column-reverse",
+						md: "column-reverse",
+						lg: "row",
+					}}
 					justify="space-between"
 					align="center"
 					// px={{ sm: 10, md: 100, lg: 200 }}

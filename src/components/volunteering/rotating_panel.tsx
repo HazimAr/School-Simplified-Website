@@ -15,21 +15,41 @@ import React, { ReactNode, MouseEvent } from "react";
 const teams: PanelProps[] = [
 	{
 		teamname: "Academics",
-		teamdesc: "alskjdfalkdsfj",
+		teamdesc:
+			"Help other students in the School Simplified community with our Academics Team. Responsibilities include educational help, sharing resources, and tutoring.",
 		src: "/logos/aca_logo.png",
 		link: "https://example.com/",
+		teams: [
+			"Notes",
+			"Prep",
+			"Tutoring",
+			"Chat-Helping",
+			"Essay Proofreading",
+		],
 	},
 	{
 		teamname: "Tech",
-		teamdesc: "grhdtxjcfkvyuhijko",
+		teamdesc:
+			"The Tech Team is a good fit for volunteers that are handy with technology. Skills such as programming, quality management, development, and familiarity with Discord are all essential to maintain our website and Discord server; we encourage you to volunteer if you are knowledgable in any of these areas.",
 		src: "/logos/tech_logo.png",
 		link: "https://example.com/",
+		teams: ["Website", "Developer", "Quality Assurance", "Discord"],
 	},
 	{
 		teamname: "Marketing",
-		teamdesc: "fewgdtxhcgvnjm",
+		teamdesc:
+			"Joining the Marketing Team is a great opportunity for volunteers with experience in social media, design, and marketing. If you are interested in working closely with different aspects of the School Simplified community, such as events, social media, and blog posts, volunteer with the Marketing Team!",
 		src: "/logos/mkt_logo.png",
 		link: "https://example.com/",
+		teams: [
+			"Instagram",
+			"TikTok",
+			"Blog",
+			"Marketing Analytics",
+			"Events",
+			"PR",
+			"Design",
+		],
 	},
 	{
 		teamname: "Human Resources",
@@ -55,6 +75,7 @@ export default class RotatingPanel extends React.Component<any, State> {
 					teamname={v.teamname}
 					teamdesc={v.teamdesc}
 					link={v.link}
+					teams={v.teams}
 					key={"item_" + idx}
 				/>
 			);
@@ -139,6 +160,7 @@ interface PanelProps {
 	teamname: string;
 	teamdesc: string;
 	link: string;
+	teams?: string[];
 }
 
 class Panel extends React.Component<PanelProps, any> {
@@ -169,9 +191,22 @@ class Panel extends React.Component<PanelProps, any> {
 					>
 						{this.props.teamname}
 					</Heading>
-					<Text textAlign={["center", "center", "right"]}>
+					<Text textAlign={["center", "center", "right"]} my={2}>
 						{this.props.teamdesc}
 					</Text>
+					{this.props.teams ? (
+						<Text
+							textAlign={["center", "center", "right"]}
+							fontStyle="italic"
+						>
+							Teams include{" "}
+							{this.props.teams
+								.slice(0, this.props.teams.length - 1)
+								.join(", ")}
+							, and{" "}
+							{this.props.teams[this.props.teams.length - 1]}
+						</Text>
+					) : null}
 
 					<Flex flexDir={{ base: "column", md: "row-reverse" }}>
 						<Link
@@ -180,7 +215,7 @@ class Panel extends React.Component<PanelProps, any> {
 							_hover={{ textDecoration: "none" }}
 						>
 							<Button bg="brand.transparent" mt={5}>
-								Join <ExternalLinkIcon mx={2} />
+								Join <ExternalLinkIcon ml={2} />
 							</Button>
 						</Link>
 					</Flex>

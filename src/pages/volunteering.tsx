@@ -13,6 +13,33 @@ import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import RotatingPanel from "@components/volunteering/rotating_panel";
 
+const reasons = [
+	{
+		title: "Earn Volunteer Hours",
+		text: "All volunteers can earn community service hours and build up their volunteering experience. Our active community provides a friendly tutoring environment for all students.",
+	},
+	{
+		title: "Learn New Skills",
+		text: "Tutoring allows volunteers to discover many different skills and experiences outside of the classroom, including leadership and critical thinking.",
+	},
+	{
+		title: "Tutor Other Students",
+		text: "Help other students with various subjects and classes, at many different grade levels.",
+	},
+	{
+		title: "Join the Community",
+		text: "Join an interactive community of enthusiastic students that are committed to learning",
+	},
+	{
+		title: "Share Resources",
+		text: "Contribute to our resources that are shared by other students for mutual learning.",
+	},
+	{
+		title: "Remote Tutoring",
+		text: "Our Discord server allows volunteers to tutor wherever and whenever, with the capacity to choose their own hours",
+	},
+];
+
 /**
  * The Volunteering page!
  *
@@ -28,7 +55,7 @@ export default function Volunteering(): JSX.Element {
 			<Container bg="brand.transparent">
 				<ContainerInside py={8}>
 					<Flex alignItems="center">
-						<Box flex={1}>
+						<Box flexGrow={1}>
 							<Heading textAlign="left" size="xl" mb={3}>
 								Volunteering Opportunities
 							</Heading>
@@ -39,7 +66,7 @@ export default function Volunteering(): JSX.Element {
 							</Text>
 						</Box>
 						<Image
-							flex={{ base: 1, sm: 0 }}
+							flexGrow={{ base: 1, sm: 0 }}
 							src="/undraw/community.svg"
 							h={{ base: 0, md: 175, lg: 275 }}
 							float="right"
@@ -56,42 +83,29 @@ export default function Volunteering(): JSX.Element {
 						justifyContent="space-between"
 						flexDir={{ base: "column", lg: "row" }}
 					>
-						<Box flex={1} my={4}>
+						<Box flexGrow={1} my={4}>
 							<Heading fontStyle="italic" size="md" mb={2}>
-								Earn Volunteer Hours
+								{reasons[0].title}
 							</Heading>
-							<Text>
-								All volunteers can earn community service hours
-								and build up their volunteering experience. Our
-								active community provides a friendly tutoring
-								environment for all students.
-							</Text>
+							<Text>{reasons[0].text}</Text>
 						</Box>
-						<Box flex={0} mx={5}>
+						<Box flexGrow={0} mx={5}>
 							<Divider orientation="vertical" bg="white" />
 						</Box>
-						<Box flex={1} my={4}>
+						<Box flexGrow={1} my={4}>
 							<Heading fontStyle="italic" size="md" mb={2}>
-								Learn New Skills
+								{reasons[1].title}
 							</Heading>
-							<Text>
-								Tutoring allows volunteers to discover many
-								different skills and experiences outside of the
-								classroom, including leadership and critical
-								thinking.
-							</Text>
+							<Text>{reasons[1].text}</Text>
 						</Box>
-						<Box flex={0} mx={5}>
+						<Box flexGrow={0} mx={5}>
 							<Divider orientation="vertical" bg="white" />
 						</Box>
-						<Box flex={1} my={4}>
+						<Box flexGrow={1} my={4}>
 							<Heading fontStyle="italic" size="md" mb={2}>
-								Tutor Other Students
+								{reasons[2].title}
 							</Heading>
-							<Text>
-								Help other students with various subjects and
-								classes, at many different grade levels.
-							</Text>
+							<Text>{reasons[2].text}</Text>
 						</Box>
 					</Flex>
 					<Flex
@@ -99,39 +113,29 @@ export default function Volunteering(): JSX.Element {
 						justifyContent="space-between"
 						flexDir={{ base: "column", lg: "row" }}
 					>
-						<Box flex={1} my={4}>
+						<Box flexGrow={1} my={4}>
 							<Heading fontStyle="italic" size="md" mb={2}>
-								Join the Community
+								{reasons[3].title}
 							</Heading>
-							<Text>
-								Join an interactive community of enthusiastic
-								students that are committed to learning
-							</Text>
+							<Text>{reasons[3].text}</Text>
 						</Box>
-						<Box flex={0} mx={5}>
+						<Box flexGrow={0} mx={5}>
 							<Divider orientation="vertical" bg="white" />
 						</Box>
-						<Box flex={1} my={4}>
+						<Box flexGrow={1} my={4}>
 							<Heading fontStyle="italic" size="md" mb={2}>
-								Share Resources
+								{reasons[4].title}
 							</Heading>
-							<Text>
-								Contribute to our resources that are shared by
-								other students for mutual learning.
-							</Text>
+							<Text>{reasons[4].text}</Text>
 						</Box>
-						<Box flex={0} mx={5}>
+						<Box flexGrow={0} mx={5}>
 							<Divider orientation="vertical" bg="white" />
 						</Box>
-						<Box flex={1} my={4}>
+						<Box flexGrow={1} my={4}>
 							<Heading fontStyle="italic" size="md" mb={2}>
-								Remote Tutoring
+								{reasons[5].title}
 							</Heading>
-							<Text>
-								Our Discord server allows volunteers to tutor
-								wherever and wherever, with the capacity to
-								choose their own hours
-							</Text>
+							<Text>{reasons[5].text}</Text>
 						</Box>
 					</Flex>
 				</ContainerInside>
@@ -152,7 +156,7 @@ export default function Volunteering(): JSX.Element {
 						_hover={{ textDecoration: "none" }}
 					>
 						<Button bg="brand.transparent">
-							Sign Up <ExternalLinkIcon mx={2} />
+							Sign Up <ExternalLinkIcon ml={2} />
 						</Button>
 					</Link>
 				</ContainerInside>

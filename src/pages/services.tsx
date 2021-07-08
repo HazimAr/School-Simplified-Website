@@ -90,7 +90,7 @@ export default function Services(): JSX.Element {
 										>
 											{item.title}
 											{item.external ? (
-												<ExternalLinkIcon mx={2} />
+												<ExternalLinkIcon ml={2} />
 											) : null}
 										</Text>
 									</Flex>

@@ -92,12 +92,7 @@ export default function RotatingPanel(): JSX.Element {
 				<Heading size="lg" mb={3}>
 					What can I volunteer for?
 				</Heading>
-				<Flex
-					alignItems="center"
-					justifyContent="space-between"
-					mb={3}
-					position="relative"
-				>
+				<Box mb={3} position="relative">
 					<Button
 						onClick={() => setIndex(index - 1)}
 						position="absolute"
@@ -125,7 +120,7 @@ export default function RotatingPanel(): JSX.Element {
 					>
 						&gt;
 					</Button>
-				</Flex>
+				</Box>
 				{teams.map((_v, idx: number) => {
 					return (
 						<Text
@@ -155,7 +150,7 @@ type PanelProps = {
 
 function Panel(props: PanelProps): JSX.Element {
 	return (
-		<Box flex={1} mx={{ base: 10, sm: 12, md: 16 }} py={5}>
+		<Box mx={{ base: 10, sm: 12, md: 16 }} py={5}>
 			<ScaleFade in={true}>
 				<Flex
 					justifyContent="space-between"
@@ -173,19 +168,19 @@ function Panel(props: PanelProps): JSX.Element {
 					<Box>
 						<Heading
 							size="lg"
-							textAlign={{ base: "center", lg: "right" }}
+							textAlign={{ base: "center", md: "right" }}
 						>
 							{props.teamName}
 						</Heading>
 						<Text
-							textAlign={{ base: "center", lg: "right" }}
+							textAlign={{ base: "center", md: "right" }}
 							my={2}
 						>
 							{props.teamDesc}
 						</Text>
 						{props.teams ? (
 							<Text
-								textAlign={{ base: "center", lg: "right" }}
+								textAlign={{ base: "center", md: "right" }}
 								fontStyle="italic"
 							>
 								Teams include{" "}

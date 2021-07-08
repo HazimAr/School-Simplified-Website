@@ -56,11 +56,7 @@ export default function Donate(): JSX.Element {
 				</ContainerInside>
 			</Container>
 
-			<Container
-				bg="brand.transparent"
-				pb="100px"
-				color="brand.purple.light"
-			>
+			<Container bg="brand.transparent" color="brand.purple.light">
 				<ContainerInside align="center">
 					<Heading size="lg" pt="20px">
 						Why support us?
@@ -71,6 +67,7 @@ export default function Donate(): JSX.Element {
 						textAlign="left"
 						py="10px"
 						flexDir={{ base: "column", md: "row" }}
+						alignItems={{ base: "center", md: "stretch" }}
 					>
 						<Box
 							p="20px"

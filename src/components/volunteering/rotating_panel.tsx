@@ -186,7 +186,7 @@ function Panel(props: PanelProps): JSX.Element {
 
 				<Flex flexDir={{ base: "column", md: "row-reverse" }}>
 					<Link
-						isExternal={true}
+						isExternal
 						href={props.link}
 						_hover={{ textDecoration: "none" }}
 					>

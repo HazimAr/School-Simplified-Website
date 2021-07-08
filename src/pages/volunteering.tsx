@@ -61,7 +61,7 @@ export default function Volunteering(): JSX.Element {
 						hours today!
 					</Text>
 					<Link
-						isExternal={true}
+						isExternal
 						href="https://discord.gg/school"
 						_hover={{ textDecoration: "none" }}
 					>

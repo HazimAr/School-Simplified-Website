@@ -60,7 +60,7 @@ export default function Services(): JSX.Element {
 					</Flex>
 				</ContainerInside>
 			</Container>
-			<Container bg="brand.transparent">
+			<Container>
 				<ContainerInside pb={8}>
 					<Flex justifyContent="space-evenly" flexWrap="wrap">
 						{items.map((item, i: number) => {

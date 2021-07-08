@@ -8,9 +8,10 @@ import {
 	Button,
 	Link,
 } from "@chakra-ui/react";
+import { useControllableState } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import React, { ReactNode, MouseEvent } from "react";
+import React, { ReactNode } from "react";
 
 const teams: PanelProps[] = [
 	{
@@ -59,103 +60,81 @@ const teams: PanelProps[] = [
 	},
 ];
 
-interface State {
-	innerPanels: JSX.Element[];
-	index: number;
-}
-
-export default class RotatingPanel extends React.Component<any, State> {
-	constructor(props: any) {
-		super(props);
-
-		const innerPanels = teams.map((v, idx: number) => {
-			return (
-				<Panel
-					src={v.src}
-					teamname={v.teamname}
-					teamdesc={v.teamdesc}
-					link={v.link}
-					teams={v.teams}
-					key={"item_" + idx}
-				/>
-			);
-		});
-		this.state = { innerPanels: innerPanels, index: 0 };
-		this.handleClickUp = this.handleClickUp.bind(this);
-		this.handleClickDown = this.handleClickDown.bind(this);
-	}
-
-	handleClickUp(_event: MouseEvent<HTMLButtonElement>) {
-		const newIdx = (this.state.index + 1) % this.state.innerPanels.length;
-		this.setState({ index: newIdx });
-	}
-
-	handleClickDown(_event: MouseEvent<HTMLButtonElement>) {
-		let newIdx = this.state.index - 1;
-		if (newIdx < 0) newIdx += this.state.innerPanels.length;
-		this.setState({ index: newIdx });
-	}
-
-	render(): ReactNode {
+export default function RotatingPanel(): JSX.Element {
+	const innerPanels = teams.map((v, idx: number) => {
 		return (
-			<Container bg="brand.transparent2" {...this.props}>
-				<ContainerInside py={8}>
-					<Heading size="lg" mb={3}>
-						What can I volunteer for?
-					</Heading>
-					<Flex
-						alignItems="center"
-						justifyContent="space-between"
-						mb={3}
-						position="relative"
-					>
-						<Button
-							onClick={this.handleClickDown}
-							position="absolute"
-							height="100%"
-							left={0}
-							top={0}
-							bg="brand.transparent"
-							w={{ base: 3, sm: 5, md: 10 }}
-							minW="unset"
-						>
-							&lt;
-						</Button>
-						{this.state.innerPanels[this.state.index]}
-						<Button
-							onClick={this.handleClickUp}
-							position="absolute"
-							height="100%"
-							right={0}
-							top={0}
-							bg="brand.transparent"
-							w={{ base: 3, sm: 5, md: 10 }}
-							minW="unset"
-						>
-							&gt;
-						</Button>
-					</Flex>
-					{teams.map((_v, index: number) => {
-						return (
-							<Text
-								fontSize={15}
-								mx={2}
-								color={
-									index == this.state.index
-										? "white"
-										: "brand.purple.dark"
-								}
-								display="inline"
-								key={"text_" + index}
-							>
-								•
-							</Text>
-						);
-					})}
-				</ContainerInside>
-			</Container>
+			<Panel
+				src={v.src}
+				teamname={v.teamname}
+				teamdesc={v.teamdesc}
+				link={v.link}
+				teams={v.teams}
+				key={"item_" + idx}
+			/>
 		);
-	}
+	});
+	const [index, setIndex] = useControllableState({
+		defaultValue: 0,
+		onChange: (newIndex: number) => {
+			if (newIndex < 0) setIndex(innerPanels.length - 1);
+			if (newIndex >= innerPanels.length) setIndex(0);
+		},
+	});
+
+	return (
+		<Container bg="brand.transparent2">
+			<ContainerInside py={8}>
+				<Heading size="lg" mb={3}>
+					What can I volunteer for?
+				</Heading>
+				<Flex
+					alignItems="center"
+					justifyContent="space-between"
+					mb={3}
+					position="relative"
+				>
+					<Button
+						onClick={() => setIndex(index - 1)}
+						position="absolute"
+						height="100%"
+						left={0}
+						top={0}
+						bg="brand.transparent"
+						w={{ base: 3, sm: 5, md: 10 }}
+						minW="unset"
+					>
+						&lt;
+					</Button>
+					{innerPanels[index]}
+					<Button
+						onClick={() => setIndex(index + 1)}
+						position="absolute"
+						height="100%"
+						right={0}
+						top={0}
+						bg="brand.transparent"
+						w={{ base: 3, sm: 5, md: 10 }}
+						minW="unset"
+					>
+						&gt;
+					</Button>
+				</Flex>
+				{teams.map((_v, idx: number) => {
+					return (
+						<Text
+							fontSize={15}
+							mx={2}
+							color={idx == index ? "white" : "brand.purple.dark"}
+							display="inline"
+							key={"text_" + idx}
+						>
+							•
+						</Text>
+					);
+				})}
+			</ContainerInside>
+		</Container>
+	);
 }
 
 interface PanelProps {
@@ -167,65 +146,55 @@ interface PanelProps {
 	teams?: string[];
 }
 
-class Panel extends React.Component<PanelProps, any> {
-	// constructor(props: PanelProps) {
-	// 	super(props);
-	// }
-
-	render(): ReactNode {
-		return (
-			<Flex
-				justifyContent="space-between"
-				flexDir={{ base: "column", md: "row" }}
-				alignItems="center"
-				overflow="auto"
-				flexGrow={1}
-				mx={{ base: 10, sm: 12, md: 16 }}
-				py={5}
-			>
-				<Image
-					src={this.props.src}
-					h={{ base: 100, sm: 200, md: 175, lg: 250 }}
-					mr={{ base: 0, md: 3 }}
-					mb={{ base: 3, md: 0 }}
-				/>
-				<Box>
-					<Heading
-						size="lg"
+function Panel(props: PanelProps): JSX.Element {
+	return (
+		<Flex
+			justifyContent="space-between"
+			flexDir={{ base: "column", md: "row" }}
+			alignItems="center"
+			overflow="auto"
+			flexGrow={1}
+			mx={{ base: 10, sm: 12, md: 16 }}
+			py={5}
+		>
+			<Image
+				src={props.src}
+				h={{ base: 100, sm: 200, md: 175, lg: 250 }}
+				mr={{ base: 0, md: 3 }}
+				mb={{ base: 3, md: 0 }}
+			/>
+			<Box>
+				<Heading size="lg" textAlign={["center", "center", "right"]}>
+					{props.teamname}
+				</Heading>
+				<Text textAlign={["center", "center", "right"]} my={2}>
+					{props.teamdesc}
+				</Text>
+				{props.teams ? (
+					<Text
 						textAlign={["center", "center", "right"]}
+						fontStyle="italic"
 					>
-						{this.props.teamname}
-					</Heading>
-					<Text textAlign={["center", "center", "right"]} my={2}>
-						{this.props.teamdesc}
+						Teams include{" "}
+						{props.teams
+							.slice(0, props.teams.length - 1)
+							.join(", ")}
+						, and {props.teams[props.teams.length - 1]}
 					</Text>
-					{this.props.teams ? (
-						<Text
-							textAlign={["center", "center", "right"]}
-							fontStyle="italic"
-						>
-							Teams include{" "}
-							{this.props.teams
-								.slice(0, this.props.teams.length - 1)
-								.join(", ")}
-							, and{" "}
-							{this.props.teams[this.props.teams.length - 1]}
-						</Text>
-					) : null}
+				) : null}
 
-					<Flex flexDir={{ base: "column", md: "row-reverse" }}>
-						<Link
-							isExternal={true}
-							href={this.props.link}
-							_hover={{ textDecoration: "none" }}
-						>
-							<Button bg="brand.transparent" mt={5}>
-								Join <ExternalLinkIcon ml={2} />
-							</Button>
-						</Link>
-					</Flex>
-				</Box>
-			</Flex>
-		);
-	}
+				<Flex flexDir={{ base: "column", md: "row-reverse" }}>
+					<Link
+						isExternal={true}
+						href={props.link}
+						_hover={{ textDecoration: "none" }}
+					>
+						<Button bg="brand.transparent" mt={5}>
+							Join <ExternalLinkIcon ml={2} />
+						</Button>
+					</Link>
+				</Flex>
+			</Box>
+		</Flex>
+	);
 }

@@ -1,39 +1,41 @@
 import {
 	Box,
+	Button,
 	Center,
 	Divider,
 	Flex,
 	Heading,
+	HStack,
 	Icon,
 	Image,
 	Link,
-	Spacer,
-	Text,
-	VStack,
-	HStack,
-	Wrap,
+	ListItem,
 	Modal,
-	ModalOverlay,
-	ModalContent,
-	ModalHeader,
-	ModalFooter,
 	ModalBody,
 	ModalCloseButton,
-	Button,
-	useDisclosure,
+	ModalContent,
+	ModalFooter,
+	ModalHeader,
+	ModalOverlay,
+	Spacer,
+	Text,
 	UnorderedList,
-	ListItem,
+	useDisclosure,
+	VStack,
+	Wrap,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
+import { rounded } from "@styles/theme";
+import React from "react";
 // import { FaDiscord } from "react-icons/fa";
 import {
+	RiDiscordLine,
 	RiFacebookBoxLine,
 	RiInstagramLine,
 	RiLinkedinBoxLine,
 	RiSpotifyLine,
 	RiTwitterLine,
-	RiDiscordLine,
 } from "react-icons/ri";
 import { SiTiktok } from "react-icons/si";
 
@@ -41,134 +43,128 @@ export default function Home(): JSX.Element {
 	const { isOpen, onOpen, onClose } = useDisclosure();
 	return (
 		<>
-			<Container bg="brand.purple.dark" maxW="xlg">
-				<Wrap justify="center">
-					<ContainerInside>
+			<Container bg="brand.purple.dark">
+				<ContainerInside>
+					<Center>
 						<Image
 							src="duck_group_shot.png"
 							alt="duck group shot"
 							objectFit="cover"
 							boxSize="220px"
 						/>
-					</ContainerInside>
-				</Wrap>
+					</Center>
+				</ContainerInside>
 			</Container>
 
 			{/* art box */}
 			<Container>
 				<ContainerInside>
 					<Flex textAlign="left">
-						<Wrap spacing="40px" mt="20px">
-							<VStack spacing={4} textAlign="left">
+						<VStack spacing={4} textAlign="left" mt="20px">
+							<VStack maxW="container.sm">
 								<Heading size="md">Our Community</Heading>
 
-								<Container maxW="container.sm">
-									<Heading size="sm">
-										Our organization features a global
-										community of over 60,000 teenagers!
-										Diverse, open-minded, and inclusive, our
-										students enjoy conversing in an
-										equitable environment where every new
-										acquaintance becomes a longtime friend!
-									</Heading>
-								</Container>
-								<Flex
-									flexDir="column"
-									justify="center"
-									align="center"
-								>
-									<Box
-										boxSize="500px"
-										backgroundColor="brand.transparent2"
-										padding="5px"
-										rounded="65px"
-									>
-										<Button
-											onClick={onOpen}
-											size="450px"
-											rounded="60px"
-										>
-											<Image
-												src="june.jpg"
-												boxSize="450px"
-												rounded="50px"
-												objectFit="cover"
-												margin="20px"
-											/>
-										</Button>
-										<Modal
-											isOpen={isOpen}
-											onClose={onClose}
-											isCentered
-											motionPreset="slideInRight"
-										>
-											<ModalOverlay />
-											<ModalContent>
-												<ModalHeader>
-													June Art Contest Winner
-												</ModalHeader>
-												<ModalCloseButton />
-												<ModalBody>
-													This months art contest
-													prompt was: Embracement of
-													Love and Identity. Our
-													winner for June was{" "}
-													<Heading size="sm">
-														aishi! (aishi🦋#1613)
-													</Heading>
-													<Heading size="sm">
-														Artist Description:
-													</Heading>
-													"I thought it to be a pride
-													month painting as you can
-													see two female faces
-													intertwined with each
-													other... Like they are
-													deeply connected mentally
-													and physically I just wanted
-													to do an abstract painting
-													actually, representing this
-													form of love and the closed
-													eyes explain the
-													satisfaction , sensuality
-													and happiness she feels in
-													love ... And the half opened
-													eyes represent shyness ... I
-													used blue coz 1: it's my fav
-													colour and 2: to give it a
-													hallucinated look ... Like
-													both of them are so much in
-													love that they feel like
-													they are hallucinated ...
-													They cannot think about
-													anything else ... They're
-													madly in love "
-													<Heading size="xsm">
-														Follow aishi on
-														instagram: @aeishthetic{" "}
-													</Heading>
-												</ModalBody>
-
-												<ModalFooter>
-													<Button
-														colorScheme="purple"
-														mr={3}
-														onClick={onClose}
-														variant="outline"
-													>
-														Close
-													</Button>
-												</ModalFooter>
-											</ModalContent>
-										</Modal>
-									</Box>
-
-									<Text fontSize="sm">
-										Artwork from our event winners!
-									</Text>
-								</Flex>
+								<Text size="sm">
+									Our organization features a global community
+									of over 60,000 teenagers! Diverse,
+									open-minded, and inclusive, our students
+									enjoy conversing in an equitable environment
+									where every new acquaintance becomes a
+									longtime friend!
+								</Text>
 							</VStack>
-						</Wrap>
+							<Flex
+								flexDir="column"
+								justify="center"
+								align="center"
+							>
+								<Box
+									boxSize="500px"
+									backgroundColor="brand.transparent2"
+									padding="5px"
+									rounded={rounded}
+								>
+									<Button
+										onClick={onOpen}
+										size="450px"
+										rounded={rounded}
+									>
+										<Image
+											src="june.jpg"
+											boxSize="450px"
+											rounded={rounded}
+											objectFit="cover"
+											margin="20px"
+										/>
+									</Button>
+									<Modal
+										isOpen={isOpen}
+										onClose={onClose}
+										isCentered
+										motionPreset="slideInRight"
+									>
+										<ModalOverlay />
+										<ModalContent>
+											<ModalHeader>
+												June Art Contest Winner
+											</ModalHeader>
+											<ModalCloseButton />
+											<ModalBody>
+												This months art contest prompt
+												was: Embracement of Love and
+												Identity. Our winner for June
+												was{" "}
+												<Heading size="sm">
+													aishi! (aishi🦋#1613)
+												</Heading>
+												<Heading size="sm">
+													Artist Description:
+												</Heading>
+												"I thought it to be a pride
+												month painting as you can see
+												two female faces intertwined
+												with each other... Like they are
+												deeply connected mentally and
+												physically I just wanted to do
+												an abstract painting actually,
+												representing this form of love
+												and the closed eyes explain the
+												satisfaction , sensuality and
+												happiness she feels in love ...
+												And the half opened eyes
+												represent shyness ... I used
+												blue coz 1: it's my fav colour
+												and 2: to give it a hallucinated
+												look ... Like both of them are
+												so much in love that they feel
+												like they are hallucinated ...
+												They cannot think about anything
+												else ... They're madly in love "
+												<Heading size="xsm">
+													Follow aishi on instagram:
+													@aeishthetic{" "}
+												</Heading>
+											</ModalBody>
+
+											<ModalFooter>
+												<Button
+													colorScheme="purple"
+													mr={3}
+													onClick={onClose}
+													variant="outline"
+												>
+													Close
+												</Button>
+											</ModalFooter>
+										</ModalContent>
+									</Modal>
+								</Box>
+
+								<Text fontSize="sm">
+									Artwork from our event winners!
+								</Text>
+							</Flex>
+						</VStack>
 
 						<Spacer />
 
@@ -179,7 +175,7 @@ export default function Home(): JSX.Element {
 									boxSize="300px"
 									backgroundColor="brand.transparent"
 									padding="20px"
-									rounded="40px"
+									rounded={rounded}
 									alignContent="left"
 								>
 									<VStack>
@@ -212,7 +208,7 @@ export default function Home(): JSX.Element {
 									backgroundColor="brand.transparent"
 									padding="20px"
 									pt="6px"
-									rounded="40px"
+									rounded={rounded}
 									alignContent="left"
 								>
 									<VStack>
@@ -268,7 +264,7 @@ export default function Home(): JSX.Element {
 									boxSize="300px"
 									backgroundColor="brand.transparent"
 									padding="20px"
-									rounded="40px"
+									rounded={rounded}
 									alignContent="left"
 								>
 									<VStack>
@@ -289,7 +285,7 @@ export default function Home(): JSX.Element {
 				</ContainerInside>
 			</Container>
 
-			<Divider orientation="horizontal" borderColor="white" />
+			<Divider borderColor="white" />
 			<Container>
 				<ContainerInside>
 					<Flex textAlign="left">
@@ -299,7 +295,7 @@ export default function Home(): JSX.Element {
 								boxSize="500px"
 								bg="brand.transparent"
 								padding="13px"
-								rounded="60px"
+								rounded={rounded}
 							>
 								<Center>
 									<Link
@@ -348,17 +344,7 @@ export default function Home(): JSX.Element {
 				</ContainerInside>
 			</Container>
 
-			<Divider orientation="horizontal" borderColor="white" />
-
-			<Container>
-				<ContainerInside>
-					<Heading mb="22px"> Our Staff </Heading>
-
-					<Heading fontSize="18px">School Simplified staff </Heading>
-				</ContainerInside>
-			</Container>
-
-			<Divider orientation="horizontal" borderColor="white" />
+			<Divider borderColor="white" />
 
 			<Container>
 				<ContainerInside>
@@ -369,7 +355,8 @@ export default function Home(): JSX.Element {
 								<Container maxW="container.sm">
 									<Heading fontSize="18px">
 										Check out our socials for school tips,
-										entertainment, music, podcasts, and much more!
+										entertainment, music, podcasts, and much
+										more!
 									</Heading>
 								</Container>
 							</VStack>
@@ -382,14 +369,13 @@ export default function Home(): JSX.Element {
 				<ContainerInside>
 					<Wrap margin="30px" spacing="40px" ml="280px">
 						<HStack spacing={5}>
-						
-								<Icon
-									as={RiSpotifyLine}
-									boxSize="90px"
-									color="white"
-								/>
-						
-							<Button size="100px" rounded="20px">
+							<Icon
+								as={RiSpotifyLine}
+								boxSize="90px"
+								color="white"
+							/>
+
+							<Button size="100px" rounded={rounded}>
 								<Link
 									href="https://www.instagram.com/school.simplified/"
 									isExternal
@@ -402,7 +388,7 @@ export default function Home(): JSX.Element {
 								</Link>
 							</Button>
 
-							<Button size="70px" rounded="20px" >
+							<Button size="70px" rounded="20px">
 								<Link
 									href="https://www.facebook.com/SchoolSimple/"
 									isExternal

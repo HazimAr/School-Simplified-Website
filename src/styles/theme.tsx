@@ -41,4 +41,6 @@ const theme = extendTheme({
 	},
 });
 
+export const rounded = "50px"
+
 export default theme;

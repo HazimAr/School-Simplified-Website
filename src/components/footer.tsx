@@ -5,7 +5,7 @@ import {
 	Link,
 	ListItem,
 	Text,
-	UnorderedList,
+	UnorderedList
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -25,8 +25,8 @@ const infos = [
 		link: "/about",
 	},
 	{
-		name: "Our Team",
-		link: "/team",
+		name: "Community",
+		link: "/community",
 	},
 	{
 		name: "Discord",

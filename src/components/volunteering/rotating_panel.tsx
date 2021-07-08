@@ -8,7 +8,6 @@ import {
 	Button,
 	Link,
 	SlideFade,
-	useDisclosure,
 } from "@chakra-ui/react";
 import { useControllableState } from "@chakra-ui/react";
 import Container from "@components/container";
@@ -63,81 +62,16 @@ const teams: PanelProps[] = [
 ];
 
 export default function RotatingPanel(): JSX.Element {
-	var oncloses: (() => void)[] = [],
-		onopens: (() => void)[] = [];
 	const innerPanels = teams.map((v, iindex: number) => {
-		// return (
-		// 	<Panel
-		// 		src={v.src}
-		// 		teamname={v.teamname}
-		// 		teamdesc={v.teamdesc}
-		// 		link={v.link}
-		// 		teams={v.teams}
-		// 		key={"key_" + iindex}
-		// 	/>);
-		const { isOpen, onClose, onOpen } = useDisclosure();
-		oncloses[iindex] = onClose;
-		onopens[iindex] = onOpen;
-
 		return (
-			<Box flex={1} mx={{ base: 10, sm: 12, md: 16 }} py={5}>
-				<SlideFade in={isOpen} key={"key_" + iindex}>
-					<Flex
-						justifyContent="space-between"
-						flexDir={{ base: "column", md: "row" }}
-						alignItems="center"
-						overflow="auto"
-					>
-						<Image
-							src={v.src}
-							h={{ base: 100, sm: 200, md: 150, lg: 250 }}
-							mr={{ base: 0, md: 3 }}
-							mb={{ base: 3, md: 0 }}
-							alt={v.teamname + " team logo"}
-						/>
-						<Box>
-							<Heading
-								size="lg"
-								textAlign={["center", "center", "right"]}
-							>
-								{v.teamname}
-							</Heading>
-							<Text
-								textAlign={["center", "center", "right"]}
-								my={2}
-							>
-								{v.teamdesc}
-							</Text>
-							{v.teams ? (
-								<Text
-									textAlign={["center", "center", "right"]}
-									fontStyle="italic"
-								>
-									Teams include{" "}
-									{v.teams
-										.slice(0, v.teams.length - 1)
-										.join(", ")}
-									, and {v.teams[v.teams.length - 1]}
-								</Text>
-							) : null}
-
-							<Flex
-								flexDir={{ base: "column", md: "row-reverse" }}
-							>
-								<Link
-									isExternal
-									href={v.link}
-									_hover={{ textDecoration: "none" }}
-								>
-									<Button bg="brand.transparent" mt={5}>
-										Join <ExternalLinkIcon ml={2} />
-									</Button>
-								</Link>
-							</Flex>
-						</Box>
-					</Flex>
-				</SlideFade>
-			</Box>
+			<Panel
+				teamname={v.teamname}
+				teamdesc={v.teamdesc}
+				link={v.link}
+				src={v.src}
+				teams={v.teams}
+				key={"key_" + iindex}
+			/>
 		);
 	});
 	const [index, setIndex] = useControllableState({
@@ -155,14 +89,14 @@ export default function RotatingPanel(): JSX.Element {
 				// 		console.error("Unable to close");
 				// 	}
 				// }
-				if (onopens[newIndex]) {
-					console.log("Opening " + newIndex);
-					try {
-						onopens[newIndex]();
-					} catch (e) {
-						console.error("Unable to open");
-					}
-				}
+				// if (onopens[newIndex]) {
+				// 	console.log("Opening " + newIndex);
+				// 	try {
+				// 		onopens[newIndex]();
+				// 	} catch (e) {
+				// 		console.error("Unable to open");
+				// 	}
+				// }
 			}
 		},
 	});
@@ -233,3 +167,61 @@ type PanelProps = {
 	link: string;
 	teams?: string[];
 };
+
+function Panel(props: PanelProps): JSX.Element {
+	return (
+		<Box flex={1} mx={{ base: 10, sm: 12, md: 16 }} py={5}>
+			<SlideFade in={true}>
+				<Flex
+					justifyContent="space-between"
+					flexDir={{ base: "column", md: "row" }}
+					alignItems="center"
+					overflow="auto"
+				>
+					<Image
+						src={props.src}
+						h={{ base: 100, sm: 200, md: 150, lg: 250 }}
+						mr={{ base: 0, md: 3 }}
+						mb={{ base: 3, md: 0 }}
+						alt={props.teamname + " team logo"}
+					/>
+					<Box>
+						<Heading
+							size="lg"
+							textAlign={["center", "center", "right"]}
+						>
+							{props.teamname}
+						</Heading>
+						<Text textAlign={["center", "center", "right"]} my={2}>
+							{props.teamdesc}
+						</Text>
+						{props.teams ? (
+							<Text
+								textAlign={["center", "center", "right"]}
+								fontStyle="italic"
+							>
+								Teams include{" "}
+								{props.teams
+									.slice(0, props.teams.length - 1)
+									.join(", ")}
+								, and {props.teams[props.teams.length - 1]}
+							</Text>
+						) : null}
+
+						<Flex flexDir={{ base: "column", md: "row-reverse" }}>
+							<Link
+								isExternal
+								href={props.link}
+								_hover={{ textDecoration: "none" }}
+							>
+								<Button bg="brand.transparent" mt={5}>
+									Join <ExternalLinkIcon ml={2} />
+								</Button>
+							</Link>
+						</Flex>
+					</Box>
+				</Flex>
+			</SlideFade>
+		</Box>
+	);
+}

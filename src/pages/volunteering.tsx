@@ -46,6 +46,7 @@ export default function Volunteering(): JSX.Element {
 							float="right"
 							display={["none", "block"]}
 							ml={7}
+							alt="Image of a community"
 						/>
 					</Flex>
 					<Divider bg="white" mt={5} />

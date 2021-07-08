@@ -159,9 +159,10 @@ function Panel(props: PanelProps): JSX.Element {
 		>
 			<Image
 				src={props.src}
-				h={{ base: 100, sm: 200, md: 175, lg: 250 }}
+				h={{ base: 100, sm: 200, md: 150, lg: 250 }}
 				mr={{ base: 0, md: 3 }}
 				mb={{ base: 3, md: 0 }}
+				alt={props.teamname + " team logo"}
 			/>
 			<Box>
 				<Heading size="lg" textAlign={["center", "center", "right"]}>

@@ -7,7 +7,7 @@ import {
 	Flex,
 	Button,
 	Link,
-	SlideFade,
+	ScaleFade,
 } from "@chakra-ui/react";
 import { useControllableState } from "@chakra-ui/react";
 import Container from "@components/container";
@@ -81,22 +81,6 @@ export default function RotatingPanel(): JSX.Element {
 			else if (newIndex >= innerPanels.length) setIndex(0);
 			else {
 				console.log(index + " vs " + newIndex);
-				// if (oncloses[index]) {
-				// 	console.log("Closing " + index);
-				// 	try {
-				// 		oncloses[index]();
-				// 	} catch (e) {
-				// 		console.error("Unable to close");
-				// 	}
-				// }
-				// if (onopens[newIndex]) {
-				// 	console.log("Opening " + newIndex);
-				// 	try {
-				// 		onopens[newIndex]();
-				// 	} catch (e) {
-				// 		console.error("Unable to open");
-				// 	}
-				// }
 			}
 		},
 	});
@@ -171,7 +155,7 @@ type PanelProps = {
 function Panel(props: PanelProps): JSX.Element {
 	return (
 		<Box flex={1} mx={{ base: 10, sm: 12, md: 16 }} py={5}>
-			<SlideFade in={true}>
+			<ScaleFade in={true}>
 				<Flex
 					justifyContent="space-between"
 					flexDir={{ base: "column", md: "row" }}
@@ -221,7 +205,7 @@ function Panel(props: PanelProps): JSX.Element {
 						</Flex>
 					</Box>
 				</Flex>
-			</SlideFade>
+			</ScaleFade>
 		</Box>
 	);
 }

@@ -48,16 +48,12 @@ export default function Volunteering(): JSX.Element {
 							ml={7}
 						/>
 					</Flex>
-				</ContainerInside>
-			</Container>
-			<Container bg="brand.transparent">
-				<ContainerInside py={5}>
-					<Divider bg="white" />
+					<Divider bg="white" mt={5} />
 				</ContainerInside>
 			</Container>
 
 			<Container bg="brand.transparent">
-				<ContainerInside pb={8}>
+				<ContainerInside py={8}>
 					<Heading size="xl">Join Us Today!</Heading>
 					<Text my={3}>
 						Sign up to start helping fellow students for service

@@ -39,7 +39,7 @@ import {
 } from "react-icons/ri";
 import { SiTiktok } from "react-icons/si";
 
-const boxSize = 600;
+const boxSize = 400;
 
 export default function Home(): JSX.Element {
 	const { isOpen, onOpen, onClose } = useDisclosure();
@@ -62,19 +62,7 @@ export default function Home(): JSX.Element {
 			<Container my={5}>
 				<ContainerInside>
 					<VStack textAlign="left">
-						<VStack spacing={4} textAlign="left">
-							<VStack maxW="50ch">
-								<Heading size="lg">Our Community</Heading>
-
-								<Text size="sm">
-									Our organization features a global community
-									of over 60,000 teenagers! Diverse,
-									open-minded, and inclusive, our students
-									enjoy conversing in an equitable environment
-									where every new acquaintance becomes a
-									longtime friend!
-								</Text>
-							</VStack>
+						<HStack spacing={4} textAlign="left">
 							<Flex
 								flexDir="column"
 								justify="center"
@@ -166,7 +154,19 @@ export default function Home(): JSX.Element {
 									Artwork from our event winners!
 								</Text>
 							</Flex>
-						</VStack>
+							<VStack maxW="50ch">
+								<Heading size="lg">Our Community</Heading>
+
+								<Text size="sm">
+									Our organization features a global community
+									of over 60,000 teenagers! Diverse,
+									open-minded, and inclusive, our students
+									enjoy conversing in an equitable environment
+									where every new acquaintance becomes a
+									longtime friend!
+								</Text>
+							</VStack>
+						</HStack>
 
 						<HStack spacing={6}>
 							{/* info boxes */}

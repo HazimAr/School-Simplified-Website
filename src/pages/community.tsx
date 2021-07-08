@@ -158,12 +158,6 @@ export default function Home(): JSX.Element {
 													>
 														Close
 													</Button>
-													<Button
-														variant="ghost"
-														onClick={onOpen}
-													>
-														Art Contest Info
-													</Button>
 												</ModalFooter>
 											</ModalContent>
 										</Modal>
@@ -265,7 +259,7 @@ export default function Home(): JSX.Element {
 
 										<Heading color="#5A60AD" size="5px">
 											Check out our Spotify for the
-											complete list of playlists!
+											complete list!
 										</Heading>
 									</VStack>
 								</Flex>
@@ -320,7 +314,7 @@ export default function Home(): JSX.Element {
 									</Link>
 								</Center>
 
-								<Heading size="sm" color="#5A60AD">
+								<Heading size="lg" color="#5A60AD">
 									Join our Discord. Come for the academic
 									help, stay for the events, live music, and
 									friends!
@@ -375,8 +369,7 @@ export default function Home(): JSX.Element {
 								<Container maxW="container.sm">
 									<Heading fontSize="18px">
 										Check out our socials for school tips,
-										entertainment, music, podcasts (coming
-										soon), and more!
+										entertainment, music, podcasts, and much more!
 									</Heading>
 								</Container>
 							</VStack>
@@ -389,68 +382,77 @@ export default function Home(): JSX.Element {
 				<ContainerInside>
 					<Wrap margin="30px" spacing="40px" ml="280px">
 						<HStack spacing={5}>
-							<Link href="" isExternal>
+						
 								<Icon
 									as={RiSpotifyLine}
 									boxSize="90px"
 									color="white"
 								/>
-							</Link>
+						
+							<Button size="100px" rounded="20px">
+								<Link
+									href="https://www.instagram.com/school.simplified/"
+									isExternal
+								>
+									<Icon
+										as={RiInstagramLine}
+										boxSize="90px"
+										color="white"
+									/>
+								</Link>
+							</Button>
 
-							<Link
-								href="https://www.instagram.com/school.simplified/"
-								isExternal
-							>
-								<Icon
-									as={RiInstagramLine}
-									boxSize="90px"
-									color="white"
-								/>
-							</Link>
+							<Button size="70px" rounded="20px" >
+								<Link
+									href="https://www.facebook.com/SchoolSimple/"
+									isExternal
+								>
+									<Icon
+										as={RiFacebookBoxLine}
+										boxSize="100px"
+										color="white"
+									/>
+								</Link>
+							</Button>
 
-							<Link
-								href="https://www.facebook.com/SchoolSimple/"
-								isExternal
-							>
-								<Icon
-									as={RiFacebookBoxLine}
-									boxSize="100px"
-									color="white"
-								/>
-							</Link>
+							<Button size="100px" rounded="20px">
+								<Link
+									href="https://www.tiktok.com/@schoolsimplified"
+									isExternal
+								>
+									<Icon
+										as={SiTiktok}
+										boxSize="80px"
+										color="white"
+									/>
+								</Link>
+							</Button>
 
-							<Link
-								href="https://www.tiktok.com/@schoolsimplified"
-								isExternal
-							>
-								<Icon
-									as={SiTiktok}
-									boxSize="80px"
-									color="white"
-								/>
-							</Link>
+							<Button size="110px" rounded="20px">
+								<Link
+									href="https://twitter.com/schoolsimplify"
+									isExternal
+								>
+									<Icon
+										as={RiTwitterLine}
+										boxSize="100px"
+										color="white"
+									/>
+								</Link>
+							</Button>
 
-							<Link
-								href="https://twitter.com/schoolsimplify"
-								isExternal
-							>
-								<Icon
-									as={RiTwitterLine}
-									boxSize="100px"
-									color="white"
-								/>
-							</Link>
-
-							<Link
-								href="https://www.linkedin.com/company/school-simplified"
-								isExternal
-							>
-								<Icon
-									as={RiLinkedinBoxLine}
-									boxSize="100px"
-									color="white"
-								/>
-							</Link>
+							<Button size="100px" rounded="20px">
+								<Link
+									href="https://www.linkedin.com/company/school-simplified"
+									isExternal
+								>
+									<Icon
+										as={RiLinkedinBoxLine}
+										boxSize="100px"
+										color="white"
+									/>
+								</Link>
+							</Button>
 						</HStack>
 					</Wrap>
 				</ContainerInside>

@@ -4,143 +4,154 @@ import { Box, Divider, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import StaffCard from "@components/staffcard";
-// import { useState, useEffect } from "react";
 
-const people = [
+type Person = {
+	name: string;
+	title: string;
+	img: string;
+	desc: string;
+};
+
+const people: Person[] = [
 	{
 		name: "Ethan Wu",
 		title: "Chairman + Founder",
 		img: "/staff/default.png",
+		desc: "wibble wobble",
 	},
 	{
 		name: "Ethan Hsu",
 		title: "CEO + Director",
 		img: "/staff/default.png",
+		desc: "wibble wobble",
 	},
 	{
 		name: "Nathanael Ma",
 		title: "Vice Chairman",
 		img: "/staff/default.png",
+		desc: "wibble wobble",
 	},
 	{
 		name: "Jason Mei",
 		title: "CAO",
 		img: "/staff/default.png",
+		desc: "wibble wobble",
 	},
 	{
 		name: "Max Konzerowski",
 		title: "CTO",
 		img: "/staff/default.png",
+		desc: "wibble wobble",
 	},
 	{
 		name: "Harry",
 		title: "CMO",
 		img: "/staff/default.png",
+		desc: "wibble wobble",
 	},
 	{
 		name: "Arohini Rajvanshi",
 		title: "CHRO",
 		img: "/staff/default.png",
+		desc: "wibble wobble",
 	},
 	{
 		name: "Paige Delancey",
 		title: "Executive Secretary + Director",
 		img: "/staff/default.png",
+		desc: "wibble wobble",
 	},
 	{
 		name: "Alex Andujar",
 		title: "Director",
 		img: "/staff/default.png",
+		desc: "wibble wobble",
 	},
 	{
 		name: "Dhananjai Senthil Kumar",
 		title: "Director",
 		img: "/staff/default.png",
+		desc: "wibble wobble",
 	},
 	{
 		name: "Atsi Gupta",
 		title: "Director",
 		img: "/staff/default.png",
+		desc: "wibble wobble",
 	},
 ];
 
-// const marketing = <Text>Marketing</Text>;
-
-// let body = marketing;
 export default function About(): JSX.Element {
-	// const [panel, setPanel] = useState("");
-
-	// useEffect(() => {
-	// 	if (panel === "m") {
-	// 		body = <Text>Marketing</Text>;
-	// 	}
-	// 	if (panel === "a") {
-	// 		body = <Text>Academics</Text>;
-	// 	}
-	// 	if (panel === "s") {
-	// 		body = <Text>Secretary</Text>;
-	// 	}
-	// 	if (panel === "t") {
-	// 		body = <Text>Technical</Text>;
-	// 	}
-	// 	if (panel === "h") {
-	// 		body = <Text>HR</Text>;
-	// 	}
-	// }, [panel]);
-
 	return (
-		<Container>
-			<ContainerInside>
-				<Box py="20px">
-					<Flex
-						p="30px"
-						align="center"
-						justify="center"
-						flexWrap="wrap"
-					>
-						<Box p="15px" maxW="500px" m="16px">
-							<Heading align="left" fontSize="35px">
-								Why Us?
+		<>
+			<Container bg="brand.transparent">
+				<ContainerInside>
+					<Box py={5}>
+						<Flex
+							align="center"
+							justify="center"
+							flexDir={{ base: "column", md: "row" }}
+						>
+							<Box>
+								<Heading
+									textAlign={{ base: "center", md: "left" }}
+									fontSize="2xl"
+									mb={3}
+								>
+									Why Us?
+								</Heading>
+								<Text
+									textAlign={{ base: "center", md: "left" }}
+								>
+									School Simplified believes that quality
+									education should be accessible to all
+									students. It strives to maintain its status
+									as a NPO while delivering profit-affiliated
+									services to teenagers all across the world.
+									As an organization both by students and for
+									students, we have a vested interest in
+									watching you all succeed!
+								</Text>
+							</Box>
+							<Image
+								src="/undraw/learning.svg"
+								w={{ base: 200, md: 300, lg: 400 }}
+								ml={{ base: 0, md: 8 }}
+								mt={{ base: 8, md: 0 }}
+							/>
+						</Flex>
+					</Box>
+				</ContainerInside>
+			</Container>
+			<Container>
+				<ContainerInside>
+					<Box>
+						<Box py={7}>
+							<Heading size="2xl" mb={3}>
+								Leadership
 							</Heading>
-							<Text align="left" fontSize="15px">
-								School Simplified believes that quality
-								education should be accessible to all students.
-								It strives to maintain its status as a NPO while
-								delivering profit-affiliated services to
-								teenagers all across the world. As an
-								organization both by students and for students,
-								we have a vested interest in watching you all
-								succeed!
+							<Text fontSize={20}>
+								Leaders of School Simplified
 							</Text>
 						</Box>
-						<Image src="/staff/default.png" boxSize="200px" />
-					</Flex>
-				</Box>
 
-				<Box>
-					<Box py="20px">
-						<Heading fontSize="35px">Leadership</Heading>
-						<Text fontSize="20px">
-							Leaders of School Simplified
-						</Text>
-					</Box>
+						<Divider bg="white" />
 
-					<Divider bg="white" />
-
-					<Flex justifyContent="center" flexWrap="wrap">
 						{people.map((staff, i: number) => {
 							return (
 								<StaffCard
 									title={staff.title}
 									name={staff.name}
+									desc={staff.desc}
 									img={staff.img}
-									key={i}
+									isLeft={i % 2 === 0}
+									key={"card_" + i}
 								/>
 							);
 						})}
-					</Flex>
-				</Box>
-			</ContainerInside>
-		</Container>
+					</Box>
+				</ContainerInside>
+			</Container>
+		</>
 	);
 }

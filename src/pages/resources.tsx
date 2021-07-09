@@ -16,11 +16,11 @@ export default function Resources(): JSX.Element {
 			<Container bg="brand.transparent">
 				<ContainerInside my={5}>
 					<Flex
-						flexDir={{ base: "column", md: "row" }}
+						flexDir={{ base: "column", sm: "row" }}
 						alignItems="center"
 						justifyContent="space-between"
 					>
-						<Box textAlign={{ base: "center", md: "left" }}>
+						<Box textAlign={{ base: "center", sm: "left" }}>
 							<Heading mb={3}>Resources</Heading>
 							<Text>
 								All the notes and courses you'll ever want for
@@ -30,6 +30,7 @@ export default function Resources(): JSX.Element {
 						<Image
 							src="/undraw/file_bundle.svg"
 							w={{ base: 200, md: 300, lg: 400 }}
+							mt={{ base: 5, sm: 0 }}
 						/>
 					</Flex>
 				</ContainerInside>
@@ -39,10 +40,15 @@ export default function Resources(): JSX.Element {
 
 			<Container bg="brand.transparent">
 				<ContainerInside my={5}>
-					<Flex alignItems="center" justifyContent="space-between">
+					<Flex
+						alignItems="center"
+						justifyContent="space-between"
+						flexDir={{ base: "column", sm: "row" }}
+					>
 						<Image
 							src="/undraw/notes.svg"
 							w={{ base: 200, md: 300, lg: 400 }}
+							mb={{ base: 5, sm: 0 }}
 						/>
 						<Box textAlign={{ base: "center", md: "right" }}>
 							<Heading mb={3}>

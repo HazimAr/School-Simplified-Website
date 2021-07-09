@@ -20,14 +20,14 @@ import { FaSearch } from "react-icons/fa";
 
 const categories: string[] = [
 	"All",
+	"Electives",
+	"English",
+	"Foreign Languages",
+	"History",
 	"Math",
 	"Science",
-	"History",
-	"English",
 	"Social Studies",
-	"Foreign Languages",
-	"Electives",
-].sort((a, b) => a.localeCompare(b));
+];
 
 export default function NotesSection(): JSX.Element {
 	return (
@@ -41,7 +41,7 @@ export default function NotesSection(): JSX.Element {
 						</Heading>
 						<NotesTree />
 					</Box>
-					<NotesGrid flex={1} />
+					<NotesGrid />
 				</Flex>
 			</ContainerInside>
 		</Container>
@@ -50,17 +50,15 @@ export default function NotesSection(): JSX.Element {
 
 /**
  * Generates the left panel of this section.
- * @param props any extra props to supply to this element
  * @returns the JSX element that represents the tree section on the left of the page
  */
-function NotesTree(props: any): JSX.Element {
+function NotesTree(): JSX.Element {
 	return (
 		<Accordion
 			borderColor="transparent"
 			borderLeftColor="white"
 			borderLeftWidth={3}
 			defaultIndex={0}
-			{...props}
 		>
 			{categories.map((category, idx: number) => {
 				return (
@@ -82,83 +80,127 @@ function NotesTree(props: any): JSX.Element {
 	);
 }
 
-var setGridTitle: (arg0: string) => void = (_e) => {};
-var setNoteCards: (arg0: NotesProps[]) => void = (_e) => {};
+var setCategory: (arg0: string) => void = (_e) => {};
 
 /**
  * Called when a category accordion button is clicked is clicked
  * @param category the category being selected
  */
 function selected(category: string) {
-	if (!setGridTitle) {
+	if (!setCategory) {
 		console.warn("setGridTitle unset!");
 		return;
 	}
 
-	if (!setNoteCards) {
-		console.warn("setNoteCards unset!");
-		return;
-	}
-
 	// console.log("Selected " + category);
-	if (category === "All") {
-		// The "All" category
-		setGridTitle("All Notes");
-	} else {
-		// Any other category
-		setGridTitle(category + " Notes");
-	}
-
-	setNoteCards(fetchNotes(category));
+	setCategory(category);
 }
+
+type AllNotes = {
+	[category: string]: NotesProps[];
+};
 
 /**
  * Fetches from the backend (?) all notes blurbs to display for this page
- * @param category the category to fetch the notes blurbs for
- * @returns all relevant notes blurbs
+ * @returns all notes blurbs
  */
-function fetchNotes(category: String): NotesProps[] {
+function fetchNotes(): AllNotes {
 	// filler for now; leaving open for backend integration
-	if (category.length) {
-		// console.log("fetchNotes invoked");
-		return [
-			{ title: "Interesting thing #1", href: "/" },
-			{ title: "Interesting thing #2", href: "/" },
-			{ title: "Interesting thing #3", href: "/" },
-			{ title: "Interesting thing #4", href: "/" },
-			{ title: "Interesting thing #5", href: "/" },
-			{ title: "Interesting thing #6", href: "/" },
-			{ title: "Interesting thing #7", href: "/" },
-		];
-	} else {
-		// console.log("blank invoked");
-		return [];
-	}
+	// console.log("fetchNotes invoked");
+	return {
+		Electives: [
+			{ title: "Interesting thing #1", href: "/s" },
+			{ title: "Interesting thing #2", href: "/a" },
+			{ title: "Interesting thing #3", href: "/a" },
+			{ title: "Interesting thing #4", href: "/f" },
+			{ title: "Interesting thing #5", href: "/e" },
+			{ title: "Interesting thing #6", href: "/v" },
+			{ title: "Interesting thing #7", href: "/w" },
+		],
+		English: [
+			{ title: "Interesting thing #1", href: "/s" },
+			{ title: "Interesting thing #2", href: "/a" },
+			{ title: "Interesting thing #3", href: "/a" },
+			{ title: "Interesting thing #4", href: "/f" },
+			{ title: "Interesting thing #5", href: "/e" },
+			{ title: "Interesting thing #6", href: "/v" },
+			{ title: "Interesting thing #7", href: "/w" },
+		],
+		"Foreign Languages": [
+			{ title: "Interesting thing #1", href: "/s" },
+			{ title: "Interesting thing #2", href: "/a" },
+			{ title: "Interesting thing #3", href: "/a" },
+			{ title: "Interesting thing #4", href: "/f" },
+			{ title: "Interesting thing #5", href: "/e" },
+			{ title: "Interesting thing #6", href: "/v" },
+			{ title: "Interesting thing #7", href: "/w" },
+		],
+		History: [
+			{ title: "Interesting thing #1", href: "/s" },
+			{ title: "Interesting thing #2", href: "/a" },
+			{ title: "Interesting thing #3", href: "/a" },
+			{ title: "Interesting thing #4", href: "/f" },
+			{ title: "Interesting thing #5", href: "/e" },
+			{ title: "Interesting thing #6", href: "/v" },
+			{ title: "Interesting thing #7", href: "/w" },
+		],
+		Math: [
+			{ title: "Interesting thing #1", href: "/s" },
+			{ title: "Interesting thing #2", href: "/a" },
+			{ title: "Interesting thing #3", href: "/a" },
+			{ title: "Interesting thing #4", href: "/f" },
+			{ title: "Interesting thing #5", href: "/e" },
+			{ title: "Interesting thing #6", href: "/v" },
+			{ title: "Interesting thing #7", href: "/w" },
+		],
+		Science: [
+			{ title: "Interesting thing #1", href: "/s" },
+			{ title: "Interesting thing #2", href: "/a" },
+			{ title: "Interesting thing #3", href: "/a" },
+			{ title: "Interesting thing #4", href: "/f" },
+			{ title: "Interesting thing #5", href: "/e" },
+			{ title: "Interesting thing #6", href: "/v" },
+			{ title: "Interesting thing #7", href: "/w" },
+		],
+		"Social Studies": [
+			{ title: "Interesting thing #1", href: "/s" },
+			{ title: "Interesting thing #2", href: "/a" },
+			{ title: "Interesting thing #3", href: "/a" },
+			{ title: "Interesting thing #4", href: "/f" },
+			{ title: "Interesting thing #5", href: "/e" },
+			{ title: "Interesting thing #6", href: "/v" },
+			{ title: "Interesting thing #7", href: "/w" },
+		],
+	};
 }
+
+const allNotes = fetchNotes();
 
 /**
  * Generates the right panel of this section.
- * @param props any extra props to supply to this element
  * @returns the JSX element that represents the grid section on the right of the page
  */
-function NotesGrid(props: any): JSX.Element {
-	const [gridTitle, setGT] = React.useState("All Notes");
-	setGridTitle = setGT; // breaking the Rule of Hooks?
-	const [notes, setN] = React.useState(fetchNotes(""));
-	setNoteCards = setN; // breaking the Rule of Hooks?
+function NotesGrid(): JSX.Element {
+	const [category, setC] = React.useState("All");
+	setCategory = setC; // breaking the Rule of Hooks?
+
+	const notes =
+		category === "All"
+			? Object.values(allNotes).flat()
+			: allNotes[category];
 
 	const innerTitleSize = useBreakpointValue({ base: "md", lg: "lg" }),
 		inputGroupSize = useBreakpointValue({ base: "sm", lg: "md" });
 
 	return (
-		<Box {...props}>
+		<Box flex={1}>
 			<Flex
 				justifyContent="space-between"
 				flexDir={{ base: "column", md: "row" }}
 				mb={5}
 			>
 				<Heading size={innerTitleSize} mb={3} flexShrink={0} mr={5}>
-					{gridTitle}
+					{category}
 				</Heading>
 				<InputGroup
 					size={inputGroupSize}
@@ -176,7 +218,7 @@ function NotesGrid(props: any): JSX.Element {
 				{notes.map((note, idx: number) => (
 					<NotesBox
 						title={note.title}
-						href={note.title}
+						href={note.href}
 						key={"note_" + idx}
 					/>
 				))}
@@ -197,11 +239,11 @@ type NotesProps = {
  * Creates a notes box
  * @returns a JSX Element that displays the blurb of the notes
  */
-function NotesBox({ title, href }: NotesProps): JSX.Element {
+function NotesBox(props: NotesProps): JSX.Element {
 	return (
 		<Link
-			href={href}
-			_hover={{ textDecoration: "none", cursor: "default" }}
+			href={props.href}
+			_hover={{ textDecoration: "none", cursor: "auto" }}
 		>
 			<Center
 				w={{ base: "initial", md: 150, lg: 175 }}
@@ -215,7 +257,7 @@ function NotesBox({ title, href }: NotesProps): JSX.Element {
 				fontSize={{ base: 14, md: 18 }}
 				_hover={{ cursor: "pointer" }}
 			>
-				{title}
+				{props.title}
 			</Center>
 		</Link>
 	);

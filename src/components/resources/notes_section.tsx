@@ -183,6 +183,7 @@ function NotesTree(props: any): JSX.Element {
 }
 
 var setGridTitle: (arg0: string) => void = (_e) => {};
+var setNoteCards: (arg0: NotesProps[]) => void = (_e) => {};
 
 /**
  * Called when a category accordion button is clicked or a subcategory thing is clicked
@@ -201,6 +202,11 @@ function selected({
 		return;
 	}
 
+	if (!setNoteCards) {
+		console.warn("setNoteCards unset!");
+		return;
+	}
+
 	// console.log("Selected " + category + "/" + subcategory);
 	if (category === "All") {
 		// The "All" category
@@ -212,6 +218,27 @@ function selected({
 		// Any other subcategory
 		setGridTitle(subcategory + " Notes");
 	}
+
+	setNoteCards(fetchNotes(category, subcategory));
+}
+
+/**
+ * Fetches from the backend (?) all notes blurbs to display for this page
+ * @param category the category to fetch the notes blurbs for
+ * @param subcategory the subcategory to fetch the notes blurbs for
+ * @returns all relevant notes blurbs
+ */
+function fetchNotes(category: string, subcategory: string): NotesProps[] {
+	// filler for now; leaving open for backend integration
+	return [
+		{ title: "Interesting thing #1", href: "/" },
+		{ title: "Interesting thing #2", href: "/" },
+		{ title: "Interesting thing #3", href: "/" },
+		{ title: "Interesting thing #4", href: "/" },
+		{ title: "Interesting thing #5", href: "/" },
+		{ title: "Interesting thing #6", href: "/" },
+		{ title: "Interesting thing #7", href: "/" },
+	];
 }
 
 /**
@@ -222,6 +249,8 @@ function selected({
 function NotesGrid(props: any): JSX.Element {
 	const [gridTitle, setGT] = React.useState("All Notes");
 	setGridTitle = setGT; // breaking the Rule of Hooks?
+	const [notes, setN] = React.useState(fetchNotes("All", "All"));
+	setNoteCards = setN; // breaking the Rule of Hooks?
 
 	const innerTitleSize = useBreakpointValue({ base: "md", lg: "lg" }),
 		inputGroupSize = useBreakpointValue({ base: "sm", lg: "md" });
@@ -248,7 +277,13 @@ function NotesGrid(props: any): JSX.Element {
 				</InputGroup>
 			</Flex>
 			<SimpleGrid columns={4}>
-				<NotesBox title="Square" href="/" />
+				{notes.map((note, idx: number) => {
+					<NotesBox
+						title={note.title}
+						href={note.title}
+						key={"note_" + idx}
+					/>;
+				})}
 			</SimpleGrid>
 		</Box>
 	);
@@ -268,13 +303,19 @@ type NotesProps = {
  */
 function NotesBox({ title, href }: NotesProps): JSX.Element {
 	return (
-		<Link href={href}>
+		<Link
+			href={href}
+			_hover={{ textDecoration: "none" }}
+			pointerEvents="none"
+		>
 			<Center
-				w={200}
-				h={200}
+				w={150}
+				h={150}
+				borderRadius={25}
 				bg="brand.transparent"
 				color="brand.purple.dark"
-				fontSize={20}
+				fontSize={18}
+				pointerEvents="auto"
 			>
 				{title}
 			</Center>

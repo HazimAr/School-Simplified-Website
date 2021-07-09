@@ -5,7 +5,7 @@ import {
 	AccordionPanel,
 	Box,
 	Heading,
-	Text
+	useControllableState,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -53,6 +53,21 @@ const categories: Categories = {
 };
 const sortedKeys = Object.keys(categories).sort((a, b) => a.localeCompare(b));
 
+/**
+ * Called when a category accordion button is clicked or a subcategory thing is clicked
+ * @param category the category being selected
+ * @param subcategory the subcategory being selected
+ */
+function selected({
+	category,
+	subcategory = "All",
+}: {
+	category: string;
+	subcategory?: string;
+}) {
+	console.log("Selected " + category + "/" + subcategory);
+}
+
 export default function NotesSection(): JSX.Element {
 	return (
 		<Container>
@@ -66,44 +81,96 @@ export default function NotesSection(): JSX.Element {
 						borderColor="transparent"
 						borderLeftColor="white"
 						borderLeftWidth={3}
+						defaultIndex={0}
 					>
 						{sortedKeys.map((key, idx: number) => {
 							const subcategories = categories[key];
-							return (
-								<AccordionItem key={"_" + idx}>
-									<AccordionButton
-										textAlign="left"
-										color="whiteAlpha.600"
-										_expanded={{ color: "white" }}
-									>
-										<Heading size="md">{key}</Heading>
-									</AccordionButton>
-									{subcategories.length ? (
+							if (subcategories.length) {
+								const [value, setValue] = useControllableState({
+									defaultValue: 0,
+								});
+								return (
+									<AccordionItem key={"_" + idx}>
+										<AccordionButton
+											textAlign="left"
+											color="whiteAlpha.600"
+											_expanded={{ color: "white" }}
+											onClick={() => {
+												selected({ category: key });
+												setValue(0);
+											}}
+										>
+											<Heading size="md">{key}</Heading>
+										</AccordionButton>
 										<AccordionPanel
 											pb={3}
 											borderLeftColor="white"
 											borderLeftWidth={1}
 											ml={3}
 										>
-											{subcategories.map(
-												(
-													subcategory,
-													index: number
-												) => {
-													return (
-														<Text
-															textAlign="left"
-															key={"__" + index}
-														>
-															{subcategory}
-														</Text>
-													);
-												}
-											)}
+											<Accordion
+												borderColor="transparent"
+												index={value}
+											>
+												{subcategories.map(
+													(
+														subcategory,
+														index: number
+													) => {
+														return (
+															<AccordionItem
+																key={
+																	"__" + index
+																}
+															>
+																<AccordionButton
+																	textAlign="left"
+																	color="whiteAlpha.600"
+																	_expanded={{
+																		color: "white",
+																	}}
+																	onClick={() => {
+																		setValue(
+																			index
+																		);
+																		selected(
+																			{
+																				category:
+																					key,
+																				subcategory:
+																					subcategory,
+																			}
+																		);
+																	}}
+																>
+																	{
+																		subcategory
+																	}
+																</AccordionButton>
+															</AccordionItem>
+														);
+													}
+												)}
+											</Accordion>
 										</AccordionPanel>
-									) : null}
-								</AccordionItem>
-							);
+									</AccordionItem>
+								);
+							} else {
+								return (
+									<AccordionItem key={"_" + idx}>
+										<AccordionButton
+											textAlign="left"
+											color="whiteAlpha.600"
+											_expanded={{ color: "white" }}
+											onClick={() => {
+												selected({ category: key });
+											}}
+										>
+											<Heading size="md">{key}</Heading>
+										</AccordionButton>
+									</AccordionItem>
+								);
+							}
 						})}
 					</Accordion>
 				</Box>

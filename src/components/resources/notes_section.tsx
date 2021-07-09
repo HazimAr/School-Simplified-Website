@@ -217,6 +217,7 @@ function NotesGrid(): JSX.Element {
 			<Flex
 				flexWrap="wrap"
 				flexDir={{ base: "column", md: "row" }}
+				alignContent="flex-start"
 				overflowY="scroll"
 				h={500}
 			>

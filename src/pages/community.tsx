@@ -45,20 +45,6 @@ export default function Home(): JSX.Element {
 	const { isOpen, onOpen, onClose } = useDisclosure();
 	return (
 		<>
-			<Container bg="brand.purple.dark">
-				<ContainerInside>
-					<Center>
-						<Image
-							src="duck_group_shot.png"
-							alt="duck group shot"
-							objectFit="cover"
-							boxSize="220px"
-						/>
-					</Center>
-				</ContainerInside>
-			</Container>
-
-			{/* art box */}
 			<Container my={5}>
 				<ContainerInside>
 					<VStack textAlign="left">
@@ -132,7 +118,7 @@ export default function Home(): JSX.Element {
 												else ... They're madly in love "
 												<Heading size="xsm">
 													Follow aishi on instagram:
-													@aeishthetic{" "}
+													@aeishthetic
 												</Heading>
 											</ModalBody>
 
@@ -154,10 +140,11 @@ export default function Home(): JSX.Element {
 									Artwork from our event winners!
 								</Text>
 							</Flex>
-							<VStack maxW="50ch">
+
+							<VStack maxW="50ch" ml="10px">
 								<Heading size="lg">Our Community</Heading>
 
-								<Text size="sm">
+								<Text fontSize="lg">
 									Our organization features a global community
 									of over 60,000 teenagers! Diverse,
 									open-minded, and inclusive, our students
@@ -168,32 +155,31 @@ export default function Home(): JSX.Element {
 							</VStack>
 						</HStack>
 
-						<HStack spacing={6}>
-							{/* info boxes */}
+						<HStack spacing={8}>
 							<Flex
 								boxSize="300px"
 								backgroundColor="brand.transparent"
 								padding="20px"
 								rounded={rounded}
 								alignContent="left"
+								mt="10px"
 							>
 								<VStack>
 									<Heading>Events</Heading>
-									<Heading color="#5A60AD" size="sm">
+									<Heading  size="sm">
 										Our Event team works hard to put
 										together events and contests for our
 										community! They offer:
 									</Heading>
-									<UnorderedList color="#6670e3">
+									<UnorderedList >
 										<ListItem>
-											{" "}
-											Monthly Art Contests{" "}
+											Monthly Art Contests
 										</ListItem>
 										<ListItem>Music Talent Show</ListItem>
 										<ListItem>Karaoke</ListItem>
 										<ListItem>Game Night</ListItem>
 									</UnorderedList>
-									<Heading color="#5A60AD" size="sm">
+									<Heading size="sm">
 										Join our discord server to participate
 										in these events!
 									</Heading>
@@ -210,7 +196,7 @@ export default function Home(): JSX.Element {
 							>
 								<VStack>
 									<Heading pt="10px">Music</Heading>
-									<Heading color="#5A60AD" size="sm">
+									<Heading  size="sm">
 										Our team has put together playlists of
 										music for you to enjoy!
 									</Heading>
@@ -218,7 +204,7 @@ export default function Home(): JSX.Element {
 										href="https://open.spotify.com/playlist/5xy112KNO4WBzaxR1tioT9?si=cbf67fcfe567406b&nd=1"
 										isExternal
 									>
-										<Heading color="#6670e3" size="xsm">
+										<Heading size="xsm">
 											Study Lofi
 										</Heading>
 									</Link>
@@ -227,7 +213,7 @@ export default function Home(): JSX.Element {
 										href="https://open.spotify.com/playlist/2qfpV3Cv3LGASgLk5DDIwA?si=df83f8b734784065"
 										isExternal
 									>
-										<Heading color="#6670e3" size="xsm">
+										<Heading size="xsm">
 											Jazz Lofi
 										</Heading>
 									</Link>
@@ -236,7 +222,7 @@ export default function Home(): JSX.Element {
 										href="https://open.spotify.com/playlist/3KUCDUAke9JNCi3EC3DR4A?si=b84da9bd407d43f2"
 										isExternal
 									>
-										<Heading color="#6670e3" size="xsm">
+										<Heading size="xsm">
 											90s Pop
 										</Heading>
 									</Link>
@@ -245,12 +231,12 @@ export default function Home(): JSX.Element {
 										href="https://open.spotify.com/playlist/1lhX7W0NEvzMSsFCkQfxk4?si=5c16816fc6974f87"
 										isExternal
 									>
-										<Heading color="#6670e3" size="xsm">
+										<Heading size="xsm">
 											2010-2015 Pop
 										</Heading>
 									</Link>
 
-									<Heading color="#5A60AD" size="5px">
+									<Heading size="5px">
 										Check out our Spotify for the complete
 										list!
 									</Heading>
@@ -266,7 +252,7 @@ export default function Home(): JSX.Element {
 							>
 								<VStack>
 									<Heading> Friends </Heading>
-									<Heading size="xsm" color="#5A60AD">
+									<Heading size="xsm">
 										Start making new freinds from all around
 										the world by joining our server. You can
 										chat, voice call, play games, or even
@@ -284,12 +270,28 @@ export default function Home(): JSX.Element {
 			<Container>
 				<ContainerInside>
 					<Flex textAlign="left">
+						<Center>
+								<Wrap spacing="30px" margin="20px">
+									<Box>
+										<Heading mb="25px" mt="20px">
+											Our Members
+										</Heading>
+										<Text fontSize="lg">
+											Our members work together to aid students all around the globe in academics and extracurricular activities.
+											We offer student oppourtunities, daily motivation, school help, entertainment, and much more!
+										</Text>
+									</Box>
+								</Wrap>
+							</Center>
+						<Spacer />
+
+
 						<Wrap spacing="40px" justify="left" margin="25px">
 							{/* disc box */}
 							<Box
-								boxSize="500px"
+								boxSize="450px"
 								bg="brand.transparent"
-								padding="13px"
+								padding="5px"
 								rounded={rounded}
 							>
 								<Center>
@@ -297,42 +299,18 @@ export default function Home(): JSX.Element {
 										href="https://discord.com/invite/school"
 										isExternal
 									>
-										<Icon
-											as={RiDiscordLine}
-											boxSize="320px"
-											color="brand.transparent2"
+										<Image
+											src="/undraw/connections.svg"
+											boxSize="340px"
 										/>
 									</Link>
 								</Center>
 
-								<Heading size="lg" color="#5A60AD">
+								<Heading size="md" ml="10px">
 									Join our Discord. Come for the academic
 									help, stay for the events, live music, and
 									friends!
 								</Heading>
-							</Box>
-						</Wrap>
-
-						<Spacer />
-						<Wrap spacing="30px" margin="20px">
-							<Box>
-								<Heading mb="25px" mt="20px">
-									{" "}
-									Our Members{" "}
-								</Heading>
-								<Heading size="50px">
-									Our organization features a global community
-									of over 60,000 teenagers! Diverse,
-									open-minded, and inclusive, our students
-									enjoy conversing in an equitable environment
-									where every new acquaintance becomes a
-									longtime friend!
-								</Heading>
-
-								<Image
-									src="/undraw/connections.svg"
-									mt="25px"
-								/>
 							</Box>
 						</Wrap>
 					</Flex>
@@ -349,7 +327,7 @@ export default function Home(): JSX.Element {
 								<Heading>Our Socials</Heading>
 								<Container maxW="container.sm">
 									<Heading fontSize="18px">
-										Check out our socials for school tips,
+										Check out our socials for tips,
 										entertainment, music, podcasts, and much
 										more!
 									</Heading>
@@ -362,7 +340,7 @@ export default function Home(): JSX.Element {
 
 			<Container>
 				<ContainerInside>
-					<Wrap margin="30px" spacing="40px" ml="280px">
+					<Wrap margin="30px" spacing="40px" ml="200px">
 						<HStack spacing={5}>
 							<Icon
 								as={RiSpotifyLine}
@@ -370,7 +348,7 @@ export default function Home(): JSX.Element {
 								color="white"
 							/>
 
-							<Button size="100px" rounded={rounded}>
+							<Button size="100px" rounded="20px">
 								<Link
 									href="https://www.instagram.com/school.simplified/"
 									isExternal
@@ -398,12 +376,25 @@ export default function Home(): JSX.Element {
 
 							<Button size="100px" rounded="20px">
 								<Link
+									href="https://discord.com/invite/school"
+									isExternal
+								>
+									<Icon
+										as={RiDiscordLine}
+										boxSize="140px"
+										color="white"
+									/>
+								</Link>
+							</Button>
+
+							<Button size="110px" >
+								<Link
 									href="https://www.tiktok.com/@schoolsimplified"
 									isExternal
 								>
 									<Icon
 										as={SiTiktok}
-										boxSize="80px"
+										boxSize="90px"
 										color="white"
 									/>
 								</Link>

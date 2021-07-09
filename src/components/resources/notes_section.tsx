@@ -1,4 +1,12 @@
-import { Box, Divider, Flex, Heading, Text } from "@chakra-ui/react";
+import {
+	Accordion,
+	AccordionButton,
+	AccordionItem,
+	AccordionPanel,
+	Box,
+	Heading,
+	Text
+} from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 
@@ -54,61 +62,50 @@ export default function NotesSection(): JSX.Element {
 					<Heading size="lg">Categories</Heading>
 
 					{/* This is the tree area */}
-					<Flex alignItems="stretch">
-						<Box mr={3}>
-							<Divider orientation="vertical" bg="white" w={1} />
-						</Box>
-						<Box mb={2}>
-							{sortedKeys.map((key, idx: number) => {
-								const subcategories = categories[key];
-
-								return (
-									<>
-										<Heading
-											key={"_" + idx}
-											textAlign="left"
-											size="md"
-											mt={2}
+					<Accordion
+						borderColor="transparent"
+						borderLeftColor="white"
+						borderLeftWidth={3}
+					>
+						{sortedKeys.map((key, idx: number) => {
+							const subcategories = categories[key];
+							return (
+								<AccordionItem key={"_" + idx}>
+									<AccordionButton
+										textAlign="left"
+										color="whiteAlpha.600"
+										_expanded={{ color: "white" }}
+									>
+										<Heading size="md">{key}</Heading>
+									</AccordionButton>
+									{subcategories.length ? (
+										<AccordionPanel
+											pb={3}
+											borderLeftColor="white"
+											borderLeftWidth={1}
+											ml={3}
 										>
-											{key}
-										</Heading>
-										{subcategories.length ? (
-											<Flex mt={1}>
-												<Box mr={2}>
-													<Divider
-														orientation="vertical"
-														bg="white"
-													/>
-												</Box>
-												<Box>
-													{subcategories.map(
-														(
-															subcategory,
-															index: number
-														) => {
-															return (
-																<Text
-																	textAlign="left"
-																	key={
-																		"__" +
-																		index
-																	}
-																>
-																	{
-																		subcategory
-																	}
-																</Text>
-															);
-														}
-													)}
-												</Box>
-											</Flex>
-										) : null}
-									</>
-								);
-							})}
-						</Box>
-					</Flex>
+											{subcategories.map(
+												(
+													subcategory,
+													index: number
+												) => {
+													return (
+														<Text
+															textAlign="left"
+															key={"__" + index}
+														>
+															{subcategory}
+														</Text>
+													);
+												}
+											)}
+										</AccordionPanel>
+									) : null}
+								</AccordionItem>
+							);
+						})}
+					</Accordion>
 				</Box>
 			</ContainerInside>
 		</Container>

@@ -29,73 +29,6 @@ const categories: string[] = [
 	"Social Studies",
 ];
 
-export default function NotesSection(): JSX.Element {
-	return (
-		<Container>
-			<ContainerInside my={5}>
-				<Heading mb={5}>Notes</Heading>
-				<Flex>
-					<Box flex={0} mr={5}>
-						<Heading size="md" mb={3} textAlign="left">
-							Categories
-						</Heading>
-						<NotesTree />
-					</Box>
-					<NotesGrid />
-				</Flex>
-			</ContainerInside>
-		</Container>
-	);
-}
-
-/**
- * Generates the left panel of this section.
- * @returns the JSX element that represents the tree section on the left of the page
- */
-function NotesTree(): JSX.Element {
-	return (
-		<Accordion
-			borderColor="transparent"
-			borderLeftColor="white"
-			borderLeftWidth={3}
-			defaultIndex={0}
-		>
-			{categories.map((category, idx: number) => {
-				return (
-					<AccordionItem key={"_" + idx}>
-						<AccordionButton
-							textAlign="left"
-							color="whiteAlpha.600"
-							_expanded={{ color: "white" }}
-							onClick={() => {
-								selected(category);
-							}}
-						>
-							<Heading size="sm">{category}</Heading>
-						</AccordionButton>
-					</AccordionItem>
-				);
-			})}
-		</Accordion>
-	);
-}
-
-var setCategory: (arg0: string) => void = (_e) => {};
-
-/**
- * Called when a category accordion button is clicked is clicked
- * @param category the category being selected
- */
-function selected(category: string) {
-	if (!setCategory) {
-		console.warn("setGridTitle unset!");
-		return;
-	}
-
-	// console.log("Selected " + category);
-	setCategory(category);
-}
-
 type AllNotes = {
 	[category: string]: NotesProps[];
 };
@@ -176,6 +109,73 @@ function fetchNotes(): AllNotes {
 
 const allNotes = fetchNotes();
 
+export default function NotesSection(): JSX.Element {
+	return (
+		<Container>
+			<ContainerInside my={5}>
+				<Heading mb={5}>Notes</Heading>
+				<Flex>
+					<Box flex={0} mr={5}>
+						<Heading size="md" mb={3} textAlign="left">
+							Categories
+						</Heading>
+						<NotesTree />
+					</Box>
+					<NotesGrid />
+				</Flex>
+			</ContainerInside>
+		</Container>
+	);
+}
+
+/**
+ * Generates the left panel of this section.
+ * @returns the JSX element that represents the tree section on the left of the page
+ */
+function NotesTree(): JSX.Element {
+	return (
+		<Accordion
+			borderColor="transparent"
+			borderLeftColor="white"
+			borderLeftWidth={3}
+			defaultIndex={0}
+		>
+			{categories.map((category, idx: number) => {
+				return (
+					<AccordionItem key={"_" + idx}>
+						<AccordionButton
+							textAlign="left"
+							color="whiteAlpha.600"
+							_expanded={{ color: "white" }}
+							onClick={() => {
+								selected(category);
+							}}
+						>
+							<Heading size="sm">{category}</Heading>
+						</AccordionButton>
+					</AccordionItem>
+				);
+			})}
+		</Accordion>
+	);
+}
+
+var setCategory: (arg0: string) => void = (_e) => {};
+
+/**
+ * Called when a category accordion button is clicked is clicked
+ * @param category the category being selected
+ */
+function selected(category: string) {
+	if (!setCategory) {
+		console.warn("setGridTitle unset!");
+		return;
+	}
+
+	// console.log("Selected " + category);
+	setCategory(category);
+}
+
 /**
  * Generates the right panel of this section.
  * @returns the JSX element that represents the grid section on the right of the page
@@ -214,7 +214,12 @@ function NotesGrid(): JSX.Element {
 					<Input placeholder="Search" bg="brand.transparent" />
 				</InputGroup>
 			</Flex>
-			<Flex flexWrap="wrap" flexDir={{ base: "column", md: "row" }}>
+			<Flex
+				flexWrap="wrap"
+				flexDir={{ base: "column", md: "row" }}
+				overflowY="scroll"
+				h={500}
+			>
 				{notes.map((note, idx: number) => (
 					<NotesBox
 						title={note.title}
@@ -240,21 +245,26 @@ type NotesProps = {
  * @returns a JSX Element that displays the blurb of the notes
  */
 function NotesBox(props: NotesProps): JSX.Element {
+	const sideLength = useBreakpointValue({
+		base: "initial",
+		md: 125,
+		lg: 185,
+	});
 	return (
 		<Link
 			href={props.href}
 			_hover={{ textDecoration: "none", cursor: "auto" }}
 		>
 			<Center
-				w={{ base: "initial", md: 150, lg: 175 }}
-				h={{ base: "initial", md: 150, lg: 175 }}
+				w={sideLength}
+				h={sideLength}
 				borderRadius={25}
 				mb={3}
 				mr={3}
 				p={3}
 				bg="brand.transparent"
 				color="brand.purple.dark"
-				fontSize={{ base: 14, md: 18 }}
+				fontSize={{ base: 14, lg: 18 }}
 				_hover={{ cursor: "pointer" }}
 			>
 				{props.title}

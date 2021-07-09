@@ -1,28 +1,63 @@
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
+import CourseList from "@components/resources/course_list";
+import NotesSection from "@components/resources/notes_section";
 
-// Got to make all of the tabs of Subjects using Chakra
-
+/**
+ * Notes and stuff
+ *
+ *
+ * @returns the Resources page
+ */
 export default function Resources(): JSX.Element {
 	return (
-		<Container>
-			<ContainerInside>
-				<Flex>
-					<Box pl="20px" flex="0.75" bg="brand.purple.dark">
-						<Heading align="left">NOTES</Heading>
-						<Text align="left">
-							We simplify complicated material by offering notes
-							and free help with classes! Our resources cover both
-							AP and non-AP courses, allowing you to explore the
-							intricacies of the subject at hand.
-						</Text>
-					</Box>
-					<Box flex="2" bg="brand.purple.dark">
-						hehe img here
-					</Box>
-				</Flex>
-			</ContainerInside>
-		</Container>
+		<>
+			<Container bg="brand.transparent">
+				<ContainerInside my={5}>
+					<Flex
+						flexDir={{ base: "column", md: "row" }}
+						alignItems="center"
+						justifyContent="space-between"
+					>
+						<Box textAlign={{ base: "center", md: "left" }}>
+							<Heading mb={3}>Resources</Heading>
+							<Text>
+								All the notes and courses you'll ever want for
+								your academic needs!
+							</Text>
+						</Box>
+						<Image
+							src="/undraw/file_bundle.svg"
+							w={{ base: 200, md: 300, lg: 400 }}
+						/>
+					</Flex>
+				</ContainerInside>
+			</Container>
+
+			<NotesSection />
+
+			<Container bg="brand.transparent">
+				<ContainerInside my={5}>
+					<Flex alignItems="center" justifyContent="space-between">
+						<Image
+							src="/undraw/notes.svg"
+							w={{ base: 200, md: 300, lg: 400 }}
+						/>
+						<Box textAlign={{ base: "center", md: "right" }}>
+							<Heading mb={3}>
+								Want community service hours?
+							</Heading>
+							<Text>
+								Earn official volunteer hours by submitting
+								notes to help our community!
+							</Text>
+						</Box>
+					</Flex>
+				</ContainerInside>
+			</Container>
+
+			<CourseList />
+		</>
 	);
 }

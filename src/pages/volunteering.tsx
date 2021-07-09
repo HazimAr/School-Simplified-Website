@@ -29,11 +29,11 @@ export default function Volunteering(): JSX.Element {
 			<Container bg="brand.transparent">
 				<ContainerInside pt={8}>
 					<Flex alignItems="center">
-						<Box flex={1}>
-							<Heading textAlign="left" size="xl" mb={3}>
+						<Box flex={1} textAlign="left">
+							<Heading size="xl" mb={3}>
 								Volunteering Opportunities
 							</Heading>
-							<Text textAlign="left" fontSize={21}>
+							<Text fontSize={21}>
 								We have a wide variety of positions available
 								that can fit any of a wide range of skills or
 								interests!

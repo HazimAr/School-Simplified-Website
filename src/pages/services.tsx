@@ -1,5 +1,5 @@
 import { ExternalLinkIcon } from "@chakra-ui/icons";
-import { Flex, Heading, Link, Text, Image, Box } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Link, Text } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 
@@ -37,11 +37,11 @@ export default function Services(): JSX.Element {
 			<Container bg="brand.transparent">
 				<ContainerInside py={8}>
 					<Flex alignItems="center">
-						<Box>
-							<Heading textAlign="left" mb={5} size="lg">
+						<Box textAlign="left">
+							<Heading mb={5} size="lg">
 								Our Services
 							</Heading>
-							<Text textAlign="left">
+							<Text>
 								Although a non-profit organization, School
 								Simplified offers the quality services of a
 								profit-based company. With areas specifically

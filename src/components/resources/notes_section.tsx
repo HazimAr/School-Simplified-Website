@@ -230,15 +230,21 @@ function selected({
  */
 function fetchNotes(category: string, subcategory: string): NotesProps[] {
 	// filler for now; leaving open for backend integration
-	return [
-		{ title: "Interesting thing #1", href: "/" },
-		{ title: "Interesting thing #2", href: "/" },
-		{ title: "Interesting thing #3", href: "/" },
-		{ title: "Interesting thing #4", href: "/" },
-		{ title: "Interesting thing #5", href: "/" },
-		{ title: "Interesting thing #6", href: "/" },
-		{ title: "Interesting thing #7", href: "/" },
-	];
+	if (category.length && subcategory.length) {
+		// console.log("fetchNotes invoked");
+		return [
+			{ title: "Interesting thing #1", href: "/" },
+			{ title: "Interesting thing #2", href: "/" },
+			{ title: "Interesting thing #3", href: "/" },
+			{ title: "Interesting thing #4", href: "/" },
+			{ title: "Interesting thing #5", href: "/" },
+			{ title: "Interesting thing #6", href: "/" },
+			{ title: "Interesting thing #7", href: "/" },
+		];
+	} else {
+		// console.log("blank invoked");
+		return [];
+	}
 }
 
 /**
@@ -249,7 +255,7 @@ function fetchNotes(category: string, subcategory: string): NotesProps[] {
 function NotesGrid(props: any): JSX.Element {
 	const [gridTitle, setGT] = React.useState("All Notes");
 	setGridTitle = setGT; // breaking the Rule of Hooks?
-	const [notes, setN] = React.useState(fetchNotes("All", "All"));
+	const [notes, setN] = React.useState(fetchNotes("", ""));
 	setNoteCards = setN; // breaking the Rule of Hooks?
 
 	const innerTitleSize = useBreakpointValue({ base: "md", lg: "lg" }),
@@ -276,14 +282,14 @@ function NotesGrid(props: any): JSX.Element {
 					<Input placeholder="Search" bg="brand.transparent" />
 				</InputGroup>
 			</Flex>
-			<SimpleGrid columns={4}>
-				{notes.map((note, idx: number) => {
+			<SimpleGrid columns={4} spacing={3}>
+				{notes.map((note, idx: number) => (
 					<NotesBox
 						title={note.title}
 						href={note.title}
 						key={"note_" + idx}
-					/>;
-				})}
+					/>
+				))}
 			</SimpleGrid>
 		</Box>
 	);

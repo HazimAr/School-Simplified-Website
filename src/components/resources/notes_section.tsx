@@ -77,104 +77,109 @@ export default function NotesSection(): JSX.Element {
 					<Heading size="lg">Categories</Heading>
 
 					{/* This is the tree area */}
-					<Accordion
-						borderColor="transparent"
-						borderLeftColor="white"
-						borderLeftWidth={3}
-						defaultIndex={0}
-					>
-						{sortedKeys.map((key, idx: number) => {
-							const subcategories = categories[key];
-							if (subcategories.length) {
-								const [value, setValue] = useControllableState({
-									defaultValue: 0,
-								});
-								return (
-									<AccordionItem key={"_" + idx}>
-										<AccordionButton
-											textAlign="left"
-											color="whiteAlpha.600"
-											_expanded={{ color: "white" }}
-											onClick={() => {
-												selected({ category: key });
-												setValue(0);
-											}}
-										>
-											<Heading size="md">{key}</Heading>
-										</AccordionButton>
-										<AccordionPanel
-											pb={3}
-											borderLeftColor="white"
-											borderLeftWidth={1}
-											ml={3}
-										>
-											<Accordion
-												borderColor="transparent"
-												index={value}
-											>
-												{subcategories.map(
-													(
-														subcategory,
-														index: number
-													) => {
-														return (
-															<AccordionItem
-																key={
-																	"__" + index
-																}
-															>
-																<AccordionButton
-																	textAlign="left"
-																	color="whiteAlpha.600"
-																	_expanded={{
-																		color: "white",
-																	}}
-																	onClick={() => {
-																		setValue(
-																			index
-																		);
-																		selected(
-																			{
-																				category:
-																					key,
-																				subcategory:
-																					subcategory,
-																			}
-																		);
-																	}}
-																>
-																	{
-																		subcategory
-																	}
-																</AccordionButton>
-															</AccordionItem>
-														);
-													}
-												)}
-											</Accordion>
-										</AccordionPanel>
-									</AccordionItem>
-								);
-							} else {
-								return (
-									<AccordionItem key={"_" + idx}>
-										<AccordionButton
-											textAlign="left"
-											color="whiteAlpha.600"
-											_expanded={{ color: "white" }}
-											onClick={() => {
-												selected({ category: key });
-											}}
-										>
-											<Heading size="md">{key}</Heading>
-										</AccordionButton>
-									</AccordionItem>
-								);
-							}
-						})}
-					</Accordion>
+					<NotesTree />
 				</Box>
 			</ContainerInside>
 		</Container>
+	);
+}
+
+/**
+ * Generates the left panel of this section.
+ * @returns the JSX element that represents the tree section on the left of the page
+ */
+function NotesTree(): JSX.Element {
+	return (
+		<Accordion
+			borderColor="transparent"
+			borderLeftColor="white"
+			borderLeftWidth={3}
+			defaultIndex={0}
+		>
+			{sortedKeys.map((key, idx: number) => {
+				const subcategories = categories[key];
+
+				// if the category has child subcategories (i.e. not the "All" section)
+				if (subcategories.length) {
+					const [value, setValue] = useControllableState({
+						defaultValue: 0,
+					});
+					return (
+						<AccordionItem key={"_" + idx}>
+							<AccordionButton
+								textAlign="left"
+								color="whiteAlpha.600"
+								_expanded={{ color: "white" }}
+								onClick={() => {
+									selected({ category: key });
+									setValue(0);
+								}}
+							>
+								<Heading size="md">{key}</Heading>
+							</AccordionButton>
+							<AccordionPanel
+								pb={3}
+								borderLeftColor="white"
+								borderLeftWidth={1}
+								ml={3}
+							>
+								{/* Create an Accordion object since it's easier that way */}
+								<Accordion
+									borderColor="transparent"
+									index={value}
+								>
+									{subcategories.map(
+										(subcategory, index: number) => {
+											return (
+												<AccordionItem
+													key={"__" + index}
+												>
+													<AccordionButton
+														textAlign="left"
+														color="whiteAlpha.600"
+														_expanded={{
+															color: "white",
+														}}
+														onClick={() => {
+															// set the value of the child dropdown, then call selected
+															setValue(index);
+															selected({
+																category: key,
+																subcategory:
+																	subcategory,
+															});
+														}}
+														py={1}
+														pl={1}
+													>
+														{subcategory}
+													</AccordionButton>
+												</AccordionItem>
+											);
+										}
+									)}
+								</Accordion>
+							</AccordionPanel>
+						</AccordionItem>
+					);
+				} else {
+					// this should be the "All" category (or any other childless category)
+					return (
+						<AccordionItem key={"_" + idx}>
+							<AccordionButton
+								textAlign="left"
+								color="whiteAlpha.600"
+								_expanded={{ color: "white" }}
+								onClick={() => {
+									selected({ category: key });
+								}}
+							>
+								<Heading size="md">{key}</Heading>
+							</AccordionButton>
+						</AccordionItem>
+					);
+				}
+			})}
+		</Accordion>
 	);
 }

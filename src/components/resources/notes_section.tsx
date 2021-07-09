@@ -11,7 +11,6 @@ import {
 	InputGroup,
 	InputLeftElement,
 	Link,
-	SimpleGrid,
 	useBreakpointValue,
 } from "@chakra-ui/react";
 import Container from "@components/container";
@@ -156,6 +155,7 @@ function NotesGrid(props: any): JSX.Element {
 			<Flex
 				justifyContent="space-between"
 				flexDir={{ base: "column", md: "row" }}
+				mb={5}
 			>
 				<Heading size={innerTitleSize} mb={3} flexShrink={0} mr={5}>
 					{gridTitle}
@@ -172,7 +172,7 @@ function NotesGrid(props: any): JSX.Element {
 					<Input placeholder="Search" bg="brand.transparent" />
 				</InputGroup>
 			</Flex>
-			<SimpleGrid columns={4} spacing={3}>
+			<Flex flexWrap="wrap" flexDir={{ base: "column", md: "row" }}>
 				{notes.map((note, idx: number) => (
 					<NotesBox
 						title={note.title}
@@ -180,7 +180,7 @@ function NotesGrid(props: any): JSX.Element {
 						key={"note_" + idx}
 					/>
 				))}
-			</SimpleGrid>
+			</Flex>
 		</Box>
 	);
 }
@@ -201,17 +201,19 @@ function NotesBox({ title, href }: NotesProps): JSX.Element {
 	return (
 		<Link
 			href={href}
-			_hover={{ textDecoration: "none" }}
-			pointerEvents="none"
+			_hover={{ textDecoration: "none", cursor: "default" }}
 		>
 			<Center
-				w={150}
-				h={150}
+				w={{ base: "initial", md: 150, lg: 175 }}
+				h={{ base: "initial", md: 150, lg: 175 }}
 				borderRadius={25}
+				mb={3}
+				mr={3}
+				p={3}
 				bg="brand.transparent"
 				color="brand.purple.dark"
-				fontSize={18}
-				pointerEvents="auto"
+				fontSize={{ base: 14, md: 18 }}
+				_hover={{ cursor: "pointer" }}
 			>
 				{title}
 			</Center>

@@ -158,7 +158,13 @@ type PanelProps = {
 	teams?: string[];
 };
 
-function Panel(props: PanelProps): JSX.Element {
+function Panel({
+	src,
+	teamName,
+	teamDesc,
+	link,
+	teams,
+}: PanelProps): JSX.Element {
 	return (
 		<Box py={5}>
 			<ScaleFade in={true}>
@@ -169,42 +175,40 @@ function Panel(props: PanelProps): JSX.Element {
 					overflow="auto"
 				>
 					<Image
-						src={props.src}
+						src={src}
 						h={{ base: 100, sm: 200, md: 150, lg: 250 }}
 						mr={{ base: 0, md: 3 }}
 						mb={{ base: 3, md: 0 }}
-						alt={props.teamName + " team logo"}
+						alt={teamName + " team logo"}
 					/>
 					<Box>
 						<Heading
 							size="lg"
 							textAlign={{ base: "center", md: "right" }}
 						>
-							{props.teamName}
+							{teamName}
 						</Heading>
 						<Text
 							textAlign={{ base: "center", md: "right" }}
 							my={2}
 						>
-							{props.teamDesc}
+							{teamDesc}
 						</Text>
-						{props.teams ? (
+						{teams ? (
 							<Text
 								textAlign={{ base: "center", md: "right" }}
 								fontStyle="italic"
 							>
 								Teams include{" "}
-								{props.teams
-									.slice(0, props.teams.length - 1)
-									.join(", ")}
-								, and {props.teams[props.teams.length - 1]}
+								{teams.slice(0, teams.length - 1).join(", ")},
+								and {teams[teams.length - 1]}
 							</Text>
 						) : null}
 
 						<Flex flexDir={{ base: "column", md: "row-reverse" }}>
 							<Link
 								isExternal
-								href={props.link}
+								href={link}
 								_hover={{ textDecoration: "none" }}
 							>
 								<Button bg="brand.transparent" mt={5}>

@@ -8,11 +8,11 @@ import {
 	Link,
 	Text,
 } from "@chakra-ui/react";
+import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import RotatingPanel from "@components/volunteering/rotating_panel";
 import Reasons from "@components/volunteering/reasons";
-import Button from "@components/button";
+import RotatingPanel from "@components/volunteering/rotating_panel";
 
 /**
  * The Volunteering page!

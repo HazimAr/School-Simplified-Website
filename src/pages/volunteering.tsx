@@ -71,7 +71,7 @@ export default function Volunteering(): JSX.Element {
 							py={10}
 							px={14}
 						>
-							<Heading size="2xl">
+							<Heading size="lg">
 								Sign Up! <ExternalLinkIcon ml={2} />
 							</Heading>
 						</Button>

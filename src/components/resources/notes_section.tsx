@@ -4,12 +4,21 @@ import {
 	AccordionItem,
 	AccordionPanel,
 	Box,
+	Center,
 	Flex,
 	Heading,
+	Icon,
+	Input,
+	InputGroup,
+	InputLeftElement,
+	Link,
+	SimpleGrid,
+	useBreakpointValue,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import React from "react";
+import { FaSearch } from "react-icons/fa";
 
 type Categories = {
 	[key: string]: string[];
@@ -60,11 +69,11 @@ export default function NotesSection(): JSX.Element {
 			<ContainerInside my={5}>
 				<Heading mb={5}>Notes</Heading>
 				<Flex>
-					<Box>
+					<Box flex={0} mr={5}>
 						<Heading size="md" mb={3} textAlign="left">
 							Categories
 						</Heading>
-						<NotesTree flex={0} />
+						<NotesTree />
 					</Box>
 					<NotesGrid flex={1} />
 				</Flex>
@@ -104,7 +113,7 @@ function NotesTree(props: any): JSX.Element {
 									setValue(0);
 								}}
 							>
-								<Heading size="md">{key}</Heading>
+								<Heading size="sm">{key}</Heading>
 							</AccordionButton>
 							<AccordionPanel
 								pb={3}
@@ -163,7 +172,7 @@ function NotesTree(props: any): JSX.Element {
 									selected({ category: key });
 								}}
 							>
-								<Heading size="md">{key}</Heading>
+								<Heading size="sm">{key}</Heading>
 							</AccordionButton>
 						</AccordionItem>
 					);
@@ -191,7 +200,8 @@ function selected({
 		console.warn("setGridTitle unset!");
 		return;
 	}
-	console.log("Selected " + category + "/" + subcategory);
+
+	// console.log("Selected " + category + "/" + subcategory);
 	if (category === "All") {
 		// The "All" category
 		setGridTitle("All Notes");
@@ -212,11 +222,62 @@ function selected({
 function NotesGrid(props: any): JSX.Element {
 	const [gridTitle, setGT] = React.useState("All Notes");
 	setGridTitle = setGT; // breaking the Rule of Hooks?
+
+	const innerTitleSize = useBreakpointValue({ base: "md", lg: "lg" }),
+		inputGroupSize = useBreakpointValue({ base: "sm", lg: "md" });
+
 	return (
 		<Box {...props}>
-			<Box>
-				<Heading size="lg">{gridTitle}</Heading>
-			</Box>
+			<Flex
+				justifyContent="space-between"
+				flexDir={{ base: "column", md: "row" }}
+			>
+				<Heading size={innerTitleSize} mb={3} flexShrink={0} mr={5}>
+					{gridTitle}
+				</Heading>
+				<InputGroup
+					size={inputGroupSize}
+					maxW={{ base: 300, lg: 500 }}
+					flexShrink={1}
+				>
+					<InputLeftElement
+						pointerEvents="none"
+						children={<Icon as={FaSearch} boxSize={5} />}
+					/>
+					<Input placeholder="Search" bg="brand.transparent" />
+				</InputGroup>
+			</Flex>
+			<SimpleGrid columns={4}>
+				<NotesBox title="Square" href="/" />
+			</SimpleGrid>
 		</Box>
+	);
+}
+
+/**
+ * What's needed to create a NotesBox object
+ */
+type NotesProps = {
+	title: string;
+	href: string;
+};
+
+/**
+ * Creates a notes box
+ * @returns a JSX Element that displays the blurb of the notes
+ */
+function NotesBox({ title, href }: NotesProps): JSX.Element {
+	return (
+		<Link href={href}>
+			<Center
+				w={200}
+				h={200}
+				bg="brand.transparent"
+				color="brand.purple.dark"
+				fontSize={20}
+			>
+				{title}
+			</Center>
+		</Link>
 	);
 }

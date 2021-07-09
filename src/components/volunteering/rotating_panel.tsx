@@ -1,11 +1,12 @@
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import {
 	Box,
-	Button,
 	Flex,
+	Center,
 	Heading,
 	Image,
 	Link,
+	Icon,
 	ScaleFade,
 	Text,
 	useControllableState,
@@ -13,6 +14,8 @@ import {
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import React from "react";
+import Button from "@components/button";
+import { FaArrowLeft, FaArrowRight, FaCircle } from "react-icons/fa";
 
 const teams: PanelProps[] = [
 	{
@@ -92,48 +95,55 @@ export default function RotatingPanel(): JSX.Element {
 				<Heading size="lg" mb={3}>
 					What can I volunteer for?
 				</Heading>
-				<Box mb={3} position="relative">
+				<Box mb={3}>{innerPanels[index]}</Box>
+				<Center>
 					<Button
 						onClick={() => setIndex(index - 1)}
-						position="absolute"
-						height="100%"
-						left={0}
-						top={0}
+						p={0}
 						bg="brand.transparent"
 						w={{ base: 3, sm: 5, md: 10 }}
 						minW="unset"
+						mx={2}
 						zIndex={2}
+						float="left"
 					>
-						&lt;
+						<Center>
+							<Icon as={FaArrowLeft} boxSize={6} />
+						</Center>
 					</Button>
-					{innerPanels[index]}
+					{teams.map((_v, idx: number) => {
+						return (
+							<Center key={"text_" + idx}>
+								<Icon
+									as={FaCircle}
+									boxSize={6}
+									color={
+										idx == index
+											? "white"
+											: "brand.purple.dark"
+									}
+									mx={2}
+									onClick={() => setIndex(idx)}
+									cursor="pointer"
+								/>
+							</Center>
+						);
+					})}
 					<Button
 						onClick={() => setIndex(index + 1)}
-						position="absolute"
-						height="100%"
-						right={0}
-						top={0}
+						p={0}
 						bg="brand.transparent"
 						w={{ base: 3, sm: 5, md: 10 }}
 						minW="unset"
 						zIndex={2}
+						mx={2}
+						float="right"
 					>
-						&gt;
+						<Center>
+							<Icon as={FaArrowRight} boxSize={6} />
+						</Center>
 					</Button>
-				</Box>
-				{teams.map((_v, idx: number) => {
-					return (
-						<Text
-							fontSize={15}
-							mx={2}
-							color={idx == index ? "white" : "brand.purple.dark"}
-							display="inline"
-							key={"text_" + idx}
-						>
-							•
-						</Text>
-					);
-				})}
+				</Center>
 			</ContainerInside>
 		</Container>
 	);
@@ -150,7 +160,7 @@ type PanelProps = {
 
 function Panel(props: PanelProps): JSX.Element {
 	return (
-		<Box mx={{ base: 10, sm: 12, md: 16 }} py={5}>
+		<Box py={5}>
 			<ScaleFade in={true}>
 				<Flex
 					justifyContent="space-between"

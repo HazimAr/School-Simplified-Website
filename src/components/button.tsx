@@ -10,8 +10,8 @@ export default function Button(props: any): JSX.Element {
 			as="button"
 			// lineHeight="1.2"
 			transition="all 0.2s cubic-bezier(.08,.52,.52,1)"
-			px="16px"
-			py="4px"
+			px={4}
+			py={2}
 			borderRadius="16px"
 			fontSize="16px"
 			fontWeight="semibold"

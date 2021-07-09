@@ -1,7 +1,6 @@
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import {
 	Box,
-	Button,
 	Divider,
 	Flex,
 	Heading,
@@ -13,6 +12,7 @@ import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import RotatingPanel from "@components/volunteering/rotating_panel";
 import Reasons from "@components/volunteering/reasons";
+import Button from "@components/button";
 
 /**
  * The Volunteering page!
@@ -68,8 +68,8 @@ export default function Volunteering(): JSX.Element {
 						<Button
 							bg="brand.transparent"
 							height="unset"
-							py={5}
-							px={7}
+							py={10}
+							px={14}
 						>
 							<Heading size="2xl">
 								Sign Up! <ExternalLinkIcon ml={2} />

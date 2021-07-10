@@ -55,7 +55,7 @@ export default function CourseList(): JSX.Element {
 		rows = 3;
 	// console.log("columns: " + columns);
 	if (!columns) {
-		console.error("useBreakpointValue not working at ALL");
+		// console.error("useBreakpointValue not working at ALL");
 		return <></>;
 	}
 	const perPage = rows * columns;

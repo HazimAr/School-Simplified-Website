@@ -162,7 +162,7 @@ export default function Home(): JSX.Element {
 								padding="20px"
 								rounded={rounded}
 								alignContent="left"
-								mt="10px"
+								mt="20px"
 							>
 								<VStack>
 									<Heading>Events</Heading>

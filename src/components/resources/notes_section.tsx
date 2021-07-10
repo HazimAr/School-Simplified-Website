@@ -110,7 +110,7 @@ export default function NotesSection(): JSX.Element {
 			<ContainerInside my={5}>
 				<Heading mb={5}>Notes</Heading>
 				<Flex>
-					<Box mr={5}>
+					<Box mr={{ base: 2, md: 4 }} w={{ base: 150, md: 190 }}>
 						<Heading size="md" mb={3} textAlign="left">
 							Categories
 						</Heading>
@@ -183,6 +183,7 @@ function NotesTree(): JSX.Element {
 												</AccordionButton>
 												<AccordionPanel
 													pb={3}
+													pl={2}
 													borderLeftColor="white"
 													borderLeftWidth={1}
 												>
@@ -317,7 +318,7 @@ function NotesGrid(): JSX.Element {
 				</Heading>
 				<InputGroup
 					size={inputGroupSize}
-					maxW={{ base: 300, lg: 500 }}
+					maxW={{ base: 250, sm: 300, lg: 500 }}
 					flexShrink={1}
 				>
 					<InputLeftElement
@@ -328,9 +329,9 @@ function NotesGrid(): JSX.Element {
 				</InputGroup>
 			</Flex>
 			<Flex
-				flexWrap="wrap"
+				flexWrap={{ base: "nowrap", md: "wrap" }}
 				flexDir={{ base: "column", md: "row" }}
-				alignContent="flex-start"
+				alignContent={{ base: "stretch", md: "flex-start" }}
 				overflowY="scroll"
 				h={500}
 			>

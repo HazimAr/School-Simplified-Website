@@ -19,9 +19,14 @@ import ContainerInside from "@components/containerInside";
 import React from "react";
 import { FaSearch } from "react-icons/fa";
 
-type AllNotes = {
-	[category: string]: {
-		[subcategory: string]: { [unit: string]: NotesProps[] }[];
+type MasterFolder = {
+	title: string;
+	content: {
+		title: string;
+		content: {
+			title: string;
+			content: NotesProps[];
+		}[];
 	}[];
 };
 
@@ -29,7 +34,7 @@ type AllNotes = {
  * Fetches from the backend (?) all notes blurbs to display for this page
  * @returns all notes blurbs
  */
-function fetchNotes(): AllNotes {
+function fetchNotes(): MasterFolder[] {
 	// filler for now; leaving open for backend integration
 	// console.log("fetchNotes invoked");
 	return [
@@ -53,6 +58,45 @@ function fetchNotes(): AllNotes {
 						},
 					],
 				},
+				{
+					title: "Calculus AB",
+					content: [
+						{
+							title: "Limits",
+							content: [
+								{ title: "Difference Quotient", href: "/404" },
+							],
+						},
+					],
+				},
+			],
+		},
+		{
+			title: "Science",
+			content: [
+				{
+					title: "Physics I",
+					content: [
+						{
+							title: "Kinematics",
+							content: [
+								{
+									title: "We flew a kite in a public place",
+									href: "https://example.com",
+								},
+							],
+						},
+						{
+							title: "Conservation",
+							content: [
+								{
+									title: "Conservation of Momentum",
+									href: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+								},
+							],
+						},
+					],
+				},
 			],
 		},
 	];
@@ -66,7 +110,7 @@ export default function NotesSection(): JSX.Element {
 			<ContainerInside my={5}>
 				<Heading mb={5}>Notes</Heading>
 				<Flex>
-					<Box flex={0} mr={5}>
+					<Box mr={5}>
 						<Heading size="md" mb={3} textAlign="left">
 							Categories
 						</Heading>
@@ -90,19 +134,19 @@ function NotesTree(): JSX.Element {
 			borderLeftColor="white"
 			borderLeftWidth={3}
 		>
-			{Object.keys(allNotes).map((category, idx: number) => {
-				const [value, setValue] = React.useState(-1);
+			{allNotes.map((categoryFolder, cIdx: number) => {
+				const [scValue, setSCValue] = React.useState(-1);
 				return (
-					<AccordionItem key={"_" + idx}>
+					<AccordionItem key={"_" + cIdx}>
 						<AccordionButton
 							textAlign="left"
 							color="whiteAlpha.600"
 							_expanded={{ color: "white" }}
 							onClick={() => {
-								setValue(-1);
+								setSCValue(-1);
 							}}
 						>
-							<Heading size="sm">{category}</Heading>
+							<Heading size="sm">{categoryFolder.title}</Heading>
 						</AccordionButton>
 						<AccordionPanel
 							pb={3}
@@ -111,11 +155,16 @@ function NotesTree(): JSX.Element {
 							ml={3}
 						>
 							{/* Create an Accordion object since it's easier that way */}
-							<Accordion borderColor="transparent" index={value}>
-								{Object.keys(allNotes[category]).map(
-									(subcategory, index: number) => {
+							<Accordion
+								borderColor="transparent"
+								index={scValue}
+							>
+								{categoryFolder.content.map(
+									(subcategoryFolder, scIdx: number) => {
+										const [uValue, setUValue] =
+											React.useState(-1);
 										return (
-											<AccordionItem key={"__" + index}>
+											<AccordionItem key={"__" + scIdx}>
 												<AccordionButton
 													textAlign="left"
 													color="whiteAlpha.600"
@@ -124,17 +173,70 @@ function NotesTree(): JSX.Element {
 													}}
 													onClick={() => {
 														// set the value of the child dropdown, then call selected
-														setValue(index);
-														selected(
-															category,
-															subcategory
-														);
+														setSCValue(scIdx);
+														setUValue(-1);
 													}}
 													py={1}
 													pl={1}
 												>
-													{subcategory}
+													{subcategoryFolder.title}
 												</AccordionButton>
+												<AccordionPanel
+													pb={3}
+													borderLeftColor="white"
+													borderLeftWidth={1}
+												>
+													{/* Accordion V2 */}
+													<Accordion
+														borderColor="transparent"
+														index={uValue}
+													>
+														{subcategoryFolder.content.map(
+															(
+																unitFolder,
+																uIdx: number
+															) => {
+																return (
+																	<AccordionItem
+																		key={
+																			"___" +
+																			uIdx
+																		}
+																	>
+																		<AccordionButton
+																			textAlign="left"
+																			color="whiteAlpha.600"
+																			_expanded={{
+																				color: "white",
+																			}}
+																			onClick={() => {
+																				// set the value of the child dropdown, then call selected
+																				setUValue(
+																					uIdx
+																				);
+																				selected(
+																					cIdx,
+																					scIdx,
+																					uIdx
+																				);
+																			}}
+																			py={
+																				1
+																			}
+																			pl={
+																				1
+																			}
+																		>
+																			{
+																				unitFolder.title
+																			}
+																		</AccordionButton>
+																	</AccordionItem>
+																);
+															}
+														)}
+													</Accordion>
+												</AccordionPanel>
 											</AccordionItem>
 										);
 									}
@@ -148,15 +250,17 @@ function NotesTree(): JSX.Element {
 	);
 }
 
-var setCategory: (arg0: string) => void = (_e) => {},
-	setSubcategory: (arg0: string) => void = (_e) => {};
+var setCategory: (arg0: number) => void = (_e) => {},
+	setSubcategory: (arg0: number) => void = (_e) => {},
+	setUnit: (arg0: number) => void = (_e) => {};
 
 /**
- * Called when a category accordion button is clicked is clicked
+ * Called when a unit accordion button is clicked
  * @param category the category being selected
  * @param subcategory the subcategory being selected
+ * @param unit the unit being selected
  */
-function selected(category: string, subcategory: string) {
+function selected(category: number, subcategory: number, unit: number) {
 	if (!setCategory) {
 		console.warn("setGridTitle unset!");
 		return;
@@ -167,9 +271,15 @@ function selected(category: string, subcategory: string) {
 		return;
 	}
 
+	if (!setUnit) {
+		console.warn("setUnit unset!");
+		return;
+	}
+
 	// console.log("Selected " + category);
 	setCategory(category);
 	setSubcategory(subcategory);
+	setUnit(unit);
 }
 
 /**
@@ -177,10 +287,17 @@ function selected(category: string, subcategory: string) {
  * @returns the JSX element that represents the grid section on the right of the page
  */
 function NotesGrid(): JSX.Element {
-	const [category, setC] = React.useState("");
+	const [category, setC] = React.useState(-1);
 	setCategory = setC; // breaking the Rule of Hooks?
-	const [subcategory, setSC] = React.useState("");
+	const [subcategory, setSC] = React.useState(-1);
 	setSubcategory = setSC; // breaking the Rule of Hooks?
+	const [unit, setU] = React.useState(-1);
+	setUnit = setU; // breaking the Rule of Hooks?
+
+	const halal =
+		allNotes[category] &&
+		allNotes[category].content[subcategory] &&
+		allNotes[category].content[subcategory].content[unit];
 
 	const innerTitleSize = useBreakpointValue({ base: "md", lg: "lg" }),
 		inputGroupSize = useBreakpointValue({ base: "sm", lg: "md" });
@@ -193,7 +310,10 @@ function NotesGrid(): JSX.Element {
 				mb={5}
 			>
 				<Heading size={innerTitleSize} mb={3} flexShrink={0} mr={5}>
-					{subcategory}
+					{halal
+						? allNotes[category].content[subcategory].content[unit]
+								.title
+						: null}
 				</Heading>
 				<InputGroup
 					size={inputGroupSize}
@@ -214,16 +334,16 @@ function NotesGrid(): JSX.Element {
 				overflowY="scroll"
 				h={500}
 			>
-				{allNotes[category] && allNotes[category][subcategory]
-					? allNotes[category][subcategory].map(
-							(note, idx: number) => (
-								<NotesBox
-									title={note.title}
-									href={note.href}
-									key={"note_" + idx}
-								/>
-							)
-					  )
+				{halal
+					? allNotes[category].content[subcategory].content[
+							unit
+					  ].content.map((note, idx: number) => (
+							<NotesBox
+								title={note.title}
+								href={note.href}
+								key={"note_" + idx}
+							/>
+					  ))
 					: null}
 			</Flex>
 		</Box>

@@ -22,7 +22,7 @@ export default function Resources(): JSX.Element {
 					>
 						<Box textAlign={{ base: "center", sm: "left" }}>
 							<Heading mb={3}>Resources</Heading>
-							<Text>
+							<Text fontSize={20}>
 								All the notes and courses you'll ever want for
 								your academic needs!
 							</Text>

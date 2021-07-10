@@ -1,20 +1,20 @@
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import {
 	Box,
-	Flex,
 	Center,
+	Flex,
 	Heading,
+	Icon,
 	Image,
 	Link,
-	Icon,
 	ScaleFade,
 	Text,
 	useControllableState,
 } from "@chakra-ui/react";
+import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import React from "react";
-import Button from "@components/button";
 import { FaArrowLeft, FaArrowRight, FaCircle } from "react-icons/fa";
 
 const teams: PanelProps[] = [
@@ -102,10 +102,7 @@ export default function RotatingPanel(): JSX.Element {
 						p={0}
 						bg="brand.transparent"
 						w={{ base: 3, sm: 5, md: 10 }}
-						minW="unset"
 						mx={2}
-						zIndex={2}
-						float="left"
 					>
 						<Center>
 							<Icon as={FaArrowLeft} boxSize={6} />
@@ -134,10 +131,7 @@ export default function RotatingPanel(): JSX.Element {
 						p={0}
 						bg="brand.transparent"
 						w={{ base: 3, sm: 5, md: 10 }}
-						minW="unset"
-						zIndex={2}
 						mx={2}
-						float="right"
 					>
 						<Center>
 							<Icon as={FaArrowRight} boxSize={6} />

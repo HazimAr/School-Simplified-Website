@@ -284,6 +284,7 @@ function NotesBox(props: NotesProps): JSX.Element {
 	return (
 		<Link
 			href={props.href}
+			isExternal
 			_hover={{ textDecoration: "none", cursor: "auto" }}
 		>
 			<Center

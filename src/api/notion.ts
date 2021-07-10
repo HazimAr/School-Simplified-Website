@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Class, Subject, Unit } from "types";
+import { Class, NotesProps, Subject, Unit } from "types";
 
 const config = {
 	headers: {
@@ -65,6 +65,12 @@ async function getUnits(
 	currentClass: any,
 	classIndex: number
 ): Promise<Unit[]> {
+	const { data: classPageData } = await axios.get(
+		`https://api.notion.com/v1/pages/${currentClass.id}`,
+		config
+	);
+	const pageURL = classPageData.url;
+
 	const promises2 = currentSubject.map(() => {
 		return axios.get(
 			`https://api.notion.com/v1/blocks/${currentClass.id}/children`,
@@ -77,26 +83,67 @@ async function getUnits(
 			return allPromises[classIndex].data.results;
 		})
 		.then((blocks) => {
-			return blocks
-				.filter(
-					(block: any) =>
-						block.type === "heading_3" &&
-						block.heading_3.text.length > 0
-				)
-				.map((block: any) => {
-					// console.log(block);
-					return {
-						title:
+			let title: string = "";
+			let units: Unit[] = [];
+			let notes: NotesProps[] = [];
+			let idx: number = 1;
+			let re = /\-/gi;
+
+			blocks.forEach((block: any) => {
+				if (block.type === "heading_3") {
+					if (block.heading_3.text.length) {
+						// valid title
+						if (title.length) {
+							units.push({ title: title, content: notes });
+						}
+
+						title =
 							block.heading_3.text[0]?.plain_text ??
-							"I was broken :(",
-						content: [
-							{
-								title: "Interesting thing #1",
-								href: "/s",
-							},
-						],
+							"I was broken :(";
+						notes = [];
+						idx = 1;
+						// } else {
+						// 	// empty title
+						// 	console.log(`Empty header detected in ${pageURL}!`);
+					}
+				} else {
+					// treat as a notes object until implemented
+					const blockID = block.id.replace(re, "");
+					// const blockID = block.id;
+					const note = {
+						title: `${title} Notes #${idx++}`,
+						href: `${pageURL}#${blockID}`,
 					};
-				});
+					console.log(note.title);
+					console.log(note.href);
+					// console.log(typeof block.id);
+					notes.push(note);
+				}
+			});
+
+			return units;
+			// return blocks
+			// 	.filter(
+			// 		(block: any) =>
+			// 			block.type === "heading_3" &&
+			// 			block.heading_3.text.length
+			// 	)
+			// 	.map((block: any) => {
+			// 		// console.log(block);
+
+			// 		// One unit
+			// 		return {
+			// 			title:
+			// 				block.heading_3.text[0]?.plain_text ??
+			// 				"I was broken :(",
+			// 			content: [
+			// 				{
+			// 					title: "Interesting thing #1",
+			// 					href: "/s",
+			// 				},
+			// 			],
+			// 		};
+			// 	});
 		});
 }
 

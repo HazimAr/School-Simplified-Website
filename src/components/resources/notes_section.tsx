@@ -20,7 +20,9 @@ import React from "react";
 import { FaSearch } from "react-icons/fa";
 
 type AllNotes = {
-	[category: string]: { [subcategory: string]: NotesProps[] };
+	[category: string]: {
+		[subcategory: string]: { [unit: string]: NotesProps[] }[];
+	}[];
 };
 
 /**
@@ -31,92 +33,23 @@ function fetchNotes(): AllNotes {
 	// filler for now; leaving open for backend integration
 	// console.log("fetchNotes invoked");
 	return {
-		Electives: {
-			a: [
-				{ title: "Interesting thing #1", href: "/s" },
-				{ title: "Interesting thing #2", href: "/a" },
-				{ title: "Interesting thing #3", href: "/a" },
-				{ title: "Interesting thing #4", href: "/f" },
-				{ title: "Interesting thing #5", href: "/e" },
-				{ title: "Interesting thing #6", href: "/v" },
-				{ title: "Interesting thing #7", href: "/w" },
-			],
-		},
-		English: {
-			a: [
-				{ title: "Interesting thing #1", href: "/s" },
-				{ title: "Interesting thing #2", href: "/a" },
-				{ title: "Interesting thing #3", href: "/a" },
-				{ title: "Interesting thing #4", href: "/f" },
-				{ title: "Interesting thing #5", href: "/e" },
-				{ title: "Interesting thing #6", href: "/v" },
-				{ title: "Interesting thing #7", href: "/w" },
-			],
-		},
-		"Foreign Languages": {
-			a: [
-				{ title: "Interesting thing #1", href: "/s" },
-				{ title: "Interesting thing #2", href: "/a" },
-				{ title: "Interesting thing #3", href: "/a" },
-				{ title: "Interesting thing #4", href: "/f" },
-				{ title: "Interesting thing #5", href: "/e" },
-				{ title: "Interesting thing #6", href: "/v" },
-				{ title: "Interesting thing #7", href: "/w" },
-			],
-		},
-		History: {
-			a: [
-				{ title: "Interesting thing #1", href: "/s" },
-				{ title: "Interesting thing #2", href: "/a" },
-				{ title: "Interesting thing #3", href: "/a" },
-				{ title: "Interesting thing #4", href: "/f" },
-				{ title: "Interesting thing #5", href: "/e" },
-				{ title: "Interesting thing #6", href: "/v" },
-				{ title: "Interesting thing #7", href: "/w" },
-			],
-			b: [
-				{ title: "Interesting thing #1", href: "/s" },
-				{ title: "Interesting thing #2", href: "/a" },
-				{ title: "Interesting thing #3", href: "/a" },
-				{ title: "Interesting thing #4", href: "/f" },
-				{ title: "Interesting thing #5", href: "/e" },
-				{ title: "Interesting thing #6", href: "/v" },
-				{ title: "Interesting thing #7", href: "/w" },
-			],
-		},
-		Math: {
-			a: [
-				{ title: "Interesting thing #1", href: "/s" },
-				{ title: "Interesting thing #2", href: "/a" },
-				{ title: "Interesting thing #3", href: "/a" },
-				{ title: "Interesting thing #4", href: "/f" },
-				{ title: "Interesting thing #5", href: "/e" },
-				{ title: "Interesting thing #6", href: "/v" },
-				{ title: "Interesting thing #7", href: "/w" },
-			],
-		},
-		Science: {
-			a: [
-				{ title: "Interesting thing #1", href: "/s" },
-				{ title: "Interesting thing #2", href: "/a" },
-				{ title: "Interesting thing #3", href: "/a" },
-				{ title: "Interesting thing #4", href: "/f" },
-				{ title: "Interesting thing #5", href: "/e" },
-				{ title: "Interesting thing #6", href: "/v" },
-				{ title: "Interesting thing #7", href: "/w" },
-			],
-		},
-		"Social Studies": {
-			a: [
-				{ title: "Interesting thing #1", href: "/s" },
-				{ title: "Interesting thing #2", href: "/a" },
-				{ title: "Interesting thing #3", href: "/a" },
-				{ title: "Interesting thing #4", href: "/f" },
-				{ title: "Interesting thing #5", href: "/e" },
-				{ title: "Interesting thing #6", href: "/v" },
-				{ title: "Interesting thing #7", href: "/w" },
-			],
-		},
+		Math: [
+			{
+				"Algebra I": [
+					{
+						Quadratics: [
+							{ title: "Interesting thing #1", href: "/s" },
+							{ title: "Interesting thing #2", href: "/a" },
+							{ title: "Interesting thing #3", href: "/a" },
+							{ title: "Interesting thing #4", href: "/f" },
+							{ title: "Interesting thing #5", href: "/e" },
+							{ title: "Interesting thing #6", href: "/v" },
+							{ title: "Interesting thing #7", href: "/w" },
+						],
+					},
+				],
+			},
+		],
 	};
 }
 

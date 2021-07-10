@@ -1,7 +1,6 @@
 import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import CourseList from "@components/resources/course_list";
 import NotesSection from "@components/resources/notes_section";
 
 /**
@@ -62,8 +61,6 @@ export default function Resources(): JSX.Element {
 					</Flex>
 				</ContainerInside>
 			</Container>
-
-			<CourseList />
 		</>
 	);
 }

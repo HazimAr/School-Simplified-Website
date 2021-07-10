@@ -33,11 +33,13 @@ async function getSubjects() {
 					});
 					const allPromises = await Promise.all(promises2);
 					const blocks = allPromises[index].data.results;
-					const content = blocks.map((block) => {
-						if (
-							block.type === "heading_3" &&
-							block.heading_3.text.length > 0
-						) {
+					const content = blocks
+						.filter(
+							(block) =>
+								block.type === "heading_3" &&
+								block.heading_3.text.length > 0
+						)
+						.map((block) => {
 							// console.log(block);
 							return {
 								title:
@@ -50,8 +52,7 @@ async function getSubjects() {
 									},
 								],
 							};
-						}
-					});
+						});
 					console.log(
 						"THIS IS THE CONTENT BITCH " + JSON.stringify(content)
 					);

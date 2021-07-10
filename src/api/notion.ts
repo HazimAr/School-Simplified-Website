@@ -20,57 +20,53 @@ async function getSubjects() {
 		);
 	});
 	let subjects;
-	await Promise.all(promises).then((classes) => {
+	await Promise.all(promises).then((axiosClassPromises) => {
 		subjects = data.results.map((page: any, index: number) => {
-			const content = classes[index].data.results.map((result) => {
-				// if (result?.child_page?.title) {
-				return {
-					title: result?.child_page?.title,
-					content: [
-						{
-							title: "Quadratics",
-							content: [
-								{
-									title: "Interesting thing #1",
-									href: "/s",
-								},
-								{
-									title: "Interesting thing #2",
-									href: "/a",
-								},
-								{
-									title: "Interesting thing #3",
-									href: "/a",
-								},
-								{
-									title: "Interesting thing #4",
-									href: "/f",
-								},
-								{
-									title: "Interesting thing #5",
-									href: "/e",
-								},
-								{
-									title: "Interesting thing #6",
-									href: "/v",
-								},
-								{
-									title: "Interesting thing #7",
-									href: "/w",
-								},
-							],
-						},
-					],
-					// };
-				};
-			});
+			const currentSubject = axiosClassPromises[index].data.results;
+			const content = currentSubject.map(
+				async (currentClass, index: number) => {
+					const promises2 = currentSubject.map((page: any) => {
+						return axios.get(
+							`https://api.notion.com/v1/blocks/${currentClass.id}/children`,
+							config
+						);
+					});
+					const allPromises = await Promise.all(promises2);
+					const blocks = allPromises[index].data.results;
+					const content = blocks.map((block) => {
+						if (
+							block.type === "heading_3" &&
+							block.heading_3.text.length > 0
+						) {
+							// console.log(block);
+							return {
+								title:
+									block.heading_3.text[0]?.plain_text ??
+									"I was broken :(",
+								content: [
+									{
+										title: "Interesting thing #1",
+										href: "/s",
+									},
+								],
+							};
+						}
+					});
+					console.log(
+						"THIS IS THE CONTENT BITCH " + JSON.stringify(content)
+					);
+					return {
+						title: currentClass?.child_page?.title,
+						content: content,
+					};
+				}
+			);
 			return {
 				title: page.properties.Name.title[0].plain_text,
 				id: page.id,
 				content: content,
 			};
 		});
-		console.log(subjects[0]);
 	});
 	return subjects;
 }

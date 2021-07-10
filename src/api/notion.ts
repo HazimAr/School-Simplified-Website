@@ -3,9 +3,9 @@ import { Class, Note, Subject, Unit } from "types";
 
 const config = {
 	headers: {
-		Authorization:
-			"Bearer " + process.env.NOTION_API_KEY ??
-			"secret_73W0zW4QYwCNgUoHFXL4XgoHfq9BuoO6qa1ZmeejLZi",
+		Authorization: "",
+		// "Bearer " + process.env.NOTION_API_KEY ??
+		// "secret_73W0zW4QYwCNgUoHFXL4XgoHfq9BuoO6qa1ZmeejLZi",
 		"Notion-Version": "2021-05-13",
 	},
 };
@@ -92,7 +92,7 @@ async function getUnits(
 		)
 		.map(async (currentBlock: any) => {
 			// console.log(block);
-			const content = getNotes();
+			const content = await getNotes();
 			return {
 				title:
 					currentBlock.heading_3.text[0]?.plain_text ??

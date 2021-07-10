@@ -219,10 +219,7 @@ function NotesGrid({ subjects }: AllSubjects): JSX.Element {
 	const [unit, setU] = React.useState(-1);
 	setUnit = setU; // breaking the Rule of Hooks?
 
-	const halal =
-		subjects[category] &&
-		subjects[category].content[subcategory] &&
-		subjects[category].content[subcategory].content[unit];
+	const content = subjects[category]?.content[subcategory]?.content[unit];
 
 	const innerTitleSize = useBreakpointValue({ base: "md", lg: "lg" }),
 		inputGroupSize = useBreakpointValue({ base: "sm", lg: "md" });
@@ -236,10 +233,7 @@ function NotesGrid({ subjects }: AllSubjects): JSX.Element {
 				flex={0}
 			>
 				<Heading size={innerTitleSize} mb={3} flexShrink={0} mr={5}>
-					{halal
-						? subjects[category].content[subcategory].content[unit]
-								.title
-						: null}
+					{content ? content.title : null}
 				</Heading>
 				<InputGroup
 					size={inputGroupSize}
@@ -261,23 +255,30 @@ function NotesGrid({ subjects }: AllSubjects): JSX.Element {
 				minH={500}
 				flex={1}
 			>
-				{halal
-					? subjects[category].content[subcategory].content[
-							unit
-					  ].content.map((note, idx: number) => (
+				{content ? (
+					content.content.length ? (
+						content.content.map((note, idx: number) => (
 							<NotesBox
 								title={note.title}
 								href={note.href}
 								lastEdited={note.lastEdited}
 								key={"note_" + idx}
 							/>
-					  ))
-					: null}
+						))
+					) : (
+						<Text fontStyle="italic">
+							Looks like there's nothing here...
+						</Text>
+					)
+				) : null}
 			</Flex>
 		</Flex>
 	);
 }
 
+/**
+ * The date and time formatter
+ */
 const dateTimeFormatter = new Intl.DateTimeFormat("en-US");
 
 /**

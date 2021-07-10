@@ -19,7 +19,7 @@ import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import React from "react";
 import { FaSearch } from "react-icons/fa";
-import { AllSubjects, NotesProps } from "types";
+import { AllSubjects, NotesProps, Subject, Unit } from "types";
 
 export default function NotesSection({ subjects }: AllSubjects): JSX.Element {
 	return (
@@ -33,7 +33,7 @@ export default function NotesSection({ subjects }: AllSubjects): JSX.Element {
 						</Heading>
 						<NotesTree subjects={subjects} />
 					</Box>
-					<NotesGrid subjects={subjects} />
+					<NotesGrid />
 				</Flex>
 			</ContainerInside>
 		</Container>
@@ -51,10 +51,10 @@ function NotesTree({ subjects }: AllSubjects): JSX.Element {
 			borderLeftColor="white"
 			borderLeftWidth={3}
 		>
-			{subjects.map((categoryFolder, cIdx: number) => {
+			{subjects.map((subject, subIdx: number) => {
 				const [scValue, setSCValue] = React.useState(-1);
 				return (
-					<AccordionItem key={"_" + cIdx}>
+					<AccordionItem key={"_" + subIdx}>
 						<AccordionButton
 							textAlign="left"
 							color="whiteAlpha.600"
@@ -64,7 +64,7 @@ function NotesTree({ subjects }: AllSubjects): JSX.Element {
 							}}
 							minW="fit-content"
 						>
-							<Heading size="sm">{categoryFolder.title}</Heading>
+							<Heading size="sm">{subject.title}</Heading>
 						</AccordionButton>
 						<AccordionPanel
 							pb={3}
@@ -77,95 +77,90 @@ function NotesTree({ subjects }: AllSubjects): JSX.Element {
 								borderColor="transparent"
 								index={scValue}
 							>
-								{categoryFolder.content.map(
-									(subcategoryFolder, scIdx: number) => {
-										const [uValue, setUValue] =
-											React.useState(-1);
-										return (
-											<AccordionItem key={"__" + scIdx}>
-												<AccordionButton
-													minW="fit-content"
-													textAlign="left"
-													color="whiteAlpha.600"
-													_expanded={{
-														color: "white",
-													}}
-													onClick={() => {
-														// set the value of the child dropdown, then call selected
-														setSCValue(scIdx);
-														setUValue(-1);
-													}}
-													py={1}
-													pl={1}
+								{subject.content.map((clazz, cIdx: number) => {
+									const [uValue, setUValue] =
+										React.useState(-1);
+									return (
+										<AccordionItem key={"__" + cIdx}>
+											<AccordionButton
+												minW="fit-content"
+												textAlign="left"
+												color="whiteAlpha.600"
+												_expanded={{
+													color: "white",
+												}}
+												onClick={() => {
+													// set the value of the child dropdown, then call selected
+													setSCValue(cIdx);
+													setUValue(-1);
+												}}
+												py={1}
+												pl={1}
+											>
+												{clazz.title}
+											</AccordionButton>
+											<AccordionPanel
+												pb={3}
+												pl={2}
+												borderLeftColor="white"
+												borderLeftWidth={1}
+												minW="fit-content"
+											>
+												{/* Accordion V2 */}
+												<Accordion
+													borderColor="transparent"
+													index={uValue}
 												>
-													{subcategoryFolder.title}
-												</AccordionButton>
-												<AccordionPanel
-													pb={3}
-													pl={2}
-													borderLeftColor="white"
-													borderLeftWidth={1}
-													minW="fit-content"
-												>
-													{/* Accordion V2 */}
-													<Accordion
-														borderColor="transparent"
-														index={uValue}
-													>
-														{subcategoryFolder.content.map(
-															(
-																unitFolder,
-																uIdx: number
-															) => {
-																return (
-																	<AccordionItem
-																		key={
-																			"___" +
-																			uIdx
+													{clazz.content.map(
+														(
+															unit,
+															uIdx: number
+														) => {
+															return (
+																<AccordionItem
+																	key={
+																		"___" +
+																		uIdx
+																	}
+																>
+																	<AccordionButton
+																		textAlign="left"
+																		color="whiteAlpha.600"
+																		_expanded={{
+																			color: "white",
+																		}}
+																		onClick={() => {
+																			// set the value of the child dropdown, then call selected
+																			setUValue(
+																				uIdx
+																			);
+																			selected(
+																				subjects,
+																				subIdx,
+																				cIdx,
+																				uIdx
+																			);
+																		}}
+																		py={1}
+																		pl={1}
+																		fontSize={
+																			14
 																		}
+																		minW="fit-content"
 																	>
-																		<AccordionButton
-																			textAlign="left"
-																			color="whiteAlpha.600"
-																			_expanded={{
-																				color: "white",
-																			}}
-																			onClick={() => {
-																				// set the value of the child dropdown, then call selected
-																				setUValue(
-																					uIdx
-																				);
-																				selected(
-																					cIdx,
-																					scIdx,
-																					uIdx
-																				);
-																			}}
-																			py={
-																				1
-																			}
-																			pl={
-																				1
-																			}
-																			fontSize={
-																				14
-																			}
-																			minW="fit-content"
-																		>
-																			{
-																				unitFolder.title
-																			}
-																		</AccordionButton>
-																	</AccordionItem>
-																);
-															}
-														)}
-													</Accordion>
-												</AccordionPanel>
-											</AccordionItem>
-										);
-									}
-								)}
+																		{
+																			unit.title
+																		}
+																	</AccordionButton>
+																</AccordionItem>
+															);
+														}
+													)}
+												</Accordion>
+											</AccordionPanel>
+										</AccordionItem>
+									);
+								})}
 							</Accordion>
 						</AccordionPanel>
 					</AccordionItem>
@@ -175,51 +170,48 @@ function NotesTree({ subjects }: AllSubjects): JSX.Element {
 	);
 }
 
-var setCategory: (arg0: number) => void = (_e) => {},
-	setSubcategory: (arg0: number) => void = (_e) => {},
-	setUnit: (arg0: number) => void = (_e) => {};
+var setContent: (arg0: Unit) => void = (_e) => {};
 
 /**
- * Called when a unit accordion button is clicked
- * @param category the category being selected
- * @param subcategory the subcategory being selected
+ * Called when a unit accordion button is clicked or an update to the unit view should be rendered
+ * @param subjects all subjects
+ * @param subject the subject being selected
+ * @param clazz the class being selected
  * @param unit the unit being selected
  */
-function selected(category: number, subcategory: number, unit: number) {
-	if (!setCategory) {
-		console.warn("setGridTitle unset!");
-		return;
-	}
-
-	if (!setSubcategory) {
-		console.warn("setSubcategory unset!");
-		return;
-	}
-
-	if (!setUnit) {
-		console.warn("setUnit unset!");
+function selected(
+	subjects: Subject[],
+	subject: number,
+	clazz: number,
+	unit: number
+) {
+	if (!setContent) {
+		console.warn("setContent unset!");
 		return;
 	}
 
 	// console.log("Selected " + category);
-	setCategory(category);
-	setSubcategory(subcategory);
-	setUnit(unit);
+	// setSubject(category);
+	// setClass(subcategory);
+	// setUnit(unit);
+	setContent(subjects[subject]?.content[clazz]?.content[unit]);
 }
 
 /**
  * Generates the right panel of this section.
  * @returns the JSX element that represents the grid section on the right of the page
  */
-function NotesGrid({ subjects }: AllSubjects): JSX.Element {
-	const [category, setC] = React.useState(-1);
-	setCategory = setC; // breaking the Rule of Hooks?
-	const [subcategory, setSC] = React.useState(-1);
-	setSubcategory = setSC; // breaking the Rule of Hooks?
-	const [unit, setU] = React.useState(-1);
-	setUnit = setU; // breaking the Rule of Hooks?
+function NotesGrid(): JSX.Element {
+	// const [subject, setS] = React.useState(-1);
+	// setSubject = setS; // breaking the Rule of Hooks?
+	// const [clazz, setC] = React.useState(-1);
+	// setClass = setC; // breaking the Rule of Hooks?
+	// const [unit, setU] = React.useState(-1);
+	// setUnit = setU; // breaking the Rule of Hooks?
+	const [content, setC] = React.useState<Unit | undefined>(undefined);
+	setContent = setC;
 
-	const content = subjects[category]?.content[subcategory]?.content[unit];
+	// const content: Unit = subjects[subject]?.content[clazz]?.content[unit];
 
 	const innerTitleSize = useBreakpointValue({ base: "md", lg: "lg" }),
 		inputGroupSize = useBreakpointValue({ base: "sm", lg: "md" });
@@ -233,7 +225,7 @@ function NotesGrid({ subjects }: AllSubjects): JSX.Element {
 				flex={0}
 			>
 				<Heading size={innerTitleSize} mb={3} flexShrink={0} mr={5}>
-					{content ? content.title : null}
+					{content ? content.title : "Welcome!"}
 				</Heading>
 				<InputGroup
 					size={inputGroupSize}
@@ -244,7 +236,7 @@ function NotesGrid({ subjects }: AllSubjects): JSX.Element {
 						pointerEvents="none"
 						children={<Icon as={FaSearch} boxSize={5} />}
 					/>
-					<Input placeholder="Search" bg="brand.transparent" />
+					<Input placeholder="Search All" bg="brand.transparent" />
 				</InputGroup>
 			</Flex>
 			<Flex
@@ -255,22 +247,20 @@ function NotesGrid({ subjects }: AllSubjects): JSX.Element {
 				minH={500}
 				flex={1}
 			>
-				{content ? (
-					content.content.length ? (
-						content.content.map((note, idx: number) => (
-							<NotesBox
-								title={note.title}
-								href={note.href}
-								lastEdited={note.lastEdited}
-								key={"note_" + idx}
-							/>
-						))
-					) : (
-						<Text fontStyle="italic">
-							Looks like there's nothing here...
-						</Text>
-					)
-				) : null}
+				{content && content.content.length ? (
+					content.content.map((note, idx: number) => (
+						<NotesBox
+							title={note.title}
+							href={note.href}
+							lastEdited={note.lastEdited}
+							key={"note_" + idx}
+						/>
+					))
+				) : (
+					<Text fontStyle="italic">
+						Looks like there's nothing here...
+					</Text>
+				)}
 			</Flex>
 		</Flex>
 	);
@@ -299,6 +289,7 @@ function NotesBox(props: NotesProps): JSX.Element {
 				href={props.href}
 				isExternal
 				_hover={{ textDecoration: "none", cursor: "auto" }}
+				data-text={props.title}
 			>
 				<Flex
 					w={sideLength}
@@ -333,6 +324,7 @@ function NotesBox(props: NotesProps): JSX.Element {
 				href={props.href}
 				isExternal
 				_hover={{ textDecoration: "none", cursor: "auto" }}
+				data-text={props.title}
 			>
 				<Center
 					w={sideLength}

@@ -18,7 +18,7 @@ import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import React from "react";
 import { FaSearch } from "react-icons/fa";
-import { AllSubjects, NotesProps } from "types";
+import { AllSubjects, Note } from "types";
 
 export default function NotesSection({ subjects }: AllSubjects): JSX.Element {
 	return (
@@ -275,7 +275,7 @@ function NotesGrid({ subjects }: AllSubjects): JSX.Element {
  * Creates a notes box
  * @returns a JSX Element that displays the blurb of the notes
  */
-function NotesBox(props: NotesProps): JSX.Element {
+function NotesBox(props: Note): JSX.Element {
 	const sideLength = useBreakpointValue({
 		base: "initial",
 		md: 125,

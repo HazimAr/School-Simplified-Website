@@ -1,4 +1,4 @@
-export type NotesProps = {
+export type Note = {
 	title: string;
 	href: string;
 };
@@ -15,7 +15,7 @@ export type Class = {
 
 export type Unit = {
 	title: string;
-	content: NotesProps[];
+	content: Note[];
 };
 
 export type AllSubjects = {

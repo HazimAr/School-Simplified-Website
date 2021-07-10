@@ -2,6 +2,7 @@ import {
 	Accordion,
 	AccordionButton,
 	AccordionItem,
+	AccordionPanel,
 	Box,
 	Center,
 	Flex,
@@ -18,19 +19,8 @@ import ContainerInside from "@components/containerInside";
 import React from "react";
 import { FaSearch } from "react-icons/fa";
 
-const categories: string[] = [
-	"All",
-	"Electives",
-	"English",
-	"Foreign Languages",
-	"History",
-	"Math",
-	"Science",
-	"Social Studies",
-];
-
 type AllNotes = {
-	[category: string]: NotesProps[];
+	[category: string]: { [subcategory: string]: NotesProps[] };
 };
 
 /**
@@ -41,69 +31,92 @@ function fetchNotes(): AllNotes {
 	// filler for now; leaving open for backend integration
 	// console.log("fetchNotes invoked");
 	return {
-		Electives: [
-			{ title: "Interesting thing #1", href: "/s" },
-			{ title: "Interesting thing #2", href: "/a" },
-			{ title: "Interesting thing #3", href: "/a" },
-			{ title: "Interesting thing #4", href: "/f" },
-			{ title: "Interesting thing #5", href: "/e" },
-			{ title: "Interesting thing #6", href: "/v" },
-			{ title: "Interesting thing #7", href: "/w" },
-		],
-		English: [
-			{ title: "Interesting thing #1", href: "/s" },
-			{ title: "Interesting thing #2", href: "/a" },
-			{ title: "Interesting thing #3", href: "/a" },
-			{ title: "Interesting thing #4", href: "/f" },
-			{ title: "Interesting thing #5", href: "/e" },
-			{ title: "Interesting thing #6", href: "/v" },
-			{ title: "Interesting thing #7", href: "/w" },
-		],
-		"Foreign Languages": [
-			{ title: "Interesting thing #1", href: "/s" },
-			{ title: "Interesting thing #2", href: "/a" },
-			{ title: "Interesting thing #3", href: "/a" },
-			{ title: "Interesting thing #4", href: "/f" },
-			{ title: "Interesting thing #5", href: "/e" },
-			{ title: "Interesting thing #6", href: "/v" },
-			{ title: "Interesting thing #7", href: "/w" },
-		],
-		History: [
-			{ title: "Interesting thing #1", href: "/s" },
-			{ title: "Interesting thing #2", href: "/a" },
-			{ title: "Interesting thing #3", href: "/a" },
-			{ title: "Interesting thing #4", href: "/f" },
-			{ title: "Interesting thing #5", href: "/e" },
-			{ title: "Interesting thing #6", href: "/v" },
-			{ title: "Interesting thing #7", href: "/w" },
-		],
-		Math: [
-			{ title: "Interesting thing #1", href: "/s" },
-			{ title: "Interesting thing #2", href: "/a" },
-			{ title: "Interesting thing #3", href: "/a" },
-			{ title: "Interesting thing #4", href: "/f" },
-			{ title: "Interesting thing #5", href: "/e" },
-			{ title: "Interesting thing #6", href: "/v" },
-			{ title: "Interesting thing #7", href: "/w" },
-		],
-		Science: [
-			{ title: "Interesting thing #1", href: "/s" },
-			{ title: "Interesting thing #2", href: "/a" },
-			{ title: "Interesting thing #3", href: "/a" },
-			{ title: "Interesting thing #4", href: "/f" },
-			{ title: "Interesting thing #5", href: "/e" },
-			{ title: "Interesting thing #6", href: "/v" },
-			{ title: "Interesting thing #7", href: "/w" },
-		],
-		"Social Studies": [
-			{ title: "Interesting thing #1", href: "/s" },
-			{ title: "Interesting thing #2", href: "/a" },
-			{ title: "Interesting thing #3", href: "/a" },
-			{ title: "Interesting thing #4", href: "/f" },
-			{ title: "Interesting thing #5", href: "/e" },
-			{ title: "Interesting thing #6", href: "/v" },
-			{ title: "Interesting thing #7", href: "/w" },
-		],
+		Electives: {
+			a: [
+				{ title: "Interesting thing #1", href: "/s" },
+				{ title: "Interesting thing #2", href: "/a" },
+				{ title: "Interesting thing #3", href: "/a" },
+				{ title: "Interesting thing #4", href: "/f" },
+				{ title: "Interesting thing #5", href: "/e" },
+				{ title: "Interesting thing #6", href: "/v" },
+				{ title: "Interesting thing #7", href: "/w" },
+			],
+		},
+		English: {
+			a: [
+				{ title: "Interesting thing #1", href: "/s" },
+				{ title: "Interesting thing #2", href: "/a" },
+				{ title: "Interesting thing #3", href: "/a" },
+				{ title: "Interesting thing #4", href: "/f" },
+				{ title: "Interesting thing #5", href: "/e" },
+				{ title: "Interesting thing #6", href: "/v" },
+				{ title: "Interesting thing #7", href: "/w" },
+			],
+		},
+		"Foreign Languages": {
+			a: [
+				{ title: "Interesting thing #1", href: "/s" },
+				{ title: "Interesting thing #2", href: "/a" },
+				{ title: "Interesting thing #3", href: "/a" },
+				{ title: "Interesting thing #4", href: "/f" },
+				{ title: "Interesting thing #5", href: "/e" },
+				{ title: "Interesting thing #6", href: "/v" },
+				{ title: "Interesting thing #7", href: "/w" },
+			],
+		},
+		History: {
+			a: [
+				{ title: "Interesting thing #1", href: "/s" },
+				{ title: "Interesting thing #2", href: "/a" },
+				{ title: "Interesting thing #3", href: "/a" },
+				{ title: "Interesting thing #4", href: "/f" },
+				{ title: "Interesting thing #5", href: "/e" },
+				{ title: "Interesting thing #6", href: "/v" },
+				{ title: "Interesting thing #7", href: "/w" },
+			],
+			b: [
+				{ title: "Interesting thing #1", href: "/s" },
+				{ title: "Interesting thing #2", href: "/a" },
+				{ title: "Interesting thing #3", href: "/a" },
+				{ title: "Interesting thing #4", href: "/f" },
+				{ title: "Interesting thing #5", href: "/e" },
+				{ title: "Interesting thing #6", href: "/v" },
+				{ title: "Interesting thing #7", href: "/w" },
+			],
+		},
+		Math: {
+			a: [
+				{ title: "Interesting thing #1", href: "/s" },
+				{ title: "Interesting thing #2", href: "/a" },
+				{ title: "Interesting thing #3", href: "/a" },
+				{ title: "Interesting thing #4", href: "/f" },
+				{ title: "Interesting thing #5", href: "/e" },
+				{ title: "Interesting thing #6", href: "/v" },
+				{ title: "Interesting thing #7", href: "/w" },
+			],
+		},
+		Science: {
+			a: [
+				{ title: "Interesting thing #1", href: "/s" },
+				{ title: "Interesting thing #2", href: "/a" },
+				{ title: "Interesting thing #3", href: "/a" },
+				{ title: "Interesting thing #4", href: "/f" },
+				{ title: "Interesting thing #5", href: "/e" },
+				{ title: "Interesting thing #6", href: "/v" },
+				{ title: "Interesting thing #7", href: "/w" },
+			],
+		},
+		"Social Studies": {
+			a: [
+				{ title: "Interesting thing #1", href: "/s" },
+				{ title: "Interesting thing #2", href: "/a" },
+				{ title: "Interesting thing #3", href: "/a" },
+				{ title: "Interesting thing #4", href: "/f" },
+				{ title: "Interesting thing #5", href: "/e" },
+				{ title: "Interesting thing #6", href: "/v" },
+				{ title: "Interesting thing #7", href: "/w" },
+			],
+		},
 	};
 }
 
@@ -138,9 +151,9 @@ function NotesTree(): JSX.Element {
 			borderColor="transparent"
 			borderLeftColor="white"
 			borderLeftWidth={3}
-			defaultIndex={0}
 		>
-			{categories.map((category, idx: number) => {
+			{Object.keys(allNotes).map((category, idx: number) => {
+				const [value, setValue] = React.useState(-1);
 				return (
 					<AccordionItem key={"_" + idx}>
 						<AccordionButton
@@ -148,11 +161,48 @@ function NotesTree(): JSX.Element {
 							color="whiteAlpha.600"
 							_expanded={{ color: "white" }}
 							onClick={() => {
-								selected(category);
+								setValue(-1);
 							}}
 						>
 							<Heading size="sm">{category}</Heading>
 						</AccordionButton>
+						<AccordionPanel
+							pb={3}
+							borderLeftColor="white"
+							borderLeftWidth={1}
+							ml={3}
+						>
+							{/* Create an Accordion object since it's easier that way */}
+							<Accordion borderColor="transparent" index={value}>
+								{Object.keys(allNotes[category]).map(
+									(subcategory, index: number) => {
+										return (
+											<AccordionItem key={"__" + index}>
+												<AccordionButton
+													textAlign="left"
+													color="whiteAlpha.600"
+													_expanded={{
+														color: "white",
+													}}
+													onClick={() => {
+														// set the value of the child dropdown, then call selected
+														setValue(index);
+														selected(
+															category,
+															subcategory
+														);
+													}}
+													py={1}
+													pl={1}
+												>
+													{subcategory}
+												</AccordionButton>
+											</AccordionItem>
+										);
+									}
+								)}
+							</Accordion>
+						</AccordionPanel>
 					</AccordionItem>
 				);
 			})}
@@ -160,20 +210,28 @@ function NotesTree(): JSX.Element {
 	);
 }
 
-var setCategory: (arg0: string) => void = (_e) => {};
+var setCategory: (arg0: string) => void = (_e) => {},
+	setSubcategory: (arg0: string) => void = (_e) => {};
 
 /**
  * Called when a category accordion button is clicked is clicked
  * @param category the category being selected
+ * @param subcategory the subcategory being selected
  */
-function selected(category: string) {
+function selected(category: string, subcategory: string) {
 	if (!setCategory) {
 		console.warn("setGridTitle unset!");
 		return;
 	}
 
+	if (!setSubcategory) {
+		console.warn("setSubcategory unset!");
+		return;
+	}
+
 	// console.log("Selected " + category);
 	setCategory(category);
+	setSubcategory(subcategory);
 }
 
 /**
@@ -181,13 +239,10 @@ function selected(category: string) {
  * @returns the JSX element that represents the grid section on the right of the page
  */
 function NotesGrid(): JSX.Element {
-	const [category, setC] = React.useState("All");
+	const [category, setC] = React.useState("");
 	setCategory = setC; // breaking the Rule of Hooks?
-
-	const notes =
-		category === "All"
-			? Object.values(allNotes).flat()
-			: allNotes[category];
+	const [subcategory, setSC] = React.useState("");
+	setSubcategory = setSC; // breaking the Rule of Hooks?
 
 	const innerTitleSize = useBreakpointValue({ base: "md", lg: "lg" }),
 		inputGroupSize = useBreakpointValue({ base: "sm", lg: "md" });
@@ -200,7 +255,7 @@ function NotesGrid(): JSX.Element {
 				mb={5}
 			>
 				<Heading size={innerTitleSize} mb={3} flexShrink={0} mr={5}>
-					{category}
+					{subcategory}
 				</Heading>
 				<InputGroup
 					size={inputGroupSize}
@@ -221,13 +276,17 @@ function NotesGrid(): JSX.Element {
 				overflowY="scroll"
 				h={500}
 			>
-				{notes.map((note, idx: number) => (
-					<NotesBox
-						title={note.title}
-						href={note.href}
-						key={"note_" + idx}
-					/>
-				))}
+				{allNotes[category] && allNotes[category][subcategory]
+					? allNotes[category][subcategory].map(
+							(note, idx: number) => (
+								<NotesBox
+									title={note.title}
+									href={note.href}
+									key={"note_" + idx}
+								/>
+							)
+					  )
+					: null}
 			</Flex>
 		</Box>
 	);

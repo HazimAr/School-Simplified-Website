@@ -5,13 +5,17 @@ export type NotesProps = {
 
 export type Subject = {
 	title: string;
-	content: {
-		title: string;
-		content: {
-			title: string;
-			content: NotesProps[];
-		}[];
-	}[];
+	content: Class[];
+};
+
+export type Class = {
+	title: string;
+	content: Unit[];
+};
+
+export type Unit = {
+	title: string;
+	content: NotesProps[];
 };
 
 export type AllSubjects = {

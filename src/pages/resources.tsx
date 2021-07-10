@@ -8,7 +8,6 @@ import { AllSubjects } from "types";
 /**
  * Notes and stuff
  *
- *
  * @returns the Resources page
  */
 export default function Resources({ subjects }: AllSubjects): JSX.Element {

@@ -18,81 +18,7 @@ import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import React from "react";
 import { FaSearch } from "react-icons/fa";
-import { AllSubjects, NotesProps, Subject } from "types";
-
-/**
- * Fetches from the backend (?) all notes blurbs to display for this page
- * @returns all notes blurbs
- */
-function fetchNotes(): Subject[] {
-	// filler for now; leaving open for backend integration
-	// console.log("fetchNotes invoked");
-	return [
-		{
-			title: "Math",
-			content: [
-				{
-					title: "Algebra I",
-					content: [
-						{
-							title: "Quadratics",
-							content: [
-								{ title: "Interesting thing #1", href: "/s" },
-								{ title: "Interesting thing #2", href: "/a" },
-								{ title: "Interesting thing #3", href: "/a" },
-								{ title: "Interesting thing #4", href: "/f" },
-								{ title: "Interesting thing #5", href: "/e" },
-								{ title: "Interesting thing #6", href: "/v" },
-								{ title: "Interesting thing #7", href: "/w" },
-							],
-						},
-					],
-				},
-				{
-					title: "Calculus AB",
-					content: [
-						{
-							title: "Limits",
-							content: [
-								{ title: "Difference Quotient", href: "/404" },
-							],
-						},
-					],
-				},
-			],
-		},
-		{
-			title: "Science",
-			content: [
-				{
-					title: "Physics I",
-					content: [
-						{
-							title: "Kinematics",
-							content: [
-								{
-									title: "We flew a kite in a public place",
-									href: "https://example.com",
-								},
-							],
-						},
-						{
-							title: "Conservation",
-							content: [
-								{
-									title: "Conservation of Momentum",
-									href: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-								},
-							],
-						},
-					],
-				},
-			],
-		},
-	];
-}
-
-const allNotes = fetchNotes();
+import { AllSubjects, NotesProps } from "types";
 
 export default function NotesSection({ subjects }: AllSubjects): JSX.Element {
 	return (
@@ -124,7 +50,7 @@ function NotesTree({ subjects }: AllSubjects): JSX.Element {
 			borderLeftColor="white"
 			borderLeftWidth={3}
 		>
-			{allNotes.map((categoryFolder, cIdx: number) => {
+			{subjects.map((categoryFolder, cIdx: number) => {
 				const [scValue, setSCValue] = React.useState(-1);
 				return (
 					<AccordionItem key={"_" + cIdx}>
@@ -286,9 +212,9 @@ function NotesGrid({ subjects }: AllSubjects): JSX.Element {
 	setUnit = setU; // breaking the Rule of Hooks?
 
 	const halal =
-		allNotes[category] &&
-		allNotes[category].content[subcategory] &&
-		allNotes[category].content[subcategory].content[unit];
+		subjects[category] &&
+		subjects[category].content[subcategory] &&
+		subjects[category].content[subcategory].content[unit];
 
 	const innerTitleSize = useBreakpointValue({ base: "md", lg: "lg" }),
 		inputGroupSize = useBreakpointValue({ base: "sm", lg: "md" });
@@ -302,7 +228,7 @@ function NotesGrid({ subjects }: AllSubjects): JSX.Element {
 			>
 				<Heading size={innerTitleSize} mb={3} flexShrink={0} mr={5}>
 					{halal
-						? allNotes[category].content[subcategory].content[unit]
+						? subjects[category].content[subcategory].content[unit]
 								.title
 						: null}
 				</Heading>
@@ -326,7 +252,7 @@ function NotesGrid({ subjects }: AllSubjects): JSX.Element {
 				h={500}
 			>
 				{halal
-					? allNotes[category].content[subcategory].content[
+					? subjects[category].content[subcategory].content[
 							unit
 					  ].content.map((note, idx: number) => (
 							<NotesBox

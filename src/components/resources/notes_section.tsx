@@ -268,10 +268,6 @@ function NotesGrid({ subjects }: AllSubjects): JSX.Element {
 }
 
 /**
- * What's needed to create a NotesBox object
- */
-
-/**
  * Creates a notes box
  * @returns a JSX Element that displays the blurb of the notes
  */

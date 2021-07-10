@@ -65,11 +65,11 @@ async function getUnits(
 	currentClass: any,
 	classIndex: number
 ): Promise<Unit[]> {
-	const { data: classPageData } = await axios.get(
-		`https://api.notion.com/v1/pages/${currentClass.id}`,
-		config
-	);
-	const pageURL = classPageData.url;
+	// const { data: classPageData } = await axios.get(
+	// 	`https://api.notion.com/v1/pages/${currentClass.id}`,
+	// 	config
+	// );
+	// const pageURL = classPageData.url;
 
 	const promises2 = currentSubject.map(() => {
 		return axios.get(
@@ -86,64 +86,71 @@ async function getUnits(
 			let title: string = "";
 			let units: Unit[] = [];
 			let notes: NotesProps[] = [];
-			let idx: number = 1;
-			let re = /\-/gi;
 
+			// go through every block in the page
 			blocks.forEach((block: any) => {
-				if (block.type === "heading_3") {
-					if (block.heading_3.text.length) {
-						// valid title
-						if (title.length) {
-							units.push({ title: title, content: notes });
-						}
+				if (block.type.startsWith("heading")) {
+					const blockType = block.type;
+					if (block[blockType].text.length) {
+						// title exists
+						const titleText = block[blockType].text[0]?.plain_text;
+						if (titleText) {
+							// valid title
+							// push previous section
+							if (title.length) {
+								units.push({ title: title, content: notes });
+							}
 
-						title =
-							block.heading_3.text[0]?.plain_text ??
-							"I was broken :(";
-						notes = [];
-						idx = 1;
-						// } else {
-						// 	// empty title
-						// 	console.log(`Empty header detected in ${pageURL}!`);
+							title = titleText;
+							notes = [];
+						} else {
+							console.warn(
+								`Title ${block.id} in class "${currentClass?.child_page?.title}" is malformed!`
+							);
+						}
 					}
-				} else {
+				} else if (block.type === "paragraph") {
 					// treat as a notes object until implemented
-					const blockID = block.id.replace(re, "");
+					let href: string = "",
+						notesTitle: string = "";
+					for (const text of block.paragraph.text) {
+						if (text.href) {
+							if (text.href.length) {
+								href = text.href;
+								if (notesTitle.length) break;
+							}
+						} else if (text.plain_text) {
+							const temp = text.plain_text.trim();
+							if (temp.length) {
+								notesTitle = temp;
+								if (href.length) break;
+							}
+						}
+					}
+
 					// const blockID = block.id;
-					const note = {
-						title: `${title} Notes #${idx++}`,
-						href: `${pageURL}#${blockID}`,
-					};
-					console.log(note.title);
-					console.log(note.href);
-					// console.log(typeof block.id);
-					notes.push(note);
+					if (href.length && notesTitle.length) {
+						const note = {
+							title: notesTitle,
+							href: href,
+						};
+						// console.log(title);
+						// console.log(href);
+						notes.push(note);
+					} else if (title.length) {
+						console.warn(
+							`ID ${block.id} in section "${title}" in class "${currentClass?.child_page?.title}" is malformed!`
+						);
+					}
 				}
 			});
 
-			return units;
-			// return blocks
-			// 	.filter(
-			// 		(block: any) =>
-			// 			block.type === "heading_3" &&
-			// 			block.heading_3.text.length
-			// 	)
-			// 	.map((block: any) => {
-			// 		// console.log(block);
+			// push last section
+			if (title.length) {
+				units.push({ title: title, content: notes });
+			}
 
-			// 		// One unit
-			// 		return {
-			// 			title:
-			// 				block.heading_3.text[0]?.plain_text ??
-			// 				"I was broken :(",
-			// 			content: [
-			// 				{
-			// 					title: "Interesting thing #1",
-			// 					href: "/s",
-			// 				},
-			// 			],
-			// 		};
-			// 	});
+			return units;
 		});
 }
 

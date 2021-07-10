@@ -23,8 +23,8 @@ export default function Resources({ subjects }: AllSubjects): JSX.Element {
 						<Box textAlign={{ base: "center", sm: "left" }}>
 							<Heading mb={3}>Resources</Heading>
 							<Text fontSize={20}>
-								All the notes and courses you'll ever want for
-								your academic needs!
+								All the notes you'll ever want for your academic
+								needs!
 							</Text>
 						</Box>
 						<Image

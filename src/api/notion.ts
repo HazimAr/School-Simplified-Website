@@ -9,22 +9,21 @@ const config = {
 };
 
 async function getSubjects(): Promise<Subject[]> {
-	const { data } = await axios.post(
+	const { data: dictData } = await axios.post(
 		`https://api.notion.com/v1/databases/283ca488c1624a4fbef37f1d8bd8da90/query`,
 		{},
 		config
 	);
-	const promises = data.results.map((page: any) => {
+	const subjectPromises = dictData.results.map((page: any) => {
 		return axios.get(
 			`https://api.notion.com/v1/blocks/${page.id}/children`,
 			config
 		);
 	});
 
-	let subjects;
-	await Promise.all(promises).then(async (subjectData) => {
-		subjects = await Promise.all(
-			(subjects = data.results.map(
+	return Promise.all(subjectPromises)
+		.then((subjectData) => {
+			return dictData.results.map(
 				async (currentSubject: any, currentSubjectIndex: number) => {
 					let content = await getClasses(
 						subjectData,
@@ -36,11 +35,9 @@ async function getSubjects(): Promise<Subject[]> {
 						content: content,
 					};
 				}
-			))
-		);
-	});
-	// @ts-expect-error
-	return subjects;
+			);
+		})
+		.then((newPromises) => Promise.all(newPromises));
 }
 
 async function getClasses(
@@ -48,8 +45,7 @@ async function getClasses(
 	subjectIndex: number
 ): Promise<Class[]> {
 	const currentSubject = subjectData[subjectIndex].data.results;
-	let content;
-	await Promise.all(
+	return Promise.all(
 		currentSubject.map(async (currentClass: any, classIndex: number) => {
 			const content = await getUnits(
 				currentSubject,
@@ -61,12 +57,7 @@ async function getClasses(
 				content: content,
 			};
 		})
-	).then((promiseContent) => {
-		content = promiseContent;
-	});
-
-	// @ts-expect-error
-	return content;
+	);
 }
 
 async function getUnits(
@@ -80,27 +71,33 @@ async function getUnits(
 			config
 		);
 	});
-	const allPromises = await Promise.all(promises2);
-	// @ts-expect-error
-	const blocks = allPromises[classIndex].data.results;
-	const content = blocks
-		.filter(
-			(block: any) =>
-				block.type === "heading_3" && block.heading_3.text.length > 0
-		)
-		.map((block: any) => {
-			// console.log(block);
-			return {
-				title: block.heading_3.text[0]?.plain_text ?? "I was broken :(",
-				content: [
-					{
-						title: "Interesting thing #1",
-						href: "/s",
-					},
-				],
-			};
+	return Promise.all(promises2)
+		.then((allPromises) => {
+			// @ts-expect-error
+			return allPromises[classIndex].data.results;
+		})
+		.then((blocks) => {
+			return blocks
+				.filter(
+					(block: any) =>
+						block.type === "heading_3" &&
+						block.heading_3.text.length > 0
+				)
+				.map((block: any) => {
+					// console.log(block);
+					return {
+						title:
+							block.heading_3.text[0]?.plain_text ??
+							"I was broken :(",
+						content: [
+							{
+								title: "Interesting thing #1",
+								href: "/s",
+							},
+						],
+					};
+				});
 		});
-	return content;
 }
 
 export { getSubjects };

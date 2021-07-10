@@ -33,7 +33,7 @@ async function getSubjects() {
 						currentSubject.map(
 							async (currentClass, classIndex: number) => {
 								const promises2 = currentSubject.map(
-									(page: any) => {
+									() => {
 										return axios.get(
 											`https://api.notion.com/v1/blocks/${currentClass.id}/children`,
 											config

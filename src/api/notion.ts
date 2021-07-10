@@ -3,7 +3,9 @@ import { Class, Subject, Unit } from "types";
 
 const config = {
 	headers: {
-		Authorization: "Bearer " + process.env.NOTION_API_KEY ?? "",
+		Authorization:
+			"Bearer " + process.env.NOTION_API_KEY ??
+			"secret_73W0zW4QYwCNgUoHFXL4XgoHfq9BuoO6qa1ZmeejLZi",
 		"Notion-Version": "2021-05-13",
 	},
 };

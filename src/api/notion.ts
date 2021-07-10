@@ -21,10 +21,11 @@ async function getSubjects() {
 	});
 	let subjects;
 	await Promise.all(promises).then((classes) => {
-		subjects = data.results.map((page: any) => {
-			const content = classes.map((myClass, index: number) => {
+		subjects = data.results.map((page: any, index: number) => {
+			const content = classes[index].data.results.map((result) => {
+				// if (result?.child_page?.title) {
 				return {
-					title: myClass.data.results[0]?.child_page?.title,
+					title: result?.child_page?.title,
 					content: [
 						{
 							title: "Quadratics",
@@ -60,6 +61,7 @@ async function getSubjects() {
 							],
 						},
 					],
+					// };
 				};
 			});
 			return {
@@ -74,4 +76,3 @@ async function getSubjects() {
 }
 
 export { getSubjects };
-

@@ -12,6 +12,7 @@ import {
 	InputGroup,
 	InputLeftElement,
 	Link,
+	Text,
 	useBreakpointValue,
 } from "@chakra-ui/react";
 import Container from "@components/container";
@@ -25,7 +26,7 @@ export default function NotesSection({ subjects }: AllSubjects): JSX.Element {
 		<Container>
 			<ContainerInside my={5}>
 				<Heading mb={5}>Notes</Heading>
-				<Flex>
+				<Flex alignItems="stretch">
 					<Box mr={{ base: 2, md: 4 }} w={{ base: 150, md: 190 }}>
 						<Heading size="md" mb={3} textAlign="left">
 							Categories
@@ -61,6 +62,7 @@ function NotesTree({ subjects }: AllSubjects): JSX.Element {
 							onClick={() => {
 								setSCValue(-1);
 							}}
+							minW="fit-content"
 						>
 							<Heading size="sm">{categoryFolder.title}</Heading>
 						</AccordionButton>
@@ -82,6 +84,7 @@ function NotesTree({ subjects }: AllSubjects): JSX.Element {
 										return (
 											<AccordionItem key={"__" + scIdx}>
 												<AccordionButton
+													minW="fit-content"
 													textAlign="left"
 													color="whiteAlpha.600"
 													_expanded={{
@@ -102,6 +105,7 @@ function NotesTree({ subjects }: AllSubjects): JSX.Element {
 													pl={2}
 													borderLeftColor="white"
 													borderLeftWidth={1}
+													minW="fit-content"
 												>
 													{/* Accordion V2 */}
 													<Accordion
@@ -143,6 +147,10 @@ function NotesTree({ subjects }: AllSubjects): JSX.Element {
 																			pl={
 																				1
 																			}
+																			fontSize={
+																				14
+																			}
+																			minW="fit-content"
 																		>
 																			{
 																				unitFolder.title
@@ -220,11 +228,12 @@ function NotesGrid({ subjects }: AllSubjects): JSX.Element {
 		inputGroupSize = useBreakpointValue({ base: "sm", lg: "md" });
 
 	return (
-		<Box flex={1}>
+		<Flex flex={1} flexDir="column">
 			<Flex
 				justifyContent="space-between"
 				flexDir={{ base: "column", md: "row" }}
 				mb={5}
+				flex={0}
 			>
 				<Heading size={innerTitleSize} mb={3} flexShrink={0} mr={5}>
 					{halal
@@ -249,7 +258,8 @@ function NotesGrid({ subjects }: AllSubjects): JSX.Element {
 				flexDir={{ base: "column", md: "row" }}
 				alignContent={{ base: "stretch", md: "flex-start" }}
 				overflowY="scroll"
-				h={500}
+				minH={500}
+				flex={1}
 			>
 				{halal
 					? subjects[category].content[subcategory].content[
@@ -258,17 +268,21 @@ function NotesGrid({ subjects }: AllSubjects): JSX.Element {
 							<NotesBox
 								title={note.title}
 								href={note.href}
+								lastEdited={note.lastEdited}
 								key={"note_" + idx}
 							/>
 					  ))
 					: null}
 			</Flex>
-		</Box>
+		</Flex>
 	);
 }
 
+const dateTimeFormatter = new Intl.DateTimeFormat("en-US");
+
 /**
  * Creates a notes box
+ * @param props the props needed to generate this element
  * @returns a JSX Element that displays the blurb of the notes
  */
 function NotesBox(props: NotesProps): JSX.Element {
@@ -277,26 +291,62 @@ function NotesBox(props: NotesProps): JSX.Element {
 		md: 125,
 		lg: 185,
 	});
-	return (
-		<Link
-			href={props.href}
-			isExternal
-			_hover={{ textDecoration: "none", cursor: "auto" }}
-		>
-			<Center
-				w={sideLength}
-				h={sideLength}
-				borderRadius={25}
-				mb={3}
-				mr={3}
-				p={3}
-				bg="brand.transparent"
-				color="brand.purple.dark"
-				fontSize={{ base: 14, lg: 18 }}
-				_hover={{ cursor: "pointer" }}
+
+	if (props.lastEdited) {
+		return (
+			<Link
+				href={props.href}
+				isExternal
+				_hover={{ textDecoration: "none", cursor: "auto" }}
 			>
-				{props.title}
-			</Center>
-		</Link>
-	);
+				<Flex
+					w={sideLength}
+					h={sideLength}
+					borderRadius={25}
+					mb={3}
+					mr={3}
+					p={3}
+					bg="brand.transparent"
+					color="brand.purple.dark"
+					_hover={{ cursor: "pointer" }}
+					flexDir="column"
+				>
+					<Center flex={1} fontSize={{ base: 14, lg: 18 }}>
+						{props.title}
+					</Center>
+					<Text
+						fontStyle="italic"
+						textAlign={{ base: "center", md: "right" }}
+						flex={0}
+						fontSize={{ base: 12, md: 10, lg: 14 }}
+					>
+						Last edited{" "}
+						{dateTimeFormatter.format(new Date(props.lastEdited))}
+					</Text>
+				</Flex>
+			</Link>
+		);
+	} else
+		return (
+			<Link
+				href={props.href}
+				isExternal
+				_hover={{ textDecoration: "none", cursor: "auto" }}
+			>
+				<Center
+					w={sideLength}
+					h={sideLength}
+					borderRadius={25}
+					mb={3}
+					mr={3}
+					p={3}
+					bg="brand.transparent"
+					color="brand.purple.dark"
+					fontSize={{ base: 14, lg: 18 }}
+					_hover={{ cursor: "pointer" }}
+				>
+					{props.title}
+				</Center>
+			</Link>
+		);
 }

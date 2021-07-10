@@ -1,6 +1,7 @@
 export type NotesProps = {
 	title: string;
 	href: string;
+	lastEdited?: string;
 };
 
 export type Subject = {

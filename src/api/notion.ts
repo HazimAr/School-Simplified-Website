@@ -130,12 +130,19 @@ async function getUnits(
 
 					// const blockID = block.id;
 					if (href.length && notesTitle.length) {
-						const note = {
-							title: notesTitle,
-							href: href,
-						};
+						const note: NotesProps = block.last_edited_time
+							? {
+									title: notesTitle,
+									href: href,
+									lastEdited: block.last_edited_time,
+							  }
+							: {
+									title: notesTitle,
+									href: href,
+							  };
 						// console.log(title);
 						// console.log(href);
+						// console.log(note.lastEdited);
 						notes.push(note);
 					} else if (title.length) {
 						console.warn(

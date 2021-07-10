@@ -110,7 +110,7 @@ export default function CourseList(): JSX.Element {
 						</Center>
 					</Button>
 					<Text>
-						{pageNum} / {pages}
+						{pageNum + 1} / {pages}
 					</Text>
 					<Button
 						onClick={() => setPageNum(pageNum + 1)}

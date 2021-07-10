@@ -32,25 +32,30 @@ type AllNotes = {
 function fetchNotes(): AllNotes {
 	// filler for now; leaving open for backend integration
 	// console.log("fetchNotes invoked");
-	return {
-		Math: [
-			{
-				"Algebra I": [
-					{
-						Quadratics: [
-							{ title: "Interesting thing #1", href: "/s" },
-							{ title: "Interesting thing #2", href: "/a" },
-							{ title: "Interesting thing #3", href: "/a" },
-							{ title: "Interesting thing #4", href: "/f" },
-							{ title: "Interesting thing #5", href: "/e" },
-							{ title: "Interesting thing #6", href: "/v" },
-							{ title: "Interesting thing #7", href: "/w" },
-						],
-					},
-				],
-			},
-		],
-	};
+	return [
+		{
+			title: "Math",
+			content: [
+				{
+					title: "Algebra I",
+					content: [
+						{
+							title: "Quadratics",
+							content: [
+								{ title: "Interesting thing #1", href: "/s" },
+								{ title: "Interesting thing #2", href: "/a" },
+								{ title: "Interesting thing #3", href: "/a" },
+								{ title: "Interesting thing #4", href: "/f" },
+								{ title: "Interesting thing #5", href: "/e" },
+								{ title: "Interesting thing #6", href: "/v" },
+								{ title: "Interesting thing #7", href: "/w" },
+							],
+						},
+					],
+				},
+			],
+		},
+	];
 }
 
 const allNotes = fetchNotes();

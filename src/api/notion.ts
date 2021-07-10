@@ -1,11 +1,11 @@
 import axios from "axios";
-import { Class, Note, Subject, Unit } from "types";
+import { Class, Subject, Unit } from "types";
 
 const config = {
 	headers: {
-		Authorization: "",
-		// "Bearer " + process.env.NOTION_API_KEY ??
-		// "secret_73W0zW4QYwCNgUoHFXL4XgoHfq9BuoO6qa1ZmeejLZi",
+		Authorization:
+			"Bearer " + process.env.NOTION_API_KEY ??
+			"secret_73W0zW4QYwCNgUoHFXL4XgoHfq9BuoO6qa1ZmeejLZi",
 		"Notion-Version": "2021-05-13",
 	},
 };
@@ -90,27 +90,18 @@ async function getUnits(
 			(block: any) =>
 				block.type === "heading_3" && block.heading_3.text.length > 0
 		)
-		.map(async (currentBlock: any) => {
+		.map((block: any) => {
 			// console.log(block);
-			const content = await getNotes();
 			return {
-				title:
-					currentBlock.heading_3.text[0]?.plain_text ??
-					"I was broken :(",
-				content: content,
+				title: block.heading_3.text[0]?.plain_text ?? "I was broken :(",
+				content: [
+					{
+						title: "Interesting thing #1",
+						href: "/s",
+					},
+				],
 			};
 		});
-	return content;
-}
-
-function getNotes(): Note[] {
-	let content = [
-		{
-			title: "Interesting thing #1",
-			href: "/s",
-		},
-	];
-
 	return content;
 }
 

@@ -1,7 +1,9 @@
+import { getSubjects } from "@api/notion";
 import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NotesSection from "@components/resources/notes_section";
+import { AllSubjects } from "types";
 
 /**
  * Notes and stuff
@@ -9,7 +11,7 @@ import NotesSection from "@components/resources/notes_section";
  *
  * @returns the Resources page
  */
-export default function Resources(): JSX.Element {
+export default function Resources({ subjects }: AllSubjects): JSX.Element {
 	return (
 		<>
 			<Container bg="brand.transparent">
@@ -35,7 +37,7 @@ export default function Resources(): JSX.Element {
 				</ContainerInside>
 			</Container>
 
-			<NotesSection />
+			<NotesSection subjects={subjects} />
 
 			<Container bg="brand.transparent">
 				<ContainerInside my={5}>
@@ -63,4 +65,9 @@ export default function Resources(): JSX.Element {
 			</Container>
 		</>
 	);
+}
+
+export async function getServerSideProps(ctx: any) {
+	const subjects = await getSubjects();
+	return { props: { subjects } };
 }

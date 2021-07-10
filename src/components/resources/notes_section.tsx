@@ -18,23 +18,13 @@ import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import React from "react";
 import { FaSearch } from "react-icons/fa";
-
-type MasterFolder = {
-	title: string;
-	content: {
-		title: string;
-		content: {
-			title: string;
-			content: NotesProps[];
-		}[];
-	}[];
-};
+import { AllSubjects, NotesProps, Subject } from "types";
 
 /**
  * Fetches from the backend (?) all notes blurbs to display for this page
  * @returns all notes blurbs
  */
-function fetchNotes(): MasterFolder[] {
+function fetchNotes(): Subject[] {
 	// filler for now; leaving open for backend integration
 	// console.log("fetchNotes invoked");
 	return [
@@ -104,7 +94,7 @@ function fetchNotes(): MasterFolder[] {
 
 const allNotes = fetchNotes();
 
-export default function NotesSection(): JSX.Element {
+export default function NotesSection({ subjects }: AllSubjects): JSX.Element {
 	return (
 		<Container>
 			<ContainerInside my={5}>
@@ -114,9 +104,9 @@ export default function NotesSection(): JSX.Element {
 						<Heading size="md" mb={3} textAlign="left">
 							Categories
 						</Heading>
-						<NotesTree />
+						<NotesTree subjects={subjects} />
 					</Box>
-					<NotesGrid />
+					<NotesGrid subjects={subjects} />
 				</Flex>
 			</ContainerInside>
 		</Container>
@@ -127,7 +117,7 @@ export default function NotesSection(): JSX.Element {
  * Generates the left panel of this section.
  * @returns the JSX element that represents the tree section on the left of the page
  */
-function NotesTree(): JSX.Element {
+function NotesTree({ subjects }: AllSubjects): JSX.Element {
 	return (
 		<Accordion
 			borderColor="transparent"
@@ -287,7 +277,7 @@ function selected(category: number, subcategory: number, unit: number) {
  * Generates the right panel of this section.
  * @returns the JSX element that represents the grid section on the right of the page
  */
-function NotesGrid(): JSX.Element {
+function NotesGrid({ subjects }: AllSubjects): JSX.Element {
 	const [category, setC] = React.useState(-1);
 	setCategory = setC; // breaking the Rule of Hooks?
 	const [subcategory, setSC] = React.useState(-1);
@@ -354,10 +344,6 @@ function NotesGrid(): JSX.Element {
 /**
  * What's needed to create a NotesBox object
  */
-type NotesProps = {
-	title: string;
-	href: string;
-};
 
 /**
  * Creates a notes box

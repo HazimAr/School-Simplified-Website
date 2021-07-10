@@ -32,15 +32,36 @@ const theme = extendTheme({
 			html: {
 				height: "100%",
 			},
+
 			body: {
-				fontFamily: "body",
-				color: "white",
-				lineHeight: "base",
+				padding: 0,
+				margin: 0,
+				fontFamily:
+					" -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif",
+				textAlign: "center",
+			},
+			a: {
+				color: "inherit",
+				textDecoration: "none",
+			},
+			ul: {
+				listStyle: "none",
+			},
+
+			"::-webkit-scrollbar": {
+				width: "0.6em",
+			},
+			"::-webkit-scrollbar-track": {
+				borderRadius: "0px",
+			},
+			"::-webkit-scrollbar-thumb": {
+				backgroundColor: "rgb(69, 74, 138)",
+				borderRadius: "80px",
 			},
 		}),
 	},
 });
 
-export const rounded = "50px"
+export const rounded = "50px";
 
 export default theme;

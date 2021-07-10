@@ -2,7 +2,6 @@ import { ChakraProvider, Box } from "@chakra-ui/react";
 import Footer from "@components/footer";
 import Header from "@components/header";
 import { pageview } from "@lib/gtag";
-import "@styles/global.css";
 import theme from "@styles/theme";
 import { META } from "config";
 import type { AppProps } from "next/app";

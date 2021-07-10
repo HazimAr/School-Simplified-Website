@@ -2,6 +2,7 @@ import {
 	Accordion,
 	AccordionButton,
 	AccordionItem,
+	AccordionPanel,
 	Box,
 	Center,
 	Flex,
@@ -11,37 +12,28 @@ import {
 	InputGroup,
 	InputLeftElement,
 	Link,
+	Text,
 	useBreakpointValue,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import React from "react";
 import { FaSearch } from "react-icons/fa";
+import { AllSubjects, NotesProps } from "types";
 
-const categories: string[] = [
-	"All",
-	"Electives",
-	"English",
-	"Foreign Languages",
-	"History",
-	"Math",
-	"Science",
-	"Social Studies",
-];
-
-export default function NotesSection(): JSX.Element {
+export default function NotesSection({ subjects }: AllSubjects): JSX.Element {
 	return (
 		<Container>
 			<ContainerInside my={5}>
 				<Heading mb={5}>Notes</Heading>
-				<Flex>
-					<Box flex={0} mr={5}>
+				<Flex alignItems="stretch">
+					<Box mr={{ base: 2, md: 4 }} w={{ base: 150, md: 190 }}>
 						<Heading size="md" mb={3} textAlign="left">
 							Categories
 						</Heading>
-						<NotesTree />
+						<NotesTree subjects={subjects} />
 					</Box>
-					<NotesGrid />
+					<NotesGrid subjects={subjects} />
 				</Flex>
 			</ContainerInside>
 		</Container>
@@ -52,27 +44,130 @@ export default function NotesSection(): JSX.Element {
  * Generates the left panel of this section.
  * @returns the JSX element that represents the tree section on the left of the page
  */
-function NotesTree(): JSX.Element {
+function NotesTree({ subjects }: AllSubjects): JSX.Element {
 	return (
 		<Accordion
 			borderColor="transparent"
 			borderLeftColor="white"
 			borderLeftWidth={3}
-			defaultIndex={0}
 		>
-			{categories.map((category, idx: number) => {
+			{subjects.map((categoryFolder, cIdx: number) => {
+				const [scValue, setSCValue] = React.useState(-1);
 				return (
-					<AccordionItem key={"_" + idx}>
+					<AccordionItem key={"_" + cIdx}>
 						<AccordionButton
 							textAlign="left"
 							color="whiteAlpha.600"
 							_expanded={{ color: "white" }}
 							onClick={() => {
-								selected(category);
+								setSCValue(-1);
 							}}
+							minW="fit-content"
 						>
-							<Heading size="sm">{category}</Heading>
+							<Heading size="sm">{categoryFolder.title}</Heading>
 						</AccordionButton>
+						<AccordionPanel
+							pb={3}
+							borderLeftColor="white"
+							borderLeftWidth={1}
+							ml={3}
+						>
+							{/* Create an Accordion object since it's easier that way */}
+							<Accordion
+								borderColor="transparent"
+								index={scValue}
+							>
+								{categoryFolder.content.map(
+									(subcategoryFolder, scIdx: number) => {
+										const [uValue, setUValue] =
+											React.useState(-1);
+										return (
+											<AccordionItem key={"__" + scIdx}>
+												<AccordionButton
+													minW="fit-content"
+													textAlign="left"
+													color="whiteAlpha.600"
+													_expanded={{
+														color: "white",
+													}}
+													onClick={() => {
+														// set the value of the child dropdown, then call selected
+														setSCValue(scIdx);
+														setUValue(-1);
+													}}
+													py={1}
+													pl={1}
+												>
+													{subcategoryFolder.title}
+												</AccordionButton>
+												<AccordionPanel
+													pb={3}
+													pl={2}
+													borderLeftColor="white"
+													borderLeftWidth={1}
+													minW="fit-content"
+												>
+													{/* Accordion V2 */}
+													<Accordion
+														borderColor="transparent"
+														index={uValue}
+													>
+														{subcategoryFolder.content.map(
+															(
+																unitFolder,
+																uIdx: number
+															) => {
+																return (
+																	<AccordionItem
+																		key={
+																			"___" +
+																			uIdx
+																		}
+																	>
+																		<AccordionButton
+																			textAlign="left"
+																			color="whiteAlpha.600"
+																			_expanded={{
+																				color: "white",
+																			}}
+																			onClick={() => {
+																				// set the value of the child dropdown, then call selected
+																				setUValue(
+																					uIdx
+																				);
+																				selected(
+																					cIdx,
+																					scIdx,
+																					uIdx
+																				);
+																			}}
+																			py={
+																				1
+																			}
+																			pl={
+																				1
+																			}
+																			fontSize={
+																				14
+																			}
+																			minW="fit-content"
+																		>
+																			{
+																				unitFolder.title
+																			}
+																		</AccordionButton>
+																	</AccordionItem>
+																);
+															}
+														)}
+													</Accordion>
+												</AccordionPanel>
+											</AccordionItem>
+										);
+									}
+								)}
+							</Accordion>
+						</AccordionPanel>
 					</AccordionItem>
 				);
 			})}
@@ -80,131 +175,69 @@ function NotesTree(): JSX.Element {
 	);
 }
 
-var setCategory: (arg0: string) => void = (_e) => {};
+var setCategory: (arg0: number) => void = (_e) => {},
+	setSubcategory: (arg0: number) => void = (_e) => {},
+	setUnit: (arg0: number) => void = (_e) => {};
 
 /**
- * Called when a category accordion button is clicked is clicked
+ * Called when a unit accordion button is clicked
  * @param category the category being selected
+ * @param subcategory the subcategory being selected
+ * @param unit the unit being selected
  */
-function selected(category: string) {
+function selected(category: number, subcategory: number, unit: number) {
 	if (!setCategory) {
 		console.warn("setGridTitle unset!");
 		return;
 	}
 
+	if (!setSubcategory) {
+		console.warn("setSubcategory unset!");
+		return;
+	}
+
+	if (!setUnit) {
+		console.warn("setUnit unset!");
+		return;
+	}
+
 	// console.log("Selected " + category);
 	setCategory(category);
+	setSubcategory(subcategory);
+	setUnit(unit);
 }
-
-type AllNotes = {
-	[category: string]: NotesProps[];
-};
-
-/**
- * Fetches from the backend (?) all notes blurbs to display for this page
- * @returns all notes blurbs
- */
-function fetchNotes(): AllNotes {
-	// filler for now; leaving open for backend integration
-	// console.log("fetchNotes invoked");
-	return {
-		Electives: [
-			{ title: "Interesting thing #1", href: "/s" },
-			{ title: "Interesting thing #2", href: "/a" },
-			{ title: "Interesting thing #3", href: "/a" },
-			{ title: "Interesting thing #4", href: "/f" },
-			{ title: "Interesting thing #5", href: "/e" },
-			{ title: "Interesting thing #6", href: "/v" },
-			{ title: "Interesting thing #7", href: "/w" },
-		],
-		English: [
-			{ title: "Interesting thing #1", href: "/s" },
-			{ title: "Interesting thing #2", href: "/a" },
-			{ title: "Interesting thing #3", href: "/a" },
-			{ title: "Interesting thing #4", href: "/f" },
-			{ title: "Interesting thing #5", href: "/e" },
-			{ title: "Interesting thing #6", href: "/v" },
-			{ title: "Interesting thing #7", href: "/w" },
-		],
-		"Foreign Languages": [
-			{ title: "Interesting thing #1", href: "/s" },
-			{ title: "Interesting thing #2", href: "/a" },
-			{ title: "Interesting thing #3", href: "/a" },
-			{ title: "Interesting thing #4", href: "/f" },
-			{ title: "Interesting thing #5", href: "/e" },
-			{ title: "Interesting thing #6", href: "/v" },
-			{ title: "Interesting thing #7", href: "/w" },
-		],
-		History: [
-			{ title: "Interesting thing #1", href: "/s" },
-			{ title: "Interesting thing #2", href: "/a" },
-			{ title: "Interesting thing #3", href: "/a" },
-			{ title: "Interesting thing #4", href: "/f" },
-			{ title: "Interesting thing #5", href: "/e" },
-			{ title: "Interesting thing #6", href: "/v" },
-			{ title: "Interesting thing #7", href: "/w" },
-		],
-		Math: [
-			{ title: "Interesting thing #1", href: "/s" },
-			{ title: "Interesting thing #2", href: "/a" },
-			{ title: "Interesting thing #3", href: "/a" },
-			{ title: "Interesting thing #4", href: "/f" },
-			{ title: "Interesting thing #5", href: "/e" },
-			{ title: "Interesting thing #6", href: "/v" },
-			{ title: "Interesting thing #7", href: "/w" },
-		],
-		Science: [
-			{ title: "Interesting thing #1", href: "/s" },
-			{ title: "Interesting thing #2", href: "/a" },
-			{ title: "Interesting thing #3", href: "/a" },
-			{ title: "Interesting thing #4", href: "/f" },
-			{ title: "Interesting thing #5", href: "/e" },
-			{ title: "Interesting thing #6", href: "/v" },
-			{ title: "Interesting thing #7", href: "/w" },
-		],
-		"Social Studies": [
-			{ title: "Interesting thing #1", href: "/s" },
-			{ title: "Interesting thing #2", href: "/a" },
-			{ title: "Interesting thing #3", href: "/a" },
-			{ title: "Interesting thing #4", href: "/f" },
-			{ title: "Interesting thing #5", href: "/e" },
-			{ title: "Interesting thing #6", href: "/v" },
-			{ title: "Interesting thing #7", href: "/w" },
-		],
-	};
-}
-
-const allNotes = fetchNotes();
 
 /**
  * Generates the right panel of this section.
  * @returns the JSX element that represents the grid section on the right of the page
  */
-function NotesGrid(): JSX.Element {
-	const [category, setC] = React.useState("All");
+function NotesGrid({ subjects }: AllSubjects): JSX.Element {
+	const [category, setC] = React.useState(-1);
 	setCategory = setC; // breaking the Rule of Hooks?
+	const [subcategory, setSC] = React.useState(-1);
+	setSubcategory = setSC; // breaking the Rule of Hooks?
+	const [unit, setU] = React.useState(-1);
+	setUnit = setU; // breaking the Rule of Hooks?
 
-	const notes =
-		category === "All"
-			? Object.values(allNotes).flat()
-			: allNotes[category];
+	const content = subjects[category]?.content[subcategory]?.content[unit];
 
 	const innerTitleSize = useBreakpointValue({ base: "md", lg: "lg" }),
 		inputGroupSize = useBreakpointValue({ base: "sm", lg: "md" });
 
 	return (
-		<Box flex={1}>
+		<Flex flex={1} flexDir="column">
 			<Flex
 				justifyContent="space-between"
 				flexDir={{ base: "column", md: "row" }}
 				mb={5}
+				flex={0}
 			>
 				<Heading size={innerTitleSize} mb={3} flexShrink={0} mr={5}>
-					{category}
+					{content ? content.title : null}
 				</Heading>
 				<InputGroup
 					size={inputGroupSize}
-					maxW={{ base: 300, lg: 500 }}
+					maxW={{ base: 250, sm: 300, lg: 500 }}
 					flexShrink={1}
 				>
 					<InputLeftElement
@@ -214,51 +247,107 @@ function NotesGrid(): JSX.Element {
 					<Input placeholder="Search" bg="brand.transparent" />
 				</InputGroup>
 			</Flex>
-			<Flex flexWrap="wrap" flexDir={{ base: "column", md: "row" }}>
-				{notes.map((note, idx: number) => (
-					<NotesBox
-						title={note.title}
-						href={note.href}
-						key={"note_" + idx}
-					/>
-				))}
+			<Flex
+				flexWrap={{ base: "nowrap", md: "wrap" }}
+				flexDir={{ base: "column", md: "row" }}
+				alignContent={{ base: "stretch", md: "flex-start" }}
+				overflowY="scroll"
+				minH={500}
+				flex={1}
+			>
+				{content ? (
+					content.content.length ? (
+						content.content.map((note, idx: number) => (
+							<NotesBox
+								title={note.title}
+								href={note.href}
+								lastEdited={note.lastEdited}
+								key={"note_" + idx}
+							/>
+						))
+					) : (
+						<Text fontStyle="italic">
+							Looks like there's nothing here...
+						</Text>
+					)
+				) : null}
 			</Flex>
-		</Box>
+		</Flex>
 	);
 }
 
 /**
- * What's needed to create a NotesBox object
+ * The date and time formatter
  */
-type NotesProps = {
-	title: string;
-	href: string;
-};
+const dateTimeFormatter = new Intl.DateTimeFormat("en-US");
 
 /**
  * Creates a notes box
+ * @param props the props needed to generate this element
  * @returns a JSX Element that displays the blurb of the notes
  */
 function NotesBox(props: NotesProps): JSX.Element {
-	return (
-		<Link
-			href={props.href}
-			_hover={{ textDecoration: "none", cursor: "auto" }}
-		>
-			<Center
-				w={{ base: "initial", md: 150, lg: 175 }}
-				h={{ base: "initial", md: 150, lg: 175 }}
-				borderRadius={25}
-				mb={3}
-				mr={3}
-				p={3}
-				bg="brand.transparent"
-				color="brand.purple.dark"
-				fontSize={{ base: 14, md: 18 }}
-				_hover={{ cursor: "pointer" }}
+	const sideLength = useBreakpointValue({
+		base: "initial",
+		md: 125,
+		lg: 185,
+	});
+
+	if (props.lastEdited) {
+		return (
+			<Link
+				href={props.href}
+				isExternal
+				_hover={{ textDecoration: "none", cursor: "auto" }}
 			>
-				{props.title}
-			</Center>
-		</Link>
-	);
+				<Flex
+					w={sideLength}
+					h={sideLength}
+					borderRadius={25}
+					mb={3}
+					mr={3}
+					p={3}
+					bg="brand.transparent"
+					color="brand.purple.dark"
+					_hover={{ cursor: "pointer" }}
+					flexDir="column"
+				>
+					<Center flex={1} fontSize={{ base: 14, lg: 18 }}>
+						{props.title}
+					</Center>
+					<Text
+						fontStyle="italic"
+						textAlign={{ base: "center", md: "right" }}
+						flex={0}
+						fontSize={{ base: 12, md: 10, lg: 14 }}
+					>
+						Last edited{" "}
+						{dateTimeFormatter.format(new Date(props.lastEdited))}
+					</Text>
+				</Flex>
+			</Link>
+		);
+	} else
+		return (
+			<Link
+				href={props.href}
+				isExternal
+				_hover={{ textDecoration: "none", cursor: "auto" }}
+			>
+				<Center
+					w={sideLength}
+					h={sideLength}
+					borderRadius={25}
+					mb={3}
+					mr={3}
+					p={3}
+					bg="brand.transparent"
+					color="brand.purple.dark"
+					fontSize={{ base: 14, lg: 18 }}
+					_hover={{ cursor: "pointer" }}
+				>
+					{props.title}
+				</Center>
+			</Link>
+		);
 }

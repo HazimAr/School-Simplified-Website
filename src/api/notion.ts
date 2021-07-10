@@ -48,8 +48,9 @@ async function getClasses(
 	subjectIndex: number
 ): Promise<Class[]> {
 	const currentSubject = subjectData[subjectIndex].data.results;
-	const content = currentSubject.map(
-		async (currentClass: any, classIndex: number) => {
+	let content;
+	await Promise.all(
+		currentSubject.map(async (currentClass: any, classIndex: number) => {
 			const content = await getUnits(
 				currentSubject,
 				currentClass,
@@ -59,9 +60,12 @@ async function getClasses(
 				title: currentClass?.child_page?.title,
 				content: content,
 			};
-		}
-	);
+		})
+	).then((promiseContent) => {
+		content = promiseContent;
+	});
 
+	// @ts-expect-error
 	return content;
 }
 
@@ -77,6 +81,7 @@ async function getUnits(
 		);
 	});
 	const allPromises = await Promise.all(promises2);
+	// @ts-expect-error
 	const blocks = allPromises[classIndex].data.results;
 	const content = blocks
 		.filter(

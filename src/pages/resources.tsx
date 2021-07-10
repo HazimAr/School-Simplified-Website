@@ -66,7 +66,7 @@ export default function Resources({ subjects }: AllSubjects): JSX.Element {
 	);
 }
 
-export async function getServerSideProps(ctx: any) {
+export async function getServerSideProps() {
 	const subjects = await getSubjects();
 	return { props: { subjects } };
 }

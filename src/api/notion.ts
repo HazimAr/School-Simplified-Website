@@ -92,7 +92,7 @@ async function getUnits(
 		)
 		.map(async (currentBlock: any) => {
 			// console.log(block);
-			const content = await getNotes();
+			const content = getNotes();
 			return {
 				title:
 					currentBlock.heading_3.text[0]?.plain_text ??

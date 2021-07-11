@@ -19,7 +19,7 @@ import {
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import LevComparator from "@components/lev_comparator";
+import { filter } from "fuzzaldrin";
 import React from "react";
 import { FaSearch } from "react-icons/fa";
 import { AllSubjects, NotesProps, Subject, Unit } from "types";
@@ -215,7 +215,7 @@ function NotesGrid({ allNotes }: { allNotes: NotesProps[] }): JSX.Element {
 	const [searchTerm, setST] = React.useState("");
 	setSearchTerm = setST;
 
-	const lc = new LevComparator(searchTerm);
+	// const lc: NotesPropsComparator = new FuzzyComparator(searchTerm);
 
 	const innerTitleSize = useBreakpointValue({ base: "md", lg: "lg" }),
 		inputGroupSize = useBreakpointValue({ base: "sm", lg: "md" });
@@ -282,16 +282,16 @@ function NotesGrid({ allNotes }: { allNotes: NotesProps[] }): JSX.Element {
 			>
 				{content && content.content.length ? (
 					searchTerm.length ? (
-						allNotes
-							.sort(lc.compare)
-							.map((note, idx: number) => (
+						filter(allNotes, searchTerm, { key: "title" }).map(
+							(note, idx: number) => (
 								<NotesBox
 									title={note.title}
 									href={note.href}
 									lastEdited={note.lastEdited}
 									key={"note_" + idx}
 								/>
-							))
+							)
+						)
 					) : (
 						content.content.map((note, idx: number) => (
 							<NotesBox

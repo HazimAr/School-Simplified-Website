@@ -8,9 +8,11 @@ import {
 	Flex,
 	Heading,
 	Icon,
+	Image,
 	Input,
 	InputGroup,
 	InputLeftElement,
+	InputRightElement,
 	Link,
 	Text,
 	useBreakpointValue,
@@ -241,21 +243,32 @@ function NotesGrid({ allNotes }: { allNotes: NotesProps[] }): JSX.Element {
 					flexShrink={1}
 				>
 					<InputLeftElement
-						_hover={{ cursor: "pointer" }}
+						pointerEvents="none"
 						children={<Icon as={FaSearch} boxSize={5} />}
 					/>
 					<Input
 						placeholder="Search All"
 						bg="brand.transparent"
-						mr={2}
 						onChange={(e) => {
-							if (searchWait !== null) clearTimeout(searchWait);
-							searchWait = setTimeout(() => {
-								// console.log("Invoked with " + e.target.value);
-								searchWait = null;
-								setSearchTerm(e.target.value);
-							}, 500);
+							const loading = document.getElementById("loading");
+							if (loading) {
+								if (searchWait !== null)
+									clearTimeout(searchWait);
+								loading.style.display = "block";
+								searchWait = setTimeout(() => {
+									// console.log("Invoked with " + e.target.value);
+									searchWait = null;
+									loading.style.display = "none";
+									setSearchTerm(e.target.value);
+								}, 500);
+							}
 						}}
+					/>
+					<InputRightElement
+						pointerEvents="none"
+						children={<Image src="/loading.svg" />}
+						id="loading"
+						display="none"
 					/>
 				</InputGroup>
 			</Flex>

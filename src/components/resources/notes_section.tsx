@@ -236,7 +236,11 @@ function NotesGrid(): JSX.Element {
 						pointerEvents="none"
 						children={<Icon as={FaSearch} boxSize={5} />}
 					/>
-					<Input placeholder="Search All" bg="brand.transparent" />
+					<Input
+						placeholder="Search All"
+						bg="brand.transparent"
+						mr={2}
+					/>
 				</InputGroup>
 			</Flex>
 			<Flex

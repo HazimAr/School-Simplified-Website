@@ -262,7 +262,7 @@ function NotesGrid({ allNotes }: { allNotes: NotesProps[] }): JSX.Element {
 									// console.log("Invoked with " + e.target.value);
 									searchWait = null;
 									loading.style.display = "none";
-									setSearchTerm(e.target.value);
+									setSearchTerm(e.target.value.trim());
 								}, 500);
 							}
 						}}

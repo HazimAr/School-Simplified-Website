@@ -93,7 +93,8 @@ async function getUnits(
 					const blockType = block.type;
 					if (block[blockType].text.length) {
 						// title exists
-						const titleText = block[blockType].text[0]?.plain_text;
+						const titleText =
+							block[blockType].text[0]?.plain_text?.trim();
 						if (titleText) {
 							// valid title
 							// push previous section

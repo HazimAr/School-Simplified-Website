@@ -190,10 +190,6 @@ function selected(
 		return;
 	}
 
-	// console.log("Selected " + category);
-	// setSubject(category);
-	// setClass(subcategory);
-	// setUnit(unit);
 	setContent(subjects[subject]?.content[clazz]?.content[unit]);
 }
 
@@ -202,16 +198,8 @@ function selected(
  * @returns the JSX element that represents the grid section on the right of the page
  */
 function NotesGrid(): JSX.Element {
-	// const [subject, setS] = React.useState(-1);
-	// setSubject = setS; // breaking the Rule of Hooks?
-	// const [clazz, setC] = React.useState(-1);
-	// setClass = setC; // breaking the Rule of Hooks?
-	// const [unit, setU] = React.useState(-1);
-	// setUnit = setU; // breaking the Rule of Hooks?
 	const [content, setC] = React.useState<Unit | undefined>(undefined);
 	setContent = setC;
-
-	// const content: Unit = subjects[subject]?.content[clazz]?.content[unit];
 
 	const innerTitleSize = useBreakpointValue({ base: "md", lg: "lg" }),
 		inputGroupSize = useBreakpointValue({ base: "sm", lg: "md" });

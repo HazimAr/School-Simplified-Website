@@ -17,11 +17,19 @@ import {
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
+import LevComparator from "@components/lev_comparator";
 import React from "react";
 import { FaSearch } from "react-icons/fa";
 import { AllSubjects, NotesProps, Subject, Unit } from "types";
 
 export default function NotesSection({ subjects }: AllSubjects): JSX.Element {
+	const allNotes: NotesProps[] = subjects
+		.map((subject) => subject.content)
+		.flat()
+		.map((clazz) => clazz.content)
+		.flat()
+		.map((unit) => unit.content)
+		.flat();
 	return (
 		<Container>
 			<ContainerInside my={5}>
@@ -33,7 +41,7 @@ export default function NotesSection({ subjects }: AllSubjects): JSX.Element {
 						</Heading>
 						<NotesTree subjects={subjects} />
 					</Box>
-					<NotesGrid />
+					<NotesGrid allNotes={allNotes} />
 				</Flex>
 			</ContainerInside>
 		</Container>
@@ -170,7 +178,8 @@ function NotesTree({ subjects }: AllSubjects): JSX.Element {
 	);
 }
 
-var setContent: (arg0: Unit) => void = (_e) => {};
+let setContent: (arg0: Unit) => void = (_e) => {},
+	setSearchTerm: (arg0: string) => void = (_e) => {};
 
 /**
  * Called when a unit accordion button is clicked or an update to the unit view should be rendered
@@ -195,14 +204,21 @@ function selected(
 
 /**
  * Generates the right panel of this section.
+ * @param allNotes all notes ever
  * @returns the JSX element that represents the grid section on the right of the page
  */
-function NotesGrid(): JSX.Element {
+function NotesGrid({ allNotes }: { allNotes: NotesProps[] }): JSX.Element {
 	const [content, setC] = React.useState<Unit | undefined>(undefined);
 	setContent = setC;
+	const [searchTerm, setST] = React.useState("");
+	setSearchTerm = setST;
+
+	const lc = new LevComparator(searchTerm);
 
 	const innerTitleSize = useBreakpointValue({ base: "md", lg: "lg" }),
 		inputGroupSize = useBreakpointValue({ base: "sm", lg: "md" });
+
+	let searchWait: ReturnType<typeof setTimeout> | null = null;
 
 	return (
 		<Flex flex={1} flexDir="column">
@@ -213,7 +229,11 @@ function NotesGrid(): JSX.Element {
 				flex={0}
 			>
 				<Heading size={innerTitleSize} mb={3} flexShrink={0} mr={5}>
-					{content ? content.title : "Welcome!"}
+					{content
+						? searchTerm.length
+							? "Search"
+							: content.title
+						: "Welcome!"}
 				</Heading>
 				<InputGroup
 					size={inputGroupSize}
@@ -221,13 +241,21 @@ function NotesGrid(): JSX.Element {
 					flexShrink={1}
 				>
 					<InputLeftElement
-						pointerEvents="none"
+						_hover={{ cursor: "pointer" }}
 						children={<Icon as={FaSearch} boxSize={5} />}
 					/>
 					<Input
 						placeholder="Search All"
 						bg="brand.transparent"
 						mr={2}
+						onChange={(e) => {
+							if (searchWait !== null) clearTimeout(searchWait);
+							searchWait = setTimeout(() => {
+								// console.log("Invoked with " + e.target.value);
+								searchWait = null;
+								setSearchTerm(e.target.value);
+							}, 500);
+						}}
 					/>
 				</InputGroup>
 			</Flex>
@@ -240,14 +268,27 @@ function NotesGrid(): JSX.Element {
 				flex={1}
 			>
 				{content && content.content.length ? (
-					content.content.map((note, idx: number) => (
-						<NotesBox
-							title={note.title}
-							href={note.href}
-							lastEdited={note.lastEdited}
-							key={"note_" + idx}
-						/>
-					))
+					searchTerm.length ? (
+						allNotes
+							.sort(lc.compare)
+							.map((note, idx: number) => (
+								<NotesBox
+									title={note.title}
+									href={note.href}
+									lastEdited={note.lastEdited}
+									key={"note_" + idx}
+								/>
+							))
+					) : (
+						content.content.map((note, idx: number) => (
+							<NotesBox
+								title={note.title}
+								href={note.href}
+								lastEdited={note.lastEdited}
+								key={"note_" + idx}
+							/>
+						))
+					)
 				) : (
 					<Text fontStyle="italic">
 						Looks like there's nothing here...
@@ -281,7 +322,6 @@ function NotesBox(props: NotesProps): JSX.Element {
 				href={props.href}
 				isExternal
 				_hover={{ textDecoration: "none", cursor: "auto" }}
-				data-text={props.title}
 			>
 				<Flex
 					w={sideLength}
@@ -316,7 +356,6 @@ function NotesBox(props: NotesProps): JSX.Element {
 				href={props.href}
 				isExternal
 				_hover={{ textDecoration: "none", cursor: "auto" }}
-				data-text={props.title}
 			>
 				<Center
 					w={sideLength}

@@ -1,3 +1,5 @@
+import { NotesProps } from "types";
+
 /**
  * Calculates the Levenshtein distance between the two parameter strings
  * @param x the first string to compare
@@ -35,13 +37,11 @@ export default class LevComparator {
 	constructor(compareTo: string) {
 		this.compareTo = compareTo.toUpperCase();
 		this.map = {};
+		this.compare = this.compare.bind(this);
 	}
 
-	compare(e1: HTMLElement, e2: HTMLElement) {
-		let s1: string = e1.dataset.text ?? "",
-			s2: string = e2.dataset.text ?? "",
-			val1,
-			val2;
+	compare({ title: s1 }: NotesProps, { title: s2 }: NotesProps) {
+		let val1, val2;
 		if (this.map[(s1 = s1.toUpperCase())]) {
 			val1 = this.map[s1];
 		} else {

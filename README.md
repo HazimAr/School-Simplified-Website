@@ -31,3 +31,4 @@ To format with prettier `npm run clean`
 ## License
 
 MIT Licensed template
+

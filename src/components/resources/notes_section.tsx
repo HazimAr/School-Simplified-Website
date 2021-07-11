@@ -221,6 +221,9 @@ function NotesGrid({ allNotes }: { allNotes: NotesProps[] }): JSX.Element {
 		inputGroupSize = useBreakpointValue({ base: "sm", lg: "md" });
 
 	let searchWait: ReturnType<typeof setTimeout> | null = null;
+	const filteredTerms = searchTerm.length
+		? filter(allNotes, searchTerm, { key: "title" })
+		: null;
 
 	return (
 		<Flex flex={1} flexDir="column">
@@ -280,20 +283,9 @@ function NotesGrid({ allNotes }: { allNotes: NotesProps[] }): JSX.Element {
 				minH={500}
 				flex={1}
 			>
-				{content && content.content.length ? (
-					searchTerm.length ? (
-						filter(allNotes, searchTerm, { key: "title" }).map(
-							(note, idx: number) => (
-								<NotesBox
-									title={note.title}
-									href={note.href}
-									lastEdited={note.lastEdited}
-									key={"note_" + idx}
-								/>
-							)
-						)
-					) : (
-						content.content.map((note, idx: number) => (
+				{searchTerm.length ? (
+					filteredTerms ? (
+						filteredTerms.map((note: NotesProps, idx: number) => (
 							<NotesBox
 								title={note.title}
 								href={note.href}
@@ -301,7 +293,18 @@ function NotesGrid({ allNotes }: { allNotes: NotesProps[] }): JSX.Element {
 								key={"note_" + idx}
 							/>
 						))
+					) : (
+						<Text fontStyle="italic">No matches found</Text>
 					)
+				) : content && content.content.length ? (
+					content.content.map((note, idx: number) => (
+						<NotesBox
+							title={note.title}
+							href={note.href}
+							lastEdited={note.lastEdited}
+							key={"note_" + idx}
+						/>
+					))
 				) : (
 					<Text fontStyle="italic">
 						Looks like there's nothing here...
@@ -348,7 +351,7 @@ function NotesBox(props: NotesProps): JSX.Element {
 					_hover={{ cursor: "pointer" }}
 					flexDir="column"
 				>
-					<Center flex={1} fontSize={{ base: 14, lg: 18 }}>
+					<Center flex={1} fontSize={{ base: 14, md: 12, lg: 18 }}>
 						{props.title}
 					</Center>
 					<Text
@@ -379,7 +382,7 @@ function NotesBox(props: NotesProps): JSX.Element {
 					p={3}
 					bg="brand.transparent"
 					color="brand.purple.dark"
-					fontSize={{ base: 14, lg: 18 }}
+					fontSize={{ base: 14, md: 12, lg: 18 }}
 					_hover={{ cursor: "pointer" }}
 				>
 					{props.title}

@@ -160,16 +160,16 @@ export default function Home(): JSX.Element {
 								boxSize="300px"
 								backgroundColor="brand.transparent"
 								padding="20px"
+								pt="6px"
 								rounded={rounded}
-								alignContent="left"
 								mt="20px"
 							>
 								<VStack>
 									<Heading>Events</Heading>
 									<Heading  size="sm">
-										Our Event team works hard to put
+										Our Events team works hard to put
 										together events and contests for our
-										community! They offer:
+										community! We offer:
 									</Heading>
 									<UnorderedList >
 										<ListItem>
@@ -192,7 +192,6 @@ export default function Home(): JSX.Element {
 								padding="20px"
 								pt="6px"
 								rounded={rounded}
-								alignContent="left"
 							>
 								<VStack>
 									<Heading pt="10px">Music</Heading>
@@ -200,41 +199,43 @@ export default function Home(): JSX.Element {
 										Our team has put together playlists of
 										music for you to enjoy!
 									</Heading>
-									<Link
-										href="https://open.spotify.com/playlist/5xy112KNO4WBzaxR1tioT9?si=cbf67fcfe567406b&nd=1"
-										isExternal
-									>
-										<Heading size="xsm">
-											Study Lofi
-										</Heading>
-									</Link>
+									<UnorderedList>
+										<Link
+											href="https://open.spotify.com/playlist/5xy112KNO4WBzaxR1tioT9?si=cbf67fcfe567406b&nd=1"
+											isExternal
+										>
+											<ListItem >
+												Study Lofi
+											</ListItem>
+										</Link>
 
-									<Link
-										href="https://open.spotify.com/playlist/2qfpV3Cv3LGASgLk5DDIwA?si=df83f8b734784065"
-										isExternal
-									>
-										<Heading size="xsm">
-											Jazz Lofi
-										</Heading>
-									</Link>
+										<Link
+											href="https://open.spotify.com/playlist/2qfpV3Cv3LGASgLk5DDIwA?si=df83f8b734784065"
+											isExternal
+										>
+											<ListItem >
+												Jazz Lofi
+											</ListItem>
+										</Link>
 
-									<Link
-										href="https://open.spotify.com/playlist/3KUCDUAke9JNCi3EC3DR4A?si=b84da9bd407d43f2"
-										isExternal
-									>
-										<Heading size="xsm">
-											90s Pop
-										</Heading>
-									</Link>
+										<Link
+											href="https://open.spotify.com/playlist/3KUCDUAke9JNCi3EC3DR4A?si=b84da9bd407d43f2"
+											isExternal
+										>
+											<ListItem >
+												90s Pop
+											</ListItem>
+										</Link>
 
-									<Link
-										href="https://open.spotify.com/playlist/1lhX7W0NEvzMSsFCkQfxk4?si=5c16816fc6974f87"
-										isExternal
-									>
-										<Heading size="xsm">
-											2010-2015 Pop
-										</Heading>
-									</Link>
+										<Link
+											href="https://open.spotify.com/playlist/1lhX7W0NEvzMSsFCkQfxk4?si=5c16816fc6974f87"
+											isExternal
+										>
+											<ListItem >
+												2010-2015 Pop
+											</ListItem>
+										</Link>
+									</UnorderedList>
 
 									<Heading size="5px">
 										Check out our Spotify for the complete
@@ -328,8 +329,7 @@ export default function Home(): JSX.Element {
 								<Container maxW="container.sm">
 									<Heading fontSize="18px">
 										Check out our socials for tips,
-										entertainment, music, podcasts, and much
-										more!
+										entertainment, music, podcasts, and opportunities and more!
 									</Heading>
 								</Container>
 							</VStack>

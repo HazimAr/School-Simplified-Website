@@ -261,8 +261,7 @@ export default function Home(): JSX.Element {
 										Start making new freinds from all around
 										the world by joining our server. You can
 										chat, voice call, play games, or even
-										enter events with others and form long
-										lasting connections!
+										enter events with others to form new and exciting friendships!
 									</Heading>
 								</VStack>
 							</Flex>

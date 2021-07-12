@@ -1,7 +1,7 @@
 import axios from "axios";
-import { Class, NotesProps, Subject, Unit } from "types";
+import { ArtData, Class, NotesProps, Subject, Unit } from "types";
 
-const config = {
+const notesConfig = {
 	headers: {
 		Authorization: "Bearer " + process.env.NOTION_API_KEY,
 		"Notion-Version": "2021-05-13",
@@ -12,12 +12,12 @@ async function getSubjects(): Promise<Subject[]> {
 	const { data: dictData } = await axios.post(
 		`https://api.notion.com/v1/databases/283ca488c1624a4fbef37f1d8bd8da90/query`,
 		{},
-		config
+		notesConfig
 	);
 	const subjectPromises = dictData.results.map((page: any) => {
 		return axios.get(
 			`https://api.notion.com/v1/blocks/${page.id}/children`,
-			config
+			notesConfig
 		);
 	});
 
@@ -74,7 +74,7 @@ async function getUnits(
 	const promises2 = currentSubject.map(() => {
 		return axios.get(
 			`https://api.notion.com/v1/blocks/${currentClass.id}/children`,
-			config
+			notesConfig
 		);
 	});
 	return Promise.all(promises2)
@@ -163,3 +163,15 @@ async function getUnits(
 }
 
 export { getSubjects };
+export { getArtInfo };
+
+const artConfig = {
+	headers: {
+		Authorization: "Bearer " + process.env.NOTION_API_KEY_2,
+		"Notion-Version": "2021-05-13",
+	},
+};
+
+function getArtInfo(): ArtData | null {
+	return null;
+}

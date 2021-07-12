@@ -165,12 +165,12 @@ async function getUnits(
 export { getSubjects };
 export { getArtInfo };
 
-const artConfig = {
-	headers: {
-		Authorization: "Bearer " + process.env.NOTION_API_KEY_2,
-		"Notion-Version": "2021-05-13",
-	},
-};
+// const artConfig = {
+// 	headers: {
+// 		Authorization: "Bearer " + process.env.NOTION_API_KEY_2,
+// 		"Notion-Version": "2021-05-13",
+// 	},
+// };
 
 function getArtInfo(): ArtData | null {
 	return null;

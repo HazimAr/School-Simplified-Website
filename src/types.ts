@@ -22,3 +22,10 @@ export type Unit = {
 export type AllSubjects = {
 	subjects: Subject[];
 };
+
+export type ArtData = {
+	image: string;
+	description: string;
+	monthlyPrompt: string;
+	socialMedia: { [media: string]: { tag: string; link?: string } };
+};

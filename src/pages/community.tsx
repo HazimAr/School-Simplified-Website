@@ -43,6 +43,11 @@ const boxSize = 400;
 
 export default function Home(): JSX.Element {
 	const { isOpen, onOpen, onClose } = useDisclosure();
+	const {
+        isOpen: { isOpenSpotify },
+        onOpen: { onOpenSpotify },
+        onClose: { onCloseSpotify },
+      } = useDisclosure() 
 	return (
 		<>
 			<Container my={5}>
@@ -342,11 +347,29 @@ export default function Home(): JSX.Element {
 				<ContainerInside>
 					<Wrap margin="30px" spacing="40px" ml="200px">
 						<HStack spacing={5}>
-							<Icon
-								as={RiSpotifyLine}
-								boxSize="90px"
-								color="white"
-							/>
+
+							<Button onClick={onOpenSpotify} size ="100px" rounded="100px">
+								<Icon
+									as={RiSpotifyLine}
+									boxSize="90px"
+									color="white"
+								/>
+							</Button>
+							<Modal isOpen={isOpenSpotify} onClose={onCloseSpotify}>
+								<ModalOverlay />
+								<ModalContent>
+								<ModalHeader>Spotify</ModalHeader>
+								<ModalCloseButton />
+								<ModalBody>
+									jfien
+								</ModalBody>
+								<ModalFooter>
+									<Button colorScheme="purple" mr={3} onClick={onCloseSpotify}>
+									Close
+									</Button>
+								</ModalFooter>
+								</ModalContent>
+							</Modal>
 
 							<Button size="100px" rounded="20px">
 								<Link

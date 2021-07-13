@@ -9,7 +9,6 @@ type Person = {
 	name: string;
 	title: string;
 	img: string;
-	desc: string;
 };
 
 const people: Person[] = [
@@ -63,7 +62,6 @@ const people: Person[] = [
 		title: "Director",
 		img: "/staff/default.png",
 	},
-
 	{
 		name: "Diana Zheng",
 		title: "Treasurer",

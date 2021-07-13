@@ -101,30 +101,6 @@ const boardOfDirectors: Person[] = [
 		img: "/staff/default.png",
 	},
 ];
-
-// const founders: Person[] = [
-// 	{
-// 		name: "Jason Mei",
-// 		title: "Chief Executive Officer (CEO) & President",
-// 		img: "/staff/default.png",
-// 	},
-// 	{
-// 		name: "Ethan Hsu",
-// 		title: "Chief Operating Officer (COO)",
-// 		img: "/staff/default.png",
-// 	},
-// 	{
-// 		name: "Ethan Wu",
-// 		title: "Executive Vice President (EVP)",
-// 		img: "/staff/default.png",
-// 	},
-// 	{
-// 		name: "Nathanael Ma",
-// 		title: "Chief Academics Officer (CAO)",
-// 		img: "/staff/default.png",
-// 	},
-// ];
-
 export default function About(): JSX.Element {
 	return (
 		<>
@@ -198,35 +174,38 @@ export default function About(): JSX.Element {
 						<Box py={3}>
 							<Heading fontSize={30}>Board of Directors</Heading>
 						</Box>
-						<Flex align="center">
-							<Heading width="100%" fontSize={25}>
-								Name
-							</Heading>
-							<Heading width="100%" fontSize={25}>
-								Title
-							</Heading>
-						</Flex>
+						<Box textAlign="left">
 
-						<Divider bg="white" />
-						{boardOfDirectors.map((staff) => {
-							return (
-								<Box>
-									<Divider bg="white.500" />
-									<Flex py={2}>
-										<Text
-											width="100%"
-											fontSize={20}
-											fontWeight="bold"
-										>
-											{staff.name}
-										</Text>
-										<Text width="100%" fontSize={20}>
-											{staff.title}
-										</Text>
-									</Flex>
-								</Box>
-							);
-						})}
+							<Flex align="center">
+								<Heading width="100%" fontSize={23}>
+									Name
+								</Heading>
+								<Heading width="100%" fontSize={23}>
+									Title
+								</Heading>
+							</Flex>
+
+							<Divider bg="white" />
+							{boardOfDirectors.map((staff) => {
+								return (
+									<Box>
+										<Divider bg="white.500" />
+										<Flex py={2}>
+											<Text
+												width="100%"
+												fontSize={20}
+												fontWeight="bold"
+											>
+												{staff.name}
+											</Text>
+											<Text width="100%" fontSize={20}>
+												{staff.title}
+											</Text>
+										</Flex>
+									</Box>
+								);
+							})}
+						</Box>
 						<Divider bg="white" />
 
 						<Box py={3}>

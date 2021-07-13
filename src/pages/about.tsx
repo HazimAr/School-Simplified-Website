@@ -1,6 +1,19 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable sonarjs/no-duplicate-string */
-import { Box, Divider, Flex, Heading, Image, Text, Table, Thead, Th, Tbody, Tr, Td } from "@chakra-ui/react";
+import {
+	Box,
+	Divider,
+	Flex,
+	Heading,
+	Image,
+	Text,
+	Table,
+	Thead,
+	Th,
+	Tbody,
+	Tr,
+	Td,
+} from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import StaffCard from "@components/staffcard";
@@ -55,6 +68,72 @@ const leadership: Person[] = [
 	{
 		name: "Diana Zheng",
 		title: "Treasurer",
+		img: "/staff/default.png",
+	},
+];
+
+const boardOfDirectors: Person[] = [
+	{
+		name: "Nathanael Ma",
+		title: "Lead Director",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Ethan Hsu",
+		title: "Director & CEO",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Madison Li",
+		title: "Director",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Harry Chow",
+		title: "Director",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Lauren Hsieh",
+		title: "Director",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Diana Zheng",
+		title: "Director",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Rohit Choudhary",
+		title: "Director",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Atsi Gupta",
+		title: "Director",
+		img: "/staff/default.png",
+	},
+];
+
+const founders: Person[] = [
+	{
+		name: "Jason Mei",
+		title: "Chief Executive Officer (CEO) & President",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Ethan Hsu",
+		title: "Chief Operating Officer (COO)",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Ethan Wu",
+		title: "Executive Vice President (EVP)",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Nathanael Ma",
+		title: "Chief Academics Officer (CAO)",
 		img: "/staff/default.png",
 	},
 ];
@@ -137,7 +216,33 @@ export default function About(): JSX.Element {
 									<Th color="white">Title</Th>
 								</Thead>
 								<Tbody>
-									{leadership.map((staff, i: number) => {
+									{boardOfDirectors.map(
+										(staff, i: number) => {
+											return (
+												<Tr>
+													<Td fontWeight="bold">
+														{staff.name}
+													</Td>
+													<Td>{staff.title}</Td>
+												</Tr>
+											);
+										}
+									)}
+								</Tbody>
+							</Table>
+						</Box>
+
+						<Divider bg="white" />
+
+						<Box py={3}>
+							<Heading fontSize={30}>Founders</Heading>
+							<Table variant="simple" colorScheme="white">
+								<Thead color="white">
+									<Th color="white">Name</Th>
+									<Th color="white">Title</Th>
+								</Thead>
+								<Tbody>
+									{founders.map((staff, i: number) => {
 										return (
 											<Tr>
 												<Td fontWeight="bold">
@@ -149,12 +254,6 @@ export default function About(): JSX.Element {
 									})}
 								</Tbody>
 							</Table>
-						</Box>
-
-						<Divider bg="white" />
-
-						<Box py={3}>
-							<Heading fontSize={30}>Founders</Heading>
 						</Box>
 					</Box>
 				</ContainerInside>

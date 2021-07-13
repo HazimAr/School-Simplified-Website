@@ -208,7 +208,7 @@ export default function About(): JSX.Element {
 						</Flex>
 
 						<Divider bg="white" />
-						{boardOfDirectors.map((staff, i: number) => {
+						{boardOfDirectors.map((staff) => {
 							return (
 								<Box>
 									<Divider bg="white.500" />

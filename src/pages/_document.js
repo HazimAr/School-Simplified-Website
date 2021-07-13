@@ -75,14 +75,7 @@ export default class MyDocument extends Document {
 						}}
 					/>
 				</Head>
-				<body
-					style={{
-						// backgroundImage: `url(/bg.svg)`,
-						// backgroundRepeat: "no-repeat",
-						// backgroundSize: "cover",
-						backgroundColor: "#7b9dff",
-					}}
-				>
+				<body>
 					<ColorModeScript initialColorMode="dark" />
 					<Main />
 					<NextScript />

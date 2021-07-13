@@ -12,6 +12,7 @@ const theme = extendTheme({
 			},
 
 			gold: "#fcd270",
+			gold2: "#dab050",
 		},
 		text: {
 			50: "#FAFAFA",
@@ -39,6 +40,8 @@ const theme = extendTheme({
 				fontFamily:
 					" -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif",
 				textAlign: "center",
+				background:
+					" rgba(141,171,247,1) linear-gradient(90deg, rgba(145,141,240,1) 0%, rgba(141,171,247,1) 100%)",
 			},
 			a: {
 				color: "inherit",
@@ -51,9 +54,11 @@ const theme = extendTheme({
 			"::-webkit-scrollbar": {
 				width: "0.6em",
 			},
+
 			"::-webkit-scrollbar-track": {
 				borderRadius: "0px",
 			},
+
 			"::-webkit-scrollbar-thumb": {
 				backgroundColor: "rgb(69, 74, 138)",
 				borderRadius: "80px",

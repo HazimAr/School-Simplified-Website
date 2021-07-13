@@ -15,7 +15,7 @@ export default function Button(props: any): JSX.Element {
 			borderRadius="16px"
 			fontSize="16px"
 			fontWeight="semibold"
-			bg="brand.purple.light"
+			bg="linear-gradient(90deg, #FFA270  0%, #e6c068 100%)"
 			_hover={{ bg: "brand.purple.dark" }}
 			_active={{
 				transform: "scale(0.95)",

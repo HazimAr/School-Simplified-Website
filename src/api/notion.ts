@@ -185,20 +185,19 @@ async function getArtInfo(): Promise<ArtData> {
 		description = "Rick Astley lol", // default description
 		monthlyPrompt = "Legend of Internet History", // default monthly prompt
 		socialMedia: SocialMedia[] = [];
-	for (const block of artPageData) {
+	for (const block of artPageData.results) {
 		if (block.type == "paragraph" && block.paragraph.text.length) {
 			const firstText: string = block.paragraph.text[0].plain_text;
 			if (firstText?.length) {
 				const tokens = firstText.split("\n");
 				switch (tokens[0].toLowerCase()) {
 					case "image":
-						if (tokens[1]) {
-							if (tokens[1].length) {
-								image = tokens[1];
-								break;
-							} else if (block.paragraph.text[1]?.href) {
-								image = block.paragraph.text[1]?.href;
-							}
+						if (tokens[1]?.length) {
+							image = tokens[1];
+							break;
+						} else if (block.paragraph.text[1]?.href) {
+							image = block.paragraph.text[1]?.href;
+							break;
 						}
 						console.warn(
 							`${block.id} [Image] in the art info page is malformed!`
@@ -227,6 +226,7 @@ async function getArtInfo(): Promise<ArtData> {
 						let malformed = false,
 							paragraphIdx = 0;
 						if (!firstText.includes("\n")) {
+							console.warn("Malformed I");
 							malformed = true;
 						} else {
 							for (
@@ -236,71 +236,93 @@ async function getArtInfo(): Promise<ArtData> {
 								!malformed && token;
 
 							) {
-								if (token?.length) {
+								console.log(`token: ${token}`);
+
+								if (!token?.length) {
+									console.warn(
+										`Malformed II -${token}- ${paragraphIdx}`
+									);
 									malformed = true;
 									break;
 								}
 
-								const nextLine = token.indexOf("\n");
-								if (nextLine !== -1) {
+								if (token.includes("\n")) {
 									// this entry is done
 									const miniToken = token.substring(
 											0,
-											nextLine
+											token.indexOf("\n")
 										),
 										splitIdx = miniToken.indexOf(": ");
 									if (splitIdx === -1) {
+										console.warn(
+											`Malformed III - "${token}" - ${miniToken} - ${paragraphIdx}`
+										);
 										malformed = true;
 										break;
 									}
 									socialMedia.push({
 										media: miniToken.substring(0, splitIdx),
-										tag: miniToken.substring(splitIdx + 2),
+										tag: miniToken
+											.substring(splitIdx + 2)
+											.trim(),
 									});
 
 									// there's another entry on the same line
-									token = token.substring(nextLine + 1);
+									token = token.substring(
+										token.indexOf("\n") + 1
+									);
 								} else {
 									// no more entries on this line, but check for link first
-									if (block.paragraph.text[++paragraphIdx]) {
-										// block exists, cool
-										const possibleHref =
-											block.paragraph.text[++paragraphIdx]
-												.href;
-										if (possibleHref) {
-											// link does exist, add it in
-											const splitIdx =
-												token.indexOf(": ");
-											if (splitIdx === -1) {
-												malformed = true;
-												break;
-											}
-											socialMedia.push({
-												media: token.substring(
-													0,
-													splitIdx
-												),
-												tag: token.substring(
-													splitIdx + 2
-												),
-												link: block.paragraph.text[
-													++paragraphIdx
-												].href,
-											});
-
-											// token is now the next paragraph
-											token =
-												block.paragraph.text[
-													++paragraphIdx
-												]?.plain_text;
-										} else {
-											// link does not exist, jump ship
-											token =
-												block.paragraph.text[
-													paragraphIdx
-												].plain_text;
+									// block exists, cool
+									const possibleHref =
+										block.paragraph.text[++paragraphIdx]
+											?.href;
+									if (possibleHref) {
+										// link does exist, add it in
+										const splitIdx = token.indexOf(": ");
+										if (splitIdx === -1) {
+											console.warn("Malformed IV");
+											malformed = true;
+											break;
 										}
-									} else break; // else we're done
+										socialMedia.push({
+											media: token.substring(0, splitIdx),
+											tag: token
+												.substring(splitIdx + 2)
+												.trim(),
+											link: block.paragraph.text[
+												paragraphIdx
+											].href.trim(),
+										});
+
+										// token is now the next paragraph
+										token =
+											block.paragraph.text[++paragraphIdx]
+												?.plain_text;
+										if (token?.startsWith("\n"))
+											token = token.substring(1);
+									} else {
+										// link does not exist, jump ship
+										// console.log(token);
+										const splitIdx = token.indexOf(": ");
+										if (splitIdx === -1) {
+											console.warn("Malformed V");
+											malformed = true;
+											break;
+										}
+										socialMedia.push({
+											media: token.substring(0, splitIdx),
+											tag: token
+												.substring(splitIdx + 2)
+												.trim(),
+										});
+
+										token =
+											block.paragraph.text[paragraphIdx]
+												?.plain_text;
+										if (token?.startsWith("\n"))
+											token = token.substring(1);
+									}
 								}
 							}
 						}

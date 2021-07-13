@@ -56,9 +56,51 @@ const leadership: Person[] = [
 		name: "Diana Zheng",
 		title: "Treasurer",
 		img: "/staff/default.png",
-	}
+	},
 ];
 
+const boardOfDirectors: Person[] = [
+	{
+		name: "Nathanael Ma",
+		title: "Lead Director",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Ethan Hsu",
+		title: "Director & CEO",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Madison Li",
+		title: "Director",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Harry Chow",
+		title: "Director",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Lauren Hsieh",
+		title: "Director",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Diana Zheng",
+		title: "Director",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Rohit Choudhary",
+		title: "Director",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Atsi Gupta",
+		title: "Director",
+		img: "/staff/default.png",
+	},
+];
 export default function About(): JSX.Element {
 	return (
 		<>
@@ -112,9 +154,7 @@ export default function About(): JSX.Element {
 
 						<Divider bg="white" />
 						<Box py={2}>
-							<Heading fontSize={30}>
-								Executive Profiles
-							</Heading>
+							<Heading fontSize={30}>Executive Profiles</Heading>
 						</Box>
 						<Flex justifyContent="center" flexWrap="wrap">
 							{leadership.map((staff, i: number) => {
@@ -131,6 +171,78 @@ export default function About(): JSX.Element {
 
 						<Divider bg="white" />
 
+						<Box py={3}>
+							<Heading fontSize={30}>Board of Directors</Heading>
+						</Box>
+						<Box textAlign="left">
+
+							<Flex align="center">
+								<Heading width="100%" fontSize={23}>
+									Name
+								</Heading>
+								<Heading width="100%" fontSize={23}>
+									Title
+								</Heading>
+							</Flex>
+
+							<Divider bg="white" />
+							{boardOfDirectors.map((staff) => {
+								return (
+									<Box>
+										<Divider bg="white.500" />
+										<Flex py={2}>
+											<Text
+												width="100%"
+												fontSize={20}
+												fontWeight="bold"
+											>
+												{staff.name}
+											</Text>
+											<Text width="100%" fontSize={20}>
+												{staff.title}
+											</Text>
+										</Flex>
+									</Box>
+								);
+							})}
+						</Box>
+						<Divider bg="white" />
+
+						<Box py={3}>
+							<Heading fontSize={30}>Founders</Heading>
+							<Flex py={2}>
+								<Text
+									width="100%"
+									fontSize={20}
+									fontWeight="bold"
+								>
+									Jason Mei
+								</Text>
+								<Text
+									width="100%"
+									fontSize={20}
+									fontWeight="bold"
+								>
+									Ethan Hsu
+								</Text>
+							</Flex>
+							<Flex py={2}>
+								<Text
+									width="100%"
+									fontSize={20}
+									fontWeight="bold"
+								>
+									Ethan Wu
+								</Text>
+								<Text
+									width="100%"
+									fontSize={20}
+									fontWeight="bold"
+								>
+									Nathanael Ma
+								</Text>
+							</Flex>
+						</Box>
 					</Box>
 				</ContainerInside>
 			</Container>

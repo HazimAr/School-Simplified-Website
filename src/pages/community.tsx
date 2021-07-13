@@ -18,13 +18,11 @@ import {
 	ModalFooter,
 	ModalHeader,
 	ModalOverlay,
-	Spacer,
 	Stack,
 	Text,
 	UnorderedList,
 	useDisclosure,
 	VStack,
-	Wrap,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -170,7 +168,6 @@ export default function Home(): JSX.Element {
 								padding="20px"
 								pt="6px"
 								rounded={rounded}
-								mt="20px"
 								boxShadow="lg"
 							>
 								<VStack>
@@ -273,55 +270,47 @@ export default function Home(): JSX.Element {
 			<Divider borderColor="white" />
 			<Container>
 				<ContainerInside>
-					<Flex textAlign="left">
-						<Center>
-							<Wrap spacing="30px" margin="20px">
-								<Box>
-									<Heading mb="25px" mt="20px">
-										Our Members
-									</Heading>
-									<Text fontSize="lg">
-										Our members work together to aid
-										students all around the globe in
-										academics and extracurricular
-										activities. We offer student
-										oppourtunities, daily motivation, school
-										help, entertainment, and much more!
-									</Text>
-								</Box>
-							</Wrap>
-						</Center>
-						<Spacer />
+					<HStack textAlign="left">
+						<VStack w="100%">
+							<Heading mb="25px" mt="20px">
+								Our Members
+							</Heading>
+							<Text fontSize="lg">
+								Our members work together to aid students all
+								around the globe in academics and
+								extracurricular activities. We offer student
+								opportunities, daily motivation, school help,
+								entertainment, and much more!
+							</Text>
+						</VStack>
 
-						<Wrap spacing="40px" justify="left" margin="25px">
-							{/* disc box */}
-							<Box
-								boxSize="450px"
-								bg="brand.transparent"
-								padding="5px"
-								rounded={rounded}
-								boxShadow="lg"
-							>
-								<Center>
-									<Link
-										href="https://discord.com/invite/school"
-										isExternal
-									>
-										<Image
-											src="/undraw/connections.svg"
-											boxSize="340px"
-										/>
-									</Link>
-								</Center>
+						{/* disc box */}
+						<VStack
+							boxSize="450px"
+							bg="brand.transparent"
+							padding="5px"
+							rounded={rounded}
+							boxShadow="lg"
+							w="100%"
+						>
+							<Center>
+								<Link
+									href="https://discord.com/invite/school"
+									isExternal
+								>
+									<Image
+										src="/undraw/connections.svg"
+										boxSize="340px"
+									/>
+								</Link>
+							</Center>
 
-								<Heading size="md" ml="10px">
-									Join our Discord. Come for the academic
-									help, stay for the events, live music, and
-									friends!
-								</Heading>
-							</Box>
-						</Wrap>
-					</Flex>
+							<Heading size="md" ml="10px">
+								Join our Discord. Come for the academic help,
+								stay for the events, live music, and friends!
+							</Heading>
+						</VStack>
+					</HStack>
 				</ContainerInside>
 			</Container>
 
@@ -329,26 +318,18 @@ export default function Home(): JSX.Element {
 
 			<Container>
 				<ContainerInside>
-					<Flex>
-						<Wrap spacing="40px" margin="20px" mt="30px" ml="285px">
-							<VStack spacing={6}>
-								<Heading>Our Socials</Heading>
-								<Container maxW="container.sm">
-									<Heading fontSize="18px">
-										Check out our socials for tips,
-										entertainment, music, podcasts, and
-										opportunities and more!
-									</Heading>
-								</Container>
-							</VStack>
-						</Wrap>
-					</Flex>
-				</ContainerInside>
-			</Container>
+					<VStack>
+						<VStack spacing={6}>
+							<Heading>Our Socials</Heading>
+							<Container>
+								<Heading fontSize="18px">
+									Check out our socials for tips,
+									entertainment, music, podcasts, and
+									opportunities and more!
+								</Heading>
+							</Container>
+						</VStack>
 
-			<Container>
-				<ContainerInside>
-					<Wrap margin="30px" spacing="40px" ml="200px">
 						<HStack spacing={5}>
 							<Button
 								onClick={onOpenSpotify}
@@ -381,131 +362,129 @@ export default function Home(): JSX.Element {
 											</Link>
 										</Button>
 
-										<Wrap padding="10px">
-											<Text>
-												{" "}
-												Here are links to all of our
-												playlists:{" "}
-											</Text>
+										<Text>
+											{" "}
+											Here are links to all of our
+											playlists:{" "}
+										</Text>
 
-											<Center>
-												<Divider
-													borderColor="white"
-													width="250px"
-													mb="15px"
-												/>
-											</Center>
-
-											<Heading size="md">
-												Lofi Playlists:
-											</Heading>
-
-											<Text>
-												<Link
-													href="https://open.spotify.com/playlist/5xy112KNO4WBzaxR1tioT9?si=cbf67fcfe567406b&nd=1"
-													isExternal
-												>
-													Study Lofi,
-												</Link>
-											</Text>
-
-											<Text>
-												<Link
-													href="https://open.spotify.com/playlist/2qfpV3Cv3LGASgLk5DDIwA?si=df83f8b734784065"
-													isExternal
-												>
-													Jazz Lofi,
-												</Link>
-											</Text>
-
-											<Text>
-												<Link
-													href="https://open.spotify.com/playlist/42VuHYE30tU6olqgYCUGj9?si=4cdc91ce894b4d8c"
-													isExternal
-												>
-													Rainy Day Lofi,
-												</Link>
-											</Text>
-
-											<Text>
-												<Link
-													href="https://open.spotify.com/playlist/6WGCRBoHJ5NZRg6D3VM7DK?si=4b658781fd54463b"
-													isExternal
-												>
-													Anime Lofi,
-												</Link>
-											</Text>
-
-											<Text>
-												<Link
-													href="https://open.spotify.com/playlist/3DGBkdcT236zwEQqsaeiHc?si=c56fda3f5c994ddd"
-													isExternal
-												>
-													Sleeping Lofi,
-												</Link>
-											</Text>
-
+										<Center>
 											<Divider
 												borderColor="white"
-												mt="10px"
-												mb="10px"
+												width="250px"
+												mb="15px"
 											/>
+										</Center>
 
-											<Heading size="md">
-												Pop Playlists:
-											</Heading>
+										<Heading size="md">
+											Lofi Playlists:
+										</Heading>
 
-											<Text>
-												<Link href="https://open.spotify.com/playlist/3KUCDUAke9JNCi3EC3DR4A?si=b84da9bd407d43f2">
-													90s Pop,
-												</Link>
-											</Text>
+										<Text>
+											<Link
+												href="https://open.spotify.com/playlist/5xy112KNO4WBzaxR1tioT9?si=cbf67fcfe567406b&nd=1"
+												isExternal
+											>
+												Study Lofi,
+											</Link>
+										</Text>
 
-											<Text>
-												<Link
-													href="https://open.spotify.com/playlist/2l050Xz8rnNfYqkyx47WTu?si=040ec727a26844bd"
-													isExternal
-												>
-													2000-2009 Pop,
-												</Link>
-											</Text>
+										<Text>
+											<Link
+												href="https://open.spotify.com/playlist/2qfpV3Cv3LGASgLk5DDIwA?si=df83f8b734784065"
+												isExternal
+											>
+												Jazz Lofi,
+											</Link>
+										</Text>
 
-											<Text>
-												<Link
-													href="https://open.spotify.com/playlist/1lhX7W0NEvzMSsFCkQfxk4?si=5c16816fc6974f87"
-													isExternal
-												>
-													2010-2015 Pop,
-												</Link>
-											</Text>
+										<Text>
+											<Link
+												href="https://open.spotify.com/playlist/42VuHYE30tU6olqgYCUGj9?si=4cdc91ce894b4d8c"
+												isExternal
+											>
+												Rainy Day Lofi,
+											</Link>
+										</Text>
 
-											<Text>
-												<Link
-													href="https://open.spotify.com/playlist/02oYO9n5qfmULA2deeQ4pR?si=1be766a9b13e4ccf"
-													isExternal
-												>
-													2016-2017 Pop,
-												</Link>
-											</Text>
+										<Text>
+											<Link
+												href="https://open.spotify.com/playlist/6WGCRBoHJ5NZRg6D3VM7DK?si=4b658781fd54463b"
+												isExternal
+											>
+												Anime Lofi,
+											</Link>
+										</Text>
 
-											<Text>
-												<Link
-													href="https://open.spotify.com/playlist/3zXZy9Xh93IY13jpqYf6AU?si=f58dac68060a46a6"
-													isExternal
-												>
-													2018-2019 Pop,
-												</Link>
-											</Text>
+										<Text>
+											<Link
+												href="https://open.spotify.com/playlist/3DGBkdcT236zwEQqsaeiHc?si=c56fda3f5c994ddd"
+												isExternal
+											>
+												Sleeping Lofi,
+											</Link>
+										</Text>
 
-											<Text>
-												<Link
-													href="https://open.spotify.com/playlist/1qyZMhC4rC1tc04FdfQr00?si=221b54418a0f4077"
-													isExternal
-												>
-													2020-2021 Pop,
-												</Link>
-											</Text>
-										</Wrap>
+										<Divider
+											borderColor="white"
+											mt="10px"
+											mb="10px"
+										/>
+
+										<Heading size="md">
+											Pop Playlists:
+										</Heading>
+
+										<Text>
+											<Link href="https://open.spotify.com/playlist/3KUCDUAke9JNCi3EC3DR4A?si=b84da9bd407d43f2">
+												90s Pop,
+											</Link>
+										</Text>
+
+										<Text>
+											<Link
+												href="https://open.spotify.com/playlist/2l050Xz8rnNfYqkyx47WTu?si=040ec727a26844bd"
+												isExternal
+											>
+												2000-2009 Pop,
+											</Link>
+										</Text>
+
+										<Text>
+											<Link
+												href="https://open.spotify.com/playlist/1lhX7W0NEvzMSsFCkQfxk4?si=5c16816fc6974f87"
+												isExternal
+											>
+												2010-2015 Pop,
+											</Link>
+										</Text>
+
+										<Text>
+											<Link
+												href="https://open.spotify.com/playlist/02oYO9n5qfmULA2deeQ4pR?si=1be766a9b13e4ccf"
+												isExternal
+											>
+												2016-2017 Pop,
+											</Link>
+										</Text>
+
+										<Text>
+											<Link
+												href="https://open.spotify.com/playlist/3zXZy9Xh93IY13jpqYf6AU?si=f58dac68060a46a6"
+												isExternal
+											>
+												2018-2019 Pop,
+											</Link>
+										</Text>
+
+										<Text>
+											<Link
+												href="https://open.spotify.com/playlist/1qyZMhC4rC1tc04FdfQr00?si=221b54418a0f4077"
+												isExternal
+											>
+												2020-2021 Pop,
+											</Link>
+										</Text>
 									</ModalBody>
 									<ModalFooter>
 										<Button
@@ -597,7 +576,7 @@ export default function Home(): JSX.Element {
 								</Link>
 							</Button>
 						</HStack>
-					</Wrap>
+					</VStack>
 				</ContainerInside>
 			</Container>
 		</>

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ArtData, Class, NotesProps, Subject, Unit } from "types";
+import { ArtData, Class, NotesProps, SocialMedia, Subject, Unit } from "types";
 
 const notesConfig = {
 	headers: {
@@ -167,13 +167,88 @@ async function getUnits(
 export { getSubjects };
 export { getArtInfo };
 
-// const artConfig = {
-// 	headers: {
-// 		Authorization: "Bearer " + process.env.NOTION_API_KEY_2,
-// 		"Notion-Version": "2021-05-13",
-// 	},
-// };
+const artConfig = {
+	headers: {
+		Authorization: "Bearer " + process.env.NOTION_API_KEY_2,
+		"Notion-Version": "2021-05-13",
+	},
+};
 
-function getArtInfo(): ArtData | null {
-	return null;
+async function getArtInfo(): Promise<ArtData> {
+	const { data: artPageData } = await axios.get(
+		`https://api.notion.com/v1/blocks/274c8b9a74e8427db2455f156db60ddc/children`,
+		artConfig
+	);
+
+	let image =
+			"https://www.thewrap.com/wp-content/uploads/2016/08/Rick-Astley-618x400.jpg", // default image
+		description = "Rick Astley lol", // default description
+		monthlyPrompt = "Legend of Internet History", // default monthly prompt
+		socialMedia: SocialMedia[] = [];
+	for (const block of artPageData) {
+		if (block.type == "paragraph" && block.paragraph.text.length) {
+			const firstText: string = block.paragraph.text[0];
+			if (firstText?.length) {
+				const tokens = firstText.split("\n");
+				switch (tokens[0].toLowerCase()) {
+					case "image":
+						if (tokens[1]) {
+							if (tokens[1].length) {
+								image = tokens[1];
+								break;
+							} else if (block.paragraph.text[1]?.href) {
+								image = block.paragraph.text[1]?.href;
+							}
+						}
+						console.warn(
+							`${block.id} [Image] in the art info page is malformed!`
+						);
+						break;
+
+					case "description":
+						if (tokens[1]?.length) {
+							description = tokens[1];
+						} else
+							console.warn(
+								`${block.id} [Description] in the art info page is malformed!`
+							);
+						break;
+
+					case "monthly prompt":
+						if (tokens[1]?.length) {
+							monthlyPrompt = tokens[1];
+						} else
+							console.warn(
+								`${block.id} [Monthly Prompt] in the art info page is malformed!`
+							);
+						break;
+
+					case "social media":
+						let malformed = tokens.length > 1;
+						for (let i = 1; i < tokens.length; i++) {
+							if (!tokens[i]?.length) {
+								malformed = true;
+								continue;
+							}
+						}
+
+						if (malformed) {
+							console.warn(
+								`${block.id} [Social Media] in the art info page is malformed!`
+							);
+						}
+						break;
+				}
+			} else {
+				console.warn(`${block.id} in the art info page is malformed!`);
+			}
+		} // else probably trolling
+	}
+
+	return {
+		image: image,
+		description: description,
+		monthlyPrompt: monthlyPrompt,
+		socialMedia: socialMedia,
+	};
 }

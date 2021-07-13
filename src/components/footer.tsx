@@ -96,7 +96,7 @@ const socials = [
 export default function Footer(): JSX.Element {
 	return (
 		<Box as="footer">
-			<Box mt="-100px">
+			<Box pt="-100px">
 				<Wave
 					fill="rgb(90, 96, 174)"
 					// paused

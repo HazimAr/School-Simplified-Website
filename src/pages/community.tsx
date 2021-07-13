@@ -52,14 +52,18 @@ export default function Home(): JSX.Element {
 			<Container my={5}>
 				<ContainerInside>
 					<VStack textAlign="left">
-						<HStack spacing={4} textAlign="left">
+						<HStack
+							spacing={4}
+							textAlign="left"
+							flexDir={{ base: "column", md: "row" }}
+						>
 							<Flex
 								flexDir="column"
 								justify="center"
 								align="center"
+								boxSize="100%"
 							>
 								<Box
-									boxSize={`${boxSize + 50}px`}
 									backgroundColor="brand.transparent2"
 									padding="5px"
 									rounded={rounded}
@@ -146,7 +150,7 @@ export default function Home(): JSX.Element {
 								</Text>
 							</Flex>
 
-							<Stack maxW="50ch" ml="10px">
+							<Stack w="100%" ml="10px">
 								<Heading size="lg">Our Community</Heading>
 
 								<Text fontSize="lg">
@@ -160,7 +164,34 @@ export default function Home(): JSX.Element {
 							</Stack>
 						</HStack>
 
-						<HStack spacing={8}>
+						<HStack flexDir={{ base: "column", md: "row" }}>
+							<VStack
+								w="100%"
+								maxW="300px"
+								maxH="300px"
+								backgroundColor="brand.transparent"
+								padding="20px"
+								pt="6px"
+								rounded={rounded}
+								boxShadow="lg"
+							>
+								<Heading>Events</Heading>
+								<Heading size="sm">
+									Our Events team works hard to put together
+									events and contests for our community! We
+									offer:
+								</Heading>
+								<UnorderedList>
+									<ListItem>Monthly Art Contests</ListItem>
+									<ListItem>Music Talent Show</ListItem>
+									<ListItem>Karaoke</ListItem>
+									<ListItem>Game Night</ListItem>
+								</UnorderedList>
+								<Heading size="sm">
+									Join our discord server to participate in
+									these events!
+								</Heading>
+							</VStack>
 							<Flex
 								boxSize="300px"
 								backgroundColor="brand.transparent"
@@ -169,37 +200,7 @@ export default function Home(): JSX.Element {
 								rounded={rounded}
 								boxShadow="lg"
 							>
-								<VStack>
-									<Heading>Events</Heading>
-									<Heading size="sm">
-										Our Events team works hard to put
-										together events and contests for our
-										community! We offer:
-									</Heading>
-									<UnorderedList>
-										<ListItem>
-											Monthly Art Contests
-										</ListItem>
-										<ListItem>Music Talent Show</ListItem>
-										<ListItem>Karaoke</ListItem>
-										<ListItem>Game Night</ListItem>
-									</UnorderedList>
-									<Heading size="sm">
-										Join our discord server to participate
-										in these events!
-									</Heading>
-								</VStack>
-							</Flex>
-
-							<Flex
-								boxSize="300px"
-								backgroundColor="brand.transparent"
-								padding="20px"
-								pt="6px"
-								rounded={rounded}
-								boxShadow="lg"
-							>
-								<VStack>
+								<VStack w="100%">
 									<Heading pt="10px">Music</Heading>
 									<Heading size="sm">
 										Our team has put together playlists of
@@ -250,10 +251,10 @@ export default function Home(): JSX.Element {
 								alignContent="left"
 								boxShadow="lg"
 							>
-								<VStack>
+								<VStack w="100%">
 									<Heading>Friends</Heading>
 									<Heading size="xsm">
-										Start making new freinds from all around
+										Start making new friends from all around
 										the world by joining our server. You can
 										chat, voice call, play games, or even
 										enter events with others to form new and
@@ -332,12 +333,12 @@ export default function Home(): JSX.Element {
 						<HStack spacing={5}>
 							<Button
 								onClick={onOpenSpotify}
-								size="100px"
+								size="100%"
 								rounded="100px"
 							>
 								<Icon
 									as={RiSpotifyLine}
-									boxSize="90px"
+									boxSize="100%"
 									color="white"
 								/>
 							</Button>
@@ -497,83 +498,71 @@ export default function Home(): JSX.Element {
 								</ModalContent>
 							</Modal>
 
-							<Button size="100px" rounded="20px">
-								<Link
-									href="https://www.instagram.com/school.simplified/"
-									isExternal
-								>
-									<Icon
-										as={RiInstagramLine}
-										boxSize="90px"
-										color="white"
-									/>
-								</Link>
-							</Button>
+							<Link
+								href="https://www.instagram.com/school.simplified/"
+								isExternal
+							>
+								<Icon
+									as={RiInstagramLine}
+									boxSize="100%"
+									color="white"
+								/>
+							</Link>
 
-							<Button size="70px" rounded="20px">
-								<Link
-									href="https://www.facebook.com/SchoolSimple/"
-									isExternal
-								>
-									<Icon
-										as={RiFacebookBoxLine}
-										boxSize="100px"
-										color="white"
-									/>
-								</Link>
-							</Button>
+							<Link
+								href="https://www.facebook.com/SchoolSimple/"
+								isExternal
+							>
+								<Icon
+									as={RiFacebookBoxLine}
+									boxSize="100%"
+									color="white"
+								/>
+							</Link>
 
-							<Button size="100px" rounded="20px">
-								<Link
-									href="https://discord.com/invite/school"
-									isExternal
-								>
-									<Icon
-										as={RiDiscordLine}
-										boxSize="140px"
-										color="white"
-									/>
-								</Link>
-							</Button>
+							<Link
+								href="https://discord.com/invite/school"
+								isExternal
+							>
+								<Icon
+									as={RiDiscordLine}
+									boxSize="100%"
+									color="white"
+								/>
+							</Link>
 
-							<Button size="110px">
-								<Link
-									href="https://www.tiktok.com/@schoolsimplified"
-									isExternal
-								>
-									<Icon
-										as={SiTiktok}
-										boxSize="90px"
-										color="white"
-									/>
-								</Link>
-							</Button>
+							<Link
+								href="https://www.tiktok.com/@schoolsimplified"
+								isExternal
+							>
+								<Icon
+									as={SiTiktok}
+									boxSize="100%"
+									color="white"
+								/>
+							</Link>
 
-							<Button size="110px" rounded="20px">
-								<Link
-									href="https://twitter.com/schoolsimplify"
-									isExternal
-								>
-									<Icon
-										as={RiTwitterLine}
-										boxSize="100px"
-										color="white"
-									/>
-								</Link>
-							</Button>
+							<Link
+								href="https://twitter.com/schoolsimplify"
+								isExternal
+							>
+								<Icon
+									as={RiTwitterLine}
+									boxSize="100%"
+									color="white"
+								/>
+							</Link>
 
-							<Button size="100px" rounded="20px">
-								<Link
-									href="https://www.linkedin.com/company/school-simplified"
-									isExternal
-								>
-									<Icon
-										as={RiLinkedinBoxLine}
-										boxSize="100px"
-										color="white"
-									/>
-								</Link>
-							</Button>
+							<Link
+								href="https://www.linkedin.com/company/school-simplified"
+								isExternal
+							>
+								<Icon
+									as={RiLinkedinBoxLine}
+									boxSize="100%"
+									color="white"
+								/>
+							</Link>
 						</HStack>
 					</VStack>
 				</ContainerInside>

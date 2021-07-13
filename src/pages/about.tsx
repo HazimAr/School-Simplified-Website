@@ -102,28 +102,28 @@ const boardOfDirectors: Person[] = [
 	},
 ];
 
-const founders: Person[] = [
-	{
-		name: "Jason Mei",
-		title: "Chief Executive Officer (CEO) & President",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Ethan Hsu",
-		title: "Chief Operating Officer (COO)",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Ethan Wu",
-		title: "Executive Vice President (EVP)",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Nathanael Ma",
-		title: "Chief Academics Officer (CAO)",
-		img: "/staff/default.png",
-	},
-];
+// const founders: Person[] = [
+// 	{
+// 		name: "Jason Mei",
+// 		title: "Chief Executive Officer (CEO) & President",
+// 		img: "/staff/default.png",
+// 	},
+// 	{
+// 		name: "Ethan Hsu",
+// 		title: "Chief Operating Officer (COO)",
+// 		img: "/staff/default.png",
+// 	},
+// 	{
+// 		name: "Ethan Wu",
+// 		title: "Executive Vice President (EVP)",
+// 		img: "/staff/default.png",
+// 	},
+// 	{
+// 		name: "Nathanael Ma",
+// 		title: "Chief Academics Officer (CAO)",
+// 		img: "/staff/default.png",
+// 	},
+// ];
 
 export default function About(): JSX.Element {
 	return (

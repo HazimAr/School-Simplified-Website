@@ -359,7 +359,7 @@ export default function Home(): JSX.Element {
 								onClose={onCloseSpotify}
 							>
 								<ModalOverlay />
-								<ModalContent>
+								<ModalContent bg="brand.purple.dark">
 									<ModalHeader>Spotify</ModalHeader>
 									<ModalCloseButton />
 									<ModalBody>
@@ -373,129 +373,132 @@ export default function Home(): JSX.Element {
 												</Heading>
 											</Link>
 										</Button>
-										<Text>
-											{" "}
-											Here are links to all of our
-											playlists:{" "}
-										</Text>
 
-										<Center>
+										<Wrap padding="10px">
+											<Text>
+												{" "}
+												Here are links to all of our
+												playlists:{" "}
+											</Text>
+
+											<Center>
+												<Divider
+													borderColor="white"
+													width="250px"
+													mb="15px"
+												/>
+											</Center>
+
+											<Heading size="md">
+												Lofi Playlists:
+											</Heading>
+
+											<Text>
+												<Link
+													href="https://open.spotify.com/playlist/5xy112KNO4WBzaxR1tioT9?si=cbf67fcfe567406b&nd=1"
+													isExternal
+												>
+													Study Lofi,
+												</Link>
+											</Text>
+
+											<Text>
+												<Link
+													href="https://open.spotify.com/playlist/2qfpV3Cv3LGASgLk5DDIwA?si=df83f8b734784065"
+													isExternal
+												>
+													Jazz Lofi,
+												</Link>
+											</Text>
+
+											<Text>
+												<Link
+													href="https://open.spotify.com/playlist/42VuHYE30tU6olqgYCUGj9?si=4cdc91ce894b4d8c"
+													isExternal
+												>
+													Rainy Day Lofi,
+												</Link>
+											</Text>
+
+											<Text>
+												<Link
+													href="https://open.spotify.com/playlist/6WGCRBoHJ5NZRg6D3VM7DK?si=4b658781fd54463b"
+													isExternal
+												>
+													Anime Lofi,
+												</Link>
+											</Text>
+
+											<Text>
+												<Link
+													href="https://open.spotify.com/playlist/3DGBkdcT236zwEQqsaeiHc?si=c56fda3f5c994ddd"
+													isExternal
+												>
+													Sleeping Lofi,
+												</Link>
+											</Text>
+
 											<Divider
 												borderColor="white"
-												width="250px"
-												mb="15px"
+												mt="10px"
+												mb="10px"
 											/>
-										</Center>
 
-										<Heading size="md">
-											Lofi Playlists:
-										</Heading>
+											<Heading size="md">
+												Pop Playlists:
+											</Heading>
 
-										<Text>
-											<Link
-												href="https://open.spotify.com/playlist/5xy112KNO4WBzaxR1tioT9?si=cbf67fcfe567406b&nd=1"
-												isExternal
-											>
-												Study Lofi
-											</Link>
-										</Text>
+											<Text>
+												<Link href="https://open.spotify.com/playlist/3KUCDUAke9JNCi3EC3DR4A?si=b84da9bd407d43f2">
+													90s Pop,
+												</Link>
+											</Text>
 
-										<Text>
-											<Link
-												href="https://open.spotify.com/playlist/2qfpV3Cv3LGASgLk5DDIwA?si=df83f8b734784065"
-												isExternal
-											>
-												Jazz Lofi
-											</Link>
-										</Text>
+											<Text>
+												<Link
+													href="https://open.spotify.com/playlist/2l050Xz8rnNfYqkyx47WTu?si=040ec727a26844bd"
+													isExternal
+												>
+													2000-2009 Pop,
+												</Link>
+											</Text>
 
-										<Text>
-											<Link
-												href="https://open.spotify.com/playlist/42VuHYE30tU6olqgYCUGj9?si=4cdc91ce894b4d8c"
-												isExternal
-											>
-												Rainy Day Lofi
-											</Link>
-										</Text>
+											<Text>
+												<Link
+													href="https://open.spotify.com/playlist/1lhX7W0NEvzMSsFCkQfxk4?si=5c16816fc6974f87"
+													isExternal
+												>
+													2010-2015 Pop,
+												</Link>
+											</Text>
 
-										<Text>
-											<Link
-												href="https://open.spotify.com/playlist/6WGCRBoHJ5NZRg6D3VM7DK?si=4b658781fd54463b"
-												isExternal
-											>
-												Anime Lofi
-											</Link>
-										</Text>
+											<Text>
+												<Link
+													href="https://open.spotify.com/playlist/02oYO9n5qfmULA2deeQ4pR?si=1be766a9b13e4ccf"
+													isExternal
+												>
+													2016-2017 Pop,
+												</Link>
+											</Text>
 
-										<Text>
-											<Link
-												href="https://open.spotify.com/playlist/3DGBkdcT236zwEQqsaeiHc?si=c56fda3f5c994ddd"
-												isExternal
-											>
-												Sleeping Lofi
-											</Link>
-										</Text>
+											<Text>
+												<Link
+													href="https://open.spotify.com/playlist/3zXZy9Xh93IY13jpqYf6AU?si=f58dac68060a46a6"
+													isExternal
+												>
+													2018-2019 Pop,
+												</Link>
+											</Text>
 
-										<Divider
-											borderColor="white"
-											mt="10px"
-											mb="10px"
-										/>
-
-										<Heading size="md">
-											Pop Playlists
-										</Heading>
-
-										<Text>
-											<Link href="https://open.spotify.com/playlist/3KUCDUAke9JNCi3EC3DR4A?si=b84da9bd407d43f2">
-												90s Pop
-											</Link>
-										</Text>
-
-										<Text>
-											<Link
-												href="https://open.spotify.com/playlist/2l050Xz8rnNfYqkyx47WTu?si=040ec727a26844bd"
-												isExternal
-											>
-												2000-2009 Pop
-											</Link>
-										</Text>
-
-										<Text>
-											<Link
-												href="https://open.spotify.com/playlist/1lhX7W0NEvzMSsFCkQfxk4?si=5c16816fc6974f87"
-												isExternal
-											>
-												2010-2015 Pop
-											</Link>
-										</Text>
-
-										<Text>
-											<Link
-												href="https://open.spotify.com/playlist/02oYO9n5qfmULA2deeQ4pR?si=1be766a9b13e4ccf"
-												isExternal
-											>
-												2016-2017 Pop
-											</Link>
-										</Text>
-
-										<Text>
-											<Link
-												href="https://open.spotify.com/playlist/3zXZy9Xh93IY13jpqYf6AU?si=f58dac68060a46a6"
-												isExternal
-											>
-												2018-2019 Pop
-											</Link>
-										</Text>
-
-										<Text>
-											<Link
-												href="https://open.spotify.com/playlist/1qyZMhC4rC1tc04FdfQr00?si=221b54418a0f4077"
-												isExternal
-											>
-												2020-2021 Pop
-											</Link>
-										</Text>
+											<Text>
+												<Link
+													href="https://open.spotify.com/playlist/1qyZMhC4rC1tc04FdfQr00?si=221b54418a0f4077"
+													isExternal
+												>
+													2020-2021 Pop,
+												</Link>
+											</Text>
+										</Wrap>
 									</ModalBody>
 									<ModalFooter>
 										<Button

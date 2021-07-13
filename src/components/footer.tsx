@@ -5,7 +5,7 @@ import {
 	Link,
 	ListItem,
 	Text,
-	UnorderedList
+	UnorderedList,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -40,13 +40,12 @@ const infos = [
 
 const services = [
 	{
-		name: "Resources",
-		link: "/resources",
-	},
-
-	{
 		name: "Volunteering",
 		link: "/volunteering",
+	},
+	{
+		name: "Resources",
+		link: "/resources",
 	},
 
 	{
@@ -61,12 +60,7 @@ const services = [
 
 	{
 		name: "College Prep",
-		link: "/cprep",
-	},
-
-	{
-		name: "SAT Prep",
-		link: "/satprep",
+		link: "/prep",
 	},
 ];
 

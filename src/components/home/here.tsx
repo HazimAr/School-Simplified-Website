@@ -56,6 +56,7 @@ function Card({
 			h={250}
 			justify="center"
 			boxShadow="lg"
+			px={10}
 		>
 			<Heading as="h1" color="brand.purple.dark">
 				{title}

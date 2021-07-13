@@ -187,7 +187,7 @@ async function getArtInfo(): Promise<ArtData> {
 		socialMedia: SocialMedia[] = [];
 	for (const block of artPageData) {
 		if (block.type == "paragraph" && block.paragraph.text.length) {
-			const firstText: string = block.paragraph.text[0];
+			const firstText: string = block.paragraph.text[0].plain_text;
 			if (firstText?.length) {
 				const tokens = firstText.split("\n");
 				switch (tokens[0].toLowerCase()) {
@@ -224,11 +224,84 @@ async function getArtInfo(): Promise<ArtData> {
 						break;
 
 					case "social media":
-						let malformed = tokens.length > 1;
-						for (let i = 1; i < tokens.length; i++) {
-							if (!tokens[i]?.length) {
-								malformed = true;
-								continue;
+						let malformed = false,
+							paragraphIdx = 0;
+						if (!firstText.includes("\n")) {
+							malformed = true;
+						} else {
+							for (
+								let token = firstText.substring(
+									firstText.indexOf("\n") + 1
+								);
+								!malformed && token;
+
+							) {
+								if (token?.length) {
+									malformed = true;
+									break;
+								}
+
+								const nextLine = token.indexOf("\n");
+								if (nextLine !== -1) {
+									// this entry is done
+									const miniToken = token.substring(
+											0,
+											nextLine
+										),
+										splitIdx = miniToken.indexOf(": ");
+									if (splitIdx === -1) {
+										malformed = true;
+										break;
+									}
+									socialMedia.push({
+										media: miniToken.substring(0, splitIdx),
+										tag: miniToken.substring(splitIdx + 2),
+									});
+
+									// there's another entry on the same line
+									token = token.substring(nextLine + 1);
+								} else {
+									// no more entries on this line, but check for link first
+									if (block.paragraph.text[++paragraphIdx]) {
+										// block exists, cool
+										const possibleHref =
+											block.paragraph.text[++paragraphIdx]
+												.href;
+										if (possibleHref) {
+											// link does exist, add it in
+											const splitIdx =
+												token.indexOf(": ");
+											if (splitIdx === -1) {
+												malformed = true;
+												break;
+											}
+											socialMedia.push({
+												media: token.substring(
+													0,
+													splitIdx
+												),
+												tag: token.substring(
+													splitIdx + 2
+												),
+												link: block.paragraph.text[
+													++paragraphIdx
+												].href,
+											});
+
+											// token is now the next paragraph
+											token =
+												block.paragraph.text[
+													++paragraphIdx
+												]?.plain_text;
+										} else {
+											// link does not exist, jump ship
+											token =
+												block.paragraph.text[
+													paragraphIdx
+												].plain_text;
+										}
+									} else break; // else we're done
+								}
 							}
 						}
 

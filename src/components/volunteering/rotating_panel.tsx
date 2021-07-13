@@ -2,6 +2,7 @@ import { ExternalLinkIcon } from "@chakra-ui/icons";
 import {
 	Box,
 	Center,
+	Circle,
 	Flex,
 	Heading,
 	Icon,
@@ -99,10 +100,10 @@ export default function RotatingPanel(): JSX.Element {
 				<Center>
 					<Button
 						onClick={() => setIndex(index - 1)}
-						p={2}
-						bg="brand.transparent"
 						w="fit-content"
 						mx={2}
+						p={0}
+						type="no-bg"
 					>
 						<Center>
 							<Icon as={FaArrowLeft} boxSize={5} />
@@ -129,10 +130,10 @@ export default function RotatingPanel(): JSX.Element {
 					})}
 					<Button
 						onClick={() => setIndex(index + 1)}
-						p={2}
-						bg="brand.transparent"
 						w="fit-content"
 						mx={2}
+						p={0}
+						type="no-bg"
 					>
 						<Center>
 							<Icon as={FaArrowRight} boxSize={5} />
@@ -169,29 +170,31 @@ function Panel({
 					alignItems="center"
 					overflow="auto"
 				>
-					<Image
-						src={src}
-						h={{ base: 100, sm: 200, md: 150, lg: 250 }}
-						mr={{ base: 0, md: 3 }}
+					<Circle
+						p={2}
+						bg="brand.transparent"
+						mr={{ base: 0, md: 5 }}
 						mb={{ base: 3, md: 0 }}
-						alt={teamName + " team logo"}
-					/>
+					>
+						<Image
+							src={src}
+							h={{ base: 100, sm: 200, md: 150, lg: 250 }}
+							alt={teamName + " team logo"}
+						/>
+					</Circle>
 					<Box>
 						<Heading
 							size="lg"
-							textAlign={{ base: "center", md: "right" }}
+							textAlign={{ base: "center", md: "left" }}
 						>
 							{teamName}
 						</Heading>
-						<Text
-							textAlign={{ base: "center", md: "right" }}
-							my={2}
-						>
+						<Text textAlign={{ base: "center", md: "left" }} my={2}>
 							{teamDesc}
 						</Text>
 						{teams ? (
 							<Text
-								textAlign={{ base: "center", md: "right" }}
+								textAlign={{ base: "center", md: "left" }}
 								fontStyle="italic"
 							>
 								Teams include{" "}
@@ -200,7 +203,7 @@ function Panel({
 							</Text>
 						) : null}
 
-						<Flex flexDir={{ base: "column", md: "row-reverse" }}>
+						<Flex flexDir={{ base: "column", md: "row" }}>
 							<Link
 								isExternal
 								href={link}

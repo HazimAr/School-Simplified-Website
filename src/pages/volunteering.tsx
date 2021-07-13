@@ -65,12 +65,7 @@ export default function Volunteering(): JSX.Element {
 						href="https://discord.gg/school"
 						_hover={{ textDecoration: "none" }}
 					>
-						<Button
-							bg="brand.transparent"
-							height="unset"
-							py={10}
-							px={14}
-						>
+						<Button bg="brand.transparent" height="unset">
 							<Heading size="lg">
 								Sign Up! <ExternalLinkIcon ml={2} />
 							</Heading>

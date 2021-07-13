@@ -5,13 +5,12 @@ import ContainerInside from "@components/containerInside";
 import { rounded } from "@styles/theme";
 import React from "react";
 
-
 export default function Here() {
 	return (
 		<Container bg="brand.transparent" py="50px" mb="25px">
 			<ContainerInside>
-				<VStack>
-					<HStack>
+				<VStack spacing={10}>
+					<HStack spacing={10}>
 						<Card
 							title="Free Tutoring"
 							description="Lorem ipsum dolor sit amet consectetur elit. Assumenda minima deleniti Lorem ipsum"
@@ -23,7 +22,7 @@ export default function Here() {
 							button="Get Free Help"
 						/>
 					</HStack>
-					<HStack>
+					<HStack spacing={10}>
 						<Card
 							title="College Prep"
 							description="Lorem ipsum dolor sit amet consectetur elit. Assumenda minima deleniti Lorem ipsum"
@@ -56,6 +55,7 @@ function Card({
 			bg="brand.transparent2"
 			h={250}
 			justify="center"
+			boxShadow="lg"
 		>
 			<Heading as="h1" color="brand.purple.dark">
 				{title}

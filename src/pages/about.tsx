@@ -1,19 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable sonarjs/no-duplicate-string */
-import {
-	Box,
-	Divider,
-	Flex,
-	Heading,
-	Image,
-	Text,
-	Table,
-	Thead,
-	Th,
-	Tbody,
-	Tr,
-	Td,
-} from "@chakra-ui/react";
+import { Box, Divider, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import StaffCard from "@components/staffcard";
@@ -224,9 +211,13 @@ export default function About(): JSX.Element {
 						{boardOfDirectors.map((staff, i: number) => {
 							return (
 								<Box>
-									<Divider bg="white.500"/>
+									<Divider bg="white.500" />
 									<Flex py={2}>
-										<Text width="100%" fontSize={20} fontWeight="bold">
+										<Text
+											width="100%"
+											fontSize={20}
+											fontWeight="bold"
+										>
 											{staff.name}
 										</Text>
 										<Text width="100%" fontSize={20}>

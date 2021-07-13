@@ -1,6 +1,4 @@
-import { getArtInfo } from "@api/notion";
 import {
-	Box,
 	Button,
 	Center,
 	Divider,
@@ -39,9 +37,7 @@ import {
 } from "react-icons/ri";
 import { SiTiktok } from "react-icons/si";
 
-const boxSize = 400;
-
-export default function Home(): JSX.Element {
+export default function Community(): JSX.Element {
 	const { isOpen, onOpen, onClose } = useDisclosure();
 	const {
 		isOpen: isOpenSpotify,
@@ -50,7 +46,7 @@ export default function Home(): JSX.Element {
 	} = useDisclosure();
 	return (
 		<>
-			<Container my={5}>
+			<Container py={10}>
 				<ContainerInside>
 					<VStack textAlign="left">
 						<HStack
@@ -58,32 +54,26 @@ export default function Home(): JSX.Element {
 							textAlign="left"
 							flexDir={{ base: "column", md: "row" }}
 						>
-							<Flex
-								flexDir="column"
-								justify="center"
-								align="center"
-								boxSize="100%"
-							>
-								<Box
+							<VStack boxSize="100%">
+								<Stack
 									backgroundColor="brand.transparent2"
-									padding="5px"
 									rounded={rounded}
 									boxShadow="lg"
 								>
-									<Button
-										onClick={onOpen}
-										size="450px"
+									<Image
+										src="june.jpg"
+										boxSize="100%"
 										rounded={rounded}
-									>
-										<Image
-											src="june.jpg"
-											boxSize={`${boxSize}px`}
-											rounded={rounded}
-											objectFit="cover"
-											margin="20px"
-											boxShadow="lg"
-										/>
-									</Button>
+										objectFit="cover"
+										boxShadow="lg"
+										transition="all 0.2s ease"
+										_hover={{
+											cursor: "pointer",
+											transform: "scale(0.95)",
+										}}
+										onClick={onOpen}
+									/>
+
 									<Modal
 										isOpen={isOpen}
 										onClose={onClose}
@@ -144,14 +134,12 @@ export default function Home(): JSX.Element {
 											</ModalFooter>
 										</ModalContent>
 									</Modal>
-								</Box>
+								</Stack>
 
-								<Text fontSize="sm">
-									Artwork from our event winners!
-								</Text>
-							</Flex>
+								<Text>Artwork from our event winners!</Text>
+							</VStack>
 
-							<Stack w="100%" ml="10px">
+							<Stack w="100%">
 								<Heading size="lg">Our Community</Heading>
 
 								<Text fontSize="lg">
@@ -572,8 +560,8 @@ export default function Home(): JSX.Element {
 	);
 }
 
-export async function getServerSideProps() {
-	const artInfo = await getArtInfo();
-	console.log(artInfo);
-	return { props: { subjects: artInfo } };
-}
+// export async function getServerSideProps() {
+// 	const artInfo = await getArtInfo();
+// 	console.log(artInfo);
+// 	return { props: { subjects: artInfo } };
+// }

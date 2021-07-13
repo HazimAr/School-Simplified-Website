@@ -292,7 +292,7 @@ export default function Home(): JSX.Element {
 						</Center>
 						<Spacer />
 
-						<Wrap spacing="40px" justify="left" margin="25px">
+						<Wrap spacing="40px" margin="25px">
 							{/* disc box */}
 							<Box
 								boxSize="450px"
@@ -328,26 +328,18 @@ export default function Home(): JSX.Element {
 
 			<Container>
 				<ContainerInside>
-					<Flex>
-						<Wrap spacing="40px" margin="20px" mt="30px" ml="285px">
-							<VStack spacing={6}>
-								<Heading>Our Socials</Heading>
-								<Container maxW="container.sm">
-									<Heading fontSize="18px">
-										Check out our socials for tips,
-										entertainment, music, podcasts, and
-										opportunities and more!
-									</Heading>
-								</Container>
-							</VStack>
-						</Wrap>
-					</Flex>
-				</ContainerInside>
-			</Container>
+					<VStack>
+						<VStack spacing={6}>
+							<Heading>Our Socials</Heading>
+							<Container>
+								<Heading fontSize="18px">
+									Check out our socials for tips,
+									entertainment, music, podcasts, and
+									opportunities and more!
+								</Heading>
+							</Container>
+						</VStack>
 
-			<Container>
-				<ContainerInside>
-					<Wrap margin="30px" spacing="40px" ml="200px">
 						<HStack spacing={5}>
 							<Button
 								onClick={onOpenSpotify}
@@ -596,7 +588,7 @@ export default function Home(): JSX.Element {
 								</Link>
 							</Button>
 						</HStack>
-					</Wrap>
+					</VStack>
 				</ContainerInside>
 			</Container>
 		</>

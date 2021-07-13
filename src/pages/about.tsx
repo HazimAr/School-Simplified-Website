@@ -125,17 +125,18 @@ export default function About(): JSX.Element {
 
 						<Divider bg="white" />
 
-						{people.map((staff, i: number) => {
-							return (
-								<StaffCard
-									title={staff.title}
-									name={staff.name}
-									img={staff.img}
-									// isLeft={i % 2 === 0}
-									key={"card_" + i}
-								/>
-							);
-						})}
+						<Flex justifyContent="center" flexWrap="wrap">
+							{people.map((staff, i: number) => {
+								return (
+									<StaffCard
+										title={staff.title}
+										name={staff.name}
+										img={staff.img}
+										key={i}
+									/>
+								);
+							})}
+						</Flex>
 					</Box>
 				</ContainerInside>
 			</Container>

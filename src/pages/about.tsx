@@ -14,59 +14,60 @@ type Person = {
 
 const people: Person[] = [
 	{
+		name: "Ethan Wu",
+		title: "Chairman + Founder",
+		img: "/staff/default.png",
+	},
+	{
 		name: "Ethan Hsu",
 		title: "Chief Executive Officer (CEO) + President",
 		img: "/staff/default.png",
-		desc: "wibble wobble",
 	},
 	{
 		name: "Lauren Hsieh",
 		title: "Secretary & Chief of Staff",
 		img: "/staff/default.png",
-		desc: "wibble wobble",
 	},
 	{
 		name: "Aarush Goradia",
 		title: "Chief Operating Officer (COO)",
 		img: "/staff/default.png",
-		desc: "wibble wobble",
 	},
 	{
 		name: "Nicole Liu",
 		title: "Executive Vice President (EVP)",
 		img: "/staff/default.png",
-		desc: "wibble wobble",
 	},
 	{
 		name: "Madison Li",
 		title: "Chief Academics Officer (CAO)",
 		img: "/staff/default.png",
-		desc: "wibble wobble",
 	},
 	{
 		name: "Harry Chow",
 		title: "Chief Marketing Officer (CMO)",
 		img: "/staff/default.png",
-		desc: "wibble wobble",
 	},
 	{
 		name: "Max Konzerowsky",
 		title: "Chief Technical Officer (CTO)",
 		img: "/staff/default.png",
-		desc: "wibble wobble",
 	},
 	{
-		name: "Arohini Rajvanshi",
-		title: "Chief Human Resource Officer (CHRO) ",
+		name: "Alex Andujar",
+		title: "Director",
 		img: "/staff/default.png",
-		desc: "wibble wobble",
+	},
+	{
+		name: "Dhananjai Senthil Kumar",
+		title: "Director",
+		img: "/staff/default.png",
 	},
 
 	{
 		name: "Diana Zheng",
 		title: "Treasurer",
 		img: "/staff/default.png",
-		desc: "wibble wobble",
 	},
 ];
 
@@ -131,9 +132,8 @@ export default function About(): JSX.Element {
 								<StaffCard
 									title={staff.title}
 									name={staff.name}
-									desc={staff.desc}
 									img={staff.img}
-									isLeft={i % 2 === 0}
+									// isLeft={i % 2 === 0}
 									key={"card_" + i}
 								/>
 							);

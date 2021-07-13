@@ -338,6 +338,7 @@ function NotesBox(props: NotesProps): JSX.Element {
 				href={props.href}
 				isExternal
 				_hover={{ textDecoration: "none", cursor: "auto" }}
+				_active={{ outline: "none" }}
 			>
 				<Flex
 					w={sideLength}
@@ -348,8 +349,13 @@ function NotesBox(props: NotesProps): JSX.Element {
 					p={3}
 					bg="brand.transparent"
 					color="brand.purple.dark"
-					_hover={{ cursor: "pointer" }}
+					transition="all 0.2s ease"
+					_hover={{ cursor: "pointer", transform: "scale(0.95)" }}
+					_active={{
+						transform: "scale(0.90)",
+					}}
 					flexDir="column"
+					boxShadow="lg"
 				>
 					<Center flex={1} fontSize={{ base: 14, md: 12, lg: 18 }}>
 						{props.title}

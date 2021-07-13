@@ -20,11 +20,12 @@ export default function StaffCard({
 				backgroundColor="whiteAlpha.400"
 				p="20px"
 				rounded="50px"
+				justifyContent="center"
 			>
 				<Image src={img} />
 			</Box>
 			<Heading size="md">{name}</Heading>
-			<Text size="sm">{title}</Text>
+			<Text size="sm" flexWrap="wrap">{title}</Text>
 		</Flex>
 	);
 }

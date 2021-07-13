@@ -13,18 +13,48 @@ type Person = {
 
 const leadership: Person[] = [
 	{
-		name: "Ethan Wu",
-		title: "Chairman + Founder",
+		name: "Ethan Hsu",
+		title: "Chief Executive Officer (CEO) & President",
 		img: "/staff/default.png",
 	},
 	{
-		name: "Ethan Hsu",
-		title: "Chief Executive Officer (CEO) + President",
+		name: "Aarush Goradia",
+		title: "Chief Operating Officer (COO)",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Nicole Liu",
+		title: "Executive Vice President (EVP)",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Madison Li",
+		title: "Chief Academics Officer (CAO)",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Harry Chow",
+		title: "Chief Marketing Officer (CMO)",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Max Konzerowsky",
+		title: "Chief Technical Officer (CTO)",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Arohini Rajvanshi",
+		title: "Chief Human Resource Officer (CHRO) ",
 		img: "/staff/default.png",
 	},
 	{
 		name: "Lauren Hsieh",
-		title: "Secretary & Chief of Staff",
+		title: "Secretary & Executive Assistant to CEO ",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Diana Zheng",
+		title: "Treasurer",
 		img: "/staff/default.png",
 	}
 ];

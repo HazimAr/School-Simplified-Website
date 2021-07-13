@@ -20,6 +20,12 @@ const people: Person[] = [
 		desc: "wibble wobble",
 	},
 	{
+		name: "Lauren Hsieh",
+		title: "Secretary & Chief of Staff",
+		img: "/staff/default.png",
+		desc: "wibble wobble",
+	},
+	{
 		name: "Aarush Goradia",
 		title: "Chief Operating Officer (COO)",
 		img: "/staff/default.png",
@@ -55,12 +61,7 @@ const people: Person[] = [
 		img: "/staff/default.png",
 		desc: "wibble wobble",
 	},
-	{
-		name: "Lauren Hsieh",
-		title: "Secretary & Executive Assistant to CEO",
-		img: "/staff/default.png",
-		desc: "wibble wobble",
-	},
+
 	{
 		name: "Diana Zheng",
 		title: "Treasurer",

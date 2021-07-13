@@ -6,7 +6,6 @@ import { Box } from "@chakra-ui/react";
 export default function Button(props: any): JSX.Element {
 	return (
 		<Box
-			{...props}
 			as="button"
 			// lineHeight="1.2"
 			transition="all 0.2s ease"
@@ -20,6 +19,7 @@ export default function Button(props: any): JSX.Element {
 			_active={{
 				transform: "scale(0.90)",
 			}}
+			{...props}
 		>
 			{props.children}
 		</Box>

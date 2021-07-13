@@ -17,13 +17,11 @@ import {
 	ModalFooter,
 	ModalHeader,
 	ModalOverlay,
-	Spacer,
 	Stack,
 	Text,
 	UnorderedList,
 	useDisclosure,
 	VStack,
-	Wrap,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -271,8 +269,8 @@ export default function Home(): JSX.Element {
 			<Divider borderColor="white" />
 			<Container>
 				<ContainerInside>
-					<Flex textAlign="left">
-						<VStack>
+					<HStack textAlign="left">
+						<VStack w="100%">
 							<Heading mb="25px" mt="20px">
 								Our Members
 							</Heading>
@@ -280,20 +278,19 @@ export default function Home(): JSX.Element {
 								Our members work together to aid students all
 								around the globe in academics and
 								extracurricular activities. We offer student
-								oppourtunities, daily motivation, school help,
+								opportunities, daily motivation, school help,
 								entertainment, and much more!
 							</Text>
 						</VStack>
 
-						<Spacer />
-
 						{/* disc box */}
-						<Box
+						<VStack
 							boxSize="450px"
 							bg="brand.transparent"
 							padding="5px"
 							rounded={rounded}
 							boxShadow="lg"
+							w="100%"
 						>
 							<Center>
 								<Link
@@ -311,8 +308,8 @@ export default function Home(): JSX.Element {
 								Join our Discord. Come for the academic help,
 								stay for the events, live music, and friends!
 							</Heading>
-						</Box>
-					</Flex>
+						</VStack>
+					</HStack>
 				</ContainerInside>
 			</Container>
 

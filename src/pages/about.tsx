@@ -1,6 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable sonarjs/no-duplicate-string */
-import { Box, Divider, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Divider, Flex, Heading, Image, Text, Table, Thead, Th, Tbody, Tr, Td } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import StaffCard from "@components/staffcard";
@@ -56,7 +56,7 @@ const leadership: Person[] = [
 		name: "Diana Zheng",
 		title: "Treasurer",
 		img: "/staff/default.png",
-	}
+	},
 ];
 
 export default function About(): JSX.Element {
@@ -112,9 +112,7 @@ export default function About(): JSX.Element {
 
 						<Divider bg="white" />
 						<Box py={2}>
-							<Heading fontSize={30}>
-								Executive Profiles
-							</Heading>
+							<Heading fontSize={30}>Executive Profiles</Heading>
 						</Box>
 						<Flex justifyContent="center" flexWrap="wrap">
 							{leadership.map((staff, i: number) => {
@@ -131,6 +129,33 @@ export default function About(): JSX.Element {
 
 						<Divider bg="white" />
 
+						<Box py={3}>
+							<Heading fontSize={30}>Board of Directors</Heading>
+							<Table variant="simple" colorScheme="white">
+								<Thead color="white">
+									<Th color="white">Name</Th>
+									<Th color="white">Title</Th>
+								</Thead>
+								<Tbody>
+									{leadership.map((staff, i: number) => {
+										return (
+											<Tr>
+												<Td fontWeight="bold">
+													{staff.name}
+												</Td>
+												<Td>{staff.title}</Td>
+											</Tr>
+										);
+									})}
+								</Tbody>
+							</Table>
+						</Box>
+
+						<Divider bg="white" />
+
+						<Box py={3}>
+							<Heading fontSize={30}>Founders</Heading>
+						</Box>
 					</Box>
 				</ContainerInside>
 			</Container>

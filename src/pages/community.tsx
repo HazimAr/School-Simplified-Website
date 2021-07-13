@@ -18,6 +18,7 @@ import {
 	ModalHeader,
 	ModalOverlay,
 	Spacer,
+	Stack,
 	Text,
 	UnorderedList,
 	useDisclosure,
@@ -41,14 +42,13 @@ import { SiTiktok } from "react-icons/si";
 
 const boxSize = 400;
 
-
 export default function Home(): JSX.Element {
 	const { isOpen, onOpen, onClose } = useDisclosure();
 	const {
-        isOpen: isOpenSpotify ,
-        onOpen:  onOpenSpotify ,
-        onClose:  onCloseSpotify ,
-    } = useDisclosure() 
+		isOpen: isOpenSpotify,
+		onOpen: onOpenSpotify,
+		onClose: onCloseSpotify,
+	} = useDisclosure();
 	return (
 		<>
 			<Container my={5}>
@@ -65,6 +65,7 @@ export default function Home(): JSX.Element {
 									backgroundColor="brand.transparent2"
 									padding="5px"
 									rounded={rounded}
+									boxShadow="lg"
 								>
 									<Button
 										onClick={onOpen}
@@ -77,6 +78,7 @@ export default function Home(): JSX.Element {
 											rounded={rounded}
 											objectFit="cover"
 											margin="20px"
+											boxShadow="lg"
 										/>
 									</Button>
 									<Modal
@@ -146,7 +148,7 @@ export default function Home(): JSX.Element {
 								</Text>
 							</Flex>
 
-							<VStack maxW="50ch" ml="10px">
+							<Stack maxW="50ch" ml="10px">
 								<Heading size="lg">Our Community</Heading>
 
 								<Text fontSize="lg">
@@ -157,7 +159,7 @@ export default function Home(): JSX.Element {
 									where every new acquaintance becomes a
 									longtime friend!
 								</Text>
-							</VStack>
+							</Stack>
 						</HStack>
 
 						<HStack spacing={8}>
@@ -168,6 +170,7 @@ export default function Home(): JSX.Element {
 								pt="6px"
 								rounded={rounded}
 								mt="20px"
+								boxShadow="lg"
 							>
 								<VStack>
 									<Heading>Events</Heading>
@@ -197,6 +200,7 @@ export default function Home(): JSX.Element {
 								padding="20px"
 								pt="6px"
 								rounded={rounded}
+								boxShadow="lg"
 							>
 								<VStack>
 									<Heading pt="10px">Music</Heading>
@@ -247,9 +251,10 @@ export default function Home(): JSX.Element {
 								padding="20px"
 								rounded={rounded}
 								alignContent="left"
+								boxShadow="lg"
 							>
 								<VStack>
-									<Heading> Friends </Heading>
+									<Heading>Friends</Heading>
 									<Heading size="xsm">
 										Start making new freinds from all around
 										the world by joining our server. You can
@@ -294,6 +299,7 @@ export default function Home(): JSX.Element {
 								bg="brand.transparent"
 								padding="5px"
 								rounded={rounded}
+								boxShadow="lg"
 							>
 								<Center>
 									<Link

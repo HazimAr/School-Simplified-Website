@@ -210,50 +210,36 @@ export default function About(): JSX.Element {
 
 						<Box py={3}>
 							<Heading fontSize={30}>Board of Directors</Heading>
-							<Table variant="simple" colorScheme="white">
-								<Thead color="white">
-									<Th color="white">Name</Th>
-									<Th color="white">Title</Th>
-								</Thead>
-								<Tbody>
-									{boardOfDirectors.map(
-										(staff, i: number) => {
-											return (
-												<Tr>
-													<Td fontWeight="bold">
-														{staff.name}
-													</Td>
-													<Td>{staff.title}</Td>
-												</Tr>
-											);
-										}
-									)}
-								</Tbody>
-							</Table>
 						</Box>
+						<Flex align="center">
+							<Heading width="100%" fontSize={25}>
+								Name
+							</Heading>
+							<Heading width="100%" fontSize={25}>
+								Title
+							</Heading>
+						</Flex>
 
+						<Divider bg="white" />
+						{boardOfDirectors.map((staff, i: number) => {
+							return (
+								<Box>
+									<Divider bg="white.500"/>
+									<Flex py={2}>
+										<Text width="100%" fontSize={20} fontWeight="bold">
+											{staff.name}
+										</Text>
+										<Text width="100%" fontSize={20}>
+											{staff.title}
+										</Text>
+									</Flex>
+								</Box>
+							);
+						})}
 						<Divider bg="white" />
 
 						<Box py={3}>
 							<Heading fontSize={30}>Founders</Heading>
-							<Table variant="simple" colorScheme="white">
-								<Thead color="white">
-									<Th color="white">Name</Th>
-									<Th color="white">Title</Th>
-								</Thead>
-								<Tbody>
-									{founders.map((staff, i: number) => {
-										return (
-											<Tr>
-												<Td fontWeight="bold">
-													{staff.name}
-												</Td>
-												<Td>{staff.title}</Td>
-											</Tr>
-										);
-									})}
-								</Tbody>
-							</Table>
 						</Box>
 					</Box>
 				</ContainerInside>

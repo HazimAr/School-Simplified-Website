@@ -1,5 +1,6 @@
 /* eslint-disable import/no-default-export */
 import { Box, Text, Image, Heading, Flex } from "@chakra-ui/react";
+import { RiBoxingLine } from "react-icons/ri";
 
 type StaffCard = {
 	name: string;
@@ -13,7 +14,7 @@ export default function StaffCard({
 	img,
 }: StaffCard): JSX.Element {
 	return (
-		<Flex flexDir="column" align="center" justify="center" p="10px" m="5px">
+		<Flex flexDir="column" p="15px" m="5px">
 			<Box
 				w="200px"
 				h="200px"
@@ -24,8 +25,12 @@ export default function StaffCard({
 			>
 				<Image src={img} />
 			</Box>
-			<Heading size="md">{name}</Heading>
-			<Text size="sm" flexWrap="wrap">{title}</Text>
+			<Box maxW="200px">
+				<Heading size="md">{name}</Heading>
+				<Text size="sm" flexWrap="wrap">
+					{title}
+				</Text>
+			</Box>
 		</Flex>
 	);
 }

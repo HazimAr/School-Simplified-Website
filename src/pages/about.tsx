@@ -1,19 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable sonarjs/no-duplicate-string */
-import {
-	Box,
-	Divider,
-	Flex,
-	Heading,
-	Image,
-	Text,
-	Table,
-	Thead,
-	Th,
-	Tbody,
-	Tr,
-	Td,
-} from "@chakra-ui/react";
+import { Box, Divider, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import StaffCard from "@components/staffcard";
@@ -115,28 +102,28 @@ const boardOfDirectors: Person[] = [
 	},
 ];
 
-const founders: Person[] = [
-	{
-		name: "Jason Mei",
-		title: "Chief Executive Officer (CEO) & President",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Ethan Hsu",
-		title: "Chief Operating Officer (COO)",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Ethan Wu",
-		title: "Executive Vice President (EVP)",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Nathanael Ma",
-		title: "Chief Academics Officer (CAO)",
-		img: "/staff/default.png",
-	},
-];
+// const founders: Person[] = [
+// 	{
+// 		name: "Jason Mei",
+// 		title: "Chief Executive Officer (CEO) & President",
+// 		img: "/staff/default.png",
+// 	},
+// 	{
+// 		name: "Ethan Hsu",
+// 		title: "Chief Operating Officer (COO)",
+// 		img: "/staff/default.png",
+// 	},
+// 	{
+// 		name: "Ethan Wu",
+// 		title: "Executive Vice President (EVP)",
+// 		img: "/staff/default.png",
+// 	},
+// 	{
+// 		name: "Nathanael Ma",
+// 		title: "Chief Academics Officer (CAO)",
+// 		img: "/staff/default.png",
+// 	},
+// ];
 
 export default function About(): JSX.Element {
 	return (
@@ -221,7 +208,7 @@ export default function About(): JSX.Element {
 						</Flex>
 
 						<Divider bg="white" />
-						{boardOfDirectors.map((staff, i: number) => {
+						{boardOfDirectors.map((staff) => {
 							return (
 								<Box>
 									<Divider bg="white.500" />

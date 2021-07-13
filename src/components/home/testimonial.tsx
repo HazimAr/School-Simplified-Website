@@ -22,11 +22,12 @@ const Reviews = [
 
 export default function Intro() {
 	return (
-		<Container>
+		<Container pt={10}>
 			<ContainerInside>
 				<Heading as="h1" mb={5}>
 					Success Stories
 				</Heading>
+
 				<Flex justify="center">
 					<Flex
 						justify="center"
@@ -85,6 +86,7 @@ export default function Intro() {
 						</Box>
 					</Flex>
 				</Flex>
+				<Divider bg="white" mt={16} />
 			</ContainerInside>
 		</Container>
 	);

@@ -47,7 +47,7 @@ const theme = extendTheme({
 					" -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif",
 				textAlign: "center",
 				background:
-					" #a688ec linear-gradient(90deg, rgba(145,141,240,1) 0%, #a688ec 100%)",
+					"  rgb(86,122,212) linear-gradient(90deg, rgb(145,141,240) 0%, rgb(86,122,212) 100%)",
 			},
 			a: {
 				color: "inherit",

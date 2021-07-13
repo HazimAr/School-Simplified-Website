@@ -6,7 +6,7 @@ import ContainerInside from "@components/containerInside";
 export default function Header(): JSX.Element {
 	return (
 		<Container
-			bg="brand.purple.light"
+			bg="#636EE0"
 			as="header"
 			py="10px"
 			w="100%"

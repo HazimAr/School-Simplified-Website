@@ -166,15 +166,14 @@ function Panel({
 			<ScaleFade in={true}>
 				<Flex
 					justifyContent="space-between"
-					flexDir={{ base: "column", md: "row" }}
+					flexDir="row"
 					alignItems="center"
 					overflow="auto"
 				>
 					<Circle
-						p={2}
+						p={{ base: 1, md: 2, lg: 3 }}
 						bg="brand.transparent"
-						mr={{ base: 0, md: 5 }}
-						mb={{ base: 3, md: 0 }}
+						mr={5}
 					>
 						<Image
 							src={src}
@@ -183,27 +182,21 @@ function Panel({
 						/>
 					</Circle>
 					<Box>
-						<Heading
-							size="lg"
-							textAlign={{ base: "center", md: "left" }}
-						>
+						<Heading size="lg" textAlign="left">
 							{teamName}
 						</Heading>
-						<Text textAlign={{ base: "center", md: "left" }} my={2}>
+						<Text textAlign="left" my={2}>
 							{teamDesc}
 						</Text>
 						{teams ? (
-							<Text
-								textAlign={{ base: "center", md: "left" }}
-								fontStyle="italic"
-							>
+							<Text textAlign="left" fontStyle="italic">
 								Teams include{" "}
 								{teams.slice(0, teams.length - 1).join(", ")},
 								and {teams[teams.length - 1]}
 							</Text>
 						) : null}
 
-						<Flex flexDir={{ base: "column", md: "row" }}>
+						<Flex flexDir="row">
 							<Link
 								isExternal
 								href={link}

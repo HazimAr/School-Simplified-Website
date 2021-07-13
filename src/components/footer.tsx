@@ -98,7 +98,7 @@ export default function Footer(): JSX.Element {
 		<Box as="footer">
 			<Box pt="-100px">
 				<Wave
-					fill="rgb(90, 96, 174)"
+					fill="#636EE0"
 					// paused
 					options={{
 						height: 120,
@@ -108,7 +108,7 @@ export default function Footer(): JSX.Element {
 					}}
 				/>
 			</Box>
-			<Container bg="brand.purple.light" mt="-7px">
+			<Container bg="#636EE0" mt="-7px">
 				<ContainerInside>
 					<Flex
 						justify="space-between"

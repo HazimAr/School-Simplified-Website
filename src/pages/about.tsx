@@ -28,6 +28,16 @@ const leadership: Person[] = [
 		img: "/staff/default.png",
 	},
 	{
+		name: "Lauren Hsieh",
+		title: "Secretary & Executive Assistant to CEO",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Anncine Lin",
+		title: "Deputy Chief of Staff",
+		img: "/staff/default.png",
+	},
+	{
 		name: "Madison Li",
 		title: "Chief Academics Officer (CAO)",
 		img: "/staff/default.png",
@@ -38,18 +48,13 @@ const leadership: Person[] = [
 		img: "/staff/default.png",
 	},
 	{
-		name: "Max Konzerowsky",
-		title: "Chief Technical Officer (CTO)",
+		name: "Jason Mei",
+		title: "Chief Information & Technology Officer (CIO)",
 		img: "/staff/default.png",
 	},
 	{
 		name: "Arohini Rajvanshi",
 		title: "Chief Human Resource Officer (CHRO) ",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Lauren Hsieh",
-		title: "Secretary & Executive Assistant to CEO ",
 		img: "/staff/default.png",
 	},
 	{
@@ -156,7 +161,7 @@ export default function About(): JSX.Element {
 						<Box py={2}>
 							<Heading fontSize={30}>Executive Profiles</Heading>
 						</Box>
-						<Flex justifyContent="center" flexWrap="wrap">
+						<Flex justifyContent="center" alignItems="center" flexWrap="wrap">
 							{leadership.map((staff, i: number) => {
 								return (
 									<StaffCard

@@ -1,3 +1,4 @@
+import { getArtInfo } from "@api/notion";
 import {
 	Box,
 	Button,
@@ -569,4 +570,10 @@ export default function Home(): JSX.Element {
 			</Container>
 		</>
 	);
+}
+
+export async function getServerSideProps() {
+	const artInfo = await getArtInfo();
+	console.log(artInfo);
+	return { props: { subjects: artInfo } };
 }

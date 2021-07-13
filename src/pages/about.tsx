@@ -11,7 +11,7 @@ type Person = {
 	img: string;
 };
 
-const people: Person[] = [
+const leadership: Person[] = [
 	{
 		name: "Ethan Wu",
 		title: "Chairman + Founder",
@@ -26,45 +26,41 @@ const people: Person[] = [
 		name: "Lauren Hsieh",
 		title: "Secretary & Chief of Staff",
 		img: "/staff/default.png",
-	},
+	}
+];
+
+const boardAndAdvisors: Person[] = [
 	{
-		name: "Aarush Goradia",
-		title: "Chief Operating Officer (COO)",
+		name: "Ethan Wu",
+		title: "Chairman + Founder",
 		img: "/staff/default.png",
 	},
 	{
-		name: "Nicole Liu",
-		title: "Executive Vice President (EVP)",
+		name: "Ethan Hsu",
+		title: "Chief Executive Officer (CEO) + President",
 		img: "/staff/default.png",
 	},
 	{
-		name: "Madison Li",
-		title: "Chief Academics Officer (CAO)",
+		name: "Lauren Hsieh",
+		title: "Secretary & Chief of Staff",
+		img: "/staff/default.png",
+	}
+];
+
+const founders: Person[] = [
+	{
+		name: "Ethan Wu",
+		title: "Chairman + Founder",
 		img: "/staff/default.png",
 	},
 	{
-		name: "Harry Chow",
-		title: "Chief Marketing Officer (CMO)",
+		name: "Ethan Hsu",
+		title: "Chief Executive Officer (CEO) + President",
 		img: "/staff/default.png",
 	},
 	{
-		name: "Max Konzerowsky",
-		title: "Chief Technical Officer (CTO)",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Alex Andujar",
-		title: "Director",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Dhananjai Senthil Kumar",
-		title: "Director",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Diana Zheng",
-		title: "Treasurer",
+		name: "Lauren Hsieh",
+		title: "Secretary & Chief of Staff",
 		img: "/staff/default.png",
 	},
 ];
@@ -114,19 +110,60 @@ export default function About(): JSX.Element {
 			<Container>
 				<ContainerInside>
 					<Box>
-						<Box py={7}>
+						<Box py={6}>
 							<Heading size="2xl" mb={3}>
 								Leadership
 							</Heading>
-							<Text fontSize={20}>
-								Leaders of School Simplified
-							</Text>
 						</Box>
 
 						<Divider bg="white" />
-
+						<Box py={2}>
+							<Text fontSize={20}>
+								Executive Profiles
+							</Text>
+						</Box>
 						<Flex justifyContent="center" flexWrap="wrap">
-							{people.map((staff, i: number) => {
+							{leadership.map((staff, i: number) => {
+								return (
+									<StaffCard
+										title={staff.title}
+										name={staff.name}
+										img={staff.img}
+										key={i}
+									/>
+								);
+							})}
+						</Flex>
+
+						<Divider bg="white" />
+
+						<Box py={2}>
+							<Text fontSize={20}>
+								Directors
+							</Text>
+						</Box>
+						<Flex justifyContent="center" flexWrap="wrap">
+							{boardAndAdvisors.map((staff, i: number) => {
+								return (
+									<StaffCard
+										title={staff.title}
+										name={staff.name}
+										img={staff.img}
+										key={i}
+									/>
+								);
+							})}
+						</Flex>
+
+						<Divider bg="white" />
+
+						<Box py={2}>
+							<Text fontSize={20}>
+								Founders
+							</Text>
+						</Box>
+						<Flex justifyContent="center" flexWrap="wrap">
+							{founders.map((staff, i: number) => {
 								return (
 									<StaffCard
 										title={staff.title}

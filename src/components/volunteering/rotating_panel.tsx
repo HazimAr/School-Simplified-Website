@@ -99,13 +99,13 @@ export default function RotatingPanel(): JSX.Element {
 				<Center>
 					<Button
 						onClick={() => setIndex(index - 1)}
-						p={0}
+						p={2}
 						bg="brand.transparent"
-						w={{ base: 3, sm: 5, md: 10 }}
+						w="fit-content"
 						mx={2}
 					>
 						<Center>
-							<Icon as={FaArrowLeft} boxSize={6} />
+							<Icon as={FaArrowLeft} boxSize={5} />
 						</Center>
 					</Button>
 					{teams.map((_v, idx: number) => {
@@ -113,7 +113,7 @@ export default function RotatingPanel(): JSX.Element {
 							<Center key={"text_" + idx}>
 								<Icon
 									as={FaCircle}
-									boxSize={6}
+									boxSize={3}
 									color={
 										idx == index
 											? "white"
@@ -122,19 +122,20 @@ export default function RotatingPanel(): JSX.Element {
 									mx={2}
 									onClick={() => setIndex(idx)}
 									cursor="pointer"
+									opacity={0.7}
 								/>
 							</Center>
 						);
 					})}
 					<Button
 						onClick={() => setIndex(index + 1)}
-						p={0}
+						p={2}
 						bg="brand.transparent"
-						w={{ base: 3, sm: 5, md: 10 }}
+						w="fit-content"
 						mx={2}
 					>
 						<Center>
-							<Icon as={FaArrowRight} boxSize={6} />
+							<Icon as={FaArrowRight} boxSize={5} />
 						</Center>
 					</Button>
 				</Center>

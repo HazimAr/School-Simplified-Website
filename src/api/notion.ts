@@ -46,17 +46,19 @@ async function getClasses(
 ): Promise<Class[]> {
 	const currentSubject = subjectData[subjectIndex].data.results;
 	return Promise.all(
-		currentSubject.map(async (currentClass: any, classIndex: number) => {
-			const content = await getUnits(
-				currentSubject,
-				currentClass,
-				classIndex
-			);
-			return {
-				title: currentClass?.child_page?.title,
-				content: content,
-			};
-		})
+		currentSubject
+			.filter((currentClass: any) => currentClass?.child_page?.title)
+			.map(async (currentClass: any, classIndex: number) => {
+				const content = await getUnits(
+					currentSubject,
+					currentClass,
+					classIndex
+				);
+				return {
+					title: currentClass.child_page.title,
+					content: content,
+				};
+			})
 	);
 }
 

@@ -29,42 +29,6 @@ const leadership: Person[] = [
 	}
 ];
 
-const boardAndAdvisors: Person[] = [
-	{
-		name: "Ethan Wu",
-		title: "Chairman + Founder",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Ethan Hsu",
-		title: "Chief Executive Officer (CEO) + President",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Lauren Hsieh",
-		title: "Secretary & Chief of Staff",
-		img: "/staff/default.png",
-	}
-];
-
-const founders: Person[] = [
-	{
-		name: "Ethan Wu",
-		title: "Chairman + Founder",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Ethan Hsu",
-		title: "Chief Executive Officer (CEO) + President",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Lauren Hsieh",
-		title: "Secretary & Chief of Staff",
-		img: "/staff/default.png",
-	},
-];
-
 export default function About(): JSX.Element {
 	return (
 		<>
@@ -110,7 +74,7 @@ export default function About(): JSX.Element {
 			<Container>
 				<ContainerInside>
 					<Box>
-						<Box py={6}>
+						<Box py={3}>
 							<Heading size="2xl" mb={3}>
 								Leadership
 							</Heading>
@@ -118,9 +82,9 @@ export default function About(): JSX.Element {
 
 						<Divider bg="white" />
 						<Box py={2}>
-							<Text fontSize={20}>
+							<Heading fontSize={30}>
 								Executive Profiles
-							</Text>
+							</Heading>
 						</Box>
 						<Flex justifyContent="center" flexWrap="wrap">
 							{leadership.map((staff, i: number) => {
@@ -137,43 +101,6 @@ export default function About(): JSX.Element {
 
 						<Divider bg="white" />
 
-						<Box py={2}>
-							<Text fontSize={20}>
-								Directors
-							</Text>
-						</Box>
-						<Flex justifyContent="center" flexWrap="wrap">
-							{boardAndAdvisors.map((staff, i: number) => {
-								return (
-									<StaffCard
-										title={staff.title}
-										name={staff.name}
-										img={staff.img}
-										key={i}
-									/>
-								);
-							})}
-						</Flex>
-
-						<Divider bg="white" />
-
-						<Box py={2}>
-							<Text fontSize={20}>
-								Founders
-							</Text>
-						</Box>
-						<Flex justifyContent="center" flexWrap="wrap">
-							{founders.map((staff, i: number) => {
-								return (
-									<StaffCard
-										title={staff.title}
-										name={staff.name}
-										img={staff.img}
-										key={i}
-									/>
-								);
-							})}
-						</Flex>
 					</Box>
 				</ContainerInside>
 			</Container>

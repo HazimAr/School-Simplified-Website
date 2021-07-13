@@ -224,9 +224,13 @@ export default function About(): JSX.Element {
 						{boardOfDirectors.map((staff, i: number) => {
 							return (
 								<Box>
-									<Divider bg="white.500"/>
+									<Divider bg="white.500" />
 									<Flex py={2}>
-										<Text width="100%" fontSize={20} fontWeight="bold">
+										<Text
+											width="100%"
+											fontSize={20}
+											fontWeight="bold"
+										>
 											{staff.name}
 										</Text>
 										<Text width="100%" fontSize={20}>
@@ -240,6 +244,38 @@ export default function About(): JSX.Element {
 
 						<Box py={3}>
 							<Heading fontSize={30}>Founders</Heading>
+							<Flex py={2}>
+								<Text
+									width="100%"
+									fontSize={20}
+									fontWeight="bold"
+								>
+									Jason Mei
+								</Text>
+								<Text
+									width="100%"
+									fontSize={20}
+									fontWeight="bold"
+								>
+									Ethan Hsu
+								</Text>
+							</Flex>
+							<Flex py={2}>
+								<Text
+									width="100%"
+									fontSize={20}
+									fontWeight="bold"
+								>
+									Ethan Wu
+								</Text>
+								<Text
+									width="100%"
+									fontSize={20}
+									fontWeight="bold"
+								>
+									Nathanael Ma
+								</Text>
+							</Flex>
 						</Box>
 					</Box>
 				</ContainerInside>

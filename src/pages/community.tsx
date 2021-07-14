@@ -1,7 +1,6 @@
-import { getArtInfo } from "@api/notion";
 import {
-	Button,
 	Box,
+	Button,
 	Center,
 	Divider,
 	Flex,
@@ -260,7 +259,7 @@ export default function Community(): JSX.Element {
 			</Container>
 
 			<Divider borderColor="white" mb="20px" />
-			<Container ml="350px">
+			<Container>
 				<ContainerInside>
 					<HStack>
 						{/* disc box */}
@@ -270,7 +269,8 @@ export default function Community(): JSX.Element {
 							padding="15px"
 							rounded={rounded}
 							boxShadow="lg"
-							w="60%"
+							w="70%"
+							
 						>
 							<Center>
 								<Link
@@ -292,31 +292,29 @@ export default function Community(): JSX.Element {
 								</Heading>
 							</Center>
 						</VStack>
-						<Flex w="100%" flexDir="column" ml="25px">
-							<Box boxSize="300px" w="300px">
-								<Heading
-									mb="5px"
-									mt="20px"
-									justify="left"
-									textAlign={{ base: "center", md: "left" }}
-									ml="25px"
-								>
-									Our Members
-								</Heading>
 
-								<Text
-									fontSize="2xl"
-									textAlign={{ base: "center", md: "left" }}
-									ml="25px"
-								>
-									Our members work together to aid students
-									all around the globe in academics and
-									extracurricular activities. We offer student
-									opportunities, daily motivation, school
-									help, entertainment, and much more!
-								</Text>
-							</Box>
-						</Flex>
+						<Stack w="100%" flexDir="column" ml="25px">
+							<Heading
+								mb="5px"
+								mt="20px"
+								justify="left"
+								textAlign={{ base: "center", md: "left" }}
+							>
+								Our Members
+							</Heading>
+
+							<Text
+								fontSize="2xl"
+								textAlign={{ base: "center", md: "left" }}
+								ml="25px"
+							>
+								Our members work together to aid students all
+								around the globe in academics and
+								extracurricular activities. We offer student
+								opportunities, daily motivation, school help,
+								entertainment, and much more!
+							</Text>
+						</Stack>
 					</HStack>
 				</ContainerInside>
 			</Container>
@@ -578,8 +576,8 @@ export default function Community(): JSX.Element {
 	);
 }
 
-export async function getServerSideProps() {
-	const artInfo = await getArtInfo();
-	console.log(artInfo);
-	return { props: { subjects: artInfo } };
-}
+// export async function getServerSideProps() {
+// 	const artInfo = await getArtInfo();
+// 	console.log(artInfo);
+// 	return { props: { subjects: artInfo } };
+// }

@@ -261,7 +261,7 @@ export default function Community(): JSX.Element {
 			</Container>
 
 			<Divider borderColor="white" mb="20px" />
-			<Container>
+			<Container ml="350px">
 				<ContainerInside>
 					<HStack>
 
@@ -299,16 +299,17 @@ export default function Community(): JSX.Element {
 									Our Members
 								</Heading>
 
-								<Text fontSize="xl" textAlign={{ base: "center", md: "left" }} ml="25px">
-									Our members work together to aid students all
-									around the globe in academics and
-									extracurricular activities. We offer student
-									opportunities, daily motivation, school help,
-									entertainment, and much more!
-								</Text>
-							</Box>
-						</Flex>
-					</HStack>
+									<Text fontSize="2xl" textAlign={{ base: "center", md: "left" }} ml="25px">
+										Our members work together to aid students all
+										around the globe in academics and
+										extracurricular activities. We offer student
+										opportunities, daily motivation, school help,
+										entertainment, and much more!
+									</Text>
+								</Box>
+							</Flex>
+						</HStack>
+					</Center>
 				</ContainerInside>
 			</Container>
 

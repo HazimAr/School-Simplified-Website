@@ -96,22 +96,22 @@ const socials = [
 export default function Footer(): JSX.Element {
 	return (
 		<Box as="footer">
-			<Box pt="-100px">
+			<Box zIndex={-1} mt={-100}>
 				<Wave
 					fill="#636EE0"
 					// paused
 					options={{
 						height: 120,
-						amplitude: 12,
-						speed: 0.25,
-						points: 3,
+						amplitude: 9,
+						speed: 0.2,
+						points: 4,
 					}}
 				/>
 			</Box>
 			<Container bg="#636EE0" mt="-7px">
-				<ContainerInside>
+				<ContainerInside pb={5}>
 					<Flex
-						justify="space-between"
+						justify="space-around"
 						textAlign="left"
 						flexWrap="wrap"
 						py="10px"
@@ -176,7 +176,7 @@ export default function Footer(): JSX.Element {
 					</Flex>
 				</ContainerInside>
 			</Container>
-			<Container bg="brand.purple.dark" py="10px">
+			<Container bg="#727ce3" py="10px">
 				<Flex
 					justify="space-between"
 					align="center"

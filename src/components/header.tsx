@@ -6,12 +6,13 @@ import ContainerInside from "@components/containerInside";
 export default function Header(): JSX.Element {
 	return (
 		<Container
-			bg="#636EE0"
+			bg="#636EE0CD"
 			as="header"
 			py="10px"
 			w="100%"
 			position="fixed"
 			zIndex={1000}
+			backdropFilter="blur(5px)"
 		>
 			<ContainerInside>
 				<Flex justify="space-between" align="center" flexWrap="wrap">

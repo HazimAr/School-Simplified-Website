@@ -184,6 +184,7 @@ async function getArtInfo(): Promise<ArtData> {
 			"https://www.thewrap.com/wp-content/uploads/2016/08/Rick-Astley-618x400.jpg", // default image
 		description = "Rick Astley lol", // default description
 		monthlyPrompt = "Legend of Internet History", // default monthly prompt
+		name = "Rick Astley", // default name
 		socialMedia: SocialMedia[] = [];
 	for (const block of artPageData.results) {
 		if (block.type == "paragraph" && block.paragraph.text.length) {
@@ -210,6 +211,15 @@ async function getArtInfo(): Promise<ArtData> {
 						} else
 							console.warn(
 								`${block.id} [Description] in the art info page is malformed!`
+							);
+						break;
+
+					case "name":
+						if (tokens[1]?.length) {
+							name = tokens[1];
+						} else
+							console.warn(
+								`${block.id} [Name] in the art info page is malformed!`
 							);
 						break;
 
@@ -344,6 +354,7 @@ async function getArtInfo(): Promise<ArtData> {
 		image: image,
 		description: description,
 		monthlyPrompt: monthlyPrompt,
+		name: name,
 		socialMedia: socialMedia,
 	};
 }

@@ -1,3 +1,4 @@
+import { getArtInfo } from "@api/notion";
 import {
 	Button,
 	Center,
@@ -153,7 +154,10 @@ export default function Community(): JSX.Element {
 							</Stack>
 						</HStack>
 
-						<HStack flexDir={{ base: "column", md: "row" }} spacing={5}>
+						<HStack
+							flexDir={{ base: "column", md: "row" }}
+							spacing={5}
+						>
 							<VStack
 								boxSize="300px"
 								backgroundColor="brand.transparent"
@@ -161,7 +165,6 @@ export default function Community(): JSX.Element {
 								pt="6px"
 								rounded={rounded}
 								boxShadow="lg"
-
 							>
 								<Heading>Events</Heading>
 								<Heading size="sm">
@@ -260,11 +263,19 @@ export default function Community(): JSX.Element {
 				<ContainerInside>
 					<HStack>
 						<Flex w="100%" flexDir="column">
-							<Heading mb="5px" mt="20px" justify="left" textAlign={{ base: "center", md: "left" }}>
+							<Heading
+								mb="5px"
+								mt="20px"
+								justify="left"
+								textAlign={{ base: "center", md: "left" }}
+							>
 								Our Members
 							</Heading>
-							
-							<Text fontSize="lg" textAlign={{ base: "center", md: "left" }}>
+
+							<Text
+								fontSize="lg"
+								textAlign={{ base: "center", md: "left" }}
+							>
 								Our members work together to aid students all
 								around the globe in academics and
 								extracurricular activities. We offer student
@@ -281,7 +292,6 @@ export default function Community(): JSX.Element {
 							rounded={rounded}
 							boxShadow="lg"
 							w="60%"
-							
 						>
 							<Center>
 								<Link
@@ -294,14 +304,14 @@ export default function Community(): JSX.Element {
 									/>
 								</Link>
 							</Center>
-							
+
 							<Center>
 								<Heading size="md" ml="15px">
-									Join our Discord. Come for the academic help,
-									stay for the events, live music, and friends!
+									Join our Discord. Come for the academic
+									help, stay for the events, live music, and
+									friends!
 								</Heading>
 							</Center>
-							
 						</VStack>
 					</HStack>
 				</ContainerInside>
@@ -564,8 +574,8 @@ export default function Community(): JSX.Element {
 	);
 }
 
-// export async function getServerSideProps() {
-// 	const artInfo = await getArtInfo();
-// 	console.log(artInfo);
-// 	return { props: { subjects: artInfo } };
-// }
+export async function getServerSideProps() {
+	const artInfo = await getArtInfo();
+	console.log(artInfo);
+	return { props: { subjects: artInfo } };
+}

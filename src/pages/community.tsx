@@ -153,16 +153,15 @@ export default function Community(): JSX.Element {
 							</Stack>
 						</HStack>
 
-						<HStack flexDir={{ base: "column", md: "row" }}>
+						<HStack flexDir={{ base: "column", md: "row" }} spacing={5}>
 							<VStack
-								w="100%"
-								maxW="300px"
-								maxH="300px"
+								boxSize="300px"
 								backgroundColor="brand.transparent"
 								padding="20px"
 								pt="6px"
 								rounded={rounded}
 								boxShadow="lg"
+
 							>
 								<Heading>Events</Heading>
 								<Heading size="sm">
@@ -256,12 +255,12 @@ export default function Community(): JSX.Element {
 				</ContainerInside>
 			</Container>
 
-			<Divider borderColor="white" />
+			<Divider borderColor="white" mb="20px" />
 			<Container>
 				<ContainerInside>
 					<HStack textAlign="left">
 						<VStack w="100%">
-							<Heading mb="25px" mt="20px">
+							<Heading mb="5px" mt="20px">
 								Our Members
 							</Heading>
 							<Text fontSize="lg">
@@ -277,10 +276,11 @@ export default function Community(): JSX.Element {
 						<VStack
 							boxSize="450px"
 							bg="brand.transparent"
-							padding="5px"
+							padding="15px"
 							rounded={rounded}
 							boxShadow="lg"
-							w="100%"
+							w="60%"
+							
 						>
 							<Center>
 								<Link
@@ -303,7 +303,7 @@ export default function Community(): JSX.Element {
 				</ContainerInside>
 			</Container>
 
-			<Divider borderColor="white" />
+			<Divider borderColor="white" mt="20px" />
 
 			<Container>
 				<ContainerInside>

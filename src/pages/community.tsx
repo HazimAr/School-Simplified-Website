@@ -260,7 +260,7 @@ export default function Community(): JSX.Element {
 				<ContainerInside>
 					<HStack textAlign="left">
 						<VStack w="100%">
-							<Heading mb="5px" mt="20px">
+							<Heading mb="5px" mt="20px" mr="505px">
 								Our Members
 							</Heading>
 							<Text fontSize="lg">
@@ -289,29 +289,32 @@ export default function Community(): JSX.Element {
 								>
 									<Image
 										src="/undraw/connections.svg"
-										boxSize="340px"
+										boxSize="315px"
 									/>
 								</Link>
 							</Center>
-
-							<Heading size="md" ml="10px">
-								Join our Discord. Come for the academic help,
-								stay for the events, live music, and friends!
-							</Heading>
+							
+							<Center>
+								<Heading size="md" ml="15px">
+									Join our Discord. Come for the academic help,
+									stay for the events, live music, and friends!
+								</Heading>
+							</Center>
+							
 						</VStack>
 					</HStack>
 				</ContainerInside>
 			</Container>
 
-			<Divider borderColor="white" mt="20px" />
+			<Divider borderColor="white" mt="20px" mb="25px" />
 
 			<Container>
 				<ContainerInside>
 					<VStack>
-						<VStack spacing={6}>
+						<VStack spacing={4}>
 							<Heading>Our Socials</Heading>
 							<Container>
-								<Heading fontSize="18px">
+								<Heading fontSize="18px" mb="35px">
 									Check out our socials for tips,
 									entertainment, music, podcasts, and
 									opportunities and more!
@@ -319,7 +322,7 @@ export default function Community(): JSX.Element {
 							</Container>
 						</VStack>
 
-						<HStack spacing={5}>
+						<HStack spacing={6}>
 							<Button
 								onClick={onOpenSpotify}
 								size="100%"

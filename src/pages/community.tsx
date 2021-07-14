@@ -252,7 +252,7 @@ export default function Community(): JSX.Element {
 			<Divider borderColor="white" mb="20px" />
 			<Container>
 				<ContainerInside maxW="1000px">
-					<HStack spacing={10}>
+					<HStack spacing={10} >
 						{/* disc box */}
 						<VStack
 							boxSize="450px"
@@ -521,7 +521,7 @@ export default function Community(): JSX.Element {
 							>
 								<Icon
 									as={RiDiscordLine}
-									boxSize={100}
+									boxSize={150}
 									color="white"
 								/>
 							</Link>

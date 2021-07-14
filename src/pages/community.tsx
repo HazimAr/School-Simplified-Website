@@ -153,9 +153,9 @@ export default function Community(): JSX.Element {
 							</Stack>
 						</HStack>
 
-						<HStack flexDir={{ base: "column", md: "row" }}>
+						<HStack flexDir={{ base: "column", md: "row" }} flexWrap="wrap" justify="center">
 							<VStack
-								boxSize="100%"
+								boxSize="300px"
 								backgroundColor="brand.transparent"
 								p="20px"
 								rounded={rounded}
@@ -173,14 +173,14 @@ export default function Community(): JSX.Element {
 									<ListItem>Karaoke</ListItem>
 									<ListItem>Game Night</ListItem>
 								</UnorderedList>
-								<Heading size="sm">
+								{/* <Heading size="sm">
 									Join our discord server to participate in
 									these events!
-								</Heading>
+								</Heading> */}
 							</VStack>
 
 							<VStack
-								boxSize="100%"
+								boxSize="300px"
 								backgroundColor="brand.transparent"
 								p="20px"
 								
@@ -221,17 +221,16 @@ export default function Community(): JSX.Element {
 										<ListItem>2010-2015 Pop</ListItem>
 									</Link>
 								</UnorderedList>
-
+								{/* 
 								<Heading size="5px">
 									Check out our Spotify for the complete list!
-								</Heading>
+								</Heading> */}
 							</VStack>
 
 							<VStack
-								boxSize="100%"
+								boxSize="300px"
 								backgroundColor="brand.transparent"
 								p="20px"
-							
 								rounded={rounded}
 								boxShadow="lg"
 							>
@@ -252,7 +251,10 @@ export default function Community(): JSX.Element {
 			<Divider borderColor="white" mb="20px" />
 			<Container>
 				<ContainerInside maxW="1000px">
-					<HStack spacing={10} >
+					<HStack
+						spacing={10}
+						flexDir={{ base: "column", md: "row" }}
+					>
 						{/* disc box */}
 						<VStack
 							boxSize="450px"
@@ -292,7 +294,7 @@ export default function Community(): JSX.Element {
 							</Heading>
 
 							<Text
-								fontSize="3xl"
+								fontSize="2xl"
 								textAlign={{ base: "center", md: "left" }}
 							>
 								Our members work together to aid students all
@@ -571,3 +573,10 @@ export default function Community(): JSX.Element {
 // 	console.log(artInfo);
 // 	return { props: { subjects: artInfo } };
 // }
+
+
+
+
+
+
+

@@ -62,7 +62,7 @@ export default function Community(): JSX.Element {
 								>
 									<Image
 										src="june.jpg"
-										boxSize="100%"
+										boxSize="500px"
 										rounded={rounded}
 										objectFit="cover"
 										boxShadow="lg"

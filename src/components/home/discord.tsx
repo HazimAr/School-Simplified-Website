@@ -3,6 +3,7 @@ import {
 	Flex,
 	Heading,
 	Image,
+	Link,
 	ListItem,
 	Text,
 	UnorderedList,
@@ -49,7 +50,9 @@ export default function Intro() {
 								<ListItem>Lorem Ipsum</ListItem>
 							</UnorderedList>
 						</Flex>
-						<Button mt={5}>Join Our Community</Button>
+						<Link href="/community">
+							<Button mt={5}>Join Our Community</Button>
+						</Link>
 					</Box>
 				</Flex>
 			</ContainerInside>

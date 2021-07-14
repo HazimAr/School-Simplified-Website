@@ -18,7 +18,7 @@ export default function Intro() {
 							blah blah blah blah blah blah blah blah blah blah
 							blah blah blah blah blah blah
 						</Text>
-						<Button>Get Help Now</Button>
+						<Button>Learn More</Button>
 					</Box>
 
 					<Box textAlign="left" my={`${spacing}px`}>

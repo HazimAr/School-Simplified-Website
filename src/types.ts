@@ -27,6 +27,7 @@ export type ArtData = {
 	image: string;
 	description: string;
 	monthlyPrompt: string;
+	name: string;
 	socialMedia: SocialMedia[];
 };
 

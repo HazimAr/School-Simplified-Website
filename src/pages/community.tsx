@@ -259,8 +259,8 @@ export default function Community(): JSX.Element {
 			<Container>
 				<ContainerInside>
 					<HStack>
-						<VStack w="100%">
-							<Heading mb="5px" mt="20px" textAlign={{ base: "center", md: "left" }}>
+						<Flex w="100%" flexDir="column">
+							<Heading mb="5px" mt="20px" justify="left" textAlign={{ base: "center", md: "left" }}>
 								Our Members
 							</Heading>
 							
@@ -271,7 +271,7 @@ export default function Community(): JSX.Element {
 								opportunities, daily motivation, school help,
 								entertainment, and much more!
 							</Text>
-						</VStack>
+						</Flex>
 
 						{/* disc box */}
 						<VStack

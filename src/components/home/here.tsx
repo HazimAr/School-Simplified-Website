@@ -23,7 +23,7 @@ export default function Here() {
 						href="/essay"
 					/>
 					<Card
-						title="Preparatory"
+						title="HS/College Prep"
 						description="Lorem ipsum dolor sit amet consectetur elit. Assumenda minima deleniti Lorem ipsum"
 						button="Get Free Help"
 						href="/prep"

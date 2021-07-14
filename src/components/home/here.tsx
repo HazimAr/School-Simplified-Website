@@ -1,4 +1,4 @@
-import { Heading, HStack, Text, VStack } from "@chakra-ui/react";
+import { Heading, Link, SimpleGrid, Text, VStack } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -9,32 +9,32 @@ export default function Here() {
 	return (
 		<Container bg="brand.transparent" py="50px" mb="25px">
 			<ContainerInside>
-				<VStack spacing={10}>
-					<HStack spacing={10}>
-						<Card
-							title="Free Tutoring"
-							description="Lorem ipsum dolor sit amet consectetur elit. Assumenda minima deleniti Lorem ipsum"
-							button="Get Free Help"
-						/>
-						<Card
-							title="Essay Revisions"
-							description="Lorem ipsum dolor sit amet consectetur elit. Assumenda minima deleniti Lorem ipsum"
-							button="Get Free Help"
-						/>
-					</HStack>
-					<HStack spacing={10}>
-						<Card
-							title="College Prep"
-							description="Lorem ipsum dolor sit amet consectetur elit. Assumenda minima deleniti Lorem ipsum"
-							button="Get Free Help"
-						/>
-						<Card
-							title="SAT Prep"
-							description="Lorem ipsum dolor sit amet consectetur elit. Assumenda minima deleniti Lorem ipsum"
-							button="Get Free Help"
-						/>
-					</HStack>
-				</VStack>
+				<SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
+					<Card
+						title="Free Tutoring"
+						description="Lorem ipsum dolor sit amet consectetur elit. Assumenda minima deleniti Lorem ipsum"
+						button="Get Free Help"
+						href="/tutoring"
+					/>
+					<Card
+						title="Essay Revisions"
+						description="Lorem ipsum dolor sit amet consectetur elit. Assumenda minima deleniti Lorem ipsum"
+						button="Get Free Help"
+						href="/essay"
+					/>
+					<Card
+						title="Preparatory"
+						description="Lorem ipsum dolor sit amet consectetur elit. Assumenda minima deleniti Lorem ipsum"
+						button="Get Free Help"
+						href="/prep"
+					/>
+					<Card
+						title="Resources"
+						description="Lorem ipsum dolor sit amet consectetur elit. Assumenda minima deleniti Lorem ipsum"
+						button="Get Free Help"
+						href="/resources"
+					/>
+				</SimpleGrid>
 			</ContainerInside>
 		</Container>
 	);
@@ -44,25 +44,30 @@ function Card({
 	title,
 	description,
 	button,
+	href,
 }: {
 	title: string;
 	description: string;
 	button: string;
+	href: string;
 }): JSX.Element {
 	return (
 		<VStack
 			rounded={rounded}
 			bg="brand.transparent2"
-			h={250}
+			minH={250}
+			h="fit-content"
 			justify="center"
 			boxShadow="lg"
-			px={10}
+			p={10}
 		>
 			<Heading as="h1" color="brand.purple.dark">
 				{title}
 			</Heading>
 			<Text color="brand.purple.light">{description}</Text>
-			<Button>{button}</Button>
+			<Link href={href}>
+				<Button>{button}</Button>
+			</Link>
 		</VStack>
 	);
 }

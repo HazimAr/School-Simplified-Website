@@ -50,11 +50,10 @@ export default function Community(): JSX.Element {
 				<ContainerInside>
 					<VStack textAlign="left">
 						<HStack
-							spacing={4}
 							textAlign="left"
 							flexDir={{ base: "column", md: "row" }}
 						>
-							<VStack boxSize="100%">
+							<VStack boxSize="80%" w="55%">
 								<Stack
 									backgroundColor="brand.transparent2"
 									rounded={rounded}
@@ -139,7 +138,7 @@ export default function Community(): JSX.Element {
 								<Text>Artwork from our event winners!</Text>
 							</VStack>
 
-							<Stack w="100%">
+							<Stack w="40%">
 								<Heading size="lg">Our Community</Heading>
 
 								<Text fontSize="lg">

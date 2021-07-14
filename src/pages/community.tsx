@@ -258,12 +258,13 @@ export default function Community(): JSX.Element {
 			<Divider borderColor="white" mb="20px" />
 			<Container>
 				<ContainerInside>
-					<HStack textAlign="left">
+					<HStack>
 						<VStack w="100%">
-							<Heading mb="5px" mt="20px" mr="505px">
+							<Heading mb="5px" mt="20px" textAlign={{ base: "center", md: "left" }}>
 								Our Members
 							</Heading>
-							<Text fontSize="lg">
+							
+							<Text fontSize="lg" textAlign={{ base: "center", md: "left" }}>
 								Our members work together to aid students all
 								around the globe in academics and
 								extracurricular activities. We offer student

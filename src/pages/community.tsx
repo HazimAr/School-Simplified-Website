@@ -23,7 +23,6 @@ import {
 	UnorderedList,
 	useDisclosure,
 	VStack,
-	Box,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -264,7 +263,6 @@ export default function Community(): JSX.Element {
 			<Container ml="350px">
 				<ContainerInside>
 					<HStack>
-
 						{/* disc box */}
 						<VStack
 							boxSize="450px"
@@ -287,32 +285,41 @@ export default function Community(): JSX.Element {
 							</Center>
 
 							<Center>
-								<Heading size="md" >
-									Join our Discord. Come for the academic help,
-									stay for the events, live music, and friends!
+								<Heading size="md">
+									Join our Discord. Come for the academic
+									help, stay for the events, live music, and
+									friends!
 								</Heading>
 							</Center>
 						</VStack>
 						<Flex w="100%" flexDir="column" ml="25px">
 							<Box boxSize="300px" w="300px">
-								<Heading mb="5px" mt="20px" justify="left" textAlign={{ base: "center", md: "left" }} ml="25px">
+								<Heading
+									mb="5px"
+									mt="20px"
+									justify="left"
+									textAlign={{ base: "center", md: "left" }}
+									ml="25px"
+								>
 									Our Members
 								</Heading>
 
-									<Text fontSize="2xl" textAlign={{ base: "center", md: "left" }} ml="25px">
-										Our members work together to aid students all
-										around the globe in academics and
-										extracurricular activities. We offer student
-										opportunities, daily motivation, school help,
-										entertainment, and much more!
-									</Text>
-								</Box>
-							</Flex>
-						</HStack>
-					</Center>
+								<Text
+									fontSize="2xl"
+									textAlign={{ base: "center", md: "left" }}
+									ml="25px"
+								>
+									Our members work together to aid students
+									all around the globe in academics and
+									extracurricular activities. We offer student
+									opportunities, daily motivation, school
+									help, entertainment, and much more!
+								</Text>
+							</Box>
+						</Flex>
+					</HStack>
 				</ContainerInside>
 			</Container>
-
 			<Divider borderColor="white" mt="20px" mb="25px" />
 
 			<Container>

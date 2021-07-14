@@ -16,7 +16,8 @@ Proper Readme will follow
 
 ## Setup
 
-click on the green `code` button and open with github desktop
+click on the green `code` button and open with github desktop or clone the
+repository onto your computer
 
 install dependencies `npm i` or `yarn`
 
@@ -31,4 +32,3 @@ To format with prettier `npm run clean`
 ## License
 
 MIT Licensed template
-

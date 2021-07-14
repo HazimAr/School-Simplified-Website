@@ -1,4 +1,4 @@
-import { Divider, Heading, Text, Grid, GridItem } from "@chakra-ui/react";
+import { Divider, Grid, GridItem, Heading, Text } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 
@@ -44,7 +44,12 @@ export default function Reasons(): JSX.Element {
 					}}
 				>
 					<GridItem my={4}>
-						<Heading fontStyle="italic" size="md" mb={2}>
+						<Heading
+							fontStyle="italic"
+							size="md"
+							mb={2}
+							color="#ffe19a"
+						>
 							{reasons[0].title}
 						</Heading>
 						<Text>{reasons[0].text}</Text>
@@ -53,7 +58,12 @@ export default function Reasons(): JSX.Element {
 						<Divider orientation="vertical" bg="white" />
 					</GridItem>
 					<GridItem my={4}>
-						<Heading fontStyle="italic" size="md" mb={2}>
+						<Heading
+							fontStyle="italic"
+							size="md"
+							mb={2}
+							color="#ffe19a"
+						>
 							{reasons[1].title}
 						</Heading>
 						<Text>{reasons[1].text}</Text>
@@ -65,7 +75,12 @@ export default function Reasons(): JSX.Element {
 						<Divider orientation="vertical" bg="white" />
 					</GridItem>
 					<GridItem my={4}>
-						<Heading fontStyle="italic" size="md" mb={2}>
+						<Heading
+							fontStyle="italic"
+							size="md"
+							mb={2}
+							color="#ffe19a"
+						>
 							{reasons[2].title}
 						</Heading>
 						<Text>{reasons[2].text}</Text>
@@ -74,7 +89,12 @@ export default function Reasons(): JSX.Element {
 						<Divider orientation="vertical" bg="white" />
 					</GridItem>
 					<GridItem my={4}>
-						<Heading fontStyle="italic" size="md" mb={2}>
+						<Heading
+							fontStyle="italic"
+							size="md"
+							mb={2}
+							color="#ffe19a"
+						>
 							{reasons[3].title}
 						</Heading>
 						<Text>{reasons[3].text}</Text>
@@ -86,7 +106,12 @@ export default function Reasons(): JSX.Element {
 						<Divider orientation="vertical" bg="white" />
 					</GridItem>
 					<GridItem my={4}>
-						<Heading fontStyle="italic" size="md" mb={2}>
+						<Heading
+							fontStyle="italic"
+							size="md"
+							mb={2}
+							color="#ffe19a"
+						>
 							{reasons[4].title}
 						</Heading>
 						<Text>{reasons[4].text}</Text>
@@ -95,7 +120,12 @@ export default function Reasons(): JSX.Element {
 						<Divider orientation="vertical" bg="white" />
 					</GridItem>
 					<GridItem my={4}>
-						<Heading fontStyle="italic" size="md" mb={2}>
+						<Heading
+							fontStyle="italic"
+							size="md"
+							mb={2}
+							color="#ffe19a"
+						>
 							{reasons[5].title}
 						</Heading>
 						<Text>{reasons[5].text}</Text>

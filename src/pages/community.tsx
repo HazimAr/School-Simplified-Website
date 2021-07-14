@@ -574,9 +574,3 @@ export default function Community(): JSX.Element {
 // 	return { props: { subjects: artInfo } };
 // }
 
-
-
-
-
-
-

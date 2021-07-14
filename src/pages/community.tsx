@@ -341,6 +341,9 @@ export default function Community(): JSX.Element {
 									boxSize="100%"
 									color="white"
 									onClick={onOpenSpotify}
+									_hover={{
+										cursor: "pointer",
+									}}
 								/>
 
 								<Modal

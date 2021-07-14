@@ -1,8 +1,8 @@
 import {
+	Box,
 	Button,
 	Center,
 	Divider,
-	Flex,
 	Heading,
 	HStack,
 	Icon,
@@ -153,15 +153,11 @@ export default function Community(): JSX.Element {
 							</Stack>
 						</HStack>
 
-						<HStack
-							flexDir={{ base: "column", md: "row" }}
-							spacing={5}
-						>
+						<HStack flexDir={{ base: "column", md: "row" }}>
 							<VStack
-								boxSize="300px"
+								boxSize="100%"
 								backgroundColor="brand.transparent"
-								padding="20px"
-								pt="6px"
+								p="20px"
 								rounded={rounded}
 								boxShadow="lg"
 							>
@@ -182,76 +178,72 @@ export default function Community(): JSX.Element {
 									these events!
 								</Heading>
 							</VStack>
-							<Flex
-								boxSize="300px"
+
+							<VStack
+								boxSize="100%"
 								backgroundColor="brand.transparent"
-								padding="20px"
-								pt="6px"
+								p="20px"
+								
 								rounded={rounded}
 								boxShadow="lg"
 							>
-								<VStack w="100%">
-									<Heading pt="10px">Music</Heading>
-									<Heading size="sm">
-										Our team has put together playlists of
-										music for you to enjoy!
-									</Heading>
-									<UnorderedList>
-										<Link
-											href="https://open.spotify.com/playlist/5xy112KNO4WBzaxR1tioT9?si=cbf67fcfe567406b&nd=1"
-											isExternal
-										>
-											<ListItem>Study Lofi</ListItem>
-										</Link>
+								<Heading pt="10px">Music</Heading>
+								<Heading size="sm">
+									Our team has put together playlists of music
+									for you to enjoy!
+								</Heading>
+								<UnorderedList>
+									<Link
+										href="https://open.spotify.com/playlist/5xy112KNO4WBzaxR1tioT9?si=cbf67fcfe567406b&nd=1"
+										isExternal
+									>
+										<ListItem>Study Lofi</ListItem>
+									</Link>
 
-										<Link
-											href="https://open.spotify.com/playlist/2qfpV3Cv3LGASgLk5DDIwA?si=df83f8b734784065"
-											isExternal
-										>
-											<ListItem>Jazz Lofi</ListItem>
-										</Link>
+									<Link
+										href="https://open.spotify.com/playlist/2qfpV3Cv3LGASgLk5DDIwA?si=df83f8b734784065"
+										isExternal
+									>
+										<ListItem>Jazz Lofi</ListItem>
+									</Link>
 
-										<Link
-											href="https://open.spotify.com/playlist/3KUCDUAke9JNCi3EC3DR4A?si=b84da9bd407d43f2"
-											isExternal
-										>
-											<ListItem>90s Pop</ListItem>
-										</Link>
+									<Link
+										href="https://open.spotify.com/playlist/3KUCDUAke9JNCi3EC3DR4A?si=b84da9bd407d43f2"
+										isExternal
+									>
+										<ListItem>90s Pop</ListItem>
+									</Link>
 
-										<Link
-											href="https://open.spotify.com/playlist/1lhX7W0NEvzMSsFCkQfxk4?si=5c16816fc6974f87"
-											isExternal
-										>
-											<ListItem>2010-2015 Pop</ListItem>
-										</Link>
-									</UnorderedList>
+									<Link
+										href="https://open.spotify.com/playlist/1lhX7W0NEvzMSsFCkQfxk4?si=5c16816fc6974f87"
+										isExternal
+									>
+										<ListItem>2010-2015 Pop</ListItem>
+									</Link>
+								</UnorderedList>
 
-									<Heading size="5px">
-										Check out our Spotify for the complete
-										list!
-									</Heading>
-								</VStack>
-							</Flex>
+								<Heading size="5px">
+									Check out our Spotify for the complete list!
+								</Heading>
+							</VStack>
 
-							<Flex
-								boxSize="300px"
+							<VStack
+								boxSize="100%"
 								backgroundColor="brand.transparent"
-								padding="20px"
+								p="20px"
+							
 								rounded={rounded}
-								alignContent="left"
 								boxShadow="lg"
 							>
-								<VStack w="100%">
-									<Heading>Friends</Heading>
-									<Heading size="xsm">
-										Start making new friends from all around
-										the world by joining our server. You can
-										chat, voice call, play games, or even
-										enter events with others to form new and
-										exciting friendships!
-									</Heading>
-								</VStack>
-							</Flex>
+								<Heading>Friends</Heading>
+								<Heading size="xsm">
+									Start making new friends from all around the
+									world by joining our server. You can chat,
+									voice call, play games, or even enter events
+									with others to form new and exciting
+									friendships!
+								</Heading>
+							</VStack>
 						</HStack>
 					</VStack>
 				</ContainerInside>
@@ -265,7 +257,7 @@ export default function Community(): JSX.Element {
 						<VStack
 							boxSize="450px"
 							bg="brand.transparent"
-							padding="15px"
+							p="15px"
 							rounded={rounded}
 							boxShadow="lg"
 							w="70%"
@@ -330,7 +322,7 @@ export default function Community(): JSX.Element {
 						</VStack>
 
 						<HStack
-								flexWrap="wrap"
+							flexWrap="wrap"
 							// flexDir={{ sm: "column", md: "row" }}
 							justify="center"
 							align="center"

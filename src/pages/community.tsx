@@ -1,5 +1,6 @@
 import {
 	Button,
+	Box,
 	Center,
 	Divider,
 	Flex,
@@ -259,19 +260,6 @@ export default function Community(): JSX.Element {
 			<Container>
 				<ContainerInside>
 					<HStack>
-						<Flex w="100%" flexDir="column">
-							<Heading mb="5px" mt="20px" justify="left" textAlign={{ base: "center", md: "left" }}>
-								Our Members
-							</Heading>
-							
-							<Text fontSize="lg" textAlign={{ base: "center", md: "left" }}>
-								Our members work together to aid students all
-								around the globe in academics and
-								extracurricular activities. We offer student
-								opportunities, daily motivation, school help,
-								entertainment, and much more!
-							</Text>
-						</Flex>
 
 						{/* disc box */}
 						<VStack
@@ -296,13 +284,28 @@ export default function Community(): JSX.Element {
 							</Center>
 							
 							<Center>
-								<Heading size="md" ml="15px">
+								<Heading size="md" >
 									Join our Discord. Come for the academic help,
 									stay for the events, live music, and friends!
 								</Heading>
 							</Center>
 							
 						</VStack>
+						<Flex w="100%" flexDir="column" ml="25px">
+							<Box boxSize="300px" w="300px">
+								<Heading mb="5px" mt="20px" justify="left" textAlign={{ base: "center", md: "left" }} ml="25px">
+									Our Members
+								</Heading>
+
+								<Text fontSize="xl" textAlign={{ base: "center", md: "left" }} ml="25px">
+									Our members work together to aid students all
+									around the globe in academics and
+									extracurricular activities. We offer student
+									opportunities, daily motivation, school help,
+									entertainment, and much more!
+								</Text>
+							</Box>
+						</Flex>
 					</HStack>
 				</ContainerInside>
 			</Container>

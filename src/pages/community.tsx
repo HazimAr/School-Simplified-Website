@@ -260,8 +260,8 @@ export default function Community(): JSX.Element {
 
 			<Divider borderColor="white" mb="20px" />
 			<Container>
-				<ContainerInside>
-					<HStack>
+				<ContainerInside maxW="1000px">
+					<HStack spacing={10}>
 						{/* disc box */}
 						<VStack
 							boxSize="450px"
@@ -270,7 +270,6 @@ export default function Community(): JSX.Element {
 							rounded={rounded}
 							boxShadow="lg"
 							w="70%"
-							
 						>
 							<Center>
 								<Link
@@ -293,10 +292,8 @@ export default function Community(): JSX.Element {
 							</Center>
 						</VStack>
 
-						<Stack w="100%" flexDir="column" ml="25px">
+						<Stack w="70%" flexDir="column" ml="25px">
 							<Heading
-								mb="5px"
-								mt="20px"
 								justify="left"
 								textAlign={{ base: "center", md: "left" }}
 							>
@@ -304,9 +301,8 @@ export default function Community(): JSX.Element {
 							</Heading>
 
 							<Text
-								fontSize="2xl"
+								fontSize="3xl"
 								textAlign={{ base: "center", md: "left" }}
-								ml="25px"
 							>
 								Our members work together to aid students all
 								around the globe in academics and

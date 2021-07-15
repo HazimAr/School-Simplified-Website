@@ -31,7 +31,7 @@ export default function Header(): JSX.Element {
 					</Link>
 					<Link href="/donate">Donate</Link>
 				</Flex> */}
-					I will add this later, have a good idea
+					OH SHIT IT BROKE
 				</Flex>
 			</ContainerInside>
 		</Container>

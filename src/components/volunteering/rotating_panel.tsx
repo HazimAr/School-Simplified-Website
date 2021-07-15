@@ -15,6 +15,7 @@ import {
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
+import useInterval from "@hooks/useInterval";
 import React from "react";
 import { FaArrowLeft, FaArrowRight, FaCircle } from "react-icons/fa";
 
@@ -89,6 +90,10 @@ export default function RotatingPanel(): JSX.Element {
 			}
 		},
 	});
+
+	useInterval(() => {
+		setIndex(index + 1);
+	}, 3000);
 
 	return (
 		<Container>

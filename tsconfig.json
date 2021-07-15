@@ -23,6 +23,7 @@
 			"@api/*": ["api/*"],
 			"@styles/*": ["styles/*"],
 			"@utils/*": ["utils/*"],
+			"@hooks/*": ["hooks/*"],
 			"@lib/*": ["lib/*"],
 			"@src/*": ["/*"],
 			"@pages/*": ["pages/*"]

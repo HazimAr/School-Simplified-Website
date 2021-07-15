@@ -1,23 +1,19 @@
-import { Box, Center, Heading } from "@chakra-ui/react";
-import ReactPlayer from "react-player";
+import { Center } from "@chakra-ui/react";
 
 export default function Four(): JSX.Element {
 	return (
-		<Center h="70vh" mt="120px">
-			<Box w="80%">
-				<ReactPlayer
-					url="/rick.mp4"
-					width="100%"
-					height="100%"
-					// autoPlay
-					loop
-					playing
-				/>
-
-				<Heading>
-					If this doesn't load go to home page then come back
-				</Heading>
-			</Box>
+		<Center position="fixed" h="100vh" w="100vw" mt="-50px" zIndex="99999">
+			<iframe
+				width="100%"
+				height="100%"
+				src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0&autoplay=1"
+				title="YouTube video player"
+				frameBorder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
+				allowFullScreen
+			></iframe>
 		</Center>
 	);
 }
+
+// .ytplayer {pointer-events: none;}

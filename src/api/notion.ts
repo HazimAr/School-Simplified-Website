@@ -182,7 +182,7 @@ async function getArtInfo(): Promise<ArtData> {
 
 	let image =
 			"https://www.thewrap.com/wp-content/uploads/2016/08/Rick-Astley-618x400.jpg", // default image
-		description = "Rick Astley lol", // default description
+		description = "Rick Astley", // default description
 		monthlyPrompt = "Legend of Internet History", // default monthly prompt
 		name = "Rick Astley", // default name
 		socialMedia: SocialMedia[] = [];

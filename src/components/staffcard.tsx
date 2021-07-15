@@ -1,5 +1,5 @@
 /* eslint-disable import/no-default-export */
-import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Text, } from "@chakra-ui/react";
 // import { RiBoxingLine } from "react-icons/ri";
 
 type StaffCard = {
@@ -22,8 +22,9 @@ export default function StaffCard({
 				p="20px"
 				rounded="50px"
 				justifyContent="center"
+				alignContent="center"
 			>
-				<Image src={img} />
+				<Image rounded="50px" display="block" boxSize="150px" objectFit="cover" src={img} />
 			</Box>
 			<Box maxW="200px">
 				<Heading size="md">{name}</Heading>

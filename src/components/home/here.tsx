@@ -18,7 +18,7 @@ export default function Here() {
 					/>
 					<Card
 						title="Essay Revisions"
-						description="Lorem ipsum dolor sit amet consectetur elit. Assumenda minima deleniti Lorem ipsum"
+						description="Our team consists of exceptional writers, all that go through a rigorous process to establish themselves as verified proofreaders. Simply fill out the form with basic details involving your essay and a proofreader will make the necessary edits"
 						button="Get Free Help"
 						href="/essay"
 					/>

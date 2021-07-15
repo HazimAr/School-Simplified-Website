@@ -16,25 +16,27 @@ const infos = [
 		name: "Home",
 		link: "/",
 	},
+
 	{
-		name: "Contact Us",
-		link: "/contact",
-	},
-	{
-		name: "About Us",
+		name: "Leadership",
 		link: "/about",
 	},
 	{
 		name: "Community",
 		link: "/community",
 	},
+
 	{
-		name: "Discord",
-		link: "https://discord.gg/school",
+		name: "Contact Us",
+		link: "/contact",
 	},
 	{
 		name: "FAQ",
 		link: "/contact",
+	},
+	{
+		name: "Discord",
+		link: "https://discord.gg/school",
 	},
 ];
 

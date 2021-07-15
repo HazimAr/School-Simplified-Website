@@ -30,7 +30,7 @@ export default function Here() {
 					/>
 					<Card
 						title="Resources"
-						description="SchoolSimplified has hundreds of high-quality notes ranging across many different school subjects. Our library of notes will consistently be updating to cover as many subjects as possible"
+						description="School Simplified has hundreds of high-quality notes ranging across many different school subjects. Our library of notes will consistently be updating to cover as many subjects as possible"
 						button="Get Free Help"
 						href="/resources"
 					/>

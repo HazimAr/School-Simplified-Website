@@ -1,15 +1,13 @@
 import { Center } from "@chakra-ui/react";
 
-
 export default function Stupid(): JSX.Element {
-
 	return (
 		<Center
 			position="fixed"
 			h="100vh"
 			w="100vw"
-			mt="-50px"
 			zIndex="99999"
+			
 			style={{ pointerEvents: "none" }}
 		>
 			<iframe

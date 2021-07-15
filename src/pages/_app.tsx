@@ -1,4 +1,4 @@
-import { ChakraProvider, Box } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import Footer from "@components/footer";
 import Header from "@components/header";
 import { pageview } from "@lib/gtag";
@@ -8,6 +8,7 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import Stupid from "./stupid";
 
 export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 	const router = useRouter();
@@ -30,7 +31,11 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 			<ChakraProvider theme={theme}>
 				<Header />
 
-				<Component {...pageProps} />
+				{process.env.NODE_ENV !== "production" ? (
+					<Component {...pageProps} />
+				) : (
+					<Stupid />
+				)}
 
 				<Footer />
 			</ChakraProvider>

@@ -1,7 +1,7 @@
 import { Center } from "@chakra-ui/react";
 
 
-export default function Four(): JSX.Element {
+export default function Stupid(): JSX.Element {
 
 	return (
 		<Center
@@ -26,5 +26,3 @@ export default function Four(): JSX.Element {
 		</Center>
 	);
 }
-
-// .ytplayer

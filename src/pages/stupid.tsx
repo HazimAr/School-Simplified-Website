@@ -4,7 +4,7 @@ import ReactPlayer from "react-player";
 export default function Four(): JSX.Element {
 	return (
 		<Center h="70vh" mt="120px">
-			<Box w="80%" >
+			<Box w="80%">
 				<ReactPlayer
 					url="/rick.mp4"
 					width="100%"
@@ -14,9 +14,7 @@ export default function Four(): JSX.Element {
 					playing
 				/>
 
-				<Heading>
-					There are no controls on this video only rick. Sorry
-				</Heading>
+				<Heading>If this doesn't load refresh until it does</Heading>
 			</Box>
 		</Center>
 	);

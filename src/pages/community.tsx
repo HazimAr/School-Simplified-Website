@@ -152,7 +152,7 @@ export default function Community(): JSX.Element {
 							</Stack>
 						</HStack>
 
-						<HStack flexDir={{ base: "column", md: "row" }} flexWrap="wrap" justify="center">
+						<HStack flexDir={{ base: "column", md: "row" }} flexWrap="wrap" justify="center" spacing={10}>
 							<VStack
 								boxSize="300px"
 								backgroundColor="brand.transparent"
@@ -269,8 +269,9 @@ export default function Community(): JSX.Element {
 									isExternal
 								>
 									<Image
-										src="/undraw/connections.svg"
+										src="\undraw\duck_group_shot.png"
 										boxSize="315px"
+										objectFit="cover"
 									/>
 								</Link>
 							</Center>

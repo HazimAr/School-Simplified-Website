@@ -10,7 +10,7 @@ const notesConfig = {
 
 async function getSubjects(): Promise<Subject[]> {
 	const { data: dictData } = await axios.post(
-		`https://api.notion.com/v1/databases/283ca488c1624a4fbef37f1d8bd8da90/query`,
+		`https://api.notion.com/v1/databases/b2009721bf4d47aa8fa99a6528db7843/query`,
 		{},
 		notesConfig
 	);

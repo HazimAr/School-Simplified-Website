@@ -7,7 +7,6 @@ export default function Stupid(): JSX.Element {
 			h="100vh"
 			w="100vw"
 			zIndex="99999"
-			
 			style={{ pointerEvents: "none" }}
 		>
 			<iframe

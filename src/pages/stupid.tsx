@@ -14,7 +14,9 @@ export default function Four(): JSX.Element {
 					playing
 				/>
 
-				<Heading>If this doesn't load refresh until it does</Heading>
+				<Heading>
+					If this doesn't load go to home page then come back
+				</Heading>
 			</Box>
 		</Center>
 	);

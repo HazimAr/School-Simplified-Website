@@ -7,8 +7,8 @@ export default function Four(): JSX.Element {
 			<Box>
 				<ReactPlayer
 					url="/rick.mp4"
-					width="1280px"
-					height="720px"
+					width="848px"
+					height="480px"
 					// autoPlay
 					loop
 					playing

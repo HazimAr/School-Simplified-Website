@@ -1,5 +1,4 @@
 import {
-	Box,
 	Button,
 	Center,
 	Divider,
@@ -152,7 +151,12 @@ export default function Community(): JSX.Element {
 							</Stack>
 						</HStack>
 
-						<HStack flexDir={{ base: "column", md: "row" }} flexWrap="wrap" justify="center" spacing={10}>
+						<HStack
+							flexDir={{ base: "column", md: "row" }}
+							flexWrap="wrap"
+							justify="center"
+							spacing={10}
+						>
 							<VStack
 								boxSize="300px"
 								backgroundColor="brand.transparent"
@@ -182,7 +186,6 @@ export default function Community(): JSX.Element {
 								boxSize="300px"
 								backgroundColor="brand.transparent"
 								p="20px"
-								
 								rounded={rounded}
 								boxShadow="lg"
 							>
@@ -261,28 +264,25 @@ export default function Community(): JSX.Element {
 							p="15px"
 							rounded={rounded}
 							boxShadow="lg"
+							justify="center"
 							w="70%"
+							spacing={5}
 						>
-							<Center>
-								<Link
-									href="https://discord.com/invite/school"
-									isExternal
-								>
-									<Image
-										src="\undraw\duck_group_shot.png"
-										boxSize="315px"
-										objectFit="cover"
-									/>
-								</Link>
-							</Center>
+							<Link
+								href="https://discord.com/invite/school"
+								isExternal
+							>
+								<Image
+									src="\undraw\duck_group_shot.png"
+									h="300px"
+									objectFit="cover"
+								/>
+							</Link>
 
-							<Center>
-								<Heading size="md">
-									Join our Discord. Come for the academic
-									help, stay for the events, live music, and
-									friends!
-								</Heading>
-							</Center>
+							<Heading size="md">
+								Join our Discord. Come for the academic help,
+								stay for the events, live music, and friends!
+							</Heading>
 						</VStack>
 
 						<Stack w="70%" flexDir="column" ml="25px">
@@ -573,4 +573,3 @@ export default function Community(): JSX.Element {
 // 	console.log(artInfo);
 // 	return { props: { subjects: artInfo } };
 // }
-

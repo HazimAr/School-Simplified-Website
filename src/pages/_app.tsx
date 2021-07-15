@@ -29,7 +29,6 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 
 			<ChakraProvider theme={theme}>
 				<Header />
-				<Box w="100%" h="50px" />
 
 				<Component {...pageProps} />
 

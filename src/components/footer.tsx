@@ -19,7 +19,7 @@ const infos = [
 
 	{
 		name: "Leadership",
-		link: "/about",
+		link: "/leadership",
 	},
 	{
 		name: "Community",

@@ -37,7 +37,7 @@ import {
 } from "react-icons/ri";
 import { SiTiktok } from "react-icons/si";
 
-export default function Community({ artInfo }: { artInfo: any }): JSX.Element {
+export default function Community(): JSX.Element {
 	const { isOpen, onOpen, onClose } = useDisclosure();
 	const {
 		isOpen: isOpenSpotify,

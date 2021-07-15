@@ -1,4 +1,3 @@
-import { getArtInfo } from "@api/notion";
 import {
 	Button,
 	Center,

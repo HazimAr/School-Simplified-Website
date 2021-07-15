@@ -15,52 +15,47 @@ const leadership: Person[] = [
 	{
 		name: "Ethan Hsu",
 		title: "Chief Executive Officer (CEO) & President",
-		img: "/staff/default.png",
+		img: "/staff/EthanHsu.jpg",
 	},
 	{
 		name: "Aarush Goradia",
 		title: "Chief Operating Officer (COO)",
-		img: "/staff/default.png",
+		img: "/staff/AarushGoradia.jpg",
 	},
 	{
 		name: "Nicole Liu",
 		title: "Executive Vice President (EVP)",
-		img: "/staff/default.png",
+		img: "/staff/NicoleLiu.jpg",
 	},
 	{
 		name: "Lauren Hsieh",
 		title: "Secretary & Executive Assistant to CEO",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Anncine Lin",
-		title: "Deputy Chief of Staff",
-		img: "/staff/default.png",
+		img: "/staff/LaurenHsieh.jpg",
 	},
 	{
 		name: "Madison Li",
 		title: "Chief Academics Officer (CAO)",
-		img: "/staff/default.png",
+		img: "/staff/MadisonLi.png",
 	},
 	{
 		name: "Harry Chow",
 		title: "Chief Marketing Officer (CMO)",
-		img: "/staff/default.png",
+		img: "/staff/HarryChow.jpg",
 	},
 	{
 		name: "Jason Mei",
 		title: "Chief Information & Technology Officer (CIO)",
-		img: "/staff/default.png",
+		img: "/staff/JasonMei.jpg",
 	},
 	{
 		name: "Arohini Rajvanshi",
 		title: "Chief Human Resource Officer (CHRO) ",
-		img: "/staff/default.png",
+		img: "/staff/ArohiniRajvanshi.jpg",
 	},
 	{
 		name: "Diana Zheng",
 		title: "Treasurer",
-		img: "/staff/default.png",
+		img: "/staff/DianaZheng.jpg",
 	},
 ];
 
@@ -182,10 +177,10 @@ export default function About(): JSX.Element {
 						<Box textAlign="left">
 
 							<Flex align="center">
-								<Heading width="100%" fontSize={23}>
+								<Heading width="100%" fontSize={17}>
 									Name
 								</Heading>
-								<Heading width="100%" fontSize={23}>
+								<Heading width="100%" fontSize={17}>
 									Title
 								</Heading>
 							</Flex>

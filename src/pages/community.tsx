@@ -569,8 +569,8 @@ export default function Community(): JSX.Element {
 	);
 }
 
-export async function getServerSideProps() {
-	const artInfo = await getArtInfo();
-	console.log(artInfo);
-	return { props: { artInfo } };
-}
+// export async function getServerSideProps() {
+// 	const artInfo = await getArtInfo();
+// 	console.log(artInfo);
+// 	return { props: { artInfo } };
+// }

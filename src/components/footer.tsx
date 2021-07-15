@@ -34,10 +34,10 @@ const infos = [
 		name: "FAQ",
 		link: "/contact",
 	},
-	{
-		name: "Discord",
-		link: "https://discord.gg/school",
-	},
+	// {
+	// 	name: "Discord",
+	// 	link: "https://discord.gg/school",
+	// },
 ];
 
 const services = [
@@ -68,6 +68,10 @@ const services = [
 
 const socials = [
 	{
+		name: "Discord",
+		link: "https://discord.gg/school",
+	},
+	{
 		name: "Instagram",
 		link: "https://www.instagram.com/school.simplified/",
 	},
@@ -75,15 +79,11 @@ const socials = [
 		name: "Tiktok",
 		link: "https://www.tiktok.com/@schoolsimplified",
 	},
-	{
-		name: "Facebook",
-		link: "https://www.facebook.com/SchoolSimple/",
-	},
+	// {
+	// 	name: "Facebook",
+	// 	link: "https://www.facebook.com/SchoolSimple/",
+	// },
 
-	{
-		name: "Discord",
-		link: "https://discord.gg/school",
-	},
 	{
 		name: "Linkedin",
 		link: "https://www.linkedin.com/company/school-simplified",

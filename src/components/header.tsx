@@ -28,14 +28,14 @@ export default function Header(): JSX.Element {
 							</Flex>
 						</Link>
 						{/* <Flex>
-					<Link href="/about" mr="7px">
-						About Us
-					</Link>
-					<Link href="/contact" mr="7px">
-						Contact
-					</Link>
-					<Link href="/donate">Donate</Link>
-				</Flex> */}
+							<Link href="/about" mr="7px">
+								About Us
+							</Link>
+							<Link href="/contact" mr="7px">
+								Contact
+							</Link>
+							<Link href="/donate">Donate</Link>
+						</Flex> */}
 						OH SHIT IT BROKE
 					</Flex>
 				</ContainerInside>

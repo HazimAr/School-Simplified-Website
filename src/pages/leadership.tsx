@@ -33,11 +33,6 @@ const leadership: Person[] = [
 		img: "/staff/LaurenHsieh.jpg",
 	},
 	{
-		name: "Anncine Lin",
-		title: "Deputy Chief of Staff",
-		img: "/staff/default.png",
-	},
-	{
 		name: "Madison Li",
 		title: "Chief Academics Officer (CAO)",
 		img: "/staff/MadisonLi.png",

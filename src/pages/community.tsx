@@ -91,9 +91,7 @@ export default function Community({
 											<ModalCloseButton />
 											<ModalBody>
 												This months art contest prompt
-												was: Embracement of Love and
-												Identity. Our winner for this
-												month was{" "}
+												was: {artInfo.monthlyPrompt}
 												<Heading size="sm">
 													{artInfo.name}
 												</Heading>
@@ -102,9 +100,24 @@ export default function Community({
 												</Heading>
 												{artInfo.description}
 												<Heading size="sm" mt={5}>
-													{artInfo.socialMedia.map((social) => { })}
-													Follow aishi on instagram:
-													@aeishthetic
+													{artInfo.socialMedia.map(
+														(social) => {
+															return (
+																<Text>
+																	Follow{" "}
+																	{
+																		artInfo.name
+																	}{" "}
+																	on{" "}
+																	{
+																		social.media
+																	}{" "}
+																	:
+																	{social.tag}
+																</Text>
+															);
+														}
+													)}
 												</Heading>
 											</ModalBody>
 

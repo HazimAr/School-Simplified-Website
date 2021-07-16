@@ -158,7 +158,7 @@ export default function Community(): JSX.Element {
 							spacing={10}
 						>
 							<VStack
-								boxSize="300px"
+								boxSize="350px"
 								backgroundColor="brand.transparent"
 								p="20px"
 								rounded={rounded}
@@ -166,15 +166,16 @@ export default function Community(): JSX.Element {
 							>
 								<Heading>Events</Heading>
 								<Heading size="sm">
-									Our Events team works hard to put together
-									events and contests for our community! We
-									offer:
+									Our Events team works hard to organize
+									events for our community, sometimes even
+									with prizes! We offer things such as:
 								</Heading>
 								<UnorderedList>
-									<ListItem>Monthly Art Contests</ListItem>
-									<ListItem>Music Talent Show</ListItem>
-									<ListItem>Karaoke</ListItem>
-									<ListItem>Game Night</ListItem>
+									<ListItem>Competitions</ListItem>
+									<ListItem>Hackathons</ListItem>
+									<ListItem>Talent Show</ListItem>
+									<ListItem>Movie Nights</ListItem>
+									<ListItem>Game Nights</ListItem>
 								</UnorderedList>
 								{/* <Heading size="sm">
 									Join our discord server to participate in
@@ -183,13 +184,13 @@ export default function Community(): JSX.Element {
 							</VStack>
 
 							<VStack
-								boxSize="300px"
+								boxSize="350px"
 								backgroundColor="brand.transparent"
 								p="20px"
 								rounded={rounded}
 								boxShadow="lg"
 							>
-								<Heading pt="10px">Music</Heading>
+								<Heading>Music</Heading>
 								<Heading size="sm">
 									Our team has put together playlists of music
 									for you to enjoy!
@@ -230,7 +231,7 @@ export default function Community(): JSX.Element {
 							</VStack>
 
 							<VStack
-								boxSize="300px"
+								boxSize="350px"
 								backgroundColor="brand.transparent"
 								p="20px"
 								rounded={rounded}
@@ -281,7 +282,8 @@ export default function Community(): JSX.Element {
 
 							<Heading size="md">
 								Join our Discord. Come for the academic help,
-								stay for the events, live music, and friends!
+								stay for the events, friends, and become a part
+								of the family!
 							</Heading>
 						</VStack>
 

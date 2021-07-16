@@ -366,11 +366,11 @@ async function getArtInfo(): Promise<ArtData> {
 	}
 
 	return {
-		image: image,
-		description: description,
-		monthlyPrompt: monthlyPrompt,
-		name: name,
-		socialMedia: socialMedia,
+		image,
+		description,
+		monthlyPrompt,
+		name,
+		socialMedia,
 	};
 }
 

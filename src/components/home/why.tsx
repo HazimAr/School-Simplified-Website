@@ -23,7 +23,7 @@ export default function Why(): JSX.Element {
 							<Text textAlign={{ base: "center", md: "left" }}>
 								School Simplified believes that quality
 								education should be accessible to all students.
-								It strives to maintain its status as a NPO while
+								We strive to maintain our status as a NPO, while
 								delivering profit-affiliated services to
 								teenagers all across the world. As an
 								organization both by students and for students,

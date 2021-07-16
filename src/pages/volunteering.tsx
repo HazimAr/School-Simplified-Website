@@ -49,10 +49,10 @@ export default function Volunteering(): JSX.Element {
 							alt="Image of a community"
 						/>
 					</Flex>
-					<Divider bg="white" mt={5} />
+					{/* <Divider bg="white" mt={5} /> */}
 				</ContainerInside>
 			</Container>
-
+{/* 
 			<Container bg="brand.transparent">
 				<ContainerInside py={8}>
 					<Heading size="xl">Join Us Today!</Heading>
@@ -72,7 +72,7 @@ export default function Volunteering(): JSX.Element {
 						</Button>
 					</Link>
 				</ContainerInside>
-			</Container>
+			</Container> */}
 
 			<RotatingPanel />
 			<Container>

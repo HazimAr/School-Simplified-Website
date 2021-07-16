@@ -58,13 +58,13 @@ const teams: PanelProps[] = [
 			"Design",
 		],
 	},
-	{
-		teamName: "Human Resources",
-		teamDesc:
-			"Joining the Marketing Team is a great opportunity for volunteers with experience in social media, design, and marketing. If you are interested in working closely with different aspects of the School Simplified community, such as events, social media, and blog posts, volunteer with the Marketing Team!",
-		src: "/logos/hr_logo.png",
-		link: "https://example.com/",
-	},
+	// {
+	// 	teamName: "Human Resources",
+	// 	teamDesc:
+	// 		"Joining the Marketing Team is a great opportunity for volunteers with experience in social media, design, and marketing. If you are interested in working closely with different aspects of the School Simplified community, such as events, social media, and blog posts, volunteer with the Marketing Team!",
+	// 	src: "/logos/hr_logo.png",
+	// 	link: "https://example.com/",
+	// },
 ];
 
 export default function RotatingPanel(): JSX.Element {

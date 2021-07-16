@@ -1,6 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable sonarjs/no-duplicate-string */
-import { Box, Divider, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Divider, Flex, Heading, Text } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import StaffCard from "@components/staffcard";
@@ -104,45 +104,6 @@ const boardOfDirectors: Person[] = [
 export default function About(): JSX.Element {
 	return (
 		<>
-			<Container bg="brand.transparent">
-				<ContainerInside>
-					<Box py={5}>
-						<Flex
-							align="center"
-							justify="center"
-							flexDir={{ base: "column", md: "row" }}
-						>
-							<Box>
-								<Heading
-									textAlign={{ base: "center", md: "left" }}
-									fontSize="2xl"
-									mb={3}
-								>
-									Why Us?
-								</Heading>
-								<Text
-									textAlign={{ base: "center", md: "left" }}
-								>
-									School Simplified believes that quality
-									education should be accessible to all
-									students. It strives to maintain its status
-									as a NPO while delivering profit-affiliated
-									services to teenagers all across the world.
-									As an organization both by students and for
-									students, we have a vested interest in
-									watching you all succeed!
-								</Text>
-							</Box>
-							<Image
-								src="/undraw/learning.svg"
-								w={{ base: 200, md: 300, lg: 400 }}
-								ml={{ base: 0, md: 8 }}
-								mt={{ base: 8, md: 0 }}
-							/>
-						</Flex>
-					</Box>
-				</ContainerInside>
-			</Container>
 			<Container>
 				<ContainerInside>
 					<Box>
@@ -156,7 +117,7 @@ export default function About(): JSX.Element {
 						<Box py={2}>
 							<Heading fontSize={30}>Executive Profiles</Heading>
 						</Box>
-						<Flex justifyContent="center" alignItems="center" flexWrap="wrap">
+						<Flex justifyContent="center" flexWrap="wrap">
 							{leadership.map((staff, i: number) => {
 								return (
 									<StaffCard
@@ -175,7 +136,6 @@ export default function About(): JSX.Element {
 							<Heading fontSize={30}>Board of Directors</Heading>
 						</Box>
 						<Box textAlign="left">
-
 							<Flex align="center">
 								<Heading width="100%" fontSize={17}>
 									Name

@@ -22,12 +22,12 @@ export default function Here() {
 						button="Get Free Help"
 						href="/essay"
 					/>
-					<Card
+					{/* <Card
 						title="HS/College Prep"
 						description="Lorem ipsum dolor sit amet consectetur elit. Assumenda minima deleniti Lorem ipsum"
 						button="Get Free Help"
 						href="/prep"
-					/>
+					/> */}
 					<Card
 						title="Resources"
 						description="School Simplified has hundreds of high-quality notes ranging across many different school subjects. Our library of notes will consistently be updating to cover as many subjects as possible"

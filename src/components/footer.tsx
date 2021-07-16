@@ -60,10 +60,10 @@ const services = [
 		link: "/essay",
 	},
 
-	{
-		name: "College Prep",
-		link: "/prep",
-	},
+	// {
+	// 	name: "College Prep",
+	// 	link: "/prep",
+	// },
 ];
 
 const socials = [

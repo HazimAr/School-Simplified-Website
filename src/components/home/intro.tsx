@@ -20,13 +20,7 @@ export default function Intro() {
 							tutoring, free essay revisions, free notes, free
 							college preparation, and a community where
 							like-minded teenagers can meet and form life-lasting
-							connections. As the largest nonprofit run by high
-							schoolers in America, School Simplified also
-							provides a rare opportunity for teenagers: our staff
-							have the opportunities to run a fully independent
-							business, negotiate and build relations across
-							organizations, learn marketing and business skills,
-							and build code for real-world applications.
+							connections.
 						</Text>
 						<Button>Learn More</Button>
 					</Box>

@@ -1,14 +1,4 @@
-import { ExternalLinkIcon } from "@chakra-ui/icons";
-import {
-	Box,
-	Divider,
-	Flex,
-	Heading,
-	Image,
-	Link,
-	Text,
-} from "@chakra-ui/react";
-import Button from "@components/button";
+import { Box, Divider, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import Reasons from "@components/volunteering/reasons";
@@ -52,7 +42,7 @@ export default function Volunteering(): JSX.Element {
 					{/* <Divider bg="white" mt={5} /> */}
 				</ContainerInside>
 			</Container>
-{/* 
+			{/* 
 			<Container bg="brand.transparent">
 				<ContainerInside py={8}>
 					<Heading size="xl">Join Us Today!</Heading>

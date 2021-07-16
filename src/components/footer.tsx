@@ -114,9 +114,9 @@ export default function Footer(): JSX.Element {
 				<ContainerInside pb={5}>
 					<Flex
 						justify="space-around"
-						textAlign="left"
 						flexWrap="wrap"
 						py="10px"
+						textAlign={{ base: "center", sm: "left" }}
 					>
 						<Box>
 							<Heading size="md">Information</Heading>

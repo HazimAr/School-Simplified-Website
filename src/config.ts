@@ -11,11 +11,11 @@ type MetaType = {
 };
 
 const META: MetaType = {
-	title: "NextJS ChakraUI Template | Hazim Arafa",
+	title: "School Simplified | Education Help",
 	lang: "en-us",
 	description:
-		"Boilerplate built to scale containing Typescript + NextJS + ChakraUI + Google Analytics + ESLint + Jest + Styled Components + Icons",
-	url: "https://boilerplate.hazimarafa.tech",
+		"School Simplified is a virtually run nonprofit that aims to spread educational equality by providing free educational services, products, and opportunities for teenagers. We provide free tutoring, free essay revisions, free notes, free college preparation, and a community where like-minded teenagers can meet and form life-lasting connections.",
+	url: "https://schoolsimplified.tech",
 	img: "/logo.png",
 };
 

@@ -38,7 +38,7 @@ export default class MyDocument extends Document {
 
 					<meta itemProp="name" content={META.title} />
 					<meta itemProp="description" content={META.description} />
-					<meta itemProp="image" content={META.image} />
+					<meta itemProp="image" content={META.img} />
 
 					<meta property="og:url" content={META.url} />
 					<meta property="og:type" content="website" />
@@ -47,7 +47,7 @@ export default class MyDocument extends Document {
 						property="og:description"
 						content={META.description}
 					/>
-					<meta property="og:image" content={META.image} />
+					<meta property="og:image" content={META.img} />
 
 					<meta name="twitter:card" content="summary_large_image" />
 					<meta name="twitter:title" content={META.title} />
@@ -55,7 +55,7 @@ export default class MyDocument extends Document {
 						name="twitter:description"
 						content={META.description}
 					/>
-					<meta name="twitter:image" content={META.image} />
+					<meta name="twitter:image" content={META.img} />
 
 					<script
 						async

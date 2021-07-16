@@ -24,9 +24,15 @@ export default function Volunteering(): JSX.Element {
 								Volunteering Opportunities
 							</Heading>
 							<Text fontSize={21}>
-								We have a wide variety of positions available
-								that can fit any of a wide range of skills or
-								interests!
+								As the largest nonprofit run by high schoolers
+								in North America, School Simplified provides
+								rare opportunities for teenagers: our staff have
+								the opportunities to run a fully independent
+								business, negotiate and build relations across
+								organizations, learn marketing and business
+								skills, and build code for real-world
+								applications. Additionally, you can earn
+								community service hours for all the work you do
 							</Text>
 						</Box>
 						<Image

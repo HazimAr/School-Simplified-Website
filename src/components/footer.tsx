@@ -110,7 +110,7 @@ export default function Footer(): JSX.Element {
 					}}
 				/>
 			</Box>
-			<Container bg="#636EE0" mt="-7px">
+			<Container bg="#636EE0" mt="-7.3px">
 				<ContainerInside pb={5}>
 					<Flex
 						justify="space-around"

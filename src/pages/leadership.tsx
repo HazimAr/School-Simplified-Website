@@ -1,6 +1,14 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable sonarjs/no-duplicate-string */
-import { Box, Divider, Flex, Heading, Text } from "@chakra-ui/react";
+import {
+	Box,
+	Divider,
+	Flex,
+	Heading,
+	HStack,
+	Text,
+	VStack,
+} from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import StaffCard from "@components/staffcard";
@@ -145,7 +153,6 @@ export default function About(): JSX.Element {
 								</Heading>
 							</Flex>
 
-							<Divider bg="white" />
 							{boardOfDirectors.map((staff) => {
 								return (
 									<Box>
@@ -168,41 +175,23 @@ export default function About(): JSX.Element {
 						</Box>
 						<Divider bg="white" />
 
-						<Box py={3}>
+						<VStack py={3}>
 							<Heading fontSize={30}>Founders</Heading>
-							<Flex py={2}>
-								<Text
-									width="100%"
-									fontSize={20}
-									fontWeight="bold"
-								>
+							<HStack py={2} spacing={10}>
+								<Text fontSize={20} fontWeight="bold">
 									Jason Mei
 								</Text>
-								<Text
-									width="100%"
-									fontSize={20}
-									fontWeight="bold"
-								>
+								<Text fontSize={20} fontWeight="bold">
 									Ethan Hsu
 								</Text>
-							</Flex>
-							<Flex py={2}>
-								<Text
-									width="100%"
-									fontSize={20}
-									fontWeight="bold"
-								>
+								<Text fontSize={20} fontWeight="bold">
 									Ethan Wu
 								</Text>
-								<Text
-									width="100%"
-									fontSize={20}
-									fontWeight="bold"
-								>
+								<Text fontSize={20} fontWeight="bold">
 									Nathanael Ma
-								</Text>
-							</Flex>
-						</Box>
+								</Text>{" "}
+							</HStack>
+						</VStack>
 					</Box>
 				</ContainerInside>
 			</Container>

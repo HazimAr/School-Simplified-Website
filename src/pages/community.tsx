@@ -1,5 +1,4 @@
 import {
-	Box,
 	Button,
 	Center,
 	Divider,
@@ -255,7 +254,7 @@ export default function Community(): JSX.Element {
 
 			<Container>
 				<ContainerInside>
-					<Box maxW="1000px">
+					<ContainerInside maxW="1000px">
 						<HStack
 							spacing={10}
 							flexDir={{ base: "column", md: "row" }}
@@ -309,7 +308,7 @@ export default function Community(): JSX.Element {
 								</Text>
 							</Stack>
 						</HStack>
-					</Box>
+					</ContainerInside>
 					<Divider borderColor="white" my="50px" />
 				</ContainerInside>
 			</Container>

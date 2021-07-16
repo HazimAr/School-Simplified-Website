@@ -53,7 +53,7 @@ export default function Community(): JSX.Element {
 							textAlign="left"
 							flexDir={{ base: "column", md: "row" }}
 						>
-							<VStack boxSize="80%" w="55%">
+							<VStack boxSize="80%" w="55%" mb={25}>
 								<Stack
 									backgroundColor="brand.transparent2"
 									rounded={rounded}

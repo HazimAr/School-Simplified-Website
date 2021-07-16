@@ -60,6 +60,7 @@ function NotesTree({ subjects }: AllSubjects): JSX.Element {
 			borderColor="transparent"
 			borderLeftColor="white"
 			borderLeftWidth={3}
+			allowToggle
 		>
 			{subjects.map((subject, subIdx: number) => {
 				const [scValue, setSCValue] = React.useState(-1);
@@ -86,6 +87,7 @@ function NotesTree({ subjects }: AllSubjects): JSX.Element {
 							<Accordion
 								borderColor="transparent"
 								index={scValue}
+								allowToggle
 							>
 								{subject.content.map((clazz, cIdx: number) => {
 									const [uValue, setUValue] =
@@ -100,7 +102,6 @@ function NotesTree({ subjects }: AllSubjects): JSX.Element {
 													color: "white",
 												}}
 												onClick={() => {
-													// set the value of the child dropdown, then call selected
 													setSCValue(cIdx);
 													setUValue(-1);
 												}}

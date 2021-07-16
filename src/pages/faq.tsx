@@ -1,34 +1,15 @@
-import { Box, Flex, Heading, Image } from "@chakra-ui/react";
-import ContactForm from "@components/contact/contact-form";
+import { getFaqInfo } from "@api/notion";
+import { Flex, Heading } from "@chakra-ui/react";
+import FaqList from "@components/contact/faq-list";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import FaqList from "@components/contact/faq-list";
+import { QAPair } from "types";
 
-export default function Contact(): JSX.Element {
-	const qaPairs = [
-		{
-			question: "Who are you?",
-			// eslint-disable-next-line sonarjs/no-duplicate-string
-			answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-		},
-		{
-			question: "Who started School Simplified?",
-			answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-		},
-		{
-			question: "Is School Simplified free to use?",
-			answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-		},
-		{
-			question: "How can I get community service hours?",
-			answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-		},
-		{
-			question: "How reliable is School Simplified?",
-			answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-		},
-	];
-
+export default function Contact({
+	qaPairs,
+}: {
+	qaPairs: QAPair[];
+}): JSX.Element {
 	return (
 		<Container>
 			<ContainerInside>
@@ -41,4 +22,9 @@ export default function Contact(): JSX.Element {
 			</ContainerInside>
 		</Container>
 	);
+}
+
+export async function getServerSideProps() {
+	const qaPairs = await getFaqInfo();
+	return { props: { qaPairs } };
 }

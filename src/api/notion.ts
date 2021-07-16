@@ -1,5 +1,13 @@
 import axios from "axios";
-import { ArtData, Class, NotesProps, SocialMedia, Subject, Unit } from "types";
+import {
+	ArtData,
+	Class,
+	NotesProps,
+	QAPair,
+	SocialMedia,
+	Subject,
+	Unit,
+} from "types";
 
 const notesConfig = {
 	headers: {
@@ -166,6 +174,7 @@ async function getUnits(
 
 export { getSubjects };
 export { getArtInfo };
+export { getFaqInfo };
 
 const artConfig = {
 	headers: {
@@ -357,4 +366,37 @@ async function getArtInfo(): Promise<ArtData> {
 		name: name,
 		socialMedia: socialMedia,
 	};
+}
+
+async function getFaqInfo() {
+	const { data } = await axios.get(
+		`https://api.notion.com/v1/blocks/bc5b51a1b7674a1da9fd09b559844881/children`,
+		notesConfig
+	);
+
+	const qaPairs: QAPair[] = data.results
+		.map((block: any) => {
+			if (block.type.startsWith("paragraph")) {
+				// treat as a notes object until implemented
+				let question: string = "";
+				let answer: string = "";
+				const text = block.paragraph.text[0]?.plain_text;
+				if (text) {
+					question = text.split(":")[0].trim();
+					answer = text.split(":")[1].trim();
+				} else {
+					console.warn(`ID ${block.id} is malformed!`);
+					return;
+				}
+				return {
+					question,
+					answer,
+				};
+			}
+			return;
+		})
+		.filter((QAPair: any) => QAPair);
+	console.log(qaPairs);
+
+	return qaPairs;
 }

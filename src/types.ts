@@ -36,3 +36,8 @@ export type SocialMedia = {
 	tag: string;
 	link?: string;
 };
+
+export type QAPair = {
+	question: string;
+	answer: string;
+};

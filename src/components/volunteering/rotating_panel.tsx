@@ -93,7 +93,7 @@ export default function RotatingPanel(): JSX.Element {
 
 	useInterval(() => {
 		setIndex(index + 1);
-	}, 3000);
+	}, 10000);
 
 	return (
 		<Container>

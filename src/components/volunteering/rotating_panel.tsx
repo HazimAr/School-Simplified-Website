@@ -39,7 +39,7 @@ const teams: PanelProps[] = [
 		teamDesc:
 			"The Tech Team is a good fit for volunteers that are handy with technology. Skills such as programming, quality management, development, and familiarity with Discord are all essential to maintain our website and Discord server; we encourage you to volunteer if you are knowledgeable in any of these areas.",
 		src: "/logos/tech_logo.png",
-		link: "https://example.com/",
+		link: "https://forms.gle/tqXm5aLwhWGQ4cGA6",
 		teams: ["Website", "Developer", "Quality Assurance", "Discord"],
 	},
 	{
@@ -47,7 +47,7 @@ const teams: PanelProps[] = [
 		teamDesc:
 			"Joining the Marketing Team is a great opportunity for volunteers with experience in social media, design, and marketing. If you are interested in working closely with different aspects of the School Simplified community, such as events, social media, and blog posts, volunteer with the Marketing Team!",
 		src: "/logos/mkt_logo.png",
-		link: "https://example.com/",
+		link: "https://forms.gle/xrZma1KjtZ6nzRxS8",
 		teams: [
 			"Instagram",
 			"TikTok",

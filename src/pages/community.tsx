@@ -52,7 +52,7 @@ export default function Community(): JSX.Element {
 							textAlign="left"
 							flexDir={{ base: "column", md: "row" }}
 						>
-							<VStack boxSize="80%" w="55%" mb={25}>
+							<VStack boxSize="100%" mb={25}>
 								<Stack
 									backgroundColor="brand.transparent2"
 									rounded={rounded}
@@ -137,7 +137,7 @@ export default function Community(): JSX.Element {
 								<Text>Artwork from our event winners!</Text>
 							</VStack>
 
-							<Stack w="40%">
+							<Stack w="100%">
 								<Heading size="lg">Our Community</Heading>
 
 								<Text fontSize="lg">
@@ -153,16 +153,17 @@ export default function Community(): JSX.Element {
 
 						<HStack
 							flexDir={{ base: "column", md: "row" }}
-							flexWrap="wrap"
+							//flexWrap="wrap"
 							justify="center"
-							spacing={10}
+							spacing={{ base: 0, md: 10 }}
 						>
 							<VStack
-								boxSize="350px"
+								w="100%"
 								backgroundColor="brand.transparent"
 								p="20px"
 								rounded={rounded}
 								boxShadow="lg"
+								h="300px"
 							>
 								<Heading>Events</Heading>
 								<Heading size="sm">
@@ -184,11 +185,13 @@ export default function Community(): JSX.Element {
 							</VStack>
 
 							<VStack
-								boxSize="350px"
+								w="100%"
 								backgroundColor="brand.transparent"
 								p="20px"
 								rounded={rounded}
 								boxShadow="lg"
+								h="300px"
+								my="20px"
 							>
 								<Heading>Music</Heading>
 								<Heading size="sm">
@@ -231,11 +234,12 @@ export default function Community(): JSX.Element {
 							</VStack>
 
 							<VStack
-								boxSize="350px"
+								w="100%"
 								backgroundColor="brand.transparent"
 								p="20px"
 								rounded={rounded}
 								boxShadow="lg"
+								h="300px"
 							>
 								<Heading>Friends</Heading>
 								<Heading size="xsm">
@@ -253,21 +257,21 @@ export default function Community(): JSX.Element {
 			</Container>
 
 			<Container>
-				<ContainerInside>
+				
 					<ContainerInside maxW="1000px">
 						<HStack
-							spacing={10}
+							
 							flexDir={{ base: "column", md: "row" }}
 						>
 							{/* disc box */}
 							<VStack
-								boxSize="450px"
+								boxSize="100%"
 								bg="brand.transparent"
 								p="15px"
 								rounded={rounded}
 								boxShadow="lg"
 								justify="center"
-								w="70%"
+								
 								spacing={5}
 							>
 								<Link
@@ -288,7 +292,7 @@ export default function Community(): JSX.Element {
 								</Heading>
 							</VStack>
 
-							<Stack w="70%" flexDir="column" ml="25px">
+							<Stack boxSize="100%" flexDir="column">
 								<Heading
 									justify="left"
 									textAlign={{ base: "center", md: "left" }}
@@ -308,7 +312,7 @@ export default function Community(): JSX.Element {
 								</Text>
 							</Stack>
 						</HStack>
-					</ContainerInside>
+					
 					<Divider borderColor="white" my="50px" />
 				</ContainerInside>
 			</Container>
@@ -329,7 +333,7 @@ export default function Community(): JSX.Element {
 
 						<HStack
 							flexWrap="wrap"
-							// flexDir={{ sm: "column", md: "row" }}
+							flexDir={{ base: "column", sm: "row" }}
 							justify="center"
 							align="center"
 						>
@@ -527,7 +531,7 @@ export default function Community(): JSX.Element {
 							>
 								<Icon
 									as={RiDiscordLine}
-									boxSize={150}
+									boxSize={{base:100, md: 150}}
 									color="white"
 								/>
 							</Link>

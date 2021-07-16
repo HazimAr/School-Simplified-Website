@@ -8,7 +8,7 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-// import Stupid from "./stupid";
+import Stupid from "./stupid";
 
 export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 	const router = useRouter();
@@ -28,15 +28,15 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			{/* {process.env.NODE_ENV === "production" ? (
+			{process.env.NODE_ENV === "production" ? (
 				<Stupid />
-			) : ( */}
+			) : (
 				<ChakraProvider theme={theme}>
 					<Header />
 					<Component {...pageProps} />
 					<Footer />
 				</ChakraProvider>
-			{/* )} */}
+			)}
 		</>
 	);
 }

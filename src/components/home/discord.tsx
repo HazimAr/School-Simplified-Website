@@ -44,9 +44,19 @@ export default function Intro() {
 						</Text>
 						<Flex justify={{ base: "center", md: "flex-start" }}>
 							<UnorderedList>
-								<ListItem>Lorem Ipsum</ListItem>
-								<ListItem>Lorem Ipsum</ListItem>
-								<ListItem>Lorem Ipsum</ListItem>
+								<ListItem>
+									We hold monthly events in our Discord
+									server, including movie nights, game nights,
+									and competitions
+								</ListItem>
+								<ListItem>
+									Start making new friends from all around the
+									world
+								</ListItem>
+								<ListItem>
+									Participate in a community of diverse,
+									open-minded, and inclusive students
+								</ListItem>
 							</UnorderedList>
 						</Flex>
 						<Link href="/community">

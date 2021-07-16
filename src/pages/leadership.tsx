@@ -6,6 +6,7 @@ import {
 	Flex,
 	Heading,
 	HStack,
+	Stack,
 	Text,
 	VStack,
 } from "@chakra-ui/react";
@@ -140,10 +141,10 @@ export default function About(): JSX.Element {
 
 						<Divider bg="white" />
 
-						<Box py={3}>
+						<Box pt={3}>
 							<Heading fontSize={30}>Board of Directors</Heading>
 						</Box>
-						<Box textAlign="left">
+						<Stack textAlign="left" py={10}>
 							<Flex align="center">
 								<Heading width="100%" fontSize={17}>
 									Name
@@ -172,10 +173,10 @@ export default function About(): JSX.Element {
 									</Box>
 								);
 							})}
-						</Box>
+						</Stack>
 						<Divider bg="white" />
 
-						<VStack py={3}>
+						<VStack py={10}>
 							<Heading fontSize={30}>Founders</Heading>
 							<HStack py={2} spacing={10}>
 								<Text fontSize={20} fontWeight="bold">

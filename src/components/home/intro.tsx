@@ -10,13 +10,15 @@ export default function Intro() {
 		<Container>
 			<ContainerInside>
 				<Flex justify="center" align="center" mt={50} mb={50}>
-					<Box maxW="50ch" textAlign="left" my={`${spacing}px`}>
+					<Box maxW="60ch" textAlign="left" my={`${spacing}px`}>
 						<Heading>The key to your educational success</Heading>
 						<Text my="10px">
-							School simplified is a student run non-profit
-							organization that aims to help students blah blah
-							blah blah blah blah blah blah blah blah blah blah
-							blah blah blah blah blah blah
+							School Simplified is a fully virtual community thats
+							fights for educational equity by providing students
+							with free educational services, products, and
+							resources such as free-tutoring, volunteering
+							opportunities, school notes, AP prep, SAT prep, as
+							well as a safe and fun community for member.
 						</Text>
 						<Button>Learn More</Button>
 					</Box>

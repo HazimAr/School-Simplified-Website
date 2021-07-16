@@ -13,7 +13,7 @@ export default function Intro() {
 					<Box maxW="60ch" textAlign="left" my={`${spacing}px`}>
 						<Heading>The key to your educational success</Heading>
 						<Text my="10px">
-							School Simplified is a virtually ran nonprofit that
+							School Simplified is a virtually run nonprofit that
 							aims to spread educational equality by providing
 							free educational services, products, and
 							opportunities for teenagers. We provide free

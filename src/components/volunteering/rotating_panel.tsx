@@ -25,7 +25,7 @@ const teams: PanelProps[] = [
 		teamDesc:
 			"Help other students in the School Simplified community with our Academics Team. Responsibilities include educational help, sharing resources, and tutoring.",
 		src: "/logos/aca_logo.png",
-		link: "https://example.com/",
+		link: "/academics",
 		teams: [
 			"Notes",
 			"Prep",

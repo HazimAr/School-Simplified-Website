@@ -182,17 +182,10 @@ export { getSubjects };
 export { getArtInfo };
 export { getFaqInfo };
 
-const artConfig = {
-	headers: {
-		Authorization: "Bearer " + process.env.NOTION_API_KEY_2,
-		"Notion-Version": "2021-05-13",
-	},
-};
-
 async function getArtInfo(): Promise<ArtData> {
 	const { data: artPageData } = await axios.get(
 		`https://api.notion.com/v1/blocks/fcfaa8ea3a2041cf91ec958db799026e/children`,
-		artConfig
+		notesConfig
 	);
 
 	let image =
@@ -379,7 +372,7 @@ async function getFaqInfo() {
 		`https://api.notion.com/v1/blocks/bc5b51a1b7674a1da9fd09b559844881/children`,
 		notesConfig
 	);
-
+	console.log(data);
 	const qaPairs: QAPair[] = data.results
 		.map((block: any) => {
 			if (block.type.startsWith("paragraph")) {

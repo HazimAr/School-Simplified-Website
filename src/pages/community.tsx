@@ -35,8 +35,13 @@ import {
 	RiTwitterLine,
 } from "react-icons/ri";
 import { SiTiktok } from "react-icons/si";
+import { ArtData } from "types";
 
-export default function Community(): JSX.Element {
+export default function Community({
+	artInfo,
+}: {
+	artInfo: ArtData;
+}): JSX.Element {
 	const { isOpen, onOpen, onClose } = useDisclosure();
 	const {
 		isOpen: isOpenSpotify,
@@ -59,7 +64,7 @@ export default function Community(): JSX.Element {
 									boxShadow="lg"
 								>
 									<Image
-										src="june.jpg"
+										src={artInfo.image}
 										boxSize="500px"
 										rounded={rounded}
 										objectFit="cover"
@@ -81,41 +86,23 @@ export default function Community(): JSX.Element {
 										<ModalOverlay />
 										<ModalContent bg="brand.purple.dark">
 											<ModalHeader>
-												June Art Contest Winner
+												Monthly Art Contest Winner
 											</ModalHeader>
 											<ModalCloseButton />
 											<ModalBody>
 												This months art contest prompt
 												was: Embracement of Love and
-												Identity. Our winner for June
-												was{" "}
+												Identity. Our winner for this
+												month was{" "}
 												<Heading size="sm">
-													aishi! (aishi🦋#1613)
+													{artInfo.name}
 												</Heading>
-												<Heading size="sm">
+												<Heading size="sm" mt={5}>
 													Artist Description:
 												</Heading>
-												"I thought it to be a pride
-												month painting as you can see
-												two female faces intertwined
-												with each other... Like they are
-												deeply connected mentally and
-												physically I just wanted to do
-												an abstract painting actually,
-												representing this form of love
-												and the closed eyes explain the
-												satisfaction , sensuality and
-												happiness she feels in love ...
-												And the half opened eyes
-												represent shyness ... I used
-												blue coz 1: it's my fav colour
-												and 2: to give it a hallucinated
-												look ... Like both of them are
-												so much in love that they feel
-												like they are hallucinated ...
-												They cannot think about anything
-												else ... They're madly in love "
-												<Heading size="xsm">
+												{artInfo.description}
+												<Heading size="sm" mt={5}>
+													{artInfo.socialMedia.map((social) => { })}
 													Follow aishi on instagram:
 													@aeishthetic
 												</Heading>

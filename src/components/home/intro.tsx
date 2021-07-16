@@ -1,5 +1,4 @@
-import { Box, Flex, Heading, Image, Text, Link } from "@chakra-ui/react";
-import Button from "@components/button";
+import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 

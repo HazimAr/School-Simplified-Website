@@ -1,4 +1,4 @@
-import { Flex, Image, Link, Text, Box } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Link } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 
@@ -24,7 +24,9 @@ export default function Header(): JSX.Element {
 						<Link href="/" _hover={{}}>
 							<Flex justify="center" align="center">
 								<Image src="/logo.png" w={30} />
-								<Text ml={2.5}>School Simplified</Text>
+								<Heading size="md" ml={2.5}>
+									School Simplified
+								</Heading>
 							</Flex>
 						</Link>
 						{/* <Flex>

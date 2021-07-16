@@ -29,7 +29,7 @@ async function getSubjects(): Promise<Subject[]> {
 		);
 	});
 
-	return Promise.all(subjectPromises)
+	let subjects: Subject[] = await Promise.all(subjectPromises)
 		.then((subjectData) => {
 			return dictData.results.map(
 				async (currentSubject: any, currentSubjectIndex: number) => {
@@ -46,6 +46,12 @@ async function getSubjects(): Promise<Subject[]> {
 			);
 		})
 		.then((newPromises) => Promise.all(newPromises));
+
+	subjects = subjects.sort((a: any, b: any) => {
+		return a.title.localeCompare(b.title);
+	});
+
+	return subjects;
 }
 
 async function getClasses(

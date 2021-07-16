@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Text, Link } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -22,7 +22,9 @@ export default function Intro() {
 							like-minded teenagers can meet and form life-lasting
 							connections.
 						</Text>
-						<Button>Get Free Help</Button>
+						<Link href="/resources">
+							<Button>Get Free Help</Button>
+						</Link>
 					</Box>
 
 					<Box textAlign="left" my={`${spacing}px`}>

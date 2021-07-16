@@ -72,7 +72,9 @@ function Card({
 			<Heading as="h1" color="brand.purple.dark">
 				{title}
 			</Heading>
-			<Text color="brand.purple.light">{description}</Text>
+			<Text textAlign="left" color="brand.purple.light">
+				{description}
+			</Text>
 			<Link href={href}>
 				<Button>{button}</Button>
 			</Link>

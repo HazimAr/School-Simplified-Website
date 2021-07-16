@@ -116,7 +116,7 @@ export default function Footer(): JSX.Element {
 						justify="space-around"
 						flexWrap="wrap"
 						py="10px"
-						textAlign={{ base: "center", sm: "left" }}
+						textAlign={{ base: "center", md: "left" }}
 					>
 						<Box>
 							<Heading size="md">Information</Heading>

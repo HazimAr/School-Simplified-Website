@@ -178,7 +178,11 @@ export default function About(): JSX.Element {
 
 						<VStack py={10}>
 							<Heading fontSize={30}>Founders</Heading>
-							<HStack py={2} spacing={10}>
+							<HStack
+								py={2}
+								spacing={{ base: 0, sm: 10 }}
+								flexDir={{ base: "column", sm: "row" }}
+							>
 								<Text fontSize={20} fontWeight="bold">
 									Jason Mei
 								</Text>

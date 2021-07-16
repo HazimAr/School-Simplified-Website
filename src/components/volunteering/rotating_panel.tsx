@@ -171,7 +171,7 @@ function Panel({
 			<ScaleFade in={true}>
 				<Flex
 					justifyContent="space-between"
-					flexDir="row"
+					flexDir={{base: "column", md: "row"}}
 					alignItems="center"
 					overflow="auto"
 				>

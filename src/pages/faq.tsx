@@ -32,33 +32,11 @@ export default function Contact(): JSX.Element {
 	return (
 		<Container>
 			<ContainerInside>
-				<Box py={10} align="center">
+				<Flex flexDirection="column" align="stretch">
 					<Heading as="h1" size="xl" mb={3}>
-						Get in Touch
+						FAQ
 					</Heading>
-					<Heading as="h2" size="md">
-						Have Questions? Comments? Concerns?
-					</Heading>
-				</Box>
-				<Flex
-					flexDirection={{
-						base: "column-reverse",
-						xl: "row",
-					}}
-					justify="space-between"
-					align="center"
-					// px={{ sm: 10, md: 100, lg: 200 }}
-					pb={10}
-				>
-					<Box>
-						<ContactForm />
-					</Box>
-					<Image
-						src="/undraw/contact.svg"
-						alt="Contact Person"
-						h="350px"
-						mb={{ base: 5, sm: 5, lg: 0 }}
-					/>
+					<FaqList list={qaPairs} />
 				</Flex>
 			</ContainerInside>
 		</Container>

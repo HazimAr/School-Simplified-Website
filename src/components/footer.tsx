@@ -32,7 +32,7 @@ const infos = [
 	},
 	{
 		name: "FAQ",
-		link: "/contact",
+		link: "/faq",
 	},
 	// {
 	// 	name: "Discord",

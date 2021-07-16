@@ -18,7 +18,7 @@ export default function Intro() {
 							with free educational services, products, and
 							resources such as free-tutoring, volunteering
 							opportunities, school notes, AP prep, SAT prep, as
-							well as a safe and fun community for member.
+							well as a safe and fun community for students.
 						</Text>
 						<Button>Learn More</Button>
 					</Box>

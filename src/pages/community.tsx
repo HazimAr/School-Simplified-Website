@@ -1,4 +1,5 @@
 import {
+	Box,
 	Button,
 	Center,
 	Divider,
@@ -248,68 +249,70 @@ export default function Community(): JSX.Element {
 							</VStack>
 						</HStack>
 					</VStack>
+					<Divider borderColor="white" mt="50px" />
 				</ContainerInside>
 			</Container>
 
-			<Divider borderColor="white" mb="20px" />
 			<Container>
-				<ContainerInside maxW="1000px">
-					<HStack
-						spacing={10}
-						flexDir={{ base: "column", md: "row" }}
-					>
-						{/* disc box */}
-						<VStack
-							boxSize="450px"
-							bg="brand.transparent"
-							p="15px"
-							rounded={rounded}
-							boxShadow="lg"
-							justify="center"
-							w="70%"
-							spacing={5}
+				<ContainerInside>
+					<Box maxW="1000px">
+						<HStack
+							spacing={10}
+							flexDir={{ base: "column", md: "row" }}
 						>
-							<Link
-								href="https://discord.com/invite/school"
-								isExternal
+							{/* disc box */}
+							<VStack
+								boxSize="450px"
+								bg="brand.transparent"
+								p="15px"
+								rounded={rounded}
+								boxShadow="lg"
+								justify="center"
+								w="70%"
+								spacing={5}
 							>
-								<Image
-									src="\undraw\duck_group_shot.png"
-									h="300px"
-									objectFit="cover"
-								/>
-							</Link>
+								<Link
+									href="https://discord.com/invite/school"
+									isExternal
+								>
+									<Image
+										src="\undraw\duck_group_shot.png"
+										h="300px"
+										objectFit="cover"
+									/>
+								</Link>
 
-							<Heading size="md">
-								Join our Discord. Come for the academic help,
-								stay for the events, friends, and become a part
-								of the family!
-							</Heading>
-						</VStack>
+								<Heading size="md">
+									Join our Discord. Come for the academic
+									help, stay for the events, friends, and
+									become a part of the family!
+								</Heading>
+							</VStack>
 
-						<Stack w="70%" flexDir="column" ml="25px">
-							<Heading
-								justify="left"
-								textAlign={{ base: "center", md: "left" }}
-							>
-								Our Members
-							</Heading>
+							<Stack w="70%" flexDir="column" ml="25px">
+								<Heading
+									justify="left"
+									textAlign={{ base: "center", md: "left" }}
+								>
+									Our Members
+								</Heading>
 
-							<Text
-								fontSize="2xl"
-								textAlign={{ base: "center", md: "left" }}
-							>
-								Our members work together to aid students all
-								around the globe in academics and
-								extracurricular activities. We offer student
-								opportunities, daily motivation, school help,
-								entertainment, and much more!
-							</Text>
-						</Stack>
-					</HStack>
+								<Text
+									fontSize="2xl"
+									textAlign={{ base: "center", md: "left" }}
+								>
+									Our members work together to aid students
+									all around the globe in academics and
+									extracurricular activities. We offer student
+									opportunities, daily motivation, school
+									help, entertainment, and much more!
+								</Text>
+							</Stack>
+						</HStack>
+					</Box>
+					<Divider borderColor="white" my="50px" />
 				</ContainerInside>
 			</Container>
-			<Divider borderColor="white" mt="20px" mb="25px" />
 
 			<Container>
 				<ContainerInside>

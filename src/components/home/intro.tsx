@@ -13,12 +13,20 @@ export default function Intro() {
 					<Box maxW="60ch" textAlign="left" my={`${spacing}px`}>
 						<Heading>The key to your educational success</Heading>
 						<Text my="10px">
-							School Simplified is a fully virtual community thats
-							fights for educational equity by providing students
-							with free educational services, products, and
-							resources such as free-tutoring, volunteering
-							opportunities, school notes, AP prep, SAT prep, as
-							well as a safe and fun community for students.
+							School Simplified is a virtually ran nonprofit that
+							aims to spread educational equality by providing
+							free educational services, products, and
+							opportunities for teenagers. We provide free
+							tutoring, free essay revisions, free notes, free
+							college preparation, and a community where
+							like-minded teenagers can meet and form life-lasting
+							connections. As the largest nonprofit run by high
+							schoolers in America, School Simplified also
+							provides a rare opportunity for teenagers: our staff
+							have the opportunities to run a fully independent
+							business, negotiate and build relations across
+							organizations, learn marketing and business skills,
+							and build code for real-world applications.
 						</Text>
 						<Button>Learn More</Button>
 					</Box>

@@ -34,10 +34,10 @@ const infos = [
 		name: "FAQ",
 		link: "/faq",
 	},
-	// {
-	// 	name: "Discord",
-	// 	link: "https://discord.gg/school",
-	// },
+	{
+		name: "Donate",
+		link: "/donate",
+	},
 ];
 
 const services = [

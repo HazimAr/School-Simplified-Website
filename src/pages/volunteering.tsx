@@ -17,13 +17,13 @@ export default function Volunteering(): JSX.Element {
 	return (
 		<>
 			<Container bg="brand.transparent">
-				<ContainerInside pt={8}>
+				<ContainerInside py={10}>
 					<Flex alignItems="center">
 						<Box flex={1} textAlign="left">
 							<Heading size="xl" mb={3}>
 								Volunteering Opportunities
 							</Heading>
-							<Text fontSize={21}>
+							<Text>
 								As the largest nonprofit run by high schoolers
 								in North America, School Simplified provides
 								rare opportunities for teenagers: our staff have

@@ -40,7 +40,7 @@ export default function Intro() {
 							Join our student-based community
 						</Heading>
 						<Text my="10px">
-							Benefits of joining are as follows
+							Benefits of joining are as follows:
 						</Text>
 						<Flex justify={{ base: "center", md: "flex-start" }}>
 							<UnorderedList>

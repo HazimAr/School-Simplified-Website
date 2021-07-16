@@ -20,7 +20,7 @@ export default function Why(): JSX.Element {
 							>
 								Why Us?
 							</Heading>
-							<Text textAlign={{ base: "center", md: "left" }}>
+							<Text textAlign={{ base: "center", md: "left" }} maxW="60ch">
 								School Simplified believes that quality
 								education should be accessible to all students.
 								We strive to maintain our status as a NPO, while

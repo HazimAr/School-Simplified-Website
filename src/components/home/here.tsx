@@ -9,7 +9,7 @@ export default function Here() {
 	return (
 		<Container bg="brand.transparent" py="50px" mb="25px">
 			<ContainerInside>
-				<VStack spacing={10}>
+				<VStack spacing={-5}>
 					<Card
 						title="Free Tutoring"
 						description="Lorem ipsum dolor sit amet consectetur elit. Assumenda minima deleniti Lorem ipsum"
@@ -17,7 +17,11 @@ export default function Here() {
 						href="/tutoring"
 					/>
 
-					<HStack justify="center" spacing={10}>
+					<HStack
+						justify="center"
+						spacing={{ base: 0, md: 10 }}
+						flexDir={{ base: "column", md: "row" }}
+					>
 						<Card
 							title="Essay Revisions"
 							description="Our team consists of exceptional writers, all that go through a rigorous process to establish themselves as verified proofreaders. Simply fill out the form with basic details involving your essay and a proofreader will make the necessary edits"
@@ -58,6 +62,7 @@ function Card({
 		<VStack
 			rounded={rounded}
 			bg="brand.transparent2"
+			my={10}
 			minH={300}
 			w="100%"
 			justify="center"

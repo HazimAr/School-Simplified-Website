@@ -20,7 +20,6 @@ export default function Intro() {
 					justify="center"
 					align="center"
 					mt="50px"
-					
 					flexDir={{ base: "column-reverse", md: "row" }}
 				>
 					<Box textAlign="left" my="" mx="25px">

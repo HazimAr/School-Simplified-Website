@@ -179,20 +179,21 @@ export default function Footer(): JSX.Element {
 				</ContainerInside>
 			</Container>
 			<Container bg="#727ce3" py="10px">
-				<Flex
-					justify="space-between"
-					align="center"
-					maxW="1200px"
-					w="100%"
-					mx="50px"
-					color="text.200"
-				>
-					<Text>School Simplified © 2021 All Rights Reserved</Text>
-					<Text>
-						<Link href="/terms">Terms of Service</Link> |{" "}
-						<Link href="/privacy">Privacy Policy</Link>
-					</Text>
-				</Flex>
+				<ContainerInside>
+					<Flex
+						justify="space-between"
+						align="center"
+						color="text.200"
+					>
+						<Text>
+							School Simplified © 2021 All Rights Reserved
+						</Text>
+						<Text>
+							<Link href="/terms">Terms of Service</Link> |{" "}
+							<Link href="/privacy">Privacy Policy</Link>
+						</Text>
+					</Flex>
+				</ContainerInside>
 			</Container>
 		</Box>
 	);

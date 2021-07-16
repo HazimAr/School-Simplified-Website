@@ -22,9 +22,9 @@ export default function Intro() {
 							like-minded teenagers can meet and form life-lasting
 							connections.
 						</Text>
-						<Link href="/resources">
+						{/* <Link href="/resources">
 							<Button>Get Free Help</Button>
-						</Link>
+						</Link> */}
 					</Box>
 
 					<Box textAlign="left" my={`${spacing}px`}>

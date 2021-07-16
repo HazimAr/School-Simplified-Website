@@ -19,8 +19,8 @@ export default function Here() {
 
 					<HStack
 						justify="center"
-						spacing={{ base: 0, md: 10 }}
-						flexDir={{ base: "column", md: "row" }}
+						spacing={{ base: 0, lg: 10 }}
+						flexDir={{ base: "column", lg: "row" }}
 					>
 						<Card
 							title="Essay Revisions"

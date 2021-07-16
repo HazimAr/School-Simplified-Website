@@ -1,3 +1,4 @@
+import { getArtInfo } from "@api/notion";
 import {
 	Button,
 	Center,
@@ -25,7 +26,6 @@ import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import { rounded } from "@styles/theme";
 import React from "react";
-// import { FaDiscord } from "react-icons/fa";
 import {
 	RiDiscordLine,
 	RiFacebookBoxLine,
@@ -257,62 +257,57 @@ export default function Community(): JSX.Element {
 			</Container>
 
 			<Container>
-				
-					<ContainerInside maxW="1000px">
-						<HStack
-							
-							flexDir={{ base: "column", md: "row" }}
+				<ContainerInside maxW="1000px">
+					<HStack flexDir={{ base: "column", md: "row" }}>
+						{/* disc box */}
+						<VStack
+							boxSize="100%"
+							bg="brand.transparent"
+							p="15px"
+							rounded={rounded}
+							boxShadow="lg"
+							justify="center"
+							spacing={5}
 						>
-							{/* disc box */}
-							<VStack
-								boxSize="100%"
-								bg="brand.transparent"
-								p="15px"
-								rounded={rounded}
-								boxShadow="lg"
-								justify="center"
-								
-								spacing={5}
+							<Link
+								href="https://discord.com/invite/school"
+								isExternal
 							>
-								<Link
-									href="https://discord.com/invite/school"
-									isExternal
-								>
-									<Image
-										src="\undraw\duck_group_shot.png"
-										h="300px"
-										objectFit="cover"
-									/>
-								</Link>
+								<Image
+									src="\undraw\duck_group_shot.png"
+									h="300px"
+									objectFit="cover"
+								/>
+							</Link>
 
-								<Heading size="md">
-									Join our Discord. Come for the academic
-									help, stay for the events, friends, and
-									become a part of the family!
-								</Heading>
-							</VStack>
+							<Heading size="md">
+								Join our Discord. Come for the academic help,
+								stay for the events, friends, and become a part
+								of the family!
+							</Heading>
+						</VStack>
 
-							<Stack boxSize="100%" flexDir="column">
-								<Heading
-									justify="left"
-									textAlign={{ base: "center", md: "left" }}
-								>
-									Our Members
-								</Heading>
+						<Stack boxSize="100%" flexDir="column">
+							<Heading
+								justify="left"
+								textAlign={{ base: "center", md: "left" }}
+							>
+								Our Members
+							</Heading>
 
-								<Text
-									fontSize="2xl"
-									textAlign={{ base: "center", md: "left" }}
-								>
-									Our members work together to aid students
-									all around the globe in academics and
-									extracurricular activities. We offer student
-									opportunities, daily motivation, school
-									help, entertainment, and much more!
-								</Text>
-							</Stack>
-						</HStack>
-					
+							<Text
+								fontSize="2xl"
+								textAlign={{ base: "center", md: "left" }}
+							>
+								Our members work together to aid students all
+								around the globe in academics and
+								extracurricular activities. We offer student
+								opportunities, daily motivation, school help,
+								entertainment, and much more!
+							</Text>
+						</Stack>
+					</HStack>
+
 					<Divider borderColor="white" my="50px" />
 				</ContainerInside>
 			</Container>
@@ -531,7 +526,7 @@ export default function Community(): JSX.Element {
 							>
 								<Icon
 									as={RiDiscordLine}
-									boxSize={{base:100, md: 150}}
+									boxSize={{ base: 100, md: 150 }}
 									color="white"
 								/>
 							</Link>
@@ -576,8 +571,8 @@ export default function Community(): JSX.Element {
 	);
 }
 
-// export async function getServerSideProps() {
-// 	const artInfo = await getArtInfo();
-// 	console.log(artInfo);
-// 	return { props: { artInfo } };
-// }
+export async function getServerSideProps() {
+	const artInfo = await getArtInfo();
+	console.log(artInfo);
+	return { props: { artInfo } };
+}

@@ -191,7 +191,7 @@ const artConfig = {
 
 async function getArtInfo(): Promise<ArtData> {
 	const { data: artPageData } = await axios.get(
-		`https://api.notion.com/v1/blocks/274c8b9a74e8427db2455f156db60ddc/children`,
+		`https://api.notion.com/v1/blocks/fcfaa8ea3a2041cf91ec958db799026e/children`,
 		artConfig
 	);
 

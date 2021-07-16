@@ -1,6 +1,5 @@
 import { getArtInfo } from "@api/notion";
 import {
-	Button,
 	Center,
 	Divider,
 	Heading,
@@ -22,6 +21,7 @@ import {
 	useDisclosure,
 	VStack,
 } from "@chakra-ui/react";
+import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import { rounded } from "@styles/theme";
@@ -138,7 +138,6 @@ export default function Community({
 
 											<ModalFooter>
 												<Button
-													colorScheme="purple"
 													mr={3}
 													onClick={onClose}
 												>

@@ -84,26 +84,37 @@ export default function Community({
 										motionPreset="slideInRight"
 									>
 										<ModalOverlay />
-										<ModalContent bg="brand.purple.dark">
+										<ModalContent
+											bg="brand.purple.dark"
+											textAlign="left"
+										>
 											<ModalHeader>
 												Monthly Art Contest Winner
 											</ModalHeader>
 											<ModalCloseButton />
 											<ModalBody>
 												This months art contest prompt
-												was: {artInfo.monthlyPrompt}
-												<Heading size="sm">
-													{artInfo.name}
-												</Heading>
+												was:{" "}
+												<Text>
+													{artInfo.monthlyPrompt}
+												</Text>
+												<Text>
+													The winner is:
+													<Heading size="sm">
+														{artInfo.name}
+													</Heading>
+												</Text>
 												<Heading size="sm" mt={5}>
 													Artist Description:
 												</Heading>
-												{artInfo.description}
+												<Text>
+													{artInfo.description}
+												</Text>
 												<Heading size="sm" mt={5}>
 													{artInfo.socialMedia.map(
 														(social) => {
 															return (
-																<Text>
+																<Text mt={5}>
 																	Follow{" "}
 																	{
 																		artInfo.name
@@ -111,9 +122,13 @@ export default function Community({
 																	on{" "}
 																	{
 																		social.media
-																	}{" "}
-																	:
-																	{social.tag}
+																	}
+																	:{" "}
+																	<Text>
+																		{
+																			social.tag
+																		}
+																	</Text>
 																</Text>
 															);
 														}

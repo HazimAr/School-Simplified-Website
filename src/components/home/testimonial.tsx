@@ -22,7 +22,7 @@ const Reviews = [
 
 export default function Intro() {
 	return (
-		<Container pt={10}>
+		<Container py={20} bg="brand.transparent">
 			<ContainerInside>
 				<Heading as="h1" mb={5}>
 					Success Stories
@@ -86,7 +86,6 @@ export default function Intro() {
 						</Box>
 					</Flex>
 				</Flex>
-				<Divider bg="white" mt={16} />
 			</ContainerInside>
 		</Container>
 	);

@@ -39,6 +39,7 @@ const theme = extendTheme({
 		body: "Montserrat-Regular",
 	},
 	styles: {
+		// @ts-ignore
 		global: () => ({
 			html: {
 				height: "100%",

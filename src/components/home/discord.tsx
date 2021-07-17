@@ -39,23 +39,20 @@ export default function Intro() {
 						<Heading as="h1">
 							Join our student-based community
 						</Heading>
-						<Text my="10px">
-							Benefits of joining are as follows:
-						</Text>
+						<Text my="10px">You'll gain exclusive access to:</Text>
 						<Flex justify={{ base: "center", md: "flex-start" }}>
 							<UnorderedList>
 								<ListItem>
-									We hold monthly events in our Discord
-									server, including movie nights, game nights,
-									and competitions
+									Fun events, including movie nights, game
+									nights, and competitions
 								</ListItem>
-								<ListItem>
-									Start making new friends from all around the
+								<ListItem my={2}>
+									Networks to make friends from all over the
 									world
 								</ListItem>
 								<ListItem>
-									Participate in a community of diverse,
-									open-minded, and inclusive students
+									Live homework help with verified staff
+									through text-based messages
 								</ListItem>
 							</UnorderedList>
 						</Flex>

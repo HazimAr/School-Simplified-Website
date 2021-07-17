@@ -25,7 +25,8 @@ export default function Here() {
 							rounded={rounded}
 							bg="brand.transparent2"
 							minH={300}
-							my={10}
+							my={{ base: 10, lg: 0 }}
+							mx={{ base: 0, lg: 10 }}
 							w="100%"
 							justify="center"
 							boxShadow="2xl"

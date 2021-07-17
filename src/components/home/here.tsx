@@ -13,7 +13,7 @@ export default function Here() {
 					<Card
 						title="Free Tutoring"
 						description="We offer one-on-one tutoring in a wide range of subjects, from regular classes to AP’s, to cater to the needs of a larger audience. It’s our goal to get back to students quickly to better prepare them for their classes, upcoming tests, and so they can thoroughly understand the material."
-						button="Get Free Help"
+						button="Sign Up"
 						href="/tutoring"
 					/>
 
@@ -25,13 +25,13 @@ export default function Here() {
 						<Card
 							title="Essay Revisions"
 							description="Our team consists of exceptional writers, all that go through a rigorous process to establish themselves as verified proofreaders. Simply fill out the form with basic details involving your essay and a proofreader will make the necessary edits."
-							button="Get Free Help"
+							button="Submit Essay"
 							href="/essay"
 						/>
 						<Card
 							title="Resources"
 							description="School Simplified has hundreds of high-quality notes ranging across many different school subjects. Our library of notes will consistently be updating to cover as many subjects as possible."
-							button="Get Free Help"
+							button="Get Resources"
 							href="/resources"
 						/>
 						{/* <Card

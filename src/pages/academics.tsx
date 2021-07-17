@@ -6,22 +6,22 @@ import {rounded} from "@styles/theme";
 
 const sections = [
 	{
-		title: "Chat-Helping & Essay Help",
+		title: "Tutoring",
 		description:
-			"Essay Help: Revising and reviewing essays, providing writing tips to students. Chat-Helping: Monitoring tickets and designated subject channels, answering text questions",
+			"Provide high-quality, free educational help through voice calls to high school students across the world.",
+		link: "https://forms.gle/AfxmXmGf6fYsW4fKA",
+	},
+	{
+		title: "Chat-Helping or Essay Revisions",
+		description:
+			"Chat-Helping: Monitoring tickets and designated subject channels, answering text questions. Essay Revisions: Revising and reviewing essays, providing writing tips to students.",
 		link: "https://forms.gle/7Qceft4HgrtLPMmP6",
 	},
 	{
-		title: "Notes & Prep",
+		title: "Notes or Prep",
 		description:
-			"Notes: Creating notes, finding notes, scanning notes, etc. for school subjects. Prep: Creating resources and holding events regarding high school and college preparation",
+			"Notes: Creating notes, finding notes, scanning notes, etc. for school subjects. Prep: Creating resources and holding events regarding high school and college preparation.",
 		link: "https://forms.gle/HuwTM42uKQsVAvPTA",
-	},
-	{
-		title: "Tutoring",
-		description:
-			"Provide high-quality, free educational help to high school students across the world",
-		link: "https://forms.gle/AfxmXmGf6fYsW4fKA",
 	},
 ];
 

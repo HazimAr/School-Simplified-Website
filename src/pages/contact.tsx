@@ -12,7 +12,7 @@ export default function Contact(): JSX.Element {
 						Get in Touch
 					</Heading>
 					<Heading as="h2" size="md">
-						Have Questions? Comments? Concerns?
+						Questions, comments, or concerns?
 					</Heading>
 				</Box>
 				<Flex

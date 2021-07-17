@@ -23,39 +23,46 @@ const teams: PanelProps[] = [
 	{
 		teamName: "Academics",
 		teamDesc:
-			"Help other students in the School Simplified community with our Academics Team. Responsibilities include educational help, sharing resources, and tutoring.",
+			"As part of our Academics Team, you can provide educational help to other students in the School Simplified community. If you excel in school and enjoy sharing your knowledge, join the Academics Team!",
 		src: "/logos/aca_logo.png",
 		link: "/academics",
 		teams: [
-			"Notes",
-			"Prep",
-			"Tutoring",
-			"Chat-Helping",
-			"Essay Proofreading",
+			"tutoring",
+			"chat-helping",
+			"essay revisions",
+			"creating notes",
+			"providing college advice",
+			"more.",
 		],
 	},
 	{
 		teamName: "Tech",
 		teamDesc:
-			"The Tech Team is a good fit for volunteers that are handy with technology. Skills such as programming, quality management, development, and familiarity with Discord are all essential to maintain our website and Discord server; we encourage you to volunteer if you are knowledgeable in any of these areas.",
+			"Joining our Technology Team will allow you to practice and develop skills such as programming, web development, and quality management. If you are knowledgeable in any of these areas, we encourage you to apply and help maintain our website and Discord server!",
 		src: "/logos/tech_logo.png",
 		link: "https://forms.gle/tqXm5aLwhWGQ4cGA6",
-		teams: ["Website", "Developer", "Quality Assurance", "Discord"],
+		teams: [
+			"web development",
+			"bot development",
+			"VPS administration",
+			"quality assurance",
+			"server management",
+			"more.",
+		],
 	},
 	{
 		teamName: "Marketing",
 		teamDesc:
-			"Joining the Marketing Team is a great opportunity for volunteers with experience in social media, design, and marketing. If you are interested in working closely with different aspects of the School Simplified community, such as events, social media, and blog posts, volunteer with the Marketing Team!",
+			"Joining the Marketing Team is a great opportunity for volunteers with experience in social media, design, and marketing. If you are interested in spreading School Simplified's mission, volunteer with the Marketing Team!",
 		src: "/logos/mkt_logo.png",
 		link: "https://forms.gle/xrZma1KjtZ6nzRxS8",
 		teams: [
-			"Instagram",
-			"TikTok",
-			"Blog",
-			"Marketing Analytics",
-			"Events",
-			"PR",
-			"Design",
+			"content creation",
+			"design",
+			"data analysis",
+			"outreaching",
+			"community engagement",
+			"more.",
 		],
 	},
 	// {
@@ -195,7 +202,7 @@ function Panel({
 						</Text>
 						{teams ? (
 							<Text textAlign="left" fontStyle="italic">
-								Teams include{" "}
+								Functions include{" "}
 								{teams.slice(0, teams.length - 1).join(", ")},
 								and {teams[teams.length - 1]}
 							</Text>

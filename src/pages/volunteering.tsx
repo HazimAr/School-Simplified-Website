@@ -26,13 +26,13 @@ export default function Volunteering(): JSX.Element {
 							<Text>
 								As the largest nonprofit run by high schoolers
 								in North America, School Simplified provides
-								rare opportunities for teenagers: our staff have
-								the opportunities to run a fully independent
-								business, negotiate and build relations across
-								organizations, learn marketing and business
-								skills, and build code for real-world
-								applications. Additionally, you can earn
-								community service hours for all the work you do.
+								valuable opportunities for teenagers. You can
+								help build code for real-life applications,
+								market and negotiate with people
+								internationally, and help develop products and
+								services. There are also leadership
+								opportunities available. Everything you do
+								counts for community service hours!
 							</Text>
 						</Box>
 						<Image

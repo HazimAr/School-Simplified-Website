@@ -91,12 +91,12 @@ const boardOfDirectors: Person[] = [
 	},
 	{
 		name: "Lauren Hsieh",
-		title: "Director",
+		title: "Director & Secretary",
 		img: "/staff/default.png",
 	},
 	{
 		name: "Diana Zheng",
-		title: "Director",
+		title: "Director & Treasurer",
 		img: "/staff/default.png",
 	},
 	{

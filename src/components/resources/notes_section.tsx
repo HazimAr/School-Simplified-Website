@@ -308,7 +308,7 @@ function NotesGrid({ allNotes }: { allNotes: NotesProps[] }): JSX.Element {
 					))
 				) : (
 					<Text fontStyle="italic">
-						Looks like there's nothing here...
+						Select one of the categories on the left to start!
 					</Text>
 				)}
 			</Flex>

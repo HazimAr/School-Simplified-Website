@@ -38,7 +38,7 @@ export default function Resources({ subjects }: AllSubjects): JSX.Element {
 
 			<NotesSection subjects={subjects} />
 
-			<Container bg="brand.transparent">
+			{/* <Container bg="brand.transparent">
 				<ContainerInside my={5}>
 					<Flex
 						alignItems="center"
@@ -61,7 +61,7 @@ export default function Resources({ subjects }: AllSubjects): JSX.Element {
 						</Box>
 					</Flex>
 				</ContainerInside>
-			</Container>
+			</Container> */}
 		</>
 	);
 }

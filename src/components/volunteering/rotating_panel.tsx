@@ -1,16 +1,16 @@
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import {
-	Box,
-	Center,
-	Circle,
-	Flex,
-	Heading,
-	Icon,
-	Image,
-	Link,
-	ScaleFade,
-	Text,
-	useControllableState,
+    Box,
+    Center,
+    Circle,
+    Flex,
+    Heading,
+    Icon,
+    Image,
+    Link,
+    ScaleFade,
+    Text,
+    useControllableState
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
@@ -29,7 +29,7 @@ const teams: PanelProps[] = [
 		teams: [
 			"tutoring",
 			"chat-helping",
-			"essay revisions",
+			"Essay Revision",
 			"creating notes",
 			"providing college advice",
 			"more.",

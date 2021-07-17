@@ -16,7 +16,7 @@ export default function Here() {
 						flexDir={{ base: "column", lg: "row" }}
 					>
 						<Card
-							title="Free Essay Revisions"
+							title="Free Essay Revision"
 							description="We offer in-depth proofreading and writing tips/tricks!"
 							button="Submit Essay"
 							href="/essay"

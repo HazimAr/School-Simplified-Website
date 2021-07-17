@@ -1,8 +1,8 @@
-import { Box, Heading, Link, Text, Flex } from "@chakra-ui/react";
+import { Box, Flex, Heading, Link, Text } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import {rounded} from "@styles/theme";
+import { rounded } from "@styles/theme";
 
 const sections = [
 	{
@@ -12,9 +12,9 @@ const sections = [
 		link: "https://forms.gle/AfxmXmGf6fYsW4fKA",
 	},
 	{
-		title: "Chat-Helping or Essay Revisions",
+		title: "Chat-Helping or Essay Revision",
 		description:
-			"Chat-Helping: Monitoring tickets and designated subject channels, answering text questions. Essay Revisions: Revising and reviewing essays, providing writing tips to students.",
+			"Chat-Helping: Monitoring tickets and designated subject channels, answering text questions. Essay Revision: Revising and reviewing essays, providing writing tips to students.",
 		link: "https://forms.gle/7Qceft4HgrtLPMmP6",
 	},
 	{
@@ -32,7 +32,14 @@ export default function Academics(): JSX.Element {
 				<Flex justify="center" flexDir="column" align="center">
 					{sections.map((section) => {
 						return (
-							<Box key={section.title} my="30px" maxW="55ch" bg="brand.transparent" rounded={rounded} p="20px">
+							<Box
+								key={section.title}
+								my="30px"
+								maxW="55ch"
+								bg="brand.transparent"
+								rounded={rounded}
+								p="20px"
+							>
 								<Heading>{section.title}</Heading>
 								<Text my="10px">{section.description}</Text>
 								<Link href={section.link} isExternal>

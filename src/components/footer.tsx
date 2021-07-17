@@ -52,7 +52,7 @@ const services = [
 	},
 
 	{
-		name: "Free Essay Revisions",
+		name: "Free Essay Revision",
 		link: "/essay",
 	},
 	{

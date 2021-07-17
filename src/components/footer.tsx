@@ -97,8 +97,8 @@ const socials = [
 // eslint-disable-next-line import/no-default-export
 export default function Footer(): JSX.Element {
 	return (
-		<Box as="footer">
-			<Box zIndex={-1} pt={-100}>
+		<Box as="footer" mt={-100}>
+			<Box zIndex={-1}>
 				<Wave
 					fill="#636EE0"
 					// paused

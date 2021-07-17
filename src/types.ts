@@ -39,5 +39,7 @@ export type SocialMedia = {
 
 export type QAPair = {
 	question: string;
-	answer: string;
+	answer: AnswerPart[];
 };
+
+export type AnswerPart = { text: string; link?: string };

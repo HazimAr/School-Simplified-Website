@@ -5,17 +5,19 @@ import {
 	AccordionItem,
 	AccordionPanel,
 	Flex,
+	Link,
 } from "@chakra-ui/react";
+import { AnswerPart } from "types";
 
 type FaqItemProps = {
 	question: string;
-	answer: string;
+	answers: AnswerPart[];
 	open: boolean;
 };
 
 export default function FaqItem({
 	question,
-	answer,
+	answers,
 	open,
 }: FaqItemProps): JSX.Element {
 	return (
@@ -32,7 +34,7 @@ export default function FaqItem({
 				_active={{ boxShadow: "none" }}
 				_focus={{ boxShadow: "none " }}
 			>
-				<Flex textAlign="left" flex="1">
+				<Flex textAlign="left" flex="1" fontWeight="bold">
 					{question}
 				</Flex>
 				{open ? (
@@ -41,7 +43,23 @@ export default function FaqItem({
 					<TriangleDownIcon color="#424242" />
 				)}
 			</AccordionButton>
-			<AccordionPanel pb={4}>{answer}</AccordionPanel>
+			<AccordionPanel pb={4}>
+				{answers.map((answer: AnswerPart, idx: number) => {
+					if (answer.link) {
+						return (
+							<Link
+								href={answer.link}
+								key={"link_" + idx}
+								color="brand.gold2"
+							>
+								{answer.text}
+							</Link>
+						);
+					} else {
+						return answer.text;
+					}
+				})}
+			</AccordionPanel>
 		</AccordionItem>
 	);
 }

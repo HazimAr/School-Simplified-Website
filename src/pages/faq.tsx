@@ -14,7 +14,7 @@ export default function Contact({
 		<Container>
 			<ContainerInside>
 				<Flex flexDirection="column" align="stretch">
-					<Heading as="h1" size="xl" mb={3}>
+					<Heading as="h1" size="xl" my={5}>
 						FAQ
 					</Heading>
 					<FaqList list={qaPairs} />

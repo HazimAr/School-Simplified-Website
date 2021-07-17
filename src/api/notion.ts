@@ -1,5 +1,6 @@
 import axios from "axios";
 import {
+	AnswerPart,
 	ArtData,
 	Class,
 	NotesProps,
@@ -372,30 +373,53 @@ async function getFaqInfo() {
 		`https://api.notion.com/v1/blocks/bc5b51a1b7674a1da9fd09b559844881/children`,
 		notesConfig
 	);
-	console.log(data);
+	// console.log(data);
 	const qaPairs: QAPair[] = data.results
+		.filter(
+			(block: any) =>
+				block.type === "paragraph" && block.paragraph?.text.length
+		)
 		.map((block: any) => {
-			if (block.type.startsWith("paragraph")) {
-				// treat as a notes object until implemented
-				let question: string = "";
-				let answer: string = "";
-				const text = block.paragraph.text[0]?.plain_text;
-				if (text) {
-					question = text.split(":")[0].trim();
-					answer = text.split(":")[1].trim();
-				} else {
-					console.warn(`ID ${block.id} is malformed!`);
-					return;
-				}
-				return {
-					question,
-					answer,
-				};
+			let question: string = "";
+			let answers: AnswerPart[] = [];
+			const textBlocks = block.paragraph.text;
+
+			const questionText = textBlocks[0];
+			if (questionText.plain_text && questionText.annotations?.bold) {
+				question = questionText.plain_text;
+			} else {
+				console.warn(`ID ${block.id} [Q&A] is malformed!`);
+				return;
 			}
-			return;
+
+			if (textBlocks.length < 1) {
+				console.warn(`ID ${block.id} [Q&A] is malformed!`);
+				return;
+			} else {
+				for (let i = 1; i < textBlocks.length; i++) {
+					if (textBlocks[i].plain_text?.length) {
+						if (textBlocks[i].href) {
+							answers.push({
+								text: textBlocks[i].plain_text,
+								link: textBlocks[i].href,
+							});
+						} else {
+							answers.push({ text: textBlocks[i].plain_text });
+						}
+					}
+				}
+
+				console.log(`Answers for "${question}":`);
+				console.log(answers);
+			}
+
+			return {
+				question,
+				answer: answers,
+			};
 		})
-		.filter((QAPair: any) => QAPair);
-	console.log(qaPairs);
+		.filter((qa: QAPair) => qa && qa.question.length && qa.answer.length);
+	// console.log(qaPairs);
 
 	return qaPairs;
 }

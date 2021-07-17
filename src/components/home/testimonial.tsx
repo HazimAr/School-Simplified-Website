@@ -11,7 +11,7 @@ const Reviews = [
 	{
 		review: "They helped me over the course of 3 days redo over 9 assignments to pass the year. I want everyone to know that they are so kind and always ready to help, they are always courteous and understanding. I want to say from the bottom of my heart, Thank you!",
 		name: "Dak",
-		title: "sophomore",
+		title: "Sophomore",
 	},
 	{
 		review: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut error vel omnis adipisci. Ad nam officiis sapiente dicta incidunt harum",

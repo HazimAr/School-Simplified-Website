@@ -332,6 +332,8 @@ export default function Community({
 								motivation, school help, entertainment, and much
 								more!
 							</Text>
+
+							<Button w="fit-content">Join Our Discord</Button>
 						</Stack>
 					</HStack>
 

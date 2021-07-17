@@ -408,9 +408,6 @@ async function getFaqInfo() {
 						}
 					}
 				}
-
-				console.log(`Answers for "${question}":`);
-				console.log(answers);
 			}
 
 			return {

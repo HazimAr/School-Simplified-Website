@@ -13,13 +13,11 @@ export default function Intro() {
 						<Heading>The key to your educational success.</Heading>
 						<Text my="10px">
 							School Simplified is a virtually run nonprofit that
-							aims to spread educational equality by providing
-							free educational services, products, and
-							opportunities for teenagers. We provide free
-							tutoring, free essay revisions, free notes, free
-							college preparation, and a community where
-							like-minded teenagers can meet and form life-lasting
-							connections.
+							spreads educational equality by providing free
+							educational services, products, and opportunities
+							for teenagers. Along with the free resources below,
+							we offer a community where teenagers can form
+							life-lasting connections.
 						</Text>
 						{/* <Link href="/resources">
 							<Button>Get Free Help</Button>

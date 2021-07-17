@@ -98,7 +98,7 @@ export default function Community({
 												<Text>
 													{artInfo.monthlyPrompt}
 												</Text>
-												<Text>
+												<Text mt={5}>
 													The winner is:
 													<Heading size="sm">
 														{artInfo.name}
@@ -156,11 +156,10 @@ export default function Community({
 
 								<Text fontSize="lg">
 									Our organization features a global community
-									of over 60,000 teenagers! Diverse,
-									open-minded, and inclusive, our students
-									enjoy conversing in an equitable environment
-									where every new acquaintance becomes a
-									longtime friend!
+									of over 60,000 teenagers. In this diverse,
+									open-minded, and inclusive community, you'll
+									have opportunities to meet new friends from
+									all around the world.
 								</Text>
 							</Stack>
 						</HStack>

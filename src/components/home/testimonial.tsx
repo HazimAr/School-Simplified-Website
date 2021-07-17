@@ -9,7 +9,7 @@ const Reviews = [
 		title: "Sophomore",
 	},
 	{
-		review: "They helped me over the course of 3 days redo over 9 assignments to pass the year. I was scared these people might've thought I was pestering them, but I want everyone to know that they are so kind and always ready to help, they are always courteous and understanding. They helped me late at night and through out the day.  I want to say from the bottom of my heart, Thank you!",
+		review: "They helped me over the course of 3 days redo over 9 assignments to pass the year. I want everyone to know that they are so kind and always ready to help, they are always courteous and understanding. I want to say from the bottom of my heart, Thank you!",
 		name: "Dak",
 		title: "sophomore",
 	},
@@ -35,7 +35,7 @@ export default function Intro() {
 						flexDir={{ base: "column", lg: "row" }}
 						maxW={{ base: 300, sm: 450, md: 600, lg: 1200 }}
 					>
-						<Box>
+						<Box w="100%">
 							<Text>"{Reviews[0].review}"</Text>
 							<Box>
 								<Heading as="h1" size="md">
@@ -55,7 +55,7 @@ export default function Intro() {
 							<Divider orientation="vertical" bg="white" />
 						</Center>
 
-						<Box my={{ base: 10, lg: 0 }}>
+						<Box w="100%" my={{ base: 10, lg: 0 }}>
 							<Text>"{Reviews[1].review}"</Text>
 							<Box>
 								<Heading as="h2" size="md">
@@ -73,7 +73,7 @@ export default function Intro() {
 						>
 							<Divider orientation="vertical" bg="white" />
 						</Center>
-						<Box>
+						<Box w="100%">
 							<Text>"{Reviews[2].review}"</Text>
 							<Box>
 								<Heading as="h2" size="md">

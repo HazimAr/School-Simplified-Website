@@ -48,7 +48,7 @@ export default function Here() {
 							title="Free Notes"
 							description="We offer hundreds of high-quality, regularly updated notes in regular subjects and APs!"
 							button="Get Notes"
-							href="/"
+							href="/notes"
 						/>
 						{/* <Card
 						title="HS/College Prep"

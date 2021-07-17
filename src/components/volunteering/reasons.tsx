@@ -5,27 +5,27 @@ import ContainerInside from "@components/containerInside";
 const reasons = [
 	{
 		title: "Earn Volunteer Hours",
-		text: "As a non-profit organization, School Simplified is able to offer you community service hours and opportunities to build up your volunteering experience. With these hours, you can build up your college resume or even utilize them for NHS or anything you need it for!",
+		text: "As a registered nonprofit organization, School Simplified can offer you community service hours and opportunities to increase your volunteering experience. You can use these hours to build up your college application, apply for NHS, or anything else you need them for!",
 	},
 	{
 		title: "Learn New Skills",
-		text: "We offer hands on experience in a professional work setting! Alongside this, we offer learning opportunities such as workshops, training programs, and other methods of learning for those who become a part of our staff.",
+		text: "We offer hands-on experience in a professional work setting! In addition, our staff are given learning opportunities, such as workshops, training programs, and early access to other educational resources.",
 	},
 	{
 		title: "Leadership Opportunities",
-		text: "School Simplified also offers plenty of leadership positions such as management and executive positions from a real company that you can put on your resume! Many of these are only accessible by our volunteers, so there will be many more opportunities that open up once you become a part of the team!",
+		text: "School Simplified also offers plenty of leadership positions, including management and executive positions that you can put on your resume. Since many of these are only accessible to our current staff, more opportunities open up once you become a volunteer with us!",
 	},
 	{
 		title: "Networking and Friends",
-		text: "With a collective community of over 300 volunteers worldwide, we offer an opportunity for you to network with teenagers from different backgrounds, get help from others, as well as make worldwide friends! In addition to this, we offer opportunities for you to network and handle connections on company wide level!",
+		text: "With a collective community of over 300 volunteers worldwide, we offer you opportunities to network with teenagers from all different backgrounds. You'll make useful connections on a company wide level, and even better, form dozens of new friendships!",
 	},
 	{
 		title: "Free Premium Resources",
-		text: "As members of our staff, all volunteers get access to the perks such as premium resources paid by School Simplified! These tools will be for you to use and learn, not only to contribute to the community but it will be for you to explore and learn!",
+		text: "As members of our staff, all volunteers get access to perks such as Canva premium and server hosting, which are paid for by the company. These tools are available for you to use, not only to contribute to our community, but also for you to explore as a learning material!",
 	},
 	{
 		title: "Easy Online Access",
-		text: "School Simplified is completely virtual meaning you can volunteer whenever you want and where ever you want as long as you're connected to the internet, meaning unlimited access to opportunities worldwide!",
+		text: "School Simplified is completely virtual, meaning you can volunteer whenever you want, wherever you want. As long as you have an Internet connection, you have unlimited access to our flexible opportunities worldwide!",
 	},
 ];
 

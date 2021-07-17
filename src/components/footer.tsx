@@ -188,10 +188,10 @@ export default function Footer(): JSX.Element {
 						<Text>
 							School Simplified © 2021 All Rights Reserved
 						</Text>
-						<Text>
+						{/* <Text>
 							<Link href="/terms">Terms of Service</Link> |{" "}
-							<Link href="/privacy">Privacy Policy</Link>
-						</Text>
+							<Link href="/privacy">Privacy Policy</Link> 
+						</Text> */}
 					</Flex>
 				</ContainerInside>
 			</Container>

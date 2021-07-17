@@ -13,7 +13,7 @@ import { AllSubjects } from "types";
 export default function Resources({ subjects }: AllSubjects): JSX.Element {
 	return (
 		<>
-			{/* <Container bg="brand.transparent">
+			<Container bg="brand.transparent">
 				<ContainerInside my={5}>
 					<Flex
 						flexDir={{ base: "column", sm: "row" }}
@@ -21,7 +21,7 @@ export default function Resources({ subjects }: AllSubjects): JSX.Element {
 						justifyContent="space-between"
 					>
 						<Box textAlign={{ base: "center", sm: "left" }}>
-							<Heading mb={3}>Resources</Heading>
+							<Heading mb={3}>Notes</Heading>
 							<Text fontSize={20}>
 								All the notes you'll ever want for your academic
 								needs!
@@ -34,7 +34,7 @@ export default function Resources({ subjects }: AllSubjects): JSX.Element {
 						/>
 					</Flex>
 				</ContainerInside>
-			</Container> */}
+			</Container>
 
 			<NotesSection subjects={subjects} />
 

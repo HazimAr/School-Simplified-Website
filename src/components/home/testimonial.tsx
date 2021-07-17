@@ -37,7 +37,7 @@ export default function Intro() {
 					>
 						<Box w="100%">
 							<Text>"{Reviews[0].review}"</Text>
-							<Box>
+							<Box mt={4}>
 								<Heading as="h1" size="md">
 									{Reviews[0].name}
 								</Heading>
@@ -57,7 +57,7 @@ export default function Intro() {
 
 						<Box w="100%" my={{ base: 10, lg: 0 }}>
 							<Text>"{Reviews[1].review}"</Text>
-							<Box>
+							<Box mt={4}>
 								<Heading as="h2" size="md">
 									{Reviews[1].name}
 								</Heading>
@@ -75,7 +75,7 @@ export default function Intro() {
 						</Center>
 						<Box w="100%">
 							<Text>"{Reviews[2].review}"</Text>
-							<Box>
+							<Box mt={4}>
 								<Heading as="h2" size="md">
 									{Reviews[2].name}
 								</Heading>

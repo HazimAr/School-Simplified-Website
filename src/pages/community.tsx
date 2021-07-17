@@ -327,7 +327,7 @@ export default function Community({
 							>
 								Our server members are fellow high school
 								students who help each other out with academics,
-								extracurricular, and life in general. Our
+								extracurriculars, and life in general. Our
 								volunteers offer student opportunities, daily
 								motivation, school help, entertainment, and much
 								more!

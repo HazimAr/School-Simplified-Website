@@ -35,9 +35,9 @@ const infos = [
 		link: "/faq",
 	},
 	{
-		name: "Donate",
-		link: "/donate",
-	},
+	// 	name: "Donate",
+	// 	link: "/donate",
+	// },
 ];
 
 const services = [

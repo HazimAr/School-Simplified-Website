@@ -318,11 +318,12 @@ export default function Community({
 								fontSize="2xl"
 								textAlign={{ base: "center", md: "left" }}
 							>
-								Our members work together to aid students all
-								around the globe in academics and
-								extracurricular activities. We offer student
-								opportunities, daily motivation, school help,
-								entertainment, and much more!
+								Our server members are fellow high school
+								students who help each other out with academics,
+								extra-curricular, and life in general. Our
+								volunteers offer student opportunities, daily
+								motivation, school help, entertainment, and much
+								more!
 							</Text>
 						</Stack>
 					</HStack>
@@ -339,7 +340,7 @@ export default function Community({
 							<Container>
 								<Heading fontSize="18px" mb="35px">
 									Check out our socials for tips,
-									entertainment, music, podcasts, and
+									entertainment, music, podcasts
 									opportunities and more!
 								</Heading>
 							</Container>

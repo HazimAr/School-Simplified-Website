@@ -4,9 +4,9 @@ import ContainerInside from "@components/containerInside";
 
 const Reviews = [
 	{
-		review: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut error vel omnis adipisci. Ad nam officiis sapiente dicta incidunt harum",
-		name: "Adam Hall",
-		title: "Senior",
+		review: "I was in a panic, attempting to write a final paper 9 hours before it’s due date, and I was in a need for help. I didn’t think I could do it, yet I somehow got it completed thanks to their help and I’m forever grateful!",
+		name: "Luna",
+		title: "Sophomore",
 	},
 	{
 		review: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut error vel omnis adipisci. Ad nam officiis sapiente dicta incidunt harum",

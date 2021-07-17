@@ -18,7 +18,7 @@ const sections = [
 		link: "https://forms.gle/7Qceft4HgrtLPMmP6",
 	},
 	{
-		title: "Notes or Prep",
+		title: "Notes or HS & College Prep",
 		description:
 			"Notes: Creating notes, finding notes, scanning notes, etc. for school subjects. Prep: Creating resources and holding events regarding high school and college preparation.",
 		link: "https://forms.gle/HuwTM42uKQsVAvPTA",

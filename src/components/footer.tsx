@@ -42,12 +42,8 @@ const infos = [
 
 const services = [
 	{
-		name: "Volunteering",
+		name: "Volunteer",
 		link: "/volunteering",
-	},
-	{
-		name: "Resources",
-		link: "/resources",
 	},
 
 	{
@@ -56,8 +52,12 @@ const services = [
 	},
 
 	{
-		name: "Essay Revisions",
+		name: "Free Essay Revisions",
 		link: "/essay",
+	},
+	{
+		name: "Free Notes",
+		link: "/resources",
 	},
 
 	// {

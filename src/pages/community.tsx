@@ -170,6 +170,7 @@ export default function Community({
 							//flexWrap="wrap"
 							justify="center"
 							spacing={{ base: 0, md: 10 }}
+							textAlign="center"
 						>
 							<VStack
 								w="100%"
@@ -178,14 +179,14 @@ export default function Community({
 								rounded={rounded}
 								boxShadow="lg"
 								h="300px"
+								justify="center"
 							>
 								<Heading>Events</Heading>
 								<Heading size="sm">
-									Our Events team works hard to organize
-									events for our community, sometimes even
-									with prizes! We offer things such as:
+									We organize community events, often with
+									prizes, such as:
 								</Heading>
-								<UnorderedList>
+								<UnorderedList textAlign="left">
 									<ListItem>Competitions</ListItem>
 									<ListItem>Hackathons</ListItem>
 									<ListItem>Talent Show</ListItem>
@@ -206,13 +207,14 @@ export default function Community({
 								boxShadow="lg"
 								h="300px"
 								my="20px"
+								justify="center"
 							>
 								<Heading>Music</Heading>
 								<Heading size="sm">
-									Our team has put together playlists of music
-									for you to enjoy!
+									We curate playlists of productivity music to
+									help you study:
 								</Heading>
-								<UnorderedList>
+								<UnorderedList textAlign="left">
 									<Link
 										href="https://open.spotify.com/playlist/5xy112KNO4WBzaxR1tioT9?si=cbf67fcfe567406b&nd=1"
 										isExternal
@@ -254,15 +256,19 @@ export default function Community({
 								rounded={rounded}
 								boxShadow="lg"
 								h="300px"
+								justify="center"
 							>
 								<Heading>Friends</Heading>
 								<Heading size="xsm">
-									Start making new friends from all around the
-									world by joining our server. You can chat,
-									voice call, play games, or even enter events
-									with others to form new and exciting
-									friendships!
+									We operate a 60k-member Discord server,
+									which offers:
 								</Heading>
+								<UnorderedList textAlign="left">
+									<ListItem>Text Chat</ListItem>
+									<ListItem>Voice Calls</ListItem>
+									<ListItem>Games</ListItem>
+									<ListItem>Levels</ListItem>
+								</UnorderedList>
 							</VStack>
 						</HStack>
 					</VStack>

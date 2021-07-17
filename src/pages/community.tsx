@@ -277,7 +277,7 @@ export default function Community({
 
 			<Container>
 				<ContainerInside maxW="1000px">
-					<HStack flexDir={{ base: "column", md: "row" }}>
+					<HStack flexDir={{ base: "column", md: "row" }} spacing={{ base: 0, md: 10 }}>
 						{/* disc box */}
 						<VStack
 							boxSize="100%"
@@ -300,9 +300,9 @@ export default function Community({
 							</Link>
 
 							<Heading size="md">
-								Join our Discord. Come for the academic help,
-								stay for the events, friends, and become a part
-								of the family!
+								Join our Discord. Come for the academic help.
+								Stay for the community and become a part of the
+								family!
 							</Heading>
 						</VStack>
 
@@ -311,7 +311,7 @@ export default function Community({
 								justify="left"
 								textAlign={{ base: "center", md: "left" }}
 							>
-								Our Members
+								Our Discord Server
 							</Heading>
 
 							<Text
@@ -340,8 +340,8 @@ export default function Community({
 							<Container>
 								<Heading fontSize="18px" mb="35px">
 									Check out our socials for tips,
-									entertainment, music, podcasts
-									opportunities and more!
+									entertainment, music, podcasts opportunities
+									and more!
 								</Heading>
 							</Container>
 						</VStack>

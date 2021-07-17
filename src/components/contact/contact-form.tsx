@@ -3,6 +3,7 @@ import {
 	FormControl,
 	FormLabel,
 	Input,
+	Stack,
 	Textarea,
 } from "@chakra-ui/react";
 import Button from "@components/button";
@@ -25,8 +26,8 @@ function StyledInput({
 		<Input
 			borderWidth="xl"
 			borderRadius="xl"
-			borderColor="#5a60ad"
-			focusBorderColor="#5a60ad"
+			borderColor="brand.purple.light"
+			focusBorderColor="brand.purple.light"
 			placeholder={placeholder}
 			_placeholder={{ color: "#3f404e" }}
 			_hover={{ backgroundColor: "transparent" }}
@@ -92,7 +93,7 @@ export default function ContactForm(): JSX.Element {
 			p={10}
 		>
 			<Flex flexDirection="row" justify="space-between">
-				<Flex flexDirection="column" mr={2}>
+				<Stack mr={2}>
 					<FormLabel>First Name</FormLabel>
 					<StyledInput
 						placeholder="First Name"
@@ -105,8 +106,8 @@ export default function ContactForm(): JSX.Element {
 							});
 						}}
 					/>
-				</Flex>
-				<Flex flexDirection="column" ml={2}>
+				</Stack>
+				<Stack ml={2}>
 					<FormLabel>Last Name</FormLabel>
 					<StyledInput
 						placeholder="Last Name"
@@ -119,7 +120,7 @@ export default function ContactForm(): JSX.Element {
 							});
 						}}
 					/>
-				</Flex>
+				</Stack>
 			</Flex>
 			<FormLabel>Email</FormLabel>
 			<StyledInput

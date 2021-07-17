@@ -1,4 +1,4 @@
-import { Heading, HStack, Link, Text, VStack } from "@chakra-ui/react";
+import { Flex, Heading, Link, Text, VStack } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -10,11 +10,10 @@ export default function Here() {
 		<Container bg="brand.transparent" py="50px" mb="25px">
 			<ContainerInside>
 				<VStack spacing={-5}>
-					<HStack
+					<Flex
 						justify="center"
 						spacing={{ base: 0, lg: 10 }}
 						flexDir={{ base: "column", lg: "row" }}
-						
 					>
 						<Card
 							title="Free Essay Revisions"
@@ -25,8 +24,8 @@ export default function Here() {
 						<VStack
 							rounded={rounded}
 							bg="brand.transparent2"
-							my={5}
 							minH={300}
+							my={10}
 							w="100%"
 							justify="center"
 							boxShadow="2xl"
@@ -56,7 +55,7 @@ export default function Here() {
 						button="Get Free Help"
 						href="/prep"
 					/> */}
-					</HStack>
+					</Flex>
 				</VStack>
 			</ContainerInside>
 		</Container>
@@ -78,11 +77,9 @@ function Card({
 		<VStack
 			rounded={rounded}
 			bg="brand.transparent2"
-			my={5}
 			minH={300}
 			w="100%"
 			justify="center"
-			
 			boxShadow="lg"
 			p={10}
 		>

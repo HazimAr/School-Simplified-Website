@@ -9,9 +9,9 @@ const Reviews = [
 		title: "Sophomore",
 	},
 	{
-		review: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut error vel omnis adipisci. Ad nam officiis sapiente dicta incidunt harum",
-		name: "Adam Hall",
-		title: "Freshman",
+		review: "They helped me over the course of 3 days redo over 9 assignments to pass the year. I was scared these people might've thought I was pestering them, but I want everyone to know that they are so kind and always ready to help, they are always courteous and understanding. They helped me late at night and through out the day.  I want to say from the bottom of my heart, Thank you!",
+		name: "Dak",
+		title: "sophomore",
 	},
 	{
 		review: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut error vel omnis adipisci. Ad nam officiis sapiente dicta incidunt harum",

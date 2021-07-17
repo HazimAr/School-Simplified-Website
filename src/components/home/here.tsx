@@ -36,7 +36,7 @@ export default function Here() {
 								Free Tutoring
 							</Heading>
 							<Text textAlign="center" color="brand.purple.light">
-								We offer private tutoring in all regular classes
+								We offer private tutoring in regular classes
 								and APs!
 							</Text>
 							<Link href="/tutoring">
@@ -46,7 +46,7 @@ export default function Here() {
 
 						<Card
 							title="Free Notes"
-							description="We offer hundreds of high-quality, regularly updated notes in many regular subjects and APs!"
+							description="We offer hundreds of high-quality, regularly updated notes in regular subjects and APs!"
 							button="Get Notes"
 							href="/resources"
 						/>

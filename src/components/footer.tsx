@@ -42,7 +42,7 @@ const infos = [
 
 const services = [
 	{
-		name: "Volunteer",
+		name: "Become a Volunteer",
 		link: "/volunteering",
 	},
 

@@ -340,7 +340,7 @@ export default function Community({
 							<Container>
 								<Heading fontSize="18px" mb="35px">
 									Check out our socials for tips,
-									entertainment, music, podcasts opportunities
+									entertainment, music, podcasts, opportunities,
 									and more!
 								</Heading>
 							</Container>

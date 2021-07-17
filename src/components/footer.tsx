@@ -42,11 +42,6 @@ const infos = [
 
 const services = [
 	{
-		name: "Become a Volunteer",
-		link: "/volunteering",
-	},
-
-	{
 		name: "Free Tutoring",
 		link: "/tutoring",
 	},
@@ -59,7 +54,10 @@ const services = [
 		name: "Free Notes",
 		link: "/resources",
 	},
-
+	{
+		name: "Volunteer",
+		link: "/volunteering",
+	},
 	// {
 	// 	name: "College Prep",
 	// 	link: "/prep",
@@ -138,7 +136,7 @@ export default function Footer(): JSX.Element {
 							</UnorderedList>
 						</Box>
 						<Box>
-							<Heading size="md">Services</Heading>
+							<Heading size="md">Resources</Heading>
 							<UnorderedList
 								styleType="none"
 								m="0"

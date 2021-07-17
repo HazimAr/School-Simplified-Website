@@ -1,4 +1,15 @@
-import { Box, Flex, Heading, HStack, Image, Link } from "@chakra-ui/react";
+import {
+	Box,
+	Flex,
+	Heading,
+	HStack,
+	Image,
+	Link,
+	Menu,
+	MenuButton,
+	MenuItem,
+	MenuList,
+} from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 
@@ -31,11 +42,28 @@ export default function Header(): JSX.Element {
 						</Link>
 						<HStack spacing={3}>
 							<Link href="/">Home</Link>
-							<Link href="/faq">FAQ</Link>
-							<Link href="/tutoring">Tutoring</Link>
-							<Link href="/leadership">Leadership</Link>
-							<Link href="/volunteer">Join Us</Link>
+
+							<Menu>
+								<MenuButton
+								// rightIcon={<ChevronDownIcon />}
+								>
+									Resources
+								</MenuButton>
+								<MenuList>
+									<Link href="/tutoring">
+										<MenuItem>Free Tutoring</MenuItem>
+									</Link>
+									<Link href="/essay">
+										<MenuItem>Free Essay Revision</MenuItem>
+									</Link>
+									<Link href="/resources">
+										<MenuItem>Free Notes</MenuItem>
+									</Link>
+								</MenuList>
+							</Menu>
+							<Link href="/volunteer">Volunteer</Link>
 							<Link href="/contact">Contact</Link>
+							<Link href="/faq">FAQ</Link>
 						</HStack>
 					</Flex>
 				</ContainerInside>

@@ -34,7 +34,7 @@ const infos = [
 		name: "FAQ",
 		link: "/faq",
 	},
-	{
+	// {
 	// 	name: "Donate",
 	// 	link: "/donate",
 	// },

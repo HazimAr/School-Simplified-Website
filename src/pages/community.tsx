@@ -20,6 +20,7 @@ import {
 	UnorderedList,
 	useDisclosure,
 	VStack,
+	AspectRatio,
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
@@ -56,26 +57,29 @@ export default function Community({
 						<HStack
 							textAlign="left"
 							flexDir={{ base: "column", md: "row" }}
+							spacing={10}
 						>
-							<VStack boxSize="100%" mb={25}>
+							<Stack boxSize="80%" mb={25}>
 								<Stack
 									backgroundColor="brand.transparent2"
 									rounded={rounded}
 									boxShadow="lg"
 								>
-									<Image
-										src={artInfo.image}
-										boxSize="500px"
-										rounded={rounded}
-										objectFit="cover"
-										boxShadow="lg"
-										transition="all 0.2s ease"
-										_hover={{
-											cursor: "pointer",
-											transform: "scale(0.95)",
-										}}
-										onClick={onOpen}
-									/>
+									<AspectRatio ratio={1}>
+										<Image
+											src={artInfo.image}
+											boxSize="100%"
+											rounded={rounded}
+											objectFit="cover"
+											boxShadow="lg"
+											transition="all 0.2s ease"
+											_hover={{
+												cursor: "pointer",
+												transform: "scale(0.95)",
+											}}
+											onClick={onOpen}
+										/>
+									</AspectRatio>
 
 									<Modal
 										isOpen={isOpen}
@@ -148,8 +152,8 @@ export default function Community({
 									</Modal>
 								</Stack>
 
-								<Text>Artwork from our event winners!</Text>
-							</VStack>
+								<Text textAlign="center">Artwork from our event winners!</Text>
+							</Stack>
 
 							<Stack w="100%">
 								<Heading size="lg">Our Community</Heading>
@@ -277,7 +281,10 @@ export default function Community({
 
 			<Container>
 				<ContainerInside maxW="1000px">
-					<HStack flexDir={{ base: "column", md: "row" }} spacing={{ base: 0, md: 10 }}>
+					<HStack
+						flexDir={{ base: "column", md: "row" }}
+						spacing={{ base: 0, md: 10 }}
+					>
 						{/* disc box */}
 						<VStack
 							boxSize="100%"
@@ -340,8 +347,8 @@ export default function Community({
 							<Container>
 								<Heading fontSize="18px" mb="35px">
 									Check out our socials for tips,
-									entertainment, music, podcasts, opportunities,
-									and more!
+									entertainment, music, podcasts,
+									opportunities, and more!
 								</Heading>
 							</Container>
 						</VStack>

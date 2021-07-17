@@ -10,7 +10,7 @@ export default function Intro() {
 			<ContainerInside>
 				<Flex justify="center" align="center" mt={50} mb={50}>
 					<Box maxW="60ch" textAlign="left" my={`${spacing}px`}>
-						<Heading>The key to your educational success</Heading>
+						<Heading>The key to your educational success.</Heading>
 						<Text my="10px">
 							School Simplified is a virtually run nonprofit that
 							aims to spread educational equality by providing

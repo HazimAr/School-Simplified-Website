@@ -23,15 +23,15 @@ export default function Here() {
 						flexDir={{ base: "column", lg: "row" }}
 					>
 						<Card
-							title="Essay Revisions"
+							title="Free Essay Revisions"
 							description="Our team consists of exceptional writers, all that go through a rigorous process to establish themselves as verified proofreaders. Simply fill out the form with basic details involving your essay and a proofreader will make the necessary edits."
 							button="Submit Essay"
 							href="/essay"
 						/>
 						<Card
-							title="Resources"
+							title="Free Notes"
 							description="School Simplified has hundreds of high-quality notes ranging across many different school subjects. Our library of notes will consistently be updating to cover as many subjects as possible."
-							button="Get Resources"
+							button="Get Notes"
 							href="/resources"
 						/>
 						{/* <Card

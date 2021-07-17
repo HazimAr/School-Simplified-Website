@@ -5,6 +5,7 @@ import {
 	Input,
 	Stack,
 	Textarea,
+	useToast,
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import { useReducer } from "react";
@@ -82,7 +83,7 @@ export default function ContactForm(): JSX.Element {
 	});
 
 	const { firstName, lastName, email, subject, message } = state;
-
+	const toast = useToast();
 	return (
 		<FormControl
 			id="first-name"
@@ -158,6 +159,13 @@ export default function ContactForm(): JSX.Element {
 			<Button
 				onClick={() => {
 					console.log(state);
+					toast({
+						title: "Message Sent",
+						description: "Thank you for sending us a message",
+						status: "success",
+						duration: 9000,
+						isClosable: true,
+					});
 				}}
 				color="white"
 			>

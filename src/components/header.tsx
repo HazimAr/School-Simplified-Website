@@ -30,8 +30,11 @@ export default function Header(): JSX.Element {
 							</Flex>
 						</Link>
 						<HStack spacing={3}>
-							<Link href="/about">Home</Link>
-							<Link href="/about">About</Link>
+							<Link href="/">Home</Link>
+							<Link href="/faq">FAQ</Link>
+							<Link href="/tutoring">Tutoring</Link>
+							<Link href="/leadership">Leadership</Link>
+							<Link href="/volunteer">Join Us</Link>
 							<Link href="/contact">Contact</Link>
 						</HStack>
 					</Flex>

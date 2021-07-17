@@ -32,7 +32,7 @@ export default function Volunteering(): JSX.Element {
 								organizations, learn marketing and business
 								skills, and build code for real-world
 								applications. Additionally, you can earn
-								community service hours for all the work you do
+								community service hours for all the work you do.
 							</Text>
 						</Box>
 						<Image

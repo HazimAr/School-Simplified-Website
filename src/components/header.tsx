@@ -56,7 +56,7 @@ export default function Header(): JSX.Element {
 									<Link href="/essay">
 										<MenuItem>Free Essay Revision</MenuItem>
 									</Link>
-									<Link href="/resources">
+									<Link href="/">
 										<MenuItem>Free Notes</MenuItem>
 									</Link>
 								</MenuList>

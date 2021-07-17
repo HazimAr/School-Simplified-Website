@@ -52,7 +52,7 @@ const services = [
 	},
 	{
 		name: "Free Notes",
-		link: "/resources",
+		link: "/",
 	},
 	{
 		name: "Volunteer",
@@ -136,7 +136,7 @@ export default function Footer(): JSX.Element {
 							</UnorderedList>
 						</Box>
 						<Box>
-							<Heading size="md">Resources</Heading>
+							<Heading size="md"></Heading>
 							<UnorderedList
 								styleType="none"
 								m="0"

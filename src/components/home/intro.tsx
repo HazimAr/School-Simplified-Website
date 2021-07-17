@@ -17,7 +17,7 @@ export default function Intro() {
 							providing free academic services, products, and
 							opportunities for teenagers.
 						</Text>
-						{/* <Link href="/resources">
+						{/* <Link href="/">
 							<Button>Get Free Help</Button>
 						</Link> */}
 					</Box>

@@ -10,27 +10,43 @@ export default function Here() {
 		<Container bg="brand.transparent" py="50px" mb="25px">
 			<ContainerInside>
 				<VStack spacing={-5}>
-					<Card
-						title="Free Tutoring"
-						description="We offer one-on-one tutoring in a wide range of subjects, from regular classes to AP’s, to cater to the needs of a larger audience. It’s our goal to get back to students quickly to better prepare them for their classes, upcoming tests, and so they can thoroughly understand the material."
-						button="Sign Up"
-						href="/tutoring"
-					/>
-
 					<HStack
 						justify="center"
 						spacing={{ base: 0, lg: 10 }}
 						flexDir={{ base: "column", lg: "row" }}
+						
 					>
 						<Card
 							title="Free Essay Revisions"
-							description="Our team consists of exceptional writers, all that go through a rigorous process to establish themselves as verified proofreaders. Simply fill out the form with basic details involving your essay and a proofreader will make the necessary edits."
+							description="We offer in-depth proofreading and writing tips/tricks!"
 							button="Submit Essay"
 							href="/essay"
 						/>
+						<VStack
+							rounded={rounded}
+							bg="brand.transparent2"
+							my={5}
+							minH={300}
+							w="100%"
+							justify="center"
+							boxShadow="2xl"
+							p={10}
+						>
+							<Heading as="h1" color="brand.purple.dark">
+								Free Tutoring
+							</Heading>
+							<Text textAlign="center" color="brand.purple.light">
+								We offer private tutoring in all regular classes
+								and APs!
+							</Text>
+							<Link href="/tutoring">
+								<Button>Sign Up</Button>
+							</Link>
+						</VStack>
+
 						<Card
 							title="Free Notes"
-							description="School Simplified has hundreds of high-quality notes ranging across many different school subjects. Our library of notes will consistently be updating to cover as many subjects as possible."
+							description="We offer hundreds of high-quality, regularly updated notes in many regular subjects and APs!"
 							button="Get Notes"
 							href="/resources"
 						/>
@@ -62,17 +78,18 @@ function Card({
 		<VStack
 			rounded={rounded}
 			bg="brand.transparent2"
-			my={10}
+			my={5}
 			minH={300}
 			w="100%"
 			justify="center"
+			
 			boxShadow="lg"
 			p={10}
 		>
 			<Heading as="h1" color="brand.purple.dark">
 				{title}
 			</Heading>
-			<Text textAlign="left" color="brand.purple.light">
+			<Text textAlign="center" color="brand.purple.light">
 				{description}
 			</Text>
 			<Link href={href}>

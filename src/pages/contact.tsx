@@ -32,7 +32,7 @@ export default function Contact(): JSX.Element {
 						src="/undraw/contact.svg"
 						alt="Contact Person"
 						h="350px"
-						mb={{ base: 5, sm: 5, lg: 0 }}
+						my={{ base: -5, sm: 5, lg: 0 }}
 					/>
 				</Flex>
 			</ContainerInside>

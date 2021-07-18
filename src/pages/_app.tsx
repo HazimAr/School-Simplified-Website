@@ -28,7 +28,7 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			{process.env.NODE_ENV === "production" ? (
+			{process.env.NODE_ENV === "test" ? (
 				<Stupid />
 			) : (
 				<ChakraProvider theme={theme}>

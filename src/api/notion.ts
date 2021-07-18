@@ -182,6 +182,7 @@ async function getUnits(
 export { getSubjects };
 export { getArtInfo };
 export { getFaqInfo };
+export { getDocs };
 
 async function getArtInfo(): Promise<ArtData> {
 	const { data: artPageData } = await axios.get(
@@ -419,4 +420,70 @@ async function getFaqInfo() {
 	// console.log(qaPairs);
 
 	return qaPairs;
+}
+
+async function getDocs() {
+	const { data } = await axios.get(
+		`https://api.notion.com/v1/blocks/ecc51a4ba7bd451781ec423c231ff53e/children`,
+		notesConfig
+	);
+
+	const docs = data.results.map((blocks: any[]) => {
+		let title = "";
+		let docTitle = "";
+		let docLink = "";
+
+		// go through every block in the page
+		blocks.forEach((block: any) => {
+			if (block.type.startsWith("heading")) {
+				const blockType = block.type;
+				if (block[blockType].text.length) {
+					// title exists
+					const title2 = block[blockType].text[0]?.plain_text?.trim();
+					if (title2) {
+						// valid title
+						// push previous section
+						if (title2.length) {
+							title = title2;
+						}
+					} else {
+						console.warn(
+							`Title ${block.id} in title "${title}" is malformed!`
+						);
+					}
+				}
+			} else if (block.type === "paragraph") {
+				// treat as a notes object until implemented
+				let href: string = "",
+					docsTitle: string = "";
+				for (const text of block.paragraph.text) {
+					if (text.href) {
+						if (text.href.length) {
+							href = text.href;
+							if (docsTitle.length) break;
+						}
+					} else if (text.plain_text) {
+						const temp = text.plain_text.trim();
+						if (temp.length) {
+							docsTitle = temp;
+							if (href.length) break;
+						}
+					}
+				}
+
+				// const blockID = block.id;
+				if (href.length && docsTitle.length) {
+					
+				} else if (title.length) {
+					console.warn(
+						`ID ${block.id} in section "${title}" in class "${currentClass?.child_page?.title}" is malformed!`
+					);
+				}
+			}
+		});
+		
+
+		return doc;
+	});
+	return docs;
 }

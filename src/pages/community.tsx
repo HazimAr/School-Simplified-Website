@@ -347,7 +347,11 @@ export default function Community({
 								more!
 							</Text>
 
-							<Button w="fit-content">Join Our Discord</Button>
+							<Button
+								w="fit-content"
+							>
+								Join Our Discord
+							</Button>
 						</Stack>
 					</HStack>
 

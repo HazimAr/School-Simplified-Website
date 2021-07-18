@@ -1,4 +1,4 @@
-import { Image, Heading, Flex, Text, Box, Link } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Link, Text } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 
@@ -16,14 +16,16 @@ export default function Four(): JSX.Element {
 							size="2xl"
 							textAlign={{ base: "center", lg: "left" }}
 						>
-							Uh Oh!
+							Oh No!
 						</Heading>
 						<Text
 							fontSize="xl"
 							my={3}
 							textAlign={{ base: "center", lg: "left" }}
 						>
-							Looks like you found a page that doesn't exist!
+							It looks like a dog has eaten the page you're
+							looking for. Click below to return to run away
+							before it eats another page...
 						</Text>
 						<Text textAlign={{ base: "center", lg: "left" }}>
 							If a page is supposed to be here, please{" "}
@@ -34,7 +36,7 @@ export default function Four(): JSX.Element {
 						</Text>
 					</Box>
 					<Image
-						src="/undraw/404.svg"
+						src="/timmy/dog.png"
 						w={{ base: 200, sm: 300, md: 525 }}
 						mt={{ base: 5, lg: 0 }}
 					/>

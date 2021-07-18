@@ -14,7 +14,7 @@ const Reviews = [
 		title: "Sophomore",
 	},
 	{
-		review: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut error vel omnis adipisci. Ad nam officiis sapiente dicta incidunt harum",
+		review: "I've had multiple tutoring sessions with him because he is an amazing tutor, and he even helped me revise an essay that got me into a program at Stanford, as well as get a 100% on my final. He even made some practice questions just for me and was super patient and talked me through every question I had. Overall, I've noticed a significant improvement in my quiz scores and understanding of the material.",
 		name: "Adam Hall",
 		title: "Freshman",
 	},

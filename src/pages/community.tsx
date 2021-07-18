@@ -327,7 +327,11 @@ export default function Community({
 							</Heading>
 						</VStack>
 
-						<Stack boxSize="100%" flexDir="column">
+						<Stack
+							boxSize="100%"
+							flexDir="column"
+							my="20px!important"
+						>
 							<Heading
 								justify="left"
 								textAlign={{ base: "center", md: "left" }}
@@ -347,11 +351,7 @@ export default function Community({
 								more!
 							</Text>
 
-							<Button
-								w="fit-content"
-							>
-								Join Our Discord
-							</Button>
+							<Button w="fit-content">Join Our Discord</Button>
 						</Stack>
 					</HStack>
 

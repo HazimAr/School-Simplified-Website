@@ -43,3 +43,10 @@ export type QAPair = {
 };
 
 export type AnswerPart = { text: string; link?: string };
+
+export type GovernanceSection = {
+	title: string;
+	docs: GovernanceDocument[];
+};
+
+export type GovernanceDocument = { title: string; href: string };

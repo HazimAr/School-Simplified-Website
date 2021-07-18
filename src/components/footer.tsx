@@ -61,11 +61,6 @@ const services = [
 		name: "Notes",
 		link: "/notes",
 	},
-	{
-		name: "Join Discord",
-
-		link: "https://discord.gg/school",
-	},
 	// {
 	// 	name: "College Prep",
 	// 	link: "/prep",

@@ -113,19 +113,7 @@ const boardOfDirectors: Person[] = [
 	},
 ];
 
-const data = [
-	{
-		title: "Governance Documents",
-		docs: [
-			{
-				title: "Committee Charters",
-				href: "Committee Charters",
-			},
-		],
-	},
-];
-
-export default function About(): JSX.Element {
+export default function About({ data }: { data: any }): JSX.Element {
 	return (
 		<>
 			<Container>

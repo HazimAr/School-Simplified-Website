@@ -331,6 +331,7 @@ export default function Community({
 							boxSize="100%"
 							flexDir="column"
 							my="20px!important"
+							
 						>
 							<Heading
 								justify="left"
@@ -351,7 +352,13 @@ export default function Community({
 								more!
 							</Text>
 
-							<Button w="fit-content">Join Our Discord</Button>
+							<Link
+								href="https://discord.com/invite/school"
+								isExternal
+								w="fit-content"
+							>
+								<Button>Join Our Discord</Button>
+							</Link>
 						</Stack>
 					</HStack>
 

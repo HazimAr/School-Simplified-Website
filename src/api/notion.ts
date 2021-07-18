@@ -437,12 +437,29 @@ async function getGovernanceData(): Promise<GovernanceSection[]> {
 			if (headingText?.length && headingText[0].plain_text.length) {
 				// offload previous data
 				if (sectionTitle.length) {
-					// output.push({});
+					output.push({ title: sectionTitle, docs: documents });
 				}
 
 				sectionTitle = headingText[0].plain_text;
-			}
+				documents = [];
+			} else
+				console.warn(`ID ${block.id} [Governance Data] is malformed!`);
 		} else if (block.type === "paragraph") {
+			let title: string = "",
+				href: string = "";
+			for (const text of block.paragraph.text) {
+				if (text.href) {
+					href = text.href;
+					if (title.length) break;
+				} else {
+					title = text.plain_text;
+					if (href.length) break;
+				}
+			}
+			if (title.length && href.length) {
+				documents.push({ title, href });
+			} else
+				console.warn(`ID ${block.id} [Governance Data] is malformed!`);
 		} // else wtf are you doing here bro
 	}
 

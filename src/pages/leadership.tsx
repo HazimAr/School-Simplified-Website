@@ -205,7 +205,12 @@ export default function About({ data }: { data: any }): JSX.Element {
 			</Container>
 			<Container>
 				<ContainerInside>
-					<HStack spacing={5} align="flex-start">
+					<HStack
+						align="flex-start"
+						textAlign="left"
+						spacing={5}
+						justify="center"
+					>
 						{data.map((section) => {
 							return (
 								<Stack key={section.title}>

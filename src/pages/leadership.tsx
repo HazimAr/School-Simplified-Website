@@ -1,5 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable sonarjs/no-duplicate-string */
+import { getGovernanceData } from "@api/notion";
 import {
 	Box,
 	Divider,
@@ -15,7 +16,6 @@ import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import StaffCard from "@components/staffcard";
 import React from "react";
-
 type Person = {
 	name: string;
 	title: string;
@@ -245,6 +245,6 @@ export default function About(): JSX.Element {
 }
 
 export async function getServerSideProps() {
-	const data = await getGovernanceSection();
+	const data = await getGovernanceData();
 	return { props: { data } };
 }

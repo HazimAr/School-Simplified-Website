@@ -102,9 +102,9 @@ export default function Footer(): JSX.Element {
 					// paused
 					options={{
 						height: 120,
-						amplitude: 9,
-						speed: 0.3,
-						points: 4,
+						amplitude: 100,
+						speed: 20,
+						points: 10,
 					}}
 				/>
 			</Box>

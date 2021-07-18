@@ -116,7 +116,7 @@ export default function About(): JSX.Element {
 			<Container>
 				<ContainerInside>
 					<Box>
-						<Box py={3}>
+						<Box py={3} mt={10}>
 							<Heading size="2xl" mb={3}>
 								Leadership
 							</Heading>

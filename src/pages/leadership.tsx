@@ -120,16 +120,14 @@ export default function About({ data }: { data: any }): JSX.Element {
 			<Container>
 				<ContainerInside>
 					<Box>
-						<Box py={3} mt={10}>
-							<Heading size="2xl" mb={3}>
-								Leadership
-							</Heading>
-						</Box>
+						<Heading size="2xl" my={7}>
+							Leadership
+						</Heading>
 
 						<Divider bg="white" />
-						<Box py={2}>
-							<Heading fontSize={30}>Executive Profiles</Heading>
-						</Box>
+						<Heading fontSize={30} my={5}>
+							Executive Profiles
+						</Heading>
 						<Flex justifyContent="center" flexWrap="wrap">
 							{leadership.map((staff, i: number) => {
 								return (
@@ -145,10 +143,10 @@ export default function About({ data }: { data: any }): JSX.Element {
 
 						<Divider bg="white" />
 
-						<Box pt={3}>
+						<Box mt={5}>
 							<Heading fontSize={30}>Board of Directors</Heading>
 						</Box>
-						<Stack textAlign="left" py={10}>
+						<Stack textAlign="left" my={10}>
 							<Flex align="center">
 								<Heading width="100%" fontSize={17}>
 									Name
@@ -180,7 +178,7 @@ export default function About({ data }: { data: any }): JSX.Element {
 						</Stack>
 						<Divider bg="white" />
 
-						<VStack py={10}>
+						<VStack py={5}>
 							<Heading fontSize={30}>Founders</Heading>
 							<HStack
 								py={2}
@@ -206,16 +204,14 @@ export default function About({ data }: { data: any }): JSX.Element {
 			</Container>
 			<Container>
 				<ContainerInside>
-					<HStack
-						spacing={5}
-						align="flex-start"
-						textAlign="left"
-						justify="center"
-					>
+					<Divider bg="white" />
+					<Flex textAlign="center" justify="center" mt={5}>
 						{data.map((section: GovernanceSection) => {
 							return (
-								<Stack key={section.title}>
-									<Heading> {section.title} </Heading>
+								<Stack key={section.title} flex={1}>
+									<Heading fontSize={20}>
+										{section.title}
+									</Heading>
 									<Stack>
 										{section.docs.map(
 											(doc: GovernanceDocument) => {
@@ -235,7 +231,7 @@ export default function About({ data }: { data: any }): JSX.Element {
 								</Stack>
 							);
 						})}
-					</HStack>
+					</Flex>
 				</ContainerInside>
 			</Container>
 		</>

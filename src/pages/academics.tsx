@@ -29,7 +29,7 @@ export default function Academics(): JSX.Element {
 	return (
 		<Container>
 			<ContainerInside>
-				<Flex justify="center" flexDir="column" align="center">
+				<Flex justify="center" flexDir="column" align="center" my="20px">
 					{sections.map((section) => {
 						return (
 							<Box

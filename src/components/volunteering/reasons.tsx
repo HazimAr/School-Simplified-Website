@@ -5,7 +5,7 @@ import ContainerInside from "@components/containerInside";
 const reasons = [
 	{
 		title: "Earn Volunteer Hours",
-		text: "As a registered nonprofit organization, School Simplified can offer you community service hours and opportunities to increase your volunteering experience. You can use these hours to build up your college application, apply for NHS, or anything else you need them for!",
+		text: "As a registered nonprofit organization, School Simplified can offer you community service hours. By increasing your volunteering experience, you can build up your college application, apply for NHS, or enhance your resume!",
 	},
 	{
 		title: "Learn New Skills",

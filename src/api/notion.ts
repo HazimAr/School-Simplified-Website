@@ -3,6 +3,7 @@ import {
 	AnswerPart,
 	ArtData,
 	Class,
+	GovernanceDocument,
 	GovernanceSection,
 	NotesProps,
 	QAPair,
@@ -183,7 +184,7 @@ async function getUnits(
 export { getSubjects };
 export { getArtInfo };
 export { getFaqInfo };
-export { getDocs };
+export { getGovernanceData };
 
 async function getArtInfo(): Promise<ArtData> {
 	const { data: artPageData } = await axios.get(
@@ -427,78 +428,23 @@ async function getGovernanceData(): Promise<GovernanceSection[]> {
 		notionConfig
 	);
 
-	let output: GovernanceSection[] = [];
+	let output: GovernanceSection[] = [],
+		sectionTitle: string = "",
+		documents: GovernanceDocument[] = [];
 	for (const block of data.results) {
 		if (block.type.startsWith("heading")) {
 			const headingText = block[block.type].text;
-		}
+			if (headingText?.length && headingText[0].plain_text.length) {
+				// offload previous data
+				if (sectionTitle.length) {
+					// output.push({});
+				}
+
+				sectionTitle = headingText[0].plain_text;
+			}
+		} else if (block.type === "paragraph") {
+		} // else wtf are you doing here bro
 	}
 
 	return output;
-}
-
-async function getDocs() {
-	const { data } = await axios.get(
-		`https://api.notion.com/v1/blocks/ecc51a4ba7bd451781ec423c231ff53e/children`,
-		notesConfig
-	);
-
-	const docs = data.results.map((blocks: any[]) => {
-		let title = "";
-		let docTitle = "";
-		let docLink = "";
-
-		// go through every block in the page
-		blocks.forEach((block: any) => {
-			if (block.type.startsWith("heading")) {
-				const blockType = block.type;
-				if (block[blockType].text.length) {
-					// title exists
-					const title2 = block[blockType].text[0]?.plain_text?.trim();
-					if (title2) {
-						// valid title
-						// push previous section
-						if (title2.length) {
-							title = title2;
-						}
-					} else {
-						console.warn(
-							`Title ${block.id} in title "${title}" is malformed!`
-						);
-					}
-				}
-			} else if (block.type === "paragraph") {
-				// treat as a notes object until implemented
-				let href: string = "",
-					docsTitle: string = "";
-				for (const text of block.paragraph.text) {
-					if (text.href) {
-						if (text.href.length) {
-							href = text.href;
-							if (docsTitle.length) break;
-						}
-					} else if (text.plain_text) {
-						const temp = text.plain_text.trim();
-						if (temp.length) {
-							docsTitle = temp;
-							if (href.length) break;
-						}
-					}
-				}
-
-				// const blockID = block.id;
-				if (href.length && docsTitle.length) {
-					
-				} else if (title.length) {
-					console.warn(
-						`ID ${block.id} in section "${title}" in class "${currentClass?.child_page?.title}" is malformed!`
-					);
-				}
-			}
-		});
-		
-
-		return doc;
-	});
-	return docs;
 }

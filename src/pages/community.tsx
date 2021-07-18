@@ -1,5 +1,6 @@
 import { getArtInfo } from "@api/notion";
 import {
+	AspectRatio,
 	Center,
 	Divider,
 	Heading,
@@ -20,7 +21,6 @@ import {
 	UnorderedList,
 	useDisclosure,
 	VStack,
-	AspectRatio,
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
@@ -152,7 +152,9 @@ export default function Community({
 									</Modal>
 								</Stack>
 
-								<Text textAlign="center">Artwork from our event winners!</Text>
+								<Text textAlign="center">
+									Artwork from our event winners!
+								</Text>
 							</Stack>
 
 							<Stack w="100%">
@@ -209,7 +211,7 @@ export default function Community({
 								rounded={rounded}
 								boxShadow="lg"
 								h="300px"
-								my="20px"
+								my="20px!important"
 								justify="center"
 							>
 								<Heading>Music</Heading>

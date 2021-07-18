@@ -29,7 +29,7 @@ export default function Volunteering(): JSX.Element {
 								valuable opportunities for teenagers. You can
 								help build code for real-life applications,
 								market and negotiate with people
-								internationally, and help develop products and
+								internationally, and develop products and
 								services. There are also leadership
 								opportunities available. Everything you do
 								counts for community service hours!

@@ -40,7 +40,13 @@ export default function Header(): JSX.Element {
 								</Heading>
 							</Flex>
 						</Link>
-						<HStack spacing={3}>
+						<HStack
+							spacing={3}
+							fontSize={{
+								base: 12,
+								md: "default",
+							}}
+						>
 							<Link href="/">Home</Link>
 
 							<Menu>

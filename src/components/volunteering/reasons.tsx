@@ -13,7 +13,7 @@ const reasons = [
 	},
 	{
 		title: "Leadership Opportunities",
-		text: "School Simplified also offers plenty of leadership positions, including management and executive positions that you can put on your resume. Since many of these are only accessible to our current staff, more opportunities open up once you become a volunteer with us!",
+		text: "School Simplified offers plenty of leadership opportunities for your resume, including management and executive positions. Since many of these are only accessible to our current staff, more opportunities open up after you become a volunteer!",
 	},
 	{
 		title: "Networking and Friends",

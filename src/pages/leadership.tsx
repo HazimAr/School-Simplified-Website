@@ -16,6 +16,7 @@ import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import StaffCard from "@components/staffcard";
 import React from "react";
+import { GovernanceDocument, GovernanceSection } from "types";
 type Person = {
 	name: string;
 	title: string;
@@ -205,24 +206,31 @@ export default function About({ data }: { data: any }): JSX.Element {
 			</Container>
 			<Container>
 				<ContainerInside>
-					<HStack spacing={5} align="flex-start">
-						{data.map((section) => {
+					<HStack
+						spacing={5}
+						align="flex-start"
+						textAlign="left"
+						justify="center"
+					>
+						{data.map((section: GovernanceSection) => {
 							return (
 								<Stack key={section.title}>
 									<Heading> {section.title} </Heading>
 									<Stack>
-										{section.docs.map((doc) => {
-											return (
-												<Link
-													key={doc.href}
-													href={doc.href}
-												>
-													<Text color="brand.gold">
-														{doc.title}
-													</Text>
-												</Link>
-											);
-										})}
+										{section.docs.map(
+											(doc: GovernanceDocument) => {
+												return (
+													<Link
+														key={doc.href}
+														href={doc.href}
+													>
+														<Text color="brand.gold">
+															{doc.title}
+														</Text>
+													</Link>
+												);
+											}
+										)}
 									</Stack>
 								</Stack>
 							);

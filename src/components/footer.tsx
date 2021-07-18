@@ -51,7 +51,7 @@ const services = [
 	},
 	{
 		name: "Homework Help",
-		link: "https://discord.gg/school",
+		link: "https://discord.gg/A782bUXTP8",
 	},
 	{
 		name: "Essay Revision",

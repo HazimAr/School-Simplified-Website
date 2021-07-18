@@ -21,7 +21,7 @@ const reasons = [
 	},
 	{
 		title: "Free Premium Resources",
-		text: "As members of our staff, all volunteers get access to perks such as Canva premium and server hosting, which are paid for by the company. These tools are available for you to use, not only to contribute to our community, but also for you to explore as a learning material!",
+		text: "As members of our staff, all volunteers get access to perks such as Canva Pro and server hosting, which are paid for by the company. These tools are available for you to use, not only to contribute to our community, but also for you to explore as a learning material!",
 	},
 	{
 		title: "Easy Online Access",

@@ -331,7 +331,7 @@ export default function Community({
 							boxSize="100%"
 							flexDir="column"
 							my="20px!important"
-							
+							align={{ base: "center", md: "left" }}
 						>
 							<Heading
 								justify="left"

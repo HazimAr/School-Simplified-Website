@@ -44,6 +44,7 @@ export default function Header(): JSX.Element {
 							spacing={3}
 							fontSize={{
 								base: 11,
+								sm: 12,
 								md: "initial",
 							}}
 						>

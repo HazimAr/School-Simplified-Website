@@ -24,7 +24,7 @@ export default function Intro() {
 	return (
 		<Container py={20} bg="brand.transparent">
 			<ContainerInside>
-				<Heading as="h1" mb={5}>
+				<Heading as="h1" m={5}>
 					Success Stories
 				</Heading>
 

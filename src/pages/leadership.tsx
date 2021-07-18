@@ -112,6 +112,11 @@ const boardOfDirectors: Person[] = [
 		title: "Director",
 		img: "/staff/default.png",
 	},
+	{
+		name: "Isaias Vilato",
+		title: "Director",
+		img: "/staff/default.png",
+	},
 ];
 
 export default function About({ data }: { data: any }): JSX.Element {

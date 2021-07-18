@@ -285,7 +285,7 @@ function NotesGrid({ allNotes }: { allNotes: NotesProps[] }): JSX.Element {
 				flex={1}
 			>
 				{searchTerm.length ? (
-					filteredTerms ? (
+					filteredTerms?.length ? (
 						filteredTerms.map((note: NotesProps, idx: number) => (
 							<NotesBox
 								title={note.title}

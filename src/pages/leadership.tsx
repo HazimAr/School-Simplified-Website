@@ -40,7 +40,7 @@ const leadership: Person[] = [
 	},
 	{
 		name: "Lauren Hsieh",
-		title: "Secretary & Executive Assistant to CEO",
+		title: "Secretary & Chief of Staff",
 		img: "/staff/LaurenHsieh.jpg",
 	},
 	{

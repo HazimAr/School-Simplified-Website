@@ -1,11 +1,13 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable sonarjs/no-duplicate-string */
+import { getGovernanceData } from "@api/notion";
 import {
 	Box,
 	Divider,
 	Flex,
 	Heading,
 	HStack,
+	Link,
 	Stack,
 	Text,
 	VStack,
@@ -13,7 +15,7 @@ import {
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import StaffCard from "@components/staffcard";
-
+import React from "react";
 type Person = {
 	name: string;
 	title: string;
@@ -110,7 +112,8 @@ const boardOfDirectors: Person[] = [
 		img: "/staff/default.png",
 	},
 ];
-export default function About(): JSX.Element {
+
+export default function About({ data }: { data: any }): JSX.Element {
 	return (
 		<>
 			<Container>
@@ -202,9 +205,34 @@ export default function About(): JSX.Element {
 			</Container>
 			<Container>
 				<ContainerInside>
-					
+					<HStack spacing={5}>
+						{data.map((section) => {
+							return (
+								<Stack>
+									<Heading> {section.title} </Heading>
+									<Stack>
+										{section.docs.map((doc) => {
+											return (
+												<Link
+													key={doc.href}
+													href={doc.href}
+												>
+													<Text>{doc.title}</Text>
+												</Link>
+											);
+										})}
+									</Stack>
+								</Stack>
+							);
+						})}
+					</HStack>
 				</ContainerInside>
 			</Container>
 		</>
 	);
+}
+
+export async function getServerSideProps() {
+	const data = await getGovernanceData();
+	return { props: { data } };
 }

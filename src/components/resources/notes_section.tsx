@@ -34,8 +34,8 @@ export default function NotesSection({ subjects }: AllSubjects): JSX.Element {
 		.flat();
 	return (
 		<Container>
-			<ContainerInside my={5}>
-				<Heading mb={5}>Notes</Heading>
+			<ContainerInside my={7}>
+				{/* <Heading mb={5}>Notes</Heading> */}
 				<Flex alignItems="stretch">
 					<Box mr={{ base: 2, md: 4 }} w={{ base: 150, md: 190 }}>
 						<Heading size="md" mb={3} textAlign="left">
@@ -308,7 +308,9 @@ function NotesGrid({ allNotes }: { allNotes: NotesProps[] }): JSX.Element {
 					))
 				) : (
 					<Text fontStyle="italic">
-						Select one of the categories on the left to start.
+						{content
+							? "There's nothing here right now. Check back later!"
+							: "Select one of the categories on the left to start."}
 					</Text>
 				)}
 			</Flex>

@@ -3,6 +3,7 @@ import {
 	AnswerPart,
 	ArtData,
 	Class,
+	GovernanceSection,
 	NotesProps,
 	QAPair,
 	SocialMedia,
@@ -10,7 +11,7 @@ import {
 	Unit,
 } from "types";
 
-const notesConfig = {
+const notionConfig = {
 	headers: {
 		Authorization: "Bearer " + process.env.NOTION_API_KEY,
 		"Notion-Version": "2021-05-13",
@@ -21,12 +22,12 @@ async function getSubjects(): Promise<Subject[]> {
 	const { data: dictData } = await axios.post(
 		`https://api.notion.com/v1/databases/b2009721bf4d47aa8fa99a6528db7843/query`,
 		{},
-		notesConfig
+		notionConfig
 	);
 	const subjectPromises = dictData.results.map((page: any) => {
 		return axios.get(
 			`https://api.notion.com/v1/blocks/${page.id}/children`,
-			notesConfig
+			notionConfig
 		);
 	});
 
@@ -91,7 +92,7 @@ async function getUnits(
 	const promises2 = currentSubject.map(() => {
 		return axios.get(
 			`https://api.notion.com/v1/blocks/${currentClass.id}/children`,
-			notesConfig
+			notionConfig
 		);
 	});
 	return Promise.all(promises2)
@@ -182,11 +183,12 @@ async function getUnits(
 export { getSubjects };
 export { getArtInfo };
 export { getFaqInfo };
+export { getDocs };
 
 async function getArtInfo(): Promise<ArtData> {
 	const { data: artPageData } = await axios.get(
 		`https://api.notion.com/v1/blocks/fcfaa8ea3a2041cf91ec958db799026e/children`,
-		notesConfig
+		notionConfig
 	);
 
 	let image =
@@ -368,13 +370,13 @@ async function getArtInfo(): Promise<ArtData> {
 	};
 }
 
-async function getFaqInfo() {
+async function getFaqInfo(): Promise<QAPair[]> {
 	const { data } = await axios.get(
 		`https://api.notion.com/v1/blocks/bc5b51a1b7674a1da9fd09b559844881/children`,
-		notesConfig
+		notionConfig
 	);
 	// console.log(data);
-	const qaPairs: QAPair[] = data.results
+	return data.results
 		.filter(
 			(block: any) =>
 				block.type === "paragraph" && block.paragraph?.text.length
@@ -417,6 +419,86 @@ async function getFaqInfo() {
 		})
 		.filter((qa: QAPair) => qa && qa.question.length && qa.answer.length);
 	// console.log(qaPairs);
+}
 
-	return qaPairs;
+async function getGovernanceData(): Promise<GovernanceSection[]> {
+	const { data } = await axios.get(
+		`https://api.notion.com/v1/blocks/ecc51a4ba7bd451781ec423c231ff53e/children`,
+		notionConfig
+	);
+
+	let output: GovernanceSection[] = [];
+	for (const block of data.results) {
+		if (block.type.startsWith("heading")) {
+			const headingText = block[block.type].text;
+		}
+	}
+
+	return output;
+}
+
+async function getDocs() {
+	const { data } = await axios.get(
+		`https://api.notion.com/v1/blocks/ecc51a4ba7bd451781ec423c231ff53e/children`,
+		notesConfig
+	);
+
+	const docs = data.results.map((blocks: any[]) => {
+		let title = "";
+		let docTitle = "";
+		let docLink = "";
+
+		// go through every block in the page
+		blocks.forEach((block: any) => {
+			if (block.type.startsWith("heading")) {
+				const blockType = block.type;
+				if (block[blockType].text.length) {
+					// title exists
+					const title2 = block[blockType].text[0]?.plain_text?.trim();
+					if (title2) {
+						// valid title
+						// push previous section
+						if (title2.length) {
+							title = title2;
+						}
+					} else {
+						console.warn(
+							`Title ${block.id} in title "${title}" is malformed!`
+						);
+					}
+				}
+			} else if (block.type === "paragraph") {
+				// treat as a notes object until implemented
+				let href: string = "",
+					docsTitle: string = "";
+				for (const text of block.paragraph.text) {
+					if (text.href) {
+						if (text.href.length) {
+							href = text.href;
+							if (docsTitle.length) break;
+						}
+					} else if (text.plain_text) {
+						const temp = text.plain_text.trim();
+						if (temp.length) {
+							docsTitle = temp;
+							if (href.length) break;
+						}
+					}
+				}
+
+				// const blockID = block.id;
+				if (href.length && docsTitle.length) {
+					
+				} else if (title.length) {
+					console.warn(
+						`ID ${block.id} in section "${title}" in class "${currentClass?.child_page?.title}" is malformed!`
+					);
+				}
+			}
+		});
+		
+
+		return doc;
+	});
+	return docs;
 }

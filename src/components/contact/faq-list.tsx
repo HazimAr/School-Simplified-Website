@@ -10,7 +10,7 @@ export default function FaqList({ list }: { list: QAPair[] }): JSX.Element {
 
 	return (
 		<Accordion
-			// allowMultiple
+			allowMultiple
 			onChange={(newExpanded: number[]) => {
 				setExpanded(newExpanded);
 			}}

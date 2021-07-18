@@ -440,11 +440,15 @@ async function getGovernanceData(): Promise<GovernanceSection[]> {
 					// output.push({});
 				}
 
-				sectionTitle = headingText[0].plain_text;
+				// const blockID = block.id;
+				if (href.length && docsTitle.length) {
+				} else if (title.length) {
+					console.warn(
+						`ID ${block.id} in section "${title}" in class "${currentClass?.child_page?.title}" is malformed!`
+					);
+				}
 			}
-		} else if (block.type === "paragraph") {
-		} // else wtf are you doing here bro
-	}
+		});
 
 	return output;
 }

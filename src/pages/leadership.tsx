@@ -2,12 +2,10 @@
 /* eslint-disable sonarjs/no-duplicate-string */
 import {
 	Box,
-	Center,
 	Divider,
 	Flex,
 	Heading,
 	HStack,
-	Image,
 	Stack,
 	Text,
 	VStack,
@@ -130,39 +128,6 @@ export default function About(): JSX.Element {
 						</Box>
 						<Flex justifyContent="center" flexWrap="wrap">
 							{leadership.map((staff, i: number) => {
-								// if (i == 4) {
-								// 	return (
-								// 		<Flex
-								// 			flexDir="column"
-								// 			p="15px"
-								// 			m="5px"
-								// 			align="center"
-								// 		>
-								// 			<Center
-								// 				w="500px"
-								// 				h="500px"
-								// 				backgroundColor="brand.transparent"
-								// 				rounded="50px"
-								// 			>
-								// 				<Image
-								// 					rounded="30px"
-								// 					display="block"
-								// 					boxSize="450px"
-								// 					objectFit="cover"
-								// 					src={staff.img}
-								// 				/>
-								// 			</Center>
-								// 			<Box maxW="200px" py="5px">
-								// 				<Heading size="md">
-								// 					{staff.name}
-								// 				</Heading>
-								// 				<Text size="sm" flexWrap="wrap">
-								// 					{staff.title}
-								// 				</Text>
-								// 			</Box>
-								// 		</Flex>
-								// 	);
-								// }
 								return (
 									<StaffCard
 										title={staff.title}
@@ -233,6 +198,11 @@ export default function About(): JSX.Element {
 							</HStack>
 						</VStack>
 					</Box>
+				</ContainerInside>
+			</Container>
+			<Container>
+				<ContainerInside>
+					
 				</ContainerInside>
 			</Container>
 		</>

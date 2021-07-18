@@ -128,11 +128,23 @@ export default function Community({
 																		social.media
 																	}
 																	:{" "}
-																	<Text>
-																		{
-																			social.tag
-																		}
-																	</Text>
+																	{social.link ? (
+																		<Link
+																			href={
+																				social.link
+																			}
+																		>
+																			{
+																				social.tag
+																			}
+																		</Link>
+																	) : (
+																		<Text>
+																			{
+																				social.tag
+																			}
+																		</Text>
+																	)}
 																</Text>
 															);
 														}

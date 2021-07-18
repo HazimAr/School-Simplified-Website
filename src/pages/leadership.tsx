@@ -208,7 +208,7 @@ export default function About({ data }: { data: any }): JSX.Element {
 					<HStack spacing={5}>
 						{data.map((section) => {
 							return (
-								<Stack>
+								<Stack key={section.title}>
 									<Heading> {section.title} </Heading>
 									<Stack>
 										{section.docs.map((doc) => {

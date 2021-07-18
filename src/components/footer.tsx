@@ -25,6 +25,10 @@ const infos = [
 		name: "Community",
 		link: "/community",
 	},
+	{
+		name: "Volunteer",
+		link: "/volunteer",
+	},
 
 	{
 		name: "Contact Us",
@@ -42,21 +46,25 @@ const infos = [
 
 const services = [
 	{
-		name: "Free Tutoring",
+		name: "Tutoring",
 		link: "/tutoring",
 	},
-
 	{
-		name: "Free Essay Revision",
+		name: "Homework Help",
+		link: "https://discord.gg/school",
+	},
+	{
+		name: "Essay Revision",
 		link: "/essay",
 	},
 	{
-		name: "Free Notes",
+		name: "Notes",
 		link: "/notes",
 	},
 	{
-		name: "Volunteer",
-		link: "/volunteer",
+		name: "Join Discord",
+
+		link: "https://discord.gg/school",
 	},
 	// {
 	// 	name: "College Prep",
@@ -155,7 +163,7 @@ export default function Footer(): JSX.Element {
 							</UnorderedList>
 						</Box>
 						<Box>
-							<Heading size="md">Follow Us</Heading>
+							<Heading size="md">Social Media</Heading>
 							<UnorderedList
 								styleType="none"
 								m="0"

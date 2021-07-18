@@ -51,13 +51,13 @@ export default function Header(): JSX.Element {
 								</MenuButton>
 								<MenuList>
 									<Link href="/tutoring">
-										<MenuItem>Free Tutoring</MenuItem>
+										<MenuItem>Tutoring</MenuItem>
 									</Link>
 									<Link href="/essay">
-										<MenuItem>Free Essay Revision</MenuItem>
+										<MenuItem>Essay Revision</MenuItem>
 									</Link>
 									<Link href="/notes">
-										<MenuItem>Free Notes</MenuItem>
+										<MenuItem>Notes</MenuItem>
 									</Link>
 								</MenuList>
 							</Menu>

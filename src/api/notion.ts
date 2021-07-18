@@ -463,5 +463,10 @@ async function getGovernanceData(): Promise<GovernanceSection[]> {
 		} // else wtf are you doing here bro
 	}
 
+	// push last one
+	if (sectionTitle.length) {
+		output.push({ title: sectionTitle, docs: documents });
+	}
+
 	return output;
 }

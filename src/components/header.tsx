@@ -44,7 +44,7 @@ export default function Header(): JSX.Element {
 							spacing={3}
 							fontSize={{
 								base: 11,
-								md: "default",
+								md: "initial",
 							}}
 						>
 							<Link href="/">Home</Link>

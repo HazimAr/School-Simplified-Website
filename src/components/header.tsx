@@ -47,7 +47,7 @@ export default function Header(): JSX.Element {
 								<MenuButton
 								// rightIcon={<ChevronDownIcon />}
 								>
-									Resources
+									Get Help
 								</MenuButton>
 								<MenuList>
 									<Link href="/tutoring">

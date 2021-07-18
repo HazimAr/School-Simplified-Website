@@ -7,6 +7,7 @@ import {
 	GovernanceSection,
 	NotesProps,
 	QAPair,
+	QASection,
 	SocialMedia,
 	Subject,
 	Unit,
@@ -371,33 +372,48 @@ async function getArtInfo(): Promise<ArtData> {
 	};
 }
 
-async function getFaqInfo(): Promise<QAPair[]> {
+async function getFaqInfo(): Promise<QASection[]> {
 	const { data } = await axios.get(
 		`https://api.notion.com/v1/blocks/bc5b51a1b7674a1da9fd09b559844881/children`,
 		notionConfig
 	);
+
+	let output: QASection[] = [],
+		title: string = "",
+		list: QAPair[] = [];
 	// console.log(data);
-	return data.results
-		.filter(
-			(block: any) =>
-				block.type === "paragraph" && block.paragraph?.text.length
-		)
-		.map((block: any) => {
+	for (const block of data.results) {
+		if (block.type.startsWith("heading")) {
+			const headingText = block[block.type].text;
+			if (headingText?.length && headingText[0].plain_text.length) {
+				// offload previous data
+				if (title.length) {
+					output.push({ title, list });
+				}
+
+				title = headingText[0].plain_text;
+				list = [];
+			} else console.warn(`ID ${block.id} [Q&A] is malformed!`);
+		} else if (block.type === "paragraph") {
 			let question: string = "";
 			let answers: AnswerPart[] = [];
 			const textBlocks = block.paragraph.text;
+			if (!textBlocks?.length) {
+				console.warn(`ID ${block.id} [Q&A] is malformed!`);
+				continue;
+			}
 
 			const questionText = textBlocks[0];
 			if (questionText.plain_text && questionText.annotations?.bold) {
 				question = questionText.plain_text;
 			} else {
 				console.warn(`ID ${block.id} [Q&A] is malformed!`);
-				return;
+				continue;
 			}
 
 			if (textBlocks.length < 1) {
 				console.warn(`ID ${block.id} [Q&A] is malformed!`);
-				return;
+				continue;
 			} else {
 				for (let i = 1; i < textBlocks.length; i++) {
 					if (textBlocks[i].plain_text?.length) {
@@ -413,13 +429,20 @@ async function getFaqInfo(): Promise<QAPair[]> {
 				}
 			}
 
-			return {
-				question,
-				answer: answers,
-			};
-		})
-		.filter((qa: QAPair) => qa && qa.question.length && qa.answer.length);
+			if (question.length && answers.length) {
+				list.push({
+					question,
+					answer: answers,
+				});
+			} else console.warn(`ID ${block.id} [Q&A] is malformed!`);
+		}
+	}
+
+	if (title.length) {
+		output.push({ title, list });
+	}
 	// console.log(qaPairs);
+	return output;
 }
 
 async function getGovernanceData(): Promise<GovernanceSection[]> {

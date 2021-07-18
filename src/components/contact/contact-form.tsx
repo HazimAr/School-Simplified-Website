@@ -123,7 +123,7 @@ export default function ContactForm(): JSX.Element {
 					/>
 				</Stack>
 			</Flex>
-			<FormLabel>Email</FormLabel>
+			<FormLabel mt={3}>Email</FormLabel>
 			<StyledInput
 				placeholder="Email"
 				type="email"

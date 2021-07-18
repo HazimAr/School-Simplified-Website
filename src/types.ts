@@ -42,6 +42,11 @@ export type QAPair = {
 	answer: AnswerPart[];
 };
 
+export type QASection = {
+	title: string;
+	list: QAPair[];
+};
+
 export type AnswerPart = { text: string; link?: string };
 
 export type GovernanceSection = {

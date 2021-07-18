@@ -20,7 +20,7 @@ export default function Header(): JSX.Element {
 			<Container
 				bg="#636EE0CD"
 				as="header"
-				py="10px"
+				py={3}
 				w="100%"
 				position="fixed"
 				zIndex={1000}
@@ -30,9 +30,9 @@ export default function Header(): JSX.Element {
 					<Flex
 						justify="space-between"
 						align="center"
-						flexWrap="wrap"
+						flexDir={{ base: "column", md: "row" }}
 					>
-						<Link href="/" _hover={{}}>
+						<Link href="/" mb={{ base: 2, md: 0 }}>
 							<Flex justify="center" align="center">
 								<Image src="/logo.png" w={30} />
 								<Heading size="md" ml={2.5}>
@@ -43,7 +43,7 @@ export default function Header(): JSX.Element {
 						<HStack
 							spacing={3}
 							fontSize={{
-								base: 12,
+								base: 11,
 								md: "default",
 							}}
 						>

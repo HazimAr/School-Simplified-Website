@@ -225,7 +225,7 @@ export default function About({ data }: { data: any }): JSX.Element {
 														key={doc.href}
 														href={doc.href}
 													>
-														<Text color="brand.gold">
+														<Text>
 															{doc.title}
 														</Text>
 													</Link>

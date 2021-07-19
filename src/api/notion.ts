@@ -155,7 +155,6 @@ async function getUnits(
 							? {
 									title: notesTitle,
 									href: href,
-									lastEdited: block.last_edited_time,
 							  }
 							: {
 									title: notesTitle,

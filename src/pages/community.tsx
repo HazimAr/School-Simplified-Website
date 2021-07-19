@@ -204,8 +204,8 @@ export default function Community({
 								h="300px"
 								justify="center"
 							>
-								<Heading>Events</Heading>
-								<Heading size="sm">
+								<Heading >Events</Heading>
+								<Heading size="sm" as="i">
 									We organize community events, often with
 									prizes, such as:
 								</Heading>
@@ -232,10 +232,9 @@ export default function Community({
 								my="20px!important"
 								justify="center"
 							>
-								<Heading>Music</Heading>
-								<Heading size="sm">
-									We curate playlists of productivity music to
-									help you study:
+								<Heading mt="-15px">Music</Heading>
+								<Heading size="sm" as="i">
+									We curate playlists to help you study, with genres like:
 								</Heading>
 								<UnorderedList textAlign="left">
 									<Link
@@ -281,8 +280,8 @@ export default function Community({
 								h="300px"
 								justify="center"
 							>
-								<Heading>Friends</Heading>
-								<Heading size="xsm">
+								<Heading mt="-15px" >Friends</Heading>
+								<Heading size="sm" as="i">
 									We operate a 60k-member Discord server,
 									which offers:
 								</Heading>
@@ -326,7 +325,7 @@ export default function Community({
 								/>
 							</Link>
 
-							<Heading size="md">
+							<Heading size="md" color="white">
 								Join our Discord. Come for the academic help,
 								stay for the family!
 							</Heading>
@@ -339,7 +338,6 @@ export default function Community({
 							align={{ base: "center", md: "left" }}
 						>
 							<Heading
-								justify="left"
 								textAlign={{ base: "center", md: "left" }}
 							>
 								Our Discord Server
@@ -377,7 +375,7 @@ export default function Community({
 						<VStack spacing={4}>
 							<Heading>Our Socials</Heading>
 							<Container>
-								<Heading fontSize="18px" mb="35px">
+								<Heading fontSize="18px" mb="35px" color="white">
 									Check out our socials for tips,
 									entertainment, music, podcasts,
 									opportunities, and more!

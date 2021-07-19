@@ -210,14 +210,10 @@ export default function About({ data }: { data: any }): JSX.Element {
 			<Container>
 				<ContainerInside>
 					<Divider bg="white" />
-					<Flex textAlign="center" justify="center" mt={5}>
+					<Flex textAlign="left" justify="center" mt={5}>
 						{data.map((section: GovernanceSection) => {
 							return (
-								<Stack
-									key={section.title}
-									flex={1}
-									textAlign="left"
-								>
+								<Stack key={section.title} flex={1}>
 									<Heading fontSize={20}>
 										{section.title}
 									</Heading>

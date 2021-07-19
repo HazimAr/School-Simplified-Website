@@ -280,16 +280,15 @@ export default function Community({
 								h="300px"
 								justify="center"
 							>
-								<Heading mt="-15px" >Friends</Heading>
+								<Heading mt="-15px" >Daily</Heading>
 								<Heading size="sm" as="i">
-									We operate a 60k-member Discord server,
-									which offers:
+									We release daily opportunities and entertainment, such as:
 								</Heading>
 								<UnorderedList textAlign="left">
-									<ListItem>Text Chat</ListItem>
-									<ListItem>Voice Calls</ListItem>
-									<ListItem>Games</ListItem>
-									<ListItem>Levels</ListItem>
+									<ListItem>Internship/ Job Openings</ListItem>
+									<ListItem>Student Discounts</ListItem>
+									<ListItem>Motivational Quotes</ListItem>
+									<ListItem>Fun Questions</ListItem>
 								</UnorderedList>
 							</VStack>
 						</HStack>
@@ -336,6 +335,7 @@ export default function Community({
 							flexDir="column"
 							my="20px!important"
 							align={{ base: "center", md: "left" }}
+							alignItems="stretch"
 						>
 							<Heading
 								textAlign={{ base: "center", md: "left" }}
@@ -347,12 +347,11 @@ export default function Community({
 								fontSize="2xl"
 								textAlign={{ base: "center", md: "left" }}
 							>
-								Our server members are high school students who
-								help each other out with academics,
-								extracurricular activities, and life in general.
-								Our volunteers offer student opportunities,
-								daily motivation, school help, entertainment,
-								and much more!
+								Our Discord server offers all of the features above, 
+								and more! Our 60k members are high school students 
+								who help each other with academics, extracurricular 
+								activities, and general life. Communication is through 
+								text chat, voice calls, and other methods!
 							</Text>
 
 							<Link

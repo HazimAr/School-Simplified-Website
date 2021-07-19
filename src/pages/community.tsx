@@ -182,7 +182,7 @@ export default function Community({
 									Our organization features a global community
 									of over 60,000 teenagers. In this diverse,
 									open-minded, and inclusive community, you'll
-									have opportunities to meet new friends from
+									have opportunities to make new friends from
 									all around the world.
 								</Text>
 							</Stack>

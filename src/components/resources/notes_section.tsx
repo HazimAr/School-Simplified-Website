@@ -300,7 +300,6 @@ function NotesGrid({ allNotes }: { allNotes: NotesProps[] }): JSX.Element {
 							<NotesBox
 								title={note.title}
 								href={note.href}
-								lastEdited={note.lastEdited}
 								key={"note_" + idx}
 							/>
 						))
@@ -312,7 +311,6 @@ function NotesGrid({ allNotes }: { allNotes: NotesProps[] }): JSX.Element {
 						<NotesBox
 							title={note.title}
 							href={note.href}
-							lastEdited={note.lastEdited}
 							key={"note_" + idx}
 						/>
 					))
@@ -329,11 +327,6 @@ function NotesGrid({ allNotes }: { allNotes: NotesProps[] }): JSX.Element {
 }
 
 /**
- * The date and time formatter
- */
-const dateTimeFormatter = new Intl.DateTimeFormat("en-US");
-
-/**
  * Creates a notes box
  * @param props the props needed to generate this element
  * @returns a JSX Element that displays the blurb of the notes
@@ -345,71 +338,31 @@ function NotesBox(props: NotesProps): JSX.Element {
 		lg: 185,
 	});
 
-	if (props.lastEdited) {
-		return (
-			<Link
-				href={props.href}
-				isExternal
-				_hover={{ textDecoration: "none", cursor: "auto" }}
-				_active={{ outline: "none" }}
+	return (
+		<Link
+			href={props.href}
+			isExternal
+			_hover={{ textDecoration: "none", cursor: "auto" }}
+		>
+			<Center
+				w={sideLength}
+				h={sideLength}
+				borderRadius={25}
+				mb={3}
+				mr={3}
+				p={3}
+				bg="brand.transparent"
+				color="brand.purple.dark"
+				transition="all 0.2s ease"
+				fontSize={{ base: 14, md: 12, lg: 18 }}
+				_hover={{ cursor: "pointer", transform: "scale(0.95)" }}
+				_active={{
+					transform: "scale(0.90)",
+				}}
+				boxShadow="lg"
 			>
-				<Flex
-					w={sideLength}
-					h={sideLength}
-					borderRadius={25}
-					mb={3}
-					mr={3}
-					p={3}
-					bg="brand.transparent"
-					color="brand.purple.dark"
-					transition="all 0.2s ease"
-					_hover={{ cursor: "pointer", transform: "scale(0.95)" }}
-					_active={{
-						transform: "scale(0.90)",
-					}}
-					flexDir="column"
-					boxShadow="lg"
-				>
-					<Center flex={1} fontSize={{ base: 14, md: 12, lg: 18 }}>
-						{props.title}
-					</Center>
-					<Text
-						fontStyle="italic"
-						textAlign={{ base: "center", md: "right" }}
-						flex={0}
-						fontSize={{ base: 12, md: 10, lg: 14 }}
-					>
-						Last edited{" "}
-						{dateTimeFormatter.format(new Date(props.lastEdited))}
-					</Text>
-				</Flex>
-			</Link>
-		);
-	} else
-		return (
-			<Link
-				href={props.href}
-				isExternal
-				_hover={{ textDecoration: "none", cursor: "auto" }}
-			>
-				<Center
-					w={sideLength}
-					h={sideLength}
-					borderRadius={25}
-					mb={3}
-					mr={3}
-					p={3}
-					bg="brand.transparent"
-					color="brand.purple.dark"
-					fontSize={{ base: 14, md: 12, lg: 18 }}
-					_hover={{ cursor: "pointer", transform: "scale(0.95)" }}
-					_active={{
-						transform: "scale(0.90)",
-					}}
-					boxShadow="lg"
-				>
-					{props.title}
-				</Center>
-			</Link>
-		);
+				{props.title}
+			</Center>
+		</Link>
+	);
 }

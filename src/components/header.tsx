@@ -43,7 +43,7 @@ export default function Header(): JSX.Element {
 						<HStack
 							spacing={3}
 							fontSize={{
-								base: 9.3,
+								base: 10,
 								sm: 12,
 								md: "initial",
 							}}
@@ -70,18 +70,18 @@ export default function Header(): JSX.Element {
 							</Menu>
 							<Link href="/volunteer">Volunteer</Link>
 							<Link href="/contact">Contact Us</Link>
-							<Link href="/faq">FAQ</Link>
+
 							<Menu>
-								<MenuButton
-								>
-									About Us
-								</MenuButton>
+								<MenuButton>About Us</MenuButton>
 								<MenuList>
 									<Link href="/community">
 										<MenuItem>Community</MenuItem>
 									</Link>
 									<Link href="/leadership">
 										<MenuItem>Leadership</MenuItem>
+									</Link>
+									<Link href="/faq">
+										<MenuItem>FAQ</MenuItem>
 									</Link>
 								</MenuList>
 							</Menu>

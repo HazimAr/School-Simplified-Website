@@ -14,7 +14,7 @@ const Reviews = [
 		title: "Sophomore",
 	},
 	{
-		review: "I've had multiple tutoring sessions with him and he's helped me revise an essay that got me into a program at Stanford, as well as get a 100% on my final with the help of some practice questions he made for me. Overall, [my tutor]'s an amazing tutor and I've noticed a significant improvement in my scores and understanding of the material.",
+		review: "I've had multiple tutoring sessions with [my tutor] and he's helped me revise an essay that got me into a program at Stanford, as well as get a 100% on my final with the help of some practice questions he made for me. Overall, he's an amazing tutor and I've noticed a significant improvement in my scores and understanding of the material.",
 		name: "Adam",
 		title: "Freshman",
 	},

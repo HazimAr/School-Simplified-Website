@@ -29,8 +29,9 @@ export default function Here() {
 							mx={{ base: 0, lg: 10 }}
 							w="100%"
 							justify="center"
-							boxShadow="2xl"
+							boxShadow="lg"
 							p={10}
+							backdropFilter="blur(5px)"
 						>
 							<Heading as="h1" color="brand.purple.dark">
 								Free Tutoring
@@ -83,6 +84,7 @@ function Card({
 			justify="center"
 			boxShadow="lg"
 			p={10}
+			backdropFilter="blur(5px)"
 		>
 			<Heading as="h1" color="brand.purple.dark">
 				{title}

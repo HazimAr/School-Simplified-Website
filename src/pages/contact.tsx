@@ -11,7 +11,7 @@ export default function Contact(): JSX.Element {
 					<Heading as="h1" size="xl" mb={3}>
 						Get in Touch
 					</Heading>
-					<Heading as="h2" size="md">
+					<Heading as="h2" size="md" color="white">
 						Questions, comments, or concerns?
 					</Heading>
 				</Box>

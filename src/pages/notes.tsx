@@ -21,7 +21,9 @@ export default function Resources({ subjects }: AllSubjects): JSX.Element {
 						justifyContent="space-between"
 					>
 						<Box textAlign={{ base: "center", sm: "left" }}>
-							<Heading mb={3}>Notes</Heading>
+							<Heading as="h1" mb={3}>
+								Notes
+							</Heading>
 							<Text fontSize={20}>
 								All the top-notch notes you'll ever want for
 								your academic needs!

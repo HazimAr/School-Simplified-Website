@@ -213,7 +213,11 @@ export default function About({ data }: { data: any }): JSX.Element {
 					<Flex textAlign="center" justify="center" mt={5}>
 						{data.map((section: GovernanceSection) => {
 							return (
-								<Stack key={section.title} flex={1}>
+								<Stack
+									key={section.title}
+									flex={1}
+									textAlign="left"
+								>
 									<Heading fontSize={20}>
 										{section.title}
 									</Heading>
@@ -225,9 +229,7 @@ export default function About({ data }: { data: any }): JSX.Element {
 														key={doc.href}
 														href={doc.href}
 													>
-														<Text>
-															{doc.title}
-														</Text>
+														<Text>{doc.title}</Text>
 													</Link>
 												);
 											}

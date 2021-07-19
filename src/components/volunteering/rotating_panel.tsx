@@ -1,16 +1,16 @@
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import {
-    Box,
-    Center,
-    Circle,
-    Flex,
-    Heading,
-    Icon,
-    Image,
-    Link,
-    ScaleFade,
-    Text,
-    useControllableState
+	Box,
+	Center,
+	Circle,
+	Flex,
+	Heading,
+	Icon,
+	Image,
+	Link,
+	ScaleFade,
+	Text,
+	useControllableState,
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
@@ -29,7 +29,7 @@ const teams: PanelProps[] = [
 		teams: [
 			"tutoring",
 			"chat-helping",
-			"Essay Revision",
+			"essay revision",
 			"creating notes",
 			"providing college advice",
 			"more.",
@@ -38,7 +38,7 @@ const teams: PanelProps[] = [
 	{
 		teamName: "Tech",
 		teamDesc:
-			"Joining our Technology Team will allow you to practice and develop skills such as programming, web development, and quality management. If you are knowledgeable in any of these areas, we encourage you to apply and help maintain our website and Discord server!",
+			"Joining our Technology Team will allow you to develop skills such as programming, web development, and quality management. If you are knowledgeable in any of these areas, we encourage you to apply!",
 		src: "/logos/tech_logo.png",
 		link: "https://forms.gle/tqXm5aLwhWGQ4cGA6",
 		teams: [
@@ -92,15 +92,15 @@ export default function RotatingPanel(): JSX.Element {
 		onChange: (newIndex: number) => {
 			if (newIndex < 0) setIndex(innerPanels.length - 1);
 			else if (newIndex >= innerPanels.length) setIndex(0);
-			else {
-				console.log(index + " vs " + newIndex);
-			}
+			// else {
+			// 	console.log(index + " vs " + newIndex);
+			// }
 		},
 	});
 
 	useInterval(() => {
 		setIndex(index + 1);
-	}, 10000);
+	}, 20000);
 
 	return (
 		<Container>
@@ -178,7 +178,7 @@ function Panel({
 			<ScaleFade in={true}>
 				<Flex
 					justifyContent="space-between"
-					flexDir={{base: "column", md: "row"}}
+					flexDir={{ base: "column", md: "row" }}
 					alignItems="center"
 					overflow="auto"
 				>

@@ -97,7 +97,7 @@ export default function Community({
 											</ModalHeader>
 											<ModalCloseButton />
 											<ModalBody>
-												This months art contest prompt
+												This month's art contest prompt
 												was:{" "}
 												<Text>
 													{artInfo.monthlyPrompt}
@@ -116,9 +116,15 @@ export default function Community({
 												</Text>
 												<Heading size="sm" mt={5}>
 													{artInfo.socialMedia.map(
-														(social) => {
+														(
+															social,
+															key: number
+														) => {
 															return (
-																<Text mt={5}>
+																<Text
+																	mt={5}
+																	key={key}
+																>
 																	Follow{" "}
 																	{
 																		artInfo.name
@@ -165,7 +171,7 @@ export default function Community({
 								</Stack>
 
 								<Text textAlign="center">
-									Artwork from our event winners!
+									Winning artwork from the latest event!
 								</Text>
 							</Stack>
 
@@ -321,9 +327,8 @@ export default function Community({
 							</Link>
 
 							<Heading size="md">
-								Join our Discord. Come for the academic help.
-								Stay for the community and become a part of the
-								family!
+								Join our Discord. Come for the academic help,
+								stay for the family!
 							</Heading>
 						</VStack>
 
@@ -344,12 +349,12 @@ export default function Community({
 								fontSize="2xl"
 								textAlign={{ base: "center", md: "left" }}
 							>
-								Our server members are fellow high school
-								students who help each other out with academics,
-								extracurriculars, and life in general. Our
-								volunteers offer student opportunities, daily
-								motivation, school help, entertainment, and much
-								more!
+								Our server members are high school students who
+								help each other out with academics,
+								extracurricular activities, and life in general.
+								Our volunteers offer student opportunities,
+								daily motivation, school help, entertainment,
+								and much more!
 							</Text>
 
 							<Link

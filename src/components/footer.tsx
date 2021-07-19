@@ -46,12 +46,12 @@ const infos = [
 
 const services = [
 	{
-		name: "Tutoring",
-		link: "/tutoring",
-	},
-	{
 		name: "Homework Help",
 		link: "https://discord.gg/A782bUXTP8",
+	},
+	{
+		name: "Tutoring",
+		link: "/tutoring",
 	},
 	{
 		name: "Essay Revision",
@@ -115,16 +115,18 @@ export default function Footer(): JSX.Element {
 				<ContainerInside pb={5}>
 					<Flex
 						justify="space-around"
-						flexWrap="wrap"
-						py="10px"
+						// flexWrap="wrap"
+						flexDir={{ base: "column", sm: "row" }}
 						textAlign={{ base: "center", md: "left" }}
 					>
-						<Box>
-							<Heading size="md">Information</Heading>
+						<Box my={3}>
+							<Heading size="md" color="white" mb={2}>
+								Information
+							</Heading>
 							<UnorderedList
 								styleType="none"
-								m="0"
-								p="0"
+								m={0}
+								p={0}
 								color="brand.gold"
 							>
 								{infos.map((info) => {
@@ -138,12 +140,14 @@ export default function Footer(): JSX.Element {
 								})}
 							</UnorderedList>
 						</Box>
-						<Box>
-							<Heading size="md">Get Help</Heading>
+						<Box my={3}>
+							<Heading size="md" color="white" mb={2}>
+								Get Help
+							</Heading>
 							<UnorderedList
 								styleType="none"
-								m="0"
-								p="0"
+								m={0}
+								p={0}
 								color="brand.gold"
 							>
 								{services.map((service) => {
@@ -157,12 +161,14 @@ export default function Footer(): JSX.Element {
 								})}
 							</UnorderedList>
 						</Box>
-						<Box>
-							<Heading size="md">Social Media</Heading>
+						<Box my={3}>
+							<Heading size="md" color="white" mb={2}>
+								Social Media
+							</Heading>
 							<UnorderedList
 								styleType="none"
-								m="0"
-								p="0"
+								m={0}
+								p={0}
 								color="brand.gold"
 							>
 								{socials.map((social) => {

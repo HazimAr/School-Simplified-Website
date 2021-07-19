@@ -26,8 +26,8 @@ export default function Why(): JSX.Element {
 							>
 								School Simplified believes that quality
 								education should be accessible to all students.
-								As an organization run by students for students, we
-								want to help you succeed!
+								As an organization run by students and for
+								students, we want to help you succeed!
 							</Text>
 						</Box>
 						<Image

@@ -35,7 +35,7 @@ export default function Header(): JSX.Element {
 						<Link href="/" mb={{ base: 2, md: 0 }}>
 							<Flex justify="center" align="center">
 								<Image src="/logo.png" w={30} />
-								<Heading size="md" ml={2.5}>
+								<Heading size="md" color="white" ml={2.5}>
 									School Simplified
 								</Heading>
 							</Flex>

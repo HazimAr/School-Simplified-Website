@@ -1,4 +1,5 @@
 import { Box, Flex, Heading, Image, Link, Text } from "@chakra-ui/react";
+import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 
@@ -7,37 +8,42 @@ export default function Four(): JSX.Element {
 		<Container>
 			<ContainerInside py={5}>
 				<Flex
-					flexDir={{ base: "column", lg: "row" }}
+					flexDir={{ base: "column", md: "row" }}
 					alignItems="center"
 					justifyContent="space-between"
 				>
 					<Box>
 						<Heading
 							size="2xl"
-							textAlign={{ base: "center", lg: "left" }}
+							textAlign={{ base: "center", md: "left" }}
 						>
 							Oh No!
 						</Heading>
 						<Text
 							fontSize="xl"
 							my={3}
-							textAlign={{ base: "center", lg: "left" }}
+							textAlign={{ base: "center", md: "left" }}
 						>
 							It looks like a dog has eaten the page you're
 							looking for. Click below to return to run away
 							before it eats another page...
 						</Text>
-						<Text textAlign={{ base: "center", lg: "left" }}>
+						<Text textAlign={{ base: "center", md: "left" }}>
 							If a page is supposed to be here, please{" "}
 							<Link href="/contact" color="brand.purple.dark">
 								let us know
 							</Link>
 							.
 						</Text>
+						<Link href="/" _hover={{ cursor: "auto" }}>
+							<Button _hover={{ cursor: "pointer" }} mt={3}>
+								Return to Home
+							</Button>
+						</Link>
 					</Box>
 					<Image
 						src="/timmy/dog.png"
-						w={{ base: 200, sm: 300, md: 525 }}
+						w={{ base: 200, sm: 250, md: 300 }}
 						mt={{ base: 5, lg: 0 }}
 					/>
 				</Flex>

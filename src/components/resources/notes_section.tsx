@@ -75,7 +75,9 @@ function NotesTree({ subjects }: AllSubjects): JSX.Element {
 							}}
 							minW="fit-content"
 						>
-							<Heading size="sm">{subject.title}</Heading>
+							<Heading size="sm" color="white">
+								{subject.title}
+							</Heading>
 						</AccordionButton>
 						<AccordionPanel
 							pb={3}
@@ -230,11 +232,19 @@ function NotesGrid({ allNotes }: { allNotes: NotesProps[] }): JSX.Element {
 		<Flex flex={1} flexDir="column">
 			<Flex
 				justifyContent="space-between"
+				alignContent="center"
 				flexDir={{ base: "column", md: "row" }}
 				mb={5}
 				flex={0}
 			>
-				<Heading size={innerTitleSize} mb={3} flexShrink={0} mr={5}>
+				<Heading
+					size={innerTitleSize}
+					mb={3}
+					flexShrink={0}
+					mr={{ base: 0, md: 5 }}
+					maxW={{ base: "initial", md: "65%" }}
+					textAlign={{ base: "center", md: "left" }}
+				>
 					{content
 						? searchTerm.length
 							? "Search"
@@ -243,7 +253,7 @@ function NotesGrid({ allNotes }: { allNotes: NotesProps[] }): JSX.Element {
 				</Heading>
 				<InputGroup
 					size={inputGroupSize}
-					maxW={{ base: 250, sm: 300, lg: 500 }}
+					maxW={{ base: "initial", md: 350, lg: 500 }}
 					flexShrink={1}
 				>
 					<InputLeftElement
@@ -310,7 +320,7 @@ function NotesGrid({ allNotes }: { allNotes: NotesProps[] }): JSX.Element {
 					<Text fontStyle="italic">
 						{content
 							? "There's nothing here right now. Check back later!"
-							: "Select one of the categories on the left to start."}
+							: "Select one of the categories on the left to get started."}
 					</Text>
 				)}
 			</Flex>
@@ -392,7 +402,11 @@ function NotesBox(props: NotesProps): JSX.Element {
 					bg="brand.transparent"
 					color="brand.purple.dark"
 					fontSize={{ base: 14, md: 12, lg: 18 }}
-					_hover={{ cursor: "pointer" }}
+					_hover={{ cursor: "pointer", transform: "scale(0.95)" }}
+					_active={{
+						transform: "scale(0.90)",
+					}}
+					boxShadow="lg"
 				>
 					{props.title}
 				</Center>

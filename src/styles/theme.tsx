@@ -62,6 +62,15 @@ const theme = extendTheme({
 			ul: {
 				listStyle: "none",
 			},
+			h1: {
+				color: "#ffd470",
+			},
+			h2: {
+				color: "#ffd470",
+			},
+			h3: {
+				color: "#ffd470",
+			},
 
 			"::-webkit-scrollbar": {
 				width: "0.6em",

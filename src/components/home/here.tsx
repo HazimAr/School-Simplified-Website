@@ -17,7 +17,7 @@ export default function Here() {
 					>
 						<Card
 							title="Free Essay Revision"
-							description="We offer in-depth proofreading and writing tips/tricks!"
+							description="We offer comprehensive proofreading for all types of writing!"
 							button="Submit Essay"
 							href="/essay"
 						/>
@@ -36,8 +36,8 @@ export default function Here() {
 								Free Tutoring
 							</Heading>
 							<Text textAlign="center" color="brand.purple.light">
-								We offer private tutoring in regular classes and
-								APs!
+								We offer private, personalized tutoring for
+								every subject and AP!
 							</Text>
 							<Link href="/tutoring">
 								<Button>Sign Up</Button>
@@ -46,7 +46,7 @@ export default function Here() {
 
 						<Card
 							title="Free Notes"
-							description="We offer hundreds of high-quality, regularly updated notes in regular subjects and APs!"
+							description="We offer extensive, regularly updated notes for a variety of classes!"
 							button="Get Notes"
 							href="/notes"
 						/>

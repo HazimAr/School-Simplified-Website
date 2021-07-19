@@ -9,7 +9,7 @@ const reasons = [
 	},
 	{
 		title: "Learn New Skills",
-		text: "We offer hands-on experience in a professional work setting! In addition, our staff are given learning opportunities, such as workshops, training programs, and early access to other educational resources.",
+		text: "We offer hands-on experience in a professional work setting! In addition, our staff are given learning opportunities, such as workshops, training programs, and early access to other bonus educational resources.",
 	},
 	{
 		title: "Leadership Opportunities",

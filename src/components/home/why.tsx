@@ -32,6 +32,7 @@ export default function Why(): JSX.Element {
 						</Box>
 						<Image
 							src="/undraw/learning.svg"
+							alt="girl standing next to paper"
 							w={{ base: 200, md: 300, lg: 400 }}
 							ml={{ base: 0, md: 8 }}
 							mt={{ base: 8, md: 0 }}

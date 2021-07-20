@@ -26,6 +26,7 @@ export default function Intro() {
 						<Image
 							h="325px"
 							src="/undraw/team.svg"
+							alt="group of students"
 							// display={{ sm: "none", md: "block" }}
 						/>
 					</Box>

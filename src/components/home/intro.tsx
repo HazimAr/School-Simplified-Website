@@ -26,6 +26,7 @@ export default function Intro() {
 						<Image
 							h="300px"
 							src="/undraw/education.svg"
+							alt="girl holding cap"
 							display={{ base: "none", md: "block" }}
 						/>
 					</Box>

@@ -123,7 +123,12 @@ export default function Footer(): JSX.Element {
 							<Heading size="md" color="white" mb={2}>
 								Information
 							</Heading>
-							<UnorderedList styleType="none" m={0} p={0}>
+							<UnorderedList
+								styleType="none"
+								m={0}
+								p={0}
+								color="brand.gold"
+							>
 								{infos.map((info) => {
 									return (
 										<ListItem key={info.name}>
@@ -139,7 +144,12 @@ export default function Footer(): JSX.Element {
 							<Heading size="md" color="white" mb={2}>
 								Get Help
 							</Heading>
-							<UnorderedList styleType="none" m={0} p={0}>
+							<UnorderedList
+								styleType="none"
+								m={0}
+								p={0}
+								color="brand.gold"
+							>
 								{services.map((service) => {
 									return (
 										<ListItem key={service.name}>
@@ -155,7 +165,12 @@ export default function Footer(): JSX.Element {
 							<Heading size="md" color="white" mb={2}>
 								Social Media
 							</Heading>
-							<UnorderedList styleType="none" m={0} p={0}>
+							<UnorderedList
+								styleType="none"
+								m={0}
+								p={0}
+								color="brand.gold"
+							>
 								{socials.map((social) => {
 									return (
 										<ListItem key={social.name}>
@@ -180,7 +195,7 @@ export default function Footer(): JSX.Element {
 						align="center"
 						color="text.200"
 					>
-						<Text color="brand.gold">
+						<Text>
 							School Simplified © 2021 All Rights Reserved
 						</Text>
 						{/* <Text>

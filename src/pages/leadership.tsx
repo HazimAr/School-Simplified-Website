@@ -210,7 +210,7 @@ export default function About({ data }: { data: any }): JSX.Element {
 			<Container>
 				<ContainerInside>
 					<Divider bg="white" />
-					<Flex textAlign="center" justify="center" mt={5}>
+					<Flex textAlign="left" justify="center" mt={5}>
 						{data.map((section: GovernanceSection) => {
 							return (
 								<Stack key={section.title} flex={1}>
@@ -225,9 +225,7 @@ export default function About({ data }: { data: any }): JSX.Element {
 														key={doc.href}
 														href={doc.href}
 													>
-														<Text>
-															{doc.title}
-														</Text>
+														<Text>{doc.title}</Text>
 													</Link>
 												);
 											}

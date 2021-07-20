@@ -57,7 +57,7 @@ export default function Intro() {
 							</UnorderedList>
 						</Flex>
 						<Link href="/community">
-							<Button mt={5}>Join Our Discord</Button>
+							<Button mt={5}>Join the Community</Button>
 						</Link>
 					</Box>
 				</Flex>

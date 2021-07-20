@@ -16,10 +16,10 @@ export default function Here() {
 						flexDir={{ base: "column", lg: "row" }}
 					>
 						<Card
-							title="Free Essay Revision"
-							description="We offer comprehensive proofreading for all types of writing!"
-							button="Submit Essay"
-							href="/essay"
+							title="Free Notes"
+							description="We offer extensive, regularly updated notes for a variety of classes!"
+							button="Get Notes"
+							href="/notes"
 						/>
 						<VStack
 							rounded={rounded}
@@ -44,13 +44,13 @@ export default function Here() {
 								<Button>Sign Up</Button>
 							</Link>
 						</VStack>
-
 						<Card
-							title="Free Notes"
-							description="We offer extensive, regularly updated notes for a variety of classes!"
-							button="Get Notes"
-							href="/notes"
+							title="Free Essay Revision"
+							description="We offer comprehensive proofreading for all types of writing!"
+							button="Submit Essay"
+							href="/essay"
 						/>
+
 						{/* <Card
 						title="HS/College Prep"
 						description="Lorem ipsum dolor sit amet consectetur elit. Assumenda minima deleniti Lorem ipsum"

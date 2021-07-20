@@ -4,7 +4,7 @@ import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
 
-export default function Four(): JSX.Element {
+export default function Five(): JSX.Element {
 	return (
 		<Container>
 			<ContainerInside py={5}>

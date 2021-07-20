@@ -36,7 +36,7 @@ export default function Header(): JSX.Element {
 							<Flex justify="center" align="center">
 								<Image
 									src="/logo.png"
-									w={30}
+									boxSize={30}
 									alt="School Simplified Logo"
 								/>
 								<Heading size="md" color="white" ml={2.5}>

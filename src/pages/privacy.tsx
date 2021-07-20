@@ -5,8 +5,7 @@ export default function Privacy(): JSX.Element {
 	return (
 		<>
 			<Container>
-				<ContainerInside>
-				</ContainerInside>
+				<ContainerInside></ContainerInside>
 			</Container>
 		</>
 	);

@@ -31,6 +31,7 @@ export default function Resources({ subjects }: AllSubjects): JSX.Element {
 						</Box>
 						<Image
 							src="/undraw/file_bundle.svg"
+							alt="file"
 							w={{ base: 200, md: 300, lg: 400 }}
 							mt={{ base: 5, sm: 0 }}
 						/>

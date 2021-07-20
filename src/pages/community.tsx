@@ -68,6 +68,7 @@ export default function Community({
 									<AspectRatio ratio={1}>
 										<Image
 											src={artInfo.image}
+											alt="art winner"
 											boxSize="100%"
 											rounded={rounded}
 											objectFit="cover"
@@ -324,6 +325,7 @@ export default function Community({
 								<Image
 									src="\undraw\duck_group_shot.png"
 									h="300px"
+									alt="group timmy"
 									objectFit="cover"
 								/>
 							</NextLink>

@@ -16,8 +16,8 @@
 		"dev": "next dev -p 6969",
 		"build": "next build",
 		"start": "next start",
-		"clean": "npx prettier --write .",
-		"test": "jest"
+		"lint": "next lint",
+		"clean": "npx prettier --write ."
 	},
 	"dependencies": {
 		"@babel/core": "^7.14.6",
@@ -46,6 +46,8 @@
 		"@types/react-icons": "^3.0.0",
 		"@types/styled-components": "^5.1.11",
 		"babel-plugin-styled-components": "^1.13.2",
+		"eslint": "^7.31.0",
+		"eslint-config-next": "^11.0.1",
 		"prettier": "^2.3.2",
 		"typescript": "^4.3.5"
 	}

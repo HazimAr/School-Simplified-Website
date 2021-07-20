@@ -26,6 +26,7 @@ export default function StaffCard({
 					display="block"
 					boxSize="165px"
 					objectFit="cover"
+					alt="staff member"
 					src={img}
 				/>
 			</Center>

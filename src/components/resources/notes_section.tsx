@@ -280,7 +280,7 @@ function NotesGrid({ allNotes }: { allNotes: NotesProps[] }): JSX.Element {
 					/>
 					<InputRightElement
 						pointerEvents="none"
-						children={<Image src="/loading.svg" />}
+						children={<Image src="/loading.svg" alt="loading" />}
 						id="loading"
 						display="none"
 					/>

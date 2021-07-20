@@ -74,6 +74,8 @@ export default class MyDocument extends Document {
           `,
 						}}
 					/>
+					<link href="/fonts/Montserrat-Regular" rel="stylesheet" />
+					<link href="/fonts/Montserrat-Bold" rel="stylesheet" />
 				</Head>
 				<body>
 					<ColorModeScript initialColorMode="dark" />

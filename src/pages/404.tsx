@@ -44,6 +44,7 @@ export default function Four(): JSX.Element {
 					</Box>
 					<Image
 						src="/timmy/dog.png"
+						alt="timmy dog"
 						w={{ base: 200, sm: 250, md: 300 }}
 						mt={{ base: 5, lg: 0 }}
 					/>

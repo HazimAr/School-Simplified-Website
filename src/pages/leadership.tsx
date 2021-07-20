@@ -2,18 +2,18 @@
 /* eslint-disable sonarjs/no-duplicate-string */
 import { getGovernanceData } from "@api/notion";
 import {
-    Box,
-    Divider,
-    Flex,
-    Heading,
-    HStack,
-    Link,
-    Stack,
-    Text,
-    VStack
+	Box,
+	Divider,
+	Flex,
+	Heading,
+	HStack,
+	Stack,
+	Text,
+	VStack,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
+import NextLink from "@components/nextChakra";
 import StaffCard from "@components/staffcard";
 import React from "react";
 import { GovernanceDocument, GovernanceSection } from "types";
@@ -221,7 +221,7 @@ export default function About({ data }: { data: any }): JSX.Element {
 										{section.docs.map(
 											(doc: GovernanceDocument) => {
 												return (
-													<Link
+													<NextLink
 														key={doc.href}
 														href={doc.href}
 													>

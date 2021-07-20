@@ -3,6 +3,7 @@ import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import { rounded } from "@styles/theme";
+import NextLink from "@components/nextChakra";
 import React from "react";
 
 export default function Here() {

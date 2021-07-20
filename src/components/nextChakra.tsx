@@ -7,7 +7,7 @@ import NextLink from "next/link";
 export default function Container(props: any): JSX.Element {
 	return (
 		<NextLink href={props.href} passHref>
-			<Link {...props}>{props.children}</Link>
+			<NextLink {...props}>{props.children}</Link>
 		</NextLink>
 	);
 }

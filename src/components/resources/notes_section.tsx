@@ -1,24 +1,24 @@
 import {
-    Accordion,
-    AccordionButton,
-    AccordionItem,
-    AccordionPanel,
-    Box,
-    Center,
-    Flex,
-    Heading,
-    Icon,
-    Image,
-    Input,
-    InputGroup,
-    InputLeftElement,
-    InputRightElement,
-    Link,
-    Text,
-    useBreakpointValue
+	Accordion,
+	AccordionButton,
+	AccordionItem,
+	AccordionPanel,
+	Box,
+	Center,
+	Flex,
+	Heading,
+	Icon,
+	Image,
+	Input,
+	InputGroup,
+	InputLeftElement,
+	InputRightElement,
+	Text,
+	useBreakpointValue,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
+import NextLink from "@components/nextChakra";
 import { filter } from "fuzzaldrin";
 import React from "react";
 import { FaSearch } from "react-icons/fa";
@@ -339,7 +339,7 @@ function NotesBox(props: NotesProps): JSX.Element {
 	});
 
 	return (
-		<Link
+		<NextLink
 			href={props.href}
 			isExternal
 			_hover={{ textDecoration: "none", cursor: "auto" }}

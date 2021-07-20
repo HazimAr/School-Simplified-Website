@@ -1,18 +1,18 @@
 import {
-    Box,
-    Center,
-    Flex,
-    Heading,
-    Icon,
-    Link,
-    Spacer,
-    Text
+	Box,
+	Center,
+	Flex,
+	Heading,
+	Icon,
+	Spacer,
+	Text,
 } from "@chakra-ui/react";
 import StyledButton from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import { FaPaypal } from "react-icons/fa";
 
+import NextLink from "@components/nextChakra";
 export default function Donate(): JSX.Element {
 	return (
 		<>
@@ -43,7 +43,7 @@ export default function Donate(): JSX.Element {
 									<Icon as={FaPaypal} boxSize="150px" />
 								</Center>
 							</Box>
-							<Link
+							<NextLink
 								href="https://www.paypal.com/donate?token=NJtH7jwgJYMkVXNf_gRWpy6_ZTCwIeS5ipOzTutEI6nR8eqc_aucztFhJ19B_Wh_-rx9v4ieAP6j9qPL&Z3JncnB0="
 								isExternal
 							>

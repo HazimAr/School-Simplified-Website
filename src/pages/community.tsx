@@ -1,39 +1,39 @@
 import { getArtInfo } from "@api/notion";
 import {
-    AspectRatio,
-    Center,
-    Divider,
-    Heading,
-    HStack,
-    Icon,
-    Image,
-    Link,
-    ListItem,
-    Modal,
-    ModalBody,
-    ModalCloseButton,
-    ModalContent,
-    ModalFooter,
-    ModalHeader,
-    ModalOverlay,
-    Stack,
-    Text,
-    UnorderedList,
-    useDisclosure,
-    VStack
+	AspectRatio,
+	Center,
+	Divider,
+	Heading,
+	HStack,
+	Icon,
+	Image,
+	ListItem,
+	Modal,
+	ModalBody,
+	ModalCloseButton,
+	ModalContent,
+	ModalFooter,
+	ModalHeader,
+	ModalOverlay,
+	Stack,
+	Text,
+	UnorderedList,
+	useDisclosure,
+	VStack,
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
+import NextLink from "@components/nextChakra";
 import { rounded } from "@styles/theme";
 import React from "react";
 import {
-    RiDiscordLine,
-    RiFacebookBoxLine,
-    RiInstagramLine,
-    RiLinkedinBoxLine,
-    RiSpotifyLine,
-    RiTwitterLine
+	RiDiscordLine,
+	RiFacebookBoxLine,
+	RiInstagramLine,
+	RiLinkedinBoxLine,
+	RiSpotifyLine,
+	RiTwitterLine,
 } from "react-icons/ri";
 import { SiTiktok } from "react-icons/si";
 import { ArtData } from "types";
@@ -135,7 +135,7 @@ export default function Community({
 																	}
 																	:{" "}
 																	{social.link ? (
-																		<Link
+																		<NextLink
 																			href={
 																				social.link
 																			}
@@ -204,7 +204,7 @@ export default function Community({
 								h="300px"
 								justify="center"
 							>
-								<Heading >Events</Heading>
+								<Heading>Events</Heading>
 								<Heading size="sm" as="i">
 									We organize community events, often with
 									prizes, such as:
@@ -234,31 +234,32 @@ export default function Community({
 							>
 								<Heading mt="-15px">Music</Heading>
 								<Heading size="sm" as="i">
-									We curate playlists to help you study, with genres like:
+									We curate playlists to help you study, with
+									genres like:
 								</Heading>
 								<UnorderedList textAlign="left">
-									<Link
+									<NextLink
 										href="https://open.spotify.com/playlist/5xy112KNO4WBzaxR1tioT9?si=cbf67fcfe567406b&nd=1"
 										isExternal
 									>
 										<ListItem>Study Lofi</ListItem>
 									</NextLink>
 
-									<Link
+									<NextLink
 										href="https://open.spotify.com/playlist/2qfpV3Cv3LGASgLk5DDIwA?si=df83f8b734784065"
 										isExternal
 									>
 										<ListItem>Jazz Lofi</ListItem>
 									</NextLink>
 
-									<Link
+									<NextLink
 										href="https://open.spotify.com/playlist/3KUCDUAke9JNCi3EC3DR4A?si=b84da9bd407d43f2"
 										isExternal
 									>
 										<ListItem>90s Pop</ListItem>
 									</NextLink>
 
-									<Link
+									<NextLink
 										href="https://open.spotify.com/playlist/1lhX7W0NEvzMSsFCkQfxk4?si=5c16816fc6974f87"
 										isExternal
 									>
@@ -280,12 +281,15 @@ export default function Community({
 								h="300px"
 								justify="center"
 							>
-								<Heading mt="-15px" >Daily</Heading>
+								<Heading mt="-15px">Daily</Heading>
 								<Heading size="sm" as="i">
-									We release daily opportunities and entertainment, such as:
+									We release daily opportunities and
+									entertainment, such as:
 								</Heading>
 								<UnorderedList textAlign="left">
-									<ListItem>Internship/ Job Openings</ListItem>
+									<ListItem>
+										Internship/ Job Openings
+									</ListItem>
 									<ListItem>Student Discounts</ListItem>
 									<ListItem>Motivational Quotes</ListItem>
 									<ListItem>Fun Questions</ListItem>
@@ -313,7 +317,7 @@ export default function Community({
 							justify="center"
 							spacing={5}
 						>
-							<Link
+							<NextLink
 								href="https://discord.com/invite/school"
 								isExternal
 							>
@@ -337,9 +341,7 @@ export default function Community({
 							align={{ base: "center", md: "left" }}
 							alignItems="stretch"
 						>
-							<Heading
-								textAlign={{ base: "center", md: "left" }}
-							>
+							<Heading textAlign={{ base: "center", md: "left" }}>
 								Our Discord Server
 							</Heading>
 
@@ -347,14 +349,15 @@ export default function Community({
 								fontSize="2xl"
 								textAlign={{ base: "center", md: "left" }}
 							>
-								Our Discord server offers all of the features above, 
-								and more! Our 60k members are high school students 
-								who help each other with academics, extracurricular 
-								activities, and general life. Communication is through 
-								text chat, voice calls, and other methods!
+								Our Discord server offers all of the features
+								above, and more! Our 60k members are high school
+								students who help each other with academics,
+								extracurricular activities, and general life.
+								Communication is through text chat, voice calls,
+								and other methods!
 							</Text>
 
-							<Link
+							<NextLink
 								href="https://discord.com/invite/school"
 								isExternal
 								w="fit-content"
@@ -374,7 +377,11 @@ export default function Community({
 						<VStack spacing={4}>
 							<Heading>Our Socials</Heading>
 							<Container>
-								<Heading fontSize="18px" mb="35px" color="white">
+								<Heading
+									fontSize="18px"
+									mb="35px"
+									color="white"
+								>
 									Check out our socials for tips,
 									entertainment, music, podcasts,
 									opportunities, and more!
@@ -394,7 +401,10 @@ export default function Community({
 								color="white"
 								onClick={onOpenSpotify}
 								transition="all 0.2s ease"
-								_hover={{ cursor: "pointer", transform: "scale(1.20)" }}
+								_hover={{
+									cursor: "pointer",
+									transform: "scale(1.20)",
+								}}
 							/>
 
 							<Modal
@@ -407,7 +417,7 @@ export default function Community({
 									<ModalCloseButton />
 									<ModalBody>
 										<Button variant="outline">
-											<Link
+											<NextLink
 												href="https://open.spotify.com/user/5lkgh8ryszqens1ywo58m5lv8?si=e3b58782d2e94498"
 												isExternal
 											>
@@ -436,7 +446,7 @@ export default function Community({
 										</Heading>
 
 										<Text>
-											<Link
+											<NextLink
 												href="https://open.spotify.com/playlist/5xy112KNO4WBzaxR1tioT9?si=cbf67fcfe567406b&nd=1"
 												isExternal
 											>
@@ -445,7 +455,7 @@ export default function Community({
 										</Text>
 
 										<Text>
-											<Link
+											<NextLink
 												href="https://open.spotify.com/playlist/2qfpV3Cv3LGASgLk5DDIwA?si=df83f8b734784065"
 												isExternal
 											>
@@ -454,7 +464,7 @@ export default function Community({
 										</Text>
 
 										<Text>
-											<Link
+											<NextLink
 												href="https://open.spotify.com/playlist/42VuHYE30tU6olqgYCUGj9?si=4cdc91ce894b4d8c"
 												isExternal
 											>
@@ -463,7 +473,7 @@ export default function Community({
 										</Text>
 
 										<Text>
-											<Link
+											<NextLink
 												href="https://open.spotify.com/playlist/6WGCRBoHJ5NZRg6D3VM7DK?si=4b658781fd54463b"
 												isExternal
 											>
@@ -472,7 +482,7 @@ export default function Community({
 										</Text>
 
 										<Text>
-											<Link
+											<NextLink
 												href="https://open.spotify.com/playlist/3DGBkdcT236zwEQqsaeiHc?si=c56fda3f5c994ddd"
 												isExternal
 											>
@@ -497,7 +507,7 @@ export default function Community({
 										</Text>
 
 										<Text>
-											<Link
+											<NextLink
 												href="https://open.spotify.com/playlist/2l050Xz8rnNfYqkyx47WTu?si=040ec727a26844bd"
 												isExternal
 											>
@@ -506,7 +516,7 @@ export default function Community({
 										</Text>
 
 										<Text>
-											<Link
+											<NextLink
 												href="https://open.spotify.com/playlist/1lhX7W0NEvzMSsFCkQfxk4?si=5c16816fc6974f87"
 												isExternal
 											>
@@ -515,7 +525,7 @@ export default function Community({
 										</Text>
 
 										<Text>
-											<Link
+											<NextLink
 												href="https://open.spotify.com/playlist/02oYO9n5qfmULA2deeQ4pR?si=1be766a9b13e4ccf"
 												isExternal
 											>
@@ -524,7 +534,7 @@ export default function Community({
 										</Text>
 
 										<Text>
-											<Link
+											<NextLink
 												href="https://open.spotify.com/playlist/3zXZy9Xh93IY13jpqYf6AU?si=f58dac68060a46a6"
 												isExternal
 											>
@@ -533,7 +543,7 @@ export default function Community({
 										</Text>
 
 										<Text>
-											<Link
+											<NextLink
 												href="https://open.spotify.com/playlist/1qyZMhC4rC1tc04FdfQr00?si=221b54418a0f4077"
 												isExternal
 											>
@@ -553,7 +563,7 @@ export default function Community({
 								</ModalContent>
 							</Modal>
 
-							<Link
+							<NextLink
 								href="https://www.instagram.com/school.simplified/"
 								isExternal
 							>
@@ -562,11 +572,14 @@ export default function Community({
 									boxSize={100}
 									color="white"
 									transition="all 0.2s ease"
-									_hover={{ cursor: "pointer", transform: "scale(1.20)" }}
+									_hover={{
+										cursor: "pointer",
+										transform: "scale(1.20)",
+									}}
 								/>
 							</NextLink>
 
-							<Link
+							<NextLink
 								href="https://www.facebook.com/SchoolSimple/"
 								isExternal
 							>
@@ -575,11 +588,14 @@ export default function Community({
 									boxSize={100}
 									color="white"
 									transition="all 0.2s ease"
-									_hover={{ cursor: "pointer", transform: "scale(1.20)" }}
+									_hover={{
+										cursor: "pointer",
+										transform: "scale(1.20)",
+									}}
 								/>
 							</NextLink>
 
-							<Link
+							<NextLink
 								href="https://discord.com/invite/school"
 								isExternal
 							>
@@ -588,11 +604,14 @@ export default function Community({
 									boxSize={{ base: 100, md: 150 }}
 									color="white"
 									transition="all 0.2s ease"
-									_hover={{ cursor: "pointer", transform: "scale(1.20)" }}
+									_hover={{
+										cursor: "pointer",
+										transform: "scale(1.20)",
+									}}
 								/>
 							</NextLink>
 
-							<Link
+							<NextLink
 								href="https://www.tiktok.com/@schoolsimplified"
 								isExternal
 							>
@@ -601,11 +620,14 @@ export default function Community({
 									boxSize={90}
 									color="white"
 									transition="all 0.2s ease"
-									_hover={{ cursor: "pointer", transform: "scale(1.20)" }}
+									_hover={{
+										cursor: "pointer",
+										transform: "scale(1.20)",
+									}}
 								/>
 							</NextLink>
 
-							<Link
+							<NextLink
 								href="https://twitter.com/schoolsimplify"
 								isExternal
 							>
@@ -614,11 +636,14 @@ export default function Community({
 									boxSize={100}
 									color="white"
 									transition="all 0.2s ease"
-									_hover={{ cursor: "pointer", transform: "scale(1.20)" }}
+									_hover={{
+										cursor: "pointer",
+										transform: "scale(1.20)",
+									}}
 								/>
 							</NextLink>
 
-							<Link
+							<NextLink
 								href="https://www.linkedin.com/company/school-simplified"
 								isExternal
 							>
@@ -627,7 +652,10 @@ export default function Community({
 									boxSize={100}
 									color="white"
 									transition="all 0.2s ease"
-									_hover={{ cursor: "pointer", transform: "scale(1.20)" }}
+									_hover={{
+										cursor: "pointer",
+										transform: "scale(1.20)",
+									}}
 								/>
 							</NextLink>
 						</HStack>

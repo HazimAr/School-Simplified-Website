@@ -8,6 +8,7 @@ import {
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
+import NextLink from "@components/nextChakra";
 import Wave from "react-wavify";
 
 const infos = [

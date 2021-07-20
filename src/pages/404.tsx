@@ -2,6 +2,7 @@ import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
+import NextLink from "@components/nextChakra";
 
 export default function Four(): JSX.Element {
 	return (

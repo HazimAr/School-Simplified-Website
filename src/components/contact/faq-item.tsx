@@ -1,12 +1,12 @@
 /* eslint-disable import/no-default-export */
 import { TriangleDownIcon, TriangleUpIcon } from "@chakra-ui/icons";
 import {
-    AccordionButton,
-    AccordionItem,
-    AccordionPanel,
-    Flex,
-    Link
+	AccordionButton,
+	AccordionItem,
+	AccordionPanel,
+	Flex,
 } from "@chakra-ui/react";
+import NextLink from "@components/nextChakra";
 import { AnswerPart } from "types";
 
 type FaqItemProps = {
@@ -47,7 +47,7 @@ export default function FaqItem({
 				{answers.map((answer: AnswerPart, idx: number) => {
 					if (answer.link) {
 						return (
-							<Link
+							<NextLink
 								href={answer.link}
 								key={"link_" + idx}
 								color="brand.gold2"

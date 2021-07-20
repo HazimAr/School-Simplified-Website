@@ -1,20 +1,20 @@
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import {
-    Box,
-    Center,
-    Circle,
-    Flex,
-    Heading,
-    Icon,
-    Image,
-    Link,
-    ScaleFade,
-    Text,
-    useControllableState
+	Box,
+	Center,
+	Circle,
+	Flex,
+	Heading,
+	Icon,
+	Image,
+	ScaleFade,
+	Text,
+	useControllableState,
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
+import NextLink from "@components/nextChakra";
 import useInterval from "@hooks/useInterval";
 import React from "react";
 import { FaArrowLeft, FaArrowRight, FaCircle } from "react-icons/fa";
@@ -209,7 +209,7 @@ function Panel({
 						) : null}
 
 						<Flex flexDir="row">
-							<Link
+							<NextLink
 								isExternal
 								href={link}
 								_hover={{ textDecoration: "none" }}

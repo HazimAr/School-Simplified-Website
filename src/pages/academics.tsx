@@ -2,6 +2,7 @@ import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
+import NextLink from "@components/nextChakra";
 import { rounded } from "@styles/theme";
 
 const sections = [

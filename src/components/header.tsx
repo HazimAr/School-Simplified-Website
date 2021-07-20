@@ -1,15 +1,17 @@
 import {
-    Box,
-    Flex,
-    Heading,
-    HStack,
-    Image, Menu,
-    MenuButton,
-    MenuItem,
-    MenuList
+	Box,
+	Flex,
+	Heading,
+	HStack,
+	Image,
+	Menu,
+	MenuButton,
+	MenuItem,
+	MenuList,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
+import NextLink from "@components/nextChakra";
 
 // eslint-disable-next-line import/no-default-export
 export default function Header(): JSX.Element {

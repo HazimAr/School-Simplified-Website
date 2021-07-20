@@ -56,7 +56,7 @@ export default function Volunteering(): JSX.Element {
 						Sign up to start helping fellow students for service
 						hours today!
 					</Text>
-					<Link
+					<NextLink
 						isExternal
 						href="https://discord.gg/school"
 						_hover={{ textDecoration: "none" }}

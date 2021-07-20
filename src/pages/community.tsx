@@ -393,9 +393,8 @@ export default function Community({
 								boxSize={100}
 								color="white"
 								onClick={onOpenSpotify}
-								_hover={{
-									cursor: "pointer",
-								}}
+								transition="all 0.2s ease"
+								_hover={{ cursor: "pointer", transform: "scale(1.20)" }}
 							/>
 
 							<Modal
@@ -562,6 +561,8 @@ export default function Community({
 									as={RiInstagramLine}
 									boxSize={100}
 									color="white"
+									transition="all 0.2s ease"
+									_hover={{ cursor: "pointer", transform: "scale(1.20)" }}
 								/>
 							</Link>
 
@@ -573,6 +574,8 @@ export default function Community({
 									as={RiFacebookBoxLine}
 									boxSize={100}
 									color="white"
+									transition="all 0.2s ease"
+									_hover={{ cursor: "pointer", transform: "scale(1.20)" }}
 								/>
 							</Link>
 
@@ -584,6 +587,8 @@ export default function Community({
 									as={RiDiscordLine}
 									boxSize={{ base: 100, md: 150 }}
 									color="white"
+									transition="all 0.2s ease"
+									_hover={{ cursor: "pointer", transform: "scale(1.20)" }}
 								/>
 							</Link>
 
@@ -595,6 +600,8 @@ export default function Community({
 									as={SiTiktok}
 									boxSize={90}
 									color="white"
+									transition="all 0.2s ease"
+									_hover={{ cursor: "pointer", transform: "scale(1.20)" }}
 								/>
 							</Link>
 
@@ -606,6 +613,8 @@ export default function Community({
 									as={RiTwitterLine}
 									boxSize={100}
 									color="white"
+									transition="all 0.2s ease"
+									_hover={{ cursor: "pointer", transform: "scale(1.20)" }}
 								/>
 							</Link>
 
@@ -617,6 +626,8 @@ export default function Community({
 									as={RiLinkedinBoxLine}
 									boxSize={100}
 									color="white"
+									transition="all 0.2s ease"
+									_hover={{ cursor: "pointer", transform: "scale(1.20)" }}
 								/>
 							</Link>
 						</HStack>

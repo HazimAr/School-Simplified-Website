@@ -34,7 +34,11 @@ export default function Header(): JSX.Element {
 					>
 						<NextLink href="/" mb={{ base: 2, md: 0 }}>
 							<Flex justify="center" align="center">
-								<Image src="/logo.png" w={30} />
+								<Image
+									src="/logo.png"
+									w={30}
+									alt="School Simplified Logo"
+								/>
 								<Heading size="md" color="white" ml={2.5}>
 									School Simplified
 								</Heading>

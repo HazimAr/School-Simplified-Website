@@ -11,12 +11,12 @@ const Reviews = [
 	{
 		review: "They helped me over the course of 3 days redo over 9 assignments to pass the year. I want everyone to know that they are so kind and always ready to help, they are always courteous and understanding. I want to say from the bottom of my heart, thank you!",
 		name: "Dak",
-		title: "Sophomore",
+		title: "Freshman",
 	},
 	{
 		review: "I've had multiple tutoring sessions with [my tutor] and he's helped me revise an essay that got me into a program at Stanford, as well as get a 100% on my final with the help of some practice questions he made for me. Overall, he's an amazing tutor and I've noticed a significant improvement in my scores and understanding of the material.",
 		name: "Adam",
-		title: "Freshman",
+		title: "Senior",
 	},
 ];
 

@@ -1,11 +1,11 @@
 /* eslint-disable import/no-default-export */
 import { TriangleDownIcon, TriangleUpIcon } from "@chakra-ui/icons";
 import {
-	AccordionButton,
-	AccordionItem,
-	AccordionPanel,
-	Flex,
-	Link,
+    AccordionButton,
+    AccordionItem,
+    AccordionPanel,
+    Flex,
+    Link
 } from "@chakra-ui/react";
 import { AnswerPart } from "types";
 
@@ -53,7 +53,7 @@ export default function FaqItem({
 								color="brand.gold2"
 							>
 								{answer.text}
-							</Link>
+							</NextLink>
 						);
 					} else {
 						return answer.text;

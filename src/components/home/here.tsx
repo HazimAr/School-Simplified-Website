@@ -1,4 +1,4 @@
-import { Flex, Heading, Link, Text, VStack } from "@chakra-ui/react";
+import { Flex, Heading, Text, VStack } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -40,9 +40,9 @@ export default function Here() {
 								We offer private, personalized tutoring for
 								every subject and AP!
 							</Text>
-							<Link href="/tutoring">
+							<NextLink href="/tutoring">
 								<Button>Sign Up</Button>
-							</Link>
+							</NextLink>
 						</VStack>
 						<Card
 							title="Free Essay Revision"
@@ -92,9 +92,9 @@ function Card({
 			<Text textAlign="center" color="brand.purple.light">
 				{description}
 			</Text>
-			<Link href={href}>
+			<NextLink href={href}>
 				<Button>{button}</Button>
-			</Link>
+			</NextLink>
 		</VStack>
 	);
 }

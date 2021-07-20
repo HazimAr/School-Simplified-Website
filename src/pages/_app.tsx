@@ -25,7 +25,7 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 		<>
 			<Head>
 				<title>{META.title}</title>
-				<link rel="icon" href="/favicon.ico" />
+				<NextLink rel="icon" href="/favicon.ico" />
 			</Head>
 
 			{process.env.NODE_ENV === "test" ? (

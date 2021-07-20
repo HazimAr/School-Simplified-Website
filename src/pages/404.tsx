@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Image, Link, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -30,16 +30,16 @@ export default function Four(): JSX.Element {
 						</Text>
 						<Text textAlign={{ base: "center", md: "left" }}>
 							If a page is supposed to be here, please{" "}
-							<Link href="/contact" color="brand.purple.dark">
+							<NextLink href="/contact" color="brand.purple.dark">
 								let us know
-							</Link>
+							</NextLink>
 							.
 						</Text>
-						<Link href="/" _hover={{ cursor: "auto" }}>
+						<NextLink href="/" _hover={{ cursor: "auto" }}>
 							<Button _hover={{ cursor: "pointer" }} mt={3}>
 								Return to Home
 							</Button>
-						</Link>
+						</NextLink>
 					</Box>
 					<Image
 						src="/timmy/dog.png"

@@ -2,15 +2,15 @@
 /* eslint-disable sonarjs/no-duplicate-string */
 import { getGovernanceData } from "@api/notion";
 import {
-	Box,
-	Divider,
-	Flex,
-	Heading,
-	HStack,
-	Link,
-	Stack,
-	Text,
-	VStack,
+    Box,
+    Divider,
+    Flex,
+    Heading,
+    HStack,
+    Link,
+    Stack,
+    Text,
+    VStack
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -226,7 +226,7 @@ export default function About({ data }: { data: any }): JSX.Element {
 														href={doc.href}
 													>
 														<Text>{doc.title}</Text>
-													</Link>
+													</NextLink>
 												);
 											}
 										)}

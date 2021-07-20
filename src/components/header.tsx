@@ -1,14 +1,12 @@
 import {
-	Box,
-	Flex,
-	Heading,
-	HStack,
-	Image,
-	Link,
-	Menu,
-	MenuButton,
-	MenuItem,
-	MenuList,
+    Box,
+    Flex,
+    Heading,
+    HStack,
+    Image, Menu,
+    MenuButton,
+    MenuItem,
+    MenuList
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -32,14 +30,14 @@ export default function Header(): JSX.Element {
 						align="center"
 						flexDir={{ base: "column", md: "row" }}
 					>
-						<Link href="/" mb={{ base: 2, md: 0 }}>
+						<NextLink href="/" mb={{ base: 2, md: 0 }}>
 							<Flex justify="center" align="center">
 								<Image src="/logo.png" w={30} />
 								<Heading size="md" color="white" ml={2.5}>
 									School Simplified
 								</Heading>
 							</Flex>
-						</Link>
+						</NextLink>
 						<HStack
 							spacing={3}
 							fontSize={{
@@ -48,7 +46,7 @@ export default function Header(): JSX.Element {
 								md: "initial",
 							}}
 						>
-							<Link href="/">Home</Link>
+							<NextLink href="/">Home</NextLink>
 
 							<Menu>
 								<MenuButton
@@ -57,32 +55,32 @@ export default function Header(): JSX.Element {
 									Get Help
 								</MenuButton>
 								<MenuList>
-									<Link href="/tutoring">
+									<NextLink href="/tutoring">
 										<MenuItem>Tutoring</MenuItem>
-									</Link>
-									<Link href="/essay">
+									</NextLink>
+									<NextLink href="/essay">
 										<MenuItem>Essay Revision</MenuItem>
-									</Link>
-									<Link href="/notes">
+									</NextLink>
+									<NextLink href="/notes">
 										<MenuItem>Notes</MenuItem>
-									</Link>
+									</NextLink>
 								</MenuList>
 							</Menu>
-							<Link href="/volunteer">Volunteer</Link>
-							<Link href="/contact">Contact Us</Link>
+							<NextLink href="/volunteer">Volunteer</NextLink>
+							<NextLink href="/contact">Contact Us</NextLink>
 
 							<Menu>
 								<MenuButton>About Us</MenuButton>
 								<MenuList>
-									<Link href="/community">
+									<NextLink href="/community">
 										<MenuItem>Community</MenuItem>
-									</Link>
-									<Link href="/leadership">
+									</NextLink>
+									<NextLink href="/leadership">
 										<MenuItem>Leadership</MenuItem>
-									</Link>
-									<Link href="/faq">
+									</NextLink>
+									<NextLink href="/faq">
 										<MenuItem>FAQ</MenuItem>
-									</Link>
+									</NextLink>
 								</MenuList>
 							</Menu>
 						</HStack>

@@ -17,9 +17,9 @@ export default function Intro() {
 							providing free academic services, products, and
 							opportunities for teenagers.
 						</Text>
-						{/* <Link href="/notes">
+						{/* <NextLink href="/notes">
 							<Button>Get Free Help</Button>
-						</Link> */}
+						</NextLink> */}
 					</Box>
 
 					<Box textAlign="left" my={`${spacing}px`}>

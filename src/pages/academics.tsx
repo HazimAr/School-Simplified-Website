@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Link, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -29,7 +29,12 @@ export default function Academics(): JSX.Element {
 	return (
 		<Container>
 			<ContainerInside>
-				<Flex justify="center" flexDir="column" align="center" my="20px">
+				<Flex
+					justify="center"
+					flexDir="column"
+					align="center"
+					my="20px"
+				>
 					{sections.map((section) => {
 						return (
 							<Box
@@ -42,9 +47,9 @@ export default function Academics(): JSX.Element {
 							>
 								<Heading>{section.title}</Heading>
 								<Text my="10px">{section.description}</Text>
-								<Link href={section.link} isExternal>
+								<NextLink href={section.link} isExternal>
 									<Button>Join Now!</Button>
-								</Link>
+								</NextLink>
 							</Box>
 						);
 					})}

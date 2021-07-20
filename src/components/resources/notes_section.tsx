@@ -1,21 +1,21 @@
 import {
-	Accordion,
-	AccordionButton,
-	AccordionItem,
-	AccordionPanel,
-	Box,
-	Center,
-	Flex,
-	Heading,
-	Icon,
-	Image,
-	Input,
-	InputGroup,
-	InputLeftElement,
-	InputRightElement,
-	Link,
-	Text,
-	useBreakpointValue,
+    Accordion,
+    AccordionButton,
+    AccordionItem,
+    AccordionPanel,
+    Box,
+    Center,
+    Flex,
+    Heading,
+    Icon,
+    Image,
+    Input,
+    InputGroup,
+    InputLeftElement,
+    InputRightElement,
+    Link,
+    Text,
+    useBreakpointValue
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -363,6 +363,6 @@ function NotesBox(props: NotesProps): JSX.Element {
 			>
 				{props.title}
 			</Center>
-		</Link>
+		</NextLink>
 	);
 }

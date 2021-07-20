@@ -3,7 +3,6 @@ import {
 	Flex,
 	Heading,
 	Image,
-	Link,
 	ListItem,
 	Text,
 	UnorderedList,
@@ -56,9 +55,9 @@ export default function Intro() {
 								</ListItem>
 							</UnorderedList>
 						</Flex>
-						<Link href="/community">
+						<NextLink href="/community">
 							<Button mt={5}>Join the Community</Button>
-						</Link>
+						</NextLink>
 					</Box>
 				</Flex>
 			</ContainerInside>

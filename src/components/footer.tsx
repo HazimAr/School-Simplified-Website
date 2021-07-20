@@ -2,7 +2,6 @@ import {
 	Box,
 	Flex,
 	Heading,
-	Link,
 	ListItem,
 	Text,
 	UnorderedList,
@@ -132,9 +131,9 @@ export default function Footer(): JSX.Element {
 								{infos.map((info) => {
 									return (
 										<ListItem key={info.name}>
-											<Link href={info.link}>
+											<NextLink href={info.link}>
 												{info.name}
-											</Link>
+											</NextLink>
 										</ListItem>
 									);
 								})}
@@ -153,9 +152,9 @@ export default function Footer(): JSX.Element {
 								{services.map((service) => {
 									return (
 										<ListItem key={service.name}>
-											<Link href={service.link}>
+											<NextLink href={service.link}>
 												{service.name}
-											</Link>
+											</NextLink>
 										</ListItem>
 									);
 								})}
@@ -174,9 +173,12 @@ export default function Footer(): JSX.Element {
 								{socials.map((social) => {
 									return (
 										<ListItem key={social.name}>
-											<Link href={social.link} isExternal>
+											<NextLink
+												href={social.link}
+												isExternal
+											>
 												{social.name}
-											</Link>
+											</NextLink>
 										</ListItem>
 									);
 								})}
@@ -196,8 +198,8 @@ export default function Footer(): JSX.Element {
 							School Simplified © 2021 All Rights Reserved
 						</Text>
 						{/* <Text>
-							<Link href="/terms">Terms of Service</Link> |{" "}
-							<Link href="/privacy">Privacy Policy</Link> 
+							<NextLink href="/terms">Terms of Service</NextLink> |{" "}
+							<NextLink href="/privacy">Privacy Policy</NextLink> 
 						</Text> */}
 					</Flex>
 				</ContainerInside>

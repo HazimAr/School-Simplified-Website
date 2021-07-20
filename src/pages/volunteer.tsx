@@ -66,7 +66,7 @@ export default function Volunteering(): JSX.Element {
 								Sign Up! <ExternalLinkIcon ml={2} />
 							</Heading>
 						</Button>
-					</Link>
+					</NextLink>
 				</ContainerInside>
 			</Container> */}
 

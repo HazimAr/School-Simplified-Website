@@ -1,26 +1,26 @@
 import { getArtInfo } from "@api/notion";
 import {
-	AspectRatio,
-	Center,
-	Divider,
-	Heading,
-	HStack,
-	Icon,
-	Image,
-	Link,
-	ListItem,
-	Modal,
-	ModalBody,
-	ModalCloseButton,
-	ModalContent,
-	ModalFooter,
-	ModalHeader,
-	ModalOverlay,
-	Stack,
-	Text,
-	UnorderedList,
-	useDisclosure,
-	VStack,
+    AspectRatio,
+    Center,
+    Divider,
+    Heading,
+    HStack,
+    Icon,
+    Image,
+    Link,
+    ListItem,
+    Modal,
+    ModalBody,
+    ModalCloseButton,
+    ModalContent,
+    ModalFooter,
+    ModalHeader,
+    ModalOverlay,
+    Stack,
+    Text,
+    UnorderedList,
+    useDisclosure,
+    VStack
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
@@ -28,12 +28,12 @@ import ContainerInside from "@components/containerInside";
 import { rounded } from "@styles/theme";
 import React from "react";
 import {
-	RiDiscordLine,
-	RiFacebookBoxLine,
-	RiInstagramLine,
-	RiLinkedinBoxLine,
-	RiSpotifyLine,
-	RiTwitterLine,
+    RiDiscordLine,
+    RiFacebookBoxLine,
+    RiInstagramLine,
+    RiLinkedinBoxLine,
+    RiSpotifyLine,
+    RiTwitterLine
 } from "react-icons/ri";
 import { SiTiktok } from "react-icons/si";
 import { ArtData } from "types";
@@ -143,7 +143,7 @@ export default function Community({
 																			{
 																				social.tag
 																			}
-																		</Link>
+																		</NextLink>
 																	) : (
 																		<Text>
 																			{
@@ -242,28 +242,28 @@ export default function Community({
 										isExternal
 									>
 										<ListItem>Study Lofi</ListItem>
-									</Link>
+									</NextLink>
 
 									<Link
 										href="https://open.spotify.com/playlist/2qfpV3Cv3LGASgLk5DDIwA?si=df83f8b734784065"
 										isExternal
 									>
 										<ListItem>Jazz Lofi</ListItem>
-									</Link>
+									</NextLink>
 
 									<Link
 										href="https://open.spotify.com/playlist/3KUCDUAke9JNCi3EC3DR4A?si=b84da9bd407d43f2"
 										isExternal
 									>
 										<ListItem>90s Pop</ListItem>
-									</Link>
+									</NextLink>
 
 									<Link
 										href="https://open.spotify.com/playlist/1lhX7W0NEvzMSsFCkQfxk4?si=5c16816fc6974f87"
 										isExternal
 									>
 										<ListItem>2010-2015 Pop</ListItem>
-									</Link>
+									</NextLink>
 								</UnorderedList>
 								{/* 
 								<Heading size="5px">
@@ -322,7 +322,7 @@ export default function Community({
 									h="300px"
 									objectFit="cover"
 								/>
-							</Link>
+							</NextLink>
 
 							<Heading size="md" color="white">
 								Join our Discord. Come for the academic help,
@@ -360,7 +360,7 @@ export default function Community({
 								w="fit-content"
 							>
 								<Button>Join Our Discord</Button>
-							</Link>
+							</NextLink>
 						</Stack>
 					</HStack>
 
@@ -414,7 +414,7 @@ export default function Community({
 												<Heading size="md">
 													Our Spotify
 												</Heading>
-											</Link>
+											</NextLink>
 										</Button>
 
 										<Text>
@@ -441,7 +441,7 @@ export default function Community({
 												isExternal
 											>
 												Study Lofi,
-											</Link>
+											</NextLink>
 										</Text>
 
 										<Text>
@@ -450,7 +450,7 @@ export default function Community({
 												isExternal
 											>
 												Jazz Lofi,
-											</Link>
+											</NextLink>
 										</Text>
 
 										<Text>
@@ -459,7 +459,7 @@ export default function Community({
 												isExternal
 											>
 												Rainy Day Lofi,
-											</Link>
+											</NextLink>
 										</Text>
 
 										<Text>
@@ -468,7 +468,7 @@ export default function Community({
 												isExternal
 											>
 												Anime Lofi,
-											</Link>
+											</NextLink>
 										</Text>
 
 										<Text>
@@ -477,7 +477,7 @@ export default function Community({
 												isExternal
 											>
 												Sleeping Lofi,
-											</Link>
+											</NextLink>
 										</Text>
 
 										<Divider
@@ -491,9 +491,9 @@ export default function Community({
 										</Heading>
 
 										<Text>
-											<Link href="https://open.spotify.com/playlist/3KUCDUAke9JNCi3EC3DR4A?si=b84da9bd407d43f2">
+											<NextLink href="https://open.spotify.com/playlist/3KUCDUAke9JNCi3EC3DR4A?si=b84da9bd407d43f2">
 												90s Pop,
-											</Link>
+											</NextLink>
 										</Text>
 
 										<Text>
@@ -502,7 +502,7 @@ export default function Community({
 												isExternal
 											>
 												2000-2009 Pop,
-											</Link>
+											</NextLink>
 										</Text>
 
 										<Text>
@@ -511,7 +511,7 @@ export default function Community({
 												isExternal
 											>
 												2010-2015 Pop,
-											</Link>
+											</NextLink>
 										</Text>
 
 										<Text>
@@ -520,7 +520,7 @@ export default function Community({
 												isExternal
 											>
 												2016-2017 Pop,
-											</Link>
+											</NextLink>
 										</Text>
 
 										<Text>
@@ -529,7 +529,7 @@ export default function Community({
 												isExternal
 											>
 												2018-2019 Pop,
-											</Link>
+											</NextLink>
 										</Text>
 
 										<Text>
@@ -538,7 +538,7 @@ export default function Community({
 												isExternal
 											>
 												2020-2021 Pop,
-											</Link>
+											</NextLink>
 										</Text>
 									</ModalBody>
 									<ModalFooter>
@@ -564,7 +564,7 @@ export default function Community({
 									transition="all 0.2s ease"
 									_hover={{ cursor: "pointer", transform: "scale(1.20)" }}
 								/>
-							</Link>
+							</NextLink>
 
 							<Link
 								href="https://www.facebook.com/SchoolSimple/"
@@ -577,7 +577,7 @@ export default function Community({
 									transition="all 0.2s ease"
 									_hover={{ cursor: "pointer", transform: "scale(1.20)" }}
 								/>
-							</Link>
+							</NextLink>
 
 							<Link
 								href="https://discord.com/invite/school"
@@ -590,7 +590,7 @@ export default function Community({
 									transition="all 0.2s ease"
 									_hover={{ cursor: "pointer", transform: "scale(1.20)" }}
 								/>
-							</Link>
+							</NextLink>
 
 							<Link
 								href="https://www.tiktok.com/@schoolsimplified"
@@ -603,7 +603,7 @@ export default function Community({
 									transition="all 0.2s ease"
 									_hover={{ cursor: "pointer", transform: "scale(1.20)" }}
 								/>
-							</Link>
+							</NextLink>
 
 							<Link
 								href="https://twitter.com/schoolsimplify"
@@ -616,7 +616,7 @@ export default function Community({
 									transition="all 0.2s ease"
 									_hover={{ cursor: "pointer", transform: "scale(1.20)" }}
 								/>
-							</Link>
+							</NextLink>
 
 							<Link
 								href="https://www.linkedin.com/company/school-simplified"
@@ -629,7 +629,7 @@ export default function Community({
 									transition="all 0.2s ease"
 									_hover={{ cursor: "pointer", transform: "scale(1.20)" }}
 								/>
-							</Link>
+							</NextLink>
 						</HStack>
 					</VStack>
 				</ContainerInside>

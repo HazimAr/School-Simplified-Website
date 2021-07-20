@@ -1,16 +1,16 @@
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import {
-	Box,
-	Center,
-	Circle,
-	Flex,
-	Heading,
-	Icon,
-	Image,
-	Link,
-	ScaleFade,
-	Text,
-	useControllableState,
+    Box,
+    Center,
+    Circle,
+    Flex,
+    Heading,
+    Icon,
+    Image,
+    Link,
+    ScaleFade,
+    Text,
+    useControllableState
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
@@ -217,7 +217,7 @@ function Panel({
 								<Button bg="brand.transparent" mt={5}>
 									Join <ExternalLinkIcon ml={2} />
 								</Button>
-							</Link>
+							</NextLink>
 						</Flex>
 					</Box>
 				</Flex>

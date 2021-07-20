@@ -1,12 +1,12 @@
 import {
-	Box,
-	Center,
-	Flex,
-	Heading,
-	Icon,
-	Link,
-	Spacer,
-	Text,
+    Box,
+    Center,
+    Flex,
+    Heading,
+    Icon,
+    Link,
+    Spacer,
+    Text
 } from "@chakra-ui/react";
 import StyledButton from "@components/button";
 import Container from "@components/container";
@@ -50,7 +50,7 @@ export default function Donate(): JSX.Element {
 								<StyledButton my="15px">
 									Donate with PayPal
 								</StyledButton>
-							</Link>
+							</NextLink>
 						</Flex>
 					</Flex>
 				</ContainerInside>

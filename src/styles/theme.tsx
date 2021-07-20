@@ -54,6 +54,7 @@ const theme = extendTheme({
 				textAlign: "center",
 				background:
 					"  #8192f0 linear-gradient(90deg, rgb(145,141,240) 0%, #8192f0 100%)",
+				color: "white",
 			},
 			a: {
 				color: "inherit",

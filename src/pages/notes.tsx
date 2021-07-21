@@ -18,7 +18,6 @@ export default function Resources({ subjects }: AllSubjects): JSX.Element {
 					<Flex
 						flexDir={{ base: "column", sm: "row" }}
 						alignItems="center"
-						justifyContent="space-between"
 					>
 						<Box textAlign={{ base: "center", sm: "left" }}>
 							<Heading as="h1" mb={3}>
@@ -30,10 +29,11 @@ export default function Resources({ subjects }: AllSubjects): JSX.Element {
 							</Text>
 						</Box>
 						<Image
-							src="/undraw/file_bundle.svg"
-							alt="file"
-							w={{ base: 200, md: 300, lg: 400 }}
+							src="/timmy/17.png"
+							alt="Timmy with book"
+							w={{ base: 150, md: 250, lg: 350 }}
 							mt={{ base: 5, sm: 0 }}
+							ml={{ base: 5, sm: 50, md: 70 }}
 						/>
 					</Flex>
 				</ContainerInside>

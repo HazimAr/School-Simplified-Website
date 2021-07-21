@@ -31,9 +31,9 @@ export default function Why(): JSX.Element {
 							</Text>
 						</Box>
 						<Image
-							src="/undraw/learning.svg"
-							alt="girl standing next to paper"
-							w={{ base: 200, md: 300, lg: 400 }}
+							src="/timmy/25.png"
+							alt="Timmy with puzzle pieces"
+							w={{ base: 100, md: 200, lg: 300 }}
 							ml={{ base: 0, md: 8 }}
 							mt={{ base: 8, md: 0 }}
 						/>

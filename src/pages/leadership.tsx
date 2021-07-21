@@ -16,12 +16,7 @@ import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
 import StaffCard from "@components/staffcard";
 import React from "react";
-import { GovernanceDocument, GovernanceSection } from "types";
-type Person = {
-	name: string;
-	title: string;
-	img: string;
-};
+import { GovernanceDocument, GovernanceSection, Person } from "types";
 
 const leadership: Person[] = [
 	{

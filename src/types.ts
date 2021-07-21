@@ -54,3 +54,9 @@ export type GovernanceSection = {
 };
 
 export type GovernanceDocument = { title: string; href: string };
+
+export type Person = {
+	name: string;
+	title: string;
+	img: string;
+};

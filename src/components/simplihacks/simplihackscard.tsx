@@ -1,5 +1,5 @@
 /* eslint-disable import/no-default-export */
-import { AvatarGroup, Box, Center, Flex, Heading, Image, Text, Avatar } from "@chakra-ui/react";
+import { Box, Center, Flex, Heading, Text, Avatar } from "@chakra-ui/react";
 import React from "react";
 
 type SimplihacksCard = {

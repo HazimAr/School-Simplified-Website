@@ -1,13 +1,4 @@
-import {
-	Box,
-	Divider,
-	Flex,
-	Heading,
-	HStack,
-	Stack,
-	Text,
-	VStack,
-} from "@chakra-ui/react";
+import { Box, Flex, Heading } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import React from "react";

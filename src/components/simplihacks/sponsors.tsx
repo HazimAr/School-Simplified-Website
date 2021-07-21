@@ -1,6 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable sonarjs/no-duplicate-string */
-import { Box, Flex, Heading, Image, Link } from "@chakra-ui/react";
+import { Flex, Heading, Image, Link } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import React from "react";

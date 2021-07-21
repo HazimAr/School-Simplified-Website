@@ -8,6 +8,11 @@ export type Subject = {
 	content: Class[];
 };
 
+export type Sponsor = {
+	image: string;
+	link: string;
+}
+
 export type Class = {
 	title: string;
 	content: Unit[];

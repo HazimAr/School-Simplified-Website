@@ -25,8 +25,8 @@ export default function Intro() {
 					<Box textAlign="left" my={`${spacing}px`}>
 						<Image
 							h="300px"
-							src="/undraw/education.svg"
-							alt="girl holding cap"
+							src="/timmy/11.png"
+							alt="Timmy with graduation cap"
 							display={{ base: "none", md: "block" }}
 						/>
 					</Box>

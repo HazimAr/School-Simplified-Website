@@ -1,4 +1,6 @@
-import { Flex, Text } from "@chakra-ui/layout";
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable sonarjs/no-duplicate-string */
+import { Box, Flex, Heading, Image, Link } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import React from "react";
@@ -65,12 +67,30 @@ const sponsors: Sponsor[] = [
 
 export default function Sponsors(): JSX.Element {
 	return (
-        <>
-            <Container py={20} bg="brand.transparent">
-                <ContainerInside>
-
-                </ContainerInside>
-            </Container>
-        </>
-    );
+		<>
+			<Container py={19} bg="brand.transparent">
+				<ContainerInside>
+					<Heading as="h1" m={5}>
+						Sponsors
+					</Heading>
+					<Flex justify="center" flexWrap="wrap">
+						{sponsors.map((sponsor, i: number) => {
+							return (
+                                <Flex flexDir="column" p="15px" align="center" justify="center">
+								    <Link href={sponsor.link}>
+									    <Image
+                                            display="block"
+                                            width="300px"
+										    src={sponsor.image}
+										    key={i}
+									    />
+								    </Link>
+                                </Flex>
+							);
+						})}
+					</Flex>
+				</ContainerInside>
+			</Container>
+		</>
+	);
 }

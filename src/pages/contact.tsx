@@ -7,7 +7,7 @@ export default function Contact(): JSX.Element {
 	return (
 		<Container>
 			<ContainerInside>
-				<Box py={10} align="center">
+				<Box my="20px">
 					<Heading as="h1" size="xl" mb={3}>
 						Get in Touch
 					</Heading>
@@ -15,25 +15,30 @@ export default function Contact(): JSX.Element {
 						Questions, comments, or concerns?
 					</Heading>
 				</Box>
-				<Flex
-					flexDirection={{
-						base: "column-reverse",
-						xl: "row",
-					}}
-					justify="space-between"
-					align="center"
-					// px={{ sm: 10, md: 100, lg: 200 }}
-					pb={10}
-				>
-					<Box>
-						<ContactForm />
-					</Box>
-					<Image
-						src="/undraw/contact.svg"
-						alt="Contact Person"
-						h="350px"
-						my={{ base: -5, sm: 5, lg: 0 }}
-					/>
+				<Flex justify="center">
+					<Box py={10} align="center"></Box>
+					<Flex
+						flexDirection={{
+							base: "column-reverse",
+							xl: "row",
+						}}
+						justify="space-between"
+						align="center"
+						// px={{ sm: 10, md: 100, lg: 200 }}
+						pb={10}
+					>
+						<Box w="100%">
+							<ContactForm />
+						</Box>
+						<Box w="100%" justify="center">
+							<Image
+								src="/timmy/19.png"
+								alt="Contact Person"
+								h="550px"
+								my={{ base: -5, sm: 5, lg: 0 }}
+							/>
+						</Box>
+					</Flex>
 				</Flex>
 			</ContainerInside>
 		</Container>

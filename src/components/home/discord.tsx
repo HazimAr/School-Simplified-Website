@@ -24,7 +24,7 @@ export default function Intro() {
 				>
 					<Box textAlign="left" my="" mx="25px">
 						<Image
-							h="400px"
+							w="400px"
 							src="/timmy/31.png"
 							alt="Timmy with boba and phone"
 							// display={{ sm: "none", md: "block" }}

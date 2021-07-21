@@ -11,6 +11,7 @@ import {
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import React from "react";
+import SimplihacksCard from "@components/simplihacks/simplihackscard"
 import { Person } from "types";
 
 const staff: Person[] = [
@@ -98,16 +99,28 @@ const staff: Person[] = [
 
 export default function Staff(): JSX.Element {
 	return (
-        <>
-            <Container py={19}>
-                <ContainerInside>
-                    <Box>
-                        <Heading as="h1" m={5}>
-                            Staff
-                        </Heading>
-                    </Box>
-                </ContainerInside>
-            </Container>
-        </>
-    );
+		<>
+			<Container py={19}>
+				<ContainerInside>
+					<Box>
+						<Heading as="h1" m={5}>
+							Staff
+						</Heading>
+						<Flex justify="center" flexWrap="wrap">
+							{staff.map((member, i: number) => {
+								return (
+									<SimplihacksCard
+										title={member.title}
+										name={member.name}
+										img={member.img}
+										key={i}
+									/>
+								);
+							})}
+						</Flex>
+					</Box>
+				</ContainerInside>
+			</Container>
+		</>
+	);
 }

@@ -37,12 +37,12 @@ export default function Volunteering(): JSX.Element {
 						</Box>
 						<Image
 							flex={{ base: 1, sm: 0 }}
-							src="/undraw/community.svg"
-							h={{ base: 0, md: 175, lg: 275 }}
+							src="/timmy/30.png"
+							h={{ base: 0, md: 175, lg: 350 }}
 							float="right"
 							display={["none", "block"]}
-							ml={7}
-							alt="Image of a community"
+							mx={15}
+							alt="Timmy with a lanyard"
 						/>
 					</Flex>
 					{/* <Divider bg="white" mt={5} /> */}

@@ -33,7 +33,7 @@ export default function Why(): JSX.Element {
 						<Image
 							src="/timmy/25.png"
 							alt="Timmy with puzzle pieces"
-							w={{ base: 100, md: 200, lg: 300 }}
+							w={{sm: 150, md: 250, lg: 300 }}
 							ml={{ base: 0, md: 8 }}
 							mt={{ base: 8, md: 0 }}
 						/>

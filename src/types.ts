@@ -51,17 +51,31 @@ export type QASection = {
 	list: QAPair[];
 };
 
-export type AnswerPart = { text: string; link?: string };
+export type AnswerPart = { 
+	text: string; 
+	link: string 
+};
 
 export type GovernanceSection = {
 	title: string;
 	docs: GovernanceDocument[];
 };
 
-export type GovernanceDocument = { title: string; href: string };
+export type GovernanceDocument = { 
+	title: string; 
+	href: string 
+};
 
 export type Person = {
 	name: string;
 	title: string;
 	img: string;
 };
+
+export type ProjectWinner = {
+	names: string;
+	title: string;
+	prize: string;
+	link: string;
+	img: string;
+}

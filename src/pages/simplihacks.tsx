@@ -1,12 +1,12 @@
-import { Hero, Description, FAQ, Schedule, Sponsors, Staff } from "@components/simplihacks/index";
+import { Hero, Description, Winners, FAQ, Sponsors, Staff } from "@components/simplihacks/index";
 
 export default function Simplihacks(): JSX.Element {
     return (
 		<>
 			<Hero />
 			<Description />
+			<Winners />
 			<FAQ />
-            <Schedule />
 			<Sponsors />
 			<Staff />
 		</>

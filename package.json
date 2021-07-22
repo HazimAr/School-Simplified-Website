@@ -20,7 +20,7 @@
 		"clean": "npx prettier --write ."
 	},
 	"dependencies": {
-		"@babel/core": "^7.14.6",
+		"@babel/core": "^7.14.8",
 		"@chakra-ui/icons": "^1.0.14",
 		"@chakra-ui/react": "^1.6.5",
 		"@chakra-ui/theme-tools": "^1.1.7",

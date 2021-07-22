@@ -17,7 +17,7 @@ export default function SimplihacksCard({
 		<Flex
 			flexDir="column"
 			p="15px"
-			m="13px"
+			m="10px"
 			align="center"
 			backgroundColor="brand.transparent"
 			rounded="50px"

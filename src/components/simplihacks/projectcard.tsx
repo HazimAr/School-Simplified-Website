@@ -29,7 +29,7 @@ export default function ProjectCard({
 			>
 				<Image src={img} />
 				<Box my="10px" mb="10px" mx="10px" maxW="310px">
-					<Link href={link}>
+					<Link href={link} target="_blank">
 						<Heading fontSize={24}>{title}</Heading>
 					</Link>
 					<Heading fontSize={20} color="brand.purple.light">

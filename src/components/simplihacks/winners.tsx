@@ -1,7 +1,6 @@
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import React from "react";
-import { ProjectWinner } from "types";
 
 // const winners: ProjectWinner[] = [
 // 	{

@@ -43,14 +43,11 @@ export default function Hero(): JSX.Element {
                                 );
                             })}
                         </Box>
-						<Box>
-							<Image
-								maxW="400px"
-								src="/timmy/29.png"
-								alt="Timmy hacking"
-								display="block"
-							/>
-						</Box>
+						<Image
+							maxW="300px"
+							src="/timmy/29.png"
+							alt="Timmy hacking"
+						/>
 					</Flex>
 				</ContainerInside>
 			</Container>

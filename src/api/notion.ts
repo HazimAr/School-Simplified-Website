@@ -422,6 +422,7 @@ async function getFaqInfo(): Promise<QASection[]> {
 								link: textBlocks[i].href,
 							});
 						} else {
+							// @ts-expect-error no link
 							answers.push({ text: textBlocks[i].plain_text });
 						}
 					}

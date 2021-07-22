@@ -1,4 +1,4 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
 
 type ProjectCard = {
 	names: string;
@@ -19,5 +19,5 @@ export default function ProjectCard({
 		<>
 			<Text>{names}{title}{prize}{link}{img}</Text>
 		</>
-	)
+	);
 }

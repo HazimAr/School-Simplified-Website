@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react"
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import ProjectBox from "@components/simplihacks/projectbox"
+import ProjectCard from "@components/simplihacks/projectcard"
 import React from "react";
 import { ProjectWinner } from "types";
 

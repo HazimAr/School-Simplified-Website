@@ -5,7 +5,7 @@ import ContainerInside from "@components/containerInside";
 
 export default function Contact(): JSX.Element {
 	return (
-		<Container>
+		<Container py={19}>
 			<ContainerInside>
 				<Box my="20px">
 					<Heading as="h1" size="xl" mb={3}>
@@ -34,7 +34,9 @@ export default function Contact(): JSX.Element {
 							<Image
 								src="/timmy/19.png"
 								alt="Contact Person"
-								h="550px"
+								h={{base: "550px", "300px":"300px"}}
+								minW="300px"
+								maxH="550px"
 								my={{ base: -5, sm: 5, lg: 0 }}
 							/>
 						</Box>

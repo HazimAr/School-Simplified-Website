@@ -6,8 +6,8 @@ import { ReactElement } from "react";
 
 export default function partners(): ReactElement {
 	return (
-		<Container>
-			<ContainerInside p={10}>
+		<Container py={19}>
+			<ContainerInside p={5}>
 				<Box>
 					<Heading>Our Partners</Heading>
 					<Text>
@@ -20,20 +20,21 @@ export default function partners(): ReactElement {
 				</Box>
 				<HStack
 					justify="center"
+					align="center"
 					flexDir={{ base: "column", md: "row" }}
 					mt={5}
 				>
 					<Link href="https://slingshotahead.com/" isExternal>
 						<Image
 							width="300px"
-							height="125px"
+							height="118px"
 							src="/partners/slingshot.png"
 						/>
 					</Link>
 					<Link href="https://versatilenode.com/" isExternal>
 						<Image
-							width="400px"
-							height="100px"
+							width="300px"
+							height="63px"
 							src="/partners/versatile.png"
 						/>
 					</Link>

@@ -205,7 +205,12 @@ export default function About({ data }: { data: any }): JSX.Element {
 			<Container>
 				<ContainerInside>
 					<Divider bg="white" />
-					<Flex textAlign="left" justify="center" mt={5}>
+					<Flex
+						textAlign={{ base: "center", sm: "left" }}
+						justify="center"
+						mt={5}
+						flexDir={{ base: "column", sm: "row" }}
+					>
 						{data.map((section: GovernanceSection) => {
 							return (
 								<Stack key={section.title} flex={1}>

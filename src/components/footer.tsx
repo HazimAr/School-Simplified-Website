@@ -198,10 +198,11 @@ export default function Footer(): JSX.Element {
 						<Text>
 							School Simplified © 2021 All Rights Reserved
 						</Text>
-						{/* <Text>
-							<NextLink href="/terms">Terms of Service</NextLink> |{" "}
-							<NextLink href="/privacy">Privacy Policy</NextLink> 
-						</Text> */}
+						<Text>
+							<NextLink href="https://github.com/HazimAr/School-Simplified">
+								Made with ❤️ by volunteers
+							</NextLink>
+						</Text>
 					</Flex>
 				</ContainerInside>
 			</Container>

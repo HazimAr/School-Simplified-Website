@@ -9,7 +9,7 @@ import {
 	HStack,
 	Stack,
 	Text,
-	VStack,
+	VStack
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";

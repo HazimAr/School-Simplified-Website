@@ -56,7 +56,7 @@ const leadership: Person[] = [
 	},
 	{
 		name: "Arohini Rajvanshi",
-		title: "Chief Human Resource Officer (CHRO) ",
+		title: "Chief Human Resources Officer (CHRO) ",
 		img: "/staff/ArohiniRajvanshi.jpg",
 	},
 	{

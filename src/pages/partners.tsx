@@ -24,14 +24,14 @@ export default function partners(): ReactElement {
 					flexDir={{ base: "column", md: "row" }}
 					mt={5}
 				>
-					<Link href="https://slingshotahead.com/" isExternal>
+					<Link href="https://slingshotahead.com" isExternal>
 						<Image
 							width="300px"
 							height="118px"
 							src="/partners/slingshot.png"
 						/>
 					</Link>
-					<Link href="https://versatilenode.com/" isExternal>
+					<Link href="https://versatilenode.com" isExternal>
 						<Image
 							width="300px"
 							height="63px"

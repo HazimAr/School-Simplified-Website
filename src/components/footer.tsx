@@ -80,10 +80,6 @@ const socials = [
 		name: "Tiktok",
 		link: "https://www.tiktok.com/@schoolsimplified",
 	},
-	// {
-	// 	name: "Facebook",
-	// 	link: "https://www.facebook.com/SchoolSimple/",
-	// },
 
 	{
 		name: "Linkedin",

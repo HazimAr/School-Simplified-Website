@@ -1,5 +1,5 @@
 // google analytics measurement id
-const GA_TRACKING_ID = "";
+const GA_TRACKING_ID = "G-VGBJF1CZMF";
 const IS_PRODUCTION = process.env.NODE_ENV === "production";
 
 type MetaType = {

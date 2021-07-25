@@ -79,3 +79,14 @@ export type ProjectWinner = {
 	link: string;
 	img: string;
 }
+
+export type SpotifyLink = {
+	title: string;
+	link: string;
+}
+
+export type SocialMediaIcon = {
+	icon: any;
+	size: any;
+	link: string;
+}

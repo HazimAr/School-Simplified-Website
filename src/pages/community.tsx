@@ -36,7 +36,109 @@ import {
 	RiTwitterLine,
 } from "react-icons/ri";
 import { SiTiktok } from "react-icons/si";
-import { ArtData } from "types";
+import { ArtData, SpotifyLink, SocialMediaIcon } from "types";
+
+const mainPlaylists: SpotifyLink[] = [
+	{
+		title: "Study Lofi",
+		link: "https://open.spotify.com/playlist/5xy112KNO4WBzaxR1tioT9?si=cbf67fcfe567406b&nd=1"
+	},
+	{
+		title: "Jazz Lofi",
+		link: "https://open.spotify.com/playlist/2qfpV3Cv3LGASgLk5DDIwA?si=df83f8b734784065"
+	},
+	{
+		title: "90s Pop",
+		link: "https://open.spotify.com/playlist/3KUCDUAke9JNCi3EC3DR4A?si=b84da9bd407d43f2"
+	},
+	{
+		title: "2010-2015 Pop",
+		link: "https://open.spotify.com/playlist/1lhX7W0NEvzMSsFCkQfxk4?si=5c16816fc6974f87"
+	},
+];
+
+const lofiPlaylists: SpotifyLink[] = [
+	{
+		title: "Study Lofi",
+		link: "https://open.spotify.com/playlist/5xy112KNO4WBzaxR1tioT9?si=cbf67fcfe567406b&nd=1",
+	},
+	{
+		title: "Jazz Lofi",
+		link: "https://open.spotify.com/playlist/2qfpV3Cv3LGASgLk5DDIwA?si=df83f8b734784065",
+	},
+	{
+		title: "Rainy Day Lofi",
+		link: "https://open.spotify.com/playlist/42VuHYE30tU6olqgYCUGj9?si=4cdc91ce894b4d8c",
+	},
+	{
+		title: "Anime Lofi",
+		link: "https://open.spotify.com/playlist/6WGCRBoHJ5NZRg6D3VM7DK?si=4b658781fd54463b",
+	},
+	{
+		title: "Sleeping Lofi",
+		link: "https://open.spotify.com/playlist/3DGBkdcT236zwEQqsaeiHc?si=c56fda3f5c994ddd",
+	}
+];
+
+const popPlaylists: SpotifyLink[] = [
+	{
+		title: "90s Pop",
+		link: "https://open.spotify.com/playlist/3KUCDUAke9JNCi3EC3DR4A?si=b84da9bd407d43f2",
+	},
+	{
+		title: "2000-2009 Pop",
+		link: "https://open.spotify.com/playlist/2l050Xz8rnNfYqkyx47WTu?si=040ec727a26844bd",
+	},
+	{
+		title: "2010-2015 Pop",
+		link: "https://open.spotify.com/playlist/1lhX7W0NEvzMSsFCkQfxk4?si=5c16816fc6974f87",
+	},
+	{
+		title: "2016-2017 Pop",
+		link: "https://open.spotify.com/playlist/02oYO9n5qfmULA2deeQ4pR?si=1be766a9b13e4ccf",
+	},
+	{
+		title: "2018-2019 Pop",
+		link: "https://open.spotify.com/playlist/3zXZy9Xh93IY13jpqYf6AU?si=f58dac68060a46a6",
+	},
+	{
+		title: "2020-2021 Pop",
+		link: "https://open.spotify.com/playlist/1qyZMhC4rC1tc04FdfQr00?si=221b54418a0f4077",
+	},
+];
+
+const socialMedias: SocialMediaIcon[] = [
+	{
+		icon: RiInstagramLine,
+		size: 100,
+		link: "https://www.instagram.com/school.simplified/",
+	},
+	{
+		icon: RiFacebookBoxLine,
+		size: 100,
+		link: "https://www.facebook.com/SchoolSimple/",
+	},
+	{
+		icon: RiDiscordLine,
+		size: { base: 100, md: 150 },
+		link: "https://discord.com/invite/school",
+	},
+	{
+		icon: SiTiktok,
+		size: 90,
+		link: "https://www.tiktok.com/@schoolsimplified",
+	},
+	{
+		icon: RiTwitterLine,
+		size: 90,
+		link: "https://twitter.com/schoolsimplify",
+	},
+	{
+		icon: RiLinkedinBoxLine,
+		size: 100,
+		link: "https://www.linkedin.com/company/school-simplified",
+	},
+];
 
 export default function Community({
 	artInfo,
@@ -239,33 +341,21 @@ export default function Community({
 									genres like:
 								</Heading>
 								<UnorderedList textAlign="left">
-									<NextLink
-										href="https://open.spotify.com/playlist/5xy112KNO4WBzaxR1tioT9?si=cbf67fcfe567406b&nd=1"
-										isExternal
-									>
-										<ListItem>Study Lofi</ListItem>
-									</NextLink>
-
-									<NextLink
-										href="https://open.spotify.com/playlist/2qfpV3Cv3LGASgLk5DDIwA?si=df83f8b734784065"
-										isExternal
-									>
-										<ListItem>Jazz Lofi</ListItem>
-									</NextLink>
-
-									<NextLink
-										href="https://open.spotify.com/playlist/3KUCDUAke9JNCi3EC3DR4A?si=b84da9bd407d43f2"
-										isExternal
-									>
-										<ListItem>90s Pop</ListItem>
-									</NextLink>
-
-									<NextLink
-										href="https://open.spotify.com/playlist/1lhX7W0NEvzMSsFCkQfxk4?si=5c16816fc6974f87"
-										isExternal
-									>
-										<ListItem>2010-2015 Pop</ListItem>
-									</NextLink>
+									{mainPlaylists.map(
+										(playlist, i: number) => {
+											return (
+												<NextLink
+													href={playlist.link}
+													key={i}
+													isExternal
+												>
+													<ListItem>
+														{playlist.title}
+													</ListItem>
+												</NextLink>
+											);
+										}
+									)}
 								</UnorderedList>
 								{/* 
 								<Heading size="5px">
@@ -415,14 +505,12 @@ export default function Community({
 									<ModalHeader>Spotify</ModalHeader>
 									<ModalCloseButton />
 									<ModalBody>
-										<Button variant="outline">
+										<Button variant="outline" mb={3}>
 											<NextLink
 												href="https://open.spotify.com/user/5lkgh8ryszqens1ywo58m5lv8?si=e3b58782d2e94498"
 												isExternal
 											>
-												<Heading size="md">
-													Our Spotify
-												</Heading>
+												Our Spotify
 											</NextLink>
 										</Button>
 
@@ -444,50 +532,21 @@ export default function Community({
 											Lofi Playlists:
 										</Heading>
 
-										<Text>
-											<NextLink
-												href="https://open.spotify.com/playlist/5xy112KNO4WBzaxR1tioT9?si=cbf67fcfe567406b&nd=1"
-												isExternal
-											>
-												Study Lofi,
-											</NextLink>
-										</Text>
-
-										<Text>
-											<NextLink
-												href="https://open.spotify.com/playlist/2qfpV3Cv3LGASgLk5DDIwA?si=df83f8b734784065"
-												isExternal
-											>
-												Jazz Lofi,
-											</NextLink>
-										</Text>
-
-										<Text>
-											<NextLink
-												href="https://open.spotify.com/playlist/42VuHYE30tU6olqgYCUGj9?si=4cdc91ce894b4d8c"
-												isExternal
-											>
-												Rainy Day Lofi,
-											</NextLink>
-										</Text>
-
-										<Text>
-											<NextLink
-												href="https://open.spotify.com/playlist/6WGCRBoHJ5NZRg6D3VM7DK?si=4b658781fd54463b"
-												isExternal
-											>
-												Anime Lofi,
-											</NextLink>
-										</Text>
-
-										<Text>
-											<NextLink
-												href="https://open.spotify.com/playlist/3DGBkdcT236zwEQqsaeiHc?si=c56fda3f5c994ddd"
-												isExternal
-											>
-												Sleeping Lofi,
-											</NextLink>
-										</Text>
+										{lofiPlaylists.map(
+											(playlist, i: number) => {
+												return (
+													<NextLink
+														href={playlist.link}
+														key={i}
+														isExternal
+													>
+														<Text>
+															{playlist.title}
+														</Text>
+													</NextLink>
+												);
+											}
+										)}
 
 										<Divider
 											borderColor="white"
@@ -499,56 +558,22 @@ export default function Community({
 											Pop Playlists:
 										</Heading>
 
-										<Text>
-											<NextLink href="https://open.spotify.com/playlist/3KUCDUAke9JNCi3EC3DR4A?si=b84da9bd407d43f2">
-												90s Pop,
-											</NextLink>
-										</Text>
+										{popPlaylists.map(
+											(playlist, i: number) => {
+												return (
+													<NextLink
+														href={playlist.link}
+														key={i}
+														isExternal
+													>
+														<Text>
+															{playlist.title}
+														</Text>
+													</NextLink>
+												);
+											}
+										)}
 
-										<Text>
-											<NextLink
-												href="https://open.spotify.com/playlist/2l050Xz8rnNfYqkyx47WTu?si=040ec727a26844bd"
-												isExternal
-											>
-												2000-2009 Pop,
-											</NextLink>
-										</Text>
-
-										<Text>
-											<NextLink
-												href="https://open.spotify.com/playlist/1lhX7W0NEvzMSsFCkQfxk4?si=5c16816fc6974f87"
-												isExternal
-											>
-												2010-2015 Pop,
-											</NextLink>
-										</Text>
-
-										<Text>
-											<NextLink
-												href="https://open.spotify.com/playlist/02oYO9n5qfmULA2deeQ4pR?si=1be766a9b13e4ccf"
-												isExternal
-											>
-												2016-2017 Pop,
-											</NextLink>
-										</Text>
-
-										<Text>
-											<NextLink
-												href="https://open.spotify.com/playlist/3zXZy9Xh93IY13jpqYf6AU?si=f58dac68060a46a6"
-												isExternal
-											>
-												2018-2019 Pop,
-											</NextLink>
-										</Text>
-
-										<Text>
-											<NextLink
-												href="https://open.spotify.com/playlist/1qyZMhC4rC1tc04FdfQr00?si=221b54418a0f4077"
-												isExternal
-											>
-												2020-2021 Pop,
-											</NextLink>
-										</Text>
 									</ModalBody>
 									<ModalFooter>
 										<Button
@@ -562,101 +587,23 @@ export default function Community({
 								</ModalContent>
 							</Modal>
 
-							<NextLink
-								href="https://www.instagram.com/school.simplified/"
-								isExternal
-							>
-								<Icon
-									as={RiInstagramLine}
-									boxSize={100}
-									color="white"
-									transition="all 0.2s ease"
-									_hover={{
-										cursor: "pointer",
-										transform: "scale(1.20)",
-									}}
-								/>
-							</NextLink>
+							{socialMedias.map((social, i: number) => {
+								return (
+									<NextLink href={social.link} key={i} isExternal>
+										<Icon
+											as={social.icon}
+											boxSize={social.size}
+											color="white"
+											transition="all 0.2s ease"
+											_hover={{
+												cursor: "pointer",
+												transform: "scale(1.20)",
+											}}
+										/>
+									</NextLink>
+								);
+							})}
 
-							<NextLink
-								href="https://www.facebook.com/SchoolSimple/"
-								isExternal
-							>
-								<Icon
-									as={RiFacebookBoxLine}
-									boxSize={100}
-									color="white"
-									transition="all 0.2s ease"
-									_hover={{
-										cursor: "pointer",
-										transform: "scale(1.20)",
-									}}
-								/>
-							</NextLink>
-
-							<NextLink
-								href="https://discord.com/invite/school"
-								isExternal
-							>
-								<Icon
-									as={RiDiscordLine}
-									boxSize={{ base: 100, md: 150 }}
-									color="white"
-									transition="all 0.2s ease"
-									_hover={{
-										cursor: "pointer",
-										transform: "scale(1.20)",
-									}}
-								/>
-							</NextLink>
-
-							<NextLink
-								href="https://www.tiktok.com/@schoolsimplified"
-								isExternal
-							>
-								<Icon
-									as={SiTiktok}
-									boxSize={90}
-									color="white"
-									transition="all 0.2s ease"
-									_hover={{
-										cursor: "pointer",
-										transform: "scale(1.20)",
-									}}
-								/>
-							</NextLink>
-
-							<NextLink
-								href="https://twitter.com/schoolsimplify"
-								isExternal
-							>
-								<Icon
-									as={RiTwitterLine}
-									boxSize={100}
-									color="white"
-									transition="all 0.2s ease"
-									_hover={{
-										cursor: "pointer",
-										transform: "scale(1.20)",
-									}}
-								/>
-							</NextLink>
-
-							<NextLink
-								href="https://www.linkedin.com/company/school-simplified"
-								isExternal
-							>
-								<Icon
-									as={RiLinkedinBoxLine}
-									boxSize={100}
-									color="white"
-									transition="all 0.2s ease"
-									_hover={{
-										cursor: "pointer",
-										transform: "scale(1.20)",
-									}}
-								/>
-							</NextLink>
 						</HStack>
 					</VStack>
 				</ContainerInside>

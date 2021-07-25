@@ -1,25 +1,23 @@
 import { getArtInfo } from "@api/notion";
 import {
 	AspectRatio,
-	Center,
 	Divider,
 	Heading,
 	HStack,
-	Icon,
 	Image,
 	ListItem,
-	Modal,
-	ModalBody,
-	ModalCloseButton,
-	ModalContent,
-	ModalFooter,
-	ModalHeader,
-	ModalOverlay,
 	Stack,
 	Text,
 	UnorderedList,
 	useDisclosure,
 	VStack,
+	Modal,
+	ModalOverlay,
+	ModalContent,
+	ModalHeader,
+	ModalBody,
+	ModalCloseButton,
+	ModalFooter
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
@@ -27,16 +25,8 @@ import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
 import { rounded } from "@styles/theme";
 import React from "react";
-import {
-	RiDiscordLine,
-	RiFacebookBoxLine,
-	RiInstagramLine,
-	RiLinkedinBoxLine,
-	RiSpotifyLine,
-	RiTwitterLine,
-} from "react-icons/ri";
-import { SiTiktok } from "react-icons/si";
-import { ArtData, SpotifyLink, SocialMediaIcon } from "types";
+import SocialMedias from "@components/community/socialmedias"
+import { ArtData, SpotifyLink } from "types";
 
 const mainPlaylists: SpotifyLink[] = [
 	{
@@ -57,100 +47,12 @@ const mainPlaylists: SpotifyLink[] = [
 	},
 ];
 
-const lofiPlaylists: SpotifyLink[] = [
-	{
-		title: "Study Lofi",
-		link: "https://open.spotify.com/playlist/5xy112KNO4WBzaxR1tioT9?si=cbf67fcfe567406b&nd=1",
-	},
-	{
-		title: "Jazz Lofi",
-		link: "https://open.spotify.com/playlist/2qfpV3Cv3LGASgLk5DDIwA?si=df83f8b734784065",
-	},
-	{
-		title: "Rainy Day Lofi",
-		link: "https://open.spotify.com/playlist/42VuHYE30tU6olqgYCUGj9?si=4cdc91ce894b4d8c",
-	},
-	{
-		title: "Anime Lofi",
-		link: "https://open.spotify.com/playlist/6WGCRBoHJ5NZRg6D3VM7DK?si=4b658781fd54463b",
-	},
-	{
-		title: "Sleeping Lofi",
-		link: "https://open.spotify.com/playlist/3DGBkdcT236zwEQqsaeiHc?si=c56fda3f5c994ddd",
-	}
-];
-
-const popPlaylists: SpotifyLink[] = [
-	{
-		title: "90s Pop",
-		link: "https://open.spotify.com/playlist/3KUCDUAke9JNCi3EC3DR4A?si=b84da9bd407d43f2",
-	},
-	{
-		title: "2000-2009 Pop",
-		link: "https://open.spotify.com/playlist/2l050Xz8rnNfYqkyx47WTu?si=040ec727a26844bd",
-	},
-	{
-		title: "2010-2015 Pop",
-		link: "https://open.spotify.com/playlist/1lhX7W0NEvzMSsFCkQfxk4?si=5c16816fc6974f87",
-	},
-	{
-		title: "2016-2017 Pop",
-		link: "https://open.spotify.com/playlist/02oYO9n5qfmULA2deeQ4pR?si=1be766a9b13e4ccf",
-	},
-	{
-		title: "2018-2019 Pop",
-		link: "https://open.spotify.com/playlist/3zXZy9Xh93IY13jpqYf6AU?si=f58dac68060a46a6",
-	},
-	{
-		title: "2020-2021 Pop",
-		link: "https://open.spotify.com/playlist/1qyZMhC4rC1tc04FdfQr00?si=221b54418a0f4077",
-	},
-];
-
-const socialMedias: SocialMediaIcon[] = [
-	{
-		icon: RiInstagramLine,
-		size: 100,
-		link: "https://www.instagram.com/school.simplified/",
-	},
-	{
-		icon: RiFacebookBoxLine,
-		size: 100,
-		link: "https://www.facebook.com/SchoolSimple/",
-	},
-	{
-		icon: RiDiscordLine,
-		size: { base: 100, md: 150 },
-		link: "https://discord.com/invite/school",
-	},
-	{
-		icon: SiTiktok,
-		size: 90,
-		link: "https://www.tiktok.com/@schoolsimplified",
-	},
-	{
-		icon: RiTwitterLine,
-		size: 90,
-		link: "https://twitter.com/schoolsimplify",
-	},
-	{
-		icon: RiLinkedinBoxLine,
-		size: 100,
-		link: "https://www.linkedin.com/company/school-simplified",
-	},
-];
-
 export default function Community({
 	artInfo,
 }: {
 	artInfo: ArtData;
 }): JSX.Element {
 	const { isOpen, onOpen, onClose } = useDisclosure();
-	const {
-		isOpen: isOpenSpotify,
-		onOpen: onOpenSpotify,
-		onClose: onCloseSpotify,
-	} = useDisclosure();
 	return (
 		<>
 			<Container py={10}>
@@ -401,8 +303,8 @@ export default function Community({
 						{/* disc box */}
 						<VStack
 							boxSize="100%"
+							maxW="458px"
 							bg="brand.transparent"
-							p="15px"
 							rounded={rounded}
 							boxShadow="lg"
 							justify="center"
@@ -420,7 +322,7 @@ export default function Community({
 								/>
 							</NextLink>
 
-							<Heading size="md" color="white">
+							<Heading size="md" color="white" pl="15px" pb="15px" pr="15px">
 								Join our Discord. Come for the academic help,
 								stay for the family!
 							</Heading>
@@ -460,154 +362,8 @@ export default function Community({
 				</ContainerInside>
 			</Container>
 
-			<Container>
-				<ContainerInside>
-					<VStack>
-						<VStack spacing={4}>
-							<Heading>Our Socials</Heading>
-							<Container>
-								<Heading
-									fontSize="18px"
-									mb="35px"
-									color="white"
-								>
-									Check out our socials for tips,
-									entertainment, music, podcasts,
-									opportunities, and more!
-								</Heading>
-							</Container>
-						</VStack>
+			<SocialMedias />
 
-						<HStack
-							flexWrap="wrap"
-							flexDir={{ base: "column", sm: "row" }}
-							justify="center"
-							align="center"
-						>
-							<Icon
-								as={RiSpotifyLine}
-								boxSize={100}
-								color="white"
-								onClick={onOpenSpotify}
-								transition="all 0.2s ease"
-								_hover={{
-									cursor: "pointer",
-									transform: "scale(1.20)",
-								}}
-							/>
-
-							<Modal
-								isOpen={isOpenSpotify}
-								onClose={onCloseSpotify}
-							>
-								<ModalOverlay />
-								<ModalContent bg="brand.purple.dark">
-									<ModalHeader>Spotify</ModalHeader>
-									<ModalCloseButton />
-									<ModalBody>
-										<Button variant="outline" mb={3}>
-											<NextLink
-												href="https://open.spotify.com/user/5lkgh8ryszqens1ywo58m5lv8?si=e3b58782d2e94498"
-												isExternal
-											>
-												Our Spotify
-											</NextLink>
-										</Button>
-
-										<Text>
-											{" "}
-											Here are links to all of our
-											playlists:{" "}
-										</Text>
-
-										<Center>
-											<Divider
-												borderColor="white"
-												width="250px"
-												mb="15px"
-											/>
-										</Center>
-
-										<Heading size="md">
-											Lofi Playlists:
-										</Heading>
-
-										{lofiPlaylists.map(
-											(playlist, i: number) => {
-												return (
-													<NextLink
-														href={playlist.link}
-														key={i}
-														isExternal
-													>
-														<Text>
-															{playlist.title}
-														</Text>
-													</NextLink>
-												);
-											}
-										)}
-
-										<Divider
-											borderColor="white"
-											mt="10px"
-											mb="10px"
-										/>
-
-										<Heading size="md">
-											Pop Playlists:
-										</Heading>
-
-										{popPlaylists.map(
-											(playlist, i: number) => {
-												return (
-													<NextLink
-														href={playlist.link}
-														key={i}
-														isExternal
-													>
-														<Text>
-															{playlist.title}
-														</Text>
-													</NextLink>
-												);
-											}
-										)}
-
-									</ModalBody>
-									<ModalFooter>
-										<Button
-											colorScheme="purple"
-											mr={3}
-											onClick={onCloseSpotify}
-										>
-											Close
-										</Button>
-									</ModalFooter>
-								</ModalContent>
-							</Modal>
-
-							{socialMedias.map((social, i: number) => {
-								return (
-									<NextLink href={social.link} key={i} isExternal>
-										<Icon
-											as={social.icon}
-											boxSize={social.size}
-											color="white"
-											transition="all 0.2s ease"
-											_hover={{
-												cursor: "pointer",
-												transform: "scale(1.20)",
-											}}
-										/>
-									</NextLink>
-								);
-							})}
-
-						</HStack>
-					</VStack>
-				</ContainerInside>
-			</Container>
 		</>
 	);
 }

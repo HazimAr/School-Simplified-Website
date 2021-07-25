@@ -39,12 +39,12 @@ const infos = [
 	},
 	{
 		name: "Partners",
-		link: "/partners"
+		link: "/partners",
 	},
 	{
 		name: "Hackathon",
-		link: "/simplihacks"
-	}
+		link: "/simplihacks",
+	},
 	// {
 	// 	name: "Donate",
 	// 	link: "/donate",

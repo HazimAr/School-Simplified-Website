@@ -54,7 +54,7 @@ export default function Community({
 							flexDir={{ base: "column", md: "row" }}
 							spacing={10}
 						>
-							<Art artInfo={artInfo}/>
+							<Art artInfo={artInfo} />
 
 							<Stack w="100%">
 								<Heading size="lg">Our Community</Heading>
@@ -148,6 +148,7 @@ export default function Community({
 								rounded={rounded}
 								boxShadow="lg"
 								h="300px"
+								my="20px!important"
 								justify="center"
 							>
 								<Heading mt="-15px">Daily</Heading>
@@ -156,9 +157,7 @@ export default function Community({
 									entertainment, such as:
 								</Heading>
 								<UnorderedList textAlign="left">
-									<ListItem>
-										Internship/ Job Openings
-									</ListItem>
+									<ListItem>Internship/ Job Openings</ListItem>
 									<ListItem>Student Discounts</ListItem>
 									<ListItem>Motivational Quotes</ListItem>
 									<ListItem>Fun Questions</ListItem>
@@ -198,7 +197,13 @@ export default function Community({
 								/>
 							</NextLink>
 
-							<Heading size="md" color="white" pl="15px" pb="15px" pr="15px">
+							<Heading
+								size="md"
+								color="white"
+								pl="15px"
+								pb="15px"
+								pr="15px"
+							>
 								Join our Discord. Come for the academic help,
 								stay for the family!
 							</Heading>
@@ -239,7 +244,6 @@ export default function Community({
 			</Container>
 
 			<SocialMedias />
-
 		</>
 	);
 }

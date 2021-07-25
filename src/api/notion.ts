@@ -483,7 +483,7 @@ async function getGovernanceData(): Promise<GovernanceSection[]> {
 				documents.push({ title, href });
 			} else
 				console.warn(`ID ${block.id} [Governance Data] is malformed!`);
-		} // else wtf are you doing here bro
+		} // else wtf are you doing here bro (reading this owo)
 	}
 
 	// push last one

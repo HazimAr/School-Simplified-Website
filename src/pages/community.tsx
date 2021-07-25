@@ -92,7 +92,9 @@ export default function Community({
 								</Heading>
 								<UnorderedList textAlign="left">
 									<ListItem>Competitions</ListItem>
-									<ListItem>Hackathons</ListItem>
+									<NextLink href="/simplihacks">
+										<ListItem>Hackathons</ListItem>
+									</NextLink>
 									<ListItem>Talent Show</ListItem>
 									<ListItem>Movie Nights</ListItem>
 									<ListItem>Game Nights</ListItem>
@@ -157,7 +159,9 @@ export default function Community({
 									entertainment, such as:
 								</Heading>
 								<UnorderedList textAlign="left">
-									<ListItem>Internship/ Job Openings</ListItem>
+									<ListItem>
+										Internship/ Job Openings
+									</ListItem>
 									<ListItem>Student Discounts</ListItem>
 									<ListItem>Motivational Quotes</ListItem>
 									<ListItem>Fun Questions</ListItem>

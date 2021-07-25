@@ -16,7 +16,6 @@ const infos = [
 		name: "Home",
 		link: "/",
 	},
-
 	{
 		name: "Leadership",
 		link: "/leadership",
@@ -38,6 +37,14 @@ const infos = [
 		name: "FAQ",
 		link: "/faq",
 	},
+	{
+		name: "Partners",
+		link: "/partners"
+	},
+	{
+		name: "Hackathon",
+		link: "/simplihacks"
+	}
 	// {
 	// 	name: "Donate",
 	// 	link: "/donate",

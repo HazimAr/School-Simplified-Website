@@ -28,7 +28,3 @@ install prettier globally `npm i -g prettier`
 To run on local development server `npm run dev`
 
 To format with prettier `npm run clean`
-
-## License
-
-MIT Licensed template

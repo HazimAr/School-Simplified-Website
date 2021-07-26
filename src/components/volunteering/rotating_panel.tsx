@@ -34,7 +34,6 @@ const teams: PanelProps[] = [
 			"providing college advice",
 			"more.",
 		],
-		display: true,
 	},
 	{
 		teamName: "Tech",
@@ -50,7 +49,6 @@ const teams: PanelProps[] = [
 			"server management",
 			"more.",
 		],
-		display: false,
 	},
 	{
 		teamName: "Marketing",
@@ -66,7 +64,6 @@ const teams: PanelProps[] = [
 			"community engagement",
 			"more.",
 		],
-		display: false,
 	},
 	// {
 	// 	teamName: "Human Resources",
@@ -78,46 +75,28 @@ const teams: PanelProps[] = [
 ];
 
 export default function RotatingPanel(): JSX.Element {
-
-
-	let [activ, setActiv] = useControllableState({
-		defaultValue: [true, false, false],
+	const innerPanels = teams.map((v, index: number) => {
+		return (
+			<Panel
+				teamName={v.teamName}
+				teamDesc={v.teamDesc}
+				link={v.link}
+				src={v.src}
+				teams={v.teams}
+				key={"key_" + index}
+			/>
+		);
 	});
-
-
-
-
-
 	const [index, setIndex] = useControllableState({
 		defaultValue: 0,
 		onChange: (newIndex: number) => {
-			if (newIndex < 0) setIndex(teams.length - 1);
-			else if (newIndex >= teams.length) setIndex(0);
+			if (newIndex < 0) setIndex(innerPanels.length - 1);
+			else if (newIndex >= innerPanels.length) setIndex(0);
 			// else {
-				console.log(index + " vs " + newIndex);
+			// 	console.log(index + " vs " + newIndex);
 			// }
-
-			switch (index) {
-				case 0:
-					setActiv([false, true, false]);
-					break;
-				case 1:
-					setActiv([false, false, true]);
-					break;
-				case 2:
-					setActiv([true, false, false]);
-					break;
-			}
-
-
 		},
 	});
-
-
-
-
-
-
 
 	useInterval(() => {
 		setIndex(index + 1);
@@ -129,36 +108,7 @@ export default function RotatingPanel(): JSX.Element {
 				<Heading size="lg" mb={3}>
 					What can I volunteer for?
 				</Heading>
-				<Box mb={3}>
-					<Panel
-						teamName={teams[0].teamName}
-						teamDesc={teams[0].teamDesc}
-						link={teams[0].link}
-						src={teams[0].src}
-						teams={teams[0].teams}
-						key={"key_0"}
-						display={activ[0]}
-					/>
-					<Panel
-						teamName={teams[1].teamName}
-						teamDesc={teams[1].teamDesc}
-						link={teams[1].link}
-						src={teams[1].src}
-						teams={teams[1].teams}
-						key={"key_1"}
-						display={activ[1]}
-					/>
-					<Panel
-						teamName={teams[2].teamName}
-						teamDesc={teams[2].teamDesc}
-						link={teams[2].link}
-						src={teams[2].src}
-						teams={teams[2].teams}
-						key={"key_2"}
-						display={activ[2]}
-					/>
-				</Box>
-
+				<Box mb={3}>{innerPanels[index]}</Box>
 				<Center>
 					<Button
 						onClick={() => setIndex(index - 1)}
@@ -207,8 +157,6 @@ export default function RotatingPanel(): JSX.Element {
 	);
 }
 
-//Interface structure for each team panel
-
 type PanelProps = {
 	children?: any;
 	src: string;
@@ -216,7 +164,6 @@ type PanelProps = {
 	teamDesc: string;
 	link: string;
 	teams?: string[];
-	display: boolean;
 };
 
 function Panel({
@@ -225,10 +172,9 @@ function Panel({
 	teamDesc,
 	link,
 	teams,
-	display,
 }: PanelProps): JSX.Element {
 	return (
-		<Box py={5} display={display ? "default" : "none"}>
+		<Box py={5}>
 			<ScaleFade in={true}>
 				<Flex
 					justifyContent="space-between"

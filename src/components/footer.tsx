@@ -145,7 +145,7 @@ export default function Footer(): JSX.Element {
 						</Box>
 						<Box my={3}>
 							<Heading size="md" color="white" mb={2}>
-								Get Help
+								Services
 							</Heading>
 							<UnorderedList
 								styleType="none"

@@ -20,7 +20,7 @@ const notionConfig = {
 	},
 };
 
-async function getSubjects(): Promise<Subject[]> {
+export async function getSubjects(): Promise<Subject[]> {
 	const { data: dictData } = await axios.post(
 		`https://api.notion.com/v1/databases/b2009721bf4d47aa8fa99a6528db7843/query`,
 		{},
@@ -181,12 +181,7 @@ async function getUnits(
 		});
 }
 
-export { getSubjects };
-export { getArtInfo };
-export { getFaqInfo };
-export { getGovernanceData };
-
-async function getArtInfo(): Promise<ArtData> {
+export async function getArtInfo(): Promise<ArtData> {
 	const { data: artPageData } = await axios.get(
 		`https://api.notion.com/v1/blocks/fcfaa8ea3a2041cf91ec958db799026e/children`,
 		notionConfig
@@ -371,7 +366,7 @@ async function getArtInfo(): Promise<ArtData> {
 	};
 }
 
-async function getFaqInfo(): Promise<QASection[]> {
+export async function getFaqInfo(): Promise<QASection[]> {
 	const { data } = await axios.get(
 		`https://api.notion.com/v1/blocks/bc5b51a1b7674a1da9fd09b559844881/children`,
 		notionConfig
@@ -445,7 +440,7 @@ async function getFaqInfo(): Promise<QASection[]> {
 	return output;
 }
 
-async function getGovernanceData(): Promise<GovernanceSection[]> {
+export async function getGovernanceData(): Promise<GovernanceSection[]> {
 	const { data } = await axios.get(
 		`https://api.notion.com/v1/blocks/ecc51a4ba7bd451781ec423c231ff53e/children`,
 		notionConfig

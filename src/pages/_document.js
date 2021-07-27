@@ -36,18 +36,19 @@ export default class MyDocument extends Document {
 				<Head>
 					<meta name="description" content={META.description} />
 
+					<meta charset = "utf-8"/>
+
 					<meta itemProp="name" content={META.title} />
 					<meta itemProp="description" content={META.description} />
 					<meta itemProp="image" content={META.img} />
 
+					<link rel="icon" href="/favicon.ico"/>
+
 					<meta property="og:url" content={META.url} />
 					<meta property="og:type" content="website" />
-					<meta property="og:title" content={META.title} />
-					<meta
-						property="og:description"
-						content={META.description}
-					/>
-					<meta property="og:image" content={META.img} />
+					{/* <meta property="og:title" content={META.title} />
+					<meta property="og:description" content={META.description}/>
+					<meta property="og:image" content={META.img} /> */}
 
 					<meta name="twitter:card" content="summary_large_image" />
 					<meta name="twitter:title" content={META.title} />

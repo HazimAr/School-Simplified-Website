@@ -5,10 +5,11 @@ import { pageview } from "@lib/gtag";
 import theme from "@styles/theme";
 import { META } from "config";
 import type { AppProps } from "next/app";
-import Head from "next/head";
+// import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import Stupid from "./hacker";
+import SocialMediaPreview from "@components/socialmediapreview";
 
 export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 	const router = useRouter();
@@ -23,11 +24,7 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 	}, [router.events]);
 	return (
 		<>
-			<Head>
-				<title>{META.title}</title>
-				<link rel="icon" href="/favicon.ico" />
-			
-			</Head>
+			<SocialMediaPreview title={META.title} description={META.description} img={META.img} />
 
 			{process.env.NODE_ENV === "test" ? (
 				<Stupid />

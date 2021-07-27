@@ -4,6 +4,8 @@ import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NotesSection from "@components/resources/notes_section";
 import { AllSubjects } from "types";
+import SocialMediaPreview from "@components/socialmediapreview";
+import { PAGEMETA } from "config";
 
 /**
  * Notes and stuff
@@ -13,6 +15,11 @@ import { AllSubjects } from "types";
 export default function Resources({ subjects }: AllSubjects): JSX.Element {
 	return (
 		<>
+			<SocialMediaPreview
+				title={PAGEMETA.notes.title}
+				description={PAGEMETA.notes.description}
+				img={PAGEMETA.notes.img}
+			/>
 			<Container bg="brand.transparent">
 				<ContainerInside my={5}>
 					<Flex

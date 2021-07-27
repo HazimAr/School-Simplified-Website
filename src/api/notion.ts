@@ -11,11 +11,12 @@ import {
 	SocialMedia,
 	Subject,
 	Unit,
+	ScholarshipProps,
 } from "types";
 
 const notionConfig = {
 	headers: {
-		Authorization: "Bearer " + process.env.NOTION_API_KEY,
+		Authorization: "Bearer " +  process.env.NOTION_API_KEY,
 		"Notion-Version": "2021-05-13",
 	},
 };
@@ -484,6 +485,69 @@ export async function getGovernanceData(): Promise<GovernanceSection[]> {
 	// push last one
 	if (sectionTitle.length) {
 		output.push({ title: sectionTitle, docs: documents });
+	}
+
+	return output;
+}
+
+// If we end up using multiple databases this method should work with every single one
+function parseAppropriateData(
+	entry: any,
+	property: string,
+	datatype: string
+): any {
+	if (entry.properties[property]) {
+		switch (datatype) {
+			case "title":
+				if (entry.properties[property].title.length > 0)
+					return entry.properties[property].title[0].plain_text;
+				return "";
+			case "url":
+				return entry.properties[property].url;
+			case "rich_text":
+				if (entry.properties[property].rich_text.length > 0)
+					return entry.properties[property].rich_text[0].plain_text;
+				return "";
+			case "multi_select":
+				let output: any[] = []
+				for (let i = 0; i < entry.properties[property].multi_select.length; i++)
+					output.push(entry.properties[property].multi_select[i].name);
+				return output;
+			default:
+				console.warn(`ID ${entry.id} [${datatype}] is an invalid datatype!`);
+				return "";
+		}
+	} else {
+		console.warn(`ID ${entry.id} [${property}] is malformed!`);
+		if (datatype === "multi_select")
+			return [];
+		return "";
+	}
+}
+
+// https://marbled-caper-ac7.notion.site/29d7d0141ee84c4d973035b24ac82a7c?v=d3d383a52e9b43448ccad99eb06f4b38
+async function getScholarshipData(): Promise<ScholarshipProps[]> {
+	const { data } = await axios.post(
+		`https://api.notion.com/v1/databases/29d7d0141ee84c4d973035b24ac82a7c/query`, {},
+		notionConfig
+	);
+
+	let output: ScholarshipProps[] = [];
+
+	// for each database entry
+	for (const entry of data.results) {
+		// for each category in the entry
+		output.push({
+			title: parseAppropriateData(entry, 'Name', 'title'),
+			link: parseAppropriateData(entry, 'Link', 'url'),
+			value: parseAppropriateData(entry, 'Value', 'rich_text'),
+			international_or_domestic: parseAppropriateData(entry, 'International or Domestic', 'multi_select'),
+			state: parseAppropriateData(entry, 'State', 'multi_select'),
+			eligible_grades: parseAppropriateData(entry, 'Eligible Grades', 'multi_select'),
+			open_date: parseAppropriateData(entry, 'Open Date', 'rich_text'),
+			closing_date: parseAppropriateData(entry, 'Closing Date', 'rich_text'),
+			notes: parseAppropriateData(entry, 'Additional Things to Note', 'rich_text')
+		});
 	}
 
 	return output;

@@ -90,3 +90,15 @@ export type SocialMediaIcon = {
 	size: any;
 	link: string;
 }
+
+export type ScholarshipProps = {
+	title: string;
+	link: string;
+	value: string;
+	international_or_domestic: string[];
+	state: string[];
+	eligible_grades: string[];
+	open_date: string;
+	closing_date: string;
+	notes: string;
+}

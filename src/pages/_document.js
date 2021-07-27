@@ -34,6 +34,8 @@ export default class MyDocument extends Document {
 		return (
 			<Html lang="en-us">
 				<Head>
+					<link rel = "icon" href = "/favicon.ico" />
+
 					<meta name="description" content={META.description} />
 
 					<meta itemProp="name" content={META.title} />

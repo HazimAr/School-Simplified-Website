@@ -11,11 +11,15 @@ import StyledButton from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import { FaPaypal } from "react-icons/fa";
+import Head from "next/head";
 
 import NextLink from "@components/nextChakra";
 export default function Donate(): JSX.Element {
 	return (
 		<>
+			<Head>
+				<title>School Simplified | Donate</title>
+			</Head>
 			<Container>
 				<ContainerInside py="25px">
 					<Flex justify="center" maxW="1200px" flexWrap="wrap">

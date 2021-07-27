@@ -19,6 +19,7 @@ import React from "react";
 import SocialMedias from "@components/community/socialmedias"
 import Art from "@components/community/art"
 import { ArtData, SpotifyLink } from "types";
+import Head from "next/head";
 
 const mainPlaylists: SpotifyLink[] = [
 	{
@@ -46,6 +47,9 @@ export default function Community({
 }): JSX.Element {
 	return (
 		<>
+			<Head>
+				<title>School Simplified | Community</title>
+			</Head>
 			<Container py={10}>
 				<ContainerInside>
 					<VStack textAlign="left">

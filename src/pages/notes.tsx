@@ -4,6 +4,7 @@ import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NotesSection from "@components/resources/notes_section";
 import { AllSubjects } from "types";
+import Head from "next/head";
 
 /**
  * Notes and stuff
@@ -13,6 +14,9 @@ import { AllSubjects } from "types";
 export default function Resources({ subjects }: AllSubjects): JSX.Element {
 	return (
 		<>
+			<Head>
+				<title>School Simplified | Resources</title>
+			</Head>
 			<Container bg="brand.transparent">
 				<ContainerInside my={5}>
 					<Flex

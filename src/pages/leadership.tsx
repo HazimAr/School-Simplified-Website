@@ -17,6 +17,7 @@ import NextLink from "@components/nextChakra";
 import StaffCard from "@components/staffcard";
 import React from "react";
 import { GovernanceDocument, GovernanceSection, Person } from "types";
+import Head from "next/head";
 
 const leadership: Person[] = [
 	{
@@ -117,6 +118,9 @@ const boardOfDirectors: Person[] = [
 export default function About({ data }: { data: any }): JSX.Element {
 	return (
 		<>
+			<Head>
+				<title>School Simplified | Leadership</title>
+			</Head>
 			<Container>
 				<ContainerInside>
 					<Box>

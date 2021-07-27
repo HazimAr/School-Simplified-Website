@@ -7,11 +7,9 @@ import {
 	GovernanceSection,
 	NotesProps,
 	QAPair,
-	QASection,
-	SocialMedia,
+	QASection, ScholarshipProps, SocialMedia,
 	Subject,
-	Unit,
-	ScholarshipProps,
+	Unit
 } from "types";
 
 const notionConfig = {
@@ -526,7 +524,7 @@ function parseAppropriateData(
 }
 
 // https://marbled-caper-ac7.notion.site/29d7d0141ee84c4d973035b24ac82a7c?v=d3d383a52e9b43448ccad99eb06f4b38
-async function getScholarshipData(): Promise<ScholarshipProps[]> {
+export async function getScholarshipData(): Promise<ScholarshipProps[]> {
 	const { data } = await axios.post(
 		`https://api.notion.com/v1/databases/29d7d0141ee84c4d973035b24ac82a7c/query`, {},
 		notionConfig

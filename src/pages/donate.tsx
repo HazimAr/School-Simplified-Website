@@ -44,6 +44,8 @@ function Card( {info}: {info: DonateCard} ): JSX.Element {
 			borderRadius="25px"
 			maxW="300px"
 			m="10px"
+			boxShadow="lg"
+			backdropFilter="blur(5px)"
 		>
 			<Heading fontSize={23} py="9px" color="brand.purple.dark">
 				{info.title}
@@ -86,10 +88,7 @@ export default function Donate(): JSX.Element {
 									<Icon as={FaPaypal} boxSize="150px" />
 								</Center>
 							</Box>
-							<NextLink
-								href="/stupid"
-								isExternal
-							>
+							<NextLink href="/stupid" isExternal>
 								<StyledButton my="15px">
 									Donate with PayPal
 								</StyledButton>
@@ -113,10 +112,7 @@ export default function Donate(): JSX.Element {
 						alignItems={{ base: "center", md: "stretch" }}
 					>
 						{pillInformation.map((information, i: number) => {
-							return (
-								<Card info={information} key={i}/>
-							);
-							
+							return <Card info={information} key={i} />;
 						})}
 					</Flex>
 				</ContainerInside>

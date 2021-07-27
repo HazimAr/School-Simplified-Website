@@ -42,13 +42,13 @@ const infos = [
 		link: "/partners",
 	},
 	{
+		name: "Donate",
+		link: "/donate",
+	},
+	{
 		name: "Hackathon",
 		link: "/simplihacks",
 	},
-	// {
-	// 	name: "Donate",
-	// 	link: "/donate",
-	// },
 ];
 
 const services = [

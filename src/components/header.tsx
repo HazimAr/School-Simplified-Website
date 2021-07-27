@@ -85,12 +85,14 @@ export default function Header(): JSX.Element {
 									<NextLink href="/leadership">
 										<MenuItem>Leadership</MenuItem>
 									</NextLink>
-
+									<NextLink href="/faq">
+										<MenuItem>FAQ</MenuItem>
+									</NextLink>
 									<NextLink href="/partners">
 										<MenuItem>Partners</MenuItem>
 									</NextLink>
-									<NextLink href="/faq">
-										<MenuItem>FAQ</MenuItem>
+									<NextLink href="/donate">
+										<MenuItem>Donate</MenuItem>
 									</NextLink>
 								</MenuList>
 							</Menu>

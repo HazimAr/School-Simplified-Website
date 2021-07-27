@@ -57,6 +57,13 @@ export default class MyDocument extends Document {
 					/>
 					<meta name="twitter:image" content={META.img} />
 
+					<meta name="application-name" content="School Simplified" />
+					<meta name="apple-mobile-web-app-title" content="School Simplified" />
+					<meta name="apple-mobile-web-app-capable" content="yes" />
+					<meta name="mobile-web-app-capable" content="yes" />
+					<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+					<link rel="apple-touch-icon" href="/mobileicon.png" />
+
 					<script
 						async
 						src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}

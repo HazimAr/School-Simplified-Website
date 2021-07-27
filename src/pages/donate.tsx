@@ -88,7 +88,7 @@ export default function Donate(): JSX.Element {
 									<Icon as={FaPaypal} boxSize="150px" />
 								</Center>
 							</Box>
-							<NextLink href="/stupid" isExternal>
+							<NextLink href="/contact">
 								<StyledButton my="15px">
 									Donate with PayPal
 								</StyledButton>

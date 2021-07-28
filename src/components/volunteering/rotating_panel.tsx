@@ -110,17 +110,14 @@ export default function RotatingPanel(): JSX.Element {
 				</Heading>
 				<Box mb={3}>{innerPanels[index]}</Box>
 				<Center>
-					<Button
+					<Center
 						onClick={() => setIndex(index - 1)}
 						w="fit-content"
 						mx={2}
-						p={0}
-						type="no-bg"
+						_hover={{ cursor: "pointer" }}
 					>
-						<Center>
-							<Icon as={FaArrowLeft} boxSize={5} />
-						</Center>
-					</Button>
+						<Icon as={FaArrowLeft} boxSize={5} />
+					</Center>
 					{teams.map((_v, idx: number) => {
 						return (
 							<Center key={"text_" + idx}>
@@ -140,17 +137,14 @@ export default function RotatingPanel(): JSX.Element {
 							</Center>
 						);
 					})}
-					<Button
+					<Center
 						onClick={() => setIndex(index + 1)}
 						w="fit-content"
 						mx={2}
-						p={0}
-						type="no-bg"
+						_hover={{ cursor: "pointer" }}
 					>
-						<Center>
-							<Icon as={FaArrowRight} boxSize={5} />
-						</Center>
-					</Button>
+						<Icon as={FaArrowRight} boxSize={5} />
+					</Center>
 				</Center>
 			</ContainerInside>
 		</Container>
@@ -175,7 +169,7 @@ function Panel({
 }: PanelProps): JSX.Element {
 	return (
 		<Box py={5}>
-			<ScaleFade in={true}>
+			<ScaleFade in={true} unmountOnExit={false}>
 				<Flex
 					justifyContent="space-between"
 					flexDir={{ base: "column", md: "row" }}

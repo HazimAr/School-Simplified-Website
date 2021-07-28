@@ -13,9 +13,6 @@ export default function Button(props: any): JSX.Element {
 		case "calm":
 			bg = "linear-gradient(90deg, #a688ec 0%, #5a60ad 100%)";
 			break;
-		case "no-bg":
-			bg = null;
-			break;
 	}
 	return (
 		<Box
@@ -29,7 +26,7 @@ export default function Button(props: any): JSX.Element {
 			fontSize="16px"
 			fontWeight="semibold"
 			bg={bg}
-			_hover={{ transform: "scale(0.95)", boxShadow: "lg" }}
+			_hover={{ transform: "scale(0.95)", boxShadow: "md" }}
 			_active={{
 				transform: "scale(0.90)",
 			}}

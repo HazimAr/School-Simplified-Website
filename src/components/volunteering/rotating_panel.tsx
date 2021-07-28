@@ -72,6 +72,10 @@ const teams: PanelProps[] = [
 ];
 
 export default function RotatingPanel(): JSX.Element {
+
+
+
+
 	const innerPanels = teams.map((v, index: number) => {
 		return (
 			<Panel
@@ -97,12 +101,20 @@ export default function RotatingPanel(): JSX.Element {
 
 	return (
 		<Container>
+		<Image display="none" src="/logos/aca_logo.png"/>
+		<Image display="none" src="/logos/tech_logo.png"/>
+		<Image display="none" src="/logos/mkt_logo.png"/>
 			<ContainerInside py={8}>
 				<Heading size="lg" mb={3}>
 					What can I volunteer for?
 				</Heading>
 				<Box mb={3}>{innerPanels[index]}</Box>
 				<Center>
+
+		
+
+
+
 					<Center
 						onClick={() =>
 							setIndex(

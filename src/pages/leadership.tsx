@@ -27,13 +27,8 @@ const leadership: Person[] = [
 	},
 	{
 		name: "Aarush Goradia",
-		title: "Chief Operating Officer (COO)",
+		title: "President of Student Advancement (PSA)",
 		img: "/staff/AarushGoradia.jpg",
-	},
-	{
-		name: "Nicole Liu",
-		title: "Executive Vice President (EVP)",
-		img: "/staff/NicoleLiu.jpg",
 	},
 	{
 		name: "Lauren Hsieh",

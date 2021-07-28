@@ -41,7 +41,7 @@
 		"@types/babel__core": "^7.1.15",
 		"@types/fuzzaldrin": "^2.1.4",
 		"@types/next": "^9.0.0",
-		"@types/node": "^16.4.0",
+		"@types/node": "^16.4.4",
 		"@types/react": "^17.0.15",
 		"@types/react-icons": "^3.0.0",
 		"@types/styled-components": "^5.1.11",

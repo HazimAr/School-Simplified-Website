@@ -8,16 +8,22 @@ import {
 	Heading,
 	HStack,
 	Stack,
+	Table,
+	Tbody,
+	Td,
 	Text,
-	VStack
+	Th,
+	Thead,
+	Tr,
+	VStack,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
 import StaffCard from "@components/staffcard";
+import Head from "next/head";
 import React from "react";
 import { GovernanceDocument, GovernanceSection, Person } from "types";
-import Head from "next/head";
 
 const leadership: Person[] = [
 	{
@@ -145,36 +151,28 @@ export default function About({ data }: { data: any }): JSX.Element {
 						<Box mt={5}>
 							<Heading fontSize={30}>Board of Directors</Heading>
 						</Box>
-						<Stack textAlign="left" my={10}>
-							<Flex align="center">
-								<Heading width="100%" fontSize={17}>
-									Name
-								</Heading>
-								<Heading width="100%" fontSize={17}>
-									Title
-								</Heading>
-							</Flex>
-
-							{boardOfDirectors.map((staff) => {
-								return (
-									<Box>
-										<Divider bg="white.500" />
-										<Flex py={2}>
-											<Text
-												width="100%"
-												fontSize={20}
-												fontWeight="bold"
-											>
-												{staff.name}
-											</Text>
-											<Text width="100%" fontSize={20}>
-												{staff.title}
-											</Text>
-										</Flex>
-									</Box>
-								);
-							})}
-						</Stack>
+						<Table variant="simple" colorScheme="whiteAlpha">
+							<Thead>
+								<Tr>
+									<Th>
+										<Heading fontSize={17}>Name</Heading>
+									</Th>
+									<Th>
+										<Heading fontSize={17}>Title</Heading>
+									</Th>
+								</Tr>
+							</Thead>
+							<Tbody>
+								{boardOfDirectors.map((staff, idx: number) => (
+									<Tr key={"row_" + idx}>
+										<Td fontWeight="bold" fontSize={20}>
+											{staff.name}
+										</Td>
+										<Td fontSize={20}>{staff.title}</Td>
+									</Tr>
+								))}
+							</Tbody>
+						</Table>
 						<Divider bg="white" />
 
 						<VStack py={5}>
@@ -212,7 +210,7 @@ export default function About({ data }: { data: any }): JSX.Element {
 					>
 						{data.map((section: GovernanceSection) => {
 							return (
-								<Stack key={section.title} flex={1}>
+								<Stack key={section.title} flex={1} my={3}>
 									<Heading fontSize={20}>
 										{section.title}
 									</Heading>

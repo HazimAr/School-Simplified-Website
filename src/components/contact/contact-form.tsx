@@ -5,6 +5,7 @@ import {
 	Input,
 	Stack,
 	Textarea,
+	useBoolean,
 	useToast,
 } from "@chakra-ui/react";
 import Button from "@components/button";
@@ -50,6 +51,14 @@ type stateType = {
 	message: string;
 };
 
+const defaultState: stateType = {
+	firstName: "",
+	lastName: "",
+	email: "",
+	subject: "",
+	message: "",
+};
+
 type actionType = {
 	type: string;
 	payload: string;
@@ -67,6 +76,8 @@ function reducer(state: stateType, action: actionType): stateType {
 			return { ...state, subject: action.payload };
 		case "message":
 			return { ...state, message: action.payload };
+		case "clear":
+			return defaultState;
 		default:
 			return state;
 	}
@@ -74,13 +85,8 @@ function reducer(state: stateType, action: actionType): stateType {
 
 // eslint-disable-next-line import/no-default-export
 export default function ContactForm(): JSX.Element {
-	const [state, dispatch] = useReducer(reducer, {
-		firstName: "",
-		lastName: "",
-		email: "",
-		subject: "",
-		message: "",
-	});
+	const [state, dispatch] = useReducer(reducer, defaultState);
+	const [disabled, setDisabled] = useBoolean();
 
 	const { firstName, lastName, email, subject, message } = state;
 	const toast = useToast();
@@ -158,16 +164,22 @@ export default function ContactForm(): JSX.Element {
 			/>
 			<Button
 				onClick={() => {
-					console.log(state);
-					toast({
-						title: "Message Sent",
-						description: "Thank you for sending us a message",
-						status: "success",
-						duration: 9000,
-						isClosable: true,
-					});
+					setDisabled.on();
+					setTimeout(() => {
+						console.log(state);
+						toast({
+							title: "Message Sent",
+							description: "Thank you for sending us a message",
+							status: "success",
+							duration: 9000,
+							isClosable: true,
+						});
+						dispatch({ type: "clear", payload: "" });
+						setDisabled.off();
+					}, Math.random() * 1000 + 500);
 				}}
 				color="white"
+				disabled={disabled}
 			>
 				Send
 			</Button>

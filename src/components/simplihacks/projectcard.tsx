@@ -1,4 +1,4 @@
-import { Box, Flex, Text, Image, Heading, Link } from "@chakra-ui/react";
+import { Flex, Heading, Image, Link, Text, VStack } from "@chakra-ui/react";
 
 type ProjectCard = {
 	names: string;
@@ -18,9 +18,9 @@ export default function ProjectCard({
 	return (
 		<>
 			<Flex
-				maxW="320px"
-				m="10px"
-				rounded="30px"
+				maxW={320}
+				m={3}
+				rounded={10}
 				backgroundColor="brand.transparent"
 				flexDir="column"
 				align="center"
@@ -28,7 +28,7 @@ export default function ProjectCard({
 				overflow="hidden"
 			>
 				<Image src={img} />
-				<Box my="10px" mb="10px" mx="10px" maxW="310px">
+				<VStack m={3} justifyContent="center" flex={1}>
 					<Link href={link} target="_blank">
 						<Heading fontSize={24}>{title}</Heading>
 					</Link>
@@ -36,7 +36,7 @@ export default function ProjectCard({
 						{prize}
 					</Heading>
 					<Text as="b">{names}</Text>
-				</Box>
+				</VStack>
 			</Flex>
 		</>
 	);

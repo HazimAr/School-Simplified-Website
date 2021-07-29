@@ -53,6 +53,7 @@ export default function Header(): JSX.Element {
 								md: "initial",
 							}}
 						>
+							<NextLink href="/">Home</NextLink>
 							<Menu>
 								<MenuButton>About Us</MenuButton>
 								<MenuList>

@@ -1,17 +1,17 @@
 import { Flex, Text } from "@chakra-ui/layout";
-import { rounded } from "@styles/theme";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
+import { rounded } from "@styles/theme";
 import React from "react";
 
 export default function Description(): JSX.Element {
 	return (
 		<>
-			<Container py={20} bg="brand.transparent">
+			<Container py={14} bg="brand.transparent">
 				<ContainerInside>
 					<Flex
 						backgroundColor="brand.transparent2"
-						p="35px"
+						p={12}
 						rounded={rounded}
 						boxShadow="lg"
 						align="center"

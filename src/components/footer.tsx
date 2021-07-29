@@ -24,10 +24,6 @@ const infos = [
 		name: "Community",
 		link: "/community",
 	},
-	{
-		name: "Volunteer",
-		link: "/volunteer",
-	},
 
 	{
 		name: "Contact Us",
@@ -42,12 +38,8 @@ const infos = [
 		link: "/partners",
 	},
 	{
-		name: "Donate",
+		name: "Support Us",
 		link: "/donate",
-	},
-	{
-		name: "Hackathon",
-		link: "/simplihacks",
 	},
 ];
 
@@ -67,6 +59,14 @@ const services = [
 	{
 		name: "Notes",
 		link: "/notes",
+	},
+	{
+		name: "Volunteer",
+		link: "/volunteer",
+	},
+	{
+		name: "Hackathon",
+		link: "/simplihacks",
 	},
 	// {
 	// 	name: "College Prep",

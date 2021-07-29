@@ -34,6 +34,8 @@ export default class MyDocument extends Document {
 		return (
 			<Html lang="en-us">
 				<Head>
+					<link rel = "icon" href = "/favicon.ico" />
+
 					<meta name="description" content={META.description} />
 
 					<meta itemProp="name" content={META.title} />
@@ -56,6 +58,13 @@ export default class MyDocument extends Document {
 						content={META.description}
 					/>
 					<meta name="twitter:image" content={META.img} />
+
+					<meta name="application-name" content="School Simplified" />
+					<meta name="apple-mobile-web-app-title" content="School Simplified" />
+					<meta name="apple-mobile-web-app-capable" content="yes" />
+					<meta name="mobile-web-app-capable" content="yes" />
+					<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+					<link rel="apple-touch-icon" href="/mobileicon.png" />
 
 					<script
 						async

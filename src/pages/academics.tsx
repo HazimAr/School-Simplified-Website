@@ -4,6 +4,7 @@ import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
 import { rounded } from "@styles/theme";
+import Head from "next/head";
 
 const sections = [
 	{
@@ -28,34 +29,39 @@ const sections = [
 
 export default function Academics(): JSX.Element {
 	return (
-		<Container>
-			<ContainerInside>
-				<Flex
-					justify="center"
-					flexDir="column"
-					align="center"
-					my="20px"
-				>
-					{sections.map((section) => {
-						return (
-							<Box
-								key={section.title}
-								my="30px"
-								maxW="55ch"
-								bg="brand.transparent"
-								rounded={rounded}
-								p="20px"
-							>
-								<Heading>{section.title}</Heading>
-								<Text my="10px">{section.description}</Text>
-								<NextLink href={section.link} isExternal>
-									<Button>Join Now!</Button>
-								</NextLink>
-							</Box>
-						);
-					})}
-				</Flex>
-			</ContainerInside>
-		</Container>
+		<>
+			<Head>
+				<title>School Simplified | Academics</title>
+			</Head>
+			<Container>
+				<ContainerInside>
+					<Flex
+						justify="center"
+						flexDir="column"
+						align="center"
+						my="20px"
+					>
+						{sections.map((section) => {
+							return (
+								<Box
+									key={section.title}
+									my="30px"
+									maxW="55ch"
+									bg="brand.transparent"
+									rounded={rounded}
+									p="20px"
+								>
+									<Heading>{section.title}</Heading>
+									<Text my="10px">{section.description}</Text>
+									<NextLink href={section.link} isExternal>
+										<Button>Join Now!</Button>
+									</NextLink>
+								</Box>
+							);
+						})}
+					</Flex>
+				</ContainerInside>
+			</Container>
+		</>
 	);
 }

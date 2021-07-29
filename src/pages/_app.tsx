@@ -24,6 +24,7 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 	return (
 		<>
 			<Head>
+				{/* Fallback Title */}
 				<title>{META.title}</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>

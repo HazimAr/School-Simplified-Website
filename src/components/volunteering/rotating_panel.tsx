@@ -32,7 +32,6 @@ const teams: PanelProps[] = [
 			"essay revision",
 			"creating notes",
 			"providing college advice",
-			"more.",
 		],
 	},
 	{
@@ -47,7 +46,6 @@ const teams: PanelProps[] = [
 			"VPS administration",
 			"quality assurance",
 			"server management",
-			"more.",
 		],
 	},
 	{
@@ -62,7 +60,6 @@ const teams: PanelProps[] = [
 			"data analysis",
 			"outreaching",
 			"community engagement",
-			"more.",
 		],
 	},
 	// {
@@ -89,38 +86,40 @@ export default function RotatingPanel(): JSX.Element {
 	});
 	const [index, setIndex] = useControllableState({
 		defaultValue: 0,
-		onChange: (newIndex: number) => {
-			if (newIndex < 0) setIndex(innerPanels.length - 1);
-			else if (newIndex >= innerPanels.length) setIndex(0);
-			// else {
+		onChange: (_newIndex: number) => {
 			// 	console.log(index + " vs " + newIndex);
-			// }
 		},
 	});
 
 	useInterval(() => {
-		setIndex(index + 1);
+		setIndex(index === innerPanels.length - 1 ? 0 : index + 1);
 	}, 20000);
 
 	return (
 		<Container>
+			{teams.map((team) => {
+				return (
+					<Image display="none" src={team.src} key={team.teamName} />
+				);
+			})}
 			<ContainerInside py={8}>
 				<Heading size="lg" mb={3}>
 					What can I volunteer for?
 				</Heading>
 				<Box mb={3}>{innerPanels[index]}</Box>
 				<Center>
-					<Button
-						onClick={() => setIndex(index - 1)}
+					<Center
+						onClick={() =>
+							setIndex(
+								index === 0 ? innerPanels.length - 1 : index - 1
+							)
+						}
 						w="fit-content"
 						mx={2}
-						p={0}
-						type="no-bg"
+						_hover={{ cursor: "pointer" }}
 					>
-						<Center>
-							<Icon as={FaArrowLeft} boxSize={5} />
-						</Center>
-					</Button>
+						<Icon as={FaArrowLeft} boxSize={5} />
+					</Center>
 					{teams.map((_v, idx: number) => {
 						return (
 							<Center key={"text_" + idx}>
@@ -140,17 +139,18 @@ export default function RotatingPanel(): JSX.Element {
 							</Center>
 						);
 					})}
-					<Button
-						onClick={() => setIndex(index + 1)}
+					<Center
+						onClick={() =>
+							setIndex(
+								index === innerPanels.length - 1 ? 0 : index + 1
+							)
+						}
 						w="fit-content"
 						mx={2}
-						p={0}
-						type="no-bg"
+						_hover={{ cursor: "pointer" }}
 					>
-						<Center>
-							<Icon as={FaArrowRight} boxSize={5} />
-						</Center>
-					</Button>
+						<Icon as={FaArrowRight} boxSize={5} />
+					</Center>
 				</Center>
 			</ContainerInside>
 		</Container>
@@ -175,7 +175,7 @@ function Panel({
 }: PanelProps): JSX.Element {
 	return (
 		<Box py={5}>
-			<ScaleFade in={true}>
+			<ScaleFade in={true} unmountOnExit={false}>
 				<Flex
 					justifyContent="space-between"
 					flexDir={{ base: "column", md: "row" }}
@@ -202,9 +202,7 @@ function Panel({
 						</Text>
 						{teams ? (
 							<Text textAlign="left" fontStyle="italic">
-								Functions include{" "}
-								{teams.slice(0, teams.length - 1).join(", ")},
-								and {teams[teams.length - 1]}
+								Functions include {teams.join(", ")}, and more.
 							</Text>
 						) : null}
 

@@ -32,6 +32,9 @@ export default function NotesSection({ subjects }: AllSubjects): JSX.Element {
 		.flat()
 		.map((unit) => unit.content)
 		.flat();
+
+	const [content, setContent] = React.useState<Unit | undefined>(undefined);
+
 	return (
 		<Container>
 			<ContainerInside my={7}>
@@ -41,9 +44,12 @@ export default function NotesSection({ subjects }: AllSubjects): JSX.Element {
 						<Heading size="md" mb={3} textAlign="left">
 							Categories
 						</Heading>
-						<NotesTree subjects={subjects} />
+						<NotesTree
+							subjects={subjects}
+							setContent={setContent}
+						/>
 					</Box>
-					<NotesGrid allNotes={allNotes} />
+					<NotesGrid allNotes={allNotes} content={content} />
 				</Flex>
 			</ContainerInside>
 		</Container>
@@ -54,7 +60,15 @@ export default function NotesSection({ subjects }: AllSubjects): JSX.Element {
  * Generates the left panel of this section.
  * @returns the JSX element that represents the tree section on the left of the page
  */
-function NotesTree({ subjects }: AllSubjects): JSX.Element {
+function NotesTree({
+	subjects,
+	setContent,
+}: {
+	subjects: Subject[];
+	setContent: (arg0: Unit) => void;
+}): JSX.Element {
+	const [scValue, setSCValue] = React.useState(-1);
+	const [uValue, setUValue] = React.useState(-1);
 	return (
 		<Accordion
 			borderColor="transparent"
@@ -63,7 +77,6 @@ function NotesTree({ subjects }: AllSubjects): JSX.Element {
 			allowToggle
 		>
 			{subjects.map((subject, subIdx: number) => {
-				const [scValue, setSCValue] = React.useState(-1);
 				return (
 					<AccordionItem key={"_" + subIdx}>
 						<AccordionButton
@@ -92,8 +105,6 @@ function NotesTree({ subjects }: AllSubjects): JSX.Element {
 								allowToggle
 							>
 								{subject.content.map((clazz, cIdx: number) => {
-									const [uValue, setUValue] =
-										React.useState(-1);
 									return (
 										<AccordionItem key={"__" + cIdx}>
 											<AccordionButton
@@ -147,11 +158,16 @@ function NotesTree({ subjects }: AllSubjects): JSX.Element {
 																			setUValue(
 																				uIdx
 																			);
-																			selected(
-																				subjects,
-																				subIdx,
-																				cIdx,
-																				uIdx
+																			setContent(
+																				subjects[
+																					subIdx
+																				]
+																					?.content[
+																					cIdx
+																				]
+																					?.content[
+																					uIdx
+																				]
 																			);
 																		}}
 																		py={1}
@@ -183,42 +199,20 @@ function NotesTree({ subjects }: AllSubjects): JSX.Element {
 	);
 }
 
-let setContent: (arg0: Unit) => void = (_e) => {},
-	setSearchTerm: (arg0: string) => void = (_e) => {};
-
-/**
- * Called when a unit accordion button is clicked or an update to the unit view should be rendered
- * @param subjects all subjects
- * @param subject the subject being selected
- * @param clazz the class being selected
- * @param unit the unit being selected
- */
-function selected(
-	subjects: Subject[],
-	subject: number,
-	clazz: number,
-	unit: number
-) {
-	if (!setContent) {
-		console.warn("setContent unset!");
-		return;
-	}
-
-	setContent(subjects[subject]?.content[clazz]?.content[unit]);
-}
-
 /**
  * Generates the right panel of this section.
  * @param allNotes all notes ever
  * @returns the JSX element that represents the grid section on the right of the page
  */
-function NotesGrid({ allNotes }: { allNotes: NotesProps[] }): JSX.Element {
-	const [content, setC] = React.useState<Unit | undefined>(undefined);
-	setContent = setC;
-	const [searchTerm, setST] = React.useState("");
-	setSearchTerm = setST;
-
+function NotesGrid({
+	allNotes,
+	content,
+}: {
+	allNotes: NotesProps[];
+	content: Unit | undefined;
+}): JSX.Element {
 	// const lc: NotesPropsComparator = new FuzzyComparator(searchTerm);
+	const [searchTerm, setSearchTerm] = React.useState("");
 
 	const innerTitleSize = useBreakpointValue({ base: "md", lg: "lg" }),
 		inputGroupSize = useBreakpointValue({ base: "sm", lg: "md" });

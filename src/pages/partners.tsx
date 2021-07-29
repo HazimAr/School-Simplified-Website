@@ -1,11 +1,10 @@
-import { Box, Heading, HStack, Link, Text } from "@chakra-ui/react";
+import { Box, Heading, HStack, Image, Text } from "@chakra-ui/react";
+import StyledButton from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import Image from "next/image";
-import { ReactElement } from "react";
+import NextLink from "@components/nextChakra";
 import Head from "next/head";
-import StyledButton from "@components/button";
-import NextLink from "next/link"
+import React, { ReactElement } from "react";
 
 export default function partners(): ReactElement {
 	return (
@@ -26,9 +25,7 @@ export default function partners(): ReactElement {
 							Simplified.
 						</Text>
 						<NextLink href="/contact">
-							<StyledButton>
-								Apply Now
-							</StyledButton>
+							<StyledButton>Apply Now</StyledButton>
 						</NextLink>
 					</Box>
 					<HStack
@@ -37,20 +34,20 @@ export default function partners(): ReactElement {
 						flexDir={{ base: "column", md: "row" }}
 						mt={5}
 					>
-						<Link href="https://slingshotahead.com" isExternal>
+						<NextLink href="https://slingshotahead.com" isExternal>
 							<Image
 								width="300px"
 								height="118px"
 								src="/partners/slingshot.png"
 							/>
-						</Link>
-						<Link href="https://versatilenode.com" isExternal>
+						</NextLink>
+						<NextLink href="https://versatilenode.com" isExternal>
 							<Image
 								width="300px"
 								height="63px"
 								src="/partners/versatile.png"
 							/>
-						</Link>
+						</NextLink>
 					</HStack>
 				</ContainerInside>
 			</Container>

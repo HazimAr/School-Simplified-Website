@@ -43,7 +43,7 @@ export default function Reasons(): JSX.Element {
 						lg: "1fr auto 1fr auto 1fr",
 					}}
 				>
-					<GridItem my={4}>
+					<GridItem py={4}>
 						<Heading
 							fontStyle="italic"
 							size="md"
@@ -54,10 +54,10 @@ export default function Reasons(): JSX.Element {
 						</Heading>
 						<Text fontSize={15}>{reasons[0].text}</Text>
 					</GridItem>
-					<GridItem mx={5}>
+					<GridItem px={5}>
 						<Divider orientation="vertical" bg="white" />
 					</GridItem>
-					<GridItem my={4}>
+					<GridItem py={4}>
 						<Heading
 							fontStyle="italic"
 							size="md"
@@ -69,12 +69,12 @@ export default function Reasons(): JSX.Element {
 						<Text fontSize={15}>{reasons[1].text}</Text>
 					</GridItem>
 					<GridItem
-						mx={5}
+						px={5}
 						display={{ base: "block", md: "none", lg: "block" }}
 					>
 						<Divider orientation="vertical" bg="white" />
 					</GridItem>
-					<GridItem my={4}>
+					<GridItem py={4}>
 						<Heading
 							fontStyle="italic"
 							size="md"
@@ -85,10 +85,10 @@ export default function Reasons(): JSX.Element {
 						</Heading>
 						<Text fontSize={15}>{reasons[2].text}</Text>
 					</GridItem>
-					<GridItem mx={5} display={{ base: "block", lg: "none" }}>
+					<GridItem px={5} display={{ base: "block", lg: "none" }}>
 						<Divider orientation="vertical" bg="white" />
 					</GridItem>
-					<GridItem my={4}>
+					<GridItem py={4}>
 						<Heading
 							fontStyle="italic"
 							size="md"
@@ -100,12 +100,12 @@ export default function Reasons(): JSX.Element {
 						<Text fontSize={15}>{reasons[3].text}</Text>
 					</GridItem>
 					<GridItem
-						mx={5}
+						px={5}
 						display={{ base: "block", md: "none", lg: "block" }}
 					>
 						<Divider orientation="vertical" bg="white" />
 					</GridItem>
-					<GridItem my={4}>
+					<GridItem py={4}>
 						<Heading
 							fontStyle="italic"
 							size="md"
@@ -116,10 +116,10 @@ export default function Reasons(): JSX.Element {
 						</Heading>
 						<Text fontSize={15}>{reasons[4].text}</Text>
 					</GridItem>
-					<GridItem mx={5}>
+					<GridItem px={5}>
 						<Divider orientation="vertical" bg="white" />
 					</GridItem>
-					<GridItem my={4}>
+					<GridItem py={4}>
 						<Heading
 							fontStyle="italic"
 							size="md"

@@ -1,10 +1,11 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable sonarjs/no-duplicate-string */
-import { Flex, Heading, Image, Link } from "@chakra-ui/react";
+import { Flex, Heading, Image } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
+import NextLink from "@components/nextChakra";
 import React from "react";
-import { Sponsor } from "types"
+import { Sponsor } from "types";
 
 const sponsors: Sponsor[] = [
 	{
@@ -76,16 +77,21 @@ export default function Sponsors(): JSX.Element {
 					<Flex justify="center" flexWrap="wrap">
 						{sponsors.map((sponsor, i: number) => {
 							return (
-                                <Flex flexDir="column" p="15px" align="center" justify="center">
-								    <Link href={sponsor.link}>
-									    <Image
-                                            display="block"
-                                            width="300px"
-										    src={sponsor.image}
-										    key={i}
-									    />
-								    </Link>
-                                </Flex>
+								<Flex
+									flexDir="column"
+									p="15px"
+									align="center"
+									justify="center"
+								>
+									<NextLink href={sponsor.link}>
+										<Image
+											display="block"
+											width="300px"
+											src={sponsor.image}
+											key={i}
+										/>
+									</NextLink>
+								</Flex>
 							);
 						})}
 					</Flex>

@@ -3,6 +3,7 @@ import {
 	Flex,
 	Heading,
 	HStack,
+	Image,
 	Menu,
 	MenuButton,
 	MenuItem,
@@ -11,7 +12,6 @@ import {
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
-import Image from "next/image";
 
 // eslint-disable-next-line import/no-default-export
 export default function Header(): JSX.Element {

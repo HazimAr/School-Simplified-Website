@@ -1,4 +1,5 @@
-import { Flex, Heading, Image, Link, Text, VStack } from "@chakra-ui/react";
+import { Flex, Heading, Image, Text, VStack } from "@chakra-ui/react";
+import NextLink from "@components/nextChakra";
 
 type ProjectCard = {
 	names: string;
@@ -29,9 +30,9 @@ export default function ProjectCard({
 			>
 				<Image src={img} />
 				<VStack m={3} justifyContent="center" flex={1}>
-					<Link href={link} target="_blank">
+					<NextLink href={link} target="_blank">
 						<Heading fontSize={24}>{title}</Heading>
-					</Link>
+					</NextLink>
 					<Heading fontSize={20} color="brand.purple.light">
 						{prize}
 					</Heading>

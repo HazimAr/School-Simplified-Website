@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import { Heading, Stack, Text, VStack } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -34,32 +34,30 @@ export default function Academics(): JSX.Element {
 				<title>School Simplified | Academics</title>
 			</Head>
 			<Container>
-				<ContainerInside>
-					<Flex
-						justify="center"
-						flexDir="column"
-						align="center"
-						my="20px"
+				<ContainerInside py={5}>
+					<Stack
+						direction={{ base: "column", lg: "row" }}
+						spacing={7}
 					>
 						{sections.map((section) => {
 							return (
-								<Box
+								<VStack
 									key={section.title}
-									my="30px"
-									maxW="55ch"
 									bg="brand.transparent"
 									rounded={rounded}
-									p="20px"
+									p={10}
+									justifyContent="center"
+									spacing={3}
 								>
 									<Heading>{section.title}</Heading>
-									<Text my="10px">{section.description}</Text>
+									<Text>{section.description}</Text>
 									<NextLink href={section.link} isExternal>
 										<Button>Join Now!</Button>
 									</NextLink>
-								</Box>
+								</VStack>
 							);
 						})}
-					</Flex>
+					</Stack>
 				</ContainerInside>
 			</Container>
 		</>

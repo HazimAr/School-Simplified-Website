@@ -1,7 +1,8 @@
-import { Box, Flex, Heading, Image, Link, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
+import NextLink from "@components/nextChakra";
 import React from "react";
 
 type ButtonType = {
@@ -40,13 +41,13 @@ export default function Hero(): JSX.Element {
 							<Text fontSize={29}>June 19 - 20, 2021</Text>
 							{buttons.map((button, i: number) => {
 								return (
-									<Link
+									<NextLink
 										href={button.link}
 										target="_blank"
 										key={i}
 									>
 										<Button m={3}>{button.text}</Button>
-									</Link>
+									</NextLink>
 								);
 							})}
 						</Box>

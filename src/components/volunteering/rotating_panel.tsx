@@ -10,6 +10,7 @@ import {
 	ScaleFade,
 	Text,
 	useControllableState,
+	VStack,
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
@@ -193,7 +194,7 @@ function Panel({
 							alt={teamName + " team logo"}
 						/>
 					</Circle>
-					<Box>
+					<VStack alignItems="flex-start">
 						<Heading size="lg" textAlign="left">
 							{teamName}
 						</Heading>
@@ -206,18 +207,16 @@ function Panel({
 							</Text>
 						) : null}
 
-						<Flex flexDir="row">
-							<NextLink
-								isExternal
-								href={link}
-								_hover={{ textDecoration: "none" }}
-							>
-								<Button bg="brand.transparent" mt={5}>
-									Join <ExternalLinkIcon ml={2} />
-								</Button>
-							</NextLink>
-						</Flex>
-					</Box>
+						<NextLink
+							isExternal
+							href={link}
+							_hover={{ textDecoration: "none" }}
+						>
+							<Button bg="brand.transparent" mt={3}>
+								Join <ExternalLinkIcon ml={2} />
+							</Button>
+						</NextLink>
+					</VStack>
 				</Flex>
 			</ScaleFade>
 		</Box>

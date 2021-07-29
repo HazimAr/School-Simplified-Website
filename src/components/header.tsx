@@ -53,29 +53,6 @@ export default function Header(): JSX.Element {
 								md: "initial",
 							}}
 						>
-							<NextLink href="/">Home</NextLink>
-
-							<Menu>
-								<MenuButton
-								// rightIcon={<ChevronDownIcon />}
-								>
-									Services
-								</MenuButton>
-								<MenuList>
-									<NextLink href="/tutoring">
-										<MenuItem>Tutoring</MenuItem>
-									</NextLink>
-									<NextLink href="/essay">
-										<MenuItem>Essay Revision</MenuItem>
-									</NextLink>
-									<NextLink href="/notes">
-										<MenuItem>Notes</MenuItem>
-									</NextLink>
-								</MenuList>
-							</Menu>
-							<NextLink href="/volunteer">Volunteer</NextLink>
-							<NextLink href="/contact">Contact Us</NextLink>
-
 							<Menu>
 								<MenuButton>About Us</MenuButton>
 								<MenuList>
@@ -96,6 +73,26 @@ export default function Header(): JSX.Element {
 									</NextLink>
 								</MenuList>
 							</Menu>
+							<Menu>
+								<MenuButton
+								// rightIcon={<ChevronDownIcon />}
+								>
+									Services
+								</MenuButton>
+								<MenuList>
+									<NextLink href="/tutoring">
+										<MenuItem>Tutoring</MenuItem>
+									</NextLink>
+									<NextLink href="/essay">
+										<MenuItem>Essay Revision</MenuItem>
+									</NextLink>
+									<NextLink href="/notes">
+										<MenuItem>Notes</MenuItem>
+									</NextLink>
+								</MenuList>
+							</Menu>
+							<NextLink href="/volunteer">Volunteer</NextLink>
+							<NextLink href="/contact">Contact Us</NextLink>
 						</HStack>
 					</Flex>
 				</ContainerInside>

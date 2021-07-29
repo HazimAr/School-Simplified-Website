@@ -1,17 +1,19 @@
 import {
 	AspectRatio,
+	Box,
 	Heading,
 	Image,
+	Modal,
+	ModalBody,
+	ModalCloseButton,
+	ModalContent,
+	ModalFooter,
+	ModalHeader,
+	ModalOverlay,
 	Stack,
 	Text,
 	useDisclosure,
-	Modal,
-	ModalOverlay,
-	ModalContent,
-	ModalHeader,
-	ModalBody,
-	ModalCloseButton,
-	ModalFooter,
+	VStack,
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import NextLink from "@components/nextChakra";
@@ -19,12 +21,8 @@ import { rounded } from "@styles/theme";
 import React from "react";
 import { ArtData } from "types";
 
-export default function Art({
-    artInfo
-}: {
-    artInfo: ArtData;
-}): JSX.Element {
-    const { isOpen, onOpen, onClose } = useDisclosure();
+export default function Art({ artInfo }: { artInfo: ArtData }): JSX.Element {
+	const { isOpen, onOpen, onClose } = useDisclosure();
 	return (
 		<Stack boxSize="80%" mb={25}>
 			<Stack
@@ -60,37 +58,51 @@ export default function Art({
 						<ModalHeader>Monthly Art Contest Winner</ModalHeader>
 						<ModalCloseButton />
 						<ModalBody>
-							This month's art contest prompt was:{" "}
-							<Text>{artInfo.monthlyPrompt}</Text>
-							<Text mt={5}>
-								The winner is:
-								<Heading size="sm">{artInfo.name}</Heading>
-							</Text>
-							<Heading size="sm" mt={5}>
-								Artist Description:
-							</Heading>
-							<Text>{artInfo.description}</Text>
-							<Heading size="sm" mt={5}>
+							<VStack spacing={5} alignItems="flex-start">
+								<Box>
+									<Text>
+										This month's art contest prompt was:
+									</Text>
+									<Heading size="sm">
+										{artInfo.monthlyPrompt}
+									</Heading>
+								</Box>
+								<Box>
+									<Text>The winner is:</Text>
+									<Heading size="sm">{artInfo.name}</Heading>
+								</Box>
+								<Box>
+									<Heading size="sm">
+										Artist Description:
+									</Heading>
+									<Text>{artInfo.description}</Text>
+								</Box>
 								{artInfo.socialMedia.map(
 									(social, key: number) => {
 										return (
-											<Text mt={5} key={key}>
-												Follow {artInfo.name} on{" "}
-												{social.media}:{" "}
-												{social.link ? (
-													<NextLink
-														href={social.link}
-													>
-														{social.tag}
-													</NextLink>
-												) : (
-													<Text>{social.tag}</Text>
-												)}
-											</Text>
+											<Box key={key}>
+												<Heading size="sm">
+													Follow {artInfo.name} on{" "}
+													{social.media}:
+												</Heading>
+												<Text>
+													{social.link ? (
+														<NextLink
+															href={social.link}
+														>
+															{social.tag}
+														</NextLink>
+													) : (
+														<Text>
+															{social.tag}
+														</Text>
+													)}
+												</Text>
+											</Box>
 										);
 									}
 								)}
-							</Heading>
+							</VStack>
 						</ModalBody>
 
 						<ModalFooter>

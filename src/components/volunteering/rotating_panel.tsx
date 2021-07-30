@@ -100,7 +100,12 @@ export default function RotatingPanel(): JSX.Element {
 		<Container>
 			{teams.map((team) => {
 				return (
-					<Image display="none" src={team.src} key={team.teamName} />
+					<Image
+						display="none"
+						src={team.src}
+						key={team.teamName}
+						alt={team.teamName + " team icon"}
+					/>
 				);
 			})}
 			<ContainerInside py={8}>

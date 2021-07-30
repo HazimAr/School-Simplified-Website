@@ -28,7 +28,7 @@ export default function ProjectCard({
 				shadow="lg"
 				overflow="hidden"
 			>
-				<Image src={img} />
+				<Image src={img} alt={title + " project image"} />
 				<VStack m={3} justifyContent="center" flex={1}>
 					<NextLink href={link} target="_blank">
 						<Heading fontSize={24}>{title}</Heading>

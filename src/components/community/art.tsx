@@ -24,7 +24,7 @@ import { ArtData } from "types";
 export default function Art({ artInfo }: { artInfo: ArtData }): JSX.Element {
 	const { isOpen, onOpen, onClose } = useDisclosure();
 	return (
-		<Stack boxSize="80%" mb={25}>
+		<Stack mb={25} flex={1}>
 			<Stack
 				backgroundColor="brand.transparent2"
 				rounded={rounded}

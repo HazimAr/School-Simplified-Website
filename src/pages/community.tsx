@@ -2,7 +2,6 @@ import { getArtInfo } from "@api/notion";
 import {
 	Divider,
 	Heading,
-	HStack,
 	Image,
 	ListItem,
 	Stack,
@@ -11,32 +10,32 @@ import {
 	VStack,
 } from "@chakra-ui/react";
 import Button from "@components/button";
+import Art from "@components/community/art";
+import SocialMedias from "@components/community/socialmedias";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
 import { rounded } from "@styles/theme";
-import React from "react";
-import SocialMedias from "@components/community/socialmedias"
-import Art from "@components/community/art"
-import { ArtData, SpotifyLink } from "types";
 import Head from "next/head";
+import React from "react";
+import { ArtData, SpotifyLink } from "types";
 
 const mainPlaylists: SpotifyLink[] = [
 	{
 		title: "Study Lofi",
-		link: "https://open.spotify.com/playlist/5xy112KNO4WBzaxR1tioT9?si=cbf67fcfe567406b&nd=1"
+		link: "https://open.spotify.com/playlist/5xy112KNO4WBzaxR1tioT9?si=cbf67fcfe567406b&nd=1",
 	},
 	{
 		title: "Jazz Lofi",
-		link: "https://open.spotify.com/playlist/2qfpV3Cv3LGASgLk5DDIwA?si=df83f8b734784065"
+		link: "https://open.spotify.com/playlist/2qfpV3Cv3LGASgLk5DDIwA?si=df83f8b734784065",
 	},
 	{
 		title: "90s Pop",
-		link: "https://open.spotify.com/playlist/3KUCDUAke9JNCi3EC3DR4A?si=b84da9bd407d43f2"
+		link: "https://open.spotify.com/playlist/3KUCDUAke9JNCi3EC3DR4A?si=b84da9bd407d43f2",
 	},
 	{
 		title: "2010-2015 Pop",
-		link: "https://open.spotify.com/playlist/1lhX7W0NEvzMSsFCkQfxk4?si=5c16816fc6974f87"
+		link: "https://open.spotify.com/playlist/1lhX7W0NEvzMSsFCkQfxk4?si=5c16816fc6974f87",
 	},
 ];
 
@@ -52,16 +51,15 @@ export default function Community({
 			</Head>
 			<Container py={10}>
 				<ContainerInside>
-					<VStack textAlign="left">
-						<HStack
+					<VStack textAlign="left" spacing={10}>
+						<Stack
 							textAlign="left"
-							flexDir={{ base: "column", md: "row" }}
-							spacing={10}
+							direction={{ base: "column", md: "row-reverse" }}
+							spacing={{ base: 5, md: 10 }}
+							justifyContent="center"
 						>
-							<Art artInfo={artInfo} />
-
-							<Stack w="100%">
-								<Heading size="lg">Our Community</Heading>
+							<VStack flex={2} justifyContent="center">
+								<Heading size="2xl">Our Community</Heading>
 
 								<Text fontSize="lg">
 									Our organization features a global community
@@ -70,23 +68,22 @@ export default function Community({
 									have opportunities to make new friends from
 									all around the world.
 								</Text>
-							</Stack>
-						</HStack>
+							</VStack>
+							<Art artInfo={artInfo} />
+						</Stack>
 
-						<HStack
-							flexDir={{ base: "column", md: "row" }}
-							//flexWrap="wrap"
+						<Stack
+							direction={{ base: "column", md: "row" }}
 							justify="center"
-							spacing={{ base: 0, md: 10 }}
+							spacing={10}
 							textAlign="center"
 						>
 							<VStack
-								w="100%"
+								flex={1}
 								backgroundColor="brand.transparent"
-								p="20px"
+								p={8}
 								rounded={rounded}
 								boxShadow="lg"
-								h="300px"
 								justify="center"
 							>
 								<Heading>Events</Heading>
@@ -110,16 +107,14 @@ export default function Community({
 							</VStack>
 
 							<VStack
-								w="100%"
+								flex={1}
 								backgroundColor="brand.transparent"
-								p="20px"
+								p={8}
 								rounded={rounded}
 								boxShadow="lg"
-								h="300px"
-								my="20px!important"
 								justify="center"
 							>
-								<Heading mt="-15px">Music</Heading>
+								<Heading>Music</Heading>
 								<Heading size="sm" as="i">
 									We curate playlists to help you study, with
 									genres like:
@@ -148,16 +143,14 @@ export default function Community({
 							</VStack>
 
 							<VStack
-								w="100%"
+								flex={1}
 								backgroundColor="brand.transparent"
-								p="20px"
+								p={8}
 								rounded={rounded}
 								boxShadow="lg"
-								h="300px"
-								my="20px!important"
 								justify="center"
 							>
-								<Heading mt="-15px">Daily</Heading>
+								<Heading>Daily</Heading>
 								<Heading size="sm" as="i">
 									We release daily opportunities and
 									entertainment, such as:
@@ -171,22 +164,22 @@ export default function Community({
 									<ListItem>Fun Questions</ListItem>
 								</UnorderedList>
 							</VStack>
-						</HStack>
+						</Stack>
 					</VStack>
-					<Divider borderColor="white" mt="50px" />
+					<Divider borderColor="white" mt={16} />
 				</ContainerInside>
 			</Container>
 
 			<Container>
-				<ContainerInside maxW="1000px">
-					<HStack
-						flexDir={{ base: "column", md: "row" }}
-						spacing={{ base: 0, md: 10 }}
+				<ContainerInside>
+					<Stack
+						direction={{ base: "column", md: "row" }}
+						spacing={{ base: 5, md: 10 }}
+						alignItems="center"
 					>
 						{/* disc box */}
 						<VStack
-							boxSize="100%"
-							maxW="458px"
+							flex={1}
 							bg="brand.transparent"
 							rounded={rounded}
 							boxShadow="lg"
@@ -217,12 +210,11 @@ export default function Community({
 							</Heading>
 						</VStack>
 
-						<Stack
+						<VStack
 							boxSize="100%"
-							flexDir="column"
-							my="20px!important"
 							align={{ base: "center", md: "left" }}
 							alignItems="stretch"
+							flex={2}
 						>
 							<Heading textAlign={{ base: "center", md: "left" }}>
 								Our Discord Server
@@ -244,10 +236,10 @@ export default function Community({
 							>
 								<Button>Join Our Discord</Button>
 							</NextLink>
-						</Stack>
-					</HStack>
+						</VStack>
+					</Stack>
 
-					<Divider borderColor="white" my="50px" />
+					<Divider borderColor="white" my={16} />
 				</ContainerInside>
 			</Container>
 

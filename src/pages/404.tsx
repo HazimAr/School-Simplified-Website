@@ -36,7 +36,7 @@ export default function Four(): JSX.Element {
 							</Text>
 							<Text textAlign={{ base: "center", md: "left" }}>
 								If a page is supposed to be here, please{" "}
-								<NextLink href="/contact" color="brand.purple.dark">
+								<NextLink href="/contact" color="brand.gold">
 									let us know
 								</NextLink>
 								.

@@ -1,7 +1,9 @@
-import { Heading, HStack, Icon, VStack } from "@chakra-ui/react";
+import { Heading, Icon, Stack, VStack } from "@chakra-ui/react";
+import Spotify from "@components/community/spotify";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
+import React from "react";
 import {
 	RiDiscordLine,
 	RiFacebookBoxLine,
@@ -10,9 +12,7 @@ import {
 	RiTwitterLine,
 } from "react-icons/ri";
 import { SiTiktok } from "react-icons/si";
-import React from "react";
 import { SocialMediaIcon } from "types";
-import Spotify from "@components/community/spotify"
 
 const socialMedias: SocialMediaIcon[] = [
 	{
@@ -55,20 +55,20 @@ export default function SocialMedias(): JSX.Element {
 					<VStack spacing={4}>
 						<Heading>Our Socials</Heading>
 						<Container>
-							<Heading fontSize="18px" mb="35px" color="white">
+							<Heading size="md" mb={10} color="white">
 								Check out our socials for tips, entertainment,
 								music, podcasts, opportunities, and more!
 							</Heading>
 						</Container>
 					</VStack>
 
-					<HStack
+					<Stack
 						flexWrap="wrap"
-						flexDir={{ base: "column", sm: "row" }}
+						direction={{ base: "column", sm: "row" }}
 						justify="center"
 						align="center"
 					>
-                        <Spotify />
+						<Spotify />
 
 						{socialMedias.map((social, i: number) => {
 							return (
@@ -86,7 +86,7 @@ export default function SocialMedias(): JSX.Element {
 								</NextLink>
 							);
 						})}
-					</HStack>
+					</Stack>
 				</VStack>
 			</ContainerInside>
 		</Container>

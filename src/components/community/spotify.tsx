@@ -1,5 +1,4 @@
 import {
-	Center,
 	Divider,
 	Heading,
 	Icon,
@@ -12,6 +11,7 @@ import {
 	ModalOverlay,
 	Text,
 	useDisclosure,
+	VStack,
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import NextLink from "@components/nextChakra";
@@ -75,7 +75,7 @@ export default function Spotify(): JSX.Element {
 		onOpen: onOpenSpotify,
 		onClose: onCloseSpotify,
 	} = useDisclosure();
-    return (
+	return (
 		<>
 			<Icon
 				as={RiSpotifyLine}
@@ -104,52 +104,50 @@ export default function Spotify(): JSX.Element {
 							</NextLink>
 						</Button>
 
-						<Text> Here are links to all of our playlists: </Text>
+						<Text>Here are links to all of our playlists:</Text>
 
-						<Center>
-							<Divider
-								borderColor="white"
-								width="250px"
-								mb="15px"
-							/>
-						</Center>
+						<Divider borderColor="white" my={3} />
 
-						<Heading size="md">Lofi Playlists:</Heading>
+						<Heading size="md" mb={3}>
+							Lofi Playlists:
+						</Heading>
 
-						{lofiPlaylists.map((playlist, i: number) => {
-							return (
-								<NextLink
-									href={playlist.link}
-									key={i}
-									isExternal
-								>
-									<Text>{playlist.title}</Text>
-								</NextLink>
-							);
-						})}
+						<VStack>
+							{lofiPlaylists.map((playlist, i: number) => {
+								return (
+									<NextLink
+										href={playlist.link}
+										key={i}
+										isExternal
+									>
+										{playlist.title}
+									</NextLink>
+								);
+							})}
+						</VStack>
 
-						<Divider borderColor="white" mt="10px" mb="10px" />
+						<Divider borderColor="white" my={3} />
 
-						<Heading size="md">Pop Playlists:</Heading>
+						<Heading size="md" mb={3}>
+							Pop Playlists:
+						</Heading>
 
-						{popPlaylists.map((playlist, i: number) => {
-							return (
-								<NextLink
-									href={playlist.link}
-									key={i}
-									isExternal
-								>
-									<Text>{playlist.title}</Text>
-								</NextLink>
-							);
-						})}
+						<VStack>
+							{popPlaylists.map((playlist, i: number) => {
+								return (
+									<NextLink
+										href={playlist.link}
+										key={i}
+										isExternal
+									>
+										{playlist.title}
+									</NextLink>
+								);
+							})}
+						</VStack>
 					</ModalBody>
 					<ModalFooter>
-						<Button
-							colorScheme="purple"
-							mr={3}
-							onClick={onCloseSpotify}
-						>
+						<Button mr={3} onClick={onCloseSpotify}>
 							Close
 						</Button>
 					</ModalFooter>

@@ -1,16 +1,16 @@
 import {
-    Button,
-    Center,
-    HStack,
-    Icon,
-    Image,
-    Link,
-    Text,
-    VStack
+	Button,
+	Center,
+	HStack,
+	Icon,
+	Image,
+	Link,
+	Text,
+	VStack,
 } from "@chakra-ui/react";
 import { FaDiscord, FaGamepad } from "react-icons/fa";
 import { HiOutlineMail, HiUserGroup } from "react-icons/hi";
-import { ImFacebook2 } from "react-icons/Im";
+import { ImFacebook2 } from "react-icons/im";
 import { SiInstagram, SiLinkedin, SiTiktok, SiTwitter } from "react-icons/si";
 
 export default function Links(): JSX.Element {

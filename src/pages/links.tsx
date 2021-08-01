@@ -1,12 +1,12 @@
 import {
-	Button,
-	Center,
-	HStack,
-	Icon,
-	Image,
-	Link,
-	Text,
-	VStack,
+    Button,
+    Center,
+    HStack,
+    Icon,
+    Image,
+    Link,
+    Text,
+    VStack
 } from "@chakra-ui/react";
 import { FaDiscord, FaGamepad } from "react-icons/fa";
 import { HiOutlineMail, HiUserGroup } from "react-icons/hi";

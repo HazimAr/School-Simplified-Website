@@ -33,7 +33,7 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 				<Stupid />
 			) : (
 				<ChakraProvider theme={theme}>
-					<Stack justify="space-between" h="100vh" spacing={0}>
+					<Stack justify="space-between" minH="100vh" spacing={0}>
 						<Box>
 							<Header />
 							<Component {...pageProps} />

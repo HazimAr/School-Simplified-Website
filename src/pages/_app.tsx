@@ -16,6 +16,7 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 	// Curtesy of The chakra Homie (Zim)
 	const progress = new ProgressBar({
 		size: 2,
+		// @ts-expect-error wtf it literally is im not stupid
 		color: theme.colors.brand.gold,
 		delay: 0,
 	});

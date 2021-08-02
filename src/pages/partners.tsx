@@ -140,11 +140,26 @@ export default function partners(): ReactElement {
 									minChildWidth="320px"
 									spacing="40px"
 								>
-									<Cell src="/partners/slingshot.png" />
-									<Cell src="/partners/versatile.png" />
-									<Cell src="/partners/slingshot.png" />
-									<Cell src="/partners/versatile.png" />
-									<Cell src="/partners/slingshot.png" />
+									<Cell
+										alt="slingshot"
+										src="/partners/slingshot.png"
+									/>
+									<Cell
+										alt="versatile"
+										src="/partners/versatile.png"
+									/>
+									<Cell
+										alt="slingshot"
+										src="/partners/slingshot.png"
+									/>
+									<Cell
+										alt="versatile"
+										src="/partners/versatile.png"
+									/>
+									<Cell
+										alt="slingshot"
+										src="/partners/slingshot.png"
+									/>
 								</SimpleGrid>
 							</TabPanel>
 							<TabPanel>
@@ -152,12 +167,30 @@ export default function partners(): ReactElement {
 									minChildWidth="320px"
 									spacing="40px"
 								>
-									<Cell src="/partners/slingshot.png" />
-									<Cell src="/partners/versatile.png" />
-									<Cell src="/partners/slingshot.png" />
-									<Cell src="/partners/versatile.png" />
-									<Cell src="/partners/versatile.png" />
-									<Cell src="/partners/versatile.png" />
+									<Cell
+										alt="slingshot"
+										src="/partners/slingshot.png"
+									/>
+									<Cell
+										alt="versatile"
+										src="/partners/versatile.png"
+									/>
+									<Cell
+										alt="slingshot"
+										src="/partners/slingshot.png"
+									/>
+									<Cell
+										alt="versatile"
+										src="/partners/versatile.png"
+									/>
+									<Cell
+										alt="versatile"
+										src="/partners/versatile.png"
+									/>
+									<Cell
+										alt="versatile"
+										src="/partners/versatile.png"
+									/>
 								</SimpleGrid>
 							</TabPanel>
 							<TabPanel>
@@ -165,14 +198,38 @@ export default function partners(): ReactElement {
 									minChildWidth="320px"
 									spacing="40px"
 								>
-									<Cell src="/partners/slingshot.png" />
-									<Cell src="/partners/slingshot.png" />
-									<Cell src="/partners/slingshot.png" />
-									<Cell src="/partners/slingshot.png" />
-									<Cell src="/partners/slingshot.png" />
-									<Cell src="/partners/slingshot.png" />
-									<Cell src="/partners/slingshot.png" />
-									<Cell src="/partners/slingshot.png" />
+									<Cell
+										alt="slingshot"
+										src="/partners/slingshot.png"
+									/>
+									<Cell
+										alt="slingshot"
+										src="/partners/slingshot.png"
+									/>
+									<Cell
+										alt="slingshot"
+										src="/partners/slingshot.png"
+									/>
+									<Cell
+										alt="slingshot"
+										src="/partners/slingshot.png"
+									/>
+									<Cell
+										alt="slingshot"
+										src="/partners/slingshot.png"
+									/>
+									<Cell
+										alt="slingshot"
+										src="/partners/slingshot.png"
+									/>
+									<Cell
+										alt="slingshot"
+										src="/partners/slingshot.png"
+									/>
+									<Cell
+										alt="slingshot"
+										src="/partners/slingshot.png"
+									/>
 								</SimpleGrid>
 							</TabPanel>
 						</TabPanels>
@@ -185,12 +242,13 @@ export default function partners(): ReactElement {
 
 type ImageCell = {
 	src: string;
+	alt: string;
 };
 
-function Cell({ src }: ImageCell): JSX.Element {
+function Cell({ src, alt }: ImageCell): JSX.Element {
 	return (
 		<Center my={10} height="80px">
-			<Image src={src} />{" "}
+			<Image src={src} alt={alt} />{" "}
 		</Center>
 	);
 }

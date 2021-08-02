@@ -1,4 +1,5 @@
 import {
+	Box,
 	Button,
 	Center,
 	HStack,
@@ -58,44 +59,68 @@ export default function Links(): JSX.Element {
 
 				<VStack spacing={4}>
 					<Button
-						leftIcon={<FaDiscord size="25px" />}
+						leftIcon={
+							<Box flex={0}>
+								<FaDiscord size="25px" />
+							</Box>
+						}
 						width="500px"
 						height="60px"
 						mt="25px"
 						rounded="30px"
 						boxShadow="md"
+						display="flex"
+						flexDir="row"
 					>
-						Join School Help Discord
+						<Text flex={1}>Join School Help Discord</Text>
 					</Button>
 
 					<Button
-						leftIcon={<FaGamepad size="30px" />}
+						leftIcon={
+							<Box flex={0}>
+								<FaGamepad size="30px" />
+							</Box>
+						}
 						width="500px"
 						height="60px"
 						rounded="30px"
 						boxShadow="md"
+						display="flex"
+						flexDir="row"
 					>
-						Join Minecraft Discord
+						<Text flex={1}>Join Minecraft Discord</Text>
 					</Button>
 
 					<Button
-						leftIcon={<HiUserGroup size="30px" />}
+						leftIcon={
+							<Box flex={0}>
+								<HiUserGroup size="30px" />
+							</Box>
+						}
 						width="500px"
 						height="60px"
 						rounded="30px"
 						boxShadow="md"
+						display="flex"
+						flexDir="row"
 					>
-						Join Our Staff
+						<Text flex={1}>Join Our Staff</Text>
 					</Button>
 
 					<Button
-						leftIcon={<HiOutlineMail size="30px" />}
+						leftIcon={
+							<Box flex={0}>
+								<HiOutlineMail size="30px" />
+							</Box>
+						}
 						width="500px"
 						height="60px"
 						rounded="30px"
 						boxShadow="md"
+						display="flex"
+						flexDir="row"
 					>
-						Contact Us
+						<Text flex={1}>Contact Us</Text>
 					</Button>
 				</VStack>
 			</VStack>

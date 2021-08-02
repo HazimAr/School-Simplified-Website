@@ -32,96 +32,197 @@ export default function Links(): JSX.Element {
 				</Text>
 
 				<HStack spacing={5}>
-					<Link href="https://www.tiktok.com/@schoolsimplified?">
+					<Link href="https://www.tiktok.com/@schoolsimplified?" isExternal>
 						<Icon as={SiTiktok} boxSize="25px" />
 					</Link>
 
-					<Link href="https://www.instagram.com/school.simplified/">
+					<Link href="https://www.instagram.com/school.simplified/" isExternal>
 						<Icon as={SiInstagram} boxSize="25px" />
 					</Link>
 
-					<Link href="https://twitter.com/schoolsimplify">
+					<Link href="https://twitter.com/schoolsimplify" isExternal>
 						<Icon as={SiTwitter} boxSize="25px" />
 					</Link>
 
-					<Link href="https://www.facebook.com/SchoolSimple/">
+					<Link href="https://www.facebook.com/SchoolSimple/" isExternal>
 						<Icon as={ImFacebook2} boxSize="25px" />
 					</Link>
 
-					<Link href="https://discord.com/invite/school">
+					<Link href="https://discord.com/invite/school" isExternal>
 						<Icon as={FaDiscord} boxSize="29px" mt="3px" />
 					</Link>
 
-					<Link href="https://www.linkedin.com/company/school-simplified">
+					<Link href="https://www.linkedin.com/company/school-simplified" isExternal>
 						<Icon as={SiLinkedin} boxSize="28px" />
 					</Link>
 				</HStack>
 
-				<VStack spacing={4}>
-					<Button
-						leftIcon={
-							<Box flex={0}>
-								<FaDiscord size="25px" />
-							</Box>
-						}
-						width="500px"
-						height="60px"
-						mt="25px"
-						rounded="30px"
-						boxShadow="md"
-						display="flex"
-						flexDir="row"
-					>
-						<Text flex={1}>Join School Help Discord</Text>
-					</Button>
+				<VStack spacing={5}>
 
-					<Button
-						leftIcon={
-							<Box flex={0}>
-								<FaGamepad size="30px" />
-							</Box>
-						}
-						width="500px"
-						height="60px"
-						rounded="30px"
-						boxShadow="md"
-						display="flex"
-						flexDir="row"
-					>
-						<Text flex={1}>Join Minecraft Discord</Text>
-					</Button>
+					<Link href="https://discord.com/invite/school" isExternal>
+						<Button
+							leftIcon={
+								<Box flex={0}>
+									<FaDiscord size="25px" />
+								</Box>
+							}
+							width="560px"
+							height="62.4px"
+							mt="25px"
+							rounded="30px"
+							boxShadow="md"
+							display="flex"
+							flexDir="row"
+						>
+							<Text flex={1}>Join School Help Discord</Text>
+						</Button>
+					</Link>
 
-					<Button
-						leftIcon={
-							<Box flex={0}>
-								<HiUserGroup size="30px" />
-							</Box>
-						}
-						width="500px"
-						height="60px"
-						rounded="30px"
-						boxShadow="md"
-						display="flex"
-						flexDir="row"
-					>
-						<Text flex={1}>Join Our Staff</Text>
-					</Button>
+					<Link href="https://discord.com/invite/simplified" isExternal>
+						<Button
+							leftIcon={
+								<Box flex={0}>
+									<FaGamepad size="30px" />
+								</Box>
+							}
+							width="560px"
+							height="62.4px"
+							rounded="30px"
+							boxShadow="md"
+							display="flex"
+							flexDir="row"
+						>
+							<Text flex={1}>Join Minecraft Discord</Text>
+						</Button>
+					</Link>
 
-					<Button
-						leftIcon={
-							<Box flex={0}>
-								<HiOutlineMail size="30px" />
-							</Box>
-						}
-						width="500px"
-						height="60px"
-						rounded="30px"
-						boxShadow="md"
-						display="flex"
-						flexDir="row"
-					>
-						<Text flex={1}>Contact Us</Text>
-					</Button>
+					<Link href="/volunteer">
+						<Button
+							leftIcon={
+								<Box flex={0}>
+									<HiUserGroup size="30px" />
+								</Box>
+							}
+							width="560px"
+							height="62.4px"
+							rounded="30px"
+							boxShadow="md"
+							display="flex"
+							flexDir="row"
+						>
+							<Text flex={1}>Join Our Staff</Text>
+						</Button>
+					</Link>
+
+					<Link href="/contact">
+						<Button
+							leftIcon={
+								<Box flex={0}>
+									<HiOutlineMail size="30px" />
+								</Box>
+							}
+							width="560px"
+							height="62.4px"
+							rounded="30px"
+							boxShadow="md"
+							display="flex"
+							flexDir="row"
+						>
+							<Text flex={1}>Contact Us</Text>
+						</Button>
+					</Link>
+
+					<Link href="https://www.tiktok.com/@schoolsimplified?" isExternal>
+						<Button
+							leftIcon={
+								<Box flex={0}>
+									<SiTiktok size="25px" />
+								</Box>
+							}
+							width="560px"
+							height="62.4px"
+							rounded="30px"
+							boxShadow="md"
+							display="flex"
+							flexDir="row"
+						>
+							<Text flex={1}>TikTok</Text>
+						</Button>
+					</Link>
+
+					<Link href="https://www.instagram.com/school.simplified/" isExternal>
+						<Button
+							leftIcon={
+								<Box flex={0}>
+									<SiInstagram size="25px" />
+								</Box>
+							}
+							width="560px"
+							height="62.4px"
+							rounded="30px"
+							boxShadow="md"
+							display="flex"
+							flexDir="row"
+						>
+							<Text flex={1}>Instagram</Text>
+						</Button>
+					</Link>
+
+					<Link href="https://twitter.com/schoolsimplify/" isExternal>
+						<Button
+							leftIcon={
+								<Box flex={0}>
+									<SiTwitter size="25px" />
+								</Box>
+							}
+							width="560px"
+							height="62.4px"
+							rounded="30px"
+							boxShadow="md"
+							display="flex"
+							flexDir="row"
+						>
+							<Text flex={1}>Twitter</Text>
+						</Button>
+					</Link>
+
+					<Link href="https://www.facebook.com/SchoolSimple/" isExternal>
+						<Button
+							leftIcon={
+								<Box flex={0}>
+									<ImFacebook2 size="25px" />
+								</Box>
+							}
+							width="560px"
+							height="62.4px"
+							rounded="30px"
+							boxShadow="md"
+							display="flex"
+							flexDir="row"
+						>
+							<Text flex={1}>Facebook</Text>
+						</Button>
+					</Link>
+
+					<Link href="https://www.linkedin.com/company/school-simplified" isExternal>
+						<Button
+							leftIcon={
+								<Box flex={0}>
+									<SiLinkedin size="25px" />
+								</Box>
+							}
+							width="560px"
+							height="62.4px"
+							rounded="30px"
+							boxShadow="md"
+							display="flex"
+							flexDir="row"
+						>
+							<Text flex={1}>Linkedin</Text>
+						</Button>
+					</Link>
+
+
 				</VStack>
 			</VStack>
 		</Center>

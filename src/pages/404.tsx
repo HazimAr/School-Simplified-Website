@@ -31,7 +31,7 @@ export default function Four(): JSX.Element {
 								textAlign={{ base: "center", md: "left" }}
 							>
 								It looks like a dog has eaten the page you're
-								looking for. Click below to return to run away
+								looking for. Click below to run away
 								before it eats another page...
 							</Text>
 							<Text textAlign={{ base: "center", md: "left" }}>

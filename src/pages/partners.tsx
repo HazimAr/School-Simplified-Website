@@ -1,24 +1,24 @@
 import {
 	Box,
+	Center,
+	Divider,
 	Heading,
 	Image,
-	Center,
-	Wrap,
-	SimpleGrid,
-	Text,
-	Divider,
 	Popover,
-	PopoverTrigger,
-	PopoverContent,
 	PopoverBody,
 	PopoverCloseButton,
+	PopoverContent,
 	PopoverHeader,
-	WrapItem,
-	Tabs,
-	TabList,
-	TabPanels,
+	PopoverTrigger,
+	SimpleGrid,
 	Tab,
+	TabList,
 	TabPanel,
+	TabPanels,
+	Tabs,
+	Text,
+	Wrap,
+	WrapItem,
 } from "@chakra-ui/react";
 import StyledButton from "@components/button";
 import Container from "@components/container";
@@ -37,7 +37,6 @@ export default function partners(): ReactElement {
 				<ContainerInside align="center">
 					<Wrap justify="center" align="center" mt={50}>
 						<WrapItem>
-							{" "}
 							<Box maxW="60ch" textAlign="left" mt={`20px`}>
 								<Heading mb={10}>
 									A network for you to become a part of the

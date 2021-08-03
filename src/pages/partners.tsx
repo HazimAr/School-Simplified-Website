@@ -7,6 +7,12 @@ import {
 	SimpleGrid,
 	Text,
 	Divider,
+	Popover,
+	PopoverTrigger,
+	PopoverContent,
+	PopoverBody,
+	PopoverCloseButton,
+	PopoverHeader,
 	WrapItem,
 	Tabs,
 	TabList,
@@ -38,11 +44,9 @@ export default function partners(): ReactElement {
 									journey
 								</Heading>
 								<Text my="10px">
-									School Simplified is a digital nonprofit
-									whose mission is to spread educational
-									equality by providing free academic
-									services, products, and opportunities for
-									teenagers.
+									Connect with us, take advantage of our
+									resources, and together we can build a
+									brighter future.
 								</Text>
 								{/* <NextLink href="/notes">
 							<Button>Get Free Help</Button>
@@ -82,7 +86,7 @@ export default function partners(): ReactElement {
 							<TabList
 								justify="center"
 								align="center"
-								color="#8287be"
+								color="#8287BE"
 							>
 								<Tab
 									_selected={{ textDecoration: "underline" }}
@@ -96,7 +100,7 @@ export default function partners(): ReactElement {
 											md: 20,
 											lg: 30,
 										}}
-										color="#8287be"
+										color="#8287BE"
 									>
 										Academic Partners
 									</Heading>
@@ -111,7 +115,7 @@ export default function partners(): ReactElement {
 											md: 20,
 											lg: 30,
 										}}
-										color="#8287be"
+										color="#8287BE"
 									>
 										Community Partners
 									</Heading>
@@ -126,7 +130,7 @@ export default function partners(): ReactElement {
 											md: 20,
 											lg: 30,
 										}}
-										color="#8287be"
+										color="#8287BE"
 									>
 										Donors & Sponsors
 									</Heading>
@@ -141,23 +145,23 @@ export default function partners(): ReactElement {
 									spacing="40px"
 								>
 									<Cell
-										alt="slingshot"
+										alt="Slingshot"
 										src="/partners/slingshot.png"
 									/>
 									<Cell
-										alt="versatile"
+										alt="Versatile"
 										src="/partners/versatile.png"
 									/>
 									<Cell
-										alt="slingshot"
+										alt="Slingshot"
 										src="/partners/slingshot.png"
 									/>
 									<Cell
-										alt="versatile"
+										alt="Versatile"
 										src="/partners/versatile.png"
 									/>
 									<Cell
-										alt="slingshot"
+										alt="Slingshot"
 										src="/partners/slingshot.png"
 									/>
 								</SimpleGrid>
@@ -168,27 +172,27 @@ export default function partners(): ReactElement {
 									spacing="40px"
 								>
 									<Cell
-										alt="slingshot"
+										alt="Slingshot"
 										src="/partners/slingshot.png"
 									/>
 									<Cell
-										alt="versatile"
+										alt="Versatile"
 										src="/partners/versatile.png"
 									/>
 									<Cell
-										alt="slingshot"
+										alt="Slingshot"
 										src="/partners/slingshot.png"
 									/>
 									<Cell
-										alt="versatile"
+										alt="Versatile"
 										src="/partners/versatile.png"
 									/>
 									<Cell
-										alt="versatile"
+										alt="Versatile"
 										src="/partners/versatile.png"
 									/>
 									<Cell
-										alt="versatile"
+										alt="Versatile"
 										src="/partners/versatile.png"
 									/>
 								</SimpleGrid>
@@ -199,35 +203,35 @@ export default function partners(): ReactElement {
 									spacing="40px"
 								>
 									<Cell
-										alt="slingshot"
+										alt="Slingshot"
 										src="/partners/slingshot.png"
 									/>
 									<Cell
-										alt="slingshot"
+										alt="Slingshot"
 										src="/partners/slingshot.png"
 									/>
 									<Cell
-										alt="slingshot"
+										alt="Slingshot"
 										src="/partners/slingshot.png"
 									/>
 									<Cell
-										alt="slingshot"
+										alt="Slingshot"
 										src="/partners/slingshot.png"
 									/>
 									<Cell
-										alt="slingshot"
+										alt="Slingshot"
 										src="/partners/slingshot.png"
 									/>
 									<Cell
-										alt="slingshot"
+										alt="Slingshot"
 										src="/partners/slingshot.png"
 									/>
 									<Cell
-										alt="slingshot"
+										alt="Slingshot"
 										src="/partners/slingshot.png"
 									/>
 									<Cell
-										alt="slingshot"
+										alt="Slingshot"
 										src="/partners/slingshot.png"
 									/>
 								</SimpleGrid>
@@ -247,8 +251,17 @@ type ImageCell = {
 
 function Cell({ src, alt }: ImageCell): JSX.Element {
 	return (
-		<Center my={10} height="80px">
-			<Image src={src} alt={alt} />{" "}
-		</Center>
+		<Popover>
+			<PopoverTrigger>
+				<Center my={10} height="80px">
+					<Image src={src} alt={alt} />{" "}
+				</Center>
+			</PopoverTrigger>
+			<PopoverContent bg="#fff" color="#8287BE">
+				<PopoverCloseButton />
+				<PopoverHeader>{alt}</PopoverHeader>{" "}
+				<PopoverBody>Description of partner here</PopoverBody>
+			</PopoverContent>
+		</Popover>
 	);
 }

@@ -84,7 +84,7 @@ export default function Links(): JSX.Element {
 
 			<Container>
 				<ContainerInside align="center">
-					<Stack spacing={5}>
+					<VStack spacing={5}>
 						<Link
 							href="https://discord.com/invite/school"
 							isExternal
@@ -293,7 +293,7 @@ export default function Links(): JSX.Element {
 								<Text flex={1}>Linkedin</Text>
 							</Button>
 						</Link>
-					</Stack>
+					</VStack>
 				</ContainerInside>
 			</Container>
 		</>

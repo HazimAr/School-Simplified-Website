@@ -88,6 +88,7 @@ export default function Links(): JSX.Element {
 						<Link
 							href="https://discord.com/invite/school"
 							isExternal
+							w="fit-content"
 						>
 							<Button
 								leftIcon={
@@ -112,6 +113,7 @@ export default function Links(): JSX.Element {
 						<Link
 							href="https://discord.com/invite/simplified"
 							isExternal
+							w="fit-content"
 						>
 							<Button
 								leftIcon={
@@ -132,7 +134,7 @@ export default function Links(): JSX.Element {
 							</Button>
 						</Link>
 
-						<Link href="/volunteer">
+						<Link href="/volunteer" w="fit-content">
 							<Button
 								leftIcon={
 									<Box flex={0}>
@@ -152,7 +154,7 @@ export default function Links(): JSX.Element {
 							</Button>
 						</Link>
 
-						<Link href="/contact">
+						<Link href="/contact" w="fit-content">
 							<Button
 								leftIcon={
 									<Box flex={0}>
@@ -174,6 +176,7 @@ export default function Links(): JSX.Element {
 
 						<Link
 							href="https://www.tiktok.com/@schoolsimplified?"
+							w="fit-content"
 							isExternal
 						>
 							<Button
@@ -197,6 +200,7 @@ export default function Links(): JSX.Element {
 
 						<Link
 							href="https://www.instagram.com/school.simplified/"
+							w="fit-content"
 							isExternal
 						>
 							<Button
@@ -220,6 +224,7 @@ export default function Links(): JSX.Element {
 
 						<Link
 							href="https://twitter.com/schoolsimplify/"
+							w="fit-content"
 							isExternal
 						>
 							<Button
@@ -243,6 +248,7 @@ export default function Links(): JSX.Element {
 
 						<Link
 							href="https://www.facebook.com/SchoolSimple/"
+							w="fit-content"
 							isExternal
 						>
 							<Button
@@ -267,6 +273,7 @@ export default function Links(): JSX.Element {
 						<Link
 							href="https://www.linkedin.com/company/school-simplified"
 							isExternal
+							w="fit-content"
 						>
 							<Button
 								leftIcon={

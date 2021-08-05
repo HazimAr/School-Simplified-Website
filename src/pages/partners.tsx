@@ -94,7 +94,7 @@ export default function partners(): ReactElement {
 								>
 									<Heading
 										fontSize={{
-											base: 20,
+											base: 15,
 											sm: 20,
 											md: 20,
 											lg: 30,
@@ -109,7 +109,7 @@ export default function partners(): ReactElement {
 								>
 									<Heading
 										fontSize={{
-											base: 20,
+											base: 15,
 											sm: 20,
 											md: 20,
 											lg: 30,
@@ -124,7 +124,7 @@ export default function partners(): ReactElement {
 								>
 									<Heading
 										fontSize={{
-											base: 20,
+											base: 15,
 											sm: 20,
 											md: 20,
 											lg: 30,

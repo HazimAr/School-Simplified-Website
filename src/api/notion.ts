@@ -7,14 +7,16 @@ import {
 	GovernanceSection,
 	NotesProps,
 	QAPair,
-	QASection, ScholarshipProps, SocialMedia,
+	QASection,
+	ScholarshipProps,
+	SocialMedia,
 	Subject,
-	Unit
+	Unit,
 } from "types";
 
 const notionConfig = {
 	headers: {
-		Authorization: "Bearer " +  process.env.NOTION_API_KEY,
+		Authorization: "Bearer " + process.env.NOTION_API_KEY,
 		"Notion-Version": "2021-05-13",
 	},
 };
@@ -507,18 +509,25 @@ function parseAppropriateData(
 					return entry.properties[property].rich_text[0].plain_text;
 				return "";
 			case "multi_select":
-				let output: any[] = []
-				for (let i = 0; i < entry.properties[property].multi_select.length; i++)
-					output.push(entry.properties[property].multi_select[i].name);
+				let output: any[] = [];
+				for (
+					let i = 0;
+					i < entry.properties[property].multi_select.length;
+					i++
+				)
+					output.push(
+						entry.properties[property].multi_select[i].name
+					);
 				return output;
 			default:
-				console.warn(`ID ${entry.id} [${datatype}] is an invalid datatype!`);
+				console.warn(
+					`ID ${entry.id} [${datatype}] is an invalid datatype!`
+				);
 				return "";
 		}
 	} else {
 		console.warn(`ID ${entry.id} [${property}] is malformed!`);
-		if (datatype === "multi_select")
-			return [];
+		if (datatype === "multi_select") return [];
 		return "";
 	}
 }
@@ -526,7 +535,8 @@ function parseAppropriateData(
 // https://marbled-caper-ac7.notion.site/29d7d0141ee84c4d973035b24ac82a7c?v=d3d383a52e9b43448ccad99eb06f4b38
 export async function getScholarshipData(): Promise<ScholarshipProps[]> {
 	const { data } = await axios.post(
-		`https://api.notion.com/v1/databases/29d7d0141ee84c4d973035b24ac82a7c/query`, {},
+		`https://api.notion.com/v1/databases/29d7d0141ee84c4d973035b24ac82a7c/query`,
+		{},
 		notionConfig
 	);
 
@@ -536,17 +546,35 @@ export async function getScholarshipData(): Promise<ScholarshipProps[]> {
 	for (const entry of data.results) {
 		// for each category in the entry
 		output.push({
-			title: parseAppropriateData(entry, 'Name', 'title'),
-			link: parseAppropriateData(entry, 'Link', 'url'),
-			value: parseAppropriateData(entry, 'Value', 'rich_text'),
-			international_or_domestic: parseAppropriateData(entry, 'International or Domestic', 'multi_select'),
-			state: parseAppropriateData(entry, 'State', 'multi_select'),
-			eligible_grades: parseAppropriateData(entry, 'Eligible Grades', 'multi_select'),
-			open_date: parseAppropriateData(entry, 'Open Date', 'rich_text'),
-			closing_date: parseAppropriateData(entry, 'Closing Date', 'rich_text'),
-			notes: parseAppropriateData(entry, 'Additional Things to Note', 'rich_text')
+			title: parseAppropriateData(entry, "Name", "title"),
+			link: parseAppropriateData(entry, "Link", "url"),
+			value: parseAppropriateData(entry, "Value", "rich_text"),
+			international_or_domestic: parseAppropriateData(
+				entry,
+				"International or Domestic",
+				"multi_select"
+			),
+			state: parseAppropriateData(entry, "State", "multi_select"),
+			eligible_grades: parseAppropriateData(
+				entry,
+				"Eligible Grades",
+				"multi_select"
+			),
+			open_date: parseAppropriateData(entry, "Open Date", "rich_text"),
+			closing_date: parseAppropriateData(
+				entry,
+				"Closing Date",
+				"rich_text"
+			),
+			notes: parseAppropriateData(
+				entry,
+				"Additional Things to Note",
+				"rich_text"
+			),
 		});
 	}
 
 	return output;
 }
+
+export async function getBlogListing() {}

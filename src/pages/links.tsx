@@ -84,7 +84,7 @@ export default function Links(): JSX.Element {
 
 			<Container>
 				<ContainerInside align="center">
-					<Stack align="center" spacing={5}>
+					<Stack spacing={5}>
 						<Link
 							href="https://discord.com/invite/school"
 							isExternal

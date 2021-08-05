@@ -94,7 +94,7 @@ export default function partners(): ReactElement {
 								>
 									<Heading
 										fontSize={{
-											base: 20,
+											base: 13,
 											sm: 20,
 											md: 20,
 											lg: 30,
@@ -109,7 +109,7 @@ export default function partners(): ReactElement {
 								>
 									<Heading
 										fontSize={{
-											base: 20,
+											base: 13,
 											sm: 20,
 											md: 20,
 											lg: 30,
@@ -124,7 +124,7 @@ export default function partners(): ReactElement {
 								>
 									<Heading
 										fontSize={{
-											base: 20,
+											base: 13,
 											sm: 20,
 											md: 20,
 											lg: 30,
@@ -140,7 +140,7 @@ export default function partners(): ReactElement {
 						<TabPanels mt={10}>
 							<TabPanel>
 								<SimpleGrid
-									minChildWidth="320px"
+									minChildWidth="250px"
 									spacing="40px"
 								>
 									<Cell
@@ -167,7 +167,7 @@ export default function partners(): ReactElement {
 							</TabPanel>
 							<TabPanel>
 								<SimpleGrid
-									minChildWidth="320px"
+									minChildWidth="250px"
 									spacing="40px"
 								>
 									<Cell
@@ -198,7 +198,7 @@ export default function partners(): ReactElement {
 							</TabPanel>
 							<TabPanel>
 								<SimpleGrid
-									minChildWidth="320px"
+									minChildWidth="250px"
 									spacing="40px"
 								>
 									<Cell

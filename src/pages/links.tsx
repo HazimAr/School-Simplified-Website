@@ -84,11 +84,10 @@ export default function Links(): JSX.Element {
 
 			<Container>
 				<ContainerInside align="center">
-					<Stack align="center" spacing={5}>
+					<Stack spacing={5}>
 						<Link
 							href="https://discord.com/invite/school"
 							isExternal
-							w="fit-content"
 						>
 							<Button
 								leftIcon={
@@ -113,7 +112,6 @@ export default function Links(): JSX.Element {
 						<Link
 							href="https://discord.com/invite/simplified"
 							isExternal
-							w="fit-content"
 						>
 							<Button
 								leftIcon={
@@ -134,7 +132,7 @@ export default function Links(): JSX.Element {
 							</Button>
 						</Link>
 
-						<Link href="/volunteer" w="fit-content">
+						<Link href="/volunteer">
 							<Button
 								leftIcon={
 									<Box flex={0}>
@@ -154,7 +152,7 @@ export default function Links(): JSX.Element {
 							</Button>
 						</Link>
 
-						<Link href="/contact" w="fit-content">
+						<Link href="/contact">
 							<Button
 								leftIcon={
 									<Box flex={0}>
@@ -176,7 +174,6 @@ export default function Links(): JSX.Element {
 
 						<Link
 							href="https://www.tiktok.com/@schoolsimplified?"
-							w="fit-content"
 							isExternal
 						>
 							<Button
@@ -200,7 +197,6 @@ export default function Links(): JSX.Element {
 
 						<Link
 							href="https://www.instagram.com/school.simplified/"
-							w="fit-content"
 							isExternal
 						>
 							<Button
@@ -224,7 +220,6 @@ export default function Links(): JSX.Element {
 
 						<Link
 							href="https://twitter.com/schoolsimplify/"
-							w="fit-content"
 							isExternal
 						>
 							<Button
@@ -248,7 +243,6 @@ export default function Links(): JSX.Element {
 
 						<Link
 							href="https://www.facebook.com/SchoolSimple/"
-							w="fit-content"
 							isExternal
 						>
 							<Button
@@ -273,7 +267,6 @@ export default function Links(): JSX.Element {
 						<Link
 							href="https://www.linkedin.com/company/school-simplified"
 							isExternal
-							w="fit-content"
 						>
 							<Button
 								leftIcon={

@@ -5,13 +5,12 @@ import {
 	Icon,
 	Image,
 	Link,
-	Stack,
 	Text,
 	VStack,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import { FaDiscord, FaGamepad } from "react-icons/fa";
+import { FaDiscord } from "react-icons/fa";
 import { HiOutlineMail, HiUserGroup } from "react-icons/hi";
 import { ImFacebook2 } from "react-icons/im";
 import { SiInstagram, SiLinkedin, SiTiktok, SiTwitter } from "react-icons/si";

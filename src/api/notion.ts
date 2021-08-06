@@ -190,7 +190,7 @@ export async function getArtInfo(): Promise<ArtData> {
 
 	let image =
 			"https://www.thewrap.com/wp-content/uploads/2016/08/Rick-Astley-618x400.jpg", // default image
-		description = "Rick Astley", // default description
+		description = "It's Rick Astley", // default description
 		monthlyPrompt = "Legend of Internet History", // default monthly prompt
 		name = "Rick Astley", // default name
 		socialMedia: SocialMedia[] = [];
@@ -577,4 +577,4 @@ export async function getScholarshipData(): Promise<ScholarshipProps[]> {
 	return output;
 }
 
-export async function getBlogListing() {}
+// export async function getBlogListing() {}

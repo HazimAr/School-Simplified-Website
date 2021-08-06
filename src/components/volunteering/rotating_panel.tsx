@@ -19,15 +19,16 @@ import NextLink from "@components/nextChakra";
 import useInterval from "@hooks/useInterval";
 import React from "react";
 import { FaArrowLeft, FaArrowRight, FaCircle } from "react-icons/fa";
+import { VolunteerPanelProps } from "types";
 
-const teams: PanelProps[] = [
+const teams: VolunteerPanelProps[] = [
 	{
 		teamName: "Academics",
 		teamDesc:
 			"As part of our Academics Team, you can provide educational help to other students in the School Simplified community. If you excel in school and enjoy sharing your knowledge, join the Academics Team!",
 		src: "/logos/aca_logo.png",
 		link: "/academics",
-		teams: [
+		functions: [
 			"tutoring",
 			"chat-helping",
 			"essay revision",
@@ -41,7 +42,7 @@ const teams: PanelProps[] = [
 			"Joining our Technology Team will allow you to develop skills such as programming, web development, and quality management. If you are knowledgeable in any of these areas, we encourage you to apply!",
 		src: "/logos/tech_logo.png",
 		link: "https://forms.gle/tqXm5aLwhWGQ4cGA6",
-		teams: [
+		functions: [
 			"web development",
 			"bot development",
 			"VPS administration",
@@ -55,7 +56,7 @@ const teams: PanelProps[] = [
 			"Joining the Marketing Team is a great opportunity for volunteers with experience in social media, design, and marketing. If you are interested in spreading School Simplified's mission, volunteer with the Marketing Team!",
 		src: "/logos/mkt_logo.png",
 		link: "https://forms.gle/xrZma1KjtZ6nzRxS8",
-		teams: [
+		functions: [
 			"content creation",
 			"design",
 			"data analysis",
@@ -63,13 +64,6 @@ const teams: PanelProps[] = [
 			"community engagement",
 		],
 	},
-	// {
-	// 	teamName: "Human Resources",
-	// 	teamDesc:
-	// 		"Joining the Marketing Team is a great opportunity for volunteers with experience in social media, design, and marketing. If you are interested in working closely with different aspects of the School Simplified community, such as events, social media, and blog posts, volunteer with the Marketing Team!",
-	// 	src: "/logos/hr_logo.png",
-	// 	link: "https://example.com/",
-	// },
 ];
 
 export default function RotatingPanel(): JSX.Element {
@@ -80,7 +74,7 @@ export default function RotatingPanel(): JSX.Element {
 				teamDesc={v.teamDesc}
 				link={v.link}
 				src={v.src}
-				teams={v.teams}
+				functions={v.functions}
 				key={"key_" + index}
 			/>
 		);
@@ -122,7 +116,7 @@ export default function RotatingPanel(): JSX.Element {
 						}
 						w="fit-content"
 						mx={2}
-						_hover={{ cursor: "pointer" }}
+						cursor="pointer"
 					>
 						<Icon as={FaArrowLeft} boxSize={5} />
 					</Center>
@@ -153,7 +147,7 @@ export default function RotatingPanel(): JSX.Element {
 						}
 						w="fit-content"
 						mx={2}
-						_hover={{ cursor: "pointer" }}
+						cursor="pointer"
 					>
 						<Icon as={FaArrowRight} boxSize={5} />
 					</Center>
@@ -163,22 +157,13 @@ export default function RotatingPanel(): JSX.Element {
 	);
 }
 
-type PanelProps = {
-	children?: any;
-	src: string;
-	teamName: string;
-	teamDesc: string;
-	link: string;
-	teams?: string[];
-};
-
 function Panel({
 	src,
 	teamName,
 	teamDesc,
 	link,
-	teams,
-}: PanelProps): JSX.Element {
+	functions: teams,
+}: VolunteerPanelProps): JSX.Element {
 	return (
 		<Box py={5}>
 			<ScaleFade in={true} unmountOnExit={false}>

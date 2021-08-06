@@ -26,8 +26,7 @@ export default function Links(): JSX.Element {
 							src="\logos\ss_logo.png"
 							alt="school simplified logo"
 							boxSize="100px"
-							mt={{base: "20px", md: "10px"}}
-							mb = "10px"
+							mt={{base: "40px", md: "10px"}}
 							mx = "10px"
 						/>
 

@@ -107,7 +107,7 @@ export default function Links(): JSX.Element {
 								flexDir="row"
 								bg="#6C7DFE"
 							>
-								<Text flex={1}>Join School Help Discord</Text>
+								<Text flex={1}>Join Discord</Text>
 							</Button>
 						</Link>
 

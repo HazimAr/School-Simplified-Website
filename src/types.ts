@@ -11,7 +11,7 @@ export type Subject = {
 export type Sponsor = {
 	image: string;
 	link: string;
-}
+};
 
 export type Class = {
 	title: string;
@@ -51,9 +51,9 @@ export type QASection = {
 	list: QAPair[];
 };
 
-export type AnswerPart = { 
-	text: string; 
-	link: string 
+export type AnswerPart = {
+	text: string;
+	link: string;
 };
 
 export type GovernanceSection = {
@@ -61,9 +61,9 @@ export type GovernanceSection = {
 	docs: GovernanceDocument[];
 };
 
-export type GovernanceDocument = { 
-	title: string; 
-	href: string 
+export type GovernanceDocument = {
+	title: string;
+	href: string;
 };
 
 export type Person = {
@@ -78,18 +78,18 @@ export type ProjectWinner = {
 	prize: string;
 	link: string;
 	img: string;
-}
+};
 
 export type SpotifyLink = {
 	title: string;
 	link: string;
-}
+};
 
 export type SocialMediaIcon = {
 	icon: any;
 	size: any;
 	link: string;
-}
+};
 
 export type ScholarshipProps = {
 	title: string;
@@ -101,4 +101,13 @@ export type ScholarshipProps = {
 	open_date: string;
 	closing_date: string;
 	notes: string;
-}
+};
+
+export type VolunteerPanelProps = {
+	children?: any;
+	src: string;
+	teamName: string;
+	teamDesc: string;
+	link: string;
+	functions?: string[];
+};

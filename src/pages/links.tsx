@@ -103,7 +103,7 @@ export default function Links(): JSX.Element {
 								boxShadow="md"
 								display="flex"
 								flexDir="row"
-								bg="#5A60AD"
+								bg="#6C7DFE"
 							>
 								<Text flex={1}>Join School Help Discord</Text>
 							</Button>
@@ -126,7 +126,7 @@ export default function Links(): JSX.Element {
 								boxShadow="md"
 								display="flex"
 								flexDir="row"
-								bg="#5A60AD"
+								bg="#6C7DFE"
 							>
 								<Text flex={1}>Join Minecraft Discord</Text>
 							</Button>
@@ -146,7 +146,7 @@ export default function Links(): JSX.Element {
 								boxShadow="md"
 								display="flex"
 								flexDir="row"
-								bg="#5A60AD"
+								bg="#6C7DFE"
 							>
 								<Text flex={1}>Join Our Staff</Text>
 							</Button>
@@ -166,7 +166,7 @@ export default function Links(): JSX.Element {
 								boxShadow="md"
 								display="flex"
 								flexDir="row"
-								bg="#5A60AD"
+								bg="#6C7DFE"
 							>
 								<Text flex={1}>Contact Us</Text>
 							</Button>
@@ -189,7 +189,7 @@ export default function Links(): JSX.Element {
 								boxShadow="md"
 								display="flex"
 								flexDir="row"
-								bg="#5A60AD"
+								bg="#6C7DFE"
 							>
 								<Text flex={1}>TikTok</Text>
 							</Button>
@@ -212,7 +212,7 @@ export default function Links(): JSX.Element {
 								boxShadow="md"
 								display="flex"
 								flexDir="row"
-								bg="#5A60AD"
+								bg="#6C7DFE"
 							>
 								<Text flex={1}>Instagram</Text>
 							</Button>
@@ -235,7 +235,7 @@ export default function Links(): JSX.Element {
 								boxShadow="md"
 								display="flex"
 								flexDir="row"
-								bg="#5A60AD"
+								bg="#6C7DFE"
 							>
 								<Text flex={1}>Twitter</Text>
 							</Button>
@@ -258,7 +258,7 @@ export default function Links(): JSX.Element {
 								boxShadow="md"
 								display="flex"
 								flexDir="row"
-								bg="#5A60AD"
+								bg="#6C7DFE"
 							>
 								<Text flex={1}>Facebook</Text>
 							</Button>
@@ -281,7 +281,7 @@ export default function Links(): JSX.Element {
 								boxShadow="md"
 								display="flex"
 								flexDir="row"
-								bg="#5A60AD"
+								bg="#6C7DFE"
 							>
 								<Text flex={1}>Linkedin</Text>
 							</Button>

@@ -112,31 +112,6 @@ export default function Links(): JSX.Element {
 							</Button>
 						</Link>
 
-						<Link
-							href="https://discord.com/invite/simplified"
-							isExternal
-							w="100%"
-							maxW="560px"
-						>
-							<Button
-								leftIcon={
-									<Box flex={0}>
-										<FaGamepad size="30px" />
-									</Box>
-								}
-								w="100%"
-								maxW="560px"
-								height="62.4px"
-								rounded="30px"
-								boxShadow="md"
-								display="flex"
-								flexDir="row"
-								bg="#6C7DFE"
-							>
-								<Text flex={1}>Join Minecraft Discord</Text>
-							</Button>
-						</Link>
-
 						<Link href="/volunteer" w="100%" maxW="560px">
 							<Button
 								leftIcon={

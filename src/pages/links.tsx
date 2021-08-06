@@ -26,8 +26,8 @@ export default function Links(): JSX.Element {
 							src="\logos\ss_logo.png"
 							alt="school simplified logo"
 							boxSize="100px"
-							mt={{base: "40px", md: "10px"}}
-							mx = "10px"
+							mt={{ base: "40px", md: "10px" }}
+							mx="10px"
 						/>
 
 						<Text fontSize="xl">School Simplified</Text>
@@ -85,10 +85,12 @@ export default function Links(): JSX.Element {
 
 			<Container>
 				<ContainerInside align="center">
-					<Stack spacing={5}>
+					<VStack spacing={5}>
 						<Link
 							href="https://discord.com/invite/school"
 							isExternal
+							w="100%"
+							maxW="560px"
 						>
 							<Button
 								leftIcon={
@@ -113,6 +115,8 @@ export default function Links(): JSX.Element {
 						<Link
 							href="https://discord.com/invite/simplified"
 							isExternal
+							w="100%"
+							maxW="560px"
 						>
 							<Button
 								leftIcon={
@@ -133,7 +137,7 @@ export default function Links(): JSX.Element {
 							</Button>
 						</Link>
 
-						<Link href="/volunteer">
+						<Link href="/volunteer" w="100%" maxW="560px">
 							<Button
 								leftIcon={
 									<Box flex={0}>
@@ -153,7 +157,7 @@ export default function Links(): JSX.Element {
 							</Button>
 						</Link>
 
-						<Link href="/contact">
+						<Link href="/contact" w="100%" maxW="560px">
 							<Button
 								leftIcon={
 									<Box flex={0}>
@@ -176,6 +180,8 @@ export default function Links(): JSX.Element {
 						<Link
 							href="https://www.tiktok.com/@schoolsimplified?"
 							isExternal
+							w="100%"
+							maxW="560px"
 						>
 							<Button
 								leftIcon={
@@ -199,6 +205,8 @@ export default function Links(): JSX.Element {
 						<Link
 							href="https://www.instagram.com/school.simplified/"
 							isExternal
+							w="100%"
+							maxW="560px"
 						>
 							<Button
 								leftIcon={
@@ -222,6 +230,8 @@ export default function Links(): JSX.Element {
 						<Link
 							href="https://twitter.com/schoolsimplify/"
 							isExternal
+							w="100%"
+							maxW="560px"
 						>
 							<Button
 								leftIcon={
@@ -245,6 +255,8 @@ export default function Links(): JSX.Element {
 						<Link
 							href="https://www.facebook.com/SchoolSimple/"
 							isExternal
+							w="100%"
+							maxW="560px"
 						>
 							<Button
 								leftIcon={
@@ -268,6 +280,8 @@ export default function Links(): JSX.Element {
 						<Link
 							href="https://www.linkedin.com/company/school-simplified"
 							isExternal
+							w="100%"
+							maxW="560px"
 						>
 							<Button
 								leftIcon={
@@ -287,7 +301,7 @@ export default function Links(): JSX.Element {
 								<Text flex={1}>Linkedin</Text>
 							</Button>
 						</Link>
-					</Stack>
+					</VStack>
 				</ContainerInside>
 			</Container>
 		</>

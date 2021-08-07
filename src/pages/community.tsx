@@ -96,7 +96,7 @@ export default function Community({
 									<NextLink href="/simplihacks">
 										<ListItem>Hackathons</ListItem>
 									</NextLink>
-									<ListItem>Talent Show</ListItem>
+									<ListItem>Talent Shows</ListItem>
 									<ListItem>Movie Nights</ListItem>
 									<ListItem>Game Nights</ListItem>
 								</UnorderedList>

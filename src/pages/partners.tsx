@@ -81,21 +81,21 @@ export default function partners(): ReactElement {
 				<ContainerInside>
 					<Heading mb={10}>Our Partners</Heading>
 					<Tabs variant="line" colorScheme="purple" align="center">
-						<Box py={2} backgroundColor="#D8D6EC">
+						<Box backgroundColor="#D8D6EC">
 							<TabList
 								justify="center"
 								align="center"
 								color="#8287BE"
 							>
 								<Tab
-									_selected={{ textDecoration: "underline" }}
-									fontWeight={100}
-									py={3}
+									_selected={{
+										borderBottom: "5px solid #8287BE",
+									}}
+									pt={3}
 								>
 									<Heading
 										fontSize={{
 											base: 13,
-											sm: 20,
 											md: 20,
 											lg: 30,
 										}}
@@ -105,12 +105,14 @@ export default function partners(): ReactElement {
 									</Heading>
 								</Tab>
 								<Tab
-									_selected={{ textDecoration: "underline" }}
+									_selected={{
+										borderBottom: "5px solid #8287BE",
+									}}
+									pt={3}
 								>
 									<Heading
 										fontSize={{
 											base: 13,
-											sm: 20,
 											md: 20,
 											lg: 30,
 										}}
@@ -120,12 +122,14 @@ export default function partners(): ReactElement {
 									</Heading>
 								</Tab>
 								<Tab
-									_selected={{ textDecoration: "underline" }}
+									_selected={{
+										borderBottom: "5px solid #8287BE",
+									}}
+									pt={3}
 								>
 									<Heading
 										fontSize={{
 											base: 13,
-											sm: 20,
 											md: 20,
 											lg: 30,
 										}}
@@ -140,8 +144,15 @@ export default function partners(): ReactElement {
 						<TabPanels mt={10}>
 							<TabPanel>
 								<SimpleGrid
-									minChildWidth="250px"
-									spacing="40px"
+									columns={[2, null, 3]}
+									spacing="20px"
+									minChildWidth={{
+										base: 170,
+										sm: 140,
+										md: 250,
+										lg: 200,
+									}}
+									spacingY={0}
 								>
 									<Cell
 										alt="Slingshot"
@@ -152,88 +163,36 @@ export default function partners(): ReactElement {
 										src="/partners/versatile.png"
 									/>
 									<Cell
-										alt="Slingshot"
-										src="/partners/slingshot.png"
-									/>
-									<Cell
-										alt="Versatile"
-										src="/partners/versatile.png"
-									/>
-									<Cell
-										alt="Slingshot"
-										src="/partners/slingshot.png"
+										alt="Deloitte"
+										src="/partners/deloitte.png"
 									/>
 								</SimpleGrid>
 							</TabPanel>
 							<TabPanel>
 								<SimpleGrid
-									minChildWidth="250px"
-									spacing="40px"
-								>
-									<Cell
-										alt="Slingshot"
-										src="/partners/slingshot.png"
-									/>
-									<Cell
-										alt="Versatile"
-										src="/partners/versatile.png"
-									/>
-									<Cell
-										alt="Slingshot"
-										src="/partners/slingshot.png"
-									/>
-									<Cell
-										alt="Versatile"
-										src="/partners/versatile.png"
-									/>
-									<Cell
-										alt="Versatile"
-										src="/partners/versatile.png"
-									/>
-									<Cell
-										alt="Versatile"
-										src="/partners/versatile.png"
-									/>
-								</SimpleGrid>
+									columns={[2, null, 3]}
+									spacing="20px"
+									minChildWidth={{
+										base: 170,
+										sm: 170,
+										md: 250,
+										lg: 300,
+									}}
+									spacingY={0}
+								></SimpleGrid>
 							</TabPanel>
 							<TabPanel>
 								<SimpleGrid
-									minChildWidth="250px"
+									columns={[2, null, 3]}
 									spacing="40px"
-								>
-									<Cell
-										alt="Slingshot"
-										src="/partners/slingshot.png"
-									/>
-									<Cell
-										alt="Slingshot"
-										src="/partners/slingshot.png"
-									/>
-									<Cell
-										alt="Slingshot"
-										src="/partners/slingshot.png"
-									/>
-									<Cell
-										alt="Slingshot"
-										src="/partners/slingshot.png"
-									/>
-									<Cell
-										alt="Slingshot"
-										src="/partners/slingshot.png"
-									/>
-									<Cell
-										alt="Slingshot"
-										src="/partners/slingshot.png"
-									/>
-									<Cell
-										alt="Slingshot"
-										src="/partners/slingshot.png"
-									/>
-									<Cell
-										alt="Slingshot"
-										src="/partners/slingshot.png"
-									/>
-								</SimpleGrid>
+									minChildWidth={{
+										base: 170,
+										sm: 170,
+										md: 250,
+										lg: 300,
+									}}
+									spacingY={0}
+								></SimpleGrid>
 							</TabPanel>
 						</TabPanels>
 					</Tabs>
@@ -252,13 +211,13 @@ function Cell({ src, alt }: ImageCell): JSX.Element {
 	return (
 		<Popover>
 			<PopoverTrigger>
-				<Center my={10} height="80px">
-					<Image src={src} alt={alt} />{" "}
+				<Center bg="#D8D6EC" rounded="lg" mt={10}>
+					<Image src={src} alt={alt} />
 				</Center>
 			</PopoverTrigger>
-			<PopoverContent bg="#fff" color="#8287BE">
+			<PopoverContent bg="#D8D6EC" color="#8287BE">
 				<PopoverCloseButton />
-				<PopoverHeader>{alt}</PopoverHeader>{" "}
+				<PopoverHeader fontWeight={700}>{alt}</PopoverHeader>
 				<PopoverBody>Description of partner here</PopoverBody>
 			</PopoverContent>
 		</Popover>

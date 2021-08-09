@@ -74,29 +74,29 @@ const services = [
 	// },
 ];
 
-const socials = [
-	{
-		name: "Discord",
-		link: "https://discord.gg/school",
-	},
-	{
-		name: "Instagram",
-		link: "https://www.instagram.com/school.simplified/",
-	},
-	{
-		name: "Tiktok",
-		link: "https://www.tiktok.com/@schoolsimplified",
-	},
+// const socials = [
+// 	{
+// 		name: "Discord",
+// 		link: "https://discord.gg/school",
+// 	},
+// 	{
+// 		name: "Instagram",
+// 		link: "https://www.instagram.com/school.simplified/",
+// 	},
+// 	{
+// 		name: "Tiktok",
+// 		link: "https://www.tiktok.com/@schoolsimplified",
+// 	},
 
-	{
-		name: "Linkedin",
-		link: "https://www.linkedin.com/company/school-simplified",
-	},
-	{
-		name: "Twitter",
-		link: "https://twitter.com/schoolsimplify/",
-	},
-];
+// 	{
+// 		name: "Linkedin",
+// 		link: "https://www.linkedin.com/company/school-simplified",
+// 	},
+// 	{
+// 		name: "Twitter",
+// 		link: "https://twitter.com/schoolsimplify/",
+// 	},
+// ];
 
 // eslint-disable-next-line import/no-default-export
 export default function Footer(): JSX.Element {
@@ -164,7 +164,7 @@ export default function Footer(): JSX.Element {
 								})}
 							</UnorderedList>
 						</Box>
-						<Box my={3}>
+						{/* <Box my={3}>
 							<Heading size="md" color="white" mb={2}>
 								Social Media
 							</Heading>
@@ -187,7 +187,7 @@ export default function Footer(): JSX.Element {
 									);
 								})}
 							</UnorderedList>
-						</Box>
+						</Box> */}
 					</Flex>
 				</ContainerInside>
 			</Container>

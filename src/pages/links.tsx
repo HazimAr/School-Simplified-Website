@@ -151,7 +151,7 @@ export default function Links(): JSX.Element {
 							</Button>
 						</Link>
 
-						<Link
+						{/* <Link
 							href="https://www.tiktok.com/@schoolsimplified?"
 							isExternal
 							w="100%"
@@ -274,7 +274,7 @@ export default function Links(): JSX.Element {
 							>
 								<Text flex={1}>Linkedin</Text>
 							</Button>
-						</Link>
+						</Link> */}
 					</VStack>
 				</ContainerInside>
 			</Container>

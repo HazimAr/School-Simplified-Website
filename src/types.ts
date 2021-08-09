@@ -111,3 +111,17 @@ export type VolunteerPanelProps = {
 	link: string;
 	functions?: string[];
 };
+
+export type BlogListing = {
+	title: string;
+	id: string;
+	created_time: string;
+	authors?: Author[] | undefined;
+};
+
+export type Author = {
+	id?: string | undefined;
+	name: string;
+	avatar_url: string;
+	email: string;
+};

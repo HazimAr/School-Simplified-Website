@@ -2,6 +2,7 @@ import axios from "axios";
 import {
 	AnswerPart,
 	ArtData,
+	BlogListing,
 	Class,
 	GovernanceDocument,
 	GovernanceSection,
@@ -577,4 +578,21 @@ export async function getScholarshipData(): Promise<ScholarshipProps[]> {
 	return output;
 }
 
-// export async function getBlogListing() {}
+export async function getBlogListing(): Promise<BlogListing[]> {
+	return await axios
+		.post(
+			"https://api.notion.com/v1/databases/79d546abf96847c6ab3cd8cffe002c39/query",
+			{},
+			notionConfig
+		)
+		.then((output) => {
+			const results = output.data.result;
+			return results.map((result: any): BlogListing => {
+				return {
+					created_time: result.created_time,
+					title: "",
+					id: result.id,
+				};
+			});
+		});
+}

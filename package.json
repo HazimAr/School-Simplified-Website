@@ -22,7 +22,7 @@
 	"dependencies": {
 		"@babel/core": "^7.14.8",
 		"@badrap/bar-of-progress": "^0.1.2",
-		"@chakra-ui/icons": "^1.0.14",
+		"@chakra-ui/icons": "^1.0.15",
 		"@chakra-ui/react": "^1.6.5",
 		"@chakra-ui/theme-tools": "^1.1.7",
 		"@emotion/react": "^11.4.0",

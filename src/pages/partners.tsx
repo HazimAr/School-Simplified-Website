@@ -37,12 +37,12 @@ export default function partners(): ReactElement {
 				<ContainerInside align="center">
 					<Wrap justify="center" align="center" mt={50}>
 						<WrapItem>
-							<Box maxW="60ch" textAlign="left" mt={`20px`}>
+							<Box maxW="60ch" textAlign="left" mt={10}>
 								<Heading mb={10}>
 									A network for you to become a part of the
 									journey
 								</Heading>
-								<Text my="10px">
+								<Text my={5}>
 									Connect with us, take advantage of our
 									resources, and together we can build a
 									brighter future.
@@ -56,7 +56,7 @@ export default function partners(): ReactElement {
 						<WrapItem>
 							<Box textAlign="left">
 								<Image
-									maxH="300px"
+									maxH={300}
 									src="/timmy/32.png"
 									alt="Timmy with graduation cap"
 									display={{ base: "none", md: "block" }}
@@ -144,8 +144,8 @@ export default function partners(): ReactElement {
 						<TabPanels mt={10}>
 							<TabPanel>
 								<SimpleGrid
-									columns={[2, null, 3]}
-									spacing="20px"
+						columns={{sm: 2, md: 3}}								
+						spacing={6}
 									minChildWidth={{
 										base: 170,
 										sm: 140,
@@ -170,8 +170,8 @@ export default function partners(): ReactElement {
 							</TabPanel>
 							<TabPanel>
 								<SimpleGrid
-									columns={[2, null, 3]}
-									spacing="20px"
+						columns={{sm: 2, md: 3}}								
+									spacing={6}
 									minChildWidth={{
 										base: 170,
 										sm: 170,
@@ -183,9 +183,9 @@ export default function partners(): ReactElement {
 							</TabPanel>
 							<TabPanel>
 								<SimpleGrid
-									columns={[2, null, 3]}
-									spacing="40px"
-									minChildWidth={{
+						columns={{sm: 2, md: 3}}								
+						spacing={6}
+						minChildWidth={{
 										base: 170,
 										sm: 170,
 										md: 250,

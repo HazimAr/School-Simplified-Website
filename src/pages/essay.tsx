@@ -10,7 +10,7 @@ export default function Essay(): JSX.Element {
 				<title>School Simplified | Essay</title>
 			</Head>
 			<Container>
-				<ContainerInside py={10} justify="center">
+				<ContainerInside py={10}>
 					<Center>
 						<Box w={{ base: "230px", sm: "400px", lg: "600px" }}>
 							<iframe

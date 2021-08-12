@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import { FaDiscord } from "react-icons/fa";
+import { FaDiscord, FaRegHandshake } from "react-icons/fa";
 import { HiOutlineMail, HiUserGroup } from "react-icons/hi";
 import { ImFacebook2 } from "react-icons/im";
 import { SiInstagram, SiLinkedin, SiTiktok, SiTwitter } from "react-icons/si";
@@ -148,6 +148,27 @@ export default function Links(): JSX.Element {
 								bg="#6C7DFE"
 							>
 								<Text flex={1}>Contact Us</Text>
+							</Button>
+						</Link>
+
+						
+						<Link href="/partners" w="100%" maxW="560px">
+							<Button
+								leftIcon={
+									<Box flex={0}>
+										<FaRegHandshake size="30px" />
+									</Box>
+								}
+								w="100%"
+								maxW="560px"
+								height="62.4px"
+								rounded="30px"
+								boxShadow="md"
+								display="flex"
+								flexDir="row"
+								bg="#6C7DFE"
+							>
+								<Text flex={1}>Partner with Us</Text>
 							</Button>
 						</Link>
 

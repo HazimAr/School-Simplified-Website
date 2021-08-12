@@ -1,4 +1,4 @@
-import { Heading, Flex, Text, Box, SimpleGrid } from "@chakra-ui/react";
+import { Box, Flex, Heading, SimpleGrid, Text } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -35,7 +35,7 @@ export default function Academics(): JSX.Element {
 			</Head>
 			<Container>
 				<ContainerInside py={5}>
-					<SimpleGrid columns={[1, null, 3]} spacing={7}>
+					<SimpleGrid columns={{ base: 1, lg: 3 }} spacing={7}>
 						{sections.map((section) => {
 							return (
 								<Flex
@@ -46,7 +46,9 @@ export default function Academics(): JSX.Element {
 									alignItems="center"
 								>
 									<Box>
-										<Heading>{section.title}</Heading>
+										<Heading my={5}>
+											{section.title}
+										</Heading>
 										<Text>{section.description}</Text>
 										<NextLink
 											href={section.link}

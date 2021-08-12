@@ -123,5 +123,9 @@ export type Author = {
 	id?: string | undefined;
 	name: string;
 	avatar_url: string;
-	email: string;
+	// email: string;
+};
+
+export type BlogPage = {
+	blocks: any[];
 };

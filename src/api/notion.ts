@@ -2,7 +2,9 @@ import axios from "axios";
 import {
 	AnswerPart,
 	ArtData,
+	Author,
 	BlogListing,
+	BlogPage,
 	Class,
 	GovernanceDocument,
 	GovernanceSection,
@@ -586,13 +588,42 @@ export async function getBlogListing(): Promise<BlogListing[]> {
 			notionConfig
 		)
 		.then((output) => {
-			const results = output.data.result;
+			const results = output.data.results;
 			return results.map((result: any): BlogListing => {
-				return {
-					created_time: result.created_time,
-					title: "",
-					id: result.id,
-				};
+				const authorObjects: any[] = result.properties.Author?.people,
+					title =
+						result.properties.Name?.title?.plain_text ??
+						"MALFORMED";
+				if (authorObjects?.length) {
+					const authors: Author[] = authorObjects.map(
+						(authorObject): Author => {
+							return {
+								name: authorObject.name,
+								avatar_url: authorObject.avatar_url,
+							};
+						}
+					);
+					return {
+						created_time: result.created_time,
+						title,
+						id: result.id,
+						authors,
+					};
+				} else {
+					return {
+						created_time: result.created_time,
+						title,
+						id: result.id,
+					};
+				}
 			});
 		});
+}
+
+export async function getBlogPage(id: string): Promise<BlogPage> {
+	const { data: pageData } = await axios.get(
+		`https://api.notion.com/v1/blocks/${id}/children`,
+		notionConfig
+	);
+	return pageData.results;
 }

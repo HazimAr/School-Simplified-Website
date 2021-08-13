@@ -34,6 +34,10 @@ import { BlogPage } from "types";
  * @return an element representing the text
  */
 export function parseText(text: any): JSX.Element {
+	if (!text.plain_text.length || /^[\s\n]+$/g.test(text.plain_text)) {
+		return <></>;
+	}
+
 	const textProps: Record<string, any> = {};
 	if (text.annotations.bold) {
 		textProps.fontWeight = "bold";
@@ -61,12 +65,14 @@ export function parseText(text: any): JSX.Element {
 				{text.plain_text}
 			</NextLink>
 		);
-	} else {
+	} else if (Object.keys(textProps).length) {
 		return (
 			<Box as="span" {...textProps}>
 				{text.plain_text}
 			</Box>
 		);
+	} else {
+		return <>{text.plain_text}</>;
 	}
 }
 

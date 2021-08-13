@@ -8,7 +8,7 @@ import {
 	UnorderedList,
 } from "@chakra-ui/react";
 import NextLink from "@components/nextChakra";
-import React from "react";
+import React, { cloneElement } from "react";
 import { BlogPage } from "types";
 
 /**
@@ -53,7 +53,11 @@ export function parseText(text: any): JSX.Element {
 		textProps.borderBottomWidth = "thin";
 	}
 	if (text.annotations.code) {
-		textProps.fontFamily = "monospace"; // maybe more later
+		textProps.fontFamily = "monospace";
+		textProps.p = 1;
+		textProps.my = -1;
+		textProps.bg = "black";
+		textProps.borderRadius = 5;
 	}
 	if (text.annotations.color !== "default") {
 		textProps.color = text.annotations.color;
@@ -61,7 +65,7 @@ export function parseText(text: any): JSX.Element {
 
 	if (text.href) {
 		return (
-			<NextLink href={text.href} {...textProps}>
+			<NextLink href={text.href} {...textProps} color="#ffe19a">
 				{text.plain_text}
 			</NextLink>
 		);
@@ -85,39 +89,55 @@ export function parseBlock(block: any): JSX.Element {
 	switch (block.type) {
 		case "paragraph":
 			return (
-				<Text>
-					{block.paragraph.text.map((item: any) => parseText(item))}
+				<Text textAlign="left" style={{ textIndent: 50 }}>
+					{block.paragraph.text.map((item: any, idx: Number) =>
+						cloneElement(parseText(item), { key: "text_" + idx })
+					)}
 				</Text>
 			);
 		case "heading_1":
 			return (
-				<Heading as="h1">
-					{block.heading_1.text.map((item: any) => parseText(item))}
+				<Heading as="h1" size="lg" pt={3}>
+					{block.heading_1.text.map((item: any, idx: Number) =>
+						cloneElement(parseText(item), { key: "text_" + idx })
+					)}
 				</Heading>
 			);
 		case "heading_2":
 			return (
-				<Heading as="h2">
-					{block.heading_2.text.map((item: any) => parseText(item))}
+				<Heading as="h2" size="md" pt={2}>
+					{block.heading_2.text.map((item: any, idx: Number) =>
+						cloneElement(parseText(item), { key: "text_" + idx })
+					)}
 				</Heading>
 			);
 		case "heading_3":
 			return (
-				<Heading as="h3">
-					{block.heading_3.text.map((item: any) => parseText(item))}
+				<Heading as="h3" size="sm" pt={1}>
+					{block.heading_3.text.map((item: any, idx: Number) =>
+						cloneElement(parseText(item), { key: "text_" + idx })
+					)}
 				</Heading>
 			);
 		case "bulleted_list_item":
 		case "numbered_list_item":
 			return (
-				<ListItem>
-					{block[block.type].text.map((item: any) => parseText(item))}
+				<ListItem textAlign="left">
+					{block[block.type].text.map((item: any, idx: Number) =>
+						cloneElement(parseText(item), { key: "text_" + idx })
+					)}
 				</ListItem>
 			);
 		case "to_do":
 			return (
-				<Checkbox defaultChecked={block.checked} disabled>
-					{block.to_do.map((item: any) => parseText(item))}
+				<Checkbox
+					textAlign="left"
+					defaultChecked={block.checked}
+					disabled
+				>
+					{block.to_do.map((item: any, idx: Number) =>
+						cloneElement(parseText(item), { key: "text_" + idx })
+					)}
 				</Checkbox>
 			);
 		case "child_page":
@@ -142,41 +162,74 @@ export function parsePage(page: BlogPage): JSX.Element {
 	let orderedList: JSX.Element[] = [],
 		unorderedList: JSX.Element[] = [];
 	// console.log(page.blocks);
+	let cnt = 0;
 	for (const block of page.blocks) {
 		const element = parseBlock(block);
 		if (block.type === "bulleted_list_item") {
 			unorderedList.push(element);
 			if (orderedList.length) {
-				elementList.push(<OrderedList>{orderedList}</OrderedList>);
+				elementList.push(
+					<OrderedList key={"block_" + cnt++} pl={6}>
+						{orderedList.map((item, idx: Number) =>
+							cloneElement(item, { key: "ol_" + idx })
+						)}
+					</OrderedList>
+				);
 				orderedList = [];
 			}
 		} else if (block.type === "numbered_list_item") {
 			orderedList.push(element);
 			if (unorderedList.length) {
 				elementList.push(
-					<UnorderedList>{unorderedList}</UnorderedList>
+					<UnorderedList key={"block_" + cnt++} pl={6}>
+						{unorderedList.map((item, idx: Number) =>
+							cloneElement(item, { key: "ul_" + idx })
+						)}
+					</UnorderedList>
 				);
 				unorderedList = [];
 			}
 		} else {
 			if (orderedList.length) {
-				elementList.push(<OrderedList>{orderedList}</OrderedList>);
+				elementList.push(
+					<OrderedList key={"block_" + cnt++} pl={6}>
+						{orderedList.map((item, idx: Number) =>
+							cloneElement(item, { key: "ol_" + idx })
+						)}
+					</OrderedList>
+				);
 				orderedList = [];
 			}
 			if (unorderedList.length) {
 				elementList.push(
-					<UnorderedList>{unorderedList}</UnorderedList>
+					<UnorderedList key={"block_" + cnt++} pl={6}>
+						{unorderedList.map((item, idx: Number) =>
+							cloneElement(item, { key: "ul_" + idx })
+						)}
+					</UnorderedList>
 				);
 				unorderedList = [];
 			}
-			elementList.push(element);
+			elementList.push(cloneElement(element, { key: "block_" + cnt++ }));
 		}
 	}
 	if (orderedList.length) {
-		elementList.push(<OrderedList>{orderedList}</OrderedList>);
+		elementList.push(
+			<OrderedList key={"block_" + cnt++} pl={6}>
+				{orderedList.map((item, idx: Number) =>
+					cloneElement(item, { key: "ol_" + idx })
+				)}
+			</OrderedList>
+		);
 	}
 	if (unorderedList.length) {
-		elementList.push(<UnorderedList>{unorderedList}</UnorderedList>);
+		elementList.push(
+			<UnorderedList key={"block_" + cnt++} pl={6}>
+				{unorderedList.map((item, idx: Number) =>
+					cloneElement(item, { key: "ul_" + idx })
+				)}
+			</UnorderedList>
+		);
 	}
 	return <>{elementList}</>;
 }

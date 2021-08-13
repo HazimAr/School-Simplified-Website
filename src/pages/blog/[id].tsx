@@ -1,5 +1,5 @@
 import { getBlogListing, getBlogPage } from "@api/notion";
-import { Heading } from "@chakra-ui/react";
+import { Box, Center, Heading, Image, Text, VStack } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import Head from "next/head";
@@ -16,10 +16,40 @@ export default function BlogPage_({
 			<Head>
 				<title>School Simplified | {listing.title}</title>
 			</Head>
-			<Container>
+			<Container bg="brand.transparent">
 				<ContainerInside my={7}>
-					<Heading>{listing.title}</Heading>
-					{parsePage(page)}
+					<VStack spacing={5}>
+						<Heading as="h1">{listing.title}</Heading>
+						{listing.authors?.length ? (
+							<Box>
+								<Text as="i" fontSize={18}>
+									Written by:
+								</Text>
+								{listing.authors.map(
+									(author, index: number) => {
+										return (
+											<Center key={index}>
+												<Image
+													src={author.avatar_url}
+													boxSize={30}
+													borderRadius={15}
+													mr={3}
+												/>
+												<Text>{author.name}</Text>
+											</Center>
+										);
+									}
+								)}
+							</Box>
+						) : null}
+					</VStack>
+				</ContainerInside>
+			</Container>
+			<Container>
+				<ContainerInside mt={5} mx={{ sm: 0, md: 3 }}>
+					<VStack spacing={3} alignItems="stretch">
+						{parsePage(page)}
+					</VStack>
 				</ContainerInside>
 			</Container>
 		</>

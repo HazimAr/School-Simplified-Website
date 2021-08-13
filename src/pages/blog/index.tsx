@@ -16,8 +16,14 @@ export default function Blog({
 				<title>School Simplified | Blogs</title>
 			</Head>
 			<Container>
+				<ContainerInside my={10}>
+					<Heading as="h1" size="xl">
+						Blogs
+					</Heading>
+				</ContainerInside>
+			</Container>
+			<Container>
 				<ContainerInside>
-					<Heading>Blogs</Heading>
 					{listings.map((listing, idx: Number) => {
 						return (
 							<Text key={"listing_" + idx}>{listing.title}</Text>

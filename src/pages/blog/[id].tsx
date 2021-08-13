@@ -1,20 +1,24 @@
 import { getBlogListing, getBlogPage } from "@api/notion";
-import { Heading } from "@chakra-ui/react";
+import { Heading, Text } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import Head from "next/head";
 import { BlogListing, BlogPage } from "types";
 
 type BlogPageProps = { page: BlogPage; listing: BlogListing };
-export default function BlogPage_(props: BlogPageProps): JSX.Element {
+export default function BlogPage_({
+	page,
+	listing,
+}: BlogPageProps): JSX.Element {
 	return (
 		<>
 			<Head>
-				<title>School Simplified | Blog Page</title>
+				<title>School Simplified | {listing.title}</title>
 			</Head>
 			<Container>
-				<ContainerInside>
-					<Heading>{JSON.stringify(props)}</Heading>
+				<ContainerInside my={7}>
+					<Heading>{listing.title}</Heading>
+					<Text>{JSON.stringify(page)}</Text>
 				</ContainerInside>
 			</Container>
 		</>
@@ -38,7 +42,7 @@ export async function getStaticProps({ params }: any) {
 		listing: thisListing,
 		page: await getBlogPage(params.id),
 	};
-	return { props, revalidate: 30 };
+	return { props, revalidate: 60 };
 }
 
 export async function getStaticPaths() {

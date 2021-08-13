@@ -592,7 +592,7 @@ export async function getBlogListing(): Promise<BlogListing[]> {
 			return results.map((result: any): BlogListing => {
 				const authorObjects: any[] = result.properties.Author?.people,
 					title =
-						result.properties.Name?.title?.plain_text ??
+						result.properties.Name?.title[0]?.plain_text ??
 						"MALFORMED";
 				if (authorObjects?.length) {
 					const authors: Author[] = authorObjects.map(

@@ -3,8 +3,8 @@ import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NotesSection from "@components/resources/notes_section";
-import { AllSubjects } from "types";
 import Head from "next/head";
+import { AllSubjects } from "types";
 
 /**
  * Notes and stuff
@@ -73,7 +73,7 @@ export default function Resources({ subjects }: AllSubjects): JSX.Element {
 	);
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 	const subjects = await getSubjects();
-	return { props: { subjects } };
+	return { props: { subjects }, revalidate: 60 };
 }

@@ -116,7 +116,8 @@ export type BlogListing = {
 	title: string;
 	id: string;
 	created_time: string;
-	authors?: Author[] | undefined;
+	link: string;
+	authors?: Author[];
 };
 
 export type Author = {

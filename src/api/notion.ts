@@ -591,7 +591,8 @@ export async function getBlogListing(): Promise<BlogListing[]> {
 			const results = output.data.results;
 			return results.map((result: any): BlogListing => {
 				const authorObjects: any[] = result.properties.Author?.people,
-					titleText = result.properties.Name?.title;
+					titleText = result.properties.Name?.title,
+					linkText = result.properties.Link?.rich_text;
 				let title;
 				if (titleText?.length) {
 					title = "";
@@ -600,6 +601,15 @@ export async function getBlogListing(): Promise<BlogListing[]> {
 					}
 				} else {
 					title = "MALFORMED";
+				}
+				let link;
+				if (linkText?.length) {
+					link = "";
+					for (const linkSegment of linkText) {
+						link += linkSegment.plain_text;
+					}
+				} else {
+					link = result.id;
 				}
 
 				if (authorObjects?.length) {
@@ -615,6 +625,7 @@ export async function getBlogListing(): Promise<BlogListing[]> {
 						created_time: result.created_time,
 						title,
 						id: result.id,
+						link,
 						authors,
 					};
 				} else {
@@ -622,6 +633,7 @@ export async function getBlogListing(): Promise<BlogListing[]> {
 						created_time: result.created_time,
 						title,
 						id: result.id,
+						link,
 					};
 				}
 			});

@@ -591,9 +591,17 @@ export async function getBlogListing(): Promise<BlogListing[]> {
 			const results = output.data.results;
 			return results.map((result: any): BlogListing => {
 				const authorObjects: any[] = result.properties.Author?.people,
-					title =
-						result.properties.Name?.title[0]?.plain_text ??
-						"MALFORMED";
+					titleText = result.properties.Name?.title;
+				let title;
+				if (titleText?.length) {
+					title = "";
+					for (const titleSegment of titleText) {
+						title += titleSegment.plain_text;
+					}
+				} else {
+					title = "MALFORMED";
+				}
+
 				if (authorObjects?.length) {
 					const authors: Author[] = authorObjects.map(
 						(authorObject): Author => {
@@ -625,5 +633,5 @@ export async function getBlogPage(id: string): Promise<BlogPage> {
 		`https://api.notion.com/v1/blocks/${id}/children`,
 		notionConfig
 	);
-	return pageData.results;
+	return { blocks: pageData.results };
 }

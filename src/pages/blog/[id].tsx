@@ -1,9 +1,10 @@
 import { getBlogListing, getBlogPage } from "@api/notion";
-import { Heading, Text } from "@chakra-ui/react";
+import { Heading } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import Head from "next/head";
 import { BlogListing, BlogPage } from "types";
+import { parsePage } from "util/parse_notion";
 
 type BlogPageProps = { page: BlogPage; listing: BlogListing };
 export default function BlogPage_({
@@ -18,7 +19,7 @@ export default function BlogPage_({
 			<Container>
 				<ContainerInside my={7}>
 					<Heading>{listing.title}</Heading>
-					<Text>{JSON.stringify(page)}</Text>
+					{parsePage(page)}
 				</ContainerInside>
 			</Container>
 		</>

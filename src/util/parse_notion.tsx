@@ -9,9 +9,10 @@ import {
 	UnorderedList,
 } from "@chakra-ui/react";
 import NextLink from "@components/nextChakra";
+import "katex/dist/katex.min.css";
 import React, { cloneElement } from "react";
+import { InlineMath } from "react-katex"; // "react-latex" doesn't work for some odd reason
 import { BlogPage } from "types";
-
 /**
  * Parses an object from Notion that represents text into a Chakra object
  * {
@@ -35,7 +36,7 @@ import { BlogPage } from "types";
  * @return an element representing the text
  */
 export function parseText(text: any): JSX.Element {
-	if (!text.plain_text.length || /^[\s\n]+$/g.test(text.plain_text)) {
+	if (!text.plain_text.length) {
 		return <></>;
 	}
 
@@ -66,11 +67,12 @@ export function parseText(text: any): JSX.Element {
 		textProps.fontStyle = "italic";
 	}
 	if (text.annotations.strikethrough) {
-		textProps.textDecoration = "strikethrough";
+		textProps.textDecoration = "line-through";
 	}
 	if (text.annotations.underline) {
 		textProps.borderBottomStyle = "solid";
 		textProps.borderBottomWidth = "thin";
+		textProps.borderBottomColor = "initial";
 	}
 	if (text.annotations.code) {
 		textProps.fontFamily = "monospace";
@@ -83,20 +85,26 @@ export function parseText(text: any): JSX.Element {
 		textProps.color = text.annotations.color;
 	}
 
-	if (text.href) {
+	const plainText =
+		text.type === "equation" ? (
+			<InlineMath math={text.plain_text} />
+		) : (
+			<>{text.plain_text}</>
+		);
+	if (text.href && !/^[\s\n]+$/g.test(text.plain_text)) {
 		return (
 			<NextLink href={text.href} {...textProps} color="#ffe19a">
-				{text.plain_text}
+				{plainText}
 			</NextLink>
 		);
 	} else if (Object.keys(textProps).length) {
 		return (
 			<Box as="span" {...textProps}>
-				{text.plain_text}
+				{plainText}
 			</Box>
 		);
 	} else {
-		return <>{text.plain_text}</>;
+		return plainText;
 	}
 }
 

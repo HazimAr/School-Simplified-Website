@@ -118,6 +118,7 @@ export type BlogListing = {
 	created_time: string;
 	link: string;
 	category: string;
+	icon: string;
 	authors?: Author[];
 };
 

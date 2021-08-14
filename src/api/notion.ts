@@ -593,7 +593,8 @@ export async function getBlogListing(): Promise<BlogListing[]> {
 				const authorObjects: any[] = result.properties.Author?.people,
 					titleText = result.properties.Name?.title,
 					linkText = result.properties.Link?.rich_text,
-					category = result.properties.Category?.select.name ?? null;
+					category = result.properties.Category?.select.name ?? null,
+					icon = result.properties.Icon?.url ?? null;
 				let title;
 				if (titleText?.length) {
 					title = "";
@@ -628,6 +629,7 @@ export async function getBlogListing(): Promise<BlogListing[]> {
 						id: result.id,
 						link,
 						category,
+						icon,
 						authors,
 					};
 				} else {
@@ -636,6 +638,7 @@ export async function getBlogListing(): Promise<BlogListing[]> {
 						title,
 						id: result.id,
 						link,
+						icon,
 						category,
 					};
 				}

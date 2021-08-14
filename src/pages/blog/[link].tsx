@@ -90,48 +90,73 @@ export default function BlogPage_({
 	}
 
 	const dtFormatter = new Intl.DateTimeFormat("en-US");
+	const backgroundProps = listing.icon
+		? {
+				bgImage: `url(${listing.icon})`,
+				bgSize: "cover",
+				bgPosition: "center",
+		  }
+		: null;
+
 	return (
 		<>
 			<Head>
 				<title>School Simplified | {listing.title}</title>
 			</Head>
-			<Container bg="brand.transparent">
-				<ContainerInside my={7}>
-					<VStack spacing={5}>
-						<Heading as="h1">{listing.title}</Heading>
-						{listing.category ? (
-							<Text as="i">{listing.category}</Text>
-						) : null}
-						<Text fontSize={18}>
-							Published:{" "}
-							{dtFormatter.format(new Date(listing.created_time))}
-						</Text>
-						{listing.authors?.length ? (
-							<Box>
-								<Text fontSize={18}>Written by:</Text>
-								{listing.authors.map(
-									(author, index: number) => {
-										return (
-											<Center key={index}>
-												<Image
-													src={author.avatar_url}
-													boxSize={30}
-													borderRadius={15}
-													mr={3}
-												/>
-												<Text>{author.name}</Text>
-											</Center>
-										);
-									}
+			<Box {...backgroundProps}>
+				<Container
+					bg={listing.icon ? "blackAlpha.500" : "blackAlpha.400"}
+					backdropFilter={listing.icon ? "blur(5px)" : null}
+				>
+					<ContainerInside my={7}>
+						<VStack spacing={5}>
+							<Heading as="h1">{listing.title}</Heading>
+							{listing.category ? (
+								<Text as="i">{listing.category}</Text>
+							) : null}
+							<Text fontSize={18}>
+								Published:{" "}
+								{dtFormatter.format(
+									new Date(listing.created_time)
 								)}
-							</Box>
-						) : null}
-						<NextLink href="/blog" color="#ffe19a">
-							Back to Blog Home
-						</NextLink>
-					</VStack>
-				</ContainerInside>
-			</Container>
+							</Text>
+							{listing.authors?.length ? (
+								<Box>
+									<Text fontSize={18}>Written by:</Text>
+									<VStack spacing={1}>
+										{listing.authors.map(
+											(author, index: number) => {
+												return (
+													<Center key={index}>
+														<Image
+															src={
+																author
+																	.avatar_url
+																	?.length
+																	? author.avatar_url
+																	: "/staff/default.png"
+															}
+															boxSize={30}
+															borderRadius={15}
+															mr={2}
+														/>
+														<Text>
+															{author.name}
+														</Text>
+													</Center>
+												);
+											}
+										)}
+									</VStack>
+								</Box>
+							) : null}
+							<NextLink href="/blog" color="#ffe19a">
+								Back to Blog Home
+							</NextLink>
+						</VStack>
+					</ContainerInside>
+				</Container>
+			</Box>
 			<Container>
 				<ContainerInside my={5} mx={{ sm: 0, md: 3 }}>
 					<VStack spacing={3} alignItems="stretch" textAlign="left">
@@ -139,7 +164,7 @@ export default function BlogPage_({
 					</VStack>
 				</ContainerInside>
 			</Container>
-			<Container bg="brand.transparent">
+			<Container bg="blackAlpha.400">
 				<ContainerInside my={7}>
 					<NextLink href="/blog" color="#ffe19a">
 						Back to Blog Home

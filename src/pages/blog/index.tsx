@@ -2,9 +2,12 @@ import { getBlogListing } from "@api/notion";
 import {
 	Box,
 	Divider,
+	Flex,
 	Heading,
+	Image,
 	StackDivider,
 	Text,
+	useBreakpointValue,
 	VStack,
 } from "@chakra-ui/react";
 import Container from "@components/container";
@@ -20,6 +23,7 @@ export default function Blog({
 	listing: BlogListing[];
 }): JSX.Element {
 	const dtFormatter = new Intl.DateTimeFormat("en-US");
+	const maxIconW = useBreakpointValue({ base: 100, sm: 150, md: 200 });
 	return (
 		<>
 			<Head>
@@ -62,28 +66,54 @@ export default function Blog({
 												.slice(0, authors.length - 1)
 												.map((author) => author.name)
 												.join(", ") +
-											", and" +
+											", and " +
 											authors[authors.length - 1].name;
 								}
 							} else authorNames = null;
 							return (
-								<Box textAlign="left" key={"listing_" + idx}>
-									<NextLink href={"/blog/" + listing.link}>
-										<Heading as="h2" size="md">
-											{listing.title}
-										</Heading>
-									</NextLink>
-									{listing.category ? (
-										<Text as="i">{listing.category}</Text>
+								<Flex
+									textAlign="left"
+									justifyContent="space-between"
+									alignItems="center"
+									key={"listing_" + idx}
+								>
+									<Box>
+										<NextLink
+											href={"/blog/" + listing.link}
+										>
+											<Heading as="h2" size="md">
+												{listing.title}
+											</Heading>
+										</NextLink>
+										{listing.category ? (
+											<Text as="i">
+												{listing.category}
+											</Text>
+										) : null}
+										<Text>
+											Published:{" "}
+											{dtFormatter.format(
+												new Date(listing.created_time)
+											)}
+										</Text>
+										{authorNames?.length ? (
+											<Text>{authorNames}</Text>
+										) : null}
+									</Box>
+									{listing.icon ? (
+										<NextLink
+											href={"/blog/" + listing.link}
+										>
+											<Image
+												src={listing.icon}
+												maxH={maxIconW}
+												maxW={maxIconW}
+												borderRadius="2xl"
+												ml={3}
+											/>
+										</NextLink>
 									) : null}
-									<Text>
-										Published:{" "}
-										{dtFormatter.format(
-											new Date(listing.created_time)
-										)}
-									</Text>
-									<Text>{authorNames}</Text>
-								</Box>
+								</Flex>
 							);
 						})}
 					</VStack>

@@ -130,7 +130,7 @@ export default function BlogPage_({
 			</Container>
 			<Container>
 				<ContainerInside my={5} mx={{ sm: 0, md: 3 }}>
-					<VStack spacing={3} alignItems="stretch">
+					<VStack spacing={3} alignItems="stretch" textAlign="left">
 						{parsePage(page)}
 					</VStack>
 				</ContainerInside>

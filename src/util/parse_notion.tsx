@@ -109,7 +109,7 @@ export function parseBlock(block: any): JSX.Element {
 	switch (block.type) {
 		case "paragraph":
 			return (
-				<Text textAlign="left" style={{ textIndent: 50 }}>
+				<Text style={{ textIndent: 50 }}>
 					{block.paragraph.text.map((item: any, idx: Number) =>
 						cloneElement(parseText(item), { key: "text_" + idx })
 					)}
@@ -142,7 +142,7 @@ export function parseBlock(block: any): JSX.Element {
 		case "bulleted_list_item":
 		case "numbered_list_item":
 			return (
-				<ListItem textAlign="left">
+				<ListItem>
 					{block[block.type].text.map((item: any, idx: Number) =>
 						cloneElement(parseText(item), { key: "text_" + idx })
 					)}
@@ -150,11 +150,7 @@ export function parseBlock(block: any): JSX.Element {
 			);
 		case "to_do":
 			return (
-				<Checkbox
-					textAlign="left"
-					defaultChecked={block.checked}
-					disabled
-				>
+				<Checkbox defaultChecked={block.checked} disabled>
 					{block.to_do.map((item: any, idx: Number) =>
 						cloneElement(parseText(item), { key: "text_" + idx })
 					)}

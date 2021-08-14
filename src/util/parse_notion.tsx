@@ -2,6 +2,7 @@ import {
 	Box,
 	Checkbox,
 	Heading,
+	Image,
 	ListItem,
 	OrderedList,
 	Text,
@@ -36,6 +37,25 @@ import { BlogPage } from "types";
 export function parseText(text: any): JSX.Element {
 	if (!text.plain_text.length || /^[\s\n]+$/g.test(text.plain_text)) {
 		return <></>;
+	}
+
+	if (text.plain_text.startsWith("!")) {
+		const parts: string[] = text.plain_text.substring(1).split(/[\s\n]+/g);
+		if (parts.length) {
+			switch (parts[0]) {
+				case "img":
+				case "image":
+					if (parts.length == 1) {
+						return <Image src={parts[1]} mx="auto" />;
+					} else {
+						let alt = parts[2];
+						for (let i = 3; i < parts.length; i++) {
+							alt += " " + parts[i];
+						}
+						return <Image src={parts[1]} alt={alt} mx="auto" />;
+					}
+			}
+		}
 	}
 
 	const textProps: Record<string, any> = {};

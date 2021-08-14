@@ -20,7 +20,7 @@ import {
 const notionConfig = {
 	headers: {
 		Authorization: "Bearer " + process.env.NOTION_API_KEY,
-		"Notion-Version": "2021-05-13",
+		"Notion-Version": "2021-07-27",
 	},
 };
 
@@ -592,7 +592,8 @@ export async function getBlogListing(): Promise<BlogListing[]> {
 			return results.map((result: any): BlogListing => {
 				const authorObjects: any[] = result.properties.Author?.people,
 					titleText = result.properties.Name?.title,
-					linkText = result.properties.Link?.rich_text;
+					linkText = result.properties.Link?.rich_text,
+					category = result.properties.Category?.select.name ?? null;
 				let title;
 				if (titleText?.length) {
 					title = "";
@@ -626,6 +627,7 @@ export async function getBlogListing(): Promise<BlogListing[]> {
 						title,
 						id: result.id,
 						link,
+						category,
 						authors,
 					};
 				} else {
@@ -634,6 +636,7 @@ export async function getBlogListing(): Promise<BlogListing[]> {
 						title,
 						id: result.id,
 						link,
+						category,
 					};
 				}
 			});

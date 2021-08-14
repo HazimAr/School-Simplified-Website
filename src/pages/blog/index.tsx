@@ -73,13 +73,16 @@ export default function Blog({
 											{listing.title}
 										</Heading>
 									</NextLink>
+									{listing.category ? (
+										<Text as="i">{listing.category}</Text>
+									) : null}
 									<Text>
 										Published:{" "}
 										{dtFormatter.format(
 											new Date(listing.created_time)
 										)}
 									</Text>
-									{authorNames}
+									<Text>{authorNames}</Text>
 								</Box>
 							);
 						})}

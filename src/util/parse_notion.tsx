@@ -77,7 +77,7 @@ export function parseText(text: any): JSX.Element {
 		textProps.p = 1;
 		textProps.my = -1;
 		textProps.bg = "black";
-		textProps.borderRadius = 5;
+		textProps.borderRadius = "md";
 	}
 	if (text.annotations.color !== "default") {
 		textProps.color = text.annotations.color;

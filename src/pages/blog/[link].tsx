@@ -98,6 +98,9 @@ export default function BlogPage_({
 				<ContainerInside my={7}>
 					<VStack spacing={5}>
 						<Heading as="h1">{listing.title}</Heading>
+						{listing.category ? (
+							<Text as="i">{listing.category}</Text>
+						) : null}
 						<Text fontSize={18}>
 							Published:{" "}
 							{dtFormatter.format(new Date(listing.created_time))}

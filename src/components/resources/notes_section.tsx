@@ -19,7 +19,7 @@ import {
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
-import { filter } from "fuzzaldrin";
+import { filter } from "fuzzaldrin-plus";
 import React from "react";
 import { FaSearch } from "react-icons/fa";
 import { AllSubjects, NotesProps, Subject, Unit } from "types";

@@ -1,28 +1,20 @@
 import { getBlogListing } from "@api/notion";
 import {
 	Box,
-	Center,
 	Flex,
 	Heading,
-	Icon,
 	Image,
-	Input,
-	InputGroup,
-	InputLeftElement,
-	InputRightElement,
-	Spinner,
 	StackDivider,
 	Text,
-	useBoolean,
 	useBreakpointValue,
 	VStack,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
+import Searchbar from "@components/searchbar";
 import Head from "next/head";
 import React, { cloneElement, useState } from "react";
-import { FaSearch } from "react-icons/fa";
 import { BlogListing } from "types";
 
 const dtFormatter = new Intl.DateTimeFormat("en-US");
@@ -33,11 +25,6 @@ export default function Blog({
 	listing: BlogListing[];
 }): JSX.Element {
 	const [searchTerm, setSearchTerm] = useState("");
-	const [searchWait, setSearchWait] = useState<ReturnType<
-		typeof setTimeout
-	> | null>(null);
-	const [loading, _setLoading] = useBoolean(false);
-
 	const inputGroupSize = useBreakpointValue({ base: "sm", lg: "md" });
 
 	return (
@@ -55,43 +42,12 @@ export default function Blog({
 			<Container bg="brand.transparent">
 				<ContainerInside my={5}>
 					<Flex>
-						<InputGroup
+						<Searchbar
 							size={inputGroupSize}
 							maxW={{ base: "initial", md: 350, lg: 500 }}
 							flexShrink={1}
-						>
-							<InputLeftElement
-								pointerEvents="none"
-								children={<Icon as={FaSearch} boxSize={5} />}
-							/>
-							<Input
-								placeholder="Search All"
-								bg="brand.transparent"
-								onChange={(e) => {
-									if (searchWait) clearTimeout(searchWait);
-									_setLoading.on();
-									setSearchWait(
-										setTimeout(() => {
-											// console.log("Invoked with " + e.target.value);
-											setSearchWait(null);
-											_setLoading.off();
-											setSearchTerm(
-												e.target.value.trim()
-											);
-										}, 500)
-									);
-								}}
-							/>
-							<InputRightElement
-								pointerEvents="none"
-								children={
-									<Center h="100%">
-										<Spinner size={inputGroupSize} />
-									</Center>
-								}
-								display={loading ? "block" : "none"}
-							/>
-						</InputGroup>
+							callback={setSearchTerm}
+						/>
 					</Flex>
 				</ContainerInside>
 			</Container>

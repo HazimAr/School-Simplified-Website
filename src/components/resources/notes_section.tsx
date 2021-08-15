@@ -7,22 +7,15 @@ import {
 	Center,
 	Flex,
 	Heading,
-	Icon,
-	Input,
-	InputGroup,
-	InputLeftElement,
-	InputRightElement,
-	Spinner,
 	Text,
-	useBoolean,
 	useBreakpointValue,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
+import Searchbar from "@components/searchbar";
 import { filter } from "fuzzaldrin-plus";
 import React, { useState } from "react";
-import { FaSearch } from "react-icons/fa";
 import { AllSubjects, NotesProps, Subject, Unit } from "types";
 
 export default function NotesSection({ subjects }: AllSubjects): JSX.Element {
@@ -214,14 +207,10 @@ function NotesGrid({
 }): JSX.Element {
 	// const lc: NotesPropsComparator = new FuzzyComparator(searchTerm);
 	const [searchTerm, setSearchTerm] = useState("");
-	const [loading, _setLoading] = useBoolean(false);
 
 	const innerTitleSize = useBreakpointValue({ base: "md", lg: "lg" }),
 		inputGroupSize = useBreakpointValue({ base: "sm", lg: "md" });
 
-	const [searchWait, setSearchWait] = useState<ReturnType<
-		typeof setTimeout
-	> | null>(null);
 	const filteredTerms = searchTerm.length
 		? filter(allNotes, searchTerm, { key: "title" })
 		: null;
@@ -249,41 +238,12 @@ function NotesGrid({
 						? content.title
 						: "Welcome!"}
 				</Heading>
-				<InputGroup
+				<Searchbar
 					size={inputGroupSize}
 					maxW={{ base: "initial", md: 350, lg: 500 }}
 					flexShrink={1}
-				>
-					<InputLeftElement
-						pointerEvents="none"
-						children={<Icon as={FaSearch} boxSize={5} />}
-					/>
-					<Input
-						placeholder="Search All"
-						bg="brand.transparent"
-						onChange={(e) => {
-							if (searchWait) clearTimeout(searchWait);
-							_setLoading.on();
-							setSearchWait(
-								setTimeout(() => {
-									// console.log("Invoked with " + e.target.value);
-									setSearchWait(null);
-									_setLoading.off();
-									setSearchTerm(e.target.value.trim());
-								}, 500)
-							);
-						}}
-					/>
-					<InputRightElement
-						pointerEvents="none"
-						children={
-							<Center h="100%">
-								<Spinner size={inputGroupSize} />
-							</Center>
-						}
-						display={loading ? "block" : "none"}
-					/>
-				</InputGroup>
+					callback={setSearchTerm}
+				/>
 			</Flex>
 			<Flex
 				flexWrap={{ base: "nowrap", md: "wrap" }}

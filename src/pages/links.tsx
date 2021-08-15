@@ -10,10 +10,7 @@ import {
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import { FaDiscord, FaRegHandshake } from "react-icons/fa";
-import { HiOutlineMail, HiUserGroup } from "react-icons/hi";
-import { ImFacebook2 } from "react-icons/im";
-import { SiInstagram, SiLinkedin, SiTiktok, SiTwitter } from "react-icons/si";
+import fetchIcon from "util/react_icon_fetcher";
 
 export default function Links(): JSX.Element {
 	return (
@@ -40,42 +37,61 @@ export default function Links(): JSX.Element {
 								href="https://www.tiktok.com/@schoolsimplified?"
 								isExternal
 							>
-								<Icon as={SiTiktok} boxSize="25px" />
+								<Icon
+									as={fetchIcon("SiTiktok")}
+									boxSize="25px"
+								/>
 							</Link>
 
 							<Link
 								href="https://www.instagram.com/school.simplified/"
 								isExternal
 							>
-								<Icon as={SiInstagram} boxSize="25px" />
+								<Icon
+									as={fetchIcon("SiInstagram")}
+									boxSize="25px"
+								/>
 							</Link>
 
 							<Link
 								href="https://twitter.com/schoolsimplify"
 								isExternal
 							>
-								<Icon as={SiTwitter} boxSize="25px" />
+								<Icon
+									as={fetchIcon("SiTwitter")}
+									boxSize="25px"
+								/>
 							</Link>
 
 							<Link
 								href="https://www.facebook.com/SchoolSimple/"
 								isExternal
 							>
-								<Icon as={ImFacebook2} boxSize="25px" />
+								<Icon
+									as={fetchIcon("ImFacebook2")}
+									boxSize="25px"
+								/>
 							</Link>
 
 							<Link
 								href="https://discord.com/invite/school"
 								isExternal
 							>
-								<Icon as={FaDiscord} boxSize="29px" mt="3px" />
+								<Icon
+									as={fetchIcon("FaDiscord")}
+									boxSize="29px"
+									mt="3px"
+								/>
 							</Link>
 
 							<Link
 								href="https://www.linkedin.com/company/school-simplified"
 								isExternal
 							>
-								<Icon as={SiLinkedin} boxSize="28px" />
+								<Icon
+									as={fetchIcon("SiLinkedin")}
+									boxSize="28px"
+								/>
 							</Link>
 						</HStack>
 					</VStack>
@@ -94,7 +110,10 @@ export default function Links(): JSX.Element {
 							<Button
 								leftIcon={
 									<Box flex={0}>
-										<FaDiscord size="25px" />
+										<Icon
+											as={fetchIcon("FaDiscord")}
+											boxSize="25px"
+										/>
 									</Box>
 								}
 								w="100%"
@@ -115,7 +134,10 @@ export default function Links(): JSX.Element {
 							<Button
 								leftIcon={
 									<Box flex={0}>
-										<HiUserGroup size="30px" />
+										<Icon
+											as={fetchIcon("HiUserGroup")}
+											boxSize="30px"
+										/>
 									</Box>
 								}
 								w="100%"
@@ -135,7 +157,10 @@ export default function Links(): JSX.Element {
 							<Button
 								leftIcon={
 									<Box flex={0}>
-										<HiOutlineMail size="30px" />
+										<Icon
+											as={fetchIcon("HiOutlineMail")}
+											boxSize="30px"
+										/>
 									</Box>
 								}
 								w="100%"
@@ -151,12 +176,14 @@ export default function Links(): JSX.Element {
 							</Button>
 						</Link>
 
-						
 						<Link href="/partners" w="100%" maxW="560px">
 							<Button
 								leftIcon={
 									<Box flex={0}>
-										<FaRegHandshake size="30px" />
+										<Icon
+											as={fetchIcon("FaRegHandshake")}
+											boxSize="30px"
+										/>
 									</Box>
 								}
 								w="100%"

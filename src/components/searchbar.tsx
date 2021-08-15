@@ -27,8 +27,12 @@ export default function Searchbar(props: SearchbarProps): JSX.Element {
 	> | null>(null);
 	const [loading, _setLoading] = useBoolean(false);
 
+	const callbackFunction = props.callback;
+	const { callback, ...functionlessProps } = props;
+
 	return (
-		<InputGroup {...props} size={props.size}>
+		<InputGroup {...functionlessProps}>
+			{/* size={props.size} is already included */}
 			<InputLeftElement
 				pointerEvents="none"
 				children={<Icon as={FaSearch} boxSize={5} />}
@@ -44,8 +48,8 @@ export default function Searchbar(props: SearchbarProps): JSX.Element {
 							// console.log("Invoked with " + e.target.value);
 							setSearchWait(null);
 							_setLoading.off();
-							if (props.callback)
-								props.callback(e.target.value.trim());
+							if (callbackFunction)
+								callbackFunction(e.target.value.trim());
 						}, 500)
 					);
 				}}

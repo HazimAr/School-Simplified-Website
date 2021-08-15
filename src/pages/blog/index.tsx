@@ -1,9 +1,13 @@
 import { getBlogListing } from "@api/notion";
 import {
 	Box,
+	Center,
 	Flex,
 	Heading,
+	HStack,
+	Icon,
 	Image,
+	Stack,
 	StackDivider,
 	Text,
 	useBreakpointValue,
@@ -13,8 +17,10 @@ import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
 import Searchbar from "@components/searchbar";
+import { filter } from "fuzzaldrin-plus";
 import Head from "next/head";
 import React, { cloneElement, useState } from "react";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { BlogListing } from "types";
 
 const dtFormatter = new Intl.DateTimeFormat("en-US");
@@ -26,6 +32,13 @@ export default function Blog({
 }): JSX.Element {
 	const [searchTerm, setSearchTerm] = useState("");
 	const inputGroupSize = useBreakpointValue({ base: "sm", lg: "md" });
+	const [pageNum, setPageNum] = useState(0);
+
+	const shownListings = searchTerm.length
+		? filter(listings, searchTerm, { key: "title" })
+		: listings;
+	const perPage = 2,
+		totalPages = Math.ceil(shownListings.length / perPage);
 
 	return (
 		<>
@@ -41,14 +54,58 @@ export default function Blog({
 			</Container>
 			<Container bg="brand.transparent">
 				<ContainerInside my={5}>
-					<Flex>
+					<Stack
+						direction={{ base: "column", lg: "row" }}
+						justifyContent="space-between"
+						spacing={3}
+					>
+						<HStack spacing={2} justifyContent="center">
+							<Center
+								onClick={() => {
+									if (pageNum > 0) setPageNum(pageNum - 1);
+								}}
+								w="fit-content"
+								cursor={pageNum === 0 ? "auto" : "pointer"}
+							>
+								<Icon
+									as={FaArrowLeft}
+									boxSize={5}
+									color={pageNum === 0 ? "gray.500" : "white"}
+								/>
+							</Center>
+							<Box as="span">
+								Page {pageNum + 1} / {totalPages}
+							</Box>
+							<Center
+								onClick={() => {
+									if (pageNum < totalPages - 1)
+										setPageNum(pageNum + 1);
+								}}
+								w="fit-content"
+								cursor={
+									pageNum === totalPages - 1
+										? "auto"
+										: "pointer"
+								}
+							>
+								<Icon
+									as={FaArrowRight}
+									boxSize={5}
+									color={
+										pageNum === totalPages - 1
+											? "gray.500"
+											: "white"
+									}
+								/>
+							</Center>
+						</HStack>
 						<Searchbar
 							size={inputGroupSize}
 							maxW={{ base: "initial", md: 350, lg: 500 }}
 							flexShrink={1}
 							callback={setSearchTerm}
 						/>
-					</Flex>
+					</Stack>
 				</ContainerInside>
 			</Container>
 			<Container>
@@ -59,11 +116,13 @@ export default function Blog({
 						alignItems="stretch"
 						divider={<StackDivider borderColor="whiteAlpha.500" />}
 					>
-						{listings.map((listing, idx: Number) =>
-							cloneElement(ListingElement(listing), {
-								key: "listing_" + idx,
-							})
-						)}
+						{shownListings
+							.slice(pageNum * perPage, (pageNum + 1) * perPage)
+							.map((listing, idx: Number) =>
+								cloneElement(ListingElement(listing), {
+									key: "listing_" + idx,
+								})
+							)}
 					</VStack>
 				</ContainerInside>
 			</Container>
@@ -72,7 +131,6 @@ export default function Blog({
 }
 
 function ListingElement(listing: BlogListing) {
-	const maxIconW = useBreakpointValue({ base: 100, sm: 150, md: 200 });
 	const authors = listing.authors;
 	let authorNames;
 	if (authors?.length) {
@@ -119,8 +177,8 @@ function ListingElement(listing: BlogListing) {
 				<NextLink href={"/blog/" + listing.link}>
 					<Image
 						src={listing.icon}
-						maxH={maxIconW}
-						maxW={maxIconW}
+						maxH={{ base: 100, sm: 150, md: 200 }}
+						maxW={{ base: 100, sm: 150, md: 200 }}
 						borderRadius="2xl"
 						ml={3}
 					/>

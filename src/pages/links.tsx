@@ -1,5 +1,4 @@
 import {
-	Box,
 	Button,
 	HStack,
 	Icon,
@@ -10,9 +9,15 @@ import {
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
+import NextLink from "@components/nextChakra";
+import React from "react";
 import fetchIcon from "util/react_icon_fetcher";
 
-export default function Links(): JSX.Element {
+export default function Links({
+	buttons,
+}: {
+	buttons: LinkButtonProps[];
+}): JSX.Element {
 	return (
 		<>
 			<Container>
@@ -21,9 +26,9 @@ export default function Links(): JSX.Element {
 						<Image
 							src="\logos\ss_logo.png"
 							alt="school simplified logo"
-							boxSize="100px"
-							mt={{ base: "40px", md: "10px" }}
-							mx="10px"
+							boxSize={100}
+							mt={{ base: 12, md: 4 }}
+							// mx="10px"
 						/>
 
 						<Text fontSize="xl">School Simplified</Text>
@@ -99,233 +104,112 @@ export default function Links(): JSX.Element {
 			</Container>
 
 			<Container>
-				<ContainerInside align="center">
-					<VStack spacing={5}>
-						<Link
-							href="https://discord.com/invite/school"
-							isExternal
-							w="100%"
-							maxW="560px"
-						>
-							<Button
-								leftIcon={
-									<Box flex={0}>
-										<Icon
-											as={fetchIcon("FaDiscord")}
-											boxSize="25px"
-										/>
-									</Box>
-								}
-								w="100%"
-								maxW="560px"
-								height="62.4px"
-								mt="25px"
-								rounded="30px"
-								boxShadow="md"
-								display="flex"
-								flexDir="row"
-								bg="#6C7DFE"
-							>
-								<Text flex={1}>Join Discord</Text>
-							</Button>
-						</Link>
-
-						<Link href="/volunteer" w="100%" maxW="560px">
-							<Button
-								leftIcon={
-									<Box flex={0}>
-										<Icon
-											as={fetchIcon("HiUserGroup")}
-											boxSize="30px"
-										/>
-									</Box>
-								}
-								w="100%"
-								maxW="560px"
-								height="62.4px"
-								rounded="30px"
-								boxShadow="md"
-								display="flex"
-								flexDir="row"
-								bg="#6C7DFE"
-							>
-								<Text flex={1}>Join Our Staff</Text>
-							</Button>
-						</Link>
-
-						<Link href="/contact" w="100%" maxW="560px">
-							<Button
-								leftIcon={
-									<Box flex={0}>
-										<Icon
-											as={fetchIcon("HiOutlineMail")}
-											boxSize="30px"
-										/>
-									</Box>
-								}
-								w="100%"
-								maxW="560px"
-								height="62.4px"
-								rounded="30px"
-								boxShadow="md"
-								display="flex"
-								flexDir="row"
-								bg="#6C7DFE"
-							>
-								<Text flex={1}>Contact Us</Text>
-							</Button>
-						</Link>
-
-						<Link href="/partners" w="100%" maxW="560px">
-							<Button
-								leftIcon={
-									<Box flex={0}>
-										<Icon
-											as={fetchIcon("FaRegHandshake")}
-											boxSize="30px"
-										/>
-									</Box>
-								}
-								w="100%"
-								maxW="560px"
-								height="62.4px"
-								rounded="30px"
-								boxShadow="md"
-								display="flex"
-								flexDir="row"
-								bg="#6C7DFE"
-							>
-								<Text flex={1}>Partner with Us</Text>
-							</Button>
-						</Link>
-
-						{/* <Link
-							href="https://www.tiktok.com/@schoolsimplified?"
-							isExternal
-							w="100%"
-							maxW="560px"
-						>
-							<Button
-								leftIcon={
-									<Box flex={0}>
-										<SiTiktok size="25px" />
-									</Box>
-								}
-								w="100%"
-								maxW="560px"
-								height="62.4px"
-								rounded="30px"
-								boxShadow="md"
-								display="flex"
-								flexDir="row"
-								bg="#6C7DFE"
-							>
-								<Text flex={1}>TikTok</Text>
-							</Button>
-						</Link>
-
-						<Link
-							href="https://www.instagram.com/school.simplified/"
-							isExternal
-							w="100%"
-							maxW="560px"
-						>
-							<Button
-								leftIcon={
-									<Box flex={0}>
-										<SiInstagram size="25px" />
-									</Box>
-								}
-								w="100%"
-								maxW="560px"
-								height="62.4px"
-								rounded="30px"
-								boxShadow="md"
-								display="flex"
-								flexDir="row"
-								bg="#6C7DFE"
-							>
-								<Text flex={1}>Instagram</Text>
-							</Button>
-						</Link>
-
-						<Link
-							href="https://twitter.com/schoolsimplify/"
-							isExternal
-							w="100%"
-							maxW="560px"
-						>
-							<Button
-								leftIcon={
-									<Box flex={0}>
-										<SiTwitter size="25px" />
-									</Box>
-								}
-								w="100%"
-								maxW="560px"
-								height="62.4px"
-								rounded="30px"
-								boxShadow="md"
-								display="flex"
-								flexDir="row"
-								bg="#6C7DFE"
-							>
-								<Text flex={1}>Twitter</Text>
-							</Button>
-						</Link>
-
-						<Link
-							href="https://www.facebook.com/SchoolSimple/"
-							isExternal
-							w="100%"
-							maxW="560px"
-						>
-							<Button
-								leftIcon={
-									<Box flex={0}>
-										<ImFacebook2 size="25px" />
-									</Box>
-								}
-								w="100%"
-								maxW="560px"
-								height="62.4px"
-								rounded="30px"
-								boxShadow="md"
-								display="flex"
-								flexDir="row"
-								bg="#6C7DFE"
-							>
-								<Text flex={1}>Facebook</Text>
-							</Button>
-						</Link>
-
-						<Link
-							href="https://www.linkedin.com/company/school-simplified"
-							isExternal
-							w="100%"
-							maxW="560px"
-						>
-							<Button
-								leftIcon={
-									<Box flex={0}>
-										<SiLinkedin size="25px" />
-									</Box>
-								}
-								w="100%"
-								maxW="560px"
-								height="62.4px"
-								rounded="30px"
-								boxShadow="md"
-								display="flex"
-								flexDir="row"
-								bg="#6C7DFE"
-							>
-								<Text flex={1}>Linkedin</Text>
-							</Button>
-						</Link> */}
+				<ContainerInside align="center" mt={8}>
+					<VStack spacing={5} maxW={560}>
+						{buttons.map((button, index: number) => {
+							return (
+								<LinkButton
+									href={button.href}
+									iconName={button.iconName}
+									boxSize={button.boxSize}
+									text={button.text}
+									key={"key_" + index}
+								/>
+							);
+						})}
 					</VStack>
 				</ContainerInside>
 			</Container>
 		</>
 	);
+}
+
+type LinkButtonProps = {
+	href: string;
+	iconName: string;
+	boxSize: any;
+	text: string;
+};
+function LinkButton(props: LinkButtonProps) {
+	return (
+		<NextLink href={props.href} isExternal w="100%">
+			<Button
+				w="100%"
+				height={62.4}
+				rounded="full"
+				boxShadow="md"
+				display="flex"
+				flexDir="row"
+				bg="#6C7DFE"
+			>
+				<Icon
+					as={fetchIcon(props.iconName)}
+					boxSize={props.boxSize}
+					position="absolute"
+					left={4}
+				/>
+				{props.text}
+			</Button>
+		</NextLink>
+	);
+}
+
+export function getStaticProps() {
+	const buttons: LinkButtonProps[] = [
+		{
+			href: "https://discord.com/invite/school",
+			iconName: "FaDiscord",
+			boxSize: "25px",
+			text: "Join Discord",
+		},
+		{
+			href: "/volunteer",
+			iconName: "HiUserGroup",
+			boxSize: "30px",
+			text: "Join Our Staff",
+		},
+		{
+			href: "/contact",
+			iconName: "HiOutlineMail",
+			boxSize: "30px",
+			text: "Contact Us",
+		},
+		{
+			href: "/partners",
+			iconName: "FaRegHandshake",
+			boxSize: "30px",
+			text: "Partner with Us",
+		},
+		// {
+		// 	href: "https://www.tiktok.com/@schoolsimplified?",
+		// 	iconName: "SiTiktok",
+		// 	boxSize: "25px",
+		// 	text: "TikTok",
+		// },
+		// {
+		// 	href: "https://www.instagram.com/school.simplified/",
+		// 	iconName: "SiInstagram",
+		// 	boxSize: "25px",
+		// 	text: "Instagram",
+		// },
+		// {
+		// 	href: "https://twitter.com/schoolsimplify/",
+		// 	iconName: "SiTwitter",
+		// 	boxSize: "25px",
+		// 	text: "Twitter",
+		// },
+		// {
+		// 	href: "https://www.facebook.com/SchoolSimple/",
+		// 	iconName: "ImFacebook2",
+		// 	boxSize: "25px",
+		// 	text: "Facebook",
+		// },
+		// {
+		// 	href: "https://www.linkedin.com/company/school-simplified",
+		// 	iconName: "SiLinkedin",
+		// 	boxSize: "25px",
+		// 	text: "LinkedIn",
+		// },
+	];
+	return { props: { buttons } };
 }

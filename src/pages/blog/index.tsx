@@ -37,7 +37,7 @@ export default function Blog({
 	const shownListings = searchTerm.length
 		? filter(listings, searchTerm, { key: "title" })
 		: listings;
-	const perPage = 2,
+	const perPage = 10,
 		totalPages = Math.ceil(shownListings.length / perPage);
 
 	return (

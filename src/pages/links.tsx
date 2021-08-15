@@ -132,7 +132,7 @@ type LinkButtonProps = {
 };
 function LinkButton(props: LinkButtonProps) {
 	return (
-		<NextLink href={props.href} isExternal w="100%">
+		<NextLink href={props.href} isExternal w="100%" cursor="auto">
 			<Button
 				w="100%"
 				height={62.4}
@@ -141,6 +141,7 @@ function LinkButton(props: LinkButtonProps) {
 				display="flex"
 				flexDir="row"
 				bg="#6C7DFE"
+				cursor="pointer"
 			>
 				<Icon
 					as={fetchIcon(props.iconName)}

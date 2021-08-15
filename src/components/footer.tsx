@@ -109,8 +109,8 @@ export default function Footer(): JSX.Element {
 					options={{
 						height: 120,
 						amplitude: 9,
-						speed: 0.3,
-						points: 4,
+						speed: 0.5,
+						points: 3,
 					}}
 				/>
 			</Box>

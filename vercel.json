@@ -1,6 +1,12 @@
 {
 	"trailingSlash": false,
-	"redirects": [],
+	"redirects": [
+		{ "source": "/timmy", "destination": "https://spaceturtle.tech" },
+		{
+			"source": "/tutorbot",
+			"destination": "https://spaceturtle.tech/tutorbot"
+		}
+	],
 	"github": {
 		"silent": true
 	}

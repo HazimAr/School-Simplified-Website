@@ -116,12 +116,19 @@ export type BlogListing = {
 	title: string;
 	id: string;
 	created_time: string;
-	authors?: Author[] | undefined;
+	link: string;
+	category: string;
+	icon: string;
+	authors?: Author[];
 };
 
 export type Author = {
 	id?: string | undefined;
 	name: string;
 	avatar_url: string;
-	email: string;
+	// email: string;
+};
+
+export type BlogPage = {
+	blocks: any[];
 };

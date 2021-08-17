@@ -15,7 +15,7 @@ export default function Tutoring(): JSX.Element {
 						<iframe
 							title=""
 							src="https://docs.google.com/forms/d/e/1FAIpQLSfT9urTBij4P7Pb3MA0yYw-VfdSJOxLJeMkw9KEn8pAGzbtTQ/viewform?embedded=true"
-							height="750"
+							height="600"
 							width="600"
 							frameBorder={0}
 							marginHeight={0}

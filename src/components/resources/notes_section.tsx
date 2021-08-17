@@ -7,21 +7,15 @@ import {
 	Center,
 	Flex,
 	Heading,
-	Icon,
-	Image,
-	Input,
-	InputGroup,
-	InputLeftElement,
-	InputRightElement,
 	Text,
 	useBreakpointValue,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
-import { filter } from "fuzzaldrin";
-import React from "react";
-import { FaSearch } from "react-icons/fa";
+import Searchbar from "@components/searchbar";
+import { filter } from "fuzzaldrin-plus";
+import React, { useState } from "react";
 import { AllSubjects, NotesProps, Subject, Unit } from "types";
 
 export default function NotesSection({ subjects }: AllSubjects): JSX.Element {
@@ -212,12 +206,11 @@ function NotesGrid({
 	content: Unit | undefined;
 }): JSX.Element {
 	// const lc: NotesPropsComparator = new FuzzyComparator(searchTerm);
-	const [searchTerm, setSearchTerm] = React.useState("");
+	const [searchTerm, setSearchTerm] = useState("");
 
 	const innerTitleSize = useBreakpointValue({ base: "md", lg: "lg" }),
 		inputGroupSize = useBreakpointValue({ base: "sm", lg: "md" });
 
-	let searchWait: ReturnType<typeof setTimeout> | null = null;
 	const filteredTerms = searchTerm.length
 		? filter(allNotes, searchTerm, { key: "title" })
 		: null;
@@ -239,46 +232,18 @@ function NotesGrid({
 					maxW={{ base: "initial", md: "65%" }}
 					textAlign={{ base: "center", md: "left" }}
 				>
-					{content
-						? searchTerm.length
-							? "Search"
-							: content.title
+					{searchTerm.length
+						? "Search"
+						: content
+						? content.title
 						: "Welcome!"}
 				</Heading>
-				<InputGroup
+				<Searchbar
 					size={inputGroupSize}
 					maxW={{ base: "initial", md: 350, lg: 500 }}
 					flexShrink={1}
-				>
-					<InputLeftElement
-						pointerEvents="none"
-						children={<Icon as={FaSearch} boxSize={5} />}
-					/>
-					<Input
-						placeholder="Search All"
-						bg="brand.transparent"
-						onChange={(e) => {
-							const loading = document.getElementById("loading");
-							if (loading) {
-								if (searchWait !== null)
-									clearTimeout(searchWait);
-								loading.style.display = "block";
-								searchWait = setTimeout(() => {
-									// console.log("Invoked with " + e.target.value);
-									searchWait = null;
-									loading.style.display = "none";
-									setSearchTerm(e.target.value.trim());
-								}, 500);
-							}
-						}}
-					/>
-					<InputRightElement
-						pointerEvents="none"
-						children={<Image src="/loading.svg" alt="loading" />}
-						id="loading"
-						display="none"
-					/>
-				</InputGroup>
+					callback={setSearchTerm}
+				/>
 			</Flex>
 			<Flex
 				flexWrap={{ base: "nowrap", md: "wrap" }}
@@ -298,7 +263,7 @@ function NotesGrid({
 							/>
 						))
 					) : (
-						<Text fontStyle="italic">No matches found</Text>
+						<Text as="i">No matches found</Text>
 					)
 				) : content && content.content.length ? (
 					content.content.map((note, idx: number) => (
@@ -309,7 +274,7 @@ function NotesGrid({
 						/>
 					))
 				) : (
-					<Text fontStyle="italic">
+					<Text as="i">
 						{content
 							? "There's nothing here right now. Check back later!"
 							: "Select one of the categories on the left to get started."}

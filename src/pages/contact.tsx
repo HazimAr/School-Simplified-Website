@@ -39,7 +39,7 @@ export default function Contact(): JSX.Element {
 								<Image
 									src="/timmy/19.png"
 									alt="Contact Person"
-									h={{base: "550px", "300px":"300px"}}
+									h={{ base: "550px", "300px": "300px" }}
 									minW="300px"
 									maxH="550px"
 									my={{ base: -5, sm: 5, lg: 0 }}

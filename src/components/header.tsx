@@ -8,6 +8,7 @@ import {
 	MenuButton,
 	MenuItem,
 	MenuList,
+	useDisclosure,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -15,6 +16,19 @@ import NextLink from "@components/nextChakra";
 
 // eslint-disable-next-line import/no-default-export
 export default function Header(): JSX.Element {
+	const graceTime: number = 250;
+
+	const {
+		isOpen: aIsOpen,
+		onOpen: aOnOpen,
+		onClose: aOnClose,
+	} = useDisclosure();
+	const {
+		isOpen: sIsOpen,
+		onOpen: sOnOpen,
+		onClose: sOnClose,
+	} = useDisclosure();
+	let aTimeout: NodeJS.Timeout, sTimeout: NodeJS.Timeout;
 	return (
 		<>
 			<Container
@@ -54,9 +68,35 @@ export default function Header(): JSX.Element {
 							}}
 						>
 							<NextLink href="/">Home</NextLink>
-							<Menu>
-								<MenuButton>About Us</MenuButton>
-								<MenuList>
+							<Menu isOpen={aIsOpen}>
+								<MenuButton
+									onMouseEnter={() => {
+										if (aTimeout) clearTimeout(aTimeout);
+										aOnOpen();
+										sOnClose();
+									}}
+									onMouseLeave={() =>
+										(aTimeout = setTimeout(
+											aOnClose,
+											graceTime
+										))
+									}
+								>
+									About Us
+								</MenuButton>
+								<MenuList
+									onMouseEnter={() => {
+										if (aTimeout) clearTimeout(aTimeout);
+										aOnOpen();
+										sOnClose();
+									}}
+									onMouseLeave={() =>
+										(aTimeout = setTimeout(
+											aOnClose,
+											graceTime
+										))
+									}
+								>
 									<NextLink href="/community">
 										<MenuItem>Community</MenuItem>
 									</NextLink>
@@ -71,13 +111,36 @@ export default function Header(): JSX.Element {
 									</NextLink>
 								</MenuList>
 							</Menu>
-							<Menu>
+							<Menu isOpen={sIsOpen}>
 								<MenuButton
-								// rightIcon={<ChevronDownIcon />}
+									// rightIcon={<ChevronDownIcon />}
+									onMouseEnter={() => {
+										if (sTimeout) clearTimeout(sTimeout);
+										sOnOpen();
+										aOnClose();
+									}}
+									onMouseLeave={() =>
+										(sTimeout = setTimeout(
+											sOnClose,
+											graceTime
+										))
+									}
 								>
 									Services
 								</MenuButton>
-								<MenuList>
+								<MenuList
+									onMouseEnter={() => {
+										if (sTimeout) clearTimeout(sTimeout);
+										sOnOpen();
+										aOnClose();
+									}}
+									onMouseLeave={() =>
+										(sTimeout = setTimeout(
+											sOnClose,
+											graceTime
+										))
+									}
+								>
 									<NextLink href="/tutoring">
 										<MenuItem>Tutoring</MenuItem>
 									</NextLink>

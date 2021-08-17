@@ -2,7 +2,9 @@ import axios from "axios";
 import {
 	AnswerPart,
 	ArtData,
+	Author,
 	BlogListing,
+	BlogPage,
 	Class,
 	GovernanceDocument,
 	GovernanceSection,
@@ -18,7 +20,7 @@ import {
 const notionConfig = {
 	headers: {
 		Authorization: "Bearer " + process.env.NOTION_API_KEY,
-		"Notion-Version": "2021-05-13",
+		"Notion-Version": "2021-07-27",
 	},
 };
 
@@ -586,13 +588,68 @@ export async function getBlogListing(): Promise<BlogListing[]> {
 			notionConfig
 		)
 		.then((output) => {
-			const results = output.data.result;
+			const results = output.data.results;
 			return results.map((result: any): BlogListing => {
-				return {
-					created_time: result.created_time,
-					title: "",
-					id: result.id,
-				};
+				const authorObjects: any[] = result.properties.Author?.people,
+					titleText = result.properties.Name?.title,
+					linkText = result.properties.Link?.rich_text,
+					category = result.properties.Category?.select.name ?? null,
+					icon = result.properties.Icon?.url ?? null;
+				let title;
+				if (titleText?.length) {
+					title = "";
+					for (const titleSegment of titleText) {
+						title += titleSegment.plain_text;
+					}
+				} else {
+					title = "MALFORMED";
+				}
+				let link;
+				if (linkText?.length) {
+					link = "";
+					for (const linkSegment of linkText) {
+						link += linkSegment.plain_text;
+					}
+				} else {
+					link = result.id;
+				}
+
+				if (authorObjects?.length) {
+					const authors: Author[] = authorObjects.map(
+						(authorObject): Author => {
+							return {
+								name: authorObject.name,
+								avatar_url: authorObject.avatar_url,
+							};
+						}
+					);
+					return {
+						created_time: result.created_time,
+						title,
+						id: result.id,
+						link,
+						category,
+						icon,
+						authors,
+					};
+				} else {
+					return {
+						created_time: result.created_time,
+						title,
+						id: result.id,
+						link,
+						icon,
+						category,
+					};
+				}
 			});
 		});
+}
+
+export async function getBlogPage(id: string): Promise<BlogPage> {
+	const { data: pageData } = await axios.get(
+		`https://api.notion.com/v1/blocks/${id}/children`,
+		notionConfig
+	);
+	return { blocks: pageData.results };
 }

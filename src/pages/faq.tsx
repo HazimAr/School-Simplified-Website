@@ -3,8 +3,8 @@ import { Box, Flex, Heading } from "@chakra-ui/react";
 import FaqList from "@components/contact/faq-list";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import { QASection } from "types";
 import Head from "next/head";
+import { QASection } from "types";
 
 export default function Contact({
 	qaPairs: qaSections,
@@ -39,7 +39,7 @@ export default function Contact({
 	);
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 	const qaPairs = await getFaqInfo();
-	return { props: { qaPairs } };
+	return { props: { qaPairs }, revalidate: 60 };
 }

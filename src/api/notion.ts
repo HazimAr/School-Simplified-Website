@@ -20,7 +20,7 @@ import {
 const notionConfig = {
 	headers: {
 		Authorization: "Bearer " + process.env.NOTION_API_KEY,
-		"Notion-Version": "2021-07-27",
+		"Notion-Version": "2021-08-16",
 	},
 };
 

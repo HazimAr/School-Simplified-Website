@@ -68,16 +68,7 @@ const teams: VolunteerPanelProps[] = [
 
 export default function RotatingPanel(): JSX.Element {
 	const innerPanels = teams.map((v, index: number) => {
-		return (
-			<Panel
-				teamName={v.teamName}
-				teamDesc={v.teamDesc}
-				link={v.link}
-				src={v.src}
-				functions={v.functions}
-				key={"key_" + index}
-			/>
-		);
+		return <Panel {...v} key={"key_" + index} />;
 	});
 	const [index, setIndex] = useControllableState({
 		defaultValue: 0,
@@ -162,7 +153,7 @@ function Panel({
 	teamName,
 	teamDesc,
 	link,
-	functions: teams,
+	functions,
 }: VolunteerPanelProps): JSX.Element {
 	return (
 		<Box py={5}>
@@ -191,9 +182,10 @@ function Panel({
 						<Text textAlign="left" my={2}>
 							{teamDesc}
 						</Text>
-						{teams ? (
+						{functions ? (
 							<Text textAlign="left" fontStyle="italic">
-								Functions include {teams.join(", ")}, and more.
+								Functions include {functions.join(", ")}, and
+								more.
 							</Text>
 						) : null}
 

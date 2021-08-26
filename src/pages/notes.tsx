@@ -15,7 +15,7 @@ export default function Resources({ subjects }: AllSubjects): JSX.Element {
 	return (
 		<>
 			<Head>
-				<title>School Simplified | Resources</title>
+				<title>School Simplified | Notes</title>
 			</Head>
 			<Container bg="brand.transparent">
 				<ContainerInside my={5}>

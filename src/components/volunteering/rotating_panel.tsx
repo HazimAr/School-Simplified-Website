@@ -64,12 +64,6 @@ const teams: VolunteerPanelProps[] = [
 			"community engagement",
 		],
 	},
-	{
-		teamName: "...and more!",
-		teamDesc: "I diagnose you with small pp",
-		src: "https://cdn.discordapp.com/attachments/805605880895766558/880283073319669810/stsmall507x507-pad600x600f8f8f8.png",
-		link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-	},
 ];
 
 export default function RotatingPanel(): JSX.Element {
@@ -165,13 +159,13 @@ function Panel({
 		<Box py={5}>
 			<ScaleFade in={true} unmountOnExit={false}>
 				<Flex
-					justifyContent="flex-start"
+					justifyContent="space-between"
 					flexDir={{ base: "column", md: "row" }}
 					alignItems="center"
 					overflow="auto"
 				>
 					<Circle
-						p={{ base: 1, sm: 3, md: 2, lg: 3 }}
+						p={{ base: 1, md: 2, lg: 3 }}
 						bg="brand.transparent"
 						mr={5}
 					>
@@ -179,7 +173,6 @@ function Panel({
 							src={src}
 							h={{ base: 100, sm: 200, md: 150, lg: 250 }}
 							alt={teamName + " team logo"}
-							rounded="full"
 						/>
 					</Circle>
 					<VStack alignItems="flex-start">

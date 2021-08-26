@@ -33,7 +33,7 @@
 	"include": [
 		"**/*.ts",
 		"**/*.tsx",
-		"src/pages/_document.js",
+		"src/pages/_document.tsx",
 		"src/pages/_error.js",
 		"src/lib/gtag.ts"
 	]

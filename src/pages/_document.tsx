@@ -1,14 +1,13 @@
 import { ColorModeScript } from "@chakra-ui/react";
-import Document, { Html, Head, Main, NextScript } from "next/document";
-
-import { GA_TRACKING_ID, META } from "../config.ts";
+import { GA_TRACKING_ID, META } from "config";
+import Document, { Head, Html, Main, NextScript } from "next/document";
 
 export default class MyDocument extends Document {
 	render() {
 		return (
 			<Html lang="en-us">
 				<Head>
-					<link rel = "icon" href = "/favicon.ico" />
+					<link rel="icon" href="/favicon.ico" />
 
 					<meta name="description" content={META.description} />
 
@@ -34,10 +33,16 @@ export default class MyDocument extends Document {
 					<meta name="twitter:image" content={META.img} />
 
 					<meta name="application-name" content="School Simplified" />
-					<meta name="apple-mobile-web-app-title" content="School Simplified" />
+					<meta
+						name="apple-mobile-web-app-title"
+						content="School Simplified"
+					/>
 					<meta name="apple-mobile-web-app-capable" content="yes" />
 					<meta name="mobile-web-app-capable" content="yes" />
-					<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+					<meta
+						name="apple-mobile-web-app-status-bar-style"
+						content="black"
+					/>
 					<link rel="apple-touch-icon" href="/mobileicon.png" />
 
 					<script

@@ -132,3 +132,9 @@ export type Author = {
 export type BlogPage = {
 	blocks: any[];
 };
+
+export type LinkButtonProps = {
+	href: string;
+	iconName?: string;
+	text: string;
+};

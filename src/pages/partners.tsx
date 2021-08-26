@@ -64,7 +64,7 @@ export default function partners(): ReactElement {
 							</Box>
 						</WrapItem>
 					</Wrap>
-					<NextLink href="/contact">
+					<NextLink href="https://docs.google.com/forms/d/e/1FAIpQLScxSrndCBz1VUA-fv5TvfmEpdowUKws1euU4nuxMcSE51JiZA/viewform?usp=sf_link">
 						<StyledButton
 							display="block"
 							width={{ base: "50", md: "50", sm: "40" }}
@@ -73,7 +73,7 @@ export default function partners(): ReactElement {
 						</StyledButton>
 					</NextLink>
 
-					<Divider h={1} bg="#fff" my={10} />
+					<Divider bg="white" my={10} />
 				</ContainerInside>
 			</Container>
 
@@ -135,7 +135,7 @@ export default function partners(): ReactElement {
 										}}
 										color="#8287BE"
 									>
-										Donors & Sponsors
+										Donors &amp; Sponsors
 									</Heading>
 								</Tab>
 							</TabList>
@@ -144,8 +144,8 @@ export default function partners(): ReactElement {
 						<TabPanels mt={10}>
 							<TabPanel>
 								<SimpleGrid
-						columns={{sm: 2, md: 3}}								
-						spacing={6}
+									columns={{ sm: 2, md: 3 }}
+									spacing={6}
 									minChildWidth={{
 										base: 170,
 										sm: 140,
@@ -170,7 +170,7 @@ export default function partners(): ReactElement {
 							</TabPanel>
 							<TabPanel>
 								<SimpleGrid
-						columns={{sm: 2, md: 3}}								
+									columns={{ sm: 2, md: 3 }}
 									spacing={6}
 									minChildWidth={{
 										base: 170,
@@ -183,9 +183,9 @@ export default function partners(): ReactElement {
 							</TabPanel>
 							<TabPanel>
 								<SimpleGrid
-						columns={{sm: 2, md: 3}}								
-						spacing={6}
-						minChildWidth={{
+									columns={{ sm: 2, md: 3 }}
+									spacing={6}
+									minChildWidth={{
 										base: 170,
 										sm: 170,
 										md: 250,

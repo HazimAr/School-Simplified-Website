@@ -11,7 +11,6 @@ import {
 import NextLink from "@components/nextChakra";
 import "katex/dist/katex.min.css";
 import React, { cloneElement } from "react";
-/// @ts-expect-error
 import { InlineMath } from "react-katex"; // "react-latex" doesn't work for some odd reason
 import { BlogPage } from "types";
 /**

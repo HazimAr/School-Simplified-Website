@@ -159,13 +159,13 @@ function Panel({
 		<Box py={5}>
 			<ScaleFade in={true} unmountOnExit={false}>
 				<Flex
-					justifyContent="space-between"
+					justifyContent="flex-start"
 					flexDir={{ base: "column", md: "row" }}
 					alignItems="center"
 					overflow="auto"
 				>
 					<Circle
-						p={{ base: 1, md: 2, lg: 3 }}
+						p={{ base: 1, sm: 3, md: 2, lg: 3 }}
 						bg="brand.transparent"
 						mr={5}
 					>
@@ -173,6 +173,7 @@ function Panel({
 							src={src}
 							h={{ base: 100, sm: 200, md: 150, lg: 250 }}
 							alt={teamName + " team logo"}
+							rounded="full"
 						/>
 					</Circle>
 					<VStack alignItems="flex-start">

@@ -15,7 +15,7 @@
 		"noUnusedParameters": true,
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
-		"strict": true,
+		"strict": false,
 		"allowSyntheticDefaultImports": true,
 		"baseUrl": "src",
 		"paths": {

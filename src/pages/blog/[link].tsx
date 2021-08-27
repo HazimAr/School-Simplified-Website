@@ -120,6 +120,12 @@ export default function BlogPage_({
 									new Date(listing.created_time)
 								)}
 							</Text>
+							<Text fontSize={18}>
+								Last Edited:{" "}
+								{dtFormatter.format(
+									new Date(listing.last_edited_time)
+								)}
+							</Text>
 							{listing.authors?.length ? (
 								<Box>
 									<Text fontSize={18}>Written by:</Text>
@@ -199,8 +205,8 @@ export async function getStaticProps({ params }: any) {
 }
 
 export async function getStaticPaths() {
-	const blogListing = await getBlogListing();
-	const paths = blogListing.map((blogListing) => {
+	const blogListings = await getBlogListing();
+	const paths = blogListings.map((blogListing) => {
 		return { params: { link: blogListing.link } };
 	});
 	return { paths, fallback: true };

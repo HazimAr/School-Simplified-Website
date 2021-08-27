@@ -116,6 +116,8 @@ export type BlogListing = {
 	title: string;
 	id: string;
 	created_time: string;
+	last_edited_time: string;
+
 	link: string;
 	category: string;
 	icon: string;

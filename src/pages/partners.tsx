@@ -57,7 +57,7 @@ export default function partners(): ReactElement {
 							<Box textAlign="left">
 								<Image
 									maxH={300}
-									src="/timmy/32.png"
+									src="/timmy/23.png"
 									alt="Timmy with graduation cap"
 									display={{ base: "none", md: "block" }}
 								/>

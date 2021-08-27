@@ -9,7 +9,6 @@ import * as FcIcons from "react-icons/fc";
 import * as FiIcons from "react-icons/fi";
 import * as GiIcons from "react-icons/gi";
 import * as GoIcons from "react-icons/go";
-import * as GrIcons from "react-icons/gr";
 import * as HiIcons from "react-icons/hi";
 import * as ImIcons from "react-icons/im";
 import * as IoIcons from "react-icons/io";
@@ -34,7 +33,6 @@ const iconList: Record<string, IconType>[] = [
 	FcIcons,
 	GiIcons,
 	GoIcons,
-	GrIcons,
 	IoIcons,
 	Io5Icons,
 	MdIcons,

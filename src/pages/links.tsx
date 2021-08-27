@@ -139,6 +139,7 @@ function LinkButton(props: LinkButtonProps) {
 						boxSize={30}
 						position="absolute"
 						left={4}
+						color="white"
 					/>
 				) : null}
 				{props.text}

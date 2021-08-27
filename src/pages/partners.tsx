@@ -6,7 +6,6 @@ import {
 	Image,
 	Popover,
 	PopoverBody,
-	PopoverCloseButton,
 	PopoverContent,
 	PopoverHeader,
 	PopoverTrigger,
@@ -17,6 +16,7 @@ import {
 	TabPanels,
 	Tabs,
 	Text,
+	useDisclosure,
 	Wrap,
 	WrapItem,
 } from "@chakra-ui/react";
@@ -157,14 +157,17 @@ export default function partners(): ReactElement {
 									<Cell
 										alt="Slingshot"
 										src="/partners/slingshot.png"
+										desc="Slingshot is a organization that places teenage prodigies at startups out of Techstars, YC, Carnegie Mellon, Stanford, MIT, and more, offering students access to the real world of technology."
 									/>
 									<Cell
 										alt="Versatile"
 										src="/partners/versatile.png"
+										desc="Versatile Node is an organization geared towards providing cheap, fast and reliable hosting for all your needs! Versatile offers resources range from minecraft hosting, VPS hosting, to web hosting."
 									/>
 									<Cell
 										alt="Deloitte"
 										src="/partners/deloitte.png"
+										desc="Deloitte US is the largest professional services organization in the United States. With more than 100,000 professionals, Deloitte provides audit and assurance, tax, consulting, and risk and financial advisory services to a broad cross-section of the largest corporations and governmental agencies."
 									/>
 								</SimpleGrid>
 							</TabPanel>
@@ -205,20 +208,45 @@ export default function partners(): ReactElement {
 type ImageCell = {
 	src: string;
 	alt: string;
+	desc: string;
 };
 
-function Cell({ src, alt }: ImageCell): JSX.Element {
+function Cell({ src, alt, desc }: ImageCell): JSX.Element {
+	const graceTime: number = 250;
+
+	const { isOpen, onOpen, onClose } = useDisclosure();
+	let timeout: NodeJS.Timeout;
 	return (
-		<Popover>
+		<Popover isOpen={isOpen}>
 			<PopoverTrigger>
-				<Center bg="#D8D6EC" rounded="lg" mt={10}>
+				<Center
+					bg="#D8D6EC"
+					rounded="lg"
+					mt={10}
+					onMouseEnter={() => {
+						if (timeout) clearTimeout(timeout);
+						onOpen();
+					}}
+					onMouseLeave={() =>
+						(timeout = setTimeout(onClose, graceTime))
+					}
+				>
 					<Image src={src} alt={alt} />
 				</Center>
 			</PopoverTrigger>
 			<PopoverContent bg="#D8D6EC" color="#8287BE">
-				<PopoverCloseButton />
-				<PopoverHeader fontWeight={700}>{alt}</PopoverHeader>
-				<PopoverBody>Description of partner here</PopoverBody>
+				<Box
+					onMouseEnter={() => {
+						if (timeout) clearTimeout(timeout);
+						onOpen();
+					}}
+					onMouseLeave={() =>
+						(timeout = setTimeout(onClose, graceTime))
+					}
+				>
+					<PopoverHeader fontWeight={700}>{alt}</PopoverHeader>
+					<PopoverBody>{desc}</PopoverBody>
+				</Box>
 			</PopoverContent>
 		</Popover>
 	);

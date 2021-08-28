@@ -171,6 +171,10 @@ function ListingElement(listing: BlogListing) {
 					Published:{" "}
 					{dtFormatter.format(new Date(listing.created_time))}
 				</Text>
+				<Text>
+					Last Edited:{" "}
+					{dtFormatter.format(new Date(listing.last_edited_time))}
+				</Text>
 				{authorNames?.length ? <Text>{authorNames}</Text> : null}
 			</Box>
 			{listing.icon ? (

@@ -1,8 +1,8 @@
 {
 	"trailingSlash": false,
 	"redirects": [],
+	"public": true,
 	"github": {
 		"silent": true
 	}
-	
 }

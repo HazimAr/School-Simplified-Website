@@ -42,7 +42,7 @@
 		"@types/babel__core": "^7.1.15",
 		"@types/fuzzaldrin-plus": "^0.6.2",
 		"@types/next": "^9.0.0",
-		"@types/node": "^16.7.2",
+		"@types/node": "^16.7.6",
 		"@types/react": "^17.0.19",
 		"@types/react-icons": "^3.0.0",
 		"eslint": "^7.32.0",

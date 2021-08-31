@@ -4,7 +4,6 @@ import Footer from "@components/footer";
 import Header from "@components/header";
 import { pageview } from "@lib/gtag";
 import theme from "@styles/theme";
-import { META } from "config";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -36,7 +35,12 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 		<>
 			<Head>
 				{/* Fallback Title */}
-				<title>School Simplified | {router.query.id}</title>
+				<title>
+					School Simplified |{" "}
+					{/* @ts-ignore */}
+					{router.query.id.charAt(0).toUpperCase() +
+						router.query.id.slice(1)}
+				</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 

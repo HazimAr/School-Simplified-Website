@@ -21,5 +21,6 @@ export default function Essay(): JSX.Element {
 				</Center>
 			</ContainerInside>
 		</Container>
+		
 	);
 }

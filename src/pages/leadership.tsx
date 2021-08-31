@@ -42,10 +42,15 @@ const leadership: Person[] = [
 		img: "/staff/LaurenHsieh.jpg",
 	},
 	{
-		name: "Madison Li",
-		title: "Chief Academics Officer (CAO)",
-		img: "/staff/MadisonLi.png",
+		name: "Param Patil",
+		title: "Senior Vice President of Academics (SVPA)",
+		img: "/staff/ParamPatil.jpg",
 	},
+	{
+		name: "Rohit Choudhary",
+		title: "Chief of Advancements Officer (CAO)",
+		img: "/staff/RohitChoudhary.jpg",
+	}
 	{
 		name: "Harry Chow",
 		title: "Chief Marketing Officer (CMO)",
@@ -56,11 +61,11 @@ const leadership: Person[] = [
 		title: "Chief Information & Technology Officer (CIO)",
 		img: "/staff/JasonMei.jpg",
 	},
-	{
-		name: "Arohini Rajvanshi",
-		title: "Chief Human Resources Officer (CHRO) ",
-		img: "/staff/ArohiniRajvanshi.jpg",
-	},
+	// {
+	// 	name: "Arohini Rajvanshi",
+	// 	title: "Chief Human Resources Officer (CHRO) ",
+	// 	img: "/staff/ArohiniRajvanshi.jpg",
+	// },
 	{
 		name: "Diana Zheng",
 		title: "Treasurer",

@@ -4,7 +4,6 @@ import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
 import { rounded } from "@styles/theme";
-import Head from "next/head";
 
 const sections = [
 	{
@@ -29,35 +28,30 @@ const sections = [
 
 export default function Academics(): JSX.Element {
 	return (
-			<Container>
-				<ContainerInside py={5}>
-					<SimpleGrid columns={{ base: 1, lg: 3 }} spacing={7}>
-						{sections.map((section) => {
-							return (
-								<Flex
-									key={section.title}
-									bg="brand.transparent"
-									rounded={rounded}
-									p={5}
-									alignItems="center"
-								>
-									<Box>
-										<Heading my={5}>
-											{section.title}
-										</Heading>
-										<Text>{section.description}</Text>
-										<NextLink
-											href={section.link}
-											isExternal
-										>
-											<Button m={4}>Join Now!</Button>
-										</NextLink>
-									</Box>
-								</Flex>
-							);
-						})}
-					</SimpleGrid>
-				</ContainerInside>
-			</Container>
+		<Container>
+			<ContainerInside py={5}>
+				<SimpleGrid columns={{ base: 1, lg: 3 }} spacing={7}>
+					{sections.map((section) => {
+						return (
+							<Flex
+								key={section.title}
+								bg="brand.transparent"
+								rounded={rounded}
+								p={5}
+								alignItems="center"
+							>
+								<Box>
+									<Heading my={5}>{section.title}</Heading>
+									<Text>{section.description}</Text>
+									<NextLink href={section.link} isExternal>
+										<Button m={4}>Join Now!</Button>
+									</NextLink>
+								</Box>
+							</Flex>
+						);
+					})}
+				</SimpleGrid>
+			</ContainerInside>
+		</Container>
 	);
 }

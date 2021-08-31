@@ -12,6 +12,7 @@ import { AllSubjects } from "types";
  */
 export default function Resources({ subjects }: AllSubjects): JSX.Element {
 	return (
+		<>
 			<Container bg="brand.transparent">
 				<ContainerInside my={5}>
 					<Flex
@@ -64,7 +65,7 @@ export default function Resources({ subjects }: AllSubjects): JSX.Element {
 					</Flex>
 				</ContainerInside>
 			</Container> */}
-		
+		</>
 	);
 }
 

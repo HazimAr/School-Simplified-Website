@@ -7,7 +7,7 @@ import {
 	Stack,
 	Text,
 	UnorderedList,
-	VStack
+	VStack,
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import Art from "@components/community/art";
@@ -44,6 +44,7 @@ export default function Community({
 	artInfo: ArtData;
 }): JSX.Element {
 	return (
+		<>
 			<Container py={10}>
 				<ContainerInside>
 					<VStack textAlign="left" spacing={10}>
@@ -239,7 +240,7 @@ export default function Community({
 			</Container>
 
 			<SocialMedias />
-
+		</>
 	);
 }
 

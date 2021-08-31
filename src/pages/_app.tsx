@@ -36,10 +36,9 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 			<Head>
 				{/* Fallback Title */}
 				<title>
-					School Simplified |{" "}
-					{/* @ts-ignore */}
-					{router.query.id.charAt(0).toUpperCase() +
-						router.query.id.slice(1)}
+					School Simplified | {/* @ts-ignore */}
+					{router.query.id?.charAt(0).toUpperCase() +
+						router.query.id?.slice(1) || "Education Help"}
 				</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>

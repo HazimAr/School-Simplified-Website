@@ -31,14 +31,15 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 			router.events.off("routeChangeComplete", handleRouteChange);
 		};
 	}, [router.events]);
+	const title = router.asPath.split("/")[1];
 	return (
 		<>
 			<Head>
 				{/* Fallback Title */}
 				<title>
 					School Simplified | {/* @ts-ignore */}
-					{router.query.id?.charAt(0).toUpperCase() +
-						router.query.id?.slice(1) || "Education Help"}
+					{title.charAt(0).toUpperCase() + title.slice(1) ||
+						"Education Help"}
 				</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>

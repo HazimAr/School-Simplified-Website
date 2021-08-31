@@ -15,6 +15,7 @@ import RotatingPanel from "@components/volunteering/rotating_panel";
  */
 export default function Volunteering(): JSX.Element {
 	return (
+		<>
 			<Container bg="brand.transparent">
 				<ContainerInside py={10}>
 					<Flex alignItems="center">
@@ -78,6 +79,6 @@ export default function Volunteering(): JSX.Element {
 			</Container>
 
 			<Reasons />
-		
+		</>
 	);
 }

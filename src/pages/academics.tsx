@@ -29,10 +29,6 @@ const sections = [
 
 export default function Academics(): JSX.Element {
 	return (
-		<>
-			<Head>
-				<title>School Simplified | Academics</title>
-			</Head>
 			<Container>
 				<ContainerInside py={5}>
 					<SimpleGrid columns={{ base: 1, lg: 3 }} spacing={7}>
@@ -63,6 +59,5 @@ export default function Academics(): JSX.Element {
 					</SimpleGrid>
 				</ContainerInside>
 			</Container>
-		</>
 	);
 }

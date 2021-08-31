@@ -3,7 +3,6 @@ import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NotesSection from "@components/resources/notes_section";
-import Head from "next/head";
 import { AllSubjects } from "types";
 
 /**
@@ -13,10 +12,6 @@ import { AllSubjects } from "types";
  */
 export default function Resources({ subjects }: AllSubjects): JSX.Element {
 	return (
-		<>
-			<Head>
-				<title>School Simplified | Notes</title>
-			</Head>
 			<Container bg="brand.transparent">
 				<ContainerInside my={5}>
 					<Flex
@@ -69,7 +64,7 @@ export default function Resources({ subjects }: AllSubjects): JSX.Element {
 					</Flex>
 				</ContainerInside>
 			</Container> */}
-		</>
+		
 	);
 }
 

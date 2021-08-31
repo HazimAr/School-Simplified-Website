@@ -24,15 +24,11 @@ import StyledButton from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
-import Head from "next/head";
 import React, { ReactElement } from "react";
 
 export default function partners(): ReactElement {
 	return (
 		<>
-			<Head>
-				<title>School Simplified | Partners</title>
-			</Head>
 			<Container>
 				<ContainerInside align="center">
 					<Wrap justify="center" align="center" mt={50}>

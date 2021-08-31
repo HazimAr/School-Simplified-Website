@@ -7,7 +7,7 @@ import {
 	Stack,
 	Text,
 	UnorderedList,
-	VStack,
+	VStack
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import Art from "@components/community/art";
@@ -16,7 +16,6 @@ import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
 import { rounded } from "@styles/theme";
-import Head from "next/head";
 import React from "react";
 import { ArtData, SpotifyLink } from "types";
 
@@ -45,10 +44,6 @@ export default function Community({
 	artInfo: ArtData;
 }): JSX.Element {
 	return (
-		<>
-			<Head>
-				<title>School Simplified | Community</title>
-			</Head>
 			<Container py={10}>
 				<ContainerInside>
 					<VStack textAlign="left" spacing={10}>
@@ -244,7 +239,7 @@ export default function Community({
 			</Container>
 
 			<SocialMedias />
-		</>
+
 	);
 }
 

@@ -36,7 +36,7 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 		<>
 			<Head>
 				{/* Fallback Title */}
-				<title>{META.title}</title>
+				<title>School Simplified | {router.query.id}</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 

@@ -49,7 +49,7 @@ const leadership: Person[] = [
 		name: "Rohit Choudhary",
 		title: "Chief of Advancements Officer (CAO)",
 		img: "/staff/RohitChoudhary.jpg",
-	}
+	},
 	{
 		name: "Harry Chow",
 		title: "Chief Marketing Officer (CMO)",

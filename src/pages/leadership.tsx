@@ -31,23 +31,23 @@ const leadership: Person[] = [
 		img: "/staff/EthanHsu.jpg",
 	},
 	{
-		name: "Aarush Goradia",
-		title: "President of Student Advancement (PSA)",
-		img: "/staff/AarushGoradia.jpg",
-	},
-	{
 		name: "Lauren Hsieh",
 		title: "Secretary & Chief of Staff",
 		img: "/staff/LaurenHsieh.jpg",
 	},
 	{
-		name: "Param Patil",
-		title: "Chief of Advancements Officer (CAO)",
+		name: "Rohit Choudhary",
+		title: "Senior Vice President of Academics (SVPA)",
 		img: "/staff/ParamPatil.jpg",
 	},
 	{
-		name: "Rohit Choudhary",
-		title: "Senior Vice President of Academics (SVPA)",
+		name: "Aarush Goradia",
+		title: "President of Student Advancement (PSA)",
+		img: "/staff/AarushGoradia.jpg",
+	},
+	{
+		name: "Param Patil",
+		title: "Chief of Advancements Officer (CAO)",
 		img: "/staff/RohitChoudhary.jpg",
 	},
 	{
@@ -55,6 +55,7 @@ const leadership: Person[] = [
 		title: "Chief Marketing Officer (CMO)",
 		img: "/staff/HarryChow.jpg",
 	},
+
 	{
 		name: "Jason Mei",
 		title: "Chief Information & Technology Officer (CIO)",

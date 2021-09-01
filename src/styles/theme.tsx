@@ -53,7 +53,7 @@ const theme = extendTheme({
 					"Montserrat-Regular, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif",
 				textAlign: "center",
 				background:
-					"  #8192f0 linear-gradient(90deg, rgb(145,141,240) 0%, #8192f0 100%)",
+					"#8192f0 linear-gradient(90deg, rgb(145,141,240) 0%, #8192f0 100%)",
 				color: "white",
 			},
 			a: {

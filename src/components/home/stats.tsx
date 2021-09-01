@@ -2,7 +2,7 @@ import { Box, Flex, Text, VStack } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import CountUp from "react-countup";
-import { BsPeopleFill } from "react-icons/bs";
+import { BsFillPersonFill, BsPeopleFill } from "react-icons/bs";
 import { FaFlag, FaGlobe, FaHandHoldingHeart } from "react-icons/fa";
 
 export default function Stats() {
@@ -29,7 +29,7 @@ export default function Stats() {
 						<CountUp end={1} duration={3} useEasing />
 						<Text>Mission</Text>
 					</StatsIcon>
-					<StatsIcon Icon={BsPeopleFill}>
+					<StatsIcon Icon={BsFillPersonFill}>
 						<CountUp end={400} suffix="+" duration={3} useEasing />
 						<Text>Staff Members</Text>
 					</StatsIcon>

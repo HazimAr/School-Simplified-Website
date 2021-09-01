@@ -27,7 +27,7 @@ export default function NotesSection({ subjects }: AllSubjects): JSX.Element {
 		.map((unit) => unit.content)
 		.flat();
 
-	const [content, setContent] = React.useState<Unit | undefined>(undefined);
+	const [content, setContent] = React.useState<Unit>();
 
 	return (
 		<Container>
@@ -205,7 +205,6 @@ function NotesGrid({
 	allNotes: NotesProps[];
 	content: Unit | undefined;
 }): JSX.Element {
-	// const lc: NotesPropsComparator = new FuzzyComparator(searchTerm);
 	const [searchTerm, setSearchTerm] = useState("");
 
 	const innerTitleSize = useBreakpointValue({ base: "md", lg: "lg" }),
@@ -265,7 +264,7 @@ function NotesGrid({
 					) : (
 						<Text as="i">No matches found</Text>
 					)
-				) : content && content.content.length ? (
+				) : content?.content?.length ? (
 					content.content.map((note, idx: number) => (
 						<NotesBox
 							title={note.title}
@@ -274,7 +273,7 @@ function NotesGrid({
 						/>
 					))
 				) : (
-					<Text as="i">
+					<Text as="i" fontSize="5xl">
 						{content
 							? "There's nothing here right now. Check back later!"
 							: "Select one of the categories on the left to get started."}

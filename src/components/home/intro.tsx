@@ -8,7 +8,7 @@ export default function Intro() {
 	return (
 		<Container>
 			<ContainerInside>
-				<Flex justify="center" align="center" mt={50} mb={50}>
+				<Flex justify="center" align="center" mt={50} >
 					<Box maxW="60ch" textAlign="left" my={`${spacing}px`}>
 						<Heading>The key to your educational success.</Heading>
 						<Text my="10px">

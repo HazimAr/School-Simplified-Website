@@ -62,8 +62,8 @@ export default function Header(): JSX.Element {
 						<HStack
 							spacing={3}
 							fontSize={{
-								base: 10,
-								sm: 12,
+								base: 14,
+								
 								md: "initial",
 							}}
 						>

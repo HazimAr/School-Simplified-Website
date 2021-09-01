@@ -130,7 +130,7 @@ function LinkButton(props: LinkButtonProps) {
 				boxShadow="md"
 				display="flex"
 				flexDir="row"
-				bg="#6C7DFE"
+				bg="brand.blue"
 				cursor="pointer"
 			>
 				{props.iconName ? (

@@ -72,13 +72,13 @@ export default function Volunteering(): JSX.Element {
 
 			<RotatingPanel />
 
-			<Container>
+			{/* <Container>
 				<ContainerInside py={3}>
 					<Divider bg="white" />
 				</ContainerInside>
 			</Container>
 
-			<Reasons />
+			<Reasons /> */}
 		</>
 	);
 }

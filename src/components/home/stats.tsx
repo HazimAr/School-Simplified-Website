@@ -11,7 +11,7 @@ export default function Stats() {
 					spacing={{ base: 0, md: 5 }}
 					justify={{ base: "flex-start", md: "center" }}
 					flexDir={{ base: "column", md: "row" }}
-					textAlign="left"
+					textAlign="center"
 					fontSize={{ base: "lg", md: "xl" }}
 				>
 					<CountUp

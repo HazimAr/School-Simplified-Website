@@ -8,7 +8,7 @@ import {
 	Flex,
 	Heading,
 	Text,
-	useBreakpointValue
+	useBreakpointValue,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -82,7 +82,7 @@ function NotesTree({
 							}}
 							minW="fit-content"
 						>
-							<Heading size="sm" color="white">
+							<Heading size="lg" color="white">
 								{subject.title}
 							</Heading>
 						</AccordionButton>

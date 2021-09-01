@@ -5,6 +5,7 @@ import {
 	ListItem,
 	Text,
 	UnorderedList,
+	useToken,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -100,11 +101,12 @@ const services = [
 
 // eslint-disable-next-line import/no-default-export
 export default function Footer(): JSX.Element {
+	const purple = useToken("colors", "brand.purple.light");
 	return (
 		<Box as="footer">
 			<Box zIndex={-1}>
 				<Wave
-					fill="#636EE0"
+					fill={purple}
 					// paused
 					options={{
 						height: 120,
@@ -114,7 +116,7 @@ export default function Footer(): JSX.Element {
 					}}
 				/>
 			</Box>
-			<Container bg="#636EE0" mt="-8px">
+			<Container bg="brand.purple.light" mt="-8px">
 				<ContainerInside pb={5}>
 					<Flex
 						justify="space-around"
@@ -191,7 +193,7 @@ export default function Footer(): JSX.Element {
 					</Flex>
 				</ContainerInside>
 			</Container>
-			<Container bg="#727ce3" py="10px">
+			<Container bg="brand.purple.light" py="10px">
 				<ContainerInside>
 					<Flex
 						justify="space-between"

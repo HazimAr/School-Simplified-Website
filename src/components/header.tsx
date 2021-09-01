@@ -32,7 +32,7 @@ export default function Header(): JSX.Element {
 	return (
 		<>
 			<Container
-				bg="#636EE0CD"
+				bg="brand.purple.light"
 				as="header"
 				py={3}
 				w="100%"

@@ -34,6 +34,7 @@ export default function StaffCard({
 					rounded="30px"
 					boxSize={{ base: 165, lg: 265 }}
 					objectFit="cover"
+					backgroundPosition="top"
 					alt="staff member"
 					src={img}
 				/>

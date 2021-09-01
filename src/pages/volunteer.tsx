@@ -1,7 +1,14 @@
-import { Box, Divider, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import {
+	Box,
+	// Divider,
+	Flex,
+	Heading,
+	Image,
+	Text,
+} from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import Reasons from "@components/volunteering/reasons";
+// import Reasons from "@components/volunteering/reasons";
 import RotatingPanel from "@components/volunteering/rotating_panel";
 
 /**

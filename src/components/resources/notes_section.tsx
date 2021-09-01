@@ -273,7 +273,10 @@ function NotesGrid({
 						/>
 					))
 				) : (
-					<Text as="i" fontSize="5xl">
+					<Text
+						as="i"
+						fontSize={{ base: "xl", sm: "4xl", md: "5xl" }}
+					>
 						{content
 							? "There's nothing here right now. Check back later!"
 							: "Select one of the categories on the left to get started."}

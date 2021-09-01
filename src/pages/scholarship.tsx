@@ -60,6 +60,5 @@ export default function Scholarship({
 
 export async function getServerSideProps() {
 	const scholarshipData = await getScholarshipData();
-	console.log(scholarshipData);
 	return { props: { scholarshipData } };
 }

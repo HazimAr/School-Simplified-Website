@@ -3,7 +3,7 @@ import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import CountUp from "react-countup";
 import { BsPeopleFill } from "react-icons/bs";
-import { FaFlag, FaGlobe } from "react-icons/fa";
+import { FaFlag, FaGlobe, FaHandHoldingHeart } from "react-icons/fa";
 
 export default function Stats() {
 	return (
@@ -21,7 +21,7 @@ export default function Stats() {
 						<CountUp end={500} suffix="M+" duration={3} useEasing />
 						<Text>People Reached</Text>
 					</StatsIcon>
-					<StatsIcon Icon={BsPeopleFill}>
+					<StatsIcon Icon={FaHandHoldingHeart}>
 						<CountUp end={60} suffix="K+" duration={3} useEasing />
 						<Text>Community Members</Text>
 					</StatsIcon>

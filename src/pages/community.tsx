@@ -16,7 +16,6 @@ import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
 import { rounded } from "@styles/theme";
-import Head from "next/head";
 import React from "react";
 import { ArtData, SpotifyLink } from "types";
 
@@ -46,9 +45,6 @@ export default function Community({
 }): JSX.Element {
 	return (
 		<>
-			<Head>
-				<title>School Simplified | Community</title>
-			</Head>
 			<Container py={10}>
 				<ContainerInside>
 					<VStack textAlign="left" spacing={10}>

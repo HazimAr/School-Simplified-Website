@@ -3,7 +3,6 @@ import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import Reasons from "@components/volunteering/reasons";
 import RotatingPanel from "@components/volunteering/rotating_panel";
-import Head from "next/head";
 
 /**
  * The Volunteering page!
@@ -17,9 +16,6 @@ import Head from "next/head";
 export default function Volunteering(): JSX.Element {
 	return (
 		<>
-			<Head>
-				<title>School Simplified | Volunteering</title>
-			</Head>
 			<Container bg="brand.transparent">
 				<ContainerInside py={10}>
 					<Flex alignItems="center">

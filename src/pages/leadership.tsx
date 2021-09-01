@@ -21,7 +21,6 @@ import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
 import StaffCard from "@components/staffcard";
-import Head from "next/head";
 import React from "react";
 import { GovernanceDocument, GovernanceSection, Person } from "types";
 
@@ -124,9 +123,6 @@ const boardOfDirectors: Person[] = [
 export default function About({ data }: { data: any }): JSX.Element {
 	return (
 		<>
-			<Head>
-				<title>School Simplified | Leadership</title>
-			</Head>
 			<Container>
 				<ContainerInside>
 					<Box>

@@ -43,6 +43,7 @@ export default function Stats() {
 						<Button>Partner</Button>
 						<Button></Button>
 					</Stack> */}
+
 				</Flex>
 			</ContainerInside>
 		</Container>

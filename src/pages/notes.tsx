@@ -10,6 +10,7 @@ import { AllSubjects } from "types";
  *
  * @returns the Resources page
  */
+
 export default function Resources({ subjects }: AllSubjects): JSX.Element {
 	return (
 		<>
@@ -28,6 +29,7 @@ export default function Resources({ subjects }: AllSubjects): JSX.Element {
 								your academic needs!
 							</Text>
 						</Box>
+						
 						<Image
 							src="/timmy/17.png"
 							alt="Timmy with book"

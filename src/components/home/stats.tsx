@@ -7,7 +7,7 @@ import { FaFlag, FaGlobe, FaHandHoldingHeart } from "react-icons/fa";
 
 export default function Stats() {
 	return (
-		<Container py={5}>
+		<Container py={5} display={{ base: "none", md: "block" }}>
 			<ContainerInside>
 				<Flex
 					spacing={{ base: 0, md: 5 }}
@@ -43,7 +43,6 @@ export default function Stats() {
 						<Button>Partner</Button>
 						<Button></Button>
 					</Stack> */}
-
 				</Flex>
 			</ContainerInside>
 		</Container>

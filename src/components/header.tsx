@@ -153,7 +153,7 @@ export default function Header(): JSX.Element {
 								</MenuList>
 							</Menu>
 							<NextLink href="/volunteer">Volunteer</NextLink>
-							<NextLink href="/links">Contact Us</NextLink>
+							<NextLink href="/contact">Contact Us</NextLink>
 						</HStack>
 					</Flex>
 				</ContainerInside>

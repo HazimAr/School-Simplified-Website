@@ -205,7 +205,7 @@ export default function Footer(): JSX.Element {
 						</Text>
 						<Text>
 							<NextLink href="https://github.com/HazimAr/School-Simplified">
-								Made with ❤️ by developers
+								Made with ❤️ by loving developers
 							</NextLink>
 						</Text>
 					</Flex>

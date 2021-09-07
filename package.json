@@ -40,7 +40,7 @@
 	},
 	"devDependencies": {
 		"@babel/preset-typescript": "^7.15.0",
-		"@types/babel__core": "^7.1.15",
+		"@types/babel__core": "^7.1.16",
 		"@types/fuzzaldrin-plus": "^0.6.2",
 		"@types/next": "^9.0.0",
 		"@types/node": "^16.7.10",

@@ -47,7 +47,7 @@ const leadership: Person[] = [
 	},
 	{
 		name: "Param Patil",
-		title: "Chief of Advancements Officer (CAO)",
+		title: "Chief Advancements Officer (CAO)",
 		img: "/staff/RohitChoudhary.jpg",
 	},
 	{

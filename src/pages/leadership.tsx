@@ -60,11 +60,6 @@ const leadership: Person[] = [
 		title: "Chief Information & Technology Officer (CIO)",
 		img: "/staff/JasonMei.jpg",
 	},
-	// {
-	// 	name: "Arohini Rajvanshi",
-	// 	title: "Chief Human Resources Officer (CHRO) ",
-	// 	img: "/staff/ArohiniRajvanshi.jpg",
-	// },
 	{
 		name: "Diana Zheng",
 		title: "Treasurer",

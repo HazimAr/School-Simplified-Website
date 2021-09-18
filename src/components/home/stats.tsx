@@ -37,12 +37,6 @@ export default function Stats() {
 						<CountUp end={147} suffix="" duration={3} useEasing />
 						<Text>Countries</Text>
 					</StatsIcon>
-
-					{/* <Stack>
-						<Button>Volunteer</Button>
-						<Button>Partner</Button>
-						<Button></Button>
-					</Stack> */}
 				</Flex>
 			</ContainerInside>
 		</Container>

@@ -19,7 +19,7 @@ export default function Stats() {
 				>
 					<StatsIcon Icon={BsPeopleFill}>
 						<CountUp end={500} suffix="M+" duration={3} useEasing />
-						<Text>People Reached</Text>
+						<Text>Impression</Text>
 					</StatsIcon>
 					<StatsIcon Icon={FaHandHoldingHeart}>
 						<CountUp end={60} suffix="K+" duration={3} useEasing />

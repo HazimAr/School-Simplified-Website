@@ -29,7 +29,7 @@ function StyledInput({
 			borderWidth="xl"
 			borderRadius="xl"
 			borderColor="brand.purple.light"
-			focusBorderColor="brand.purple.light"
+			focusBorderColor="brand.purple.dark"
 			placeholder={placeholder}
 			_placeholder={{ color: "#3f404e" }}
 			_hover={{ backgroundColor: "transparent" }}
@@ -98,6 +98,7 @@ export default function ContactForm(): JSX.Element {
 			color="#171717"
 			borderRadius="2.25rem"
 			p={10}
+			shadow="lg"
 		>
 			<Flex flexDirection="row" justify="space-between">
 				<Stack mr={2}>

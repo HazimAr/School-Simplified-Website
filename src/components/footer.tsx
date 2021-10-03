@@ -130,7 +130,7 @@ export default function Footer(): JSX.Element {
 									Subscribe
 								</Button>
 							</HStack>
-							<Spacer/>
+							<Spacer />
 							<Flex justify="center">
 								<HStack>
 									<FaInstagram size={size} />

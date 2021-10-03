@@ -9,12 +9,21 @@ import {
 	HStack,
 	Stack,
 	Input,
+	Spacer,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
 import Wave from "react-wavify";
 import Button from "./button";
+import {
+	FaDiscord,
+	FaGithub,
+	FaTwitter,
+	FaFacebook,
+	FaInstagram,
+	FaLinkedinIn,
+} from "react-icons/fa";
 
 // eslint-disable-next-line import/no-default-export
 export default function Footer(): JSX.Element {
@@ -121,6 +130,17 @@ export default function Footer(): JSX.Element {
 									Subscribe
 								</Button>
 							</HStack>
+							<Spacer/>
+							<Flex justify="center">
+								<HStack>
+									<FaInstagram size={size} />
+									<FaDiscord size={size} />
+									<FaLinkedinIn size={size} />
+									<FaTwitter size={size} />
+									<FaFacebook size={size} />
+									<FaGithub size={size} />
+								</HStack>
+							</Flex>
 						</Stack>
 					</Flex>
 				</ContainerInside>
@@ -146,6 +166,9 @@ export default function Footer(): JSX.Element {
 		</Box>
 	);
 }
+
+const size = "40px";
+
 const about = [
 	{
 		name: "Home",

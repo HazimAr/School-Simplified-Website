@@ -18,7 +18,6 @@ export default function Button(props: any): JSX.Element {
 		<Box
 			px={4}
 			py={2}
-			{...props}
 			as="button"
 			// lineHeight="1.2"
 			transition="all 0.2s ease"
@@ -31,6 +30,7 @@ export default function Button(props: any): JSX.Element {
 				transform: "scale(0.90)",
 			}}
 			boxShadow="lg"
+			{...props}
 		>
 			{props.children}
 		</Box>

@@ -6,13 +6,19 @@ import {
 	Text,
 	UnorderedList,
 	useToken,
+	HStack,
+	Stack,
+	Input,
+	InputRightAddon,
+	InputGroup,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
 import Wave from "react-wavify";
+import Button from "./button";
 
-const infos = [
+const about = [
 	{
 		name: "Home",
 		link: "/",
@@ -25,79 +31,85 @@ const infos = [
 		name: "Community",
 		link: "/community",
 	},
-
-	{
-		name: "Contact Us",
-		link: "/contact",
-	},
-	{
-		name: "FAQ",
-		link: "/faq",
-	},
 	{
 		name: "Partners",
 		link: "/partners",
 	},
 	{
-		name: "Support Us",
-		link: "/donate",
+		name: "Terms of User",
+		link: "/terms",
+	},
+
+	{
+		name: "Privacy Policy",
+		link: "/privacy",
 	},
 ];
 
-const services = [
+const resources = [
 	{
-		name: "Homework Help",
-		link: "https://discord.gg/A782bUXTP8",
+		name: "Programs",
+		link: "/programs",
+	},
+	{
+		name: "Volunteering",
+		link: "/volunteering",
+	},
+	{
+		name: "Internships",
+		link: "/internships",
 	},
 	{
 		name: "Tutoring",
 		link: "/tutoring",
 	},
 	{
-		name: "Essay Revision",
-		link: "/essay",
+		name: "Blog",
+		link: "/blog",
 	},
 	{
-		name: "Notes",
+		name: "Events",
+		link: "/events",
+	},
+	{
+		name: "Homework Help",
+		link: "/homework",
+	},
+	{
+		name: "Notes & Resources",
 		link: "/notes",
 	},
 	{
-		name: "Volunteer",
-		link: "/volunteer",
+		name: "Essay Revisions",
+		link: "/essay",
 	},
-	{
-		name: "Hackathon",
-		link: "/simplihacks",
-	},
-	// {
-	// 	name: "College Prep",
-	// 	link: "/prep",
-	// },
 ];
 
-// const socials = [
-// 	{
-// 		name: "Discord",
-// 		link: "https://discord.gg/school",
-// 	},
-// 	{
-// 		name: "Instagram",
-// 		link: "https://www.instagram.com/school.simplified/",
-// 	},
-// 	{
-// 		name: "Tiktok",
-// 		link: "https://www.tiktok.com/@schoolsimplified",
-// 	},
+const support = [
+	{
+		name: "Contact Us",
+		link: "/contact",
+	},
+	{
+		name: "Support Us",
+		link: "/support",
+	},
+	{
+		name: "FAQ",
+		link: "/faq",
+	},
+];
 
-// 	{
-// 		name: "Linkedin",
-// 		link: "https://www.linkedin.com/company/school-simplified",
-// 	},
-// 	{
-// 		name: "Twitter",
-// 		link: "https://twitter.com/schoolsimplify/",
-// 	},
-// ];
+const advertise = [
+	{
+		name: "Media Kit",
+		link: "/media",
+	},
+	{
+		name: "Links",
+		link: "/links",
+	},
+];
 
 // eslint-disable-next-line import/no-default-export
 export default function Footer(): JSX.Element {
@@ -119,81 +131,96 @@ export default function Footer(): JSX.Element {
 			<Container bg="brand.purple.light" mt="-8px">
 				<ContainerInside pb={5}>
 					<Flex
-						justify="space-around"
-						// flexWrap="wrap"
+						justify="space-between"
 						flexDir={{ base: "column", sm: "row" }}
 						textAlign={{ base: "center", md: "left" }}
 					>
-						<Box my={3}>
-							<Heading size="md" color="white" mb={2}>
-								Information
+						<Stack>
+							<Heading as="h3" size="md">
+								About
 							</Heading>
-							<UnorderedList
-								styleType="none"
-								m={0}
-								p={0}
-								color="brand.gold"
-							>
-								{infos.map((info) => {
-									return (
-										<ListItem key={info.name}>
-											<NextLink href={info.link}>
-												{info.name}
+							<UnorderedList styleType="none">
+								{about.map((item) => (
+									<ListItem key={item.name}>
+										<NextLink href={item.link}>
+											<Text fontSize="sm">
+												{item.name}
+											</Text>
+										</NextLink>
+									</ListItem>
+								))}
+							</UnorderedList>
+						</Stack>
+						<Stack>
+							<Heading as="h3" size="md">
+								Resources
+							</Heading>
+							<UnorderedList styleType="none">
+								{resources.map((item) => (
+									<ListItem key={item.name}>
+										<NextLink href={item.link}>
+											<Text fontSize="sm">
+												{item.name}
+											</Text>
+										</NextLink>
+									</ListItem>
+								))}
+							</UnorderedList>
+						</Stack>
+						<Stack>
+							<Stack>
+								<Heading as="h3" size="md">
+									Support
+								</Heading>
+								<UnorderedList styleType="none">
+									{support.map((item) => (
+										<ListItem key={item.name}>
+											<NextLink href={item.link}>
+												<Text fontSize="sm">
+													{item.name}
+												</Text>
 											</NextLink>
 										</ListItem>
-									);
-								})}
-							</UnorderedList>
-						</Box>
-						<Box my={3}>
-							<Heading size="md" color="white" mb={2}>
-								Services
-							</Heading>
-							<UnorderedList
-								styleType="none"
-								m={0}
-								p={0}
-								color="brand.gold"
-							>
-								{services.map((service) => {
-									return (
-										<ListItem key={service.name}>
-											<NextLink href={service.link}>
-												{service.name}
+									))}
+								</UnorderedList>
+							</Stack>
+							<Stack>
+								<Heading as="h3" size="md">
+									Advertise
+								</Heading>
+								<UnorderedList styleType="none">
+									{advertise.map((item) => (
+										<ListItem key={item.name}>
+											<NextLink href={item.link}>
+												<Text fontSize="sm">
+													{item.name}
+												</Text>
 											</NextLink>
 										</ListItem>
-									);
-								})}
-							</UnorderedList>
-						</Box>
-						{/* <Box my={3}>
-							<Heading size="md" color="white" mb={2}>
-								Social Media
+									))}
+								</UnorderedList>
+							</Stack>
+						</Stack>
+						<Stack>
+							<Heading as="h3" size="md">
+								Newsletter
 							</Heading>
-							<UnorderedList
-								styleType="none"
-								m={0}
-								p={0}
-								color="brand.gold"
-							>
-								{socials.map((social) => {
-									return (
-										<ListItem key={social.name}>
-											<NextLink
-												href={social.link}
-												isExternal
-											>
-												{social.name}
-											</NextLink>
-										</ListItem>
-									);
-								})}
-							</UnorderedList>
-						</Box> */}
+							<Text fontSize="sm" maxW="40ch">
+								Join over 000,000 people who recieve weekly news
+								to stay updated!
+							</Text>
+							<HStack>
+								<Input placeholder="Your Email Here" />
+
+								<Button rounded="10px" w="35%">
+									Subscribe
+								</Button>
+							</HStack>
+						</Stack>
 					</Flex>
 				</ContainerInside>
 			</Container>
-			<Container bg="brand.purple.light" py="10px">
+			<Container bg="brand.purple.dark" py="10px">
 				<ContainerInside>
 					<Flex
 						justify="space-between"

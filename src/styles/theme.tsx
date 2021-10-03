@@ -7,8 +7,8 @@ const theme = extendTheme({
 			transparent: "rgba(255,255,255,0.3)",
 			transparent2: "rgba(255,255,255,0.6)",
 			purple: {
-				light: "rgb(90, 96, 174)",
-				dark: "rgb(69, 74, 138)",
+				light: "#737ac5",
+				dark: "#5a60ad",
 			},
 
 			gold: "#fcd270",

@@ -9,107 +9,12 @@ import {
 	HStack,
 	Stack,
 	Input,
-	InputRightAddon,
-	InputGroup,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
 import Wave from "react-wavify";
 import Button from "./button";
-
-const about = [
-	{
-		name: "Home",
-		link: "/",
-	},
-	{
-		name: "Leadership",
-		link: "/leadership",
-	},
-	{
-		name: "Community",
-		link: "/community",
-	},
-	{
-		name: "Partners",
-		link: "/partners",
-	},
-	{
-		name: "Terms of User",
-		link: "/terms",
-	},
-
-	{
-		name: "Privacy Policy",
-		link: "/privacy",
-	},
-];
-
-const resources = [
-	{
-		name: "Programs",
-		link: "/programs",
-	},
-	{
-		name: "Volunteering",
-		link: "/volunteering",
-	},
-	{
-		name: "Internships",
-		link: "/internships",
-	},
-	{
-		name: "Tutoring",
-		link: "/tutoring",
-	},
-	{
-		name: "Blog",
-		link: "/blog",
-	},
-	{
-		name: "Events",
-		link: "/events",
-	},
-	{
-		name: "Homework Help",
-		link: "/homework",
-	},
-	{
-		name: "Notes & Resources",
-		link: "/notes",
-	},
-	{
-		name: "Essay Revisions",
-		link: "/essay",
-	},
-];
-
-const support = [
-	{
-		name: "Contact Us",
-		link: "/contact",
-	},
-	{
-		name: "Support Us",
-		link: "/support",
-	},
-	{
-		name: "FAQ",
-		link: "/faq",
-	},
-];
-
-const advertise = [
-	{
-		name: "Media Kit",
-		link: "/media",
-	},
-	{
-		name: "Links",
-		link: "/links",
-	},
-];
 
 // eslint-disable-next-line import/no-default-export
 export default function Footer(): JSX.Element {
@@ -241,3 +146,95 @@ export default function Footer(): JSX.Element {
 		</Box>
 	);
 }
+const about = [
+	{
+		name: "Home",
+		link: "/",
+	},
+	{
+		name: "Leadership",
+		link: "/leadership",
+	},
+	{
+		name: "Community",
+		link: "/community",
+	},
+	{
+		name: "Partners",
+		link: "/partners",
+	},
+	{
+		name: "Terms of User",
+		link: "/terms",
+	},
+
+	{
+		name: "Privacy Policy",
+		link: "/privacy",
+	},
+];
+
+const resources = [
+	{
+		name: "Programs",
+		link: "/programs",
+	},
+	{
+		name: "Volunteering",
+		link: "/volunteering",
+	},
+	{
+		name: "Internships",
+		link: "/internships",
+	},
+	{
+		name: "Tutoring",
+		link: "/tutoring",
+	},
+	{
+		name: "Blog",
+		link: "/blog",
+	},
+	{
+		name: "Events",
+		link: "/events",
+	},
+	{
+		name: "Homework Help",
+		link: "/homework",
+	},
+	{
+		name: "Notes & Resources",
+		link: "/notes",
+	},
+	{
+		name: "Essay Revisions",
+		link: "/essay",
+	},
+];
+
+const support = [
+	{
+		name: "Contact Us",
+		link: "/contact",
+	},
+	{
+		name: "Support Us",
+		link: "/support",
+	},
+	{
+		name: "FAQ",
+		link: "/faq",
+	},
+];
+
+const advertise = [
+	{
+		name: "Media Kit",
+		link: "/media",
+	},
+	{
+		name: "Links",
+		link: "/links",
+	},
+];

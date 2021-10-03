@@ -42,7 +42,6 @@ const theme = extendTheme({
 		// @ts-ignore
 		global: () => ({
 			html: {
-				height: "100%",
 				scrollBehavior: "smooth",
 			},
 
@@ -53,7 +52,12 @@ const theme = extendTheme({
 					"Montserrat-Regular, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif",
 				textAlign: "center",
 				background:
-					"#8192f0 linear-gradient(90deg, rgb(145,141,240) 0%, #8192f0 100%)",
+					"#6C7DFE linear-gradient(180deg, #5A60AD 0%, #6C7DFE 20%, #A7B2FF 80%, #8192f0 100%)",
+				backgroundSize: "cover",
+				backgroundPosition: "center",
+				backgroundRepeat: "no-repeat",
+				backgroundAttachment: "fixed",
+
 				color: "white",
 			},
 			a: {

@@ -44,6 +44,7 @@ const theme = extendTheme({
 			html: {
 				scrollBehavior: "smooth",
 			},
+			
 
 			body: {
 				padding: 0,

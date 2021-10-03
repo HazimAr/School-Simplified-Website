@@ -1,6 +1,0 @@
-{
-	"extends": ["eslint:recommended", "next"],
-	"rules": {
-		"react/no-unescaped-entities": "off"
-	}
-}

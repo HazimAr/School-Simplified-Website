@@ -14,77 +14,6 @@ import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
 
-const menuItems = [
-	{
-		name: "About Us",
-		children: [
-			{
-				name: "Community",
-				href: "/community",
-			},
-			{
-				name: "Partners",
-				href: "/partners",
-			},
-			{
-				name: "Leadership",
-				href: "/leadership",
-			},
-			{
-				name: "FAQ",
-				href: "/faq",
-			},
-		],
-	},
-	{
-		name: "Programs",
-		children: [
-			{
-				name: "Accelerate Your Organization",
-				href: "/idfk",
-			},
-			{
-				name: "Become a Chapter",
-				href: "/idfk",
-			},
-			{
-				name: "BAP (SOON TM)",
-				href: "/idfk",
-			},
-			{
-				name: "Internships",
-				href: "/internships",
-			},
-		],
-	},
-	{
-		name: "Get Involved",
-		children: [
-			{
-				name: "Volunteer",
-				href: "/volunteer",
-			},
-			{
-				name: "Leadership Opportunities",
-				href: "/leadership-something-idk-yet",
-			},
-		],
-	},
-	{
-		name: "Support Us",
-		children: [
-			{
-				name: "Donate",
-				href: "/donate",
-			},
-			{
-				name: "Sponsor",
-				href: "/sponsor",
-			},
-		],
-	},
-];
-
 // eslint-disable-next-line import/no-default-export
 export default function Header(): JSX.Element {
 	const graceTime = 50;
@@ -159,7 +88,10 @@ export default function Header(): JSX.Element {
 											onMouseLeave={onMouseLeave}
 										>
 											{menuItem.children.map((child) => (
-												<NextLink href={child.href} key={child.name}>
+												<NextLink
+													href={child.href}
+													key={child.name}
+												>
 													<MenuItem>
 														{child.name}
 													</MenuItem>
@@ -178,3 +110,74 @@ export default function Header(): JSX.Element {
 		</>
 	);
 }
+
+const menuItems = [
+	{
+		name: "About Us",
+		children: [
+			{
+				name: "Community",
+				href: "/community",
+			},
+			{
+				name: "Partners",
+				href: "/partners",
+			},
+			{
+				name: "Leadership",
+				href: "/leadership",
+			},
+			{
+				name: "FAQ",
+				href: "/faq",
+			},
+		],
+	},
+	{
+		name: "Programs",
+		children: [
+			{
+				name: "Accelerate Your Organization",
+				href: "/idfk",
+			},
+			{
+				name: "Become a Chapter",
+				href: "/idfk",
+			},
+			{
+				name: "BAP (SOON TM)",
+				href: "/idfk",
+			},
+			{
+				name: "Internships",
+				href: "/internships",
+			},
+		],
+	},
+	{
+		name: "Get Involved",
+		children: [
+			{
+				name: "Volunteer",
+				href: "/volunteer",
+			},
+			{
+				name: "Leadership Opportunities",
+				href: "/leadership-something-idk-yet",
+			},
+		],
+	},
+	{
+		name: "Support Us",
+		children: [
+			{
+				name: "Donate",
+				href: "/donate",
+			},
+			{
+				name: "Sponsor",
+				href: "/sponsor",
+			},
+		],
+	},
+];

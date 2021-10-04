@@ -23,6 +23,7 @@ import {
 	FaFacebook,
 	FaInstagram,
 	FaLinkedinIn,
+	FaTiktok,
 } from "react-icons/fa";
 
 // eslint-disable-next-line import/no-default-export
@@ -133,12 +134,13 @@ export default function Footer(): JSX.Element {
 							<Spacer />
 							<Flex justify="center">
 								<HStack>
-									<FaInstagram size={size} />
-									<FaDiscord size={size} />
-									<FaLinkedinIn size={size} />
-									<FaTwitter size={size} />
-									<FaFacebook size={size} />
-									<FaGithub size={size} />
+									{socials.map((item) => {
+										return (
+											<NextLink href={item.link}>
+												<item.icon size={size} />
+											</NextLink>
+										);
+									})}
 								</HStack>
 							</Flex>
 						</Stack>
@@ -166,6 +168,44 @@ export default function Footer(): JSX.Element {
 		</Box>
 	);
 }
+
+const socials = [
+	{
+		name: "Instagram",
+		link: "https://www.instagram.com/schoolsimplified/",
+		icon: (props) => <FaInstagram {...props} />,
+	},
+	{
+		name: "Discord",
+		link: "https://discord.gg/school",
+		icon: (props) => <FaDiscord {...props} />,
+	},
+	{
+		name: "LinkedIn",
+		link: "https://www.linkedin.com/company/school-simplified",
+		icon: (props) => <FaLinkedinIn {...props} />,
+	},
+	{
+		name: "Twitter",
+		link: "https://twitter.com/SchoolSimplified",
+		icon: (props) => <FaTwitter {...props} />,
+	},
+	{
+		name: "Facebook",
+		link: "https://www.facebook.com/SchoolSimplified",
+		icon: (props) => <FaFacebook {...props} />,
+	},
+	{
+		name: "Github",
+		link: "https://github.com/HazimAr/School-Simplified",
+		icon: (props) => <FaGithub {...props} />,
+	},
+	{
+		name: "TikTok",
+		link: "https://www.tiktok.com/@schoolsimplified",
+		icon: (props) => <FaTiktok {...props} />,
+	},
+];
 
 const size = "40px";
 

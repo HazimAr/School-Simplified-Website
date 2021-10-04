@@ -13,9 +13,8 @@ export default function Intro() {
 						<Heading>The key to your educational success.</Heading>
 						<Text my="10px">
 							School Simplified is a digital nonprofit whose
-							mission is to spread educational equality by
-							providing free academic services, products, and
-							opportunities for teenagers.
+							mission is to empower the next generation to 
+							revolutionize the future through learning.
 						</Text>
 						{/* <NextLink href="/notes">
 							<Button>Get Free Help</Button>

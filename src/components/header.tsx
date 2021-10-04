@@ -159,7 +159,7 @@ export default function Header(): JSX.Element {
 											onMouseLeave={onMouseLeave}
 										>
 											{menuItem.children.map((child) => (
-												<NextLink href={child.href}>
+												<NextLink href={child.href} key={child.name}>
 													<MenuItem>
 														{child.name}
 													</MenuItem>

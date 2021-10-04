@@ -14,21 +14,81 @@ import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
 
+const menuItems = [
+	{
+		name: "About Us",
+		children: [
+			{
+				name: "Community",
+				href: "/community",
+			},
+			{
+				name: "Partners",
+				href: "/partners",
+			},
+			{
+				name: "Leadership",
+				href: "/leadership",
+			},
+			{
+				name: "FAQ",
+				href: "/faq",
+			},
+		],
+	},
+	{
+		name: "Programs",
+		children: [
+			{
+				name: "Accelerate Your Organization",
+				href: "/idfk",
+			},
+			{
+				name: "Become a Chapter",
+				href: "/idfk",
+			},
+			{
+				name: "BAP (SOON TM)",
+				href: "/idfk",
+			},
+			{
+				name: "Internships",
+				href: "/internships",
+			},
+		],
+	},
+	{
+		name: "Get Involved",
+		children: [
+			{
+				name: "Volunteer",
+				href: "/volunteer",
+			},
+			{
+				name: "Leadership Opportunities",
+				href: "/leadership-something-idk-yet",
+			},
+		],
+	},
+	{
+		name: "Support Us",
+		children: [
+			{
+				name: "Donate",
+				href: "/donate",
+			},
+			{
+				name: "Sponsor",
+				href: "/sponsor",
+			},
+		],
+	},
+];
+
 // eslint-disable-next-line import/no-default-export
 export default function Header(): JSX.Element {
-	const graceTime: number = 250;
+	const graceTime = 50;
 
-	const {
-		isOpen: aIsOpen,
-		onOpen: aOnOpen,
-		onClose: aOnClose,
-	} = useDisclosure();
-	const {
-		isOpen: sIsOpen,
-		onOpen: sOnOpen,
-		onClose: sOnClose,
-	} = useDisclosure();
-	let aTimeout: NodeJS.Timeout, sTimeout: NodeJS.Timeout;
 	return (
 		<>
 			<Container
@@ -67,91 +127,48 @@ export default function Header(): JSX.Element {
 							}}
 						>
 							<NextLink href="/">Home</NextLink>
-							<Menu isOpen={aIsOpen}>
-								<MenuButton
-									onMouseEnter={() => {
-										if (aTimeout) clearTimeout(aTimeout);
-										aOnOpen();
-										sOnClose();
-									}}
-									onMouseLeave={() =>
-										(aTimeout = setTimeout(
-											aOnClose,
-											graceTime
-										))
+							{menuItems.map((menuItem) => {
+								const { isOpen, onOpen, onClose } =
+									useDisclosure();
+
+								let timeout: NodeJS.Timeout;
+
+								const onMouseEnter = (): void => {
+									if (timeout) {
+										clearTimeout(timeout);
 									}
-								>
-									About Us
-								</MenuButton>
-								<MenuList
-									onMouseEnter={() => {
-										if (aTimeout) clearTimeout(aTimeout);
-										aOnOpen();
-										sOnClose();
-									}}
-									onMouseLeave={() =>
-										(aTimeout = setTimeout(
-											aOnClose,
-											graceTime
-										))
-									}
-								>
-									<NextLink href="/community">
-										<MenuItem>Community</MenuItem>
-									</NextLink>
-									<NextLink href="/leadership">
-										<MenuItem>Leadership</MenuItem>
-									</NextLink>
-									<NextLink href="/faq">
-										<MenuItem>FAQ</MenuItem>
-									</NextLink>
-									<NextLink href="/partners">
-										<MenuItem>Partners</MenuItem>
-									</NextLink>
-								</MenuList>
-							</Menu>
-							<Menu isOpen={sIsOpen}>
-								<MenuButton
-									// rightIcon={<ChevronDownIcon />}
-									onMouseEnter={() => {
-										if (sTimeout) clearTimeout(sTimeout);
-										sOnOpen();
-										aOnClose();
-									}}
-									onMouseLeave={() =>
-										(sTimeout = setTimeout(
-											sOnClose,
-											graceTime
-										))
-									}
-								>
-									Services
-								</MenuButton>
-								<MenuList
-									onMouseEnter={() => {
-										if (sTimeout) clearTimeout(sTimeout);
-										sOnOpen();
-										aOnClose();
-									}}
-									onMouseLeave={() =>
-										(sTimeout = setTimeout(
-											sOnClose,
-											graceTime
-										))
-									}
-								>
-									<NextLink href="/tutoring">
-										<MenuItem>Tutoring</MenuItem>
-									</NextLink>
-									<NextLink href="/essay">
-										<MenuItem>Essay Revision</MenuItem>
-									</NextLink>
-									<NextLink href="/notes">
-										<MenuItem>Notes</MenuItem>
-									</NextLink>
-								</MenuList>
-							</Menu>
-							<NextLink href="/volunteer">Volunteer</NextLink>
+									onOpen();
+								};
+
+								const onMouseLeave = (): void => {
+									timeout = setTimeout(() => {
+										onClose();
+									}, graceTime);
+								};
+
+								return (
+									<Menu isOpen={isOpen} key={menuItem.name}>
+										<MenuButton
+											onMouseEnter={onMouseEnter}
+											onMouseLeave={onMouseLeave}
+										>
+											{menuItem.name}
+										</MenuButton>
+										<MenuList
+											onMouseEnter={onMouseEnter}
+											onMouseLeave={onMouseLeave}
+										>
+											{menuItem.children.map((child) => (
+												<NextLink href={child.href}>
+													<MenuItem>
+														{child.name}
+													</MenuItem>
+												</NextLink>
+											))}
+										</MenuList>
+									</Menu>
+								);
+							})}
 							<NextLink href="/contact">Contact Us</NextLink>
 						</HStack>
 					</Flex>

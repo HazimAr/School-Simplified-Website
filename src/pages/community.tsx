@@ -246,6 +246,5 @@ export default function Community({
 
 export async function getServerSideProps() {
 	const artInfo = await getArtInfo();
-	console.log(artInfo);
 	return { props: { artInfo } };
 }

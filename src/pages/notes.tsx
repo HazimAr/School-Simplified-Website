@@ -8,12 +8,13 @@ import { AllSubjects } from "types";
 export default function Resources({ subjects }: AllSubjects): JSX.Element {
 	return (
 		<>
-			{/* <Container
+			<Container
 				backgroundImage="/timmy/lofi_timmy.png"
 				backgroundPosition="center"
 				backgroundRepeat="no-repeat"
 				backgroundSize="cover"
-				filter="brightness(0.8)"
+				// filter="brightness(0.8)"
+				opacity="0.25"
 			>
 				<ContainerInside py="15vh" my={5}>
 					<Box textAlign="center">
@@ -28,8 +29,8 @@ export default function Resources({ subjects }: AllSubjects): JSX.Element {
 						</Center>
 					</Box>
 				</ContainerInside>
-			</Container> */}
-			<Container h="15vh">
+			</Container>
+			{/* <Container h="15vh">
 			
 					<Image
 						src="/timmy/lofi_timmy.png"
@@ -55,7 +56,7 @@ export default function Resources({ subjects }: AllSubjects): JSX.Element {
 						</Center>
 					</Box>
 				</ContainerInside>
-			</Container>
+			</Container> */}
 
 			<NotesSection subjects={subjects} />
 

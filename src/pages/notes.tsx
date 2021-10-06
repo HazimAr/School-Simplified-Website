@@ -1,43 +1,59 @@
 import { getSubjects } from "@api/notion";
-import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Text, Center } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NotesSection from "@components/resources/notes_section";
 import { AllSubjects } from "types";
 
-/**
- * Notes and stuff
- *
- * @returns the Resources page
- */
-
 export default function Resources({ subjects }: AllSubjects): JSX.Element {
 	return (
 		<>
-			<Container bg="brand.transparent">
-				<ContainerInside my={5}>
-					<Flex
-						flexDir={{ base: "column", sm: "row" }}
-						alignItems="center"
-					>
-						<Box textAlign={{ base: "center", sm: "left" }}>
-							<Heading as="h1" mb={3}>
-								Notes
-							</Heading>
-							<Text fontSize={20}>
+			{/* <Container
+				backgroundImage="/timmy/lofi_timmy.png"
+				backgroundPosition="center"
+				backgroundRepeat="no-repeat"
+				backgroundSize="cover"
+				filter="brightness(0.8)"
+			>
+				<ContainerInside py="15vh" my={5}>
+					<Box textAlign="center">
+						<Heading as="h1" mb={3} fontSize={100}>
+							Notes
+						</Heading>
+						<Center>
+							<Text fontSize={30} maxW="30ch">
 								All the top-notch notes you'll ever want for
 								your academic needs!
 							</Text>
-						</Box>
-						
-						<Image
-							src="/timmy/17.png"
-							alt="Timmy with book"
-							w={{ base: 150, md: 250, lg: 350 }}
-							mt={{ base: 5, sm: 0 }}
-							ml={{ base: 5, sm: 50, md: 70 }}
-						/>
-					</Flex>
+						</Center>
+					</Box>
+				</ContainerInside>
+			</Container> */}
+			<Container h="15vh">
+			
+					<Image
+						src="/timmy/lofi_timmy.png"
+						objectFit="cover"
+						objectPosition="center"
+						w="100%"
+						h="100%"
+						opacity={0.25}
+						position="absolute"
+					/>
+			
+
+				<ContainerInside my={5}>
+					<Box textAlign="center">
+						<Heading as="h1" mb={3} fontSize={100}>
+							Notes
+						</Heading>
+						<Center>
+							<Text fontSize={30} maxW="30ch">
+								All the top-notch notes you'll ever want for
+								your academic needs!
+							</Text>
+						</Center>
+					</Box>
 				</ContainerInside>
 			</Container>
 

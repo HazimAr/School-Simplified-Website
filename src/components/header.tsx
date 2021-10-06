@@ -26,7 +26,6 @@ export default function Header(): JSX.Element {
 				w="100%"
 				position="fixed"
 				zIndex={1000}
-				backdropFilter="blur(5px)"
 			>
 				<ContainerInside>
 					<Flex
@@ -106,7 +105,6 @@ export default function Header(): JSX.Element {
 					</Flex>
 				</ContainerInside>
 			</Container>
-			<Box w="100%" h="50px" />
 		</>
 	);
 }

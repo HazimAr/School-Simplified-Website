@@ -136,11 +136,13 @@ export default function About({ data }: { data: any }): JSX.Element {
 						</Heading>
 
 						<Divider bg="white" />
-						<Center>
+						<Center my={5}>
 							<ExecutiveButton
 								onClick={() => {
 									!senior && setSenior(true);
 								}}
+								left
+								active={senior}
 							>
 								Senior Executives
 							</ExecutiveButton>
@@ -148,11 +150,12 @@ export default function About({ data }: { data: any }): JSX.Element {
 								onClick={() => {
 									senior && setSenior(false);
 								}}
+								active={!senior}
 							>
 								Executives
 							</ExecutiveButton>
 						</Center>
-						<Heading fontSize={30} my={5}>
+						<Heading fontSize={30} mb={5}>
 							Executive Profiles
 						</Heading>
 						<Flex justifyContent="center" flexWrap="wrap">
@@ -187,8 +190,8 @@ export default function About({ data }: { data: any }): JSX.Element {
 								</Tr>
 							</Thead>
 							<Tbody>
-								{boardOfDirectors.map((staff, idx: number) => (
-									<Tr key={"row_" + idx}>
+								{boardOfDirectors.map((staff) => (
+									<Tr key={staff.name}>
 										<Td fontWeight="bold" fontSize={20}>
 											{staff.name}
 										</Td>
@@ -267,6 +270,26 @@ export async function getServerSideProps() {
 	return { props: { data } };
 }
 
-function ExecutiveButton({ children, onClick }) {
-	return <Box onClick={onClick}>{children}</Box>;
+function ExecutiveButton({ children, onClick, left = false, active }) {
+	return (
+		<Box
+			onClick={onClick}
+			maxW="200px"
+			py={3}
+			w="100%"
+			bg={
+				active
+					? "linear-gradient(90deg, #FFA270 0%, #e6c068 100%)"
+					: "brand.transparent"
+			}
+			borderLeftRadius={left ? "100px" : 0}
+			borderRightRadius={left ? 0 : "100PX"}
+			_hover={{
+				bg: "brand.transparent2",
+				cursor: "pointer",
+			}}
+		>
+			{children}
+		</Box>
+	);
 }

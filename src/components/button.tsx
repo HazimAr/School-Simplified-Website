@@ -6,12 +6,13 @@ import { Box } from "@chakra-ui/react";
 export default function Button(props: any): JSX.Element {
 	let bg;
 	switch (props.type) {
-		case "exciting":
-		default:
-			bg = "linear-gradient(90deg, #FFA270 0%, #e6c068 100%)";
-			break;
+		// case "exciting":
+
 		case "calm":
 			bg = "linear-gradient(90deg, #a688ec 0%, #5a60ad 100%)";
+			break;
+		default:	
+			bg = "linear-gradient(90deg, #FFA270 0%, #e6c068 100%)";
 			break;
 	}
 	return (

@@ -25,117 +25,6 @@ import StaffCard from "@components/staffcard";
 import { useState } from "react";
 import { GovernanceDocument, GovernanceSection, Person } from "types";
 
-const seniorExecs: Person[] = [
-	{
-		name: "Ethan Hsu",
-		title: "Chief Executive Officer (CEO) & President",
-		img: "/staff/EthanHsu.jpg",
-	},
-	{
-		name: "Hazim Arafa",
-		title: "President of Programming Simplified",
-		img: "/staff/HazimArafa.jpg",
-	},
-	{
-		name: "Lauren Hsieh",
-		title: "Secretary & Chief of Staff",
-		img: "/staff/LaurenHsieh.jpg",
-	},
-	{
-		name: "Rohit Choudhary",
-		title: "Senior Vice President of Academics (SVPA)",
-		img: "/staff/ParamPatil.jpg",
-	},
-	{
-		name: "Aarush Goradia",
-		title: "President of Student Advancement (PSA)",
-		img: "/staff/AarushGoradia.jpg",
-	},
-
-	{
-		name: "Param Patil",
-		title: "Chief Advancements Officer (CAO)",
-		img: "/staff/RohitChoudhary.jpg",
-	},
-	{
-		name: "Harry Chow",
-		title: "Chief Marketing Officer (CMO)",
-		img: "/staff/HarryChow.jpg",
-	},
-	{
-		name: "Jason Mei",
-		title: "Chief Information & Technology Officer (CIO)",
-		img: "/staff/JasonMei.jpg",
-	},
-	{
-		name: "Diana Zheng",
-		title: "Treasurer",
-		img: "/staff/DianaZheng.jpg",
-	},
-];
-
-const execs: Person[] = [
-	{
-		name: "Yasmeen Elkheir",
-		title: "Vice President of Operations @Programming Simplified",
-		img: "/staff/YasmeenElkheir.jpg",
-	},
-
-	{
-		name: "Isamar Zhu",
-		title: "Vice President of Staff @Programming Simplified",
-		img: "/staff/Isamar.jpg",
-	},
-];
-
-const boardOfDirectors: Person[] = [
-	{
-		name: "Nathanael Ma",
-		title: "Lead Director",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Ethan Hsu",
-		title: "Director & CEO",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Madison Li",
-		title: "Director",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Harry Chow",
-		title: "Director",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Lauren Hsieh",
-		title: "Director & Secretary",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Diana Zheng",
-		title: "Director & Treasurer",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Rohit Choudhary",
-		title: "Director",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Atsi Gupta",
-		title: "Director",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Isaias Vilato",
-		title: "Director",
-		img: "/staff/default.png",
-	},
-];
-
 export default function About({ data }: { data: any }): JSX.Element {
 	const [senior, setSenior] = useState(true);
 	return (
@@ -281,6 +170,117 @@ export async function getServerSideProps() {
 	const data = await getGovernanceData();
 	return { props: { data } };
 }
+
+const seniorExecs: Person[] = [
+	{
+		name: "Ethan Hsu",
+		title: "Chief Executive Officer (CEO) & President",
+		img: "/staff/EthanHsu.jpg",
+	},
+	{
+		name: "Hazim Arafa",
+		title: "President of Programming Simplified",
+		img: "/staff/HazimArafa.jpg",
+	},
+	{
+		name: "Lauren Hsieh",
+		title: "Secretary & Chief of Staff",
+		img: "/staff/LaurenHsieh.jpg",
+	},
+	{
+		name: "Rohit Choudhary",
+		title: "Senior Vice President of Academics (SVPA)",
+		img: "/staff/ParamPatil.jpg",
+	},
+	{
+		name: "Aarush Goradia",
+		title: "President of Student Advancement (PSA)",
+		img: "/staff/AarushGoradia.jpg",
+	},
+
+	{
+		name: "Param Patil",
+		title: "Chief Advancements Officer (CAO)",
+		img: "/staff/RohitChoudhary.jpg",
+	},
+	{
+		name: "Harry Chow",
+		title: "Chief Marketing Officer (CMO)",
+		img: "/staff/HarryChow.jpg",
+	},
+	{
+		name: "Jason Mei",
+		title: "Chief Information & Technology Officer (CIO)",
+		img: "/staff/JasonMei.jpg",
+	},
+	{
+		name: "Diana Zheng",
+		title: "Treasurer",
+		img: "/staff/DianaZheng.jpg",
+	},
+];
+
+const execs: Person[] = [
+	{
+		name: "Yasmeen Elkheir",
+		title: "Vice President of Operations @Programming Simplified",
+		img: "/staff/YasmeenElkheir.jpg",
+	},
+
+	{
+		name: "Isamar Zhu",
+		title: "Vice President of Staff @Programming Simplified",
+		img: "/staff/Isamar.jpg",
+	},
+];
+
+const boardOfDirectors: Person[] = [
+	{
+		name: "Nathanael Ma",
+		title: "Lead Director",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Ethan Hsu",
+		title: "Director & CEO",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Madison Li",
+		title: "Director",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Harry Chow",
+		title: "Director",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Lauren Hsieh",
+		title: "Director & Secretary",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Diana Zheng",
+		title: "Director & Treasurer",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Rohit Choudhary",
+		title: "Director",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Atsi Gupta",
+		title: "Director",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Isaias Vilato",
+		title: "Director",
+		img: "/staff/default.png",
+	},
+];
 
 function ExecutiveButton({ children, onClick, left = false, active }) {
 	return (

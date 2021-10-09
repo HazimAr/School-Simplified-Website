@@ -230,7 +230,7 @@ const execs: Person[] = [
 	{
 		name: "Isamar Zhu",
 		title: "Vice President of Staff @Programming Simplified",
-		img: "/staff/Isamar.jpg",
+		img: "/staff/IsamarZhu.jpg",
 	},
 ];
 

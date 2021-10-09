@@ -5,7 +5,7 @@ import ContainerInside from "@components/containerInside";
 export default function Essay(): JSX.Element {
 	return (
 		<Container>
-			<ContainerInside >
+			<ContainerInside py={10}>
 				<Center>
 					<iframe
 						title=""

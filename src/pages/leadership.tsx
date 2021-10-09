@@ -16,16 +16,15 @@ import {
 	Thead,
 	Tr,
 	VStack,
-	Center,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
 import StaffCard from "@components/staffcard";
-import { useState } from "react";
+import React from "react";
 import { GovernanceDocument, GovernanceSection, Person } from "types";
 
-const seniorExecs: Person[] = [
+const leadership: Person[] = [
 	{
 		name: "Ethan Hsu",
 		title: "Chief Executive Officer (CEO) & President",
@@ -65,14 +64,6 @@ const seniorExecs: Person[] = [
 		name: "Diana Zheng",
 		title: "Treasurer",
 		img: "/staff/DianaZheng.jpg",
-	},
-];
-
-const execs: Person[] = [
-	{
-		name: "Yasmeen",
-		title: "Vice President of Operations @Programming Simplified",
-		img: "/staff/Yasmeen.jpg",
 	},
 ];
 
@@ -125,7 +116,6 @@ const boardOfDirectors: Person[] = [
 ];
 
 export default function About({ data }: { data: any }): JSX.Element {
-	const [senior, setSenior] = useState(true);
 	return (
 		<>
 			<Container>
@@ -136,38 +126,20 @@ export default function About({ data }: { data: any }): JSX.Element {
 						</Heading>
 
 						<Divider bg="white" />
-						<Center>
-							<ExecutiveButton
-								onClick={() => {
-									!senior && setSenior(true);
-								}}
-							>
-								Senior Executives
-							</ExecutiveButton>
-							<ExecutiveButton
-								onClick={() => {
-									senior && setSenior(false);
-								}}
-							>
-								Executives
-							</ExecutiveButton>
-						</Center>
 						<Heading fontSize={30} my={5}>
 							Executive Profiles
 						</Heading>
 						<Flex justifyContent="center" flexWrap="wrap">
-							{(senior ? seniorExecs : execs).map(
-								(staff: Person) => {
-									return (
-										<StaffCard
-											title={staff.title}
-											name={staff.name}
-											img={staff.img}
-											key={staff.title}
-										/>
-									);
-								}
-							)}
+							{leadership.map((staff, i: number) => {
+								return (
+									<StaffCard
+										title={staff.title}
+										name={staff.name}
+										img={staff.img}
+										key={i}
+									/>
+								);
+							})}
 						</Flex>
 
 						<Divider bg="white" />
@@ -265,8 +237,4 @@ export default function About({ data }: { data: any }): JSX.Element {
 export async function getServerSideProps() {
 	const data = await getGovernanceData();
 	return { props: { data } };
-}
-
-function ExecutiveButton({ children, onClick }) {
-	return <Box onClick={onClick}>{children}</Box>;
 }

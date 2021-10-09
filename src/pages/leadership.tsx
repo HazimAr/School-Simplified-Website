@@ -70,9 +70,15 @@ const seniorExecs: Person[] = [
 
 const execs: Person[] = [
 	{
-		name: "Yasmeen",
+		name: "Yasmeen idfk your last name",
 		title: "Vice President of Operations @Programming Simplified",
 		img: "/staff/Yasmeen.jpg",
+	},
+
+	{
+		name: "Isamar Zhu",
+		title: "Vice President of Staff @Programming Simplified",
+		img: "/staff/Isamar.jpg",
 	},
 ];
 
@@ -284,6 +290,7 @@ function ExecutiveButton({ children, onClick, left = false, active }) {
 			}
 			borderLeftRadius={left ? "100px" : 0}
 			borderRightRadius={left ? 0 : "100PX"}
+			transition="all 0.1s ease-in"
 			_hover={{
 				bg: "brand.transparent2",
 				cursor: "pointer",

@@ -177,31 +177,11 @@ const seniorExecs: Person[] = [
 		title: "Chief Executive Officer (CEO) & President",
 		img: "/staff/EthanHsu.jpg",
 	},
-	{
-		name: "Hazim Arafa",
-		title: "President of Programming Simplified",
-		img: "/staff/HazimArafa.jpg",
-	},
+
 	{
 		name: "Lauren Hsieh",
 		title: "Secretary & Chief of Staff",
 		img: "/staff/LaurenHsieh.jpg",
-	},
-	{
-		name: "Rohit Choudhary",
-		title: "Senior Vice President of Academics (SVPA)",
-		img: "/staff/ParamPatil.jpg",
-	},
-	{
-		name: "Aarush Goradia",
-		title: "President of Student Advancement (PSA)",
-		img: "/staff/AarushGoradia.jpg",
-	},
-
-	{
-		name: "Param Patil",
-		title: "Chief Advancements Officer (CAO)",
-		img: "/staff/RohitChoudhary.jpg",
 	},
 	{
 		name: "Harry Chow",
@@ -213,6 +193,32 @@ const seniorExecs: Person[] = [
 		title: "Chief Information & Technology Officer (CIO)",
 		img: "/staff/JasonMei.jpg",
 	},
+	{
+		name: "Harold Huang",
+		title: "Chief Human Resources Officer",
+		img: "/staff/HaroldHuang.png",
+	},
+	{
+		name: "Hazim Arafa",
+		title: "President of Programming Simplified",
+		img: "/staff/HazimArafa.jpg",
+	},
+	{
+		name: "Aarush Goradia",
+		title: "President of Student Advancement (PSA)",
+		img: "/staff/AarushGoradia.jpg",
+	},
+	{
+		name: "David Sun",
+		title: "President of National Chapters",
+		img: "/staff/DavidSun",
+	},
+	{
+		name: "Param Patil",
+		title: "Chief Advancements Officer (CAO)",
+		img: "/staff/RohitChoudhary.jpg",
+	},
+
 	{
 		name: "Diana Zheng",
 		title: "Treasurer",
@@ -231,6 +237,41 @@ const execs: Person[] = [
 		name: "Isamar Zhu",
 		title: "Vice President of Staff @Programming Simplified",
 		img: "/staff/IsamarZhu.jpg",
+	},
+	{
+		name: "Jiaho Zhang",
+		title: "Vice President of Advancement",
+		img: "/staff/JiahoZhang.jpg",
+	},
+	{
+		name: "Josh Schram",
+		title: "Senior Vice President of Academics",
+		img: "/staff/JoshSchram.jpg",
+	},
+	{
+		name: "Rohit Choudhary",
+		title: "Senior Vice President of Academics",
+		img: "/staff/RohitChoudhary.jpg",
+	},
+	{
+		name: "Masa Murry",
+		title: "Vice President of Marketing",
+		img: "/staff/MasaMurry.jpg",
+	},
+	{
+		name: "Max Konzerowsky",
+		title: "Vice President of Technical",
+		img: "/staff/MaxKonzerowsky.jpg",
+	},
+	{
+		name: "Nicholas Zhang",
+		title: "Vice President of Technical",
+		img: "/staff/NicholasZhang.jpg",
+	},
+	{
+		name: "Rohit Penta",
+		title: "Vice President of Technical",
+		img: "/staff/RohitPenta.jpg",
 	},
 ];
 

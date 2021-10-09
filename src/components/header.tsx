@@ -39,7 +39,7 @@ export default function Header(): JSX.Element {
 									src="/logo.png"
 									width={30}
 									height={30}
-									alt="School Simplified Logo"
+									alt="logo"
 								/>
 								<Heading size="md" color="white" ml={2.5}>
 									School Simplified

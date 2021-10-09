@@ -1,5 +1,4 @@
 import {
-	Box,
 	Flex,
 	Heading,
 	HStack,
@@ -64,7 +63,7 @@ export default function Header(): JSX.Element {
 								const onMouseEnter = (): void => {
 									if (timeout) {
 										clearTimeout(timeout);
-								a	}
+									}
 									onOpen();
 								};
 

@@ -8,7 +8,7 @@ import {
 	Class,
 	GovernanceDocument,
 	GovernanceSection,
-	// LinkButtonProps,
+	LinkButtonProps,
 	NotesProps,
 	QAPair,
 	QASection,
@@ -657,38 +657,38 @@ export async function getScholarshipData(): Promise<ScholarshipProps[]> {
 // 	return { blocks: pageData.results };
 // }
 
-// export async function getLinkButtons(): Promise<LinkButtonProps[]> {
-// 	const { data } = await axios.get(
-// 		"https://api.notion.com/v1/blocks/441c68cd9dbd49a498da4ff5ff6c3dcf/children",
-// 		notionConfig
-// 	);
-// 	const output: LinkButtonProps[] = [];
+export async function getLinkButtons(): Promise<LinkButtonProps[]> {
+	const { data } = await axios.get(
+		"https://api.notion.com/v1/blocks/441c68cd9dbd49a498da4ff5ff6c3dcf/children",
+		notionConfig
+	);
+	const output: LinkButtonProps[] = [];
 
-// 	let current: LinkButtonProps = { href: "", text: "" };
-// 	for (const block of data.results) {
-// 		if (block.type.startsWith("heading")) {
-// 			// put old LinkButtonProps into list
-// 			if (current.text) output.push(current);
+	let current: LinkButtonProps = { href: "", text: "" };
+	for (const block of data.results) {
+		if (block.type.startsWith("heading")) {
+			// put old LinkButtonProps into list
+			if (current.text) output.push(current);
 
-// 			// start new LinkButtonProp
-// 			const textObjects: any[] = block[block.type].text;
-// 			const text: string = textObjects
-// 				.map((obj) => obj.plain_text)
-// 				.join("");
-// 			current = { href: "", text };
-// 		} else if (block.type === "paragraph") {
-// 			const textObjects: any[] = block.paragraph.text;
-// 			const text: string = textObjects
-// 				.map((obj) => obj.plain_text)
-// 				.join("");
-// 			if (text.startsWith("Icon: ")) {
-// 				current.iconName = text.substring(6);
-// 			} else if (text.startsWith("Link: ")) {
-// 				current.href = text.substring(6);
-// 			}
-// 		}
-// 	}
-// 	if (current.text) output.push(current);
+			// start new LinkButtonProp
+			const textObjects: any[] = block[block.type].text;
+			const text: string = textObjects
+				.map((obj) => obj.plain_text)
+				.join("");
+			current = { href: "", text };
+		} else if (block.type === "paragraph") {
+			const textObjects: any[] = block.paragraph.text;
+			const text: string = textObjects
+				.map((obj) => obj.plain_text)
+				.join("");
+			if (text.startsWith("Icon: ")) {
+				current.iconName = text.substring(6);
+			} else if (text.startsWith("Link: ")) {
+				current.href = text.substring(6);
+			}
+		}
+	}
+	if (current.text) output.push(current);
 
-// 	return output;
-// }
+	return output;
+}

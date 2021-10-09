@@ -2,8 +2,8 @@ import axios from "axios";
 import {
 	AnswerPart,
 	ArtData,
-	Author,
-	BlogListing,
+	// Author,
+	// BlogListing,
 	BlogPage,
 	Class,
 	GovernanceDocument,
@@ -156,12 +156,7 @@ async function getUnits(
 
 					// const blockID = block.id;
 					if (href.length && notesTitle.length) {
-						const note: NotesProps = block.last_edited_time
-							? {
-									title: notesTitle,
-									href: href,
-							  }
-							: {
+						const note: NotesProps = {
 									title: notesTitle,
 									href: href,
 							  };
@@ -581,73 +576,73 @@ export async function getScholarshipData(): Promise<ScholarshipProps[]> {
 	return output;
 }
 
-export async function getBlogListing(): Promise<BlogListing[]> {
-	return axios
-		.post(
-			"https://api.notion.com/v1/databases/79d546abf96847c6ab3cd8cffe002c39/query",
-			{},
-			notionConfig
-		)
-		.then((output) => {
-			const results = output.data.results;
-			return results.map((result: any): BlogListing => {
-				const authorObjects: any[] = result.properties.Author?.people,
-					titleText = result.properties.Name?.title,
-					linkText = result.properties.Link?.rich_text,
-					category = result.properties.Category?.select.name ?? null,
-					icon = result.properties.Icon?.url ?? null;
-				let title;
-				if (titleText?.length) {
-					title = "";
-					for (const titleSegment of titleText) {
-						title += titleSegment.plain_text;
-					}
-				} else {
-					title = "MALFORMED";
-				}
-				let link;
-				if (linkText?.length) {
-					link = "";
-					for (const linkSegment of linkText) {
-						link += linkSegment.plain_text;
-					}
-				} else {
-					link = result.id;
-				}
+// export async function getBlogListing(): Promise<BlogListing[]> {
+// 	return axios
+// 		.post(
+// 			"https://api.notion.com/v1/databases/79d546abf96847c6ab3cd8cffe002c39/query",
+// 			{},
+// 			notionConfig
+// 		)
+// 		.then((output) => {
+// 			const results = output.data.results;
+// 			return results.map((result: any): BlogListing => {
+// 				const authorObjects: any[] = result.properties.Author?.people,
+// 					titleText = result.properties.Name?.title,
+// 					linkText = result.properties.Link?.rich_text,
+// 					category = result.properties.Category?.select.name ?? null,
+// 					icon = result.properties.Icon?.url ?? null;
+// 				let title;
+// 				if (titleText?.length) {
+// 					title = "";
+// 					for (const titleSegment of titleText) {
+// 						title += titleSegment.plain_text;
+// 					}
+// 				} else {
+// 					title = "MALFORMED";
+// 				}
+// 				let link;
+// 				if (linkText?.length) {
+// 					link = "";
+// 					for (const linkSegment of linkText) {
+// 						link += linkSegment.plain_text;
+// 					}
+// 				} else {
+// 					link = result.id;
+// 				}
 
-				if (authorObjects?.length) {
-					const authors: Author[] = authorObjects.map(
-						(authorObject): Author => {
-							return {
-								name: authorObject.name,
-								avatar_url: authorObject.avatar_url,
-							};
-						}
-					);
-					return {
-						created_time: result.created_time,
-						last_edited_time: result.last_edited_time,
-						title,
-						id: result.id,
-						link,
-						category,
-						icon,
-						authors,
-					};
-				} else {
-					return {
-						created_time: result.created_time,
-						last_edited_time: result.last_edited_time,
-						title,
-						id: result.id,
-						link,
-						icon,
-						category,
-					};
-				}
-			});
-		});
-}
+// 				if (authorObjects?.length) {
+// 					const authors: Author[] = authorObjects.map(
+// 						(authorObject): Author => {
+// 							return {
+// 								name: authorObject.name,
+// 								avatar_url: authorObject.avatar_url,
+// 							};
+// 						}
+// 					);
+// 					return {
+// 						created_time: result.created_time,
+// 						last_edited_time: result.last_edited_time,
+// 						title,
+// 						id: result.id,
+// 						link,
+// 						category,
+// 						icon,
+// 						authors,
+// 					};
+// 				} else {
+// 					return {
+// 						created_time: result.created_time,
+// 						last_edited_time: result.last_edited_time,
+// 						title,
+// 						id: result.id,
+// 						link,
+// 						icon,
+// 						category,
+// 					};
+// 				}
+// 			});
+// 		});
+// }
 
 export async function getBlogPage(id: string): Promise<BlogPage> {
 	const { data: pageData } = await axios.get(

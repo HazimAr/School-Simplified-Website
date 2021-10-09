@@ -193,6 +193,7 @@ function ListingElement(listing: BlogListing) {
 }
 
 export async function getStaticProps() {
-	const props = { listing: await getBlogListing() };
+	// const props = { listing: await getBlogListing() };
+	const props = { listing: { yourmom } };
 	return { props, revalidate: 20 };
 }

@@ -8,6 +8,7 @@ import {
 	MenuItem,
 	MenuList,
 	useDisclosure,
+	Box,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -104,6 +105,7 @@ export default function Header(): JSX.Element {
 					</Flex>
 				</ContainerInside>
 			</Container>
+			<Box h="54px" />
 		</>
 	);
 }

@@ -64,7 +64,7 @@ export default function Header(): JSX.Element {
 								const onMouseEnter = (): void => {
 									if (timeout) {
 										clearTimeout(timeout);
-									}
+								a	}
 									onOpen();
 								};
 

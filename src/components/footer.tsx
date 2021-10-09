@@ -23,6 +23,7 @@ import {
 	FaFacebook,
 	FaInstagram,
 	FaLinkedinIn,
+	// @ts-ignore
 	FaTiktok,
 } from "react-icons/fa";
 

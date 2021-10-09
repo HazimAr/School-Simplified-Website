@@ -76,9 +76,9 @@ const seniorExecs: Person[] = [
 
 const execs: Person[] = [
 	{
-		name: "Yasmeen idfk your last name",
+		name: "Yasmeen Elkheir",
 		title: "Vice President of Operations @Programming Simplified",
-		img: "/staff/Yasmeen.jpg",
+		img: "/staff/YasmeenElkheir.jpg",
 	},
 
 	{

@@ -47,6 +47,11 @@ const seniorExecs: Person[] = [
 		img: "/staff/AarushGoradia.jpg",
 	},
 	{
+		name: "Hazim Arafa",
+		title: "President of Programming Simplified (PPS)",
+		img: "/staff/HazimArafa.jpg",
+	},
+	{
 		name: "Param Patil",
 		title: "Chief Advancements Officer (CAO)",
 		img: "/staff/RohitChoudhary.jpg",

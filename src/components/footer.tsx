@@ -34,7 +34,7 @@ export default function Footer(): JSX.Element {
 		<Box as="footer">
 			<Box zIndex={-1}>
 				<Wave
-					fill={purple}
+					fill={purple}	
 					// paused
 					options={{
 						height: 120,

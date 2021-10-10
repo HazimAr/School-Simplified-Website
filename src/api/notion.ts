@@ -41,6 +41,7 @@ export async function getSubjects(): Promise<Subject[]> {
 
 	let subjects: Subject[] = await Promise.all(subjectPromises)
 		.then((subjectData) => {
+			// @ts-ignore
 			return dictData.results.map(
 				async (currentSubject: any, currentSubjectIndex: number) => {
 					let content = await getClasses(

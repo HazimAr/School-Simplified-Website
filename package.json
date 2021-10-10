@@ -12,6 +12,9 @@
 		"ChakraUI",
 		"Boilerplate"
 	],
+	"engines": {
+		"node": ">=16.0.0"
+	},
 	"scripts": {
 		"dev": "next dev -p 6969",
 		"build": "next build",

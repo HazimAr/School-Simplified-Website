@@ -31,6 +31,7 @@ export async function getSubjects(): Promise<Subject[]> {
 		{},
 		notionConfig
 	);
+	// @ts-ignore
 	const subjectPromises = dictData.results.map((page: any) => {
 		return axios.get(
 			`https://api.notion.com/v1/blocks/${page.id}/children`,
@@ -157,9 +158,9 @@ async function getUnits(
 					// const blockID = block.id;
 					if (href.length && notesTitle.length) {
 						const note: NotesProps = {
-									title: notesTitle,
-									href: href,
-							  };
+							title: notesTitle,
+							href: href,
+						};
 						// console.log(title);
 						// console.log(href);
 						// console.log(note.lastEdited);

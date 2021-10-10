@@ -20,7 +20,7 @@
 		"clean": "npx prettier --write ."
 	},
 	"dependencies": {
-		"@babel/core": "^7.15.5",
+		"@babel/core": "^7.15.8",
 		"@badrap/bar-of-progress": "^0.1.2",
 		"@chakra-ui/icons": "^1.0.15",
 		"@chakra-ui/react": "^1.6.7",
@@ -40,7 +40,7 @@
 	},
 	"devDependencies": {
 		"@babel/preset-typescript": "^7.15.0",
-		"@types/babel__core": "^7.1.15",
+		"@types/babel__core": "^7.1.16",
 		"@types/fuzzaldrin-plus": "^0.6.2",
 		"@types/next": "^9.0.0",
 		"@types/node": "^16.7.10",
@@ -48,6 +48,6 @@
 		"@types/react-icons": "^3.0.0",
 		"eslint": "^7.32.0",
 		"prettier": "^2.3.2",
-		"typescript": "^4.4.2"
+		"typescript": "^4.4.3"
 	}
 }

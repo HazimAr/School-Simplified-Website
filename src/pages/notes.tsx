@@ -1,5 +1,5 @@
 import { getSubjects } from "@api/notion";
-import { Box, Heading, Text, Center } from "@chakra-ui/react";
+import { Box, Center, Heading, Text } from "@chakra-ui/react";
 import ContainerBackground from "@components/containerBackground";
 import ContainerInside from "@components/containerInside";
 import NotesSection from "@components/resources/notes_section";

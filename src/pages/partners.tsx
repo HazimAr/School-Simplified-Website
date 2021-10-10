@@ -3,13 +3,13 @@ import {
 	Center,
 	Divider,
 	Heading,
+	HStack,
 	Image,
 	Popover,
 	PopoverBody,
 	PopoverContent,
 	PopoverHeader,
 	PopoverTrigger,
-	HStack,
 	Text,
 	useDisclosure,
 	Wrap,
@@ -19,7 +19,7 @@ import StyledButton from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
-import React, { ReactElement } from "react";
+import { ReactElement } from "react";
 
 export default function partners(): ReactElement {
 	return (

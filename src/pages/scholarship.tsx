@@ -1,27 +1,20 @@
-import {
-    Flex,
-	Text,
-    Heading
-} from "@chakra-ui/react";
+import { getScholarshipData } from "@api/notion";
+import { Flex, Heading, Text } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import React from "react";
 import { ScholarshipProps } from "types";
-import { getScholarshipData } from "@api/notion";
 
 export default function Scholarship({
-    scholarshipData,
+	scholarshipData,
 }: {
-    scholarshipData: ScholarshipProps[]
+	scholarshipData: ScholarshipProps[];
 }): JSX.Element {
-    return (
-        <Container py={19}>
-            <ContainerInside>
-                <Heading>
-                    This page is temporary lol how did u find it
-                </Heading>
-                {scholarshipData.map((entry, i: number) => {
-                    return (
+	return (
+		<Container py={19}>
+			<ContainerInside>
+				<Heading>This page is temporary lol how did u find it</Heading>
+				{scholarshipData.map((entry, i: number) => {
+					return (
 						<Flex key={i} py={2}>
 							<Text width="100%" fontSize={10}>
 								{entry.title}
@@ -52,10 +45,10 @@ export default function Scholarship({
 							</Text>
 						</Flex>
 					);
-                })}
-            </ContainerInside>
-        </Container>
-    );
+				})}
+			</ContainerInside>
+		</Container>
+	);
 }
 
 export async function getServerSideProps() {

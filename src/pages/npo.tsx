@@ -1,15 +1,15 @@
 import {
 	Heading,
 	HStack,
-	VStack,
 	Image,
+	ListItem,
 	Stack,
 	UnorderedList,
-	ListItem,
+	VStack,
 } from "@chakra-ui/react";
 import Button from "@components/button";
-import ContainerBackground from "@components/containerBackground";
 import Container from "@components/container";
+import ContainerBackground from "@components/containerBackground";
 import ContainerInside from "@components/containerInside";
 
 export default function Npo() {

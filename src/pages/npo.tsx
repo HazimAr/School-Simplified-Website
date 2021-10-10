@@ -101,7 +101,7 @@ function Card({ heading, items, src = "/timmy/1.png" }) {
 			py="25px"
 			bg="brand.transparent"
 			position="relative"
-			maxW="600px"
+			maxW="700px"
 			w="100%"
 		>
 			<Heading>{heading}</Heading>

@@ -184,29 +184,34 @@ const seniorExecs: Person[] = [
 		img: "/staff/LaurenHsieh.jpg",
 	},
 	{
+		name: "Anncine Lin",
+		title: "Deputy Chief of Staff",
+		img: "/staff/AnncineLin.jpg",
+	},
+	{
 		name: "Harry Chow",
 		title: "Chief Marketing Officer (CMO)",
 		img: "/staff/HarryChow.jpg",
 	},
 	{
-		name: "Jason Mei",
-		title: "Chief Information & Technology Officer (CIO)",
-		img: "/staff/JasonMei.jpg",
-	},
-	{
-		name: "Harold Huang",
-		title: "Chief Human Resources Officer",
-		img: "/staff/HaroldHuang.png",
-	},
-	{
-		name: "Hazim Arafa",
-		title: "President of Programming Simplified",
-		img: "/staff/HazimArafa.jpg",
+		name: "Masa Murry",
+		title: "Senior Vice President of Global Marketing",
+		img: "/staff/",
 	},
 	{
 		name: "Aarush Goradia",
 		title: "President of Student Advancement (PSA)",
 		img: "/staff/AarushGoradia.jpg",
+	},
+	{
+		name: "Jason Mei",
+		title: "Executive Vice President of Information Technology",
+		img: "/staff/JasonMei.jpg",
+	},
+	{
+		name: "Hazim Arafa",
+		title: "President of Programming Simplified",
+		img: "/staff/HazimArafa.jpg",
 	},
 	{
 		name: "David Sun",
@@ -229,34 +234,28 @@ const seniorExecs: Person[] = [
 const execs: Person[] = [
 	{
 		name: "Yasmeen Elkheir",
-		title: "Vice President of Operations @Programming Simplified",
+		title: "Vice President of Programming Simplified, Operations",
 		img: "/staff/YasmeenElkheir.jpg",
 	},
-
 	{
 		name: "Isamar Zhu",
-		title: "Vice President of Staff @Programming Simplified",
+		title: "Vice President of Programming Simplified, Staff",
 		img: "/staff/IsamarZhu.jpg",
 	},
 	{
-		name: "Jiaho Zhang",
-		title: "Vice President of Advancement",
-		img: "/staff/JiahoZhang.jpg",
-	},
-	{
-		name: "Josh Schram",
-		title: "Senior Vice President of Academics",
-		img: "/staff/JoshSchram.jpg",
-	},
-	{
 		name: "Rohit Choudhary",
-		title: "Senior Vice President of Academics",
+		title: "Vice President of Academics",
 		img: "/staff/RohitChoudhary.jpg",
 	},
 	{
-		name: "Masa Murry",
-		title: "Vice President of Marketing",
-		img: "/staff/MasaMurry.jpg",
+		name: "Josh Schram",
+		title: "Vice President of Academics",
+		img: "/staff/JoshSchram.jpg",
+	},
+	{
+		name: "Jiahao Zhang",
+		title: "Global Vice President of Advancement",
+		img: "/staff/JiahoZhang.jpg",
 	},
 	{
 		name: "Max Konzerowsky",
@@ -282,15 +281,16 @@ const boardOfDirectors: Person[] = [
 		img: "/staff/default.png",
 	},
 	{
+		name: "Madison Li",
+		title: "Lead Director",
+		img: "/staff/default.png",
+	},
+	{
 		name: "Ethan Hsu",
 		title: "Director & CEO",
 		img: "/staff/default.png",
 	},
-	{
-		name: "Madison Li",
-		title: "Director",
-		img: "/staff/default.png",
-	},
+
 	{
 		name: "Harry Chow",
 		title: "Director",
@@ -318,6 +318,16 @@ const boardOfDirectors: Person[] = [
 	},
 	{
 		name: "Isaias Vilato",
+		title: "Director",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Param Patil",
+		title: "Director",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Kayla Laguana",
 		title: "Director",
 		img: "/staff/default.png",
 	},

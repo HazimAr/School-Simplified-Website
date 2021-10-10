@@ -9,12 +9,24 @@ export default function Resources({ subjects }: AllSubjects): JSX.Element {
 	return (
 		<>
 			<Container
-				backgroundImage="/timmy/lofi_timmy.png"
-				backgroundPosition="center"
-				backgroundRepeat="no-repeat"
-				backgroundSize="cover"
+				// backgroundImage="/timmy/lofi_timmy.png"
+				// backgroundPosition="center"
+				// backgroundRepeat="no-repeat"
+				// backgroundSize="cover"
+				position="relative"
+				zIndex={1}
+				_before={{
+					content: "''",
+					position: "absolute",
+					zIndex: -1,
+					top: 0,
+					left: 0,
+					right: 0,
+					bottom: 0,
+					background: "url('/timmy/lofi_timmy.png') center center",
+					opacity: 0.25,
+				}}
 				// filter="brightness(0.8)"
-				opacity="0.25"
 			>
 				<ContainerInside py="15vh" my={5}>
 					<Box textAlign="center">

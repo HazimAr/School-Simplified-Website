@@ -34,7 +34,7 @@ export default function Footer(): JSX.Element {
 		<Box as="footer">
 			<Box zIndex={-1}>
 				<Wave
-					fill={purple}	
+					fill={purple}
 					// paused
 					options={{
 						height: 120,
@@ -137,7 +137,10 @@ export default function Footer(): JSX.Element {
 								<HStack>
 									{socials.map((item) => {
 										return (
-											<NextLink href={item.link}>
+											<NextLink
+												key={item.link}
+												href={item.link}
+											>
 												<item.icon size={size} />
 											</NextLink>
 										);

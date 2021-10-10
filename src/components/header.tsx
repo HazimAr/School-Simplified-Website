@@ -27,6 +27,7 @@ export default function Header(): JSX.Element {
 				position="fixed"
 				zIndex={1000}
 				bg="brand.transparent"
+				backdropFilter="blur(12px)"
 				// filter="blur(24px)"
 			>
 				<ContainerInside>

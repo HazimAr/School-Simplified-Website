@@ -195,6 +195,7 @@ export async function getArtInfo(): Promise<ArtData> {
 		monthlyPrompt = "Legend of Internet History", // default monthly prompt
 		name = "Rick Astley", // default name
 		socialMedia: SocialMedia[] = [];
+	//@ts-ignore
 	for (const block of artPageData.results) {
 		if (block.type == "paragraph" && block.paragraph.text.length) {
 			const firstText: string = block.paragraph.text[0].plain_text;
@@ -378,6 +379,7 @@ export async function getFaqInfo(): Promise<QASection[]> {
 		title: string = "",
 		list: QAPair[] = [];
 	// console.log(data);
+	//@ts-ignore
 	for (const block of data.results) {
 		if (block.type.startsWith("heading")) {
 			const headingText = block[block.type].text;
@@ -451,6 +453,7 @@ export async function getGovernanceData(): Promise<GovernanceSection[]> {
 	let output: GovernanceSection[] = [],
 		sectionTitle: string = "",
 		documents: GovernanceDocument[] = [];
+	//@ts-ignore
 	for (const block of data.results) {
 		if (block.type.startsWith("heading")) {
 			const headingText = block[block.type].text;
@@ -544,6 +547,7 @@ export async function getScholarshipData(): Promise<ScholarshipProps[]> {
 	let output: ScholarshipProps[] = [];
 
 	// for each database entry
+	//@ts-ignore
 	for (const entry of data.results) {
 		// for each category in the entry
 		output.push({
@@ -651,6 +655,7 @@ export async function getBlogPage(id: string): Promise<BlogPage> {
 		`https://api.notion.com/v1/blocks/${id}/children`,
 		notionConfig
 	);
+	//@ts-ignore
 	return { blocks: pageData.results };
 }
 
@@ -662,6 +667,7 @@ export async function getLinkButtons(): Promise<LinkButtonProps[]> {
 	const output: LinkButtonProps[] = [];
 
 	let current: LinkButtonProps = { href: "", text: "" };
+	//@ts-ignore
 	for (const block of data.results) {
 		if (block.type.startsWith("heading")) {
 			// put old LinkButtonProps into list

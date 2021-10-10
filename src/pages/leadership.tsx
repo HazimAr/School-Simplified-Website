@@ -287,7 +287,7 @@ const boardOfDirectors: Person[] = [
 	},
 	{
 		name: "Ethan Hsu",
-		title: "Director & CEO",
+		title: "Chairperson & CEO",
 		img: "/staff/default.png",
 	},
 

@@ -208,6 +208,7 @@ const seniorExecs: Person[] = [
 		title: "Executive Vice President of Information Technology",
 		img: "/staff/JasonMei.jpg",
 	},
+
 	{
 		name: "Hazim Arafa",
 		title: "President of Programming Simplified",
@@ -223,7 +224,6 @@ const seniorExecs: Person[] = [
 		title: "President of National Chapters",
 		img: "/staff/DavidSun",
 	},
-
 	{
 		name: "Diana Zheng",
 		title: "Treasurer",
@@ -292,11 +292,6 @@ const boardOfDirectors: Person[] = [
 	},
 
 	{
-		name: "Harry Chow",
-		title: "Director",
-		img: "/staff/default.png",
-	},
-	{
 		name: "Lauren Hsieh",
 		title: "Director & Secretary",
 		img: "/staff/default.png",
@@ -304,6 +299,11 @@ const boardOfDirectors: Person[] = [
 	{
 		name: "Diana Zheng",
 		title: "Director & Treasurer",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Harry Chow",
+		title: "Director",
 		img: "/staff/default.png",
 	},
 	{

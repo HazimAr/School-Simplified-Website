@@ -26,6 +26,8 @@ export default function Header(): JSX.Element {
 				w="100%"
 				position="fixed"
 				zIndex={1000}
+				bg="brand.transparent"
+				// filter="blur(24px)"
 			>
 				<ContainerInside>
 					<Flex

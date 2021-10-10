@@ -199,9 +199,9 @@ const seniorExecs: Person[] = [
 		img: "/staff/",
 	},
 	{
-		name: "Aarush Goradia",
-		title: "President of Student Advancement (PSA)",
-		img: "/staff/AarushGoradia.jpg",
+		name: "Param Patil",
+		title: "Chief Advancements Officer (CAO)",
+		img: "/staff/RohitChoudhary.jpg",
 	},
 	{
 		name: "Jason Mei",
@@ -214,14 +214,14 @@ const seniorExecs: Person[] = [
 		img: "/staff/HazimArafa.jpg",
 	},
 	{
+		name: "Aarush Goradia",
+		title: "President of Student Advancement (PSA)",
+		img: "/staff/AarushGoradia.jpg",
+	},
+	{
 		name: "David Sun",
 		title: "President of National Chapters",
 		img: "/staff/DavidSun",
-	},
-	{
-		name: "Param Patil",
-		title: "Chief Advancements Officer (CAO)",
-		img: "/staff/RohitChoudhary.jpg",
 	},
 
 	{
@@ -236,6 +236,11 @@ const execs: Person[] = [
 		name: "Yasmeen Elkheir",
 		title: "Vice President of Programming Simplified, Operations",
 		img: "/staff/YasmeenElkheir.jpg",
+	},
+	{
+		name: "Rohit Penta",
+		title: "Vice President of Technical",
+		img: "/staff/RohitPenta.jpg",
 	},
 	{
 		name: "Isamar Zhu",
@@ -266,11 +271,6 @@ const execs: Person[] = [
 		name: "Nicholas Zhang",
 		title: "Vice President of Technical",
 		img: "/staff/NicholasZhang.jpg",
-	},
-	{
-		name: "Rohit Penta",
-		title: "Vice President of Technical",
-		img: "/staff/RohitPenta.jpg",
 	},
 ];
 

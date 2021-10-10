@@ -6,7 +6,6 @@ import {
 	Stack,
 	UnorderedList,
 	ListItem,
-	Center,
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import ContainerBackground from "@components/containerBackground";

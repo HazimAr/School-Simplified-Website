@@ -18,8 +18,7 @@ import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
 import Searchbar from "@components/searchbar";
 import { filter } from "fuzzaldrin-plus";
-import Head from "next/head";
-import React, { cloneElement, useState } from "react";
+import { cloneElement, useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { BlogListing } from "types";
 
@@ -42,14 +41,15 @@ export default function Blog({
 
 	return (
 		<>
-			<Head>
-				<title>School Simplified | Blogs</title>
-			</Head>
 			<Container>
 				<ContainerInside my={10}>
 					<Heading as="h1" size="xl">
-						Blogs
+						Blogs and Articles
 					</Heading>
+					<HStack>
+						<Stack></Stack>
+						<Image src="/timmy/resources.png" maxH="300px" />
+					</HStack>
 				</ContainerInside>
 			</Container>
 			<Container bg="brand.transparent">

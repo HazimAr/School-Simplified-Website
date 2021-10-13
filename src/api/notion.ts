@@ -2,9 +2,9 @@ import axios from "axios";
 import {
 	AnswerPart,
 	ArtData,
-	// Author,
-	// BlogListing,
-	// BlogPage,
+	Author,
+	BlogListing,
+	BlogPage,
 	Class,
 	GovernanceDocument,
 	GovernanceSection,
@@ -41,7 +41,7 @@ export async function getSubjects(): Promise<Subject[]> {
 
 	let subjects: Subject[] = await Promise.all(subjectPromises)
 		.then((subjectData) => {
-	//@ts-ignore
+			//@ts-ignore
 			return dictData.results.map(
 				async (currentSubject: any, currentSubjectIndex: number) => {
 					let content = await getClasses(
@@ -70,6 +70,7 @@ async function getClasses(
 	subjectIndex: number
 ): Promise<Class[]> {
 	const currentSubject = subjectData[subjectIndex].data.results;
+	//@ts-ignore
 	return Promise.all(
 		currentSubject
 			.filter((currentClass: any) => currentClass?.child_page?.title)
@@ -106,7 +107,6 @@ async function getUnits(
 	});
 	return Promise.all(promises2)
 		.then((allPromises) => {
-			// @ts-expect-error
 			return allPromises[classIndex].data.results;
 		})
 		.then((blocks) => {
@@ -160,13 +160,13 @@ async function getUnits(
 					if (href.length && notesTitle.length) {
 						const note: NotesProps = block.last_edited_time
 							? {
-									title: notesTitle,
-									href: href,
-							  }
+								title: notesTitle,
+								href: href,
+							}
 							: {
-									title: notesTitle,
-									href: href,
-							  };
+								title: notesTitle,
+								href: href,
+							};
 						// console.log(title);
 						// console.log(href);
 						// console.log(note.lastEdited);
@@ -195,7 +195,7 @@ export async function getArtInfo(): Promise<ArtData> {
 	);
 
 	let image =
-			"https://www.thewrap.com/wp-content/uploads/2016/08/Rick-Astley-618x400.jpg", // default image
+		"https://www.thewrap.com/wp-content/uploads/2016/08/Rick-Astley-618x400.jpg", // default image
 		description = "It's Rick Astley", // default description
 		monthlyPrompt = "Legend of Internet History", // default monthly prompt
 		name = "Rick Astley", // default name
@@ -274,9 +274,9 @@ export async function getArtInfo(): Promise<ArtData> {
 								if (token.includes("\n")) {
 									// this entry is done
 									const miniToken = token.substring(
-											0,
-											token.indexOf("\n")
-										),
+										0,
+										token.indexOf("\n")
+									),
 										splitIdx = miniToken.indexOf(": ");
 									if (splitIdx === -1) {
 										console.warn(
@@ -587,81 +587,81 @@ export async function getScholarshipData(): Promise<ScholarshipProps[]> {
 	return output;
 }
 
-// export async function getBlogListing(): Promise<BlogListing[]> {
-// 	return axios
-// 		.post(
-// 			"https://api.notion.com/v1/databases/79d546abf96847c6ab3cd8cffe002c39/query",
-// 			{},
-// 			notionConfig
-// 		)
-// 		.then((output) => {
-// 			const results = output.data.results;
-// 			return results.map((result: any): BlogListing => {
-// 				const authorObjects: any[] = result.properties.Author?.people,
-// 					titleText = result.properties.Name?.title,
-// 					linkText = result.properties.Link?.rich_text,
-// 					category = result.properties.Category?.select.name ?? null,
-// 					icon = result.properties.Icon?.url ?? null;
-// 				let title;
-// 				if (titleText?.length) {
-// 					title = "";
-// 					for (const titleSegment of titleText) {
-// 						title += titleSegment.plain_text;
-// 					}
-// 				} else {
-// 					title = "MALFORMED";
-// 				}
-// 				let link;
-// 				if (linkText?.length) {
-// 					link = "";
-// 					for (const linkSegment of linkText) {
-// 						link += linkSegment.plain_text;
-// 					}
-// 				} else {
-// 					link = result.id;
-// 				}
+export async function getBlogListing(): Promise<BlogListing[]> {
+	return axios
+		.post(
+			"https://api.notion.com/v1/databases/79d546abf96847c6ab3cd8cffe002c39/query",
+			{},
+			notionConfig
+		)
+		.then((output) => {
+			const results = output.data.results;
+			return results.map((result: any): BlogListing => {
+				const authorObjects: any[] = result.properties.Author?.people,
+					titleText = result.properties.Name?.title,
+					linkText = result.properties.Link?.rich_text,
+					category = result.properties.Category?.select.name ?? null,
+					icon = result.properties.Icon?.url ?? null;
+				let title;
+				if (titleText?.length) {
+					title = "";
+					for (const titleSegment of titleText) {
+						title += titleSegment.plain_text;
+					}
+				} else {
+					title = "MALFORMED";
+				}
+				let link;
+				if (linkText?.length) {
+					link = "";
+					for (const linkSegment of linkText) {
+						link += linkSegment.plain_text;
+					}
+				} else {
+					link = result.id;
+				}
 
-// 				if (authorObjects?.length) {
-// 					const authors: Author[] = authorObjects.map(
-// 						(authorObject): Author => {
-// 							return {
-// 								name: authorObject.name,
-// 								avatar_url: authorObject.avatar_url,
-// 							};
-// 						}
-// 					);
-// 					return {
-// 						created_time: result.created_time,
-// 						last_edited_time: result.last_edited_time,
-// 						title,
-// 						id: result.id,
-// 						link,
-// 						category,
-// 						icon,
-// 						authors,
-// 					};
-// 				} else {
-// 					return {
-// 						created_time: result.created_time,
-// 						last_edited_time: result.last_edited_time,
-// 						title,
-// 						id: result.id,
-// 						link,
-// 						icon,
-// 						category,
-// 					};
-// 				}
-// 			});
-// 		});
-// }
+				if (authorObjects?.length) {
+					const authors: Author[] = authorObjects.map(
+						(authorObject): Author => {
+							return {
+								name: authorObject.name,
+								avatar_url: authorObject.avatar_url,
+							};
+						}
+					);
+					return {
+						created_time: result.created_time,
+						last_edited_time: result.last_edited_time,
+						title,
+						id: result.id,
+						link,
+						category,
+						icon,
+						authors,
+					};
+				} else {
+					return {
+						created_time: result.created_time,
+						last_edited_time: result.last_edited_time,
+						title,
+						id: result.id,
+						link,
+						icon,
+						category,
+					};
+				}
+			});
+		});
+}
 
-// export async function getBlogPage(id: string): Promise<BlogPage> {
-// 	const { data: pageData } = await axios.get(
-// 		`https://api.notion.com/v1/blocks/${id}/children`,
-// 		notionConfig
-// 	);
-// 	return { blocks: pageData.results };
-// }
+export async function getBlogPage(id: string): Promise<BlogPage> {
+	const { data: pageData } = await axios.get(
+		`https://api.notion.com/v1/blocks/${id}/children`,
+		notionConfig
+	);
+	return { blocks: pageData.results };
+}
 
 export async function getLinkButtons(): Promise<LinkButtonProps[]> {
 	const { data } = await axios.get(
@@ -671,7 +671,6 @@ export async function getLinkButtons(): Promise<LinkButtonProps[]> {
 	const output: LinkButtonProps[] = [];
 
 	let current: LinkButtonProps = { href: "", text: "" };
-	//@ts-ignore
 	for (const block of data.results) {
 		if (block.type.startsWith("heading")) {
 			// put old LinkButtonProps into list

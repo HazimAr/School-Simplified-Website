@@ -103,6 +103,7 @@ async function getUnits(
 	});
 	return Promise.all(promises2)
 		.then((allPromises) => {
+			//@ts-ignore
 			return allPromises[classIndex].data.results;
 		})
 		.then((blocks) => {
@@ -505,7 +506,6 @@ function parseAppropriateData(
 					return entry.properties[property].rich_text[0].plain_text;
 				return "";
 			case "multi_select":
-
 				return entry.properties[property].multi_select.map(prop => prop.name);
 			default:
 				console.warn(

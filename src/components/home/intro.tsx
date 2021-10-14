@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Image, Text, VStack } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text, VStack } from "@chakra-ui/react";
 import ContainerBackground from "@components/containerBackground";
 import ContainerInside from "@components/containerInside";
 import CountUp from "react-countup";

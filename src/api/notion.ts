@@ -152,7 +152,6 @@ async function getUnits(
 						}
 					}
 
-					// const blockID = block.id;
 					if (href.length && notesTitle.length) {
 						const note: NotesProps = {
 							title: notesTitle,
@@ -506,15 +505,8 @@ function parseAppropriateData(
 					return entry.properties[property].rich_text[0].plain_text;
 				return "";
 			case "multi_select":
-				let output: any[] = [];
-				for (
-					let i = 0;
-					i < entry.properties[property].multi_select.length;
-					i++
-				)
-					output.push(
-						entry.properties[property].multi_select[i].name
-					);
+				let output = entry.properties[property].multi_select.map(prop => prop.name);
+
 				return output;
 			default:
 				console.warn(

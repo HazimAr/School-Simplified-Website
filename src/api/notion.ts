@@ -505,9 +505,8 @@ function parseAppropriateData(
 					return entry.properties[property].rich_text[0].plain_text;
 				return "";
 			case "multi_select":
-				let output = entry.properties[property].multi_select.map(prop => prop.name);
 
-				return output;
+				return entry.properties[property].multi_select.map(prop => prop.name);
 			default:
 				console.warn(
 					`ID ${entry.id} [${datatype}] is an invalid datatype!`

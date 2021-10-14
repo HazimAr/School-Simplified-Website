@@ -167,19 +167,10 @@ export default function About({ data }: { data: any }): JSX.Element {
 }
 
 export async function getServerSideProps() {
-	// const data = await getGovernanceData();
+	const data = await getGovernanceData();
 	return {
 		props: {
-			data: [
-				{
-					title: "hi",
-					docs: [
-						{
-							href: "/",
-						},
-					],
-				},
-			],
+			data,
 		},
 	};
 }

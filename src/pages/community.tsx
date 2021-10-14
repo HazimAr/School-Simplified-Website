@@ -1,6 +1,5 @@
 import { getArtInfo } from "@api/notion";
 import {
-	Divider,
 	Heading,
 	Image,
 	ListItem,

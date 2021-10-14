@@ -167,8 +167,21 @@ export default function About({ data }: { data: any }): JSX.Element {
 }
 
 export async function getServerSideProps() {
-	const data = await getGovernanceData();
-	return { props: { data } };
+	// const data = await getGovernanceData();
+	return {
+		props: {
+			data: [
+				{
+					title: "hi",
+					docs: [
+						{
+							href: "/",
+						},
+					],
+				},
+			],
+		},
+	};
 }
 
 const seniorExecs: Person[] = [

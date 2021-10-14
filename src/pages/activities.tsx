@@ -24,8 +24,10 @@ export default function Activities() {
 								student opportunities outside of school. Our
 								goal is to advance learning outside of school!
 							</Text>
+							<Button>Club President</Button>
 						</VStack>
 						<Image src="/timmy/16.png" w="600px" />
+						
 					</HStack>
 				</ContainerInside>
 			</Container>

@@ -39,6 +39,7 @@ export async function getSubjects(): Promise<Subject[]> {
 		);
 	});
 
+	//@ts-ignore
 	let subjects: Subject[] = await Promise.all(subjectPromises)
 		.then((subjectData) => {
 			//@ts-ignore
@@ -93,13 +94,8 @@ async function getUnits(
 	currentClass: any,
 	classIndex: number
 ): Promise<Unit[]> {
-	// const { data: classPageData } = await axios.get(
-	// 	`https://api.notion.com/v1/pages/${currentClass.id}`,
-	// 	config
-	// );
-	// const pageURL = classPageData.url;
 
-	const promises2 = currentSubject.map(() => {
+	const pomises2 = currentSubject.map(() => {
 		return axios.get(
 			`https://api.notion.com/v1/blocks/${currentClass.id}/children`,
 			notionConfig
@@ -158,18 +154,11 @@ async function getUnits(
 
 					// const blockID = block.id;
 					if (href.length && notesTitle.length) {
-						const note: NotesProps = block.last_edited_time
-							? {
-								title: notesTitle,
-								href: href,
-							}
-							: {
-								title: notesTitle,
-								href: href,
-							};
-						// console.log(title);
-						// console.log(href);
-						// console.log(note.lastEdited);
+						const note: NotesProps = {
+							title: notesTitle,
+							href: href,
+						};
+
 						notes.push(note);
 					} else if (title.length) {
 						console.warn(
@@ -445,7 +434,6 @@ export async function getFaqInfo(): Promise<QASection[]> {
 	if (title.length) {
 		output.push({ title, list });
 	}
-	// console.log(qaPairs);
 	return output;
 }
 
@@ -594,8 +582,8 @@ export async function getBlogListing(): Promise<BlogListing[]> {
 			{},
 			notionConfig
 		)
-		.then((output) => {
-			const results = output.data.results;
+		.then(({ data }: any) => {
+			const results = data.results;
 			return results.map((result: any): BlogListing => {
 				const authorObjects: any[] = result.properties.Author?.people,
 					titleText = result.properties.Name?.title,
@@ -660,6 +648,7 @@ export async function getBlogPage(id: string): Promise<BlogPage> {
 		`https://api.notion.com/v1/blocks/${id}/children`,
 		notionConfig
 	);
+	//@ts-ignore
 	return { blocks: pageData.results };
 }
 
@@ -671,6 +660,7 @@ export async function getLinkButtons(): Promise<LinkButtonProps[]> {
 	const output: LinkButtonProps[] = [];
 
 	let current: LinkButtonProps = { href: "", text: "" };
+	//@ts-ignore
 	for (const block of data.results) {
 		if (block.type.startsWith("heading")) {
 			// put old LinkButtonProps into list

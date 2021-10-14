@@ -95,7 +95,7 @@ async function getUnits(
 	classIndex: number
 ): Promise<Unit[]> {
 
-	const pomises2 = currentSubject.map(() => {
+	const promises2 = currentSubject.map(() => {
 		return axios.get(
 			`https://api.notion.com/v1/blocks/${currentClass.id}/children`,
 			notionConfig

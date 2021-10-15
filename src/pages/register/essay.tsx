@@ -1,10 +1,10 @@
 import { Center } from "@chakra-ui/react";
-import Container from "@components/container";
+import ContainerBackground from "@components/containerBackground";
 import ContainerInside from "@components/containerInside";
 
 export default function Essay(): JSX.Element {
 	return (
-		<Container>
+		<ContainerBackground src="/timmy/lofi_timmy.png">
 			<ContainerInside >
 				<Center>
 					<iframe

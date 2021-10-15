@@ -56,7 +56,6 @@ const theme = extendTheme({
 				backgroundPosition: "center",
 				backgroundRepeat: "no-repeat",
 				backgroundAttachment: "fixed",
-
 				color: "white",
 			},
 			a: {

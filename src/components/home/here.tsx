@@ -51,7 +51,13 @@ export default function Here() {
 							button="Submit Essay"
 							href="/essay"
 						/>
-
+						<Card
+							title="Free Essay Revision"
+							description="We offer comprehensive proofreading for all types of writing!"
+							button="Submit Essay"
+							href="/essay"
+						/>
+						
 						{/* <Card
 						title="HS/College Prep"
 						description="Lorem ipsum dolor sit amet consectetur elit. Assumenda minima deleniti Lorem ipsum"

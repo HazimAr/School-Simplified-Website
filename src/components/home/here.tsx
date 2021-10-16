@@ -11,7 +11,6 @@ export default function Here() {
 		<Container
 			bg="linear-gradient(180deg, rgba(167, 178, 255, 0.5) 0%, rgba(90, 96, 173, 0.25) 100%);"
 			py="50px"
-			mb="25px"
 		>
 			<ContainerInside>
 				<Flex

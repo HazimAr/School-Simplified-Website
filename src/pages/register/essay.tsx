@@ -5,7 +5,7 @@ import ContainerInside from "@components/containerInside";
 export default function Essay(): JSX.Element {
 	return (
 		<ContainerBackground src="/timmy/lofi_timmy.png">
-			<ContainerInside >
+			<ContainerInside>
 				<Center>
 					<iframe
 						title=""
@@ -20,6 +20,6 @@ export default function Essay(): JSX.Element {
 					</iframe>
 				</Center>
 			</ContainerInside>
-		</Container>
+		</ContainerBackground>
 	);
 }

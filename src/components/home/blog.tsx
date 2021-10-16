@@ -1,20 +1,11 @@
-import {
-	Box,
-	Flex,
-	Heading,
-	HStack,
-	Image,
-	Text,
-	Stack,
-} from "@chakra-ui/react";
-
+import { Box, Heading, HStack, Text, Stack } from "@chakra-ui/react";
 import ContainerInside from "@components/containerInside";
 import Button from "@components/button";
 import ContainerBackground from "@components/containerBackground";
 
 export default function Blog() {
 	return (
-		<ContainerBackground py={10} >
+		<ContainerBackground py={10}>
 			<ContainerInside>
 				<Stack textAlign="left" spacing={5}>
 					<Stack w={{ base: "100%", lg: "50%" }}>

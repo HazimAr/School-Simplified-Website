@@ -1,12 +1,39 @@
-import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
-import Container from "@components/container";
-import ContainerInside from "@components/containerInside";
+import {
+	Box,
+	Flex,
+	Heading,
+	HStack,
+	Image,
+	Text,
+	Stack,
+} from "@chakra-ui/react";
 
-export default function Why(): JSX.Element {
+import ContainerInside from "@components/containerInside";
+import Button from "@components/button";
+import ContainerBackground from "@components/containerBackground";
+
+export default function Blog() {
 	return (
-		<Container py={5}>
+		<ContainerBackground py={10} >
 			<ContainerInside>
-				<Box py={5}>
+				<Stack textAlign="left" spacing={5}>
+					<Stack w={{ base: "100%", lg: "50%" }}>
+						<Heading>
+							Check out <br /> The Latest Read!
+						</Heading>
+						<Text>
+							Check out the latest blog from our student authors
+							and read about what they have to say!
+						</Text>
+						<Button w="fit-content">Read More</Button>
+					</Stack>
+					<HStack justify="center" spacing={{ base: 0, lg: 5 }}>
+						<Card />
+						<Card />
+						<Card />
+					</HStack>
+				</Stack>
+				{/* <Box py={5}>
 					<Flex
 						align="center"
 						justify="center"
@@ -38,8 +65,12 @@ export default function Why(): JSX.Element {
 							mt={{ base: 8, md: 0 }}
 						/>
 					</Flex>
-				</Box>
+				</Box> */}
 			</ContainerInside>
-		</Container>
+		</ContainerBackground>
 	);
+}
+
+function Card() {
+	return <Box rounded={20} h="300px" w="100%" bg="brand.transparent"></Box>;
 }

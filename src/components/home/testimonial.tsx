@@ -4,11 +4,6 @@ import ContainerInside from "@components/containerInside";
 
 const Reviews = [
 	{
-		review: "I was in a panic, attempting to write a final paper 9 hours before its due date, and I was in need of  help. I didn’t think I could do it, yet I somehow got it completed thanks to their help and I’m forever grateful!",
-		name: "Luna",
-		title: "Sophomore",
-	},
-	{
 		review: "They helped me over the course of 3 days redo over 9 assignments to pass the year. I want everyone to know that they are so kind and always ready to help, they are always courteous and understanding. I want to say from the bottom of my heart, thank you!",
 		name: "Dak",
 		title: "Freshman",
@@ -22,11 +17,12 @@ const Reviews = [
 
 export default function Intro() {
 	return (
-		<Container py={20} bg="brand.transparent">
+		<Container
+			py={20}
+			bg="linear-gradient(180deg, rgba(161, 167, 237, 0.6) 0%, rgba(108, 125, 254, 0.6) 100%);"
+		>
 			<ContainerInside>
-				<Heading as="h1" m={5}>
-					Success Stories
-				</Heading>
+				<Heading as="h1">Success Stories</Heading>
 
 				<Flex justify="center">
 					<Flex
@@ -64,24 +60,6 @@ export default function Intro() {
 								</Heading>
 								<Heading as="h3" size="xs" color="white">
 									{Reviews[1].title}
-								</Heading>
-							</Box>
-						</Box>
-						<Center
-							height="100%"
-							mx={20}
-							display={{ base: "none", lg: "block" }}
-						>
-							<Divider orientation="vertical" bg="white" />
-						</Center>
-						<Box w="100%" my={{ base: 0, lg: 5 }}>
-							<Text>"{Reviews[2].review}"</Text>
-							<Box mt={4}>
-								<Heading as="h2" size="md">
-									{Reviews[2].name}
-								</Heading>
-								<Heading as="h3" size="xs" color="white">
-									{Reviews[2].title}
 								</Heading>
 							</Box>
 						</Box>

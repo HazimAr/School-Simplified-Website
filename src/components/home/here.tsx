@@ -8,7 +8,11 @@ import React from "react";
 
 export default function Here() {
 	return (
-		<Container bg="brand.transparent" py="50px" mb="25px">
+		<Container
+			bg="linear-gradient(180deg, rgba(167, 178, 255, 0.5) 0%, rgba(90, 96, 173, 0.25) 100%);"
+			py="50px"
+			mb="25px"
+		>
 			<ContainerInside>
 				<Flex
 					justify="center"
@@ -28,6 +32,7 @@ export default function Here() {
 						button="Sign Up"
 						href="/tutoring"
 						mt={{ base: "25px", lg: 0 }}
+						ml={{ base: 0, lg: "25px" }}
 					/>
 					<Card
 						title="Free Essay Revision"
@@ -35,13 +40,15 @@ export default function Here() {
 						button="Submit Essay"
 						href="/essay"
 						mt={{ base: "25px", lg: 0 }}
+						ml={{ base: 0, lg: "25px" }}
 					/>
 					<Card
-						title="Free Essay Revision"
+						title="Free Homework Help"
 						description="We offer comprehensive proofreading for all types of writing!"
 						button="Submit Essay"
 						href="/essay"
 						mt={{ base: "25px", lg: 0 }}
+						ml={{ base: 0, lg: "25px" }}
 					/>
 				</Flex>
 			</ContainerInside>
@@ -54,21 +61,17 @@ function Card(props) {
 	return (
 		<VStack
 			rounded={rounded}
-			bg="brand.transparent2"
-			minH={300}
+			bg="brand.transparent"
 			w="100%"
 			justify="center"
 			boxShadow="lg"
 			p={10}
-			backdropFilter="blur(5px)"
 			{...rest}
 		>
-			<Heading as="h1" color="brand.purple.dark">
+			<Heading as="h1" color="brand.purple.dark" size="lg">
 				{title}
 			</Heading>
-			<Text textAlign="center" color="brand.purple.light">
-				{description}
-			</Text>
+			<Text>{description}</Text>
 			<NextLink href={href}>
 				<Button>{button}</Button>
 			</NextLink>

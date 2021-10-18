@@ -1,5 +1,5 @@
 import {
-	Discord,
+	Code,
 	Here,
 	Intro,
 	Testimonial,
@@ -13,7 +13,7 @@ export default function Home() {
 			<Here />
 			<Testimonial />
 			<Blog />
-			<Discord />
+			<Code />
 		</>
 	);
 }

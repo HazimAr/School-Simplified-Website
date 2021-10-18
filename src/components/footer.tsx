@@ -10,6 +10,7 @@ import {
 	Stack,
 	Input,
 	Spacer,
+	VStack,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -177,11 +178,15 @@ export default function Footer(): JSX.Element {
 						<Text>
 							School Simplified © 2021 All Rights Reserved
 						</Text>
-						<Text>
+						<VStack>
+							<Text>
+								School Simplified Inc. | 8 The Green, Dover, DE
+								19901
+							</Text>
 							<NextLink href="https://github.com/HazimAr/School-Simplified">
-								Made with ❤️ by passionate developers
+								Made by passionate developers
 							</NextLink>
-						</Text>
+						</VStack>
 					</Flex>
 				</ContainerInside>
 			</Container>

@@ -69,6 +69,22 @@ export default function Footer(): JSX.Element {
 						</Stack>
 						<Stack>
 							<Heading as="h3" size="md">
+								Services
+							</Heading>
+							<UnorderedList styleType="none">
+								{services.map((item) => (
+									<ListItem key={item.name}>
+										<NextLink href={item.link}>
+											<Text fontSize="sm">
+												{item.name}
+											</Text>
+										</NextLink>
+									</ListItem>
+								))}
+							</UnorderedList>
+						</Stack>
+						<Stack>
+							<Heading as="h3" size="md">
 								Resources
 							</Heading>
 							<UnorderedList styleType="none">
@@ -223,6 +239,10 @@ const about = [
 		link: "/leadership",
 	},
 	{
+		name: "Our Organizations",
+		link: "/organizations",
+	},
+	{
 		name: "Community",
 		link: "/community",
 	},
@@ -230,33 +250,44 @@ const about = [
 		name: "Partners",
 		link: "/partners",
 	},
-	{
-		name: "Terms of User",
-		link: "/terms",
-	},
+];
 
+const services = [
 	{
-		name: "Privacy Policy",
-		link: "/privacy",
+		name: "Tutoring",
+		link: "/tutoring",
+	},
+	{
+		name: "Essay Revisions",
+		link: "/essay",
+	},
+	{
+		name: "Homework Help",
+		link: "/homework",
+	},
+	{
+		name: "Notes and Resources",
+		link: "/notes",
 	},
 ];
 
 const resources = [
 	{
-		name: "Programs",
-		link: "/programs",
-	},
-	{
 		name: "Volunteering",
 		link: "/volunteering",
 	},
 	{
-		name: "Internships",
-		link: "/internships",
+		name: "Leadership Opportunities",
+		link: "/leadership/join",
 	},
 	{
-		name: "Tutoring",
-		link: "/tutoring",
+		name: "Programs",
+		link: "/programs",
+	},
+
+	{
+		name: "Internships",
+		link: "/internships",
 	},
 	{
 		name: "Blog",
@@ -265,18 +296,6 @@ const resources = [
 	{
 		name: "Events",
 		link: "/events",
-	},
-	{
-		name: "Homework Help",
-		link: "/homework",
-	},
-	{
-		name: "Notes & Resources",
-		link: "/notes",
-	},
-	{
-		name: "Essay Revisions",
-		link: "/essay",
 	},
 ];
 

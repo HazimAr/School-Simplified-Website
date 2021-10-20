@@ -15,7 +15,6 @@ export default function Here() {
 			<ContainerInside>
 				<Flex
 					justify="center"
-					spacing={{ base: 0, lg: 10 }}
 					flexDir={{ base: "column", lg: "row" }}
 				>
 					<Card
@@ -64,7 +63,7 @@ function Card(props) {
 			w="100%"
 			justify="center"
 			boxShadow="lg"
-			p={10}
+			p={5}
 			{...rest}
 		>
 			<Heading as="h1" color="brand.purple.dark" size="lg">

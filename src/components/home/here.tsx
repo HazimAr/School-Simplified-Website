@@ -2,8 +2,8 @@ import { Flex, Heading, Text, VStack } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import { rounded } from "@styles/theme";
 import NextLink from "@components/nextChakra";
+import { rounded } from "@styles/theme";
 import React from "react";
 
 export default function Here() {
@@ -13,10 +13,7 @@ export default function Here() {
 			py="50px"
 		>
 			<ContainerInside>
-				<Flex
-					justify="center"
-					flexDir={{ base: "column", lg: "row" }}
-				>
+				<Flex justify="center" flexDir={{ base: "column", lg: "row" }}>
 					<Card
 						title="Free Notes"
 						description="We offer extensive, regularly updated notes for a variety of classes!"

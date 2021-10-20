@@ -1,18 +1,8 @@
-import {
-	Box,
-	Flex,
-	Heading,
-	HStack,
-	Image,
-	ListItem,
-	Text,
-	UnorderedList,
-	Stack,
-} from "@chakra-ui/react";
+import { Box, Heading, HStack, Image, Text, Stack } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import NextLink from "@components/nextChakra";
+
 import { useState } from "react";
 
 export default function Intro() {

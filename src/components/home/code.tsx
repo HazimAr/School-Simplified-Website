@@ -13,15 +13,45 @@ import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
+import { useState } from "react";
 
 export default function Intro() {
+	const [content, setContent] = useState(0);
 	return (
 		<Container>
 			<ContainerInside>
 				<HStack justify="center">
 					<Stack textAlign="left">
 						<Heading>Learn to apply code</Heading>
-						<Stack>
+						<HStack spacing={0} w="100%">
+							<SectionButton
+								borderLeftRadius={"25px"}
+								onClick={() => {
+									setContent(0);
+								}}
+								isActive={content === 0}
+							>
+								About
+							</SectionButton>
+							<SectionButton
+								onClick={() => {
+									setContent(1);
+								}}
+								isActive={content === 1}
+							>
+								Courses
+							</SectionButton>
+							<SectionButton
+								borderRightRadius={"25px"}
+								onClick={() => {
+									setContent(2);
+								}}
+								isActive={content === 2}
+							>
+								Join
+							</SectionButton>
+						</HStack>
+						<Stack bg="brand.transparent" p={5} rounded="25px">
 							<Text>
 								Lorem, ipsum dolor sit amet consectetur
 								adipisicing elit. Eligendi eos cupiditate
@@ -41,5 +71,33 @@ export default function Intro() {
 				</HStack>
 			</ContainerInside>
 		</Container>
+	);
+}
+
+function SectionButton(props) {
+	const { children, onClick, isActive } = props;
+	return (
+		<Box
+			onClick={onClick}
+			maxW="200px"
+			py={3}
+			w="100%"
+			bg={
+				isActive
+					? "linear-gradient(90deg, #FFA270 0%, #e6c068 100%)"
+					: "brand.transparent"
+			}
+			textAlign="center"
+			// borderLeftRadius={left ? "100px" : 0}
+			// borderRightRadius={left ? 0 : "100PX"}
+			transition="all 0.1s ease-in"
+			_hover={{
+				bg: "brand.transparent2",
+				cursor: "pointer",
+			}}
+			{...props}
+		>
+			{children}
+		</Box>
 	);
 }

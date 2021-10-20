@@ -338,7 +338,8 @@ const boardOfDirectors: Person[] = [
 	},
 ];
 
-function ExecutiveButton({ children, onClick, left = false, active }) {
+function ExecutiveButton(props) {
+	const { children, onClick, left, active } = props;
 	return (
 		<Box
 			onClick={onClick}
@@ -357,6 +358,7 @@ function ExecutiveButton({ children, onClick, left = false, active }) {
 				bg: "brand.transparent2",
 				cursor: "pointer",
 			}}
+			{...props}
 		>
 			{children}
 		</Box>

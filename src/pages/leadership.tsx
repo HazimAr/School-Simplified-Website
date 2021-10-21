@@ -57,7 +57,7 @@ const leadership: Person[] = [
 	},
 	{
 		name: "Jason Mei",
-		title: "Chief Information & Technology Officer (CIO)",
+		title: "SVP of Information Technology",
 		img: "/staff/JasonMei.jpg",
 	},
 	{

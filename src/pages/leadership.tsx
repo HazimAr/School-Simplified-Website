@@ -278,6 +278,11 @@ const execs: Person[] = [
 		title: "Vice President of Technical",
 		img: "/staff/NicholasZhang.jpg",
 	},
+	{
+		name: "Soap E",
+		title: "Vice President of Community Engangement",
+		img: "/staff/RohitChoudhary.jpg",
+	},
 ];
 
 const boardOfDirectors: Person[] = [

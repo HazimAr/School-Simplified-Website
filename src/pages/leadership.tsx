@@ -192,6 +192,22 @@ const seniorExecs: Person[] = [
 		title: "Chief Advancements Officer (CAO)",
 		img: "/staff/RohitChoudhary.jpg",
 	},
+
+	{
+		name: "Hazim Arafa",
+		title: "President of Programming Simplified",
+		img: "/staff/HazimArafa.jpg",
+	},
+	{
+		name: "Aarush Goradia",
+		title: "President of Student Activities (PSA)",
+		img: "/staff/AarushGoradia.jpg",
+	},
+	{
+		name: "David Sun",
+		title: "President of National Chapters",
+		img: "/staff/DavidSun",
+	},
 	{
 		name: "Harry Chow",
 		title: "Chief Marketing Officer (CMO)",
@@ -209,21 +225,6 @@ const seniorExecs: Person[] = [
 		img: "/staff/JasonMei.jpg",
 	},
 
-	{
-		name: "Hazim Arafa",
-		title: "President of Programming Simplified",
-		img: "/staff/HazimArafa.jpg",
-	},
-	{
-		name: "Aarush Goradia",
-		title: "President of Student Activities (PSA)",
-		img: "/staff/AarushGoradia.jpg",
-	},
-	{
-		name: "David Sun",
-		title: "President of National Chapters",
-		img: "/staff/DavidSun",
-	},
 	{
 		name: "Diana Zheng",
 		title: "Treasurer",

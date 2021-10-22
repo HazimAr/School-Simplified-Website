@@ -281,7 +281,7 @@ const execs: Person[] = [
 	{
 		name: "Soap E",
 		title: "Vice President of Community Engangement",
-		img: "/staff/RohitChoudhary.jpg",
+		img: "/staff/soape.jpg",
 	},
 ];
 

@@ -192,22 +192,6 @@ const seniorExecs: Person[] = [
 		title: "Chief Advancements Officer (CAO)",
 		img: "/staff/RohitChoudhary.jpg",
 	},
-	{
-		name: "Harry Chow",
-		title: "Chief Marketing Officer (CMO)",
-		img: "/staff/HarryChow.jpg",
-	},
-	{
-		name: "Masa Murry",
-		title: "Senior Vice President of Global Marketing",
-		img: "/staff/",
-	},
-
-	{
-		name: "Jason Mei",
-		title: "Executive Vice President of Information Technology",
-		img: "/staff/JasonMei.jpg",
-	},
 
 	{
 		name: "Hazim Arafa",
@@ -224,6 +208,23 @@ const seniorExecs: Person[] = [
 		title: "President of National Chapters",
 		img: "/staff/DavidSun",
 	},
+	{
+		name: "Harry Chow",
+		title: "Chief Marketing Officer (CMO)",
+		img: "/staff/HarryChow.jpg",
+	},
+	{
+		name: "Masa Murry",
+		title: "Senior Vice President of Global Marketing",
+		img: "/staff/MasaMurry.jpg",
+	},
+
+	{
+		name: "Jason Mei",
+		title: "Executive Vice President of Information Technology",
+		img: "/staff/JasonMei.jpg",
+	},
+
 	{
 		name: "Diana Zheng",
 		title: "Treasurer",
@@ -276,6 +277,11 @@ const execs: Person[] = [
 		name: "Nicholas Zhang",
 		title: "Vice President of Technical",
 		img: "/staff/NicholasZhang.jpg",
+	},
+	{
+		name: "Soap E",
+		title: "Vice President of Community Engangement",
+		img: "/staff/soape.jpg",
 	},
 ];
 

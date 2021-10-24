@@ -246,7 +246,7 @@ const execs: Person[] = [
 	{
 		name: "Rohit Penta",
 		title: "Vice President of Technical",
-		img: "/staff/RohitPenta.jpg",
+		img: "/staff/ParamPatil.jpg",
 	},
 	{
 		name: "Isamar Zhu",

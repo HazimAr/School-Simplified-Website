@@ -5,7 +5,6 @@ import {
 	HStack,
 	Image,
 	Text,
-	Flex,
 	Box,
 } from "@chakra-ui/react";
 import Button from "@components/button";

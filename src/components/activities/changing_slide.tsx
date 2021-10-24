@@ -2,7 +2,6 @@ import { ExternalLinkIcon } from "@chakra-ui/icons";
 import {
 	Box,
 	Center,
-	Circle,
 	Flex,
 	Heading,
 	Icon,

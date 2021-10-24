@@ -5,10 +5,13 @@ import {
 	Heading,
 	Image,
 	Text,
-	Button,
+	HStack,
+	VStack,
+	Center,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
+import Button from "@components/button";
 // import Reasons from "@components/volunteering/reasons";
 // import RotatingPanel from "@components/volunteering/rotating_panel";
 
@@ -32,15 +35,18 @@ export default function Volunteering(): JSX.Element {
 								Volunteering Opportunities
 							</Heading>
 							<Text>
-								As the largest nonprofit run by high schoolers
-								in North America, School Simplified provides
-								valuable opportunities for teenagers. You can
-								help build code for real-life applications,
-								market and negotiate with people
-								internationally, and develop products and
-								services. There are also leadership
-								opportunities available. Everything you do
-								counts for community service hours!
+								<b>
+									As the largest nonprofit run by high
+									schoolers in North America, School
+									Simplified provides valuable opportunities
+									for teenagers. You can help build code for
+									real-life applications, market and negotiate
+									with people internationally, and develop
+									products and services. There are also
+									leadership opportunities available.
+									Everything you do counts for community
+									service hours!
+								</b>
 							</Text>
 						</Box>
 					</Flex>
@@ -60,7 +66,28 @@ export default function Volunteering(): JSX.Element {
 								XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 								XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 							</Text>
-							<Button>Button</Button>
+							<Button>Services</Button>
+							<Button>Products</Button>
+							<Button>Technology</Button>
+							<Center>
+								<HStack>
+									<VStack>
+										<Button>Chat Helping</Button>
+										<Button>Tutoring</Button>
+										<Button>Essay Reviser</Button>
+									</VStack>
+									<VStack>
+										<Button>Notes</Button>
+										<Button>College Prep</Button>
+										<Button>Projects</Button>
+									</VStack>
+									<VStack>
+										<Button>Developer</Button>
+										<Button>Database</Button>
+										<Button>Website</Button>
+									</VStack>
+								</HStack>
+							</Center>
 						</Box>
 						<Image
 							flex={{ base: 1, sm: 0 }}
@@ -96,6 +123,10 @@ export default function Volunteering(): JSX.Element {
 								opportunity for volunteers with experience in
 								social media, design, and marketing.
 							</Text>
+							<Button>Content Creator</Button>
+							<Button>Design</Button>
+							<Button>Public Relations</Button>
+							<Button>Discord</Button>
 						</Box>
 					</Flex>
 				</ContainerInside>

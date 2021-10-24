@@ -280,8 +280,25 @@ const execs: Person[] = [
 	},
 	{
 		name: "Soap E",
-		title: "Vice President of Community Engangement",
+		// name: "Sophia Bhatia",
+		title: "Vice President of Community Engagement",
 		img: "/staff/soape.jpg",
+	},
+	{
+		name: "Noah Bondi",
+		title: "National VP of Communications (Chapters)",
+		img: "/staff/NoahBondi.jpg",
+	},
+	{
+		name: "Vivek Anandh",
+		title: "National VP of Information-Technology (Chapters)",
+		img: "/staff/VivekAnandh.jpg",
+	},
+	{
+		name: "Gavin Hecock",
+		title: "dumb bitch",
+		// title: "Vice President of Student Activities",
+		img: "/staff/GavinHecock.jpg",
 	},
 ];
 

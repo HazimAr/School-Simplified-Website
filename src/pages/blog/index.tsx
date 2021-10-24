@@ -7,6 +7,7 @@ import {
 	HStack,
 	Icon,
 	Image,
+	Spacer,
 	Stack,
 	StackDivider,
 	Text,
@@ -43,13 +44,13 @@ export default function Blog({
 		<>
 			<Container>
 				<ContainerInside my={10}>
-					<Heading as="h1" size="xl">
-						Blogs and Articles
-					</Heading>
-					<HStack>
-						<Stack></Stack>
+					<Flex>
+						<Heading as="h1" size="xl">
+							Blogs and Articles
+						</Heading>
+						<Spacer />
 						<Image src="/timmy/resources.png" maxH="300px" />
-					</HStack>
+					</Flex>
 				</ContainerInside>
 			</Container>
 			<Container bg="brand.transparent">

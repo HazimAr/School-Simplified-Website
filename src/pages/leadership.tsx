@@ -38,7 +38,7 @@ const leadership: Person[] = [
 	{
 		name: "Rohit Choudhary",
 		title: "Senior Vice President of Academics (SVPA)",
-		img: "/staff/ParamPatil.jpg",
+		img: "/staff/RohitChoudhary.jpg",
 	},
 	{
 		name: "Aarush Goradia",
@@ -48,7 +48,7 @@ const leadership: Person[] = [
 	{
 		name: "Param Patil",
 		title: "Chief Advancements Officer (CAO)",
-		img: "/staff/RohitChoudhary.jpg",
+		img: "/staff/ParamPatil.jpg",
 	},
 	{
 		name: "Harry Chow",

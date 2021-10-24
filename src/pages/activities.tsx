@@ -11,8 +11,15 @@ import {
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
+import ChangingSlide from "@components/activities/changing_slide";
 
-//ToDo(Yello): Fix slides styling and implement state management
+/**
+ * The Activities page!
+ * 
+ * Describes what Student Activities are
+ * Displays all SS Clubs and provides information on joining them
+ * @returns the Activities page
+ */
 
 export default function Activities() {
 	return (
@@ -43,33 +50,10 @@ export default function Activities() {
 				</ContainerInside>
 			</Container>
 			<Container>
-				<ContainerInside>
-					<Slides/>
+				<ContainerInside w="100%">
+					<ChangingSlide />
 				</ContainerInside>
 			</Container>
 		</>
 	);
-}
-
-function Slides() {
-	return (
-		<>
-			<Heading my={10} fontWeight="extrabold" size="xl">Join Our Clubs</Heading>
-			<Flex bg="brand.transparent" borderRadius={500} minW="50%" minH={500}>
-				<Image src="/clubs/chess1.png" display={{ base: "none", md: "block" }}/>
-				<VStack>
-					<Heading size="lg" pt={25} px={50}>Example</Heading>
-					<Text textAlign="left" py={25} px={50} overflow="auto">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-						molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-						numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
-						optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis
-						obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam
-						nihil, eveniet aliquid culpa officia aut!
-					</Text>
-					<Button>Join</Button>
-				</VStack>
-			</Flex>
-		</>
-	)
 }

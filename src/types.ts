@@ -109,8 +109,16 @@ export type VolunteerPanelProps = {
 	teamName: string;
 	teamDesc: string;
 	link: string;
-	functions?: string[];
 };
+
+export type ActivitySlideProps = {
+	children?: any;
+	src: string;
+	clubName: string;
+	clubDesc: string;
+	link: string;
+	functions?: string[];
+}
 
 export type BlogListing = {
 	title: string;

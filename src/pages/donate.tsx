@@ -5,8 +5,8 @@ export default function Donate() {
 		<Center>
 			<iframe
 				src="https://master.d3o53wn77q6k5v.amplifyapp.com/"
-				height="650"
-				width="500"
+				height="700"
+				width="600"
 				frameBorder="0"
 				allowTransparency
 			>

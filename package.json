@@ -44,7 +44,7 @@
 		"@types/fuzzaldrin-plus": "^0.6.2",
 		"@types/next": "^9.0.0",
 		"@types/node": "^16.10.2",
-		"@types/react": "^17.0.20",
+		"@types/react": "^17.0.31",
 		"@types/react-icons": "^3.0.0",
 		"eslint": "^7.32.0",
 		"prettier": "^2.4.1",

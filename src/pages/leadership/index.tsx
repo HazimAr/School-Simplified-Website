@@ -300,6 +300,11 @@ const execs: Person[] = [
 		// title: "Vice President of Student Activities",
 		img: "/staff/GavinHecock.jpg",
 	},
+	{
+		name: "Adrian Sucahyo",
+		title: "Vice President of Operations, Chapters",
+		img: "/staff/AdrianSucahyo.jpg",
+	},
 ];
 
 const boardOfDirectors: Person[] = [

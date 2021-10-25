@@ -19,7 +19,7 @@ export default function Intro() {
 								onClick={() => {
 									setContent(0);
 								}}
-								isActive={content === 0}
+								active={content === 0}
 							>
 								About
 							</SectionButton>
@@ -27,7 +27,7 @@ export default function Intro() {
 								onClick={() => {
 									setContent(1);
 								}}
-								isActive={content === 1}
+								active={content === 1}
 							>
 								Courses
 							</SectionButton>
@@ -36,7 +36,7 @@ export default function Intro() {
 								onClick={() => {
 									setContent(2);
 								}}
-								isActive={content === 2}
+								active={content === 2}
 							>
 								Join
 							</SectionButton>
@@ -65,7 +65,7 @@ export default function Intro() {
 }
 
 function SectionButton(props) {
-	const { children, onClick, isActive } = props;
+	const { children, onClick, active } = props;
 	return (
 		<Box
 			onClick={onClick}
@@ -73,7 +73,7 @@ function SectionButton(props) {
 			py={3}
 			w="100%"
 			bg={
-				isActive
+				active
 					? "linear-gradient(90deg, #FFA270 0%, #e6c068 100%)"
 					: "brand.transparent"
 			}

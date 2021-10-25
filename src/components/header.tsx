@@ -136,6 +136,31 @@ const menuItems = [
 		],
 	},
 	{
+		name: "Services & Products",
+		children: [
+			{
+				name: "Essay Revision",
+				href: "/essay",
+			},
+			{
+				name: "Tutoring",
+				href: "/tutoring",
+			},
+			{
+				name: "Notes & Resources",
+				href: "/notes",
+			},
+			{
+				name: "Homework Help",
+				href: "/homework",
+			},
+			{
+				name: "SAT Prep",
+				href: "/sat",
+			},
+		],
+	},
+	{
 		name: "Programs",
 		children: [
 			{

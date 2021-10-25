@@ -5,11 +5,15 @@ import {
 	Heading,
 	Image,
 	Text,
+	HStack,
+	VStack,
+	Center,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
+import Button from "@components/button";
 // import Reasons from "@components/volunteering/reasons";
-import RotatingPanel from "@components/volunteering/rotating_panel";
+// import RotatingPanel from "@components/volunteering/rotating_panel";
 
 /**
  * The Volunteering page!
@@ -26,21 +30,64 @@ export default function Volunteering(): JSX.Element {
 			<Container bg="brand.transparent">
 				<ContainerInside py={10}>
 					<Flex alignItems="center">
-						<Box flex={1} textAlign="left">
+						<Box flex={1} textAlign="center">
 							<Heading size="xl" my={3}>
 								Volunteering Opportunities
 							</Heading>
 							<Text>
-								As the largest nonprofit run by high schoolers
-								in North America, School Simplified provides
-								valuable opportunities for teenagers. You can
-								help build code for real-life applications,
-								market and negotiate with people
-								internationally, and develop products and
-								services. There are also leadership
-								opportunities available. Everything you do
-								counts for community service hours!
+								<b>
+									As the largest nonprofit run by high
+									schoolers in North America, School
+									Simplified provides valuable opportunities
+									for teenagers. You can help build code for
+									real-life applications, market and negotiate
+									with people internationally, and develop
+									products and services. There are also
+									leadership opportunities available.
+									Everything you do counts for community
+									service hours!
+								</b>
 							</Text>
+						</Box>
+					</Flex>
+					{/* <Divider bg="white" mt={5} /> */}
+				</ContainerInside>
+			</Container>
+
+			<Container>
+				<ContainerInside py={10}>
+					<Flex alignItems="center">
+						<Box flex={1} textAlign="center">
+							<Heading size="xl" my={3}>
+								School Simplified Digital
+							</Heading>
+							<Text py={3}>
+								XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+								XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+								XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+							</Text>
+							<Button>Services</Button>
+							<Button>Products</Button>
+							<Button>Technology</Button>
+							<Center>
+								<HStack>
+									<VStack>
+										<Button>Chat Helping</Button>
+										<Button>Tutoring</Button>
+										<Button>Essay Reviser</Button>
+									</VStack>
+									<VStack>
+										<Button>Notes</Button>
+										<Button>College Prep</Button>
+										<Button>Projects</Button>
+									</VStack>
+									<VStack>
+										<Button>Developer</Button>
+										<Button>Database</Button>
+										<Button>Website</Button>
+									</VStack>
+								</HStack>
+							</Center>
 						</Box>
 						<Image
 							flex={{ base: 1, sm: 0 }}
@@ -52,9 +99,39 @@ export default function Volunteering(): JSX.Element {
 							alt="Timmy with a lanyard"
 						/>
 					</Flex>
-					{/* <Divider bg="white" mt={5} /> */}
 				</ContainerInside>
 			</Container>
+
+			<Container bg="brand.transparent">
+				<ContainerInside py={10}>
+					<Flex alignItems="center">
+						<Image
+							flex={{ base: 1, sm: 0 }}
+							src="/timmy/2.png"
+							h={{ base: 0, md: 175, lg: 350 }}
+							float="right"
+							display={["none", "block"]}
+							mx={15}
+							alt="Timmy drinking boba"
+						/>
+						<Box flex={1} textAlign="center">
+							<Heading size="xl" my={3}>
+								Global Marketing
+							</Heading>
+							<Text>
+								Joining the Marketing Team is a great
+								opportunity for volunteers with experience in
+								social media, design, and marketing.
+							</Text>
+							<Button>Content Creator</Button>
+							<Button>Design</Button>
+							<Button>Public Relations</Button>
+							<Button>Discord</Button>
+						</Box>
+					</Flex>
+				</ContainerInside>
+			</Container>
+
 			{/* 
 			<Container bg="brand.transparent">
 				<ContainerInside py={8}>
@@ -77,7 +154,7 @@ export default function Volunteering(): JSX.Element {
 				</ContainerInside>
 			</Container> */}
 
-			<RotatingPanel />
+			{/* <RotatingPanel /> */}
 
 			{/* <Container>
 				<ContainerInside py={3}>

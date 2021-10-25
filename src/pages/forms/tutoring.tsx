@@ -1,11 +1,11 @@
-import { Center, } from "@chakra-ui/react";
+import { Center } from "@chakra-ui/react";
 import ContainerInside from "@components/containerInside";
 import ContainerBackground from "@components/containerBackground";
 
 export default function Tutoring(): JSX.Element {
 	return (
-		<ContainerBackground src="/timmy/lofi_timmy.png" py="50px" alt="Create Timmy Background">
-			<ContainerInside py={10}>
+		<ContainerBackground src="/timmy/lofi_timmy.png" py="50px">
+			<ContainerInside>
 				<Center>
 					<iframe
 						title=""
@@ -20,6 +20,6 @@ export default function Tutoring(): JSX.Element {
 					</iframe>
 				</Center>
 			</ContainerInside>
-        </ContainerBackground>
+		</ContainerBackground>
 	);
 }

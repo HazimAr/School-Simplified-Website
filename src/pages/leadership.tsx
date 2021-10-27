@@ -206,7 +206,7 @@ const seniorExecs: Person[] = [
 	{
 		name: "David Sun",
 		title: "President of National Chapters",
-		img: "/staff/DavidSun",
+		img: "/staff/DavidSun.jpg",
 	},
 	{
 		name: "Harry Chow",

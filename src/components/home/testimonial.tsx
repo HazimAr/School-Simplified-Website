@@ -22,8 +22,19 @@ export default function Intro() {
 			bg="linear-gradient(180deg, rgba(161, 167, 237, 0.6) 0%, rgba(108, 125, 254, 0.6) 100%);"
 		>
 			<ContainerInside>
-				<Heading as="h1">Success Stories</Heading>
-
+				<Heading as="h1">Your Success is Our Success!</Heading>
+				<Text fontSize="xl" color="white">
+					School Simplified believes that quality education should be
+					accessible to everyone with equal opportunity. As an
+					organization run by students from around the world we know
+					exactly what you need to succeed! Take advantage of that and
+					help us help you!
+				</Text>
+				<Divider bg="white" my="40px" />
+				<Heading as="h1">Don't Believe Us?</Heading>
+				<Text fontSize="lg" color="white">
+					Ask some of our students and hear what they have to say
+				</Text>
 				<Flex justify="center">
 					<Flex
 						justify="center"

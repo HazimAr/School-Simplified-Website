@@ -44,8 +44,8 @@ export default function Donate() {
 									src="/timmy/7.png"
 									alt="Donate Timmy"
 									h={{ base: "550px", "300px": "300px" }}
-									minW="500px" 
-									maxH="916px"
+									minW="400px" 
+									maxH="666px"
 									my={{ base: -5, sm: 5, lg: 0 }}
 								/>
 							</Box>

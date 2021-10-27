@@ -1,21 +1,21 @@
 import {
-	Box,
+	//Box,
 	// Divider,
-	Flex,
+	//Flex,
 	Heading,
-	Image,
+	//Image,
 	Text,
-	HStack,
+	//HStack,
 	VStack,
 	Center,
 	Stack,
 } from "@chakra-ui/react";
-import Container from "@components/container";
+//import Container from "@components/container";
+//import Button from "@components/button";
 import ContainerBackground from "@components/containerBackground";
 import ContainerInside from "@components/containerInside";
-import Button from "@components/button";
 // import Reasons from "@components/volunteering/reasons";
-// import RotatingPanel from "@components/volunteering/rotating_panel";
+import RotatingPanel from "@components/volunteering/rotating_panel";
 
 /**
  * The Volunteering page!
@@ -29,9 +29,9 @@ import Button from "@components/button";
 export default function Volunteering(): JSX.Element {
 	return (
 		<>
-			<ContainerBackground src="/timmy/raining_timmy.png" py={10}>
+			<ContainerBackground src="/timmy/raining_timmy.png" py={100}>
 				<Center>
-					<ContainerInside py={10} justifyContent="center">
+					<ContainerInside  py={10} justifyContent="center">
 					<Stack
 							textAlign="left"
 							direction={{ base: "column", md: "row-reverse" }}
@@ -53,13 +53,15 @@ export default function Volunteering(): JSX.Element {
 								</Text>
 							</VStack>
 						</Stack>
-
-						{/* <Divider bg="white" mt={5} /> */}
 					</ContainerInside>
 				</Center>
 			</ContainerBackground>
+						{/* <Divider bg="white" mt={5} /> */}
 
-			<Container>
+			<RotatingPanel></RotatingPanel>
+
+
+			{/* <Container>
 				<ContainerInside py={10}>
 					<Flex alignItems="center">
 						<Box flex={1} textAlign="center">
@@ -135,39 +137,7 @@ export default function Volunteering(): JSX.Element {
 						</Box>
 					</Flex>
 				</ContainerInside>
-			</Container>
-
-			{/* 
-			<Container bg="brand.transparent">
-				<ContainerInside py={8}>
-					<Heading size="xl">Join Us Today!</Heading>
-					<Text my={3}>
-						Sign up to start helping fellow students for service
-						hours today!
-					</Text>
-					<NextLink
-						isExternal
-						href="https://discord.gg/school"
-						_hover={{ textDecoration: "none" }}
-					>
-						<Button bg="brand.transparent" height="unset">
-							<Heading size="lg">
-								Sign Up! <ExternalLinkIcon ml={2} />
-							</Heading>
-						</Button>
-					</NextLink>
-				</ContainerInside>
 			</Container> */}
-
-			{/* <RotatingPanel /> */}
-
-			{/* <Container>
-				<ContainerInside py={3}>
-					<Divider bg="white" />
-				</ContainerInside>
-			</Container>
-
-			<Reasons /> */}
 		</>
 	);
 }

@@ -23,10 +23,10 @@ import { VolunteerPanelProps } from "types";
 
 const teams: VolunteerPanelProps[] = [
 	{
-		teamName: "Academics",
+		teamName: "Marketing Department",
 		teamDesc:
-			"As part of our Academics Team, you can provide educational help to other students in the School Simplified community. If you excel in school and enjoy sharing your knowledge, join the Academics Team!",
-		src: "/logos/aca_logo.png",
+			"Joining the Marketing Team is a great opportunity for volunteers with experience in social media, design, and marketing. If you are interested in spreading School Simplified's mission, volunteer with the Marketing Team!",
+		src: "timmy/social media.png",
 		link: "/academics",
 		functions: [
 			"tutoring",
@@ -37,9 +37,9 @@ const teams: VolunteerPanelProps[] = [
 		],
 	},
 	{
-		teamName: "Tech",
+		teamName: "Projects Division",
 		teamDesc:
-			"Joining our Technology Team will allow you to develop skills such as programming, web development, and quality management. If you are knowledgeable in any of these areas, we encourage you to apply!",
+			"text text text text",
 		src: "/logos/tech_logo.png",
 		link: "https://forms.gle/tqXm5aLwhWGQ4cGA6",
 		functions: [
@@ -51,9 +51,51 @@ const teams: VolunteerPanelProps[] = [
 		],
 	},
 	{
-		teamName: "Marketing",
+		teamName: "Academic Department",
 		teamDesc:
-			"Joining the Marketing Team is a great opportunity for volunteers with experience in social media, design, and marketing. If you are interested in spreading School Simplified's mission, volunteer with the Marketing Team!",
+			"As a part of our Academics Teams, you can provide educational help to other students in the School Simplified community. If you excel in school and enjoy sharing your knowledge, join the Academics Department!",
+		src: "/logos/mkt_logo.png",
+		link: "https://forms.gle/xrZma1KjtZ6nzRxS8",
+		functions: [
+			"content creation",
+			"design",
+			"data analysis",
+			"outreaching",
+			"community engagement",
+		],
+	},
+	{
+		teamName: "Information-Technology Department",
+		teamDesc:
+			"Joining our Technology Team will allow you to develop skills such as programming, web development, and quality management. Apply if you are knowledgeable in any of these areas!",
+		src: "/logos/mkt_logo.png",
+		link: "https://forms.gle/xrZma1KjtZ6nzRxS8",
+		functions: [
+			"content creation",
+			"design",
+			"data analysis",
+			"outreaching",
+			"community engagement",
+		],
+	},
+	{
+		teamName: "Community Division",
+		teamDesc:
+			"text text text text",
+		src: "/logos/mkt_logo.png",
+		link: "https://forms.gle/xrZma1KjtZ6nzRxS8",
+		functions: [
+			"content creation",
+			"design",
+			"data analysis",
+			"outreaching",
+			"community engagement",
+		],
+	},
+	{
+		teamName: "Human Resources Department",
+		teamDesc:
+			"text text text text",
 		src: "/logos/mkt_logo.png",
 		link: "https://forms.gle/xrZma1KjtZ6nzRxS8",
 		functions: [
@@ -82,7 +124,7 @@ export default function RotatingPanel(): JSX.Element {
 	}, 20000);
 
 	return (
-		<Container>
+		<Container background= "#6F7ADC">
 			{teams.map((team) => {
 				return (
 					<Image
@@ -94,9 +136,7 @@ export default function RotatingPanel(): JSX.Element {
 				);
 			})}
 			<ContainerInside py={8}>
-				<Heading size="lg" mb={3}>
-					What can I volunteer for?
-				</Heading>
+
 				<Box mb={3}>{innerPanels[index]}</Box>
 				<Center>
 					<Center
@@ -153,7 +193,7 @@ function Panel({
 	teamName,
 	teamDesc,
 	link,
-	functions,
+	// functions,
 }: VolunteerPanelProps): JSX.Element {
 	return (
 		<Box py={5}>
@@ -183,12 +223,12 @@ function Panel({
 						<Text textAlign="left" my={2}>
 							{teamDesc}
 						</Text>
-						{functions ? (
+						{/* {functions ? (
 							<Text textAlign="left" fontStyle="italic">
 								Functions include {functions.join(", ")}, and
 								more.
 							</Text>
-						) : null}
+						) : null} */}
 
 						<NextLink
 							isExternal

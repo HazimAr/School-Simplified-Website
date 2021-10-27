@@ -1,4 +1,12 @@
-import { Box, Heading, HStack, Text, Stack, Image } from "@chakra-ui/react";
+import {
+	Box,
+	Heading,
+	HStack,
+	Text,
+	Stack,
+	Image,
+	VStack,
+} from "@chakra-ui/react";
 import ContainerInside from "@components/containerInside";
 import Button from "@components/button";
 import ContainerBackground from "@components/containerBackground";
@@ -22,19 +30,19 @@ export default function Blog({ listing }: { listing: BlogListing[] }) {
 					</Stack>
 					<HStack justify="center" spacing={{ base: 0, lg: 5 }}>
 						<Card
-							src={listing[0].icon}
-							title={listing[0].title}
-							href={listing[0].link}
+							src={listing[0]?.icon}
+							title={listing[0]?.title}
+							href={listing[0]?.link}
 						/>
 						<Card
-							src={listing[1].icon}
-							title={listing[1].title}
-							href={listing[1].link}
+							src={listing[1]?.icon}
+							title={listing[1]?.title}
+							href={listing[1]?.link}
 						/>
 						<Card
-							src={listing[2].icon}
-							title={listing[2].title}
-							href={listing[2].link}
+							src={listing[2]?.icon}
+							title={listing[2]?.title}
+							href={listing[2]?.link}
 						/>
 					</HStack>
 				</Stack>
@@ -78,13 +86,13 @@ export default function Blog({ listing }: { listing: BlogListing[] }) {
 
 function Card({ src, title, href }) {
 	return (
-		<>
-			<NextChakraLink href={href}>
-				<Box rounded={20} h="300px" w="100%" bg="brand.transparent">
-					<Image src={src} />
+		<VStack>
+			<NextChakraLink href={`/blog/${href ?? ""}`}>
+				<Box rounded={20} w="100%" bg="brand.transparent">
+					<Image src={src} rounded={20} />
 				</Box>
 			</NextChakraLink>
 			<Heading>{title}</Heading>
-		</>
+		</VStack>
 	);
 }

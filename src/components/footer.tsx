@@ -11,6 +11,7 @@ import {
 	Input,
 	Spacer,
 	VStack,
+	Grid,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -135,7 +136,7 @@ export default function Footer(): JSX.Element {
 							</Stack>
 						</Stack>
 						<Stack>
-							<Heading as="h3" size="md">
+							{/* <Heading as="h3" size="md">
 								Newsletter
 							</Heading>
 							<Text fontSize="sm" maxW="40ch">
@@ -149,21 +150,20 @@ export default function Footer(): JSX.Element {
 									Subscribe
 								</Button>
 							</HStack>
-							<Spacer />
-							<Flex justify="center">
-								<HStack>
-									{socials.map((item) => {
-										return (
-											<NextLink
-												key={item.link}
-												href={item.link}
-											>
-												<item.icon size={size} />
-											</NextLink>
-										);
-									})}
-								</HStack>
-							</Flex>
+							<Spacer /> */}
+
+							<Grid templateColumns="repeat(3, 1fr)" gap={3}>
+								{socials.map((item) => {
+									return (
+										<NextLink
+											key={item.link}
+											href={item.link}
+										>
+											<item.icon size={size} />
+										</NextLink>
+									);
+								})}
+							</Grid>
 						</Stack>
 					</Flex>
 				</ContainerInside>

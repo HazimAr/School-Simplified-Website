@@ -1,11 +1,9 @@
-import ContainerBackground from "@components/containerBackground";
 import {
 	VStack,
 	Heading,
 	HStack,
 	Image,
 	Text,
-	Box,
 	Center,
 	Stack
 } from "@chakra-ui/react";

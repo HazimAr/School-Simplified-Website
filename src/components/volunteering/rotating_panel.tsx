@@ -40,7 +40,7 @@ const teams: VolunteerPanelProps[] = [
 		teamName: "Projects Division",
 		teamDesc:
 			"text text text text",
-		src: "/logos/tech_logo.png",
+		src: "timmy/3.png",
 		link: "https://forms.gle/tqXm5aLwhWGQ4cGA6",
 		functions: [
 			"web development",
@@ -54,7 +54,7 @@ const teams: VolunteerPanelProps[] = [
 		teamName: "Academic Department",
 		teamDesc:
 			"As a part of our Academics Teams, you can provide educational help to other students in the School Simplified community. If you excel in school and enjoy sharing your knowledge, join the Academics Department!",
-		src: "/logos/mkt_logo.png",
+		src: "timmy/1.png",
 		link: "https://forms.gle/xrZma1KjtZ6nzRxS8",
 		functions: [
 			"content creation",
@@ -68,7 +68,7 @@ const teams: VolunteerPanelProps[] = [
 		teamName: "Information-Technology Department",
 		teamDesc:
 			"Joining our Technology Team will allow you to develop skills such as programming, web development, and quality management. Apply if you are knowledgeable in any of these areas!",
-		src: "/logos/mkt_logo.png",
+		src: "timmy/17.png",
 		link: "https://forms.gle/xrZma1KjtZ6nzRxS8",
 		functions: [
 			"content creation",
@@ -82,7 +82,7 @@ const teams: VolunteerPanelProps[] = [
 		teamName: "Community Division",
 		teamDesc:
 			"text text text text",
-		src: "/logos/mkt_logo.png",
+		src: "timmy/roles.png",
 		link: "https://forms.gle/xrZma1KjtZ6nzRxS8",
 		functions: [
 			"content creation",
@@ -96,7 +96,7 @@ const teams: VolunteerPanelProps[] = [
 		teamName: "Human Resources Department",
 		teamDesc:
 			"text text text text",
-		src: "/logos/mkt_logo.png",
+		src: "timmy/timmy_magnifying_class.png",
 		link: "https://forms.gle/xrZma1KjtZ6nzRxS8",
 		functions: [
 			"content creation",

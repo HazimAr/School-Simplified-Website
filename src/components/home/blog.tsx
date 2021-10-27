@@ -28,7 +28,11 @@ export default function Blog({ listing }: { listing: BlogListing[] }) {
 						</Text>
 						<Button w="fit-content">Read More</Button>
 					</Stack>
-					<HStack justify="center" spacing={{ base: 0, lg: 5 }}>
+					<HStack
+						justify="center"
+						size="md"
+						spacing={{ base: 0, lg: 5 }}
+					>
 						<Card
 							src={listing[0]?.icon}
 							title={listing[0]?.title}

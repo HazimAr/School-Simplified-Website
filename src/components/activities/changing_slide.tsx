@@ -88,7 +88,7 @@ export default function ChangingSlide(): JSX.Element {
 			})}
 			<ContainerInside py={8}>
 				<Heading size="xl" mb={3}>
-					Join our Clubs
+					Join Our Clubs
 				</Heading>
 				<Box mb={3}>{innerSlides[index]}</Box>
 				<Center>

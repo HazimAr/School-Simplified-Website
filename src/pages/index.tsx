@@ -4,6 +4,7 @@ import {
 	Intro,
 	Testimonial,
 	Blog,
+	Clubs,
 } from "@components/home/index";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
 			<Testimonial />
 			<Blog />
 			<Code />
+			<Clubs />
 		</>
 	);
 }

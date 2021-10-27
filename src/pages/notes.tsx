@@ -5,7 +5,7 @@ import ContainerInside from "@components/containerInside";
 import NotesSection from "@components/resources/notes_section";
 import { AllSubjects } from "types";
 
-export default function Resources({ subjects }: AllSubjects): JSX.Element {
+export default function Resources({ subjects=null }: AllSubjects): JSX.Element {
 	return (
 		<>
 			<ContainerBackground src="/timmy/lofi_timmy.png">

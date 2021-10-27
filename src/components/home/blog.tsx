@@ -2,8 +2,9 @@ import { Box, Heading, HStack, Text, Stack } from "@chakra-ui/react";
 import ContainerInside from "@components/containerInside";
 import Button from "@components/button";
 import ContainerBackground from "@components/containerBackground";
+import { BlogListing } from "types";
 
-export default function Blog() {
+export default function Blog({ listing }: { listing: BlogListing[] }) {
 	return (
 		<ContainerBackground py={10}>
 			<ContainerInside>
@@ -19,9 +20,21 @@ export default function Blog() {
 						<Button w="fit-content">Read More</Button>
 					</Stack>
 					<HStack justify="center" spacing={{ base: 0, lg: 5 }}>
-						<Card />
-						<Card />
-						<Card />
+						<Card
+							src={listing[0].icon}
+							title={listing[0].title}
+							href={listing[0].link}
+						/>
+						<Card
+							src={listing[1].icon}
+							title={listing[1].title}
+							href={listing[1].link}
+						/>
+						<Card
+							src={listing[2].icon}
+							title={listing[2].title}
+							href={listing[2].link}
+						/>
 					</HStack>
 				</Stack>
 				{/* <Box py={5}>
@@ -62,6 +75,11 @@ export default function Blog() {
 	);
 }
 
-function Card() {
-	return <Box rounded={20} h="300px" w="100%" bg="brand.transparent"></Box>;
+function Card({ src, title, href }) {
+	return (
+		<>
+			<Box rounded={20} h="300px" w="100%" bg="brand.transparent"></Box>
+			<Heading>{title}</Heading>
+		</>
+	);
 }

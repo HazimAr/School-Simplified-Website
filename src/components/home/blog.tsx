@@ -1,19 +1,9 @@
-import {
-	Box,
-	Heading,
-	HStack,
-	Text,
-	Stack,
-	Image,
-	VStack,
-	Center,
-} from "@chakra-ui/react";
+import { Heading, HStack, Text, Stack, VStack, Center } from "@chakra-ui/react";
 import ContainerInside from "@components/containerInside";
 import Button from "@components/button";
 import ContainerBackground from "@components/containerBackground";
 import { BlogListing } from "types";
 import NextChakraLink from "@components/nextChakra";
-import NextImage from "next/image";
 
 export default function Blog({ listing }: { listing: BlogListing[] }) {
 	return (

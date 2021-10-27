@@ -1,8 +1,9 @@
-import { Box, Heading, HStack, Text, Stack } from "@chakra-ui/react";
+import { Box, Heading, HStack, Text, Stack, Image } from "@chakra-ui/react";
 import ContainerInside from "@components/containerInside";
 import Button from "@components/button";
 import ContainerBackground from "@components/containerBackground";
 import { BlogListing } from "types";
+import NextChakraLink from "@components/nextChakra";
 
 export default function Blog({ listing }: { listing: BlogListing[] }) {
 	return (
@@ -78,7 +79,11 @@ export default function Blog({ listing }: { listing: BlogListing[] }) {
 function Card({ src, title, href }) {
 	return (
 		<>
-			<Box rounded={20} h="300px" w="100%" bg="brand.transparent"></Box>
+			<NextChakraLink href={href}>
+				<Box rounded={20} h="300px" w="100%" bg="brand.transparent">
+					<Image src={src} />
+				</Box>
+			</NextChakraLink>
 			<Heading>{title}</Heading>
 		</>
 	);

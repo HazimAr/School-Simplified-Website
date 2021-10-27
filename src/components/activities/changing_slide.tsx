@@ -87,9 +87,6 @@ export default function ChangingSlide(): JSX.Element {
 				);
 			})}
 			<ContainerInside py={8}>
-				<Heading size="xl" mb={3}>
-					Join our Clubs
-				</Heading>
 				<Box mb={3}>{innerSlides[index]}</Box>
 				<Center>
 					<Center
@@ -153,7 +150,6 @@ function Panel({
 				<Flex
 					justifyContent="flex-start"
 					flexDir={{ base: "column", md: "row" }}
-					
 				>
 					<Image
 							src={src}
@@ -161,11 +157,11 @@ function Panel({
 							alt={clubName + " team logo"}
 							w="100%"
 						/>
-					<VStack w="100%" alignItems="flex-start" borderRadius="0px 15px 15px 0px" bg="brand.transparent">
+					<VStack w="100%" alignItems="flex-start" borderRadius="0px 45% 45% 0px" bg="brand.transparent">
 						<Heading p={15} size="lg" textAlign="left">
 							{clubName}
 						</Heading>
-						<Text p={15} textAlign="left" my={2}>
+						<Text w="95%" p={15} textAlign="left" my={2}>
 							{clubDesc}
 						</Text>
 

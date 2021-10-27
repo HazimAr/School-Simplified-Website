@@ -8,8 +8,10 @@ import {
 	HStack,
 	VStack,
 	Center,
+	Stack,
 } from "@chakra-ui/react";
 import Container from "@components/container";
+import ContainerBackground from "@components/containerBackground";
 import ContainerInside from "@components/containerInside";
 import Button from "@components/button";
 // import Reasons from "@components/volunteering/reasons";
@@ -27,32 +29,35 @@ import Button from "@components/button";
 export default function Volunteering(): JSX.Element {
 	return (
 		<>
-			<Container bg="brand.transparent">
-				<ContainerInside py={10}>
-					<Flex alignItems="center">
-						<Box flex={1} textAlign="center">
-							<Heading size="xl" my={5}>
-								Join Our Team
-							</Heading>
-							<Text>
-								<b>
-									As the largest nonprofit run by high
-									schoolers in North America, School
-									Simplified provides valuable opportunities
-									for teenagers. You can help build code for
-									real-life applications, market and negotiate
-									with people internationally, and develop
-									products and services. There are also
-									leadership opportunities available.
-									Everything you do counts for community
-									service hours!
-								</b>
-							</Text>
-						</Box>
-					</Flex>
-					{/* <Divider bg="white" mt={5} /> */}
-				</ContainerInside>
-			</Container>
+			<ContainerBackground src="/timmy/raining_timmy.png" py={10}>
+				<Center>
+					<ContainerInside py={10} justifyContent="center">
+					<Stack
+							textAlign="left"
+							direction={{ base: "column", md: "row-reverse" }}
+							width="700px"
+							spacing={{ base: 5, md: 10}}
+							justifyContent="left"
+						>
+							<VStack flex={5} justifyContent="center">
+								<Heading size="xl" width="700px">Join Our Team</Heading>
+
+								<Text fontSize="lg">
+									<b>
+										As the largest student run nonprofit in North America, School
+										Simplified provides you with a variety of opportunities.
+										Become a part of our team today and together we can build
+										a better future!
+									</b>
+									
+								</Text>
+							</VStack>
+						</Stack>
+
+						{/* <Divider bg="white" mt={5} /> */}
+					</ContainerInside>
+				</Center>
+			</ContainerBackground>
 
 			<Container>
 				<ContainerInside py={10}>

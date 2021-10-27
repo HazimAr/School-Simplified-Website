@@ -57,6 +57,7 @@ export default function Intro() {
 						src="/timmy/29.png"
 						alt="Timmy working on laptop"
 						w="500px"
+						display={{ base: "none", lg: "block" }}
 					/>
 				</HStack>
 			</ContainerInside>

@@ -6,12 +6,14 @@ import {
 	Stack,
 	Image,
 	VStack,
+	Center,
 } from "@chakra-ui/react";
 import ContainerInside from "@components/containerInside";
 import Button from "@components/button";
 import ContainerBackground from "@components/containerBackground";
 import { BlogListing } from "types";
 import NextChakraLink from "@components/nextChakra";
+import NextImage from "next/image";
 
 export default function Blog({ listing }: { listing: BlogListing[] }) {
 	return (
@@ -31,7 +33,9 @@ export default function Blog({ listing }: { listing: BlogListing[] }) {
 					<HStack
 						justify="center"
 						size="md"
-						spacing={{ base: 0, lg: 5 }}
+						spacing={{ base: 0, sm: 5 }}
+						flexDir={{ base: "column", sm: "row" }}
+						align="flex-start"
 					>
 						<Card
 							src={listing[0]?.icon}
@@ -92,11 +96,33 @@ function Card({ src, title, href }) {
 	return (
 		<VStack w="100%">
 			<NextChakraLink href={`/blog/${href ?? ""}`}>
-				<Box rounded={20} bg="brand.transparent">
-					<Image src={src} rounded={20} />
-				</Box>
+				<Center
+					rounded={20}
+					bg="brand.transparent"
+					boxSize={{
+						base: "125px",
+						sm: "140px",
+						md: "200px",
+						lg: "300px",
+					}}
+					backgroundImage={src}
+					backgroundSize="cover"
+					backgroundPosition="center"
+				>
+					{/* <Image
+						src={src}
+						// width={100}
+						// height={100}
+						// layout="fill"
+					/> */}
+				</Center>
 			</NextChakraLink>
-			<Heading>{title}</Heading>
+			<Heading
+				textAlign="center"
+				fontSize={{ base: "sm", sm: "md", md: "lg", lg: "2xl" }}
+			>
+				{title}
+			</Heading>
 		</VStack>
 	);
 }

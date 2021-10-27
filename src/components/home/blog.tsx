@@ -86,9 +86,9 @@ export default function Blog({ listing }: { listing: BlogListing[] }) {
 
 function Card({ src, title, href }) {
 	return (
-		<VStack>
+		<VStack w="100%">
 			<NextChakraLink href={`/blog/${href ?? ""}`}>
-				<Box rounded={20} w="100%" bg="brand.transparent">
+				<Box rounded={20} bg="brand.transparent">
 					<Image src={src} rounded={20} />
 				</Box>
 			</NextChakraLink>

@@ -1,5 +1,6 @@
 /* eslint-disable import/no-default-export */
 import { Box, Center, Flex, Heading, Text, Avatar } from "@chakra-ui/react";
+import { rounded } from "@styles/theme";
 import React from "react";
 
 type SimplihacksCard = {
@@ -20,7 +21,7 @@ export default function SimplihacksCard({
 			m="10px"
 			align="center"
 			backgroundColor="brand.transparent"
-			rounded="50px"
+			rounded={rounded}
 			w="170px"
 			shadow="lg"
 		>

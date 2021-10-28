@@ -2,6 +2,7 @@ import { Box, Heading, HStack, Image, Stack, Text } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
+import { rounded } from "@styles/theme";
 import { useState } from "react";
 
 export default function Intro() {
@@ -40,7 +41,7 @@ export default function Intro() {
 								Join
 							</SectionButton>
 						</HStack>
-						<Stack bg="brand.transparent" p={5} rounded="25px">
+						<Stack bg="brand.transparent" p={5} rounded={rounded}>
 							<Text>
 								Lorem, ipsum dolor sit amet consectetur
 								adipisicing elit. Eligendi eos cupiditate

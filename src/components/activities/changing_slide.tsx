@@ -14,6 +14,7 @@ import {
 import Button from "@components/button";
 import NextLink from "@components/nextChakra";
 import useInterval from "@hooks/useInterval";
+import { rounded } from "@styles/theme";
 import React from "react";
 
 import { FaArrowLeft, FaArrowRight, FaCircle } from "react-icons/fa";
@@ -58,8 +59,8 @@ const clubs: ActivitySlideProps[] = [
 ];
 
 export default function ChangingSlide(): JSX.Element {
-	const innerSlides = clubs.map((v, index: number) => {
-		return <Panel {...v} key={"key_" + index} />;
+	const innerSlides = clubs.map((club) => {
+		return <Panel {...club} key={club.clubName} />;
 	});
 	const [index, setIndex] = useControllableState({
 		defaultValue: 0,
@@ -99,9 +100,9 @@ export default function ChangingSlide(): JSX.Element {
 				>
 					<Icon as={FaArrowLeft} boxSize={5} />
 				</Center>
-				{clubs.map((_v, idx: number) => {
+				{clubs.map((club, idx: number) => {
 					return (
-						<Center key={"text_" + idx}>
+						<Center key={club.clubName}>
 							<Icon
 								as={FaCircle}
 								boxSize={3}
@@ -142,21 +143,23 @@ function Panel({
 	return (
 		<Box w="100%">
 			<ScaleFade in={true} unmountOnExit={false}>
-				<Flex
-					justifyContent="flex-start"
-					flexDir={{ base: "column", md: "row" }}
-				>
-					<Image
-						src={src}
-						h={{ base: 100, sm: 200, md: 150, lg: 400 }}
-						alt={clubName + " team logo"}
+				<Flex flexDir={{ base: "column", md: "row" }}>
+					<Box
+						backgroundImage={src}
+						backgroundSize="cover"
+						backgroundPosition="center"
+						backgroundRepeat="no-repeat"
+						bg="brand.transparent"
+						// boxSize="100%"
+						h="100%"
 						w="100%"
 						display={{ base: "none", lg: "block" }}
 					/>
+					{/* <Image src={src} alt={clubName + " team logo"} w="100%" /> */}
 					<VStack
 						w="100%"
 						alignItems="flex-start"
-						borderRadius={{ base: "25px", lg: "0px 45% 45% 0px" }}
+						borderRightRadius={{ base: rounded, lg: "50%" }}
 						bg="brand.transparent"
 					>
 						<Heading p={15} size="lg" textAlign="left">

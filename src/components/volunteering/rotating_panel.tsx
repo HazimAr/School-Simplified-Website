@@ -26,7 +26,7 @@ const teams: VolunteerPanelProps[] = [
 		teamDesc:
 			"Joining the Marketing Team is a great opportunity for volunteers with experience in social media, design, and marketing. If you are interested in spreading School Simplified's mission, volunteer with the Marketing Team!",
 		src: "timmy/marketingdept.png",
-		link: "/academics",
+		link: "/volunteer/marketing",
 		functions: [
 			"tutoring",
 			"chat-helping",
@@ -38,9 +38,11 @@ const teams: VolunteerPanelProps[] = [
 	{
 		teamName: "Projects Division",
 		teamDesc:
-		"text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text",
+			"text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text",
 		src: "timmy/projectsdept.png",
-		link: "https://forms.gle/tqXm5aLwhWGQ4cGA6",
+		link: "/volunteer/projects",
+
+		// link: "https://forms.gle/tqXm5aLwhWGQ4cGA6",
 		functions: [
 			"web development",
 			"bot development",
@@ -80,7 +82,7 @@ const teams: VolunteerPanelProps[] = [
 	{
 		teamName: "Community Division",
 		teamDesc:
-		"text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text",
+			"text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text",
 		src: "timmy/communitydept.png",
 		link: "https://forms.gle/xrZma1KjtZ6nzRxS8",
 		functions: [
@@ -125,7 +127,7 @@ export default function RotatingPanel(): JSX.Element {
 	//src= "\timmy\timmy_background"
 
 	return (
-		<Container background= "#6F7ADC">
+		<Container background="#6F7ADC">
 			{teams.map((team) => {
 				return (
 					<Image
@@ -137,7 +139,6 @@ export default function RotatingPanel(): JSX.Element {
 				);
 			})}
 			<ContainerInside py={8}>
-
 				<Box mb={3}>{innerPanels[index]}</Box>
 				<Center>
 					<Center
@@ -194,8 +195,8 @@ function Panel({
 	teamName,
 	teamDesc,
 	link,
-	// functions,
-}: VolunteerPanelProps): JSX.Element {
+}: // functions,
+VolunteerPanelProps): JSX.Element {
 	return (
 		<Box py={5}>
 			<ScaleFade in={true} unmountOnExit={false}>
@@ -206,7 +207,6 @@ function Panel({
 						alignItems="center"
 						overflow="auto"
 					>
-						
 						<VStack alignItems="flex-start">
 							<Heading size="lg" textAlign="left">
 								{teamName}
@@ -227,7 +227,10 @@ function Panel({
 								href={link}
 								_hover={{ textDecoration: "none" }}
 							>
-								<Button bg="linear-gradient(90deg, #FFA270 0%, #e6c068 100%)" mt={3}>
+								<Button
+									bg="linear-gradient(90deg, #FFA270 0%, #e6c068 100%)"
+									mt={3}
+								>
 									Applications
 								</Button>
 							</NextLink>
@@ -235,13 +238,12 @@ function Panel({
 						<Image
 							src={src}
 							h={{ base: 150, sm: 300, md: 100, lg: 300 }}
-							ml = "25px"
+							ml="25px"
 							alt={teamName + " team logo"}
 							rounded="full"
 						/>
 					</Flex>
 				</Center>
-				
 			</ScaleFade>
 		</Box>
 	);

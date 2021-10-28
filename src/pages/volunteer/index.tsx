@@ -31,25 +31,28 @@ export default function Volunteering(): JSX.Element {
 		<>
 			<ContainerBackground src="/timmy/raining_timmy.png" py={100}>
 				<Center>
-					<ContainerInside  py={10} justifyContent="center">
-					<Stack
+					<ContainerInside py={10} justifyContent="center">
+						<Stack
 							textAlign="left"
 							direction={{ base: "column", md: "row-reverse" }}
 							width="700px"
-							spacing={{ base: 5, md: 10}}
+							spacing={{ base: 5, md: 10 }}
 							justifyContent="left"
 						>
 							<VStack flex={5} justifyContent="center">
-								<Heading size="xl" width="700px">Join Our Team</Heading>
+								<Heading size="xl" width="700px">
+									Join Our Team
+								</Heading>
 
 								<Text fontSize="lg">
 									<b>
-										As the largest student run nonprofit in North America, School
-										Simplified provides you with a variety of opportunities.
-										Become a part of our team today and together we can build
-										a better future!
+										As the largest student run nonprofit in
+										North America, School Simplified
+										provides you with a variety of
+										opportunities. Become a part of our team
+										today and together we can build a better
+										future!
 									</b>
-									
 								</Text>
 							</VStack>
 						</Stack>
@@ -57,8 +60,7 @@ export default function Volunteering(): JSX.Element {
 				</Center>
 			</ContainerBackground>
 
-			<RotatingPanel></RotatingPanel>
-			<Divider bg="white" />
+			<RotatingPanel />
 		</>
 	);
 }

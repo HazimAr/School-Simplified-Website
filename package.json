@@ -28,7 +28,7 @@
 		"@emotion/react": "^11.4.1",
 		"@emotion/styled": "^11.3.0",
 		"axios": "^0.24.0",
-		"framer-motion": "^4.1.17",
+		"framer-motion": "^5.0.0",
 		"fuzzaldrin-plus": "^0.6.0",
 		"next": "^12.0.1",
 		"react": "^17.0.2",

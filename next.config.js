@@ -1,3 +1,4 @@
 module.exports = {
-	swcMinify: true,
+	// rust compiler (5x faster build times)
+	swcMinify: false,
 };

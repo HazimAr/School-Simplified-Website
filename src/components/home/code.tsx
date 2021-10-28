@@ -1,8 +1,7 @@
-import { Box, Heading, HStack, Image, Text, Stack } from "@chakra-ui/react";
+import { Box, Heading, HStack, Image, Stack, Text } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-
 import { useState } from "react";
 
 export default function Intro() {
@@ -19,7 +18,7 @@ export default function Intro() {
 								onClick={() => {
 									setContent(0);
 								}}
-								active={content === 0}
+								selected={content === 0}
 							>
 								About
 							</SectionButton>
@@ -27,7 +26,7 @@ export default function Intro() {
 								onClick={() => {
 									setContent(1);
 								}}
-								active={content === 1}
+								selected={content === 1}
 							>
 								Courses
 							</SectionButton>
@@ -36,7 +35,7 @@ export default function Intro() {
 								onClick={() => {
 									setContent(2);
 								}}
-								active={content === 2}
+								selected={content === 2}
 							>
 								Join
 							</SectionButton>
@@ -66,7 +65,7 @@ export default function Intro() {
 }
 
 function SectionButton(props) {
-	const { children, onClick, active } = props;
+	const { children, onClick, selected } = props;
 	return (
 		<Box
 			onClick={onClick}
@@ -74,7 +73,7 @@ function SectionButton(props) {
 			py={3}
 			w="100%"
 			bg={
-				active
+				selected
 					? "linear-gradient(90deg, #FFA270 0%, #e6c068 100%)"
 					: "brand.transparent"
 			}

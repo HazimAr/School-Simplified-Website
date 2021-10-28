@@ -9,6 +9,7 @@ import {
 	Stack,
 	VStack,
 	Grid,
+	Center,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -22,12 +23,10 @@ import {
 	FaFacebook,
 	FaInstagram,
 	FaLinkedinIn,
-	// @ts-ignore
 	FaTiktok,
 } from "react-icons/fa";
 
-// eslint-disable-next-line import/no-default-export
-export default function Footer(): JSX.Element {
+export default function Footer() {
 	const purple = useToken("colors", "brand.purple.light");
 	return (
 		<Box as="footer">
@@ -152,12 +151,11 @@ export default function Footer(): JSX.Element {
 							<Grid templateColumns="repeat(3, 1fr)" gap={3}>
 								{socials.map((item) => {
 									return (
-										<NextLink
-											key={item.link}
-											href={item.link}
-										>
-											<item.icon size={size} />
-										</NextLink>
+										<Center key={item.link}>
+											<NextLink href={item.link}>
+												<item.icon size={size} />
+											</NextLink>
+										</Center>
 									);
 								})}
 							</Grid>

@@ -118,7 +118,7 @@ export function parseBlock(block: any): JSX.Element {
 		case "paragraph":
 			return (
 				<Text style={{ textIndent: 50 }}>
-					{block.paragraph.text.map((item: any, idx: Number) =>
+					{block.paragraph.text.map((item: any, idx: number) =>
 						cloneElement(parseText(item), { key: "text_" + idx })
 					)}
 				</Text>
@@ -126,7 +126,7 @@ export function parseBlock(block: any): JSX.Element {
 		case "heading_1":
 			return (
 				<Heading as="h1" size="lg" pt={3}>
-					{block.heading_1.text.map((item: any, idx: Number) =>
+					{block.heading_1.text.map((item: any, idx: number) =>
 						cloneElement(parseText(item), { key: "text_" + idx })
 					)}
 				</Heading>
@@ -134,7 +134,7 @@ export function parseBlock(block: any): JSX.Element {
 		case "heading_2":
 			return (
 				<Heading as="h2" size="md" pt={2}>
-					{block.heading_2.text.map((item: any, idx: Number) =>
+					{block.heading_2.text.map((item: any, idx: number) =>
 						cloneElement(parseText(item), { key: "text_" + idx })
 					)}
 				</Heading>
@@ -142,7 +142,7 @@ export function parseBlock(block: any): JSX.Element {
 		case "heading_3":
 			return (
 				<Heading as="h3" size="sm" pt={1}>
-					{block.heading_3.text.map((item: any, idx: Number) =>
+					{block.heading_3.text.map((item: any, idx: number) =>
 						cloneElement(parseText(item), { key: "text_" + idx })
 					)}
 				</Heading>
@@ -151,7 +151,7 @@ export function parseBlock(block: any): JSX.Element {
 		case "numbered_list_item":
 			return (
 				<ListItem>
-					{block[block.type].text.map((item: any, idx: Number) =>
+					{block[block.type].text.map((item: any, idx: number) =>
 						cloneElement(parseText(item), { key: "text_" + idx })
 					)}
 				</ListItem>
@@ -159,7 +159,7 @@ export function parseBlock(block: any): JSX.Element {
 		case "to_do":
 			return (
 				<Checkbox defaultChecked={block.checked} disabled>
-					{block.to_do.map((item: any, idx: Number) =>
+					{block.to_do.map((item: any, idx: number) =>
 						cloneElement(parseText(item), { key: "text_" + idx })
 					)}
 				</Checkbox>
@@ -194,7 +194,7 @@ export function parsePage(page: BlogPage): JSX.Element {
 			if (orderedList.length) {
 				elementList.push(
 					<OrderedList key={"block_" + cnt++} pl={6}>
-						{orderedList.map((item, idx: Number) =>
+						{orderedList.map((item, idx: number) =>
 							cloneElement(item, { key: "ol_" + idx })
 						)}
 					</OrderedList>
@@ -206,7 +206,7 @@ export function parsePage(page: BlogPage): JSX.Element {
 			if (unorderedList.length) {
 				elementList.push(
 					<UnorderedList key={"block_" + cnt++} pl={6}>
-						{unorderedList.map((item, idx: Number) =>
+						{unorderedList.map((item, idx: number) =>
 							cloneElement(item, { key: "ul_" + idx })
 						)}
 					</UnorderedList>
@@ -217,7 +217,7 @@ export function parsePage(page: BlogPage): JSX.Element {
 			if (orderedList.length) {
 				elementList.push(
 					<OrderedList key={"block_" + cnt++} pl={6}>
-						{orderedList.map((item, idx: Number) =>
+						{orderedList.map((item, idx: number) =>
 							cloneElement(item, { key: "ol_" + idx })
 						)}
 					</OrderedList>
@@ -227,7 +227,7 @@ export function parsePage(page: BlogPage): JSX.Element {
 			if (unorderedList.length) {
 				elementList.push(
 					<UnorderedList key={"block_" + cnt++} pl={6}>
-						{unorderedList.map((item, idx: Number) =>
+						{unorderedList.map((item, idx: number) =>
 							cloneElement(item, { key: "ul_" + idx })
 						)}
 					</UnorderedList>
@@ -240,7 +240,7 @@ export function parsePage(page: BlogPage): JSX.Element {
 	if (orderedList.length) {
 		elementList.push(
 			<OrderedList key={"block_" + cnt++} pl={6}>
-				{orderedList.map((item, idx: Number) =>
+				{orderedList.map((item, idx: number) =>
 					cloneElement(item, { key: "ol_" + idx })
 				)}
 			</OrderedList>
@@ -249,7 +249,7 @@ export function parsePage(page: BlogPage): JSX.Element {
 	if (unorderedList.length) {
 		elementList.push(
 			<UnorderedList key={"block_" + cnt++} pl={6}>
-				{unorderedList.map((item, idx: Number) =>
+				{unorderedList.map((item, idx: number) =>
 					cloneElement(item, { key: "ul_" + idx })
 				)}
 			</UnorderedList>

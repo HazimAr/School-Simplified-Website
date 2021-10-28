@@ -12,8 +12,6 @@ import {
 	VStack,
 } from "@chakra-ui/react";
 import Button from "@components/button";
-import Container from "@components/container";
-import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
 import useInterval from "@hooks/useInterval";
 import React from "react";
@@ -26,35 +24,35 @@ const clubs: ActivitySlideProps[] = [
 		clubName: "Chess  Club",
 		clubDesc:
 			"This is text to test the design of this sections. Sections are a part of a whole, and that is what this is, it could be 1 part of 1000000 or 10 of 12.  This is text to test the design of this sections. Sections are a part of a whole, and that is what this is, it could be 1 part of 1000000 or 10 of 12.  This is text to test the design of this sections. Sections are a part of a whole, and that is what this is, it could be 1 part of 1000000 or 10 of 12.  ",
-		src: "/clubs/chess1.png",
+		src: "/clubs/chess.png",
 		link: "/",
 	},
 	{
 		clubName: "Cooking Club",
 		clubDesc:
 			"Our goal is to not only provide an opportunity to enhance such essential life skills but also to have fun and build a strong community! Anyone over 13+ can join whether or not they have true experience. All that matters is that everyone is willing to learn from one another and explore new ideas.",
-		src: "/clubs/cooking1.png",
+		src: "/clubs/cooking.png",
 		link: "/",
 	},
 	{
 		clubName: "Music Club",
 		clubDesc:
 			"In this club, we gather musicians and help with music, tempos, composing, rhythms, etc. This is a great opportunity for you to interact with other musicians and develop in your musical career! We take musicians of any kind! Woodwind, strings, etc. Feel free to join and play with us!",
-		src: "/clubs/music1.png",
+		src: "/clubs/music.png",
 		link: "/",
 	},
 	{
 		clubName: "Advocacy Club",
 		clubDesc:
 			"It takes a lot to stand up and make your voice heard. Are you up for that challenge? Join the Simplified Advocacy Club, and work alongside young students to make a difference and make your voice heard.",
-		src: "/clubs/advocacy1.png",
+		src: "/clubs/advocacy.png",
 		link: "/",
 	},
 	{
 		clubName: "Coding Club",
 		clubDesc:
 			"In the Simplified Coding Club you’ll learn the basics of programming and how to apply your new skills in situations like contest programming, hackathons, and your own personal projects. Programming is an awesome skill to learn so we urge everyone of all skill levels to join! Not only will you be able to create projects relevant to what you want to do, but you can use them in real life as well.",
-		src: "/clubs/coding1.png",
+		src: "/clubs/coding.png",
 		link: "/",
 	},
 ];

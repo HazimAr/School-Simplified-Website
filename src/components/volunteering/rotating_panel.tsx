@@ -235,6 +235,7 @@ function Panel({
 						<Image
 							src={src}
 							h={{ base: 150, sm: 300, md: 100, lg: 300 }}
+							ml = "25px"
 							alt={teamName + " team logo"}
 							rounded="full"
 						/>

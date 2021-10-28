@@ -203,15 +203,24 @@ VolunteerPanelProps): JSX.Element {
 				<Center>
 					<Flex
 						justifyContent="flex-start"
-						flexDir={{ base: "column", md: "row" }}
+						flexDir={{ base: "column", md: "column", lg:"row"}}
 						alignItems="center"
 						overflow="auto"
 					>
-						<VStack alignItems="flex-start">
-							<Heading size="lg" textAlign="left">
+						<VStack 
+							alignItems="flex-start"
+							textAlign="left"
+							width={{base: "250px", xl:"600px", lg:"670px", md:"700px", sm: "480px" }}
+							spacing={{ base: 5, md: 8 }}
+							justifyContent={{ base: "center", md: "center" }}
+						>
+							<Heading 
+								size="lg" 
+								textAlign={{ base: "left", md: "center" }}
+							>
 								{teamName}
 							</Heading>
-							<Text textAlign="left" my={2} width="650px">
+							<Text textAlign="left" my={2} width={{lg:"720px", base:"250px", md:"700px", sm:"470px"}}>
 								{teamDesc}
 							</Text>
 
@@ -229,7 +238,7 @@ VolunteerPanelProps): JSX.Element {
 							>
 								<Button
 									bg="linear-gradient(90deg, #FFA270 0%, #e6c068 100%)"
-									mt={3}
+									mt={{ base: 5, md: 0 }}
 								>
 									Applications
 								</Button>
@@ -237,8 +246,8 @@ VolunteerPanelProps): JSX.Element {
 						</VStack>
 						<Image
 							src={src}
-							h={{ base: 150, sm: 300, md: 100, lg: 300 }}
-							ml="25px"
+							h={{ base: 150, sm: 200, md: 250, lg: 250 }}
+							ml={{ base: "30px", sm: "30px", md: "30px", lg: "28px" }}
 							alt={teamName + " team logo"}
 							rounded="full"
 						/>

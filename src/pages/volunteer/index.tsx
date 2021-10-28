@@ -1,6 +1,6 @@
 import {
 	//Box,
-	Divider,
+	//Divider,
 	//Flex,
 	Heading,
 	//Image,
@@ -31,16 +31,19 @@ export default function Volunteering(): JSX.Element {
 		<>
 			<ContainerBackground src="/timmy/raining_timmy.png" py={100}>
 				<Center>
-					<ContainerInside py={10} justifyContent="center">
+					<ContainerInside py={10} pr={{base:2, sm:2}} justifyContent="center">
 						<Stack
 							textAlign="left"
 							direction={{ base: "column", md: "row-reverse" }}
-							width="700px"
+							width={{xl:"700px", lg:"300px", sm: "100x" }}
 							spacing={{ base: 5, md: 10 }}
-							justifyContent="left"
+							justifyContent={{ base: "left", md: "center" }}
 						>
 							<VStack flex={5} justifyContent="center">
-								<Heading size="xl" width="700px">
+								<Heading
+								 size="xl" 
+								 width={{xl:"300px", lg:"600px", sm: "600x" }}
+								 >
 									Join Our Team
 								</Heading>
 

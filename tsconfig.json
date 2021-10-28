@@ -27,7 +27,8 @@
 			"@lib/*": ["lib/*"],
 			"@src/*": ["/*"],
 			"@pages/*": ["pages/*"]
-		}
+		},
+		"incremental": true
 	},
 	"exclude": ["node_modules"],
 	"include": ["**/*.ts", "**/*.tsx"]

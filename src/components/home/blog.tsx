@@ -98,6 +98,10 @@ function Card({ src, title, href }) {
 					backgroundImage={src}
 					backgroundSize="cover"
 					backgroundPosition="center"
+					transition="transform 0.2s ease-in"
+					_hover={{
+						transform: "scale(1.05)",
+					}}
 				>
 					{/* <Image
 						src={src}

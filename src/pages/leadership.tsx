@@ -181,7 +181,6 @@ const seniorExecs: Person[] = [
 		title: "Chief Executive Officer (CEO) & President",
 		img: "/staff/EthanHsu.jpg",
 	},
-
 	{
 		name: "Lauren Hsieh",
 		title: "Secretary & Chief of Staff",
@@ -192,7 +191,6 @@ const seniorExecs: Person[] = [
 		title: "Chief Advancements Officer (CAO)",
 		img: "/staff/RohitChoudhary.jpg",
 	},
-
 	{
 		name: "Hazim Arafa",
 		title: "President of Programming Simplified",
@@ -218,13 +216,11 @@ const seniorExecs: Person[] = [
 		title: "Senior Vice President of Global Marketing",
 		img: "/staff/MasaMurry.jpg",
 	},
-
 	{
 		name: "Jason Mei",
 		title: "Executive Vice President of Information Technology",
 		img: "/staff/JasonMei.jpg",
 	},
-
 	{
 		name: "Diana Zheng",
 		title: "Treasurer",

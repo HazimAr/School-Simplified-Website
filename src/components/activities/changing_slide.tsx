@@ -5,7 +5,7 @@ import {
 	Flex,
 	Heading,
 	Icon,
-	Image,
+	Stack,
 	ScaleFade,
 	Text,
 	useControllableState,
@@ -75,17 +75,6 @@ export default function ChangingSlide(): JSX.Element {
 
 	return (
 		<VStack>
-			{clubs.map((club) => {
-				return (
-					<Image
-						display="none"
-						src={club.src}
-						key={club.clubName}
-						alt={club.clubDesc + " team icon"}
-					/>
-				);
-			})}
-
 			<Box mb={3}>{innerSlides[index]}</Box>
 			<Center>
 				<Center
@@ -149,18 +138,20 @@ function Panel({
 						backgroundSize="cover"
 						backgroundPosition="center"
 						backgroundRepeat="no-repeat"
-						bg="brand.transparent"
+						// bg="brand.transparent"
 						// boxSize="100%"
-						h="100%"
+						h="400px"
 						w="100%"
 						display={{ base: "none", lg: "block" }}
+						borderLeftRadius={{ base: rounded, lg: "50%" }}
 					/>
 					{/* <Image src={src} alt={clubName + " team logo"} w="100%" /> */}
-					<VStack
+					<Stack
 						w="100%"
-						alignItems="flex-start"
+						borderLeftRadius={{ base: rounded, lg: "none" }}
 						borderRightRadius={{ base: rounded, lg: "50%" }}
 						bg="brand.transparent"
+						px={5}
 					>
 						<Heading p={15} size="lg" textAlign="left">
 							{clubName}
@@ -179,7 +170,7 @@ function Panel({
 								Join <ExternalLinkIcon ml={2} />
 							</Button>
 						</NextLink>
-					</VStack>
+					</Stack>
 				</Flex>
 			</ScaleFade>
 		</Box>

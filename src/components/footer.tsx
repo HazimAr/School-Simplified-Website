@@ -57,7 +57,7 @@ export default function Footer() {
 								{about.map((item) => (
 									<ListItem key={item.name}>
 										<NextLink href={item.link}>
-											<Text fontSize="sm">
+											<Text fontSize="xs">
 												{item.name}
 											</Text>
 										</NextLink>
@@ -73,7 +73,7 @@ export default function Footer() {
 								{services.map((item) => (
 									<ListItem key={item.name}>
 										<NextLink href={item.link}>
-											<Text fontSize="sm">
+											<Text fontSize="xs">
 												{item.name}
 											</Text>
 										</NextLink>
@@ -89,7 +89,7 @@ export default function Footer() {
 								{resources.map((item) => (
 									<ListItem key={item.name}>
 										<NextLink href={item.link}>
-											<Text fontSize="sm">
+											<Text fontSize="xs">
 												{item.name}
 											</Text>
 										</NextLink>
@@ -106,7 +106,7 @@ export default function Footer() {
 									{support.map((item) => (
 										<ListItem key={item.name}>
 											<NextLink href={item.link}>
-												<Text fontSize="sm">
+												<Text fontSize="xs">
 													{item.name}
 												</Text>
 											</NextLink>
@@ -122,7 +122,7 @@ export default function Footer() {
 									{advertise.map((item) => (
 										<ListItem key={item.name}>
 											<NextLink href={item.link}>
-												<Text fontSize="sm">
+												<Text fontSize="xs">
 													{item.name}
 												</Text>
 											</NextLink>
@@ -273,30 +273,40 @@ const services = [
 
 const resources = [
 	{
+		name: "Notes",
+		link: "/notes",
+	},
+	{
+		name: "Tutoring",
+		link: "/tutoring",
+	},
+	{
+		name: "Essay Revisions",
+		link: "/essay",
+	},
+	{
+		name: "Homework Help",
+		link: "/homework",
+	},
+	{
 		name: "Volunteering",
 		link: "/volunteering",
 	},
 	{
-		name: "Leadership Opportunities",
-		link: "/leadership/join",
-	},
-	{
-		name: "Programs",
-		link: "/programs",
-	},
-
-	{
-		name: "Internships",
-		link: "/internships",
-	},
-	{
-		name: "Blog",
+		name: "Blogs & Articles",
 		link: "/blog",
 	},
-	{
-		name: "Events",
-		link: "/events",
-	},
+	// {
+	// 	name: "Programs",
+	// 	link: "/programs",
+	// },
+
+	// {
+	// 	name: "Internships",
+	// 	link: "/internships",
+	// },
+	
+
 ];
 
 const support = [
@@ -305,8 +315,8 @@ const support = [
 		link: "/contact",
 	},
 	{
-		name: "Support Us",
-		link: "/support",
+		name: "Donate",
+		link: "/donate",
 	},
 	{
 		name: "FAQ",
@@ -316,7 +326,7 @@ const support = [
 
 const advertise = [
 	{
-		name: "Media Kit",
+		name: "Brand Policy",
 		link: "/media",
 	},
 	{

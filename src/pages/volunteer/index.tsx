@@ -1,20 +1,6 @@
-import {
-	//Box,
-	//Divider,
-	//Flex,
-	Heading,
-	//Image,
-	Text,
-	//HStack,
-	VStack,
-	Center,
-	Stack,
-} from "@chakra-ui/react";
-//import Container from "@components/container";
-//import Button from "@components/button";
+import { Heading, Text, VStack, Center, Stack } from "@chakra-ui/react";
 import ContainerBackground from "@components/containerBackground";
 import ContainerInside from "@components/containerInside";
-// import Reasons from "@components/volunteering/reasons";
 import RotatingPanel from "@components/volunteering/rotating_panel";
 
 /**
@@ -26,24 +12,32 @@ import RotatingPanel from "@components/volunteering/rotating_panel";
  * Needs a couple Undraw images
  * @returns the Volunteering page
  */
-export default function Volunteering(): JSX.Element {
+export default function Volunteering() {
 	return (
 		<>
 			<ContainerBackground src="/timmy/raining_timmy.png" py={100}>
 				<Center>
-					<ContainerInside py={10} pr={{base:2, sm:2}} justifyContent="center">
+					<ContainerInside
+						py={10}
+						pr={{ base: 2, sm: 2 }}
+						justifyContent="center"
+					>
 						<Stack
 							textAlign="left"
 							direction={{ base: "column", md: "row-reverse" }}
-							width={{xl:"700px", lg:"300px", sm: "100x" }}
+							width={{ xl: "700px", lg: "300px", sm: "100x" }}
 							spacing={{ base: 5, md: 10 }}
 							justifyContent={{ base: "left", md: "center" }}
 						>
 							<VStack flex={5} justifyContent="center">
 								<Heading
-								 size="xl" 
-								 width={{xl:"300px", lg:"600px", sm: "600x" }}
-								 >
+									size="xl"
+									width={{
+										xl: "300px",
+										lg: "600px",
+										sm: "600x",
+									}}
+								>
 									Join Our Team
 								</Heading>
 

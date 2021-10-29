@@ -211,24 +211,39 @@ VolunteerPanelProps): JSX.Element {
 				<Center>
 					<Flex
 						justifyContent="flex-start"
-						flexDir={{ base: "column", md: "column", lg:"row"}}
+						flexDir={{ base: "column", md: "column", lg: "row" }}
 						alignItems="center"
 						overflow="auto"
 					>
-						<VStack 
+						<VStack
 							alignItems="flex-start"
 							textAlign="left"
-							width={{base: "250px", xl:"600px", lg:"650px", md:"700px", sm: "480px" }}
+							width={{
+								base: "250px",
+								xl: "600px",
+								lg: "650px",
+								md: "700px",
+								sm: "480px",
+							}}
 							spacing={{ base: 5, md: 8 }}
 							justifyContent={{ base: "center", md: "center" }}
 						>
-							<Heading 
-								size="lg" 
+							<Heading
+								size="lg"
 								textAlign={{ base: "left", md: "center" }}
 							>
 								{teamName}
 							</Heading>
-							<Text textAlign="left" my={2} width={{lg:"720px", base:"250px", md:"700px", sm:"470px"}}>
+							<Text
+								textAlign="left"
+								my={2}
+								width={{
+									lg: "720px",
+									base: "250px",
+									md: "700px",
+									sm: "470px",
+								}}
+							>
 								{teamDesc}
 							</Text>
 
@@ -255,7 +270,13 @@ VolunteerPanelProps): JSX.Element {
 						<Image
 							src={src}
 							h={{ base: 150, sm: 200, md: 250, lg: 250 }}
-							ml={{ base: "30px", sm: "30px", md: "30px", lg: "50px", xl:"100px"}}
+							ml={{
+								base: "30px",
+								sm: "30px",
+								md: "30px",
+								lg: "50px",
+								xl: "100px",
+							}}
 							mt={{ base: 5, md: 0 }}
 							alt={teamName + " team logo"}
 							rounded="full"

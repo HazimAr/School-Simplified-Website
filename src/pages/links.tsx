@@ -1,11 +1,7 @@
 import { getLinkButtons } from "@api/notion";
 import {
 	Button,
-	HStack,
 	Icon,
-	Image,
-	Link,
-	Text,
 	VStack,
 } from "@chakra-ui/react";
 import Container from "@components/container";
@@ -16,80 +12,12 @@ import { LinkButtonProps } from "types";
 import fetchIcon from "util/react_icon_fetcher";
 import Hero from "./volunteer/hero";
 
-export default function Links({
-	buttons,
-}: {
-	buttons: LinkButtonProps[];
-}): JSX.Element {
+export default function Links({ buttons }: { buttons: LinkButtonProps[] }) {
 	return (
 		<>
 			<Container>
 				<ContainerInside>
-					<VStack spacing={3}>
-						<Hero heading="School Simplified" />
-						<HStack spacing={5}>
-							<Link
-								href="https://www.tiktok.com/@schoolsimplified?"
-								isExternal
-							>
-								<Icon
-									as={fetchIcon("SiTiktok")}
-									boxSize="25px"
-								/>
-							</Link>
-
-							<Link
-								href="https://www.instagram.com/school.simplified/"
-								isExternal
-							>
-								<Icon
-									as={fetchIcon("SiInstagram")}
-									boxSize="25px"
-								/>
-							</Link>
-
-							<Link
-								href="https://twitter.com/schoolsimplify"
-								isExternal
-							>
-								<Icon
-									as={fetchIcon("SiTwitter")}
-									boxSize="25px"
-								/>
-							</Link>
-
-							<Link
-								href="https://www.facebook.com/SchoolSimple/"
-								isExternal
-							>
-								<Icon
-									as={fetchIcon("ImFacebook2")}
-									boxSize="25px"
-								/>
-							</Link>
-
-							<Link
-								href="https://discord.com/invite/school"
-								isExternal
-							>
-								<Icon
-									as={fetchIcon("FaDiscord")}
-									boxSize="29px"
-									mt="3px"
-								/>
-							</Link>
-
-							<Link
-								href="https://www.linkedin.com/company/school-simplified"
-								isExternal
-							>
-								<Icon
-									as={fetchIcon("SiLinkedin")}
-									boxSize="28px"
-								/>
-							</Link>
-						</HStack>
-					</VStack>
+					<Hero heading="School Simplified" />
 				</ContainerInside>
 			</Container>
 

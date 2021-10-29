@@ -103,6 +103,8 @@ export default function Header(): JSX.Element {
 									</Menu>
 								);
 							})}
+							<NextLink href="/volunteer">Volunteer</NextLink>
+							<NextLink href="/donate">Donate</NextLink>
 							<NextLink href="/contact">Contact Us</NextLink>
 						</HStack>
 					</Flex>
@@ -133,30 +135,36 @@ const menuItems = [
 				name: "FAQ",
 				href: "/faq",
 			},
+			{
+				name: "Social Media",
+				href: "/links",
+			},
 		],
 	},
 	{
-		name: "Services & Products",
+		name: "Resources",
 		children: [
 			{
-				name: "Essay Revision",
-				href: "/essay",
+				name: "Notes",
+				href: "/notes",
 			},
 			{
 				name: "Tutoring",
 				href: "/tutoring",
 			},
+
 			{
-				name: "Notes & Resources",
-				href: "/notes",
+				name: "Essay Revision",
+				href: "/essay",
 			},
+
 			{
 				name: "Homework Help",
-				href: "/homework",
+				href: "/discord",
 			},
 			{
-				name: "SAT Prep",
-				href: "/sat",
+				name: "Blogs & Articles",
+				href: "/blog",
 			},
 		],
 	},
@@ -170,40 +178,6 @@ const menuItems = [
 			{
 				name: "Become a Chapter",
 				href: "/idfk",
-			},
-			{
-				name: "BAP (SOON TM)",
-				href: "/idfk",
-			},
-			{
-				name: "Internships",
-				href: "/internships",
-			},
-		],
-	},
-	{
-		name: "Get Involved",
-		children: [
-			{
-				name: "Volunteer",
-				href: "/volunteer",
-			},
-			{
-				name: "Leadership Opportunities",
-				href: "/leadership-something-idk-yet",
-			},
-		],
-	},
-	{
-		name: "Support Us",
-		children: [
-			{
-				name: "Donate",
-				href: "/donate",
-			},
-			{
-				name: "Sponsor",
-				href: "/sponsor",
 			},
 		],
 	},

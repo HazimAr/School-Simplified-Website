@@ -138,8 +138,6 @@ function Panel({
 						backgroundSize="cover"
 						backgroundPosition="center"
 						backgroundRepeat="no-repeat"
-						// bg="brand.transparent"
-						// boxSize="100%"
 						h="400px"
 						w="100%"
 						display={{ base: "none", lg: "block" }}

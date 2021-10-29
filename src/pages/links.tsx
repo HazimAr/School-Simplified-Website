@@ -20,10 +20,8 @@ export default function Links({ buttons }: { buttons: LinkButtonProps[] }) {
 			<Container>
 				<ContainerInside align="center" mt={8}>
 					<VStack spacing={5} maxW={560}>
-						{buttons.map((button, index: number) => {
-							return (
-								<LinkButton {...button} key={"key_" + index} />
-							);
+						{buttons.map((button) => {
+							return <LinkButton {...button} key={button.text} />;
 						})}
 					</VStack>
 				</ContainerInside>

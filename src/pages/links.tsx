@@ -14,6 +14,7 @@ import NextLink from "@components/nextChakra";
 import React from "react";
 import { LinkButtonProps } from "types";
 import fetchIcon from "util/react_icon_fetcher";
+import Hero from "./volunteer/hero";
 
 export default function Links({
 	buttons,
@@ -25,20 +26,7 @@ export default function Links({
 			<Container>
 				<ContainerInside>
 					<VStack spacing={3}>
-						<Image
-							src="\logos\ss_logo.png"
-							alt="school simplified logo"
-							boxSize={100}
-							mt={{ base: 12, md: 4 }}
-							// mx="10px"
-						/>
-
-						<Text fontSize="xl">School Simplified</Text>
-
-						<Text fontSize="md">
-							Free Tutoring | Free Notes | Free Essay Revisions
-						</Text>
-
+						<Hero heading="School Simplified" />
 						<HStack spacing={5}>
 							<Link
 								href="https://www.tiktok.com/@schoolsimplified?"

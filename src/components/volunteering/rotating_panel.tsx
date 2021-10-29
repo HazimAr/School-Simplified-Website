@@ -56,7 +56,9 @@ const teams: VolunteerPanelProps[] = [
 		teamDesc:
 			"As a part of our Academics Teams, you can provide educational help to other students in the School Simplified community. If you excel in school and enjoy sharing your knowledge, join the Academics Department!",
 		src: "timmy/academicsdept.png",
-		link: "https://forms.gle/xrZma1KjtZ6nzRxS8",
+		link: "/volunteer/acad",
+
+		//link: "https://forms.gle/xrZma1KjtZ6nzRxS8",
 		functions: [
 			"content creation",
 			"design",
@@ -70,7 +72,9 @@ const teams: VolunteerPanelProps[] = [
 		teamDesc:
 			"Joining our Technology Team will allow you to develop skills such as programming, web development, and quality management. Apply if you are knowledgeable in any of these areas!",
 		src: "timmy/itdept.png",
-		link: "https://forms.gle/xrZma1KjtZ6nzRxS8",
+		link: "/volunteer/tech",
+
+		//link: "https://forms.gle/xrZma1KjtZ6nzRxS8",
 		functions: [
 			"content creation",
 			"design",
@@ -84,7 +88,9 @@ const teams: VolunteerPanelProps[] = [
 		teamDesc:
 			"text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text",
 		src: "timmy/communitydept.png",
-		link: "https://forms.gle/xrZma1KjtZ6nzRxS8",
+		link: "/volunteer/community",
+
+		//link: "https://forms.gle/xrZma1KjtZ6nzRxS8",
 		functions: [
 			"content creation",
 			"design",
@@ -98,7 +104,9 @@ const teams: VolunteerPanelProps[] = [
 		teamDesc:
 			"text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text",
 		src: "timmy/hrdept.png",
-		link: "https://forms.gle/xrZma1KjtZ6nzRxS8",
+		link: "/volunteer/hr",
+
+		//link: "https://forms.gle/xrZma1KjtZ6nzRxS8",
 		functions: [
 			"content creation",
 			"design",
@@ -210,7 +218,7 @@ VolunteerPanelProps): JSX.Element {
 						<VStack 
 							alignItems="flex-start"
 							textAlign="left"
-							width={{base: "250px", xl:"600px", lg:"670px", md:"700px", sm: "480px" }}
+							width={{base: "250px", xl:"600px", lg:"650px", md:"700px", sm: "480px" }}
 							spacing={{ base: 5, md: 8 }}
 							justifyContent={{ base: "center", md: "center" }}
 						>
@@ -238,7 +246,7 @@ VolunteerPanelProps): JSX.Element {
 							>
 								<Button
 									bg="linear-gradient(90deg, #FFA270 0%, #e6c068 100%)"
-									mt={{ base: 5, md: 0 }}
+									//mt={{ base: 5, md: 0 }}
 								>
 									Applications
 								</Button>
@@ -247,7 +255,8 @@ VolunteerPanelProps): JSX.Element {
 						<Image
 							src={src}
 							h={{ base: 150, sm: 200, md: 250, lg: 250 }}
-							ml={{ base: "30px", sm: "30px", md: "30px", lg: "28px" }}
+							ml={{ base: "30px", sm: "30px", md: "30px", lg: "50px", xl:"100px"}}
+							mt={{ base: 5, md: 0 }}
 							alt={teamName + " team logo"}
 							rounded="full"
 						/>

@@ -10,7 +10,6 @@ import {
 	VStack,
 	Grid,
 	Center,
-	Icon,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -158,24 +157,11 @@ export default function Footer() {
 							<Spacer /> */}
 
 							<Grid templateColumns="repeat(3, 1fr)" gap={3}>
-								{socials.map((social) => {
+								{socials.map((item) => {
 									return (
-										<Center key={social.link}>
-											<NextLink
-												href={social.link}
-												isExternal
-											>
-												<Icon
-													as={social.icon}
-													boxSize="40px"
-													color="white"
-													transition="all 0.2s ease"
-													_hover={{
-														cursor: "pointer",
-														transform:
-															"scale(1.20)",
-													}}
-												/>
+										<Center key={item.link}>
+											<NextLink href={item.link}>
+												<item.icon size={size} />
 											</NextLink>
 										</Center>
 									);

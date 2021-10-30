@@ -5,7 +5,6 @@ import {
 	Flex,
 	Heading,
 	Icon,
-	Stack,
 	ScaleFade,
 	Text,
 	useControllableState,

@@ -10,21 +10,14 @@ import {
 	VStack,
 	Grid,
 	Center,
+	Icon,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
 import Wave from "react-wavify";
 
-import {
-	FaDiscord,
-	FaGithub,
-	FaTwitter,
-	FaFacebook,
-	FaInstagram,
-	FaLinkedinIn,
-	FaTiktok,
-} from "react-icons/fa";
+import { socials } from "config";
 
 export default function Footer() {
 	const purple = useToken("colors", "brand.purple.light");
@@ -165,11 +158,24 @@ export default function Footer() {
 							<Spacer /> */}
 
 							<Grid templateColumns="repeat(3, 1fr)" gap={3}>
-								{socials.map((item) => {
+								{socials.map((social) => {
 									return (
-										<Center key={item.link}>
-											<NextLink href={item.link}>
-												<item.icon size={size} />
+										<Center key={social.link}>
+											<NextLink
+												href={social.link}
+												isExternal
+											>
+												<Icon
+													as={social.icon}
+													boxSize="40px"
+													color="white"
+													transition="all 0.2s ease"
+													_hover={{
+														cursor: "pointer",
+														transform:
+															"scale(1.20)",
+													}}
+												/>
 											</NextLink>
 										</Center>
 									);
@@ -204,44 +210,6 @@ export default function Footer() {
 		</Box>
 	);
 }
-
-const socials = [
-	{
-		name: "Instagram",
-		link: "https://www.instagram.com/schoolsimplified/",
-		icon: (props) => <FaInstagram {...props} />,
-	},
-	{
-		name: "Discord",
-		link: "https://discord.gg/school",
-		icon: (props) => <FaDiscord {...props} />,
-	},
-	{
-		name: "LinkedIn",
-		link: "https://www.linkedin.com/company/school-simplified",
-		icon: (props) => <FaLinkedinIn {...props} />,
-	},
-	{
-		name: "Twitter",
-		link: "https://twitter.com/SchoolSimplified",
-		icon: (props) => <FaTwitter {...props} />,
-	},
-	{
-		name: "Facebook",
-		link: "https://www.facebook.com/SchoolSimplified",
-		icon: (props) => <FaFacebook {...props} />,
-	},
-	{
-		name: "Github",
-		link: "https://github.com/HazimAr/School-Simplified",
-		icon: (props) => <FaGithub {...props} />,
-	},
-	{
-		name: "TikTok",
-		link: "https://www.tiktok.com/@schoolsimplified",
-		icon: (props) => <FaTiktok {...props} />,
-	},
-];
 
 const size = "40px";
 
@@ -286,10 +254,6 @@ const resources = [
 		link: "/homework",
 	},
 	{
-		name: "Volunteering",
-		link: "/volunteering",
-	},
-	{
 		name: "Blogs & Articles",
 		link: "/blog",
 	},
@@ -321,7 +285,7 @@ const support = [
 
 const join = [
 	{
-		name: "volunteer",
+		name: "Volunteer",
 		link: "/volunteer",
 	},
 	{

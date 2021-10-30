@@ -7,6 +7,7 @@ import {
 	Text,
 	UnorderedList,
 	VStack,
+	Divider,
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import Art from "@components/community/art";
@@ -89,7 +90,7 @@ export default function Community({
 								Our Discord Server
 							</Heading>
 
-							<Text fontSize="2xl" textAlign="left">
+							<Text textAlign="left">
 								Our Discord server offers all of the features
 								above, and more! Our 60k members are high school
 								students who help each other with academics,
@@ -122,16 +123,13 @@ export default function Community({
 							/>
 						</Stack>
 					</Stack>
-				</ContainerInside>
-			</Container>
-
-			<Container py={10}>
-				<ContainerInside>
+					{/* <Divider size="1px" h="20px" /> */}
 					<Stack
 						direction={{ base: "column", md: "row" }}
 						justify="center"
 						spacing={10}
 						textAlign="center"
+						pt="80px"
 					>
 						<VStack
 							flex={1}
@@ -217,6 +215,10 @@ export default function Community({
 						</VStack>
 					</Stack>
 				</ContainerInside>
+			</Container>
+
+			<Container py={10}>
+				<ContainerInside></ContainerInside>
 			</Container>
 
 			<SocialMedias />

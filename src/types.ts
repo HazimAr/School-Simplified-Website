@@ -86,9 +86,9 @@ export type SpotifyLink = {
 };
 
 export type SocialMediaIcon = {
-	icon: any;
-	size: any;
+	name: string;
 	link: string;
+	icon: any;
 };
 
 export type ScholarshipProps = {
@@ -118,7 +118,7 @@ export type ActivitySlideProps = {
 	clubName: string;
 	clubDesc: string;
 	link: string;
-}
+};
 
 export type BlogListing = {
 	title: string;

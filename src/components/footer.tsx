@@ -65,7 +65,7 @@ export default function Footer() {
 								))}
 							</UnorderedList>
 						</Stack>
-						<Stack>
+						{/* <Stack>
 							<Heading as="h3" size="md">
 								Services
 							</Heading>
@@ -80,7 +80,7 @@ export default function Footer() {
 									</ListItem>
 								))}
 							</UnorderedList>
-						</Stack>
+						</Stack> */}
 						<Stack>
 							<Heading as="h3" size="md">
 								Resources
@@ -238,10 +238,10 @@ const about = [
 		name: "Leadership",
 		link: "/leadership",
 	},
-	{
-		name: "Our Organizations",
-		link: "/organizations",
-	},
+	// {
+	// 	name: "Our Organizations",
+	// 	link: "/organizations",
+	// },
 	{
 		name: "Community",
 		link: "/community",
@@ -249,25 +249,6 @@ const about = [
 	{
 		name: "Partners",
 		link: "/partners",
-	},
-];
-
-const services = [
-	{
-		name: "Tutoring",
-		link: "/tutoring",
-	},
-	{
-		name: "Essay Revisions",
-		link: "/essay",
-	},
-	{
-		name: "Homework Help",
-		link: "/homework",
-	},
-	{
-		name: "Notes and Resources",
-		link: "/notes",
 	},
 ];
 
@@ -305,8 +286,6 @@ const resources = [
 	// 	name: "Internships",
 	// 	link: "/internships",
 	// },
-	
-
 ];
 
 const support = [
@@ -321,6 +300,21 @@ const support = [
 	{
 		name: "FAQ",
 		link: "/faq",
+	},
+];
+
+const join = [
+	{
+		name: "volunteer",
+		link: "/volunteer",
+	},
+	{
+		name: "Become A Chapter",
+		link: "/chapter",
+	},
+	{
+		name: "Accelerate Your Organization",
+		link: "/accelerate",
 	},
 ];
 

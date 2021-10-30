@@ -4,7 +4,7 @@ import Clubs from "@components/activities/changing_slide";
 
 export default function Here() {
 	return (
-		<Container py="50px">
+		<Container py="100px">
 			<ContainerInside>
 				<Clubs />
 			</ContainerInside>

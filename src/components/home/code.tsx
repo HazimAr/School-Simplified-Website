@@ -8,7 +8,7 @@ import { useState } from "react";
 export default function Intro() {
 	const [content, setContent] = useState(0);
 	return (
-		<Container>
+		<Container py="100px">
 			<ContainerInside>
 				<HStack justify="center">
 					<Stack textAlign="left">

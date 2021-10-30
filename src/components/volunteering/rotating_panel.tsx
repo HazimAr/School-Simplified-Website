@@ -135,7 +135,7 @@ export default function RotatingPanel(): JSX.Element {
 	//src= "\timmy\timmy_background"
 
 	return (
-		<Container background="#6F7ADC">
+		<Container >
 			{teams.map((team) => {
 				return (
 					<Image

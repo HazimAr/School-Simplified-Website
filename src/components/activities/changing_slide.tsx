@@ -138,20 +138,21 @@ function Panel({
 						backgroundSize="cover"
 						backgroundPosition="center"
 						backgroundRepeat="no-repeat"
-						h="400px"
+						h="500px"
 						w="100%"
 						display={{ base: "none", lg: "block" }}
 						borderLeftRadius={{ base: rounded, lg: "50%" }}
 					/>
 					{/* <Image src={src} alt={clubName + " team logo"} w="100%" /> */}
-					<Stack
+					<VStack
 						w="100%"
 						borderLeftRadius={{ base: rounded, lg: "none" }}
 						borderRightRadius={{ base: rounded, lg: "50%" }}
+						justify="center"
 						bg="brand.transparent"
 						px={5}
 					>
-						<Heading p={15} size="lg" textAlign="left">
+						<Heading p={15} size="xl" textAlign="left">
 							{clubName}
 						</Heading>
 						<Text w="95%" p={15} textAlign="left" my={2}>
@@ -168,7 +169,7 @@ function Panel({
 								Join <ExternalLinkIcon ml={2} />
 							</Button>
 						</NextLink>
-					</Stack>
+					</VStack>
 				</Flex>
 			</ScaleFade>
 		</Box>

@@ -189,7 +189,7 @@ const seniorExecs: Person[] = [
 	{
 		name: "Param Patil",
 		title: "Chief Advancements Officer (CAO)",
-		img: "/staff/RohitChoudhary.jpg",
+		img: "/staff/ParamPatil.jpg",
 	},
 	{
 		name: "Hazim Arafa",
@@ -242,7 +242,7 @@ const execs: Person[] = [
 	{
 		name: "Rohit Penta",
 		title: "Vice President of Technical",
-		img: "/staff/ParamPatil.jpg",
+		img: "/staff/RohitPenta.jpg",
 	},
 	{
 		name: "Isamar Zhu",

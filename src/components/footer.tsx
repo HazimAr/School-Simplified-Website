@@ -98,6 +98,22 @@ export default function Footer() {
 							</UnorderedList>
 						</Stack>
 						<Stack>
+							<Heading as="h3" size="md">
+								Join Us
+							</Heading>
+							<UnorderedList styleType="none">
+								{join.map((item) => (
+									<ListItem key={item.name}>
+										<NextLink href={item.link}>
+											<Text fontSize="xs">
+												{item.name}
+											</Text>
+										</NextLink>
+									</ListItem>
+								))}
+							</UnorderedList>
+						</Stack>
+						<Stack>
 							<Stack>
 								<Heading as="h3" size="md">
 									Support

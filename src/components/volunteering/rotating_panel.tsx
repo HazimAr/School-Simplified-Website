@@ -1,4 +1,3 @@
-//import { ExternalLinkIcon } from "@chakra-ui/icons";
 import {
 	Box,
 	Center,

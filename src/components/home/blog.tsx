@@ -7,7 +7,7 @@ import NextChakraLink from "@components/nextChakra";
 
 export default function Blog({ listing }: { listing: BlogListing[] }) {
 	return (
-		<ContainerBackground py="100px">
+		<ContainerBackground src="/blog.jpg" py="50px">
 			<ContainerInside>
 				<Stack textAlign="left" spacing={5}>
 					<Stack w={{ base: "100%", lg: "50%" }}>

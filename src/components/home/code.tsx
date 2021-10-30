@@ -18,7 +18,7 @@ import { useState } from "react";
 export default function Intro() {
 	const [content, setContent] = useState(0);
 	return (
-		<ContainerBackground src="/code.jpg" py="50px">
+		<ContainerBackground src="/code.jpg" py="100px">
 			<ContainerInside>
 				<HStack justify="center">
 					<VStack w="100%" textAlign="left" spacing="25px">

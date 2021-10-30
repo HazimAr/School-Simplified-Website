@@ -34,42 +34,43 @@ const socials: SocialMediaIcon[] = [
 	{
 		name: "Spotify",
 		link: "https://open.spotify.com/user/5lkgh8ryszqens1ywo58m5lv8?si=047cab1b8a714515",
-		icon: () => <FaSpotify />,
+		icon: (props) => <FaSpotify {...props} />,
 	},
 	{
 		name: "Instagram",
 		link: "https://www.instagram.com/schoolsimplified/",
-		icon: () => <FaInstagram />,
+		icon: (props) => <FaInstagram {...props} />,
 	},
 	{
 		name: "Discord",
 		link: "https://discord.gg/school",
-		icon: () => <FaDiscord />,
+		icon: (props) => <FaDiscord {...props} />,
 	},
 	{
 		name: "LinkedIn",
 		link: "https://www.linkedin.com/company/school-simplified",
-		icon: () => <FaLinkedinIn />,
+		icon: (props) => <FaLinkedinIn {...props} />,
 	},
 	{
 		name: "Twitter",
 		link: "https://twitter.com/SchoolSimplified",
-		icon: () => <FaTwitter />,
+		icon: (props) => <FaTwitter {...props} />,
 	},
 	{
 		name: "Facebook",
 		link: "https://www.facebook.com/SchoolSimplified",
-		icon: () => <FaFacebook />,
+		icon: (props) => <FaFacebook {...props} />,
+	},
+
+	{
+		name: "TikTok",
+		link: "https://www.tiktok.com/@schoolsimplified",
+		icon: (props) => <FaTiktok {...props} />,
 	},
 	{
 		name: "Github",
 		link: "https://github.com/HazimAr/School-Simplified",
-		icon: () => <FaGithub />,
-	},
-	{
-		name: "TikTok",
-		link: "https://www.tiktok.com/@schoolsimplified",
-		icon: () => <FaTiktok />,
+		icon: (props) => <FaGithub {...props} />,
 	},
 ];
 

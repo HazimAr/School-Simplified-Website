@@ -16,7 +16,7 @@ export default function ContainerBackground(props) {
 				background: `url('${props.src}') center center`,
 				backgroundRepeat: "no-repeat",
 				backgroundSize: "cover",
-				opacity: 0.25,
+				opacity: 0.1,
 			}}
 			{...props}
 		>

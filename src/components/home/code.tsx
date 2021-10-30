@@ -1,6 +1,16 @@
-import { Box, Heading, HStack, Image, Stack, Text } from "@chakra-ui/react";
+import {
+	Box,
+	Flex,
+	Heading,
+	HStack,
+	Image,
+	Stack,
+	Text,
+	VStack,
+	Center,
+} from "@chakra-ui/react";
 import Button from "@components/button";
-import Container from "@components/container";
+import ContainerBackground from "@components/containerBackground";
 import ContainerInside from "@components/containerInside";
 import { rounded } from "@styles/theme";
 import { useState } from "react";
@@ -8,14 +18,14 @@ import { useState } from "react";
 export default function Intro() {
 	const [content, setContent] = useState(0);
 	return (
-		<Container py="100px">
+		<ContainerBackground src="/code.jpg" py="50px">
 			<ContainerInside>
 				<HStack justify="center">
-					<Stack textAlign="left">
+					<VStack w="100%" textAlign="left" spacing="25px">
 						<Heading>Learn to apply code</Heading>
-						<HStack spacing={0} w="100%">
+						<Flex justify="center" w="100%">
 							<SectionButton
-								borderLeftRadius={"25px"}
+								borderLeftRadius="25px"
 								onClick={() => {
 									setContent(0);
 								}}
@@ -40,7 +50,7 @@ export default function Intro() {
 							>
 								Join
 							</SectionButton>
-						</HStack>
+						</Flex>
 						<Stack bg="brand.transparent" p={5} rounded={rounded}>
 							<Text>
 								Lorem, ipsum dolor sit amet consectetur
@@ -52,16 +62,17 @@ export default function Intro() {
 							</Text>
 							<Button w="fit-content">Enroll</Button>
 						</Stack>
-					</Stack>
-					<Image
-						src="/timmy/29.png"
-						alt="Timmy working on laptop"
-						w="500px"
-						display={{ base: "none", lg: "block" }}
-					/>
+					</VStack>
+					<Center w="60%" display={{ base: "none", lg: "flex" }}>
+						<Image
+							src="/timmy/29.png"
+							alt="Timmy working on laptop"
+							w="300px"
+						/>
+					</Center>
 				</HStack>
 			</ContainerInside>
-		</Container>
+		</ContainerBackground>
 	);
 }
 
@@ -70,7 +81,6 @@ function SectionButton(props) {
 	return (
 		<Box
 			onClick={onClick}
-			maxW="200px"
 			py={3}
 			w="100%"
 			bg={

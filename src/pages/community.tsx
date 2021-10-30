@@ -7,7 +7,6 @@ import {
 	Text,
 	UnorderedList,
 	VStack,
-	Divider,
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import Art from "@components/community/art";

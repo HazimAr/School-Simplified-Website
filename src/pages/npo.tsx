@@ -25,16 +25,17 @@ export default function Npo() {
 					</VStack>
 				</ContainerInside>
 			</ContainerBackground>
-			<Container>
+			<Container py="50px">
 				<ContainerInside>
 					<Heading>Becoming a NonProfit Organization</Heading>
-					<HStack h="">
+					<HStack justify="center" spacing={10}>
 						<Image
-							src="/timmy/information.png"
+							src="/timmy/npo.png"
 							alt="timmy standing on paper"
-							maxW="100%"
+							maxW="300px"
+							w="100%"
 						/>
-						<Stack w="100%" textAlign="left">
+						<Stack textAlign="left">
 							<Heading>What do you gain?</Heading>
 							<UnorderedList>
 								<ListItem>

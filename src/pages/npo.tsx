@@ -29,7 +29,7 @@ export default function Npo() {
 			<Container py="50px">
 				<ContainerInside>
 					<Heading>Becoming a NonProfit Organization</Heading>
-					<HStack justify="center" spacing={10}>
+					<HStack justify="center" spacing={10} py="25px">
 						<Image
 							src="/timmy/npo.png"
 							alt="timmy standing on paper"
@@ -65,6 +65,7 @@ export default function Npo() {
 					<HStack
 						spacing={{ base: 0, "2xl": "110px" }}
 						flexDirection={{ base: "column", "2xl": "row" }}
+						py="25px"
 					>
 						<Card
 							heading="Keep: "
@@ -78,7 +79,11 @@ export default function Npo() {
 							]}
 							src="/timmy/20.png"
 						/>
-						<Box w="100%" h="100px" display={{base: "block", "2xl": "none"}} />
+						<Box
+							w="100%"
+							h="50px"
+							display={{ base: "block", "2xl": "none" }}
+						/>
 						<Card
 							heading="Give: "
 							items={[

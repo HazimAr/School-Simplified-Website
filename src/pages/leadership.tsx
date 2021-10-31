@@ -323,18 +323,18 @@ const boardOfDirectors: Person[] = [
 	},
 	{
 		name: "Ethan Hsu",
-		title: "Chairperson & CEO",
+		title: "Chairperson",
 		img: "/staff/default.png",
 	},
 
 	{
 		name: "Lauren Hsieh",
-		title: "Director & Secretary",
+		title: "Director",
 		img: "/staff/default.png",
 	},
 	{
 		name: "Diana Zheng",
-		title: "Director & Treasurer",
+		title: "Director",
 		img: "/staff/default.png",
 	},
 	{

@@ -111,17 +111,17 @@ export default function About({ data }: { data: any }): JSX.Element {
 								flexDir={{ base: "column", sm: "row" }}
 							>
 								<Text fontSize={20} fontWeight="bold">
-									Jason Mei
+									Ethan Wu
+								</Text>
+								<Text fontSize={20} fontWeight="bold">
+									Nathanael Ma
 								</Text>
 								<Text fontSize={20} fontWeight="bold">
 									Ethan Hsu
 								</Text>
 								<Text fontSize={20} fontWeight="bold">
-									Ethan Wu
+									Jason Mei
 								</Text>
-								<Text fontSize={20} fontWeight="bold">
-									Nathanael Ma
-								</Text>{" "}
 							</HStack>
 						</VStack>
 					</Box>

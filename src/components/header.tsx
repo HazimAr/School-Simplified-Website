@@ -173,11 +173,11 @@ const menuItems = [
 		children: [
 			{
 				name: "Accelerate Your Organization",
-				href: "/idfk",
+				href: "/npo",
 			},
 			{
 				name: "Become a Chapter",
-				href: "/idfk",
+				href: "/chapter",
 			},
 		],
 	},

@@ -5,9 +5,9 @@ import NextLink from "@components/nextChakra";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import { BsShieldShaded } from "react-icons/bs";
-import { IoCalendarOutline } from "react-icons/io";
-import { GrGroup } from "react-icons/gr";
+import { BsShieldShaded, BsCalendar3 } from "react-icons/bs";
+//import { GrGroup } from "react-icons/gr";
+import { RiGroupFill } from "react-icons/ri"
 
 export default function Community() {
 	return (
@@ -59,7 +59,7 @@ export default function Community() {
 										textAlign="left"
 									>
 										<HStack>
-											<IoCalendarOutline />
+											<BsCalendar3 />
 											<Text>Events Organizer</Text>
 										</HStack>
 									</Button>
@@ -78,7 +78,7 @@ export default function Community() {
 											textAlign="left"
 										>
 											<HStack>
-												<GrGroup />
+												<RiGroupFill />
 												<Text>Advisor</Text>
 											</HStack>
 										</Button>

@@ -6,7 +6,8 @@ import NextLink from "@components/nextChakra";
 import React from "react";
 import { LinkButtonProps } from "types";
 import fetchIcon from "util/react_icon_fetcher";
-import Hero from "./volunteer/hero";
+import Hero from "@components/volunteering/hero";
+//import Hero from "./volunteer/hero";
 
 export default function Links({ buttons }: { buttons: LinkButtonProps[] }) {
 	return (

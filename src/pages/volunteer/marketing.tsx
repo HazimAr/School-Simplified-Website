@@ -16,10 +16,13 @@ export default function Marketing() {
 				</ContainerInside>
 			</Container>
 
-			<Container bg="#8F9CFE" h="800px">
+			<Container bg="#8F9CFE" {{ base: "1000px", md: "800px" }}>
 				<ContainerInside>
 					<Center>
-						<HStack>
+						<HStack flexDirection={{
+								base: "column",
+								md: "row",
+							}}>
 							<Image
 								src="/timmy/timmy_lanyard.png"
 								alt="timmy with lanyard"

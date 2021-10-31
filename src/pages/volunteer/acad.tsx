@@ -20,7 +20,12 @@ export default function Acad() {
 			<Container bg="#8F9CFE" h="400px">
 				<ContainerInside>
 					<Center>
-						<HStack>
+						<HStack
+							flexDirection={{
+								base: "column",
+								md: "row",
+							}}
+						>
 							<Image
 								src="/timmy/timmy_lanyard.png"
 								alt="timmy with lanyard"

@@ -19,15 +19,21 @@ export default function Projects() {
 				</ContainerInside>
 			</Container>
 
-			<Container bg="#8F9CFE" h="400px">
+			<Container bg="#8F9CFE" h={{ base: "600px", md: "400px" }}>
 				<ContainerInside>
 					<Center>
-						<HStack>
+						<HStack
+							flexDirection={{
+								base: "column",
+								md: "row",
+							}}
+						>
 							<Image
 								src="/timmy/timmy_lanyard.png"
 								alt="timmy with lanyard"
 								w="300px"
 								mr="70px"
+								align="center"
 							/>
 							<VStack spacing="20px">
 								<NextLink

@@ -183,7 +183,7 @@ const seniorExecs: Person[] = [
 	},
 	{
 		name: "Lauren Hsieh",
-		title: "Secretary & Chief of Staff",
+		title: "Chief of Staff & Corporate Secretary ",
 		img: "/staff/LaurenHsieh.jpg",
 	},
 

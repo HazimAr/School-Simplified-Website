@@ -255,7 +255,8 @@ const execs: Person[] = [
 		img: "/staff/RohitChoudhary.jpg",
 	},
 	{
-		name: "Josh Schram",
+		name: "Cracker",
+		// name: "Josh Schram",
 		title: "Vice President of Academics",
 		img: "/staff/JoshSchram.jpg",
 	},

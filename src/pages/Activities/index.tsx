@@ -26,10 +26,10 @@ export default function Activities() {
 			<Container my={50}>
 				<ContainerInside>
 					<Center>
-						<Image mr={5} src="/timmy/timmy_baseball.png" w="300px" display={{ base: "none", md: "block" }} alt="Timmy with baseball bat" />
+						<Image mr={5} src="/timmy/timmy_dino.png" w="300px" display={{ base: "none", md: "block" }} alt="Timmy with baseball bat" />
 					<Stack>
 						<Heading textAlign="left" my={5} fontWeight="extrabold" size="xl"><b>Join Our Clubs!</b></Heading>
-						<Text textAlign="left">School SImplified offers virtual clubs for you to connect with others<br/>
+						<Text textAlign="left">School Simplified offers virtual clubs for you to connect with others<br/>
 						from around the world who share the same passions as you!<br/>
 						Explore your passions through the many clubs we offer!</Text>
 					</Stack>
@@ -37,7 +37,8 @@ export default function Activities() {
 				</ContainerInside>
 			</Container>
 			<Container bg="linear-gradient(180deg, rgba(90, 96, 173, 0.71) 0%, rgba(108, 125, 254, 0.71) 100%);">
-				<ContainerInside w="100%">
+				<ContainerInside w="100%" mb={21}>
+					<Heading py={21} >Our Clubs</Heading>
 					<ChangingSlide />
 				</ContainerInside>
 			</Container>

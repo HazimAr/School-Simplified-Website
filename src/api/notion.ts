@@ -94,7 +94,6 @@ async function getUnits(
 	currentClass: any,
 	classIndex: number
 ): Promise<Unit[]> {
-
 	const promises2 = currentSubject.map(() => {
 		return axios.get(
 			`https://api.notion.com/v1/blocks/${currentClass.id}/children`,
@@ -184,7 +183,7 @@ export async function getArtInfo(): Promise<ArtData> {
 	);
 
 	let image =
-		"https://www.thewrap.com/wp-content/uploads/2016/08/Rick-Astley-618x400.jpg", // default image
+			"https://www.thewrap.com/wp-content/uploads/2016/08/Rick-Astley-618x400.jpg", // default image
 		description = "It's Rick Astley", // default description
 		monthlyPrompt = "Legend of Internet History", // default monthly prompt
 		name = "Rick Astley", // default name
@@ -263,9 +262,9 @@ export async function getArtInfo(): Promise<ArtData> {
 								if (token.includes("\n")) {
 									// this entry is done
 									const miniToken = token.substring(
-										0,
-										token.indexOf("\n")
-									),
+											0,
+											token.indexOf("\n")
+										),
 										splitIdx = miniToken.indexOf(": ");
 									if (splitIdx === -1) {
 										console.warn(
@@ -506,7 +505,9 @@ function parseAppropriateData(
 					return entry.properties[property].rich_text[0].plain_text;
 				return "";
 			case "multi_select":
-				return entry.properties[property].multi_select.map(prop => prop.name);
+				return entry.properties[property].multi_select.map(
+					(prop) => prop.name
+				);
 			default:
 				console.warn(
 					`ID ${entry.id} [${datatype}] is an invalid datatype!`

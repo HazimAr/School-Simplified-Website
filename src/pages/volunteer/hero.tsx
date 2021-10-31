@@ -1,5 +1,5 @@
 import {
-	Text,
+	//Text,
 	Image,
 	Heading,
 	VStack,
@@ -23,9 +23,9 @@ export default function Hero({ heading }) {
 
 			<Heading fontSize="xl">{heading}</Heading>
 
-			<Text fontSize="md">
+			{/* <Text fontSize="md">
 				Free Tutoring | Free Notes | Free Essay Revisions
-			</Text>
+			</Text> */}
 
 			<HStack spacing={5}>
 				<Link

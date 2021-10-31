@@ -26,7 +26,10 @@ export default function Npo() {
 					</VStack>
 				</ContainerInside>
 			</ContainerBackground>
-			<Container py="50px">
+			<Container
+				bg="linear-gradient(180deg, rgba(90, 96, 173, 0.71) 0%, rgba(108, 125, 254, 0.71) 100%)"
+				py="50px"
+			>
 				<ContainerInside>
 					<Heading>Becoming a NonProfit Organization</Heading>
 					<HStack justify="center" spacing={10} py="25px">
@@ -62,6 +65,10 @@ export default function Npo() {
 							</UnorderedList>
 						</Stack>
 					</HStack>
+				</ContainerInside>
+			</Container>
+			<Container>
+				<ContainerInside>
 					<HStack
 						spacing={{ base: 0, "2xl": "110px" }}
 						flexDirection={{ base: "column", "2xl": "row" }}

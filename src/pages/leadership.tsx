@@ -186,6 +186,38 @@ const seniorExecs: Person[] = [
 		title: "Secretary & Chief of Staff",
 		img: "/staff/LaurenHsieh.jpg",
 	},
+
+	{
+		name: "David Sun",
+		title: "President of National Chapters",
+		img: "/staff/DavidSun.jpg",
+	},
+	{
+		name: "Harry Chow",
+		title: "Chief Marketing Officer (CMO)",
+		img: "/staff/HarryChow.jpg",
+	},
+	{
+		name: "Diana Zheng",
+		title: "Corporate Treasurer",
+		img: "/staff/DianaZheng.jpg",
+	},
+	{
+		name: "Anncine Lin",
+		title: "Chief of Human Resources Officer",
+		img: "/staff/AnncineLin.jpg",
+	},
+	{
+		name: "Masa Murry",
+		title: "Senior Vice President of Global Marketing",
+		img: "/staff/MasaMurry.jpg",
+	},
+
+	{
+		name: "Jason Mei",
+		title: "Executive Vice President of Information Technology",
+		img: "/staff/JasonMei.jpg",
+	},
 	{
 		name: "Param Patil",
 		title: "Chief Advancements Officer (CAO)",
@@ -201,54 +233,40 @@ const seniorExecs: Person[] = [
 		title: "President of Student Activities (PSA)",
 		img: "/staff/AarushGoradia.jpg",
 	},
-	{
-		name: "David Sun",
-		title: "President of National Chapters",
-		img: "/staff/DavidSun.jpg",
-	},
-	{
-		name: "Harry Chow",
-		title: "Chief Marketing Officer (CMO)",
-		img: "/staff/HarryChow.jpg",
-	},
-	{
-		name: "Masa Murry",
-		title: "Senior Vice President of Global Marketing",
-		img: "/staff/MasaMurry.jpg",
-	},
-	{
-		name: "Jason Mei",
-		title: "Executive Vice President of Information Technology",
-		img: "/staff/JasonMei.jpg",
-	},
-	{
-		name: "Diana Zheng",
-		title: "Treasurer",
-		img: "/staff/DianaZheng.jpg",
-	},
-	{
-		name: "Anncine Lin",
-		title: "Deputy Chief of Staff",
-		img: "/staff/AnncineLin.jpg",
-	},
 ];
 
 const execs: Person[] = [
 	{
+		name: "Jiahao Zhang",
+		title: "Global Vice President of Advancement",
+		img: "/staff/JiahaoZhang.jpg",
+	},
+	{
 		name: "Yasmeen Elkheir",
-		title: "Vice President of Programming Simplified, Operations",
+		title: "Vice President of Operations, Programming Simplified",
 		img: "/staff/YasmeenElkheir.jpg",
 	},
 	{
+		name: "Isamar Zhu",
+		title: "Vice President of Staff, Programming Simplified",
+		img: "/staff/IsamarZhu.jpg",
+	},
+	{
 		name: "Rohit Penta",
-		title: "Vice President of Technical",
+		title: "Vice President of Information-Technology, School Simplified Digital",
 		img: "/staff/RohitPenta.jpg",
 	},
 	{
-		name: "Isamar Zhu",
-		title: "Vice President of Programming Simplified, Staff",
-		img: "/staff/IsamarZhu.jpg",
+		name: "Max Konzerowsky",
+		title: "Vice President of Information-Technology, School Simplified Digital",
+		img: "/staff/MaxKonzerowsky.jpg",
 	},
+	{
+		name: "Nicholas Zhang",
+		title: "Vice President of Information-Technology, School Simplified Digital",
+		img: "/staff/NicholasZhang.jpg",
+	},
+
 	{
 		name: "Rohit Choudhary",
 		title: "Vice President of Academics",
@@ -260,21 +278,7 @@ const execs: Person[] = [
 		title: "Vice President of Academics",
 		img: "/staff/JoshSchram.jpg",
 	},
-	{
-		name: "Jiahao Zhang",
-		title: "Global Vice President of Advancement",
-		img: "/staff/JiahaoZhang.jpg",
-	},
-	{
-		name: "Max Konzerowsky",
-		title: "Vice President of Technical",
-		img: "/staff/MaxKonzerowsky.jpg",
-	},
-	{
-		name: "Nicholas Zhang",
-		title: "Vice President of Technical",
-		img: "/staff/NicholasZhang.jpg",
-	},
+
 	{
 		name: "Soap E",
 		// name: "Sophia Bhatia",

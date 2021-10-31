@@ -69,6 +69,7 @@ export default function Projects() {
 										</HStack>
 									</Button>
 								</NextLink>
+
 								<NextLink
 									isExternal
 									href="https://forms.gle/ptdYuHK3gDWguswT9"

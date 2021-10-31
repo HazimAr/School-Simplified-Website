@@ -71,7 +71,7 @@ const teams: VolunteerPanelProps[] = [
 		teamDesc:
 			"Joining our Technology Team will allow you to develop skills such as programming, web development, and quality management. Apply if you are knowledgeable in any of these areas!",
 		src: "timmy/itdept.png",
-		link: "/volunteer/tech",
+		link: "https://forms.gle/fGtWW57DWevKyZdM8",
 
 		//link: "https://forms.gle/xrZma1KjtZ6nzRxS8",
 		functions: [
@@ -103,7 +103,7 @@ const teams: VolunteerPanelProps[] = [
 		teamDesc:
 			"text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text",
 		src: "timmy/hrdept.png",
-		link: "/volunteer/hr",
+		link: "https://forms.gle/HnraGUWyPR59S35f9",
 
 		//link: "https://forms.gle/xrZma1KjtZ6nzRxS8",
 		functions: [

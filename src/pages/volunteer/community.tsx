@@ -1,4 +1,4 @@
-import Hero from "./hero";
+import Hero from "@components/volunteering/hero";
 import { HStack, Center, VStack, Image, Text } from "@chakra-ui/react";
 
 import NextLink from "@components/nextChakra";

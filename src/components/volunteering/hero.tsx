@@ -12,7 +12,7 @@ import fetchIcon from "util/react_icon_fetcher";
 
 export default function Hero({ heading }) {
 	return (
-		<VStack spacing={3}>
+		<VStack spacing={3} py="50px">
 			<Image
 				src="\logos\ss_logo.png"
 				alt="school simplified logo"

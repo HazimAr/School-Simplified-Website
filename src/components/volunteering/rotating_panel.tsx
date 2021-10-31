@@ -233,16 +233,7 @@ VolunteerPanelProps): JSX.Element {
 							>
 								{teamName}
 							</Heading>
-							<Text
-								textAlign="left"
-								my={2}
-								width={{
-									lg: "720px",
-									base: "250px",
-									md: "700px",
-									sm: "470px",
-								}}
-							>
+							<Text textAlign="left" my={2}>
 								{teamDesc}
 							</Text>
 
@@ -270,14 +261,15 @@ VolunteerPanelProps): JSX.Element {
 							src={src}
 							h={{ base: 150, sm: 200, md: 250, lg: 250 }}
 							ml={{
-								base: "30px",
-								sm: "30px",
+								base: "0",
+							
 								md: "30px",
 								lg: "50px",
 								xl: "100px",
 							}}
 							mt={{ base: 5, md: 0 }}
 							alt={teamName + " team logo"}
+
 							rounded="full"
 						/>
 					</Flex>

@@ -1,26 +1,23 @@
 import Hero from "./hero";
-import { HStack, Center, VStack, Image} from "@chakra-ui/react";
+import { HStack, Center, VStack, Image, Text } from "@chakra-ui/react";
 
 import NextLink from "@components/nextChakra";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-// import BsShieldShaded from 'react-icons/bs';
-// import IoCalendarOutline from 'react-icons/io';
-// import GrGroup from 'react-icons/gr';
+import { BsShieldShaded } from "react-icons/bs";
+import { IoCalendarOutline } from "react-icons/io";
+import { GrGroup } from "react-icons/gr";
 
 export default function Community() {
 	return (
 		<>
-			<Container
-				h="300px">
+			<Container h="300px">
 				<ContainerInside>
 					<Hero heading="Community Applications" />
 				</ContainerInside>
 			</Container>
-			<Container 
-				bg="#8F9CFE"
-				h="400px">
+			<Container bg="#8F9CFE" h="400px">
 				<ContainerInside>
 					<Center>
 						<HStack>
@@ -30,20 +27,23 @@ export default function Community() {
 								w="300px"
 								mr="70px"
 							/>
-							<VStack
-								spacing="20px">
+							<VStack spacing="20px">
 								<NextLink
 									isExternal
 									href="https://forms.gle/JaE31wNHXDcLE3jz6"
 									_hover={{ textDecoration: "none" }}
 								>
-									<Button 
+									<Button
 										bg="#7283FE"
-										md="100px" 
+										md="100px"
 										w="300px"
 										h="50px"
 										textAlign="left"
-										> Moderator
+									>
+										<HStack>
+											<BsShieldShaded />
+											<Text>Moderator</Text>
+										</HStack>
 									</Button>
 								</NextLink>
 								<NextLink
@@ -51,14 +51,17 @@ export default function Community() {
 									href="https://forms.gle/CpCKy8Fi2f4oz6kU6"
 									_hover={{ textDecoration: "none" }}
 								>
-									<Button 
+									<Button
 										bg="#7283FE"
-										md="100px" 
+										md="100px"
 										w="300px"
 										h="50px"
 										textAlign="left"
-										>
-										Events Organizer
+									>
+										<HStack>
+											<IoCalendarOutline />
+											<Text>Events Organizer</Text>
+										</HStack>
 									</Button>
 								</NextLink>
 								<NextLink
@@ -67,22 +70,23 @@ export default function Community() {
 									_hover={{ textDecoration: "none" }}
 								>
 									<HStack>
-										<Button 
+										<Button
 											bg="#7283FE"
-											md="100px" 
+											md="100px"
 											w="300px"
 											h="50px"
 											textAlign="left"
-											>
-											Advisor
+										>
+											<HStack>
+												<GrGroup />
+												<Text>Advisor</Text>
+											</HStack>
 										</Button>
 									</HStack>
-									
 								</NextLink>
 							</VStack>
 						</HStack>
 					</Center>
-					 
 				</ContainerInside>
 			</Container>
 		</>

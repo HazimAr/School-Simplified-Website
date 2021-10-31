@@ -6,6 +6,7 @@ import { BlogListing } from "types";
 import NextChakraLink from "@components/nextChakra";
 
 export default function Blog({ listing }: { listing: BlogListing[] }) {
+	console.log(listing);
 	return (
 		<ContainerBackground src="/blog.jpg" py="50px">
 			<ContainerInside>
@@ -18,7 +19,9 @@ export default function Blog({ listing }: { listing: BlogListing[] }) {
 							Check out the latest blog from our student authors
 							and read about what they have to say!
 						</Text>
-						<Button w="fit-content">Read More</Button>
+						<NextChakraLink href="/blog">
+							<Button w="fit-content">Read More</Button>
+						</NextChakraLink>
 					</Stack>
 					<HStack
 						justify="center"
@@ -110,13 +113,14 @@ function Card({ src, title, href }) {
 						// layout="fill"
 					/> */}
 				</Center>
+
+				<Heading
+					textAlign="center"
+					fontSize={{ base: "sm", sm: "md", md: "lg", lg: "2xl" }}
+				>
+					{title}
+				</Heading>
 			</NextChakraLink>
-			<Heading
-				textAlign="center"
-				fontSize={{ base: "sm", sm: "md", md: "lg", lg: "2xl" }}
-			>
-				{title}
-			</Heading>
 		</VStack>
 	);
 }

@@ -186,6 +186,38 @@ const seniorExecs: Person[] = [
 		title: "Secretary & Chief of Staff",
 		img: "/staff/LaurenHsieh.jpg",
 	},
+
+	{
+		name: "David Sun",
+		title: "President of National Chapters",
+		img: "/staff/DavidSun.jpg",
+	},
+	{
+		name: "Harry Chow",
+		title: "Chief Marketing Officer (CMO)",
+		img: "/staff/HarryChow.jpg",
+	},
+	{
+		name: "Diana Zheng",
+		title: "Corporate Treasurer",
+		img: "/staff/DianaZheng.jpg",
+	},
+	{
+		name: "Anncine Lin",
+		title: "Chief of Human Resources Officer",
+		img: "/staff/AnncineLin.jpg",
+	},
+	{
+		name: "Masa Murry",
+		title: "Senior Vice President of Global Marketing",
+		img: "/staff/MasaMurry.jpg",
+	},
+
+	{
+		name: "Jason Mei",
+		title: "Executive Vice President of Information Technology",
+		img: "/staff/JasonMei.jpg",
+	},
 	{
 		name: "Param Patil",
 		title: "Chief Advancements Officer (CAO)",
@@ -200,36 +232,6 @@ const seniorExecs: Person[] = [
 		name: "Aarush Goradia",
 		title: "President of Student Activities (PSA)",
 		img: "/staff/AarushGoradia.jpg",
-	},
-	{
-		name: "David Sun",
-		title: "President of National Chapters",
-		img: "/staff/DavidSun.jpg",
-	},
-	{
-		name: "Harry Chow",
-		title: "Chief Marketing Officer (CMO)",
-		img: "/staff/HarryChow.jpg",
-	},
-	{
-		name: "Masa Murry",
-		title: "Senior Vice President of Global Marketing",
-		img: "/staff/MasaMurry.jpg",
-	},
-	{
-		name: "Jason Mei",
-		title: "Executive Vice President of Information Technology",
-		img: "/staff/JasonMei.jpg",
-	},
-	{
-		name: "Diana Zheng",
-		title: "Treasurer",
-		img: "/staff/DianaZheng.jpg",
-	},
-	{
-		name: "Anncine Lin",
-		title: "Deputy Chief of Staff",
-		img: "/staff/AnncineLin.jpg",
 	},
 ];
 

@@ -60,7 +60,10 @@ export default function Npo() {
 							</UnorderedList>
 						</Stack>
 					</HStack>
-					<HStack spacing="110px">
+					<HStack
+						spacing={{ base: 0, md: "110px" }}
+						flexDirection={{ base: "column", md: "row" }}
+					>
 						<Card
 							heading="Keep: "
 							items={[

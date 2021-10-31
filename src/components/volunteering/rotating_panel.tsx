@@ -262,7 +262,6 @@ VolunteerPanelProps): JSX.Element {
 							h={{ base: 150, sm: 200, md: 250, lg: 250 }}
 							ml={{
 								base: "0",
-							
 								md: "30px",
 								lg: "50px",
 								xl: "100px",

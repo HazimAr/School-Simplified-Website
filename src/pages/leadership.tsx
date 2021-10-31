@@ -188,24 +188,15 @@ const seniorExecs: Person[] = [
 	},
 
 	{
-		name: "David Sun",
-		title: "President of National Chapters",
-		img: "/staff/DavidSun.jpg",
+		name: "Param Patil",
+		title: "Chief Advancements Officer (CAO)",
+		img: "/staff/ParamPatil.jpg",
 	},
+
 	{
 		name: "Harry Chow",
 		title: "Chief Marketing Officer (CMO)",
 		img: "/staff/HarryChow.jpg",
-	},
-	{
-		name: "Diana Zheng",
-		title: "Corporate Treasurer",
-		img: "/staff/DianaZheng.jpg",
-	},
-	{
-		name: "Anncine Lin",
-		title: "Chief of Human Resources Officer",
-		img: "/staff/AnncineLin.jpg",
 	},
 	{
 		name: "Masa Murry",
@@ -219,14 +210,25 @@ const seniorExecs: Person[] = [
 		img: "/staff/JasonMei.jpg",
 	},
 	{
-		name: "Param Patil",
-		title: "Chief Advancements Officer (CAO)",
-		img: "/staff/ParamPatil.jpg",
+		name: "Diana Zheng",
+		title: "Corporate Treasurer",
+		img: "/staff/DianaZheng.jpg",
 	},
+	{
+		name: "Anncine Lin",
+		title: "Chief of Human Resources Officer",
+		img: "/staff/AnncineLin.jpg",
+	},
+
 	{
 		name: "Hazim Arafa",
 		title: "President of Programming Simplified",
 		img: "/staff/HazimArafa.jpg",
+	},
+	{
+		name: "David Sun",
+		title: "President of National Chapters",
+		img: "/staff/DavidSun.jpg",
 	},
 	{
 		name: "Aarush Goradia",

@@ -46,6 +46,7 @@ export default function Acad() {
 										</HStack>
 									</Button>
 								</NextLink>
+
 								<NextLink
 									isExternal
 									href="https://forms.gle/y1uXnvQ1EHEAHocn8"
@@ -64,6 +65,7 @@ export default function Acad() {
 										</HStack>
 									</Button>
 								</NextLink>
+
 								<NextLink
 									isExternal
 									href="https://forms.gle/y1uXnvQ1EHEAHocn8"

@@ -45,6 +45,7 @@ export default function Community() {
 										</HStack>
 									</Button>
 								</NextLink>
+
 								<NextLink
 									isExternal
 									href="https://forms.gle/CpCKy8Fi2f4oz6kU6"
@@ -63,6 +64,7 @@ export default function Community() {
 										</HStack>
 									</Button>
 								</NextLink>
+
 								<NextLink
 									isExternal
 									href="https://discord.gg/DVbhtXZjdA"

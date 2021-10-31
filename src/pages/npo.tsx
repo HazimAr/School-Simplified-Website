@@ -60,7 +60,7 @@ export default function Npo() {
 							</UnorderedList>
 						</Stack>
 					</HStack>
-					<VStack>
+					<HStack spacing="110px">
 						<Card
 							heading="Keep: "
 							items={[
@@ -84,7 +84,7 @@ export default function Npo() {
 							]}
 							src="/timmy/10.png"
 						/>
-					</VStack>
+					</HStack>
 				</ContainerInside>
 			</Container>
 		</>
@@ -106,7 +106,7 @@ function Card({ heading, items, src = "/timmy/1.png" }) {
 			<Heading>{heading}</Heading>
 			<UnorderedList>
 				{items.map((item: string) => {
-					return <ListItem>{item}</ListItem>;
+					return <ListItem key={item}>{item}</ListItem>;
 				})}
 			</UnorderedList>
 			<Button w="30%">Enroll</Button>

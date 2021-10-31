@@ -252,6 +252,18 @@ const execs: Person[] = [
 		img: "/staff/IsamarZhu.jpg",
 	},
 	{
+		name: "Cracker",
+		// name: "Josh Schram",
+		title: "Vice President of Academics",
+		img: "/staff/JoshSchram.jpg",
+	},
+	{
+		name: "Rohit Choudhary",
+		title: "Vice President of Academics",
+		img: "/staff/RohitChoudhary.jpg",
+	},
+
+	{
 		name: "Rohit Penta",
 		title: "Vice President of Information-Technology, School Simplified Digital",
 		img: "/staff/RohitPenta.jpg",
@@ -265,18 +277,6 @@ const execs: Person[] = [
 		name: "Nicholas Zhang",
 		title: "Vice President of Information-Technology, School Simplified Digital",
 		img: "/staff/NicholasZhang.jpg",
-	},
-
-	{
-		name: "Rohit Choudhary",
-		title: "Vice President of Academics",
-		img: "/staff/RohitChoudhary.jpg",
-	},
-	{
-		name: "Cracker",
-		// name: "Josh Schram",
-		title: "Vice President of Academics",
-		img: "/staff/JoshSchram.jpg",
 	},
 
 	{

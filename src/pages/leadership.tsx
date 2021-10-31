@@ -262,7 +262,7 @@ const execs: Person[] = [
 	{
 		name: "Jiahao Zhang",
 		title: "Global Vice President of Advancement",
-		img: "/staff/JiahoZhang.jpg",
+		img: "/staff/JiahaoZhang.jpg",
 	},
 	{
 		name: "Max Konzerowsky",

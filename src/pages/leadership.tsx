@@ -232,7 +232,7 @@ const seniorExecs: Person[] = [
 	},
 	{
 		name: "Aarush Goradia",
-		title: "President of Student Activities (PSA)",
+		title: "President of Student Activitie)",
 		img: "/staff/AarushGoradia.jpg",
 	},
 ];

@@ -6,6 +6,7 @@ import {
 	Stack,
 	UnorderedList,
 	VStack,
+	Box,
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
@@ -62,8 +63,8 @@ export default function Npo() {
 						</Stack>
 					</HStack>
 					<HStack
-						spacing={{ base: 0, md: "110px" }}
-						flexDirection={{ base: "column", md: "row" }}
+						spacing={{ base: 0, "2xl": "110px" }}
+						flexDirection={{ base: "column", "2xl": "row" }}
 					>
 						<Card
 							heading="Keep: "
@@ -77,6 +78,7 @@ export default function Npo() {
 							]}
 							src="/timmy/20.png"
 						/>
+						<Box w="100%" h="100px" display={{base: "block", "2xl": "none"}} />
 						<Card
 							heading="Give: "
 							items={[

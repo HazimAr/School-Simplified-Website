@@ -237,35 +237,24 @@ const seniorExecs: Person[] = [
 
 const execs: Person[] = [
 	{
+		name: "Jiahao Zhang",
+		title: "Global Vice President of Advancement",
+		img: "/staff/JiahaoZhang.jpg",
+	},
+	{
 		name: "Yasmeen Elkheir",
-		title: "Vice President of Programming Simplified, Operations",
+		title: "Vice President of Operations, Programming Simplified",
 		img: "/staff/YasmeenElkheir.jpg",
+	},
+	{
+		name: "Isamar Zhu",
+		title: "Vice President of Staff, Programming Simplified",
+		img: "/staff/IsamarZhu.jpg",
 	},
 	{
 		name: "Rohit Penta",
 		title: "Vice President of Technical",
 		img: "/staff/RohitPenta.jpg",
-	},
-	{
-		name: "Isamar Zhu",
-		title: "Vice President of Programming Simplified, Staff",
-		img: "/staff/IsamarZhu.jpg",
-	},
-	{
-		name: "Rohit Choudhary",
-		title: "Vice President of Academics",
-		img: "/staff/RohitChoudhary.jpg",
-	},
-	{
-		name: "Cracker",
-		// name: "Josh Schram",
-		title: "Vice President of Academics",
-		img: "/staff/JoshSchram.jpg",
-	},
-	{
-		name: "Jiahao Zhang",
-		title: "Global Vice President of Advancement",
-		img: "/staff/JiahaoZhang.jpg",
 	},
 	{
 		name: "Max Konzerowsky",
@@ -277,6 +266,19 @@ const execs: Person[] = [
 		title: "Vice President of Technical",
 		img: "/staff/NicholasZhang.jpg",
 	},
+
+	{
+		name: "Rohit Choudhary",
+		title: "Vice President of Academics",
+		img: "/staff/RohitChoudhary.jpg",
+	},
+	{
+		name: "Cracker",
+		// name: "Josh Schram",
+		title: "Vice President of Academics",
+		img: "/staff/JoshSchram.jpg",
+	},
+
 	{
 		name: "Soap E",
 		// name: "Sophia Bhatia",

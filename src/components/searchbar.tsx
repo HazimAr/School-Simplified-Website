@@ -36,10 +36,13 @@ export default function Searchbar(props: SearchbarProps): JSX.Element {
 			<InputLeftElement
 				pointerEvents="none"
 				children={<Icon as={FaSearch} boxSize={5} />}
+				height="100%"
 			/>
 			<Input
-				placeholder="Search All"
+				placeholder="Search"
 				bg="brand.transparent"
+				borderRadius="full"
+				size="lg"
 				onChange={(e) => {
 					if (searchWait) clearTimeout(searchWait);
 					_setLoading.on();

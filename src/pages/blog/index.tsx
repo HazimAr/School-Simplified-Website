@@ -7,8 +7,6 @@ import {
 	HStack,
 	Icon,
 	Image,
-	Spacer,
-	Stack,
 	StackDivider,
 	Text,
 	useBreakpointValue,
@@ -25,6 +23,32 @@ import { BlogListing } from "types";
 
 const dtFormatter = new Intl.DateTimeFormat("en-US");
 
+function toAuthorAttribution(authors): string {
+	if (authors?.length) {
+		let authorNames: string;
+		authorNames = "Written by ";
+		switch (authors.length) {
+			case 1:
+				authorNames += authors[0].name;
+				break;
+			case 2:
+				authorNames += authors[0].name + " and " + authors[1].name;
+				break;
+			default:
+				authorNames +=
+					authors
+						.slice(0, authors.length - 1)
+						.map((author) => author.name)
+						.join(", ") +
+					", and " +
+					authors[authors.length - 1].name;
+		}
+		return authorNames;
+	}
+
+	return null;
+}
+
 export default function Blog({
 	listing: listings,
 }: {
@@ -34,32 +58,64 @@ export default function Blog({
 	const inputGroupSize = useBreakpointValue({ base: "sm", lg: "md" });
 	const [pageNum, setPageNum] = useState(0);
 
-	const shownListings = searchTerm.length
+	listings.sort((a, b) => {
+		return (
+			new Date(b.created_time).getTime() -
+			new Date(a.created_time).getTime()
+		);
+	});
+
+	const shownListings = searchTerm
 		? filter(listings, searchTerm, { key: "title" })
 		: listings;
 	const perPage = 10,
 		totalPages = Math.ceil(shownListings.length / perPage);
 
+	const topBlogAuthors = toAuthorAttribution(listings[0].authors);
+
 	return (
 		<>
 			<Container>
 				<ContainerInside my={10}>
-					<Flex>
-						<Heading as="h1" size="xl">
-							Blogs and Articles
-						</Heading>
-						<Spacer />
-						<Image src="/timmy/resources.png" maxH="300px" />
-					</Flex>
+					<Heading as="h1" size="xl" mb={5}>
+						Blogs and Articles
+					</Heading>
+					<HStack spacing={5} justifyContent="center" mx={100}>
+						<Image src="/timmy/blogtimmy.png" maxH="300px" />
+						<Box flex={1}>
+							<Box
+								bgImage={listings[0].icon}
+								bgSize="cover"
+								borderRadius="3xl"
+								h={200}
+								w="100%"
+								mb={5}
+							/>
+							<NextLink href={"/blog/" + listings[0].link}>
+								<Heading as="h2" size="lg">
+									{listings[0].title}
+								</Heading>
+							</NextLink>
+							<Text as="i">
+								{topBlogAuthors
+									? listings[0].category +
+									  " | " +
+									  topBlogAuthors
+									: listings[0].category}
+							</Text>
+						</Box>
+					</HStack>
 				</ContainerInside>
 			</Container>
 			<Container bg="brand.transparent">
 				<ContainerInside my={5}>
-					<Stack
-						direction={{ base: "column", lg: "row" }}
-						justifyContent="space-between"
-						spacing={3}
-					>
+					<VStack spacing={3}>
+						<Searchbar
+							size={inputGroupSize}
+							maxW={{ base: "initial", md: 350, lg: 500 }}
+							flexShrink={1}
+							callback={setSearchTerm}
+						/>
 						<HStack spacing={2} justifyContent="center">
 							<Center
 								onClick={() => {
@@ -100,13 +156,7 @@ export default function Blog({
 								/>
 							</Center>
 						</HStack>
-						<Searchbar
-							size={inputGroupSize}
-							maxW={{ base: "initial", md: 350, lg: 500 }}
-							flexShrink={1}
-							callback={setSearchTerm}
-						/>
-					</Stack>
+					</VStack>
 				</ContainerInside>
 			</Container>
 			<Container>
@@ -132,27 +182,8 @@ export default function Blog({
 }
 
 function ListingElement(listing: BlogListing) {
-	const authors = listing.authors;
-	let authorNames;
-	if (authors?.length) {
-		authorNames = "Written by ";
-		switch (authors.length) {
-			case 1:
-				authorNames += authors[0].name;
-				break;
-			case 2:
-				authorNames += authors[0].name + " and " + authors[1].name;
-				break;
-			default:
-				authorNames +=
-					authors
-						.slice(0, authors.length - 1)
-						.map((author) => author.name)
-						.join(", ") +
-					", and " +
-					authors[authors.length - 1].name;
-		}
-	} else authorNames = null;
+	let authorNames: string = toAuthorAttribution(listing.authors);
+
 	return (
 		<Flex
 			textAlign="left"
@@ -172,10 +203,10 @@ function ListingElement(listing: BlogListing) {
 					Published:{" "}
 					{dtFormatter.format(new Date(listing.created_time))}
 				</Text>
-				<Text>
+				{/* <Text>
 					Last Edited:{" "}
 					{dtFormatter.format(new Date(listing.last_edited_time))}
-				</Text>
+				</Text> */}
 				{authorNames?.length ? <Text>{authorNames}</Text> : null}
 			</Box>
 			{listing.icon ? (

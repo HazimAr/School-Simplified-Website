@@ -11,7 +11,7 @@ import { GiBlackBook } from "react-icons/gi";
 export default function Acad() {
 	return (
 		<>
-			<Container>
+			<Container h="300px">
 				<ContainerInside>
 					<Hero heading="Academics Department Applications" />
 				</ContainerInside>

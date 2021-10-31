@@ -6,8 +6,7 @@ import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import { BsShieldShaded, BsCalendar3 } from "react-icons/bs";
-//import { GrGroup } from "react-icons/gr";
-import { RiGroupFill } from "react-icons/ri"
+import { RiGroupFill } from "react-icons/ri";
 
 export default function Community() {
 	return (

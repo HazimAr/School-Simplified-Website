@@ -1,4 +1,4 @@
-import { HStack, Container, Image, Box, Heading, Flex } from "@chakra-ui/react";
+import { HStack, Container, Box, Heading } from "@chakra-ui/react";
 
 export default function Donate() {
 	return (

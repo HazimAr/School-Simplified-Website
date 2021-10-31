@@ -312,6 +312,11 @@ const execs: Person[] = [
 
 const boardOfDirectors: Person[] = [
 	{
+		name: "Ethan Hsu",
+		title: "Chairperson",
+		img: "/staff/default.png",
+	},
+	{
 		name: "Nathanael Ma",
 		title: "Lead Director",
 		img: "/staff/default.png",
@@ -321,12 +326,6 @@ const boardOfDirectors: Person[] = [
 		title: "Lead Director",
 		img: "/staff/default.png",
 	},
-	{
-		name: "Ethan Hsu",
-		title: "Chairperson",
-		img: "/staff/default.png",
-	},
-
 	{
 		name: "Lauren Hsieh",
 		title: "Director",

@@ -253,17 +253,17 @@ const execs: Person[] = [
 	},
 	{
 		name: "Rohit Penta",
-		title: "Vice President of Technical",
+		title: "Vice President of Information-Technology, School Simplified Digital",
 		img: "/staff/RohitPenta.jpg",
 	},
 	{
 		name: "Max Konzerowsky",
-		title: "Vice President of Technical",
+		title: "Vice President of Information-Technology, School Simplified Digital",
 		img: "/staff/MaxKonzerowsky.jpg",
 	},
 	{
 		name: "Nicholas Zhang",
-		title: "Vice President of Technical",
+		title: "Vice President of Information-Technology, School Simplified Digital",
 		img: "/staff/NicholasZhang.jpg",
 	},
 

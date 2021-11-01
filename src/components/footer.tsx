@@ -239,10 +239,10 @@ const resources = [
 		name: "Homework Help",
 		link: "/homework",
 	},
-	{
-		name: "Blogs & Articles",
-		link: "/blog",
-	},
+	// {
+	// 	name: "Blogs & Articles",
+	// 	link: "/blog",
+	// },
 	// {
 	// 	name: "Programs",
 	// 	link: "/programs",

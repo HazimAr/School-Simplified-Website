@@ -117,7 +117,7 @@ export function parseBlock(block: any): JSX.Element {
 	switch (block.type) {
 		case "paragraph":
 			return (
-				<Text style={{ textIndent: 50 }}>
+				<Text>
 					{block.paragraph.text.map((item: any, idx: number) =>
 						cloneElement(parseText(item), { key: "text_" + idx })
 					)}

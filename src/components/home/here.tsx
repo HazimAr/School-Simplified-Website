@@ -52,7 +52,7 @@ export default function Here() {
 }
 
 function Card(props) {
-	const { title, description, button, href, ...rest } = props;
+	const { title, description, button, href, isExternal, ...rest } = props;
 	return (
 		<VStack
 			rounded={rounded}
@@ -67,7 +67,7 @@ function Card(props) {
 				{title}
 			</Heading>
 			<Text>{description}</Text>
-			<NextLink href={href}>
+			<NextLink href={href} isExternal={isExternal}>
 				<Button>{button}</Button>
 			</NextLink>
 		</VStack>

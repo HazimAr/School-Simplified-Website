@@ -6,10 +6,14 @@ import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
-import { FaPaintBrush, FaTools, FaTiktok } from "react-icons/fa";
-import { GoMegaphone } from "react-icons/go";
-import { GiLightBulb, GiFountainPen } from "react-icons/gi";
-import { BsInstagram } from "react-icons/bs";
+import { FaTiktok, FaLightbulb } from "react-icons/fa";
+import { GiPencil } from "react-icons/gi";
+import {
+	BsInstagram,
+	BsMegaphoneFill,
+	BsPalette,
+	BsTools,
+} from "react-icons/bs";
 export default function Marketing() {
 	return (
 		<>
@@ -18,23 +22,17 @@ export default function Marketing() {
 					<Hero heading="Marketing Applications" />
 				</ContainerInside>
 			</Container>
-
-			<Container bg="#8F9CFE" h={{ base: "600px", md: "400px" }}>
+			<Container bg="#8F9CFE" h="400px">
 				<ContainerInside>
 					<Center>
-						<HStack
-							flexDirection={{
-								base: "column",
-								md: "row",
-							}}
-						>
+						<HStack>
 							<Image
-								src="/timmy/timmy_lanyard.png"
-								alt="timmy with lanyard"
-								w="300px"
+								src="/timmy/timmywithbackground.png"
+								alt="timmy with pink background"
+								w="350px"
 								mr="70px"
 							/>
-							<HStack spacing="40px">
+							<HStack spacing="20px">
 								<VStack spacing="20px">
 									<NextLink
 										isExternal
@@ -44,13 +42,14 @@ export default function Marketing() {
 										<Button
 											bg="#7283FE"
 											md="100px"
-											w="300px"
+											w="350px"
 											h="50px"
 											textAlign="left"
+											borderRadius="35px"
 										>
 											<HStack>
-												<FaPaintBrush />
-												<Text>Design</Text>
+												<BsPalette />
+												<Text>Designer</Text>
 											</HStack>
 										</Button>
 									</NextLink>
@@ -63,17 +62,17 @@ export default function Marketing() {
 										<Button
 											bg="#7283FE"
 											md="100px"
-											w="300px"
+											w="350px"
 											h="50px"
 											textAlign="left"
+											borderRadius="35px"
 										>
 											<HStack>
-												<FaTools />
+												<BsTools />
 												<Text>Discord Editor</Text>
 											</HStack>
 										</Button>
 									</NextLink>
-
 									<NextLink
 										isExternal
 										href="https://forms.gle/e8EArXqZYXZj6vxr6"
@@ -82,42 +81,42 @@ export default function Marketing() {
 										<Button
 											bg="#7283FE"
 											md="100px"
-											w="300px"
+											w="350px"
 											h="50px"
 											textAlign="left"
+											borderRadius="35px"
 										>
 											<HStack>
-												<GoMegaphone />
+												<BsMegaphoneFill />
 												<Text>
 													Public Relations Specialist
 												</Text>
 											</HStack>
 										</Button>
 									</NextLink>
-
 									<NextLink
 										isExternal
-										href="https://forms.gle/qe4LaxJsnZNigP3c7"
+										href="https://forms.gle/grxWXCRPjPAV9izLA"
 										_hover={{ TextDecoration: "none" }}
 									>
 										<Button
 											bg="#7283FE"
 											md="100px"
-											w="300px"
+											w="350px"
 											h="50px"
 											textAlign="left"
+											borderRadius="35px"
 										>
 											<HStack>
-												<GiLightBulb />
+												<FaLightbulb />
 												<Text>
-													Vice President of Global,
+													Vice President of Global
 													Marketing
 												</Text>
 											</HStack>
 										</Button>
 									</NextLink>
 								</VStack>
-
 								<VStack spacing="20px">
 									<NextLink
 										isExternal
@@ -127,9 +126,10 @@ export default function Marketing() {
 										<Button
 											bg="#7283FE"
 											md="100px"
-											w="300px"
+											w="350px"
 											h="50px"
 											textAlign="left"
+											borderRadius="35px"
 										>
 											<HStack>
 												<BsInstagram />
@@ -148,9 +148,10 @@ export default function Marketing() {
 										<Button
 											bg="#7283FE"
 											md="100px"
-											w="300px"
+											w="350px"
 											h="50px"
 											textAlign="left"
+											borderRadius="35px"
 										>
 											<HStack>
 												<FaTiktok />
@@ -160,40 +161,40 @@ export default function Marketing() {
 											</HStack>
 										</Button>
 									</NextLink>
-
 									<NextLink
 										isExternal
-										href="https://forms.gle/grxWXCRPjPAV9izLA"
+										href="https://forms.gle/qe4LaxJsnZNigP3c7"
 										_hover={{ TextDecoration: "none" }}
 									>
 										<Button
 											bg="#7283FE"
 											md="100px"
-											w="300px"
+											w="350px"
 											h="50px"
 											textAlign="left"
+											borderRadius="35px"
 										>
 											<HStack>
-												<GiFountainPen />
+												<GiPencil />
 												<Text>Blog Writer</Text>
 											</HStack>
 										</Button>
 									</NextLink>
-
 									<NextLink
 										isExternal
-										href="https://forms.gle/grxWXCRPjPAV9izLA"
+										href="https://forms.gle/fWDh8MMN2tsKo6gy7"
 										_hover={{ TextDecoration: "none" }}
 									>
 										<Button
 											bg="#7283FE"
 											md="100px"
-											w="300px"
+											w="350px"
 											h="50px"
 											textAlign="left"
+											borderRadius="35px"
 										>
 											<HStack>
-												<GiLightBulb />
+												<FaLightbulb />
 												<Text>
 													President of Marketing,
 													Editorial

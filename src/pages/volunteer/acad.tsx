@@ -13,7 +13,7 @@ export default function Acad() {
 		<>
 			<Container h="300px">
 				<ContainerInside>
-					<Hero heading="Academics Department Applications" />
+					<Hero heading="Academics Applications" />
 				</ContainerInside>
 			</Container>
 

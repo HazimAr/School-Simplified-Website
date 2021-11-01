@@ -6,7 +6,10 @@ import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
-import { BsCheckLg } from "react-icons/bs";
+import { FaPaintBrush, FaTools, FaTiktok } from "react-icons/fa";
+import { GoMegaphone } from "react-icons/go";
+import { GiLightBulb, GiFountainPen } from "react-icons/gi";
+import { BsInstagram } from "react-icons/bs";
 export default function Marketing() {
 	return (
 		<>
@@ -16,7 +19,7 @@ export default function Marketing() {
 				</ContainerInside>
 			</Container>
 
-			<Container bg="#8F9CFE" h={{ base: "1000px", md: "800px" }}>
+			<Container bg="#8F9CFE" h={{ base: "600px", md: "400px" }}>
 				<ContainerInside>
 					<Center>
 						<HStack
@@ -31,167 +34,175 @@ export default function Marketing() {
 								w="300px"
 								mr="70px"
 							/>
-							<VStack spacing="20px">
-								<NextLink
-									isExternal
-									href="https://forms.gle/QnwAAWpPs5XcWfzr8"
-									_hover={{ TextDecoration: "none" }}
-								>
-									<Button
-										bg="#7283FE"
-										md="100px"
-										w="300px"
-										h="50px"
-										textAlign="left"
+							<HStack spacing="40px">
+								<VStack spacing="20px">
+									<NextLink
+										isExternal
+										href="https://forms.gle/QnwAAWpPs5XcWfzr8"
+										_hover={{ TextDecoration: "none" }}
 									>
-										<HStack>
-											<BsCheckLg />
-											<Text>Design</Text>
-										</HStack>
-									</Button>
-								</NextLink>
+										<Button
+											bg="#7283FE"
+											md="100px"
+											w="300px"
+											h="50px"
+											textAlign="left"
+										>
+											<HStack>
+												<FaPaintBrush />
+												<Text>Design</Text>
+											</HStack>
+										</Button>
+									</NextLink>
 
-								<NextLink
-									isExternal
-									href="https://forms.gle/TgNLPu9bYARxt8Ks5"
-									_hover={{ TextDecoration: "none" }}
-								>
-									<Button
-										bg="#7283FE"
-										md="100px"
-										w="300px"
-										h="50px"
-										textAlign="left"
+									<NextLink
+										isExternal
+										href="https://forms.gle/TgNLPu9bYARxt8Ks5"
+										_hover={{ TextDecoration: "none" }}
 									>
-										<HStack>
-											<BsCheckLg />
-											<Text>Discord</Text>
-										</HStack>
-									</Button>
-								</NextLink>
+										<Button
+											bg="#7283FE"
+											md="100px"
+											w="300px"
+											h="50px"
+											textAlign="left"
+										>
+											<HStack>
+												<FaTools />
+												<Text>Discord Editor</Text>
+											</HStack>
+										</Button>
+									</NextLink>
 
-								<NextLink
-									isExternal
-									href="https://forms.gle/e8EArXqZYXZj6vxr6"
-									_hover={{ TextDecoration: "none" }}
-								>
-									<Button
-										bg="#7283FE"
-										md="100px"
-										w="300px"
-										h="50px"
-										textAlign="left"
+									<NextLink
+										isExternal
+										href="https://forms.gle/e8EArXqZYXZj6vxr6"
+										_hover={{ TextDecoration: "none" }}
 									>
-										<HStack>
-											<BsCheckLg />
-											<Text>Public Relations</Text>
-										</HStack>
-									</Button>
-								</NextLink>
+										<Button
+											bg="#7283FE"
+											md="100px"
+											w="300px"
+											h="50px"
+											textAlign="left"
+										>
+											<HStack>
+												<GoMegaphone />
+												<Text>
+													Public Relations Specialist
+												</Text>
+											</HStack>
+										</Button>
+									</NextLink>
 
-								<NextLink
-									isExternal
-									href="https://forms.gle/qe4LaxJsnZNigP3c7"
-									_hover={{ TextDecoration: "none" }}
-								>
-									<Button
-										bg="#7283FE"
-										md="100px"
-										w="300px"
-										h="50px"
-										textAlign="left"
+									<NextLink
+										isExternal
+										href="https://forms.gle/qe4LaxJsnZNigP3c7"
+										_hover={{ TextDecoration: "none" }}
 									>
-										<HStack>
-											<BsCheckLg />
-											<Text>
-												Instagram Content Creator
-											</Text>
-										</HStack>
-									</Button>
-								</NextLink>
+										<Button
+											bg="#7283FE"
+											md="100px"
+											w="300px"
+											h="50px"
+											textAlign="left"
+										>
+											<HStack>
+												<GiLightBulb />
+												<Text>
+													Vice President of Global,
+													Marketing
+												</Text>
+											</HStack>
+										</Button>
+									</NextLink>
+								</VStack>
 
-								<NextLink
-									isExternal
-									href="https://forms.gle/qe4LaxJsnZNigP3c7"
-									_hover={{ TextDecoration: "none" }}
-								>
-									<Button
-										bg="#7283FE"
-										md="100px"
-										w="300px"
-										h="50px"
-										textAlign="left"
+								<VStack spacing="20px">
+									<NextLink
+										isExternal
+										href="https://forms.gle/qe4LaxJsnZNigP3c7"
+										_hover={{ TextDecoration: "none" }}
 									>
-										<HStack>
-											<BsCheckLg />
-											<Text>TikTok Content Creator</Text>
-										</HStack>
-									</Button>
-								</NextLink>
+										<Button
+											bg="#7283FE"
+											md="100px"
+											w="300px"
+											h="50px"
+											textAlign="left"
+										>
+											<HStack>
+												<BsInstagram />
+												<Text>
+													Instagram Content Creator
+												</Text>
+											</HStack>
+										</Button>
+									</NextLink>
 
-								<NextLink
-									isExternal
-									href="https://forms.gle/qe4LaxJsnZNigP3c7"
-									_hover={{ TextDecoration: "none" }}
-								>
-									<Button
-										bg="#7283FE"
-										md="100px"
-										w="300px"
-										h="50px"
-										textAlign="left"
+									<NextLink
+										isExternal
+										href="https://forms.gle/qe4LaxJsnZNigP3c7"
+										_hover={{ TextDecoration: "none" }}
 									>
-										<HStack>
-											<BsCheckLg />
-											<Text>Blog Writer</Text>
-										</HStack>
-									</Button>
-								</NextLink>
+										<Button
+											bg="#7283FE"
+											md="100px"
+											w="300px"
+											h="50px"
+											textAlign="left"
+										>
+											<HStack>
+												<FaTiktok />
+												<Text>
+													TikTok Content Creator
+												</Text>
+											</HStack>
+										</Button>
+									</NextLink>
 
-								<NextLink
-									isExternal
-									href="https://forms.gle/grxWXCRPjPAV9izLA"
-									_hover={{ TextDecoration: "none" }}
-								>
-									<Button
-										bg="#7283FE"
-										md="100px"
-										w="300px"
-										h="50px"
-										textAlign="left"
+									<NextLink
+										isExternal
+										href="https://forms.gle/grxWXCRPjPAV9izLA"
+										_hover={{ TextDecoration: "none" }}
 									>
-										<HStack>
-											<BsCheckLg />
-											<Text>
-												Vice President of Global
-												Marketing
-											</Text>
-										</HStack>
-									</Button>
-								</NextLink>
+										<Button
+											bg="#7283FE"
+											md="100px"
+											w="300px"
+											h="50px"
+											textAlign="left"
+										>
+											<HStack>
+												<GiFountainPen />
+												<Text>Blog Writer</Text>
+											</HStack>
+										</Button>
+									</NextLink>
 
-								<NextLink
-									isExternal
-									href="https://forms.gle/grxWXCRPjPAV9izLA"
-									_hover={{ TextDecoration: "none" }}
-								>
-									<Button
-										bg="#7283FE"
-										md="100px"
-										w="300px"
-										h="50px"
-										textAlign="left"
+									<NextLink
+										isExternal
+										href="https://forms.gle/grxWXCRPjPAV9izLA"
+										_hover={{ TextDecoration: "none" }}
 									>
-										<HStack>
-											<BsCheckLg />
-											<Text>
-												President of Marketing,
-												Editorial
-											</Text>
-										</HStack>
-									</Button>
-								</NextLink>
-							</VStack>
+										<Button
+											bg="#7283FE"
+											md="100px"
+											w="300px"
+											h="50px"
+											textAlign="left"
+										>
+											<HStack>
+												<GiLightBulb />
+												<Text>
+													President of Marketing,
+													Editorial
+												</Text>
+											</HStack>
+										</Button>
+									</NextLink>
+								</VStack>
+							</HStack>
 						</HStack>
 					</Center>
 				</ContainerInside>

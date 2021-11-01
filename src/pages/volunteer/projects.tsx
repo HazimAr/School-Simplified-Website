@@ -15,7 +15,7 @@ export default function Projects() {
 		<>
 			<Container h="300px">
 				<ContainerInside>
-					<Hero heading="Projects Division Applications" />
+					<Hero heading="Projects Applications" />
 				</ContainerInside>
 			</Container>
 

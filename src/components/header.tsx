@@ -162,10 +162,10 @@ const menuItems = [
 				name: "Homework Help",
 				href: "/discord",
 			},
-			{
-				name: "Blogs & Articles",
-				href: "/blog",
-			},
+			// {
+			// 	name: "Blogs & Articles",
+			// 	href: "/blog",
+			// },
 		],
 	},
 	{

@@ -37,7 +37,7 @@ const teams: VolunteerPanelProps[] = [
 	{
 		teamName: "Projects Division",
 		teamDesc:
-			"text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text",
+			"By joining our Projects Team, you can earn community service hours while proposing projects for School Simplified, create and share notes on various subjects through our official website, create resources for students, or help us hold events regarding either high school or college preparation.",
 		src: "timmy/projectsdept.png",
 		link: "/volunteer/projects",
 
@@ -85,7 +85,7 @@ const teams: VolunteerPanelProps[] = [
 	{
 		teamName: "Community Division",
 		teamDesc:
-			"text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text",
+			"By being apart of the Community Department, you can moderate our Discord server, become an Adivsor, or help us organize our future events. Apply today!",
 		src: "timmy/communitydept.png",
 		link: "/volunteer/community",
 
@@ -101,7 +101,7 @@ const teams: VolunteerPanelProps[] = [
 	{
 		teamName: "Human Resources Department",
 		teamDesc:
-			"text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text",
+			"Our Human Resources Department primarily works on onboarding new members and overseeing the specific teams they are in the charge of. They also closely work with the managers to hire new staff for School Simplified.",
 		src: "timmy/hrdept.png",
 		link: "https://forms.gle/HnraGUWyPR59S35f9",
 

@@ -165,8 +165,11 @@ export function parseBlock(block: any): JSX.Element {
 				</Checkbox>
 			);
 		case "child_page":
+
 		case "toggle":
+
 		case "unsupported":
+
 		default:
 			return (
 				<Text as="i" color="red">

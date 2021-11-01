@@ -151,7 +151,7 @@ export default function Chapter() {
 				<Center h="100vh">
 					<Heading>
 						We are currently not taking applications right now.
-						Please check back with us later
+						Please check back with us later.
 					</Heading>
 				</Center>
 			</ContainerInside>

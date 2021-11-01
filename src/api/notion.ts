@@ -575,7 +575,7 @@ export async function getBlogListing(): Promise<BlogListing[]> {
 			notionConfig
 		)
 		.then(({ data }: any) => {
-			console.log("Inside 'then'");
+			// console.log("Inside 'then'");
 			const results = data.results;
 			return results.map((result: any): BlogListing => {
 				const authorObjects: any[] = result.properties.Author?.people,

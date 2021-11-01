@@ -1,10 +1,11 @@
 {
-	"name": "school-simplified",
+	"name": "template",
 	"version": "0.1.0",
 	"author": "Hazim Arafa <hazimarafa80@gmail.com>",
+	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/HazimAr/School-Simplified"
+		"url": "https://github.com/HazimAr/"
 	},
 	"keywords": [
 		"NextJS",
@@ -19,28 +20,34 @@
 		"clean": "npx prettier --write ."
 	},
 	"dependencies": {
+		"@babel/core": "^7.16.0",
 		"@badrap/bar-of-progress": "^0.1.2",
 		"@chakra-ui/icons": "^1.0.16",
 		"@chakra-ui/react": "^1.6.10",
-		"@emotion/react": "^11.5.0",
+		"@chakra-ui/theme-tools": "^1.2.2",
+		"@emotion/react": "^11.4.1",
 		"@emotion/styled": "^11.3.0",
 		"axios": "^0.24.0",
-		"framer-motion": "^4.1.17",
+		"framer-motion": "^5.0.0",
 		"fuzzaldrin-plus": "^0.6.0",
 		"next": "^12.0.1",
 		"react": "^17.0.2",
 		"react-countup": "^6.0.0",
-		"react-dom": "^17.0.2",
+		"react-dom": "17.0.2",
 		"react-icons": "^4.3.1",
 		"react-katex": "^2.0.2",
 		"react-wavify": "^1.5.4"
 	},
 	"devDependencies": {
+		"@babel/preset-typescript": "^7.15.0",
+		"@types/babel__core": "^7.1.16",
 		"@types/fuzzaldrin-plus": "^0.6.2",
-		"@types/node": "^16.7.10",
-		"@types/react": "^17.0.20",
+		"@types/next": "^9.0.0",
+		"@types/node": "^16.11.6",
+		"@types/react": "^17.0.33",
+		"@types/react-icons": "^3.0.0",
 		"eslint": "^8.1.0",
-		"prettier": "^2.3.2",
-		"typescript": "^4.4.2"
+		"prettier": "^2.4.1",
+		"typescript": "^4.4.3"
 	}
 }

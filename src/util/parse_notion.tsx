@@ -35,7 +35,8 @@ import { BlogPage } from "types";
  * @param text an object like the one given above
  * @return an element representing the text
  */
-export function parseText(text: any): JSX.Element {
+
+export function parseText(text: any) {
 	if (!text.plain_text.length) {
 		return <></>;
 	}
@@ -89,11 +90,22 @@ export function parseText(text: any): JSX.Element {
 		text.type === "equation" ? (
 			<InlineMath math={text.plain_text} />
 		) : (
-			<>{text.plain_text}</>
+			<>
+				{text.plain_text.split("\n").length > 1 ? (
+					<>
+						{text.plain_text}
+						<br />
+					</>
+				) : (
+					<>{text.plain_text}</>
+				)}
+			</>
 		);
+	console.log(text.plain_text.split("\n"));
 	if (text.href && !/^[\s\n]+$/g.test(text.plain_text)) {
 		return (
 			<NextLink href={text.href} {...textProps} color="#ffe19a">
+				{}
 				{plainText}
 			</NextLink>
 		);

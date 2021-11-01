@@ -160,7 +160,7 @@ function Panel({
 
 						<NextLink
 							isExternal
-							href={link}
+							href="/discord"
 							_hover={{ textDecoration: "none" }}
 							p={15}
 						>

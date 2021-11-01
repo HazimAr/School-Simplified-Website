@@ -91,7 +91,7 @@ export function parseText(text: any) {
 			<InlineMath math={text.plain_text} />
 		) : (
 			<>
-				{text.plain_text.split("\n").length > 1 ? (
+				{/[\n]+/g.test(text.plain_text) ? (
 					<>
 						{text.plain_text}
 						<br />

@@ -3,19 +3,20 @@ import {
 	Here,
 	Intro,
 	Testimonial,
-	Blog,
+	// Blog,
 	Clubs,
 } from "@components/home/index";
 import { getBlogListing } from "@api/notion";
 import { BlogListing } from "types";
 
 export default function Home({ listing }: { listing: BlogListing[] }) {
+	console.log(listing);
 	return (
 		<>
 			<Intro />
 			<Here />
 			<Testimonial />
-			<Blog listing={listing} />
+			{/* <Blog listing={listing} /> */}
 			{/* <Code /> */}
 			<Clubs />
 		</>

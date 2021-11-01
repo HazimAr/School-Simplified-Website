@@ -89,37 +89,39 @@ function Card({ src, title, href }) {
 	return (
 		<VStack w="100%">
 			<NextChakraLink href={`/blog/${href ?? ""}`}>
-				<Center
-					rounded={20}
-					bg="brand.transparent"
-					boxSize={{
-						base: "125px",
-						sm: "140px",
-						md: "200px",
-						lg: "300px",
-					}}
-					backgroundImage={src}
-					backgroundSize="cover"
-					backgroundPosition="center"
-					transition="transform 0.2s ease-in"
-					_hover={{
-						transform: "scale(1.05)",
-					}}
-				>
-					{/* <Image
+				<Center flexDir="column">
+					<Center
+						rounded={20}
+						bg="brand.transparent"
+						boxSize={{
+							base: "125px",
+							sm: "140px",
+							md: "200px",
+							lg: "300px",
+						}}
+						backgroundImage={src}
+						backgroundSize="cover"
+						backgroundPosition="center"
+						transition="transform 0.2s ease-in"
+						_hover={{
+							transform: "scale(1.05)",
+						}}
+					>
+						{/* <Image
 						src={src}
 						// width={100}
 						// height={100}
 						// layout="fill"
 					/> */}
-				</Center>
+					</Center>
 
-				<Heading
-					textAlign="center"
-					fontSize={{ base: "sm", sm: "md", md: "lg", lg: "2xl" }}
-				>
-					{title}
-				</Heading>
+					<Heading
+						textAlign="center"
+						fontSize={{ base: "sm", sm: "md", md: "lg", lg: "2xl" }}
+					>
+						{title}
+					</Heading>
+				</Center>
 			</NextChakraLink>
 		</VStack>
 	);

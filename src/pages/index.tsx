@@ -24,6 +24,5 @@ export default function Home({ listing }: { listing: BlogListing[] }) {
 }
 
 export async function getStaticProps() {
-	const props = { listing: await getBlogListing() };
-	return { props, revalidate: 60 };
+	return { props: { listing: await getBlogListing() }, revalidate: 60 };
 }

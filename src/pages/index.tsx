@@ -1,21 +1,28 @@
 import {
-	Discord,
+	// Code,
 	Here,
 	Intro,
-	Stats,
 	Testimonial,
-	Why,
+	Blog,
+	Clubs,
 } from "@components/home/index";
+import { getBlogListing } from "@api/notion";
+import { BlogListing } from "types";
 
-export default function Home(): JSX.Element {
+export default function Home({ listing }: { listing: BlogListing[] }) {
 	return (
 		<>
 			<Intro />
-			<Stats />
 			<Here />
-			<Why />
 			<Testimonial />
-			<Discord />
+			<Blog listing={listing} />
+			{/* <Code /> */}
+			<Clubs />
 		</>
 	);
+}
+
+export async function getStaticProps() {
+	const props = { listing: await getBlogListing() };
+	return { props, revalidate: 60 };
 }

@@ -31,7 +31,7 @@ export async function getSubjects(): Promise<Subject[]> {
 		{},
 		notionConfig
 	);
-	// @ts-ignore
+	//@ts-ignore
 	const subjectPromises = dictData.results.map((page: any) => {
 		return axios.get(
 			`https://api.notion.com/v1/blocks/${page.id}/children`,
@@ -39,9 +39,10 @@ export async function getSubjects(): Promise<Subject[]> {
 		);
 	});
 
+	//@ts-ignore
 	let subjects: Subject[] = await Promise.all(subjectPromises)
 		.then((subjectData) => {
-			// @ts-ignore
+			//@ts-ignore
 			return dictData.results.map(
 				async (currentSubject: any, currentSubjectIndex: number) => {
 					let content = await getClasses(
@@ -70,6 +71,7 @@ async function getClasses(
 	subjectIndex: number
 ): Promise<Class[]> {
 	const currentSubject = subjectData[subjectIndex].data.results;
+	//@ts-ignore
 	return Promise.all(
 		currentSubject
 			.filter((currentClass: any) => currentClass?.child_page?.title)
@@ -92,12 +94,6 @@ async function getUnits(
 	currentClass: any,
 	classIndex: number
 ): Promise<Unit[]> {
-	// const { data: classPageData } = await axios.get(
-	// 	`https://api.notion.com/v1/pages/${currentClass.id}`,
-	// 	config
-	// );
-	// const pageURL = classPageData.url;
-
 	const promises2 = currentSubject.map(() => {
 		return axios.get(
 			`https://api.notion.com/v1/blocks/${currentClass.id}/children`,
@@ -106,7 +102,7 @@ async function getUnits(
 	});
 	return Promise.all(promises2)
 		.then((allPromises) => {
-			// @ts-expect-error
+			//@ts-ignore
 			return allPromises[classIndex].data.results;
 		})
 		.then((blocks) => {
@@ -156,15 +152,11 @@ async function getUnits(
 						}
 					}
 
-					// const blockID = block.id;
 					if (href.length && notesTitle.length) {
 						const note: NotesProps = {
 							title: notesTitle,
 							href: href,
 						};
-						// console.log(title);
-						// console.log(href);
-						// console.log(note.lastEdited);
 						notes.push(note);
 					} else if (title.length) {
 						console.warn(
@@ -440,7 +432,6 @@ export async function getFaqInfo(): Promise<QASection[]> {
 	if (title.length) {
 		output.push({ title, list });
 	}
-	// console.log(qaPairs);
 	return output;
 }
 
@@ -513,16 +504,9 @@ function parseAppropriateData(
 					return entry.properties[property].rich_text[0].plain_text;
 				return "";
 			case "multi_select":
-				let output: any[] = [];
-				for (
-					let i = 0;
-					i < entry.properties[property].multi_select.length;
-					i++
-				)
-					output.push(
-						entry.properties[property].multi_select[i].name
-					);
-				return output;
+				return entry.properties[property].multi_select.map(
+					(prop) => prop.name
+				);
 			default:
 				console.warn(
 					`ID ${entry.id} [${datatype}] is an invalid datatype!`
@@ -582,73 +566,73 @@ export async function getScholarshipData(): Promise<ScholarshipProps[]> {
 	return output;
 }
 
-// export async function getBlogListing(): Promise<BlogListing[]> {
-// 	return axios
-// 		.post(
-// 			"https://api.notion.com/v1/databases/79d546abf96847c6ab3cd8cffe002c39/query",
-// 			{},
-// 			notionConfig
-// 		)
-// 		.then((output) => {
-// 			const results = output.data.results;
-// 			return results.map((result: any): BlogListing => {
-// 				const authorObjects: any[] = result.properties.Author?.people,
-// 					titleText = result.properties.Name?.title,
-// 					linkText = result.properties.Link?.rich_text,
-// 					category = result.properties.Category?.select.name ?? null,
-// 					icon = result.properties.Icon?.url ?? null;
-// 				let title;
-// 				if (titleText?.length) {
-// 					title = "";
-// 					for (const titleSegment of titleText) {
-// 						title += titleSegment.plain_text;
-// 					}
-// 				} else {
-// 					title = "MALFORMED";
-// 				}
-// 				let link;
-// 				if (linkText?.length) {
-// 					link = "";
-// 					for (const linkSegment of linkText) {
-// 						link += linkSegment.plain_text;
-// 					}
-// 				} else {
-// 					link = result.id;
-// 				}
+export async function getBlogListing(): Promise<BlogListing[]> {
+	return axios
+		.post(
+			"https://api.notion.com/v1/databases/79d546abf96847c6ab3cd8cffe002c39/query",
+			{},
+			notionConfig
+		)
+		.then(({ data }: any) => {
+			const results = data.results;
+			return results.map((result: any): BlogListing => {
+				const authorObjects: any[] = result.properties.Author?.people,
+					titleText = result.properties.Name?.title,
+					linkText = result.properties.Link?.rich_text,
+					category = result.properties.Category?.select.name ?? null,
+					icon = result.properties.Icon?.url ?? null;
+				let title;
+				if (titleText?.length) {
+					title = "";
+					for (const titleSegment of titleText) {
+						title += titleSegment.plain_text;
+					}
+				} else {
+					title = "MALFORMED";
+				}
+				let link;
+				if (linkText?.length) {
+					link = "";
+					for (const linkSegment of linkText) {
+						link += linkSegment.plain_text;
+					}
+				} else {
+					link = result.id;
+				}
 
-// 				if (authorObjects?.length) {
-// 					const authors: Author[] = authorObjects.map(
-// 						(authorObject): Author => {
-// 							return {
-// 								name: authorObject.name,
-// 								avatar_url: authorObject.avatar_url,
-// 							};
-// 						}
-// 					);
-// 					return {
-// 						created_time: result.created_time,
-// 						last_edited_time: result.last_edited_time,
-// 						title,
-// 						id: result.id,
-// 						link,
-// 						category,
-// 						icon,
-// 						authors,
-// 					};
-// 				} else {
-// 					return {
-// 						created_time: result.created_time,
-// 						last_edited_time: result.last_edited_time,
-// 						title,
-// 						id: result.id,
-// 						link,
-// 						icon,
-// 						category,
-// 					};
-// 				}
-// 			});
-// 		});
-// }
+				if (authorObjects?.length) {
+					const authors: Author[] = authorObjects.map(
+						(authorObject): Author => {
+							return {
+								name: authorObject.name,
+								avatar_url: authorObject.avatar_url,
+							};
+						}
+					);
+					return {
+						created_time: result.created_time,
+						last_edited_time: result.last_edited_time,
+						title,
+						id: result.id,
+						link,
+						category,
+						icon,
+						authors,
+					};
+				} else {
+					return {
+						created_time: result.created_time,
+						last_edited_time: result.last_edited_time,
+						title,
+						id: result.id,
+						link,
+						icon,
+						category,
+					};
+				}
+			});
+		});
+}
 
 export async function getBlogPage(id: string): Promise<BlogPage> {
 	const { data: pageData } = await axios.get(

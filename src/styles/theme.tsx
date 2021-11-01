@@ -7,8 +7,8 @@ const theme = extendTheme({
 			transparent: "rgba(255,255,255,0.3)",
 			transparent2: "rgba(255,255,255,0.6)",
 			purple: {
-				light: "rgb(90, 96, 174)",
-				dark: "rgb(69, 74, 138)",
+				light: "#737ac5",
+				dark: "#5a60ad",
 			},
 
 			gold: "#fcd270",
@@ -39,10 +39,8 @@ const theme = extendTheme({
 		body: "Montserrat-Regular",
 	},
 	styles: {
-		// @ts-ignore
 		global: () => ({
 			html: {
-				height: "100%",
 				scrollBehavior: "smooth",
 			},
 
@@ -53,7 +51,11 @@ const theme = extendTheme({
 					"Montserrat-Regular, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif",
 				textAlign: "center",
 				background:
-					"#8192f0 linear-gradient(90deg, rgb(145,141,240) 0%, #8192f0 100%)",
+					"#6C7DFE linear-gradient(180deg, #5A60AD 0%, #6C7DFE 20%, #8291fd 80%, #9fa8fc 100%)",
+				backgroundSize: "cover",
+				backgroundPosition: "center",
+				backgroundRepeat: "no-repeat",
+				backgroundAttachment: "fixed",
 				color: "white",
 			},
 			a: {

@@ -1,5 +1,4 @@
 import {
-	Box,
 	Flex,
 	Heading,
 	HStack,
@@ -9,6 +8,7 @@ import {
 	MenuItem,
 	MenuList,
 	useDisclosure,
+	Box,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -16,29 +16,19 @@ import NextLink from "@components/nextChakra";
 
 // eslint-disable-next-line import/no-default-export
 export default function Header(): JSX.Element {
-	const graceTime: number = 250;
+	const graceTime = 50;
 
-	const {
-		isOpen: aIsOpen,
-		onOpen: aOnOpen,
-		onClose: aOnClose,
-	} = useDisclosure();
-	const {
-		isOpen: sIsOpen,
-		onOpen: sOnOpen,
-		onClose: sOnClose,
-	} = useDisclosure();
-	let aTimeout: NodeJS.Timeout, sTimeout: NodeJS.Timeout;
 	return (
 		<>
 			<Container
-				bg="brand.purple.light"
 				as="header"
 				py={3}
 				w="100%"
 				position="fixed"
 				zIndex={1000}
-				backdropFilter="blur(5px)"
+				bg="brand.transparent"
+				backdropFilter="blur(12px)"
+				// filter="blur(24px)"
 			>
 				<ContainerInside>
 					<Flex
@@ -52,7 +42,7 @@ export default function Header(): JSX.Element {
 									src="/logo.png"
 									width={30}
 									height={30}
-									alt="School Simplified Logo"
+									alt="logo"
 								/>
 								<Heading size="md" color="white" ml={2.5}>
 									School Simplified
@@ -68,97 +58,127 @@ export default function Header(): JSX.Element {
 							}}
 						>
 							<NextLink href="/">Home</NextLink>
-							<Menu isOpen={aIsOpen}>
-								<MenuButton
-									onMouseEnter={() => {
-										if (aTimeout) clearTimeout(aTimeout);
-										aOnOpen();
-										sOnClose();
-									}}
-									onMouseLeave={() =>
-										(aTimeout = setTimeout(
-											aOnClose,
-											graceTime
-										))
+							{menuItems.map((menuItem) => {
+								const { isOpen, onOpen, onClose } =
+									useDisclosure();
+
+								let timeout: NodeJS.Timeout;
+
+								const onMouseEnter = (): void => {
+									if (timeout) {
+										clearTimeout(timeout);
 									}
-								>
-									About Us
-								</MenuButton>
-								<MenuList
-									onMouseEnter={() => {
-										if (aTimeout) clearTimeout(aTimeout);
-										aOnOpen();
-										sOnClose();
-									}}
-									onMouseLeave={() =>
-										(aTimeout = setTimeout(
-											aOnClose,
-											graceTime
-										))
-									}
-								>
-									<NextLink href="/community">
-										<MenuItem>Community</MenuItem>
-									</NextLink>
-									<NextLink href="/leadership">
-										<MenuItem>Leadership</MenuItem>
-									</NextLink>
-									<NextLink href="/faq">
-										<MenuItem>FAQ</MenuItem>
-									</NextLink>
-									<NextLink href="/partners">
-										<MenuItem>Partners</MenuItem>
-									</NextLink>
-								</MenuList>
-							</Menu>
-							<Menu isOpen={sIsOpen}>
-								<MenuButton
-									// rightIcon={<ChevronDownIcon />}
-									onMouseEnter={() => {
-										if (sTimeout) clearTimeout(sTimeout);
-										sOnOpen();
-										aOnClose();
-									}}
-									onMouseLeave={() =>
-										(sTimeout = setTimeout(
-											sOnClose,
-											graceTime
-										))
-									}
-								>
-									Services
-								</MenuButton>
-								<MenuList
-									onMouseEnter={() => {
-										if (sTimeout) clearTimeout(sTimeout);
-										sOnOpen();
-										aOnClose();
-									}}
-									onMouseLeave={() =>
-										(sTimeout = setTimeout(
-											sOnClose,
-											graceTime
-										))
-									}
-								>
-									<NextLink href="/tutoring">
-										<MenuItem>Tutoring</MenuItem>
-									</NextLink>
-									<NextLink href="/essay">
-										<MenuItem>Essay Revision</MenuItem>
-									</NextLink>
-									<NextLink href="/notes">
-										<MenuItem>Notes</MenuItem>
-									</NextLink>
-								</MenuList>
-							</Menu>
+									onOpen();
+								};
+
+								const onMouseLeave = (): void => {
+									timeout = setTimeout(() => {
+										onClose();
+									}, graceTime);
+								};
+
+								return (
+									<Menu isOpen={isOpen} key={menuItem.name}>
+										<MenuButton
+											onMouseEnter={onMouseEnter}
+											onMouseLeave={onMouseLeave}
+										>
+											{menuItem.name}
+										</MenuButton>
+										<MenuList
+											onMouseEnter={onMouseEnter}
+											onMouseLeave={onMouseLeave}
+										>
+											{menuItem.children.map((child) => (
+												<NextLink
+													href={child.href}
+													key={child.name}
+												>
+													<MenuItem>
+														{child.name}
+													</MenuItem>
+												</NextLink>
+											))}
+										</MenuList>
+									</Menu>
+								);
+							})}
 							<NextLink href="/volunteer">Volunteer</NextLink>
+							<NextLink href="/donate">Donate</NextLink>
 							<NextLink href="/contact">Contact Us</NextLink>
 						</HStack>
 					</Flex>
 				</ContainerInside>
 			</Container>
-			<Box w="100%" h="50px" />
+			<Box h="54px" />
 		</>
 	);
 }
+
+const menuItems = [
+	{
+		name: "About Us",
+		children: [
+			{
+				name: "Community",
+				href: "/community",
+			},
+			{
+				name: "Partners",
+				href: "/partners",
+			},
+			{
+				name: "Leadership",
+				href: "/leadership",
+			},
+			{
+				name: "FAQ",
+				href: "/faq",
+			},
+			{
+				name: "Social Media",
+				href: "/links",
+			},
+		],
+	},
+	{
+		name: "Resources",
+		children: [
+			{
+				name: "Notes",
+				href: "/notes",
+			},
+			{
+				name: "Tutoring",
+				href: "/tutoring",
+			},
+
+			{
+				name: "Essay Revision",
+				href: "/essay",
+			},
+
+			{
+				name: "Homework Help",
+				href: "/discord",
+			},
+			{
+				name: "Blogs & Articles",
+				href: "/blog",
+			},
+		],
+	},
+	{
+		name: "Programs",
+		children: [
+			{
+				name: "Accelerate Your Organization",
+				href: "/npo",
+			},
+			{
+				name: "Become a Chapter",
+				href: "/chapter",
+			},
+		],
+	},
+];

@@ -1,8 +1,6 @@
-import { ExternalLinkIcon } from "@chakra-ui/icons";
 import {
 	Box,
 	Center,
-	Circle,
 	Flex,
 	Heading,
 	Icon,
@@ -23,11 +21,11 @@ import { VolunteerPanelProps } from "types";
 
 const teams: VolunteerPanelProps[] = [
 	{
-		teamName: "Academics",
+		teamName: "Marketing Department",
 		teamDesc:
-			"As part of our Academics Team, you can provide educational help to other students in the School Simplified community. If you excel in school and enjoy sharing your knowledge, join the Academics Team!",
-		src: "/logos/aca_logo.png",
-		link: "/academics",
+			"Joining the Marketing Team is a great opportunity for volunteers with experience in social media, design, and marketing. If you are interested in spreading School Simplified's mission, volunteer with the Marketing Team!",
+		src: "timmy/marketingdept.png",
+		link: "/volunteer/marketing",
 		functions: [
 			"tutoring",
 			"chat-helping",
@@ -37,11 +35,13 @@ const teams: VolunteerPanelProps[] = [
 		],
 	},
 	{
-		teamName: "Tech",
+		teamName: "Projects Division",
 		teamDesc:
-			"Joining our Technology Team will allow you to develop skills such as programming, web development, and quality management. If you are knowledgeable in any of these areas, we encourage you to apply!",
-		src: "/logos/tech_logo.png",
-		link: "https://forms.gle/tqXm5aLwhWGQ4cGA6",
+			"text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text",
+		src: "timmy/projectsdept.png",
+		link: "/volunteer/projects",
+
+		// link: "https://forms.gle/tqXm5aLwhWGQ4cGA6",
 		functions: [
 			"web development",
 			"bot development",
@@ -51,11 +51,61 @@ const teams: VolunteerPanelProps[] = [
 		],
 	},
 	{
-		teamName: "Marketing",
+		teamName: "Academic Department",
 		teamDesc:
-			"Joining the Marketing Team is a great opportunity for volunteers with experience in social media, design, and marketing. If you are interested in spreading School Simplified's mission, volunteer with the Marketing Team!",
-		src: "/logos/mkt_logo.png",
-		link: "https://forms.gle/xrZma1KjtZ6nzRxS8",
+			"As a part of our Academics Teams, you can provide educational help to other students in the School Simplified community. If you excel in school and enjoy sharing your knowledge, join the Academics Department!",
+		src: "timmy/academicsdept.png",
+		link: "/volunteer/acad",
+
+		//link: "https://forms.gle/xrZma1KjtZ6nzRxS8",
+		functions: [
+			"content creation",
+			"design",
+			"data analysis",
+			"outreaching",
+			"community engagement",
+		],
+	},
+	{
+		teamName: "Information-Technology Department",
+		teamDesc:
+			"Joining our Technology Team will allow you to develop skills such as programming, web development, and quality management. Apply if you are knowledgeable in any of these areas!",
+		src: "timmy/itdept.png",
+		link: "https://forms.gle/fGtWW57DWevKyZdM8",
+
+		//link: "https://forms.gle/xrZma1KjtZ6nzRxS8",
+		functions: [
+			"content creation",
+			"design",
+			"data analysis",
+			"outreaching",
+			"community engagement",
+		],
+	},
+	{
+		teamName: "Community Division",
+		teamDesc:
+			"text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text",
+		src: "timmy/communitydept.png",
+		link: "/volunteer/community",
+
+		//link: "https://forms.gle/xrZma1KjtZ6nzRxS8",
+		functions: [
+			"content creation",
+			"design",
+			"data analysis",
+			"outreaching",
+			"community engagement",
+		],
+	},
+	{
+		teamName: "Human Resources Department",
+		teamDesc:
+			"text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text",
+		src: "timmy/hrdept.png",
+		link: "https://forms.gle/HnraGUWyPR59S35f9",
+
+		//link: "https://forms.gle/xrZma1KjtZ6nzRxS8",
 		functions: [
 			"content creation",
 			"design",
@@ -81,6 +131,8 @@ export default function RotatingPanel(): JSX.Element {
 		setIndex(index === innerPanels.length - 1 ? 0 : index + 1);
 	}, 20000);
 
+	//src= "\timmy\timmy_background"
+
 	return (
 		<Container>
 			{teams.map((team) => {
@@ -94,9 +146,6 @@ export default function RotatingPanel(): JSX.Element {
 				);
 			})}
 			<ContainerInside py={8}>
-				<Heading size="lg" mb={3}>
-					What can I volunteer for?
-				</Heading>
 				<Box mb={3}>{innerPanels[index]}</Box>
 				<Center>
 					<Center
@@ -153,54 +202,77 @@ function Panel({
 	teamName,
 	teamDesc,
 	link,
-	functions,
-}: VolunteerPanelProps): JSX.Element {
+}: // functions,
+VolunteerPanelProps): JSX.Element {
 	return (
 		<Box py={5}>
 			<ScaleFade in={true} unmountOnExit={false}>
-				<Flex
-					justifyContent="flex-start"
-					flexDir={{ base: "column", md: "row" }}
-					alignItems="center"
-					overflow="auto"
-				>
-					<Circle
-						p={{ base: 1, sm: 3, md: 2, lg: 3 }}
-						bg="brand.transparent"
-						mr={5}
+				<Center>
+					<Flex
+						justifyContent="flex-start"
+						flexDir={{ base: "column", md: "column", lg: "row" }}
+						alignItems="center"
+						overflow="auto"
 					>
+						<VStack
+							alignItems="flex-start"
+							textAlign="left"
+							width={{
+								base: "250px",
+								xl: "600px",
+								lg: "650px",
+								md: "700px",
+								sm: "480px",
+							}}
+							spacing={{ base: 5, md: 8 }}
+							justifyContent={{ base: "center", md: "center" }}
+						>
+							<Heading
+								size="lg"
+								textAlign={{ base: "left", md: "center" }}
+							>
+								{teamName}
+							</Heading>
+							<Text textAlign="left" my={2}>
+								{teamDesc}
+							</Text>
+
+							{/* {functions ? (
+								<Text textAlign="left" fontStyle="italic">
+									Functions include {functions.join(", ")}, and
+									more.
+								</Text>
+							) : null} */}
+
+							<NextLink
+								isExternal
+								href={link}
+								_hover={{ textDecoration: "none" }}
+							>
+								<Button
+									bg="linear-gradient(90deg, #FFA270 0%, #e6c068 100%)"
+									//mt={{ base: 5, md: 0 }}
+								>
+									Applications
+								</Button>
+							</NextLink>
+						</VStack>
 						<Image
 							src={src}
-							h={{ base: 100, sm: 200, md: 150, lg: 250 }}
+							h={{ base: 150, sm: 200, md: 250, lg: 250 }}
+							ml={{
+								base: "0",
+								md: "30px",
+								lg: "50px",
+								xl: "100px",
+							}}
+							mt={{ base: 5, md: 0 }}
 							alt={teamName + " team logo"}
+
 							rounded="full"
 						/>
-					</Circle>
-					<VStack alignItems="flex-start">
-						<Heading size="lg" textAlign="left">
-							{teamName}
-						</Heading>
-						<Text textAlign="left" my={2}>
-							{teamDesc}
-						</Text>
-						{functions ? (
-							<Text textAlign="left" fontStyle="italic">
-								Functions include {functions.join(", ")}, and
-								more.
-							</Text>
-						) : null}
-
-						<NextLink
-							isExternal
-							href={link}
-							_hover={{ textDecoration: "none" }}
-						>
-							<Button bg="brand.transparent" mt={3}>
-								Join <ExternalLinkIcon ml={2} />
-							</Button>
-						</NextLink>
-					</VStack>
-				</Flex>
+					</Flex>
+				</Center>
 			</ScaleFade>
 		</Box>
 	);

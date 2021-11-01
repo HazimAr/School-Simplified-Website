@@ -16,106 +16,17 @@ import {
 	Thead,
 	Tr,
 	VStack,
+	Center,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
 import StaffCard from "@components/staffcard";
-import React from "react";
+import { useState } from "react";
 import { GovernanceDocument, GovernanceSection, Person } from "types";
 
-const leadership: Person[] = [
-	{
-		name: "Ethan Hsu",
-		title: "Chief Executive Officer (CEO) & President",
-		img: "/staff/EthanHsu.jpg",
-	},
-	{
-		name: "Lauren Hsieh",
-		title: "Secretary & Chief of Staff",
-		img: "/staff/LaurenHsieh.jpg",
-	},
-	{
-		name: "Rohit Choudhary",
-		title: "Senior Vice President of Academics (SVPA)",
-		img: "/staff/RohitChoudhary.jpg",
-	},
-	{
-		name: "Aarush Goradia",
-		title: "President of Student Advancement (PSA)",
-		img: "/staff/AarushGoradia.jpg",
-	},
-	{
-		name: "Param Patil",
-		title: "Chief Advancements Officer (CAO)",
-		img: "/staff/ParamPatil.jpg",
-	},
-	{
-		name: "Harry Chow",
-		title: "Chief Marketing Officer (CMO)",
-		img: "/staff/HarryChow.jpg",
-	},
-	{
-		name: "Jason Mei",
-		title: "Chief Information Technology Officer",
-		img: "/staff/JasonMei.jpg",
-	},
-	{
-		name: "Diana Zheng",
-		title: "Treasurer",
-		img: "/staff/DianaZheng.jpg",
-	},
-];
-
-const boardOfDirectors: Person[] = [
-	{
-		name: "Nathanael Ma",
-		title: "Lead Director",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Ethan Hsu",
-		title: "Director & CEO",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Madison Li",
-		title: "Director",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Harry Chow",
-		title: "Director",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Lauren Hsieh",
-		title: "Director & Secretary",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Diana Zheng",
-		title: "Director & Treasurer",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Rohit Choudhary",
-		title: "Director",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Atsi Gupta",
-		title: "Director",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Isaias Vilato",
-		title: "Director",
-		img: "/staff/default.png",
-	},
-];
-
 export default function About({ data }: { data: any }): JSX.Element {
+	const [senior, setSenior] = useState(true);
 	return (
 		<>
 			<Container>
@@ -126,20 +37,41 @@ export default function About({ data }: { data: any }): JSX.Element {
 						</Heading>
 
 						<Divider bg="white" />
-						<Heading fontSize={30} my={5}>
+						<Center my={5}>
+							<ExecutiveButton
+								onClick={() => {
+									!senior && setSenior(true);
+								}}
+								left
+								active={senior}
+							>
+								Senior Executives
+							</ExecutiveButton>
+							<ExecutiveButton
+								onClick={() => {
+									senior && setSenior(false);
+								}}
+								active={!senior}
+							>
+								Executives
+							</ExecutiveButton>
+						</Center>
+						<Heading fontSize={30} mb={5}>
 							Executive Profiles
 						</Heading>
 						<Flex justifyContent="center" flexWrap="wrap">
-							{leadership.map((staff, i: number) => {
-								return (
-									<StaffCard
-										title={staff.title}
-										name={staff.name}
-										img={staff.img}
-										key={i}
-									/>
-								);
-							})}
+							{(senior ? seniorExecs : execs).map(
+								(staff: Person, i: number) => {
+									return (
+										<StaffCard
+											title={staff.title}
+											name={staff.name}
+											img={staff.img}
+											key={i}
+										/>
+									);
+								}
+							)}
 						</Flex>
 
 						<Divider bg="white" />
@@ -159,8 +91,8 @@ export default function About({ data }: { data: any }): JSX.Element {
 								</Tr>
 							</Thead>
 							<Tbody>
-								{boardOfDirectors.map((staff, idx: number) => (
-									<Tr key={"row_" + idx}>
+								{boardOfDirectors.map((staff) => (
+									<Tr key={staff.name}>
 										<Td fontWeight="bold" fontSize={20}>
 											{staff.name}
 										</Td>
@@ -179,17 +111,17 @@ export default function About({ data }: { data: any }): JSX.Element {
 								flexDir={{ base: "column", sm: "row" }}
 							>
 								<Text fontSize={20} fontWeight="bold">
-									Jason Mei
+									Ethan Wu
+								</Text>
+								<Text fontSize={20} fontWeight="bold">
+									Nathanael Ma
 								</Text>
 								<Text fontSize={20} fontWeight="bold">
 									Ethan Hsu
 								</Text>
 								<Text fontSize={20} fontWeight="bold">
-									Ethan Wu
+									Jason Mei
 								</Text>
-								<Text fontSize={20} fontWeight="bold">
-									Nathanael Ma
-								</Text>{" "}
 							</HStack>
 						</VStack>
 					</Box>
@@ -236,5 +168,227 @@ export default function About({ data }: { data: any }): JSX.Element {
 
 export async function getServerSideProps() {
 	const data = await getGovernanceData();
-	return { props: { data } };
+	return {
+		props: {
+			data,
+		},
+	};
+}
+
+const seniorExecs: Person[] = [
+	{
+		name: "Ethan Hsu",
+		title: "Chief Executive Officer & President",
+		img: "/staff/EthanHsu.jpg",
+	},
+	{
+		name: "Lauren Hsieh",
+		title: "Chief of Staff & Corporate Secretary ",
+		img: "/staff/LaurenHsieh.jpg",
+	},
+
+	{
+		name: "Param Patil",
+		title: "Chief Advancements Officer ",
+		img: "/staff/ParamPatil.jpg",
+	},
+	{
+		name: "Hazim Arafa",
+		title: "President of Programming Simplified",
+		img: "/staff/HazimArafa.jpg",
+	},
+	{
+		name: "David Sun",
+		title: "President of National Chapters",
+		img: "/staff/DavidSun.jpg",
+	},
+	{
+		name: "Aarush Goradia",
+		title: "President of Student Activities",
+		img: "/staff/AarushGoradia.jpg",
+	},
+
+	{
+		name: "Harry Chow",
+		title: "Chief Marketing Officer",
+		img: "/staff/HarryChow.jpg",
+	},
+	{
+		name: "Masa Murry",
+		title: "Senior Vice President of Global Marketing",
+		img: "/staff/MasaMurry.jpg",
+	},
+
+	{
+		name: "Jason Mei",
+		title: "Executive Vice President of Information Technology",
+		img: "/staff/JasonMei.jpg",
+	},
+	{
+		name: "Diana Zheng",
+		title: "Corporate Treasurer",
+		img: "/staff/DianaZheng.jpg",
+	},
+	{
+		name: "Anncine Lin",
+		title: "Chief of Human Resources Officer",
+		img: "/staff/AnncineLin.jpg",
+	},
+];
+
+const execs: Person[] = [
+	{
+		name: "Jiahao Zhang",
+		title: "Global Vice President of Advancement",
+		img: "/staff/JiahaoZhang.jpg",
+	},
+	{
+		name: "Yasmeen Elkheir",
+		title: "Vice President of Operations, Programming Simplified",
+		img: "/staff/YasmeenElkheir.jpg",
+	},
+	{
+		name: "Isamar Zhu",
+		title: "Vice President of Staff, Programming Simplified",
+		img: "/staff/IsamarZhu.jpg",
+	},
+	{
+		name: "Cracker",
+		// name: "Josh Schram",
+		title: "Vice President of Academics",
+		img: "/staff/JoshSchram.jpg",
+	},
+	{
+		name: "Rohit Choudhary",
+		title: "Vice President of Academics",
+		img: "/staff/RohitChoudhary.jpg",
+	},
+
+	{
+		name: "Rohit Penta",
+		title: "Vice President of Information-Technology, School Simplified Digital",
+		img: "/staff/RohitPenta.jpg",
+	},
+	// {
+	// 	name: "Max Konzerowsky",
+	// 	title: "Vice President of Information-Technology, School Simplified Digital",
+	// 	img: "/staff/MaxKonzerowsky.jpg",
+	// },
+	// {
+	// 	name: "Nicholas Zhang",
+	// 	title: "Vice President of Information-Technology, School Simplified Digital",
+	// 	img: "/staff/NicholasZhang.jpg",
+	// },
+
+	// {
+	// 	name: "Soap E",
+	// 	// name: "Sophia Bhatia",
+	// 	title: "Vice President of Community Engagement",
+	// 	img: "/staff/soape.jpg",
+	// },
+	// {
+	// 	name: "Noah Bondi",
+	// 	title: "National VP of Communications (Chapters)",
+	// 	img: "/staff/NoahBondi.jpg",
+	// },
+	// {
+	// 	name: "Vivek Anandh",
+	// 	title: "National VP of Information-Technology (Chapters)",
+	// 	img: "/staff/VivekAnandh.jpg",
+	// },
+	{
+		name: "Gavin Hecock",
+		title: "Vice President of Student Activities",
+		img: "/staff/GavinHecock.jpg",
+	},
+	// {
+	// 	name: "Adrian Sucahyo",
+	// 	title: "Vice President of Operations, Chapters",
+	// 	img: "/staff/AdrianSucahyo.jpg",
+	// },
+];
+
+const boardOfDirectors: Person[] = [
+	{
+		name: "Ethan Hsu",
+		title: "Chairperson",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Nathanael Ma",
+		title: "Lead Director",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Madison Li",
+		title: "Lead Director",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Lauren Hsieh",
+		title: "Director",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Diana Zheng",
+		title: "Director",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Harry Chow",
+		title: "Director",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Rohit Choudhary",
+		title: "Director",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Atsi Gupta",
+		title: "Director",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Isaias Vilato",
+		title: "Director",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Param Patil",
+		title: "Director",
+		img: "/staff/default.png",
+	},
+	{
+		name: "Kayla Laguana",
+		title: "Director",
+		img: "/staff/default.png",
+	},
+];
+
+function ExecutiveButton(props) {
+	const { children, onClick, left, active } = props;
+	return (
+		<Box
+			onClick={onClick}
+			maxW="200px"
+			py={3}
+			w="100%"
+			bg={
+				active
+					? "linear-gradient(90deg, #FFA270 0%, #e6c068 100%)"
+					: "brand.transparent"
+			}
+			borderLeftRadius={left ? "100px" : 0}
+			borderRightRadius={left ? 0 : "100PX"}
+			transition="all 0.1s ease-in"
+			_hover={{
+				bg: "brand.transparent2",
+				cursor: "pointer",
+			}}
+			{...props}
+		>
+			{children}
+		</Box>
+	);
 }

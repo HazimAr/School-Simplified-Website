@@ -1,8 +1,8 @@
-import Discord from "./discord";
+import Code from "./code";
 import Here from "./here";
 import Intro from "./intro";
-import Stats from "./stats";
 import Testimonial from "./testimonial";
-import Why from "./why";
+import Blog from "./blog";
+import Clubs from "./clubs";
 
-export { Intro, Here, Testimonial, Discord, Why, Stats };
+export { Intro, Here, Testimonial, Code, Blog,Clubs };

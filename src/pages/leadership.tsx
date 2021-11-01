@@ -192,6 +192,21 @@ const seniorExecs: Person[] = [
 		title: "Chief Advancements Officer ",
 		img: "/staff/ParamPatil.jpg",
 	},
+	{
+		name: "Hazim Arafa",
+		title: "President of Programming Simplified",
+		img: "/staff/HazimArafa.jpg",
+	},
+	{
+		name: "David Sun",
+		title: "President of National Chapters",
+		img: "/staff/DavidSun.jpg",
+	},
+	{
+		name: "Aarush Goradia",
+		title: "President of Student Activities",
+		img: "/staff/AarushGoradia.jpg",
+	},
 
 	{
 		name: "Harry Chow",
@@ -218,22 +233,6 @@ const seniorExecs: Person[] = [
 		name: "Anncine Lin",
 		title: "Chief of Human Resources Officer",
 		img: "/staff/AnncineLin.jpg",
-	},
-
-	{
-		name: "Hazim Arafa",
-		title: "President of Programming Simplified",
-		img: "/staff/HazimArafa.jpg",
-	},
-	{
-		name: "David Sun",
-		title: "President of National Chapters",
-		img: "/staff/DavidSun.jpg",
-	},
-	{
-		name: "Aarush Goradia",
-		title: "President of Student Activities",
-		img: "/staff/AarushGoradia.jpg",
 	},
 ];
 

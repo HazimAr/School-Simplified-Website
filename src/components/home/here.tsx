@@ -41,6 +41,7 @@ export default function Here() {
 						title="Free Homework Help"
 						description="We offer free tutoring to all students willing to learn"
 						button="Request Help"
+						isExternal
 						href="/discord"
 						mt={{ base: "25px", lg: 0 }}
 						ml={{ base: 0, lg: "25px" }}

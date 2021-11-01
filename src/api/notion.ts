@@ -2,8 +2,8 @@ import axios from "axios";
 import {
 	AnswerPart,
 	ArtData,
-	// Author,
-	// BlogListing,
+	Author,
+	BlogListing,
 	BlogPage,
 	Class,
 	GovernanceDocument,
@@ -157,6 +157,7 @@ async function getUnits(
 							title: notesTitle,
 							href: href,
 						};
+
 						notes.push(note);
 					} else if (title.length) {
 						console.warn(
@@ -182,7 +183,7 @@ export async function getArtInfo(): Promise<ArtData> {
 	);
 
 	let image =
-			"https://www.thewrap.com/wp-content/uploads/2016/08/Rick-Astley-618x400.jpg", // default image
+		"https://www.thewrap.com/wp-content/uploads/2016/08/Rick-Astley-618x400.jpg", // default image
 		description = "It's Rick Astley", // default description
 		monthlyPrompt = "Legend of Internet History", // default monthly prompt
 		name = "Rick Astley", // default name
@@ -261,9 +262,9 @@ export async function getArtInfo(): Promise<ArtData> {
 								if (token.includes("\n")) {
 									// this entry is done
 									const miniToken = token.substring(
-											0,
-											token.indexOf("\n")
-										),
+										0,
+										token.indexOf("\n")
+									),
 										splitIdx = miniToken.indexOf(": ");
 									if (splitIdx === -1) {
 										console.warn(

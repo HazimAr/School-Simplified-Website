@@ -39,9 +39,9 @@ export default function Here() {
 					/>
 					<Card
 						title="Free Homework Help"
-						description="We offer comprehensive proofreading for all types of writing!"
-						button="Submit Essay"
-						href="/essay"
+						description="We offer free tutoring to all students willing to learn"
+						button="Request Help"
+						href="/discord"
 						mt={{ base: "25px", lg: 0 }}
 						ml={{ base: 0, lg: "25px" }}
 					/>

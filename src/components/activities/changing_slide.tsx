@@ -23,7 +23,7 @@ const clubs: ActivitySlideProps[] = [
 	{
 		clubName: "Chess  Club",
 		clubDesc:
-			"This is text to test the design of this sections. Sections are a part of a whole, and that is what this is, it could be 1 part of 1000000 or 10 of 12.  This is text to test the design of this sections. Sections are a part of a whole, and that is what this is, it could be 1 part of 1000000 or 10 of 12.  This is text to test the design of this sections. Sections are a part of a whole, and that is what this is, it could be 1 part of 1000000 or 10 of 12.  ",
+			"We strive to help people learn and enjoy the game of chess, or to teach others the basics of the game. We also host tournaments for the game with other events at hand. We do have a couple rules, however; keep in mind that you must be 13+, follow all server rules, and have fun!",
 		src: "/clubs/chess.png",
 		link: "/",
 	},

@@ -1,5 +1,5 @@
 import {
-	Code,
+	// Code,
 	Here,
 	Intro,
 	Testimonial,
@@ -16,7 +16,7 @@ export default function Home({ listing }: { listing: BlogListing[] }) {
 			<Here />
 			<Testimonial />
 			<Blog listing={listing} />
-			<Code />
+			{/* <Code /> */}
 			<Clubs />
 		</>
 	);

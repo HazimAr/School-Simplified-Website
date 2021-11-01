@@ -269,44 +269,43 @@ const execs: Person[] = [
 		title: "Vice President of Information-Technology, School Simplified Digital",
 		img: "/staff/RohitPenta.jpg",
 	},
-	{
-		name: "Max Konzerowsky",
-		title: "Vice President of Information-Technology, School Simplified Digital",
-		img: "/staff/MaxKonzerowsky.jpg",
-	},
-	{
-		name: "Nicholas Zhang",
-		title: "Vice President of Information-Technology, School Simplified Digital",
-		img: "/staff/NicholasZhang.jpg",
-	},
+	// {
+	// 	name: "Max Konzerowsky",
+	// 	title: "Vice President of Information-Technology, School Simplified Digital",
+	// 	img: "/staff/MaxKonzerowsky.jpg",
+	// },
+	// {
+	// 	name: "Nicholas Zhang",
+	// 	title: "Vice President of Information-Technology, School Simplified Digital",
+	// 	img: "/staff/NicholasZhang.jpg",
+	// },
 
-	{
-		name: "Soap E",
-		// name: "Sophia Bhatia",
-		title: "Vice President of Community Engagement",
-		img: "/staff/soape.jpg",
-	},
-	{
-		name: "Noah Bondi",
-		title: "National VP of Communications (Chapters)",
-		img: "/staff/NoahBondi.jpg",
-	},
-	{
-		name: "Vivek Anandh",
-		title: "National VP of Information-Technology (Chapters)",
-		img: "/staff/VivekAnandh.jpg",
-	},
+	// {
+	// 	name: "Soap E",
+	// 	// name: "Sophia Bhatia",
+	// 	title: "Vice President of Community Engagement",
+	// 	img: "/staff/soape.jpg",
+	// },
+	// {
+	// 	name: "Noah Bondi",
+	// 	title: "National VP of Communications (Chapters)",
+	// 	img: "/staff/NoahBondi.jpg",
+	// },
+	// {
+	// 	name: "Vivek Anandh",
+	// 	title: "National VP of Information-Technology (Chapters)",
+	// 	img: "/staff/VivekAnandh.jpg",
+	// },
 	{
 		name: "Gavin Hecock",
-		title: "dumb bitch",
-		// title: "Vice President of Student Activities",
+		title: "Vice President of Student Activities",
 		img: "/staff/GavinHecock.jpg",
 	},
-	{
-		name: "Adrian Sucahyo",
-		title: "Vice President of Operations, Chapters",
-		img: "/staff/AdrianSucahyo.jpg",
-	},
+	// {
+	// 	name: "Adrian Sucahyo",
+	// 	title: "Vice President of Operations, Chapters",
+	// 	img: "/staff/AdrianSucahyo.jpg",
+	// },
 ];
 
 const boardOfDirectors: Person[] = [

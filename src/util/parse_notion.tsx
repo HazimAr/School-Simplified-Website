@@ -101,7 +101,6 @@ export function parseText(text: any) {
 				)}
 			</>
 		);
-	console.log(text.plain_text.split("\n"));
 	if (text.href && !/^[\s\n]+$/g.test(text.plain_text)) {
 		return (
 			<NextLink href={text.href} {...textProps} color="#ffe19a">

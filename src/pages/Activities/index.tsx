@@ -5,12 +5,13 @@ import {
 	Image,
 	Text,
 	Center,
-	Stack
+	Stack,
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import ChangingSlide from "@components/activities/changing_slide";
+import NextLink from "@components/nextChakra";
 
 /**
  * The Activities page!
@@ -54,7 +55,14 @@ export default function Activities() {
 									starting your very own club. Start a club for whatever you
 									want, however you want, and become a club president today!
 								</Text>
-								<Button>Apply</Button>
+								<NextLink 
+									isExternal
+									href="https://forms.gle/EbmL1kKaib3DKA1U7"
+									_hover={{ textDecoration: "none" }}
+									p={15}
+								>
+									<Button>Apply</Button>
+								</NextLink>
 							</VStack>
 							<Image src="/timmy/timmy_sports.png" w="300px" display={{ base: "none", md: "block" }} alt="Timmy with sports balls" />
 						</HStack>

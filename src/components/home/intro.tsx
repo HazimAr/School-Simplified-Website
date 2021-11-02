@@ -28,6 +28,7 @@ export default function Intro() {
 					flexWrap="wrap"
 					flexDir={{ base: "column", sm: "row" }}
 					textAlign="center"
+					display="none"
 					fontSize={{ base: "lg", md: "xl" }}
 					mt="50px"
 				>

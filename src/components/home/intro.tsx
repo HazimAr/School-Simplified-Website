@@ -6,7 +6,6 @@ import CountUp from "react-countup";
 export default function Intro() {
 	return (
 		<ContainerBackground src="/timmy/lofi_timmy.png" py="50px">
-	
 			<ContainerInside>
 				<Center>
 					<VStack spacing={10} maxW="60ch">
@@ -28,7 +27,6 @@ export default function Intro() {
 					flexWrap="wrap"
 					flexDir={{ base: "column", sm: "row" }}
 					textAlign="center"
-					display="none"
 					fontSize={{ base: "lg", md: "xl" }}
 					mt="50px"
 				>

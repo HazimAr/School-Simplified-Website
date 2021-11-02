@@ -97,7 +97,7 @@ export default function Marketing() {
 
 									<NextLink
 										isExternal
-										href="https://forms.gle/qe4LaxJsnZNigP3c7"
+										href="https://forms.gle/grxWXCRPjPAV9izLA"
 										_hover={{ TextDecoration: "none" }}
 									>
 										<Button
@@ -163,7 +163,7 @@ export default function Marketing() {
 
 									<NextLink
 										isExternal
-										href="https://forms.gle/grxWXCRPjPAV9izLA"
+										href="https://forms.gle/qe4LaxJsnZNigP3c7"
 										_hover={{ TextDecoration: "none" }}
 									>
 										<Button
@@ -182,7 +182,7 @@ export default function Marketing() {
 
 									<NextLink
 										isExternal
-										href="https://forms.gle/grxWXCRPjPAV9izLA"
+										href="https://forms.gle/zfCwVeCtAqkQPr2f7"
 										_hover={{ TextDecoration: "none" }}
 									>
 										<Button
@@ -195,8 +195,7 @@ export default function Marketing() {
 											<HStack>
 												<GiLightBulb />
 												<Text>
-													President of Marketing,
-													Editorial
+													Marketing Leadership
 												</Text>
 											</HStack>
 										</Button>

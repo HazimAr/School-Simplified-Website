@@ -1,6 +1,6 @@
 import {
 	// Code,
-	Here,
+	// Here,
 	Intro,
 	Testimonial,
 	// Blog,

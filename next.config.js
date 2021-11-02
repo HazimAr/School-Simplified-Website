@@ -1,6 +1,5 @@
 //@ts-ignore
 module.exports = {
-	// rust compiler (5x faster build times)
 	async redirects() {
 		return [
 			{
@@ -10,5 +9,6 @@ module.exports = {
 			},
 		];
 	},
-	swcMinify: false,
+	// rust compiler (5x faster build times)
+	swcMinify: true,
 };

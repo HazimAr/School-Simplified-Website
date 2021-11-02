@@ -4,8 +4,6 @@ import {
 	ArtData,
 	Author,
 	BlogListing,
-	// Author,
-	// BlogListing,
 	BlogPage,
 	Class,
 	GovernanceDocument,
@@ -159,6 +157,7 @@ async function getUnits(
 							title: notesTitle,
 							href: href,
 						};
+
 						notes.push(note);
 					} else if (title.length) {
 						console.warn(
@@ -576,6 +575,7 @@ export async function getBlogListing(): Promise<BlogListing[]> {
 			notionConfig
 		)
 		.then(({ data }: any) => {
+			// console.log("Inside 'then'");
 			const results = data.results;
 			return results.map((result: any): BlogListing => {
 				const authorObjects: any[] = result.properties.Author?.people,
@@ -583,7 +583,8 @@ export async function getBlogListing(): Promise<BlogListing[]> {
 					linkText = result.properties.Link?.rich_text,
 					category = result.properties.Category?.select.name ?? null,
 					icon = result.properties.Icon?.url ?? null;
-				let title;
+
+				let title: string;
 				if (titleText?.length) {
 					title = "";
 					for (const titleSegment of titleText) {
@@ -592,7 +593,8 @@ export async function getBlogListing(): Promise<BlogListing[]> {
 				} else {
 					title = "MALFORMED";
 				}
-				let link;
+
+				let link: string;
 				if (linkText?.length) {
 					link = "";
 					for (const linkSegment of linkText) {

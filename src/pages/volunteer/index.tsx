@@ -43,7 +43,7 @@ export default function Volunteering() {
 
 								<Text fontSize="lg">
 									<b>
-										As the largest student run nonprofit in
+										As the largest teen led nonprofit in
 										North America, School Simplified
 										provides you with a variety of
 										opportunities. Become a part of our team

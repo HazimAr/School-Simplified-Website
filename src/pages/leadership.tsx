@@ -253,9 +253,9 @@ const execs: Person[] = [
 		img: "/staff/IsamarZhu.jpg",
 	},
 	{
-		name: "Cracker",
-		// name: "Josh Schram",
-		title: "Vice President of Academics",
+		// name: "Cracker",
+		name: "Josh Schram",
+		title: "Vice President of Academics, Digital",
 		img: "/staff/JoshSchram.jpg",
 	},
 	{
@@ -266,7 +266,7 @@ const execs: Person[] = [
 
 	{
 		name: "Rohit Penta",
-		title: "Vice President of Information-Technology, School Simplified Digital",
+		title: "Vice President of Information-Technology, Digital",
 		img: "/staff/RohitPenta.jpg",
 	},
 	// {
@@ -298,7 +298,7 @@ const execs: Person[] = [
 	// },
 	{
 		name: "Gavin Hecock",
-		title: "Vice President of Student Activities",
+		title: "Vice President of Clubs, Student Activities",
 		img: "/staff/GavinHecock.jpg",
 	},
 	// {

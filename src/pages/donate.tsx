@@ -8,8 +8,8 @@ export default function Donate() {
 					Donate
 				</Heading>
 				<Heading as="h2" size="md" color="white">
-					text goes here on why people should consider donating to
-					school simplified
+					School simplified doesn't charge anything for our services,
+					so we rely on your donations! Consider donating to us.
 				</Heading>
 				<Heading as="h2" size="md" color="white">
 					<iframe

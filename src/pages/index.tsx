@@ -14,7 +14,7 @@ export default function Home({ listing }: { listing: BlogListing[] }) {
 	return (
 		<>
 			<Intro />
-			<Here />
+			{/* <Here /> */}
 			<Testimonial />
 			{/* <Blog listing={listing} /> */}
 			{/* <Code /> */}

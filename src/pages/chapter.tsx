@@ -8,8 +8,9 @@ export default function Chapter() {
 			<ContainerInside>
 				<Center h="100vh">
 					<Heading>
-						We are currently not taking applications right now.
-						Please check back with us later
+						We are not currently taking applications.
+						Please check back with us later,
+						we look forward to working with you!
 					</Heading>
 				</Center>
 			</ContainerInside>

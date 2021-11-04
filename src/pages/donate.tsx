@@ -1,4 +1,6 @@
-import { Container, Heading, VStack } from "@chakra-ui/react";
+import { Heading, VStack } from "@chakra-ui/react";
+import Container from "@components/container";
+import ContainerInside from "@components/containerinside";
 
 export default function Donate() {
 	return (

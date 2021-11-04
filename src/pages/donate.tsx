@@ -1,7 +1,8 @@
-import { Container, Box, Heading } from "@chakra-ui/react";
+import { Container, Box, Heading, Center } from "@chakra-ui/react";
 
 export default function Donate() {
 	return (
+		<Center>
 		<Container py={19}>
 			<Box my="20px">
 				<Heading as="h1" size="4xl" mb={8}>
@@ -24,5 +25,6 @@ export default function Donate() {
 				</Heading>
 			</Box>
 		</Container>
+		</Center>
 	);
 }

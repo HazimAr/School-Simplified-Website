@@ -31,7 +31,7 @@ export default function Chapter() {
 			<Container boxShadow=" 0 0 100px 100px rgba(108, 125, 254, 0.71) " py={50} my={50} bg="linear-gradient(180deg, rgba(90, 96, 173, 0.71) 0%, rgba(108, 125, 254, 0.71) 100%);">
 				<ContainerInside>
 					<HStack>
-						<VStack alignItems="start">
+						<VStack alignItems="flex-start">
 							<Heading my={5}>Taking Chapters to the Next Level.</Heading>
 							<Text fontSize="18px" textAlign="left">
 								School Simplified chapters are the perfect blend of flexibility and rigor. 

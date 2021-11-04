@@ -283,6 +283,10 @@ const join = [
 		name: "Accelerate Your Organization",
 		link: "/accelerate",
 	},
+	{
+		name: "Student Activities",
+		link: "/Activities",
+	},
 ];
 
 const advertise = [

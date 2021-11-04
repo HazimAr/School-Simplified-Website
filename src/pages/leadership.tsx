@@ -193,22 +193,6 @@ const seniorExecs: Person[] = [
 		img: "/staff/ParamPatil.jpg",
 	},
 	{
-		name: "Hazim Arafa",
-		title: "President of Programming Simplified",
-		img: "/staff/HazimArafa.jpg",
-	},
-	{
-		name: "David Sun",
-		title: "President of National Chapters",
-		img: "/staff/DavidSun.jpg",
-	},
-	{
-		name: "Aarush Goradia",
-		title: "President of Student Activities",
-		img: "/staff/AarushGoradia.jpg",
-	},
-
-	{
 		name: "Harry Chow",
 		title: "Chief Marketing Officer",
 		img: "/staff/HarryChow.jpg",
@@ -218,21 +202,37 @@ const seniorExecs: Person[] = [
 		title: "Senior Vice President of Global Marketing",
 		img: "/staff/MasaMurry.jpg",
 	},
-
 	{
 		name: "Jason Mei",
 		title: "Executive Vice President of Information Technology",
 		img: "/staff/JasonMei.jpg",
 	},
+
 	{
 		name: "Diana Zheng",
 		title: "Corporate Treasurer",
 		img: "/staff/DianaZheng.jpg",
 	},
 	{
-		name: "Anncine Lin",
+		name: "Anccine Lin",
 		title: "Chief of Human Resources Officer",
 		img: "/staff/AnncineLin.jpg",
+	},
+
+	{
+		name: "David Sun",
+		title: "President of National Chapters",
+		img: "/staff/DavidSun.jpg",
+	},
+	{
+		name: "Hazim Arafa",
+		title: "President of Programming Simplified",
+		img: "/staff/HazimArafa.jpg",
+	},
+	{
+		name: "Aarush Goradia",
+		title: "President of Student Activities",
+		img: "/staff/AarushGoradia.jpg",
 	},
 ];
 
@@ -253,20 +253,20 @@ const execs: Person[] = [
 		img: "/staff/IsamarZhu.jpg",
 	},
 	{
-		// name: "Cracker",
 		name: "Josh Schram",
-		title: "Vice President of Academics, Digital",
+		// name: "Josh Schram",
+		title: "Vice President of Academics",
 		img: "/staff/JoshSchram.jpg",
 	},
 	{
 		name: "Rohit Choudhary",
-		title: "Vice President of Academics",
+		title: "Vice President of Academics, Digital",
 		img: "/staff/RohitChoudhary.jpg",
 	},
 
 	{
 		name: "Rohit Penta",
-		title: "Vice President of Information-Technology, Digital",
+		title: "Vice President of Technology, Digital",
 		img: "/staff/RohitPenta.jpg",
 	},
 	// {
@@ -298,7 +298,7 @@ const execs: Person[] = [
 	// },
 	{
 		name: "Gavin Hecock",
-		title: "Vice President of Clubs, Student Activities",
+		title: "Vice President of Student Activities",
 		img: "/staff/GavinHecock.jpg",
 	},
 	// {

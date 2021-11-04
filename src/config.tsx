@@ -1,12 +1,10 @@
 import {
 	FaDiscord,
-	FaGithub,
 	FaTwitter,
 	FaFacebook,
 	FaInstagram,
 	FaLinkedinIn,
 	FaTiktok,
-	FaSpotify,
 } from "react-icons/fa";
 import { SocialMediaIcon } from "types";
 
@@ -31,11 +29,6 @@ const META: MetaType = {
 };
 
 const socials: SocialMediaIcon[] = [
-	{
-		name: "Spotify",
-		link: "https://open.spotify.com/user/5lkgh8ryszqens1ywo58m5lv8?si=047cab1b8a714515",
-		icon: (props) => <FaSpotify {...props} />,
-	},
 	{
 		name: "Instagram",
 		link: "https://www.instagram.com/schoolsimplified/",
@@ -66,11 +59,6 @@ const socials: SocialMediaIcon[] = [
 		name: "TikTok",
 		link: "https://www.tiktok.com/@schoolsimplified",
 		icon: (props) => <FaTiktok {...props} />,
-	},
-	{
-		name: "Github",
-		link: "https://github.com/HazimAr/School-Simplified",
-		icon: (props) => <FaGithub {...props} />,
 	},
 ];
 

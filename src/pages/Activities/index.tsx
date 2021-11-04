@@ -39,11 +39,11 @@ export default function Activities() {
 			</Container>
 			<Container bg="linear-gradient(180deg, rgba(90, 96, 173, 0.71) 0%, rgba(108, 125, 254, 0.71) 100%);">
 				<ContainerInside w="100%" mb={21}>
-					<Heading py={21} >Our Clubs</Heading>
+					<Heading py={30} >Our Clubs</Heading>
 					<ChangingSlide />
 				</ContainerInside>
 			</Container>
-			<Container my={50}>
+			<Container my={90}>
 				<ContainerInside> 
 					<Center>
 						<HStack spacing={50}>

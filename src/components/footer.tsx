@@ -156,7 +156,7 @@ export default function Footer() {
 							</HStack>
 							<Spacer /> */}
 
-							<Grid templateColumns="repeat(3, 1fr)" gap={3}>
+							<Grid templateColumns="repeat(3, 1fr)" gap={3} py={10} >
 								{socials.map((item) => {
 									return (
 										<Center key={item.link}>
@@ -186,9 +186,10 @@ export default function Footer() {
 								School Simplified Inc. | 8 The Green, Dover, DE
 								19901
 							</Text>
-							<NextLink href="https://github.com/HazimAr/School-Simplified">
-								Made by passionate developers
-							</NextLink>
+							<Text>
+								Made with 💖 by passionate <NextLink href="https://github.com/HazimAr/School-Simplified"> developers
+								</NextLink>
+							</Text>
 						</VStack>
 					</Flex>
 				</ContainerInside>
@@ -282,12 +283,16 @@ const join = [
 		name: "Accelerate Your Organization",
 		link: "/accelerate",
 	},
+	{
+		name: "Student Activities",
+		link: "/activities",
+	},
 ];
 
 const advertise = [
 	{
 		name: "Brand Policy",
-		link: "/media",
+		link: "https://drive.google.com/file/d/1vM3wyYe4J0x7_wZ91LpH480gISL10FIU/view?usp=sharing",
 	},
 	{
 		name: "Links",

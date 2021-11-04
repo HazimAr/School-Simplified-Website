@@ -6,7 +6,6 @@ import {
 	Text,
 	Center,
 	Stack,
-	Space
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";

@@ -5,7 +5,6 @@ import {
 	FaInstagram,
 	FaLinkedinIn,
 	FaTiktok,
-	FaSpotify,
 } from "react-icons/fa";
 import { SocialMediaIcon } from "types";
 

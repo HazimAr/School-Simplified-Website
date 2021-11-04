@@ -39,9 +39,10 @@ export default function Here() {
 					/>
 					<Card
 						title="Free Homework Help"
-						description="We offer comprehensive proofreading for all types of writing!"
-						button="Submit Essay"
-						href="/essay"
+						description="We offer free tutoring to all students willing to learn"
+						button="Request Help"
+						isExternal
+						href="/discord"
 						mt={{ base: "25px", lg: 0 }}
 						ml={{ base: 0, lg: "25px" }}
 					/>
@@ -52,7 +53,7 @@ export default function Here() {
 }
 
 function Card(props) {
-	const { title, description, button, href, ...rest } = props;
+	const { title, description, button, href, isExternal, ...rest } = props;
 	return (
 		<VStack
 			rounded={rounded}
@@ -67,7 +68,7 @@ function Card(props) {
 				{title}
 			</Heading>
 			<Text>{description}</Text>
-			<NextLink href={href}>
+			<NextLink href={href} isExternal={isExternal}>
 				<Button>{button}</Button>
 			</NextLink>
 		</VStack>

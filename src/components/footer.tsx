@@ -292,8 +292,7 @@ const join = [
 const advertise = [
 	{
 		name: "Brand Policy",
-		link: "/",
-		href: "https://drive.google.com/file/d/1vM3wyYe4J0x7_wZ91LpH480gISL10FIU/view?usp=sharing",
+		link: "https://drive.google.com/file/d/1vM3wyYe4J0x7_wZ91LpH480gISL10FIU/view?usp=sharing",
 	},
 	{
 		name: "Links",

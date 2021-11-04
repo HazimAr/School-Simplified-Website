@@ -1,7 +1,7 @@
 import { Flex, Heading, Text, VStack, Center } from "@chakra-ui/react";
 import ContainerBackground from "@components/containerBackground";
 import ContainerInside from "@components/containerInside";
-import CountUp from "react-countup";
+// import CountUp from "react-countup";
 
 export default function Intro() {
 	return (

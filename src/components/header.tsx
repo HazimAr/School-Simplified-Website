@@ -181,7 +181,7 @@ const menuItems = [
 			},
 			{
 				name: "Student Activities",
-				href: "/actities",
+				href: "/activities",
 			},
 		],
 	},

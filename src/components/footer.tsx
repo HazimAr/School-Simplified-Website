@@ -284,7 +284,7 @@ const join = [
 		link: "/accelerate",
 	},
 	{
-		name: "Student",
+		name: "Student Activities",
 		link: "/Activities",
 	},
 ];

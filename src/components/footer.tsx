@@ -156,7 +156,7 @@ export default function Footer() {
 							</HStack>
 							<Spacer /> */}
 
-							<Grid templateColumns="repeat(3, 1fr)" gap={3} >
+							<Grid templateColumns="repeat(3, 1fr)" gap={3} py={10} >
 								{socials.map((item) => {
 									return (
 										<Center key={item.link}>

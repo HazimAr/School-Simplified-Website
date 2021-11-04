@@ -186,9 +186,10 @@ export default function Footer() {
 								School Simplified Inc. | 8 The Green, Dover, DE
 								19901
 							</Text>
-							<NextLink href="https://github.com/HazimAr/School-Simplified">
-								Made by passionate developers
-							</NextLink>
+							<Text>
+								Made with 💖 by passionate <NextLink href="https://github.com/HazimAr/School-Simplified"> developers
+								</NextLink>
+							</Text>
 						</VStack>
 					</Flex>
 				</ContainerInside>

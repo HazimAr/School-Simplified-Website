@@ -2,7 +2,6 @@ import { Container, Heading, Center } from "@chakra-ui/react";
 
 export default function Donate() {
 	return (
-		<Center>
 			<Container py={19}>
 				<Center my="20px">
 					<Heading as="h1" size="4xl" mb={8}>
@@ -25,6 +24,5 @@ export default function Donate() {
 					</iframe>
 				</Center>
 			</Container>
-		</Center>
 	);
 }

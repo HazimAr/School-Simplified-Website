@@ -156,7 +156,7 @@ export default function Footer() {
 							</HStack>
 							<Spacer /> */}
 
-							<Grid templateColumns="repeat(3, 1fr)" gap={3}>
+							<Grid templateColumns="repeat(3, 1fr)" gap={3} >
 								{socials.map((item) => {
 									return (
 										<Center key={item.link}>
@@ -284,7 +284,7 @@ const join = [
 		link: "/accelerate",
 	},
 	{
-		name: "Student Activities",
+		name: "Student",
 		link: "/Activities",
 	},
 ];
@@ -292,7 +292,8 @@ const join = [
 const advertise = [
 	{
 		name: "Brand Policy",
-		link: "/media",
+		link: "/",
+		href: "https://drive.google.com/file/d/1vM3wyYe4J0x7_wZ91LpH480gISL10FIU/view?usp=sharing",
 	},
 	{
 		name: "Links",

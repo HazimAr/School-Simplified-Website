@@ -285,7 +285,7 @@ const join = [
 	},
 	{
 		name: "Student Activities",
-		link: "/Activities",
+		link: "/activities",
 	},
 ];
 

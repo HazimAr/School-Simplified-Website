@@ -85,7 +85,7 @@ export default function Blog({
 						spacing={5}
 						justifyContent="center"
 						alignItems={{ base: "center", md: null }}
-						mx={100}
+						mx={{ base: 30, sm: 61, lg: 100 }}
 					>
 						<Image
 							src="/timmy/blogtimmy.png"

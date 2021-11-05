@@ -5,6 +5,7 @@ import {
 	Heading,
 	HStack,
 	Icon,
+	Stack,
 	Image,
 	SimpleGrid,
 	Text,
@@ -18,11 +19,11 @@ import Searchbar from "@components/searchbar";
 import { filter } from "fuzzaldrin-plus";
 import { cloneElement, useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { BlogListing } from "types";
+import { Author, BlogListing } from "types";
 
 const dtFormatter = new Intl.DateTimeFormat("en-US");
 
-function toAuthorAttribution(authors): string {
+function toAuthorAttribution(authors: Author[]): string {
 	if (authors?.length) {
 		let authorNames: string;
 		authorNames = "Written by ";
@@ -79,8 +80,17 @@ export default function Blog({
 					<Heading as="h1" size="xl" mb={5}>
 						Blogs and Articles
 					</Heading>
-					<HStack spacing={5} justifyContent="center" mx={100}>
-						<Image src="/timmy/blogtimmy.png" maxH="300px" />
+					<Stack
+						direction={{ base: "column", md: "row" }}
+						spacing={5}
+						justifyContent="center"
+						alignItems={{ base: "center", md: null }}
+						mx={100}
+					>
+						<Image
+							src="/timmy/blogtimmy.png"
+							maxW={{ base: 150, md: 300 }}
+						/>
 						<Box flex={1}>
 							<Box
 								bgImage={listings[0].icon}
@@ -103,7 +113,7 @@ export default function Blog({
 									: listings[0].category}
 							</Text>
 						</Box>
-					</HStack>
+					</Stack>
 				</ContainerInside>
 			</Container>
 			<Container bg="brand.transparent">
@@ -160,7 +170,11 @@ export default function Blog({
 			</Container>
 			<Container>
 				<ContainerInside>
-					<SimpleGrid spacing={5} mt={7} columns={{default: 1, md: 2, lg: 3}}>
+					<SimpleGrid
+						spacing={5}
+						mt={7}
+						columns={{ base: 1, sm: 2, md: 3 }}
+					>
 						{shownListings
 							.slice(pageNum * perPage, (pageNum + 1) * perPage)
 							.map((listing, idx: Number) =>

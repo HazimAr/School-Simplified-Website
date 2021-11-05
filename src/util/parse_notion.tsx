@@ -90,7 +90,7 @@ export function parseText(text: any) {
 		text.type === "equation" ? (
 			<InlineMath math={text.plain_text} />
 		) : (
-			<span style={{ whiteSpace: "pre-wrap" }}>
+			<span style={{ whiteSpace: "pre-line" }}>
 				{text.plain_text}
 				{/* {/[\n]+/g.test(text.plain_text) ? (
 					<>

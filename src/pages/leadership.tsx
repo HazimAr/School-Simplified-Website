@@ -212,7 +212,22 @@ const seniorExecs: Person[] = [
 		title: "Executive Vice President of Information Technology",
 		img: "/staff/JasonMei.jpg",
 	},
+	{
+		name: "Hazim Arafa",
+		title: "President of Programming Simplified",
+		img: "/staff/HazimArafa.jpg",
+	},
+	{
+		name: "David Sun",
+		title: "President of National Chapters",
+		img: "/staff/DavidSun.jpg",
+	},
 
+	{
+		name: "Aarush Goradia",
+		title: "President of Student Activities",
+		img: "/staff/AarushGoradia.jpg",
+	},
 	{
 		name: "Diana Zheng",
 		title: "Corporate Treasurer",
@@ -222,22 +237,6 @@ const seniorExecs: Person[] = [
 		name: "Anccine Lin",
 		title: "Chief of Human Resources Officer",
 		img: "/staff/AnncineLin.jpg",
-	},
-
-	{
-		name: "David Sun",
-		title: "President of National Chapters",
-		img: "/staff/DavidSun.jpg",
-	},
-	{
-		name: "Hazim Arafa",
-		title: "President of Programming Simplified",
-		img: "/staff/HazimArafa.jpg",
-	},
-	{
-		name: "Aarush Goradia",
-		title: "President of Student Activities",
-		img: "/staff/AarushGoradia.jpg",
 	},
 ];
 

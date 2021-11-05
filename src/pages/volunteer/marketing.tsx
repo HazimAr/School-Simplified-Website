@@ -182,7 +182,7 @@ export default function Marketing() {
 									</NextLink>
 									<NextLink
 										isExternal
-										href="https://forms.gle/fWDh8MMN2tsKo6gy7"
+										href="https://forms.gle/zfCwVeCtAqkQPr2f7"
 										_hover={{ TextDecoration: "none" }}
 									>
 										<Button
@@ -196,8 +196,7 @@ export default function Marketing() {
 											<HStack>
 												<FaLightbulb />
 												<Text>
-													President of Marketing,
-													Editorial
+													Marketing Leadership
 												</Text>
 											</HStack>
 										</Button>

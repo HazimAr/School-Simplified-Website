@@ -179,6 +179,10 @@ const menuItems = [
 				name: "Become a Chapter",
 				href: "/chapter",
 			},
+			{
+				name: "Student Activities",
+				href: "/activities",
+			},
 		],
 	},
 ];

@@ -36,7 +36,6 @@ export default function Intro() {
 							{ <CountUp
 								end={500}
 								suffix="M+"
-								duration={3}
 								useEasing
 							/> }
 						</Heading>

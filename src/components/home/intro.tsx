@@ -11,7 +11,9 @@ export default function Intro() {
 					<VStack spacing={10} maxW="60ch">
 						<Heading fontWeight="extrabold" size="3xl">
 							School Simplified:
-							<br /> We Inspire Learning
+						</Heading>
+						<Heading fontWeight="bold" size="2xl"	>
+						We Inspire Learning 
 						</Heading>
 						<Text my="10px">
 							Through learning, we empower the next generation to

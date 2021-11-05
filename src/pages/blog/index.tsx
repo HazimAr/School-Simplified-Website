@@ -2,12 +2,11 @@ import { getBlogListing } from "@api/notion";
 import {
 	Box,
 	Center,
-	Flex,
 	Heading,
 	HStack,
 	Icon,
 	Image,
-	StackDivider,
+	SimpleGrid,
 	Text,
 	useBreakpointValue,
 	VStack,
@@ -161,12 +160,7 @@ export default function Blog({
 			</Container>
 			<Container>
 				<ContainerInside>
-					<VStack
-						spacing={5}
-						mt={7}
-						alignItems="stretch"
-						divider={<StackDivider borderColor="whiteAlpha.500" />}
-					>
+					<SimpleGrid spacing={5} mt={7} columns={{default: 1, md: 2, lg: 3}}>
 						{shownListings
 							.slice(pageNum * perPage, (pageNum + 1) * perPage)
 							.map((listing, idx: Number) =>
@@ -174,7 +168,7 @@ export default function Blog({
 									key: "listing_" + idx,
 								})
 							)}
-					</VStack>
+					</SimpleGrid>
 				</ContainerInside>
 			</Container>
 		</>
@@ -185,42 +179,41 @@ function ListingElement(listing: BlogListing) {
 	let authorNames: string = toAuthorAttribution(listing.authors);
 
 	return (
-		<Flex
-			textAlign="left"
-			justifyContent="space-between"
-			alignItems="center"
+		<VStack
+			bgColor="brand.darkerBlue"
+			alignItems="stretch"
+			overflow="hidden"
+			borderRadius="3xl"
 		>
-			<Box>
+			<NextLink
+				href={"/blog/" + listing.link}
+				bgImg={listing.icon ?? "/timmy/blogtimmy.png"}
+				bgSize="cover"
+				bgPos="center"
+				style={{ aspectRatio: "3/2" }}
+				// w="100%"
+			/>
+			<VStack
+				alignItems="stretch"
+				justify="center"
+				textAlign="left"
+				py={4}
+				px={5}
+				flex={1}
+				spacing={1}
+			>
+				<Text as="i" fontSize="xs">
+					{dtFormatter.format(new Date(listing.created_time))}
+					{listing.category ? " | " + listing.category : null}
+				</Text>
 				<NextLink href={"/blog/" + listing.link}>
 					<Heading as="h2" size="md">
 						{listing.title}
 					</Heading>
 				</NextLink>
-				{listing.category ? (
-					<Text as="i">{listing.category}</Text>
-				) : null}
-				<Text>
-					Published:{" "}
-					{dtFormatter.format(new Date(listing.created_time))}
-				</Text>
-				{/* <Text>
-					Last Edited:{" "}
-					{dtFormatter.format(new Date(listing.last_edited_time))}
-				</Text> */}
 				{authorNames?.length ? <Text>{authorNames}</Text> : null}
-			</Box>
-			{listing.icon ? (
-				<NextLink href={"/blog/" + listing.link}>
-					<Image
-						src={listing.icon}
-						maxH={{ base: 100, sm: 150, md: 200 }}
-						maxW={{ base: 100, sm: 150, md: 200 }}
-						borderRadius="2xl"
-						ml={3}
-					/>
-				</NextLink>
-			) : null}
-		</Flex>
+			</VStack>
+		</VStack>
 	);
 }
 

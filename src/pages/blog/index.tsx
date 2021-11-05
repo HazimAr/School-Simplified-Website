@@ -160,7 +160,7 @@ export default function Blog({
 			</Container>
 			<Container>
 				<ContainerInside>
-					<SimpleGrid spacing={5} mt={7} columns={3}>
+					<SimpleGrid spacing={5} mt={7} columns={{default: 1, md: 2, lg: 3}}>
 						{shownListings
 							.slice(pageNum * perPage, (pageNum + 1) * perPage)
 							.map((listing, idx: Number) =>

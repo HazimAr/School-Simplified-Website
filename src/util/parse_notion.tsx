@@ -90,21 +90,24 @@ export function parseText(text: any) {
 		text.type === "equation" ? (
 			<InlineMath math={text.plain_text} />
 		) : (
-			<>
-				{/[\n]+/g.test(text.plain_text) ? (
+			<span style={{ whiteSpace: "pre-wrap" }}>
+				{text.plain_text}
+				{/* {/[\n]+/g.test(text.plain_text) ? (
 					<>
-						{text.plain_text}
+						{text.plain_text.replace(/(?:\r\n|\r|\n)/g, "<br>")}
 						<br />
 					</>
 				) : (
-					<>{text.plain_text}</>
-				)}
-			</>
+					<>
+						{console.log(text)}
+						{text.plain_text}
+					</>
+				)} */}
+			</span>
 		);
 	if (text.href && !/^[\s\n]+$/g.test(text.plain_text)) {
 		return (
 			<NextLink href={text.href} {...textProps} color="#ffe19a">
-				{}
 				{plainText}
 			</NextLink>
 		);

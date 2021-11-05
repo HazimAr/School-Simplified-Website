@@ -7,12 +7,16 @@ import {
 	OrderedList,
 	Text,
 	UnorderedList,
+	Divider,
 } from "@chakra-ui/react";
 import NextLink from "@components/nextChakra";
 import "katex/dist/katex.min.css";
 import React, { cloneElement } from "react";
 import { InlineMath } from "react-katex"; // "react-latex" doesn't work for some odd reason
 import { BlogPage } from "types";
+// import SyntaxHighlighter from "react-syntax-highlighter";
+// import { atelierCaveDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
+
 /**
  * Parses an object from Notion that represents text into a Chakra object
  * {
@@ -33,9 +37,8 @@ import { BlogPage } from "types";
         "href": null
     },
  * @param text an object like the one given above
- * @return an element representing the text
+ * @returns an element representing the text
  */
-
 export function parseText(text: any) {
 	if (!text.plain_text.length) {
 		return <></>;
@@ -123,6 +126,16 @@ export function parseText(text: any) {
 }
 
 /**
+ * A function that takes a collection of rich text objects and returns
+ * a plaintext representation of all objects appended to each other
+ * @param text a collection of rich text objects to parse into plaintext
+ * @returns the plaintext of all the text
+ */
+export function parsePlainText(text: any[]): string {
+	return text.map((block) => block.plain_text).join("");
+}
+
+/**
  * A function that takes a block object and spits out a Chakra object
  * @param block the block object to parse
  * @returns the parsed block as a JSX element
@@ -173,17 +186,46 @@ export function parseBlock(block: any): JSX.Element {
 		case "to_do":
 			return (
 				<Checkbox defaultChecked={block.checked} disabled>
-					{block.to_do.map((item: any, idx: number) =>
+					{block.to_do.text.map((item: any, idx: number) =>
 						cloneElement(parseText(item), { key: "text_" + idx })
 					)}
 				</Checkbox>
 			);
+		case "divider":
+			return <Divider borderColor="white" />;
+		case "quote":
+			return (
+				<Box borderLeftColor="white" borderLeftWidth={3} pl={5}>
+					{block.quote.text.map((item: any, idx: number) =>
+						cloneElement(parseText(item), { key: "quote_" + idx })
+					)}
+				</Box>
+			);
+		case "code":
+		// return (
+		// 	<SyntaxHighlighter
+		// 		language={block.code.language}
+		// 		style={atelierCaveDark}
+		// 	>
+		// 		{parsePlainText(block.code.text)}
+		// 	</SyntaxHighlighter>
+		// );
+		case "image":
+		case "video":
+		case "file":
+		case "pdf":
+		case "bookmark":
+		case "equation":
+		case "table_of_contents":
+		case "callout":
+
+		// we will not even TRY to implement the following:
+		case "breadcrumb":
+		case "embed":
 		case "child_page":
-
+		case "child_database":
 		case "toggle":
-
 		case "unsupported":
-
 		default:
 			return (
 				<Text as="i" color="red">

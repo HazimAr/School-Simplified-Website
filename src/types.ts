@@ -147,3 +147,11 @@ export type LinkButtonProps = {
 	iconName?: string;
 	text: string;
 };
+
+export type FileObj = {
+	url: string;
+	/**
+	 * in ISO 8601 date time
+	 */
+	expiry_time?: string;
+};

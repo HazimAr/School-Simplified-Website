@@ -177,11 +177,6 @@ export async function getServerSideProps() {
 
 const seniorExecs: Person[] = [
 	{
-		name: "Bhavyasri Suggula",
-		title: "Executive Projects Director",
-		img: "/staff/BhavyasriSuggula.jpg",
-	},
-	{
 		name: "Ethan Hsu",
 		title: "Chief Executive Officer & President",
 		img: "/staff/EthanHsu.jpg",
@@ -234,8 +229,13 @@ const seniorExecs: Person[] = [
 		img: "/staff/DianaZheng.jpg",
 	},
 	{
+		name: "Bhavyasri Suggula",
+		title: "Executive Projects Director",
+		img: "/staff/BhavyasriSuggula.jpg",
+	},
+	{
 		name: "Anccine Lin",
-		title: "Chief of Human Resources Officer",
+		title: "Chief Human Resources Officer",
 		img: "/staff/AnncineLin.jpg",
 	},
 ];

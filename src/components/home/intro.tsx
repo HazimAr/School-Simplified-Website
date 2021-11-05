@@ -8,11 +8,11 @@ export default function Intro() {
 		<ContainerBackground src="/timmy/lofi_timmy.png" py="50px">
 			<ContainerInside>
 				<Center>
-					<VStack spacing={10} maxW="60ch">
+					<VStack spacing={5} maxW="60ch">
 						<Heading fontWeight="extrabold" size="3xl">
 							School Simplified:
 						</Heading>
-						<Heading fontWeight="bold" size="2xl"	>
+						<Heading fontWeight="bold" size="2xl" pv="0"	>
 						We Inspire Learning 
 						</Heading>
 						<Text my="10px">

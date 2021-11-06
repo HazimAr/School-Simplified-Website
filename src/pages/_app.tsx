@@ -31,7 +31,8 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 			router.events.off("routeChangeComplete", handleRouteChange);
 		};
 	}, [router.events]);
-	const title = router.asPath.split("/")[1];
+	const titleArray = router.asPath.split("/");
+	const title = titleArray[titleArray.length - 1];
 	return (
 		<>
 			<Head>

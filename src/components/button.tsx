@@ -30,7 +30,6 @@ export default function Button(props: any): JSX.Element {
 			_active={{
 				transform: "scale(0.90)",
 			}}
-			boxShadow="lg"
 			{...props}
 		>
 			{props.children}

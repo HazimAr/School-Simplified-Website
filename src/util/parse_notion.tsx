@@ -12,7 +12,7 @@ import {
 import NextLink from "@components/nextChakra";
 import "katex/dist/katex.min.css";
 import React, { cloneElement } from "react";
-import { InlineMath } from "react-katex"; // "react-latex" doesn't work for some odd reason
+import { InlineMath, BlockMath } from "react-katex"; // "react-latex" doesn't work for some odd reason
 import { BlogPage, FileObj } from "types";
 // import SyntaxHighlighter from "react-syntax-highlighter";
 // import { atelierCaveDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
@@ -93,19 +93,22 @@ export function parseText(text: any) {
 		text.type === "equation" ? (
 			<InlineMath math={text.plain_text} />
 		) : (
-			<span style={{ whiteSpace: "pre-line" }}>
-				{replaceNewlines(text.plain_text)}
-			</span>
+			<>{replaceNewlines(text.plain_text)}</>
 		);
 	if (text.href && !/^[\s\n]+$/g.test(text.plain_text)) {
 		return (
-			<NextLink href={text.href} {...textProps} color="#ffe19a">
+			<NextLink
+				href={text.href}
+				{...textProps}
+				color="#ffe19a"
+				style={{ whiteSpace: "pre-line" }}
+			>
 				{plainText}
 			</NextLink>
 		);
 	} else if (Object.keys(textProps).length) {
 		return (
-			<Box as="span" {...textProps}>
+			<Box as="span" {...textProps} style={{ whiteSpace: "pre-line" }}>
 				{plainText}
 			</Box>
 		);
@@ -157,7 +160,7 @@ export function parseBlock(block: any): JSX.Element {
 	switch (block.type) {
 		case "paragraph":
 			return (
-				<Text>
+				<Text overflow="hidden">
 					{block.paragraph.text.map((item: any, idx: number) =>
 						cloneElement(parseText(item), { key: "text_" + idx })
 					)}
@@ -223,6 +226,7 @@ export function parseBlock(block: any): JSX.Element {
 					p={2}
 					borderRadius="lg"
 					as="pre"
+					overflowX="scroll"
 				>
 					{parsePlainText(block.code.text)}
 				</Box>
@@ -243,10 +247,15 @@ export function parseBlock(block: any): JSX.Element {
 					<Image src={imageFile.url} mx="auto" />
 				</Box>
 			);
+		case "equation":
+			return (
+				<Box overflowX="scroll">
+					<BlockMath math={block.equation.expression} />
+				</Box>
+			);
 		case "video":
 		case "file":
 		case "pdf":
-		case "equation":
 		case "table_of_contents":
 		case "callout":
 

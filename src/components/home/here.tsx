@@ -60,6 +60,7 @@ function Card(props) {
 			bg="brand.transparent"
 			w="100%"
 			justify="space-evenly"
+			boxShadow="lg"
 			p={5}
 			{...rest}
 		>

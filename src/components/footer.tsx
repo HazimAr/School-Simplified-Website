@@ -188,7 +188,7 @@ export default function Footer() {
 							</Text>
 							<Text>
 								Made with 💖 by passionate <NextLink href="https://github.com/HazimAr/School-Simplified"> developers
-								</NextLink>
+								</NextLink> and designers
 							</Text>
 						</VStack>
 					</Flex>

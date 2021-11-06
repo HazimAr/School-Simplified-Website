@@ -110,8 +110,7 @@ export default function Marketing() {
 											<HStack>
 												<GiLightBulb />
 												<Text>
-													Vice President of Global,
-													Marketing
+													Vice President of Marketing
 												</Text>
 											</HStack>
 										</Button>

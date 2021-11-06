@@ -120,7 +120,7 @@ export function parseText(text: any) {
  * @returns the converted element
  */
 function replaceNewlines(text: string): JSX.Element {
-	console.log('called with "' + text + '".');
+	// console.log('called with "' + text + '".');
 
 	// no newlines
 	if (!text.includes("\n") && !text.includes("\r")) return <>{text}</>;
@@ -133,7 +133,7 @@ function replaceNewlines(text: string): JSX.Element {
 		elements.push(<br />);
 	}
 	elements.pop();
-	console.log("elements: ", elements);
+	// console.log("elements: ", elements);
 
 	return <>{elements}</>;
 }
@@ -238,7 +238,11 @@ export function parseBlock(block: any): JSX.Element {
 		case "image":
 			const imageFileType: string = block.image.type;
 			const imageFile: FileObj = block.image[imageFileType];
-			return <Image src={imageFile.url} m="auto" />;
+			return (
+				<Box>
+					<Image src={imageFile.url} mx="auto" />
+				</Box>
+			);
 		case "video":
 		case "file":
 		case "pdf":

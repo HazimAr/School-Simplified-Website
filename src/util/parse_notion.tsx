@@ -13,7 +13,7 @@ import NextLink from "@components/nextChakra";
 import "katex/dist/katex.min.css";
 import React, { cloneElement } from "react";
 import { InlineMath } from "react-katex"; // "react-latex" doesn't work for some odd reason
-import { BlogPage } from "types";
+import { BlogPage, FileObj } from "types";
 // import SyntaxHighlighter from "react-syntax-highlighter";
 // import { atelierCaveDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
@@ -236,6 +236,9 @@ export function parseBlock(block: any): JSX.Element {
 		// 	</SyntaxHighlighter>
 		// );
 		case "image":
+			const imageFileType: string = block.image.type;
+			const imageFile: FileObj = block.image[imageFileType];
+			return <Image src={imageFile.url} m="auto" />;
 		case "video":
 		case "file":
 		case "pdf":

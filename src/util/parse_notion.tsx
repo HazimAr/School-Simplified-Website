@@ -40,28 +40,28 @@ import { BlogPage } from "types";
  * @returns an element representing the text
  */
 export function parseText(text: any) {
-	if (!text.plain_text.length) {
+	if (!text.plain_text?.length) {
 		return <></>;
 	}
 
-	if (text.plain_text.startsWith("!")) {
-		const parts: string[] = text.plain_text.substring(1).split(/[\s\n]+/g);
-		if (parts.length) {
-			switch (parts[0]) {
-				case "img":
-				case "image":
-					if (parts.length == 1) {
-						return <Image src={parts[1]} mx="auto" />;
-					} else {
-						let alt = parts[2];
-						for (let i = 3; i < parts.length; i++) {
-							alt += " " + parts[i];
-						}
-						return <Image src={parts[1]} alt={alt} mx="auto" />;
-					}
-			}
-		}
-	}
+	// if (text.plain_text.startsWith("!")) {
+	// 	const parts: string[] = text.plain_text.substring(1).split(/[\s\n]+/g);
+	// 	if (parts.length) {
+	// 		switch (parts[0]) {
+	// 			case "img":
+	// 			case "image":
+	// 				if (parts.length == 1) {
+	// 					return <Image src={parts[1]} mx="auto" />;
+	// 				} else {
+	// 					let alt = parts[2];
+	// 					for (let i = 3; i < parts.length; i++) {
+	// 						alt += " " + parts[i];
+	// 					}
+	// 					return <Image src={parts[1]} alt={alt} mx="auto" />;
+	// 				}
+	// 		}
+	// 	}
+	// }
 
 	const textProps: Record<string, any> = {};
 	if (text.annotations.bold) {
@@ -94,18 +94,7 @@ export function parseText(text: any) {
 			<InlineMath math={text.plain_text} />
 		) : (
 			<span style={{ whiteSpace: "pre-line" }}>
-				{text.plain_text}
-				{/* {/[\n]+/g.test(text.plain_text) ? (
-					<>
-						{text.plain_text.replace(/(?:\r\n|\r|\n)/g, "<br>")}
-						<br />
-					</>
-				) : (
-					<>
-						{console.log(text)}
-						{text.plain_text}
-					</>
-				)} */}
+				{replaceNewlines(text.plain_text)}
 			</span>
 		);
 	if (text.href && !/^[\s\n]+$/g.test(text.plain_text)) {
@@ -126,13 +115,37 @@ export function parseText(text: any) {
 }
 
 /**
+ * Converts a plain string to a JSX psuedoelement with \n and \r replaced with <br />.
+ * @param text the text to convert to a JSX psuedoelement
+ * @returns the converted element
+ */
+function replaceNewlines(text: string): JSX.Element {
+	console.log('called with "' + text + '".');
+
+	// no newlines
+	if (!text.includes("\n") && !text.includes("\r")) return <>{text}</>;
+
+	// >= 1 newline
+	const elements: JSX.Element[] = [];
+
+	for (const segment of text.split(/[\n\r]+/g)) {
+		elements.push(<>{segment}</>);
+		elements.push(<br />);
+	}
+	elements.pop();
+	console.log("elements: ", elements);
+
+	return <>{elements}</>;
+}
+
+/**
  * A function that takes a collection of rich text objects and returns
  * a plaintext representation of all objects appended to each other
  * @param text a collection of rich text objects to parse into plaintext
  * @returns the plaintext of all the text
  */
-export function parsePlainText(text: any[]): string {
-	return text.map((block) => block.plain_text).join("");
+export function parsePlainText(text: any[]): JSX.Element {
+	return <>{text.map((block) => replaceNewlines(block.plain_text))}</>;
 }
 
 /**
@@ -202,6 +215,18 @@ export function parseBlock(block: any): JSX.Element {
 				</Box>
 			);
 		case "code":
+			return (
+				<Box
+					bgColor="black"
+					color="white"
+					fontFamily="'Consolas', monospace"
+					p={2}
+					borderRadius="lg"
+					as="pre"
+				>
+					{parsePlainText(block.code.text)}
+				</Box>
+			);
 		// return (
 		// 	<SyntaxHighlighter
 		// 		language={block.code.language}

@@ -242,12 +242,12 @@ export function parseBlock(block: any): JSX.Element {
 		case "video":
 		case "file":
 		case "pdf":
-		case "bookmark":
 		case "equation":
 		case "table_of_contents":
 		case "callout":
 
 		// we will not even TRY to implement the following:
+		case "bookmark":
 		case "breadcrumb":
 		case "embed":
 		case "child_page":

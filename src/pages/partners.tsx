@@ -145,6 +145,12 @@ const partners = [
 					"Deloitte US is the largest professional services organization in the United States. With more than 100,000 professionals, Deloitte provides audit and assurance, tax, consulting, and risk and financial advisory services to a broad cross-section of the largest corporations and governmental agencies.",
 				src: "/partners/deloitte.png",
 			},
+			{
+				name: "Hidaku",
+				description:
+					 "",
+				src: "/partners/Hidaku.png",
+			}
 		],
 	},
 	{

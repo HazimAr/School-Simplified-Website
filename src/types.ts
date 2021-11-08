@@ -117,6 +117,7 @@ export type ActivitySlideProps = {
 	src: string;
 	clubName: string;
 	clubDesc: string;
+	link: string;
 };
 
 export type BlogListing = {

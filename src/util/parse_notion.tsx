@@ -256,10 +256,10 @@ export function parseBlock(block: any): JSX.Element {
 		case "video":
 		case "file":
 		case "pdf":
-		case "table_of_contents":
 		case "callout":
 
 		// we will not even TRY to implement the following:
+		case "table_of_contents":
 		case "bookmark":
 		case "breadcrumb":
 		case "embed":

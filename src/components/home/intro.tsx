@@ -42,12 +42,12 @@ export default function Intro() {
 								duration={3}
 							/>}
 						</Heading>
-						<Text>Impression</Text>
+						<Text>Impressions</Text>
 					</VStack>
 					<VStack>
 						<Heading>
 							{<CountUp
-								end={60}
+								end={62}
 								suffix="K+"
 								duration={3}
 								useEasing
@@ -64,7 +64,7 @@ export default function Intro() {
 					<VStack>
 						<Heading>
 							{<CountUp
-								end={400}
+								end={500}
 								suffix="+"
 								duration={3}
 								useEasing

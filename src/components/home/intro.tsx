@@ -1,4 +1,4 @@
-import { Flex, Heading, Text, VStack, Center } from "@chakra-ui/react";
+import { Flex, Heading, Text, VStack, Center, Spacer } from "@chakra-ui/react";
 import ContainerBackground from "@components/containerBackground";
 import ContainerInside from "@components/containerInside";
 import CountUp from "react-countup";
@@ -43,6 +43,7 @@ export default function Intro() {
 							/>}
 						</Heading>
 						<Text>Impressions</Text>
+						<Spacer/><Spacer/><Spacer/>
 					</VStack>
 					<VStack>
 						<Heading>
@@ -54,12 +55,14 @@ export default function Intro() {
 							/>}
 						</Heading>
 						<Text>Community Members</Text>
+						<Spacer/><Spacer/><Spacer/>
 					</VStack>
 					<VStack>
 						<Heading>
 							{<CountUp end={1} duration={3} useEasing />}
 						</Heading>
 						<Text>Mission</Text>
+						<Spacer/><Spacer/><Spacer/>
 					</VStack>
 					<VStack>
 						<Heading>
@@ -71,6 +74,7 @@ export default function Intro() {
 							/>}
 						</Heading>
 						<Text>Staff Members</Text>
+						<Spacer/><Spacer/><Spacer/>
 					</VStack>
 					<VStack>
 						<Heading>

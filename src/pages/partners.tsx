@@ -127,12 +127,12 @@ const partners = [
 	{
 		name: "Academic Partners",
 		data: [
-			{
-				name: "Slingshot",
-				description:
-					"Slingshot is a non-profit organization that provides technical assistance to students in the field of computer science.",
-				src: "/partners/slingshot.png",
-			},
+			// {
+			// 	name: "Slingshot",
+			// 	description:
+			// 		"Slingshot is a non-profit organization that provides technical assistance to students in the field of computer science.",
+			// 	src: "/partners/slingshot.png",
+			// },
 			{
 				name: "Versatile Node",
 				description:

@@ -88,6 +88,7 @@ export default function Header(): JSX.Element {
 										<MenuList
 											onMouseEnter={onMouseEnter}
 											onMouseLeave={onMouseLeave}
+											onClick={onMouseLeave}
 										>
 											{menuItem.children.map((child) => (
 												<NextLink

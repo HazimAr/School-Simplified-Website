@@ -58,7 +58,10 @@ export default function PartnersPage() {
 							</Box>
 						</WrapItem>
 					</Wrap>
-					<NextLink href="https://docs.google.com/forms/d/e/1FAIpQLScxSrndCBz1VUA-fv5TvfmEpdowUKws1euU4nuxMcSE51JiZA/viewform?usp=sf_link" w="fit-content">
+					<NextLink
+						href="https://docs.google.com/forms/d/e/1FAIpQLScxSrndCBz1VUA-fv5TvfmEpdowUKws1euU4nuxMcSE51JiZA/viewform?usp=sf_link"
+						w="fit-content"
+					>
 						<StyledButton
 							display="block"
 							width={{ base: "50", md: "50", sm: "40" }}
@@ -147,10 +150,9 @@ const partners = [
 			},
 			{
 				name: "Hidaku",
-				description:
-					 "",
+				description: "",
 				src: "/partners/Hidaku.png",
-			}
+			},
 		],
 	},
 	{
@@ -199,6 +201,7 @@ function Cell({ src, alt, desc }): JSX.Element {
 					onMouseLeave={() =>
 						(timeout = setTimeout(onClose, graceTime))
 					}
+					overflow="hidden"
 				>
 					<Image src={src} alt={alt} />
 				</Center>
@@ -214,7 +217,7 @@ function Cell({ src, alt, desc }): JSX.Element {
 					}
 				>
 					<PopoverHeader fontWeight={700}>{alt}</PopoverHeader>
-					<PopoverBody>{desc}</PopoverBody>
+					{desc ? <PopoverBody>{desc}</PopoverBody> : null}
 				</Box>
 			</PopoverContent>
 		</Popover>

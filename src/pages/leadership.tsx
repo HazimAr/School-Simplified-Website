@@ -297,7 +297,7 @@ const execs: Person[] = [
 	// },
 	{
 		name: "Vivek Anandh",
-		title: "National VP Information-Technology of National Chapters",
+		title: "Vice President of Information-Technology, National Chapters",
 		img: "/staff/VivekAnandh.jpg",
 	},
 	{
@@ -307,7 +307,7 @@ const execs: Person[] = [
 	},
 	{
 		name: "Christina Dong",
-		title: "Marketing Vice President of National Chapters",
+		title: "Vice President of Marketing, National Chapters",
 		img: "/staff/ChristinaDong.jpg",
 	},
 	// {

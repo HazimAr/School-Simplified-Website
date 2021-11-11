@@ -130,12 +130,6 @@ const partners = [
 	{
 		name: "Academic Partners",
 		data: [
-			// {
-			// 	name: "Slingshot",
-			// 	description:
-			// 		"Slingshot is a non-profit organization that provides technical assistance to students in the field of computer science.",
-			// 	src: "/partners/slingshot.png",
-			// },
 			{
 				name: "Versatile Node",
 				description:
@@ -156,8 +150,67 @@ const partners = [
 		],
 	},
 	{
-		name: "Community Partners",
-		data: [],
+		name: "Event Partners",
+		data: [
+			{
+				name: "Inspirit AI",
+				src: "/simplihacks/sponsors/inspiritai.png",
+			},
+			{
+				name: "Slingshot",
+				description:
+					"Slingshot is a non-profit organization that provides technical assistance to students in the field of computer science.",
+				src: "/partners/slingshot.png",
+			},
+			{
+				name: "echoAR",
+				src: "/simplihacks/sponsors/echoar.png",
+			},
+			{
+				name: "replit",
+				src: "/simplihacks/sponsors/replitdark.svg",
+			},
+			{
+				name: "AoPS",
+				src: "/simplihacks/sponsors/AoPSLogo.png",
+			},
+			{
+				name: "DigitalOcean",
+				src: "/simplihacks/sponsors/digitalocean.png",
+			},
+			{
+				name: "1Password",
+				src: "/simplihacks/sponsors/1password.png",
+			},
+			{
+				name: "taskade",
+				src: "/simplihacks/sponsors/taskade.png",
+			},
+			{
+				name: "Wolfram",
+				src: "/simplihacks/sponsors/wolframsponsor.png",
+			},
+			{
+				name: "Gather",
+				src: "/simplihacks/sponsors/gather.png",
+			},
+			{
+				name: "Magoosh",
+				src: "/simplihacks/sponsors/magoosh.png",
+			},
+			{
+				name: "Interview Cake",
+				src: "/simplihacks/sponsors/interviewcake.png",
+			},
+			{
+				name: "HyperX",
+				src: "/simplihacks/sponsors/hyperx.png",
+			},
+			{
+				name: "Product Hunt",
+				src: "/simplihacks/sponsors/producthunt.png",
+			},
+		],
 	},
 	{
 		name: "Donors & Sponsors",
@@ -202,6 +255,7 @@ function Cell({ src, alt, desc }): JSX.Element {
 						(timeout = setTimeout(onClose, graceTime))
 					}
 					overflow="hidden"
+					p={3}
 				>
 					<Image src={src} alt={alt} />
 				</Center>

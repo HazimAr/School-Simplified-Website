@@ -259,7 +259,7 @@ const execs: Person[] = [
 	{
 		name: "Josh Schram",
 		// name: "Josh Schram",
-		title: "Vice President of Academics",
+		title: "Vice President of Academics, Digital",
 		img: "/staff/JoshSchram.jpg",
 	},
 	{
@@ -295,11 +295,11 @@ const execs: Person[] = [
 	// 	title: "National VP of Communications (Chapters)",
 	// 	img: "/staff/NoahBondi.jpg",
 	// },
-	// {
-	// 	name: "Vivek Anandh",
-	// 	title: "National VP of Information-Technology (Chapters)",
-	// 	img: "/staff/VivekAnandh.jpg",
-	// },
+	{
+		name: "Vivek Anandh",
+		title: "National VP Information-Technology of National Chapters",
+		img: "/staff/VivekAnandh.jpg",
+	},
 	{
 		name: "Gavin Hecock",
 		title: "Vice President of Student Activities",

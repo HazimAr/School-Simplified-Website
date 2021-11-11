@@ -213,7 +213,7 @@ const seniorExecs: Person[] = [
 		img: "/staff/DianaZheng.jpg",
 	},
 	{
-		name: "Anccine Lin",
+		name: "Anncine Lin",
 		title: "Chief Human Resources Officer",
 		img: "/staff/AnncineLin.jpg",
 	},

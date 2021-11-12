@@ -114,7 +114,7 @@ const menuItems: MenuItem[] = [
 	},
 	{
 		name: "Join Us",
-		href: "/join",
+		href: "/volunteer",
 	},
 	{
 		name: "Donate",

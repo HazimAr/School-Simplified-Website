@@ -1,12 +1,4 @@
-import {
-	Box,
-	Center,
-	Divider,
-	Flex,
-	Heading,
-	Text,
-	Spacer,
-} from "@chakra-ui/react";
+import { Center, Divider, Flex, Heading, Text, Spacer } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 

@@ -63,7 +63,7 @@ const menuItems: MenuItem[] = [
 	// 	href: "/blog",
 	// },
 	{
-		name: "Academic Resources",
+		name: "Resources",
 		children: [
 			{
 				name: "Essay Revision",
@@ -102,10 +102,10 @@ const menuItems: MenuItem[] = [
 				name: "Editorial",
 				href: "/editorial",
 			},
-			{
-				name: "Programming Simplified",
-				href: "/",
-			},
+			// {
+			// 	name: "Programming Simplified",
+			// 	href: "/",
+			// },
 			// {
 			// 	name: "Accelerate Your Organization",
 			// 	href: "/npo",

@@ -14,10 +14,120 @@ import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
 
+type MenuItem = {
+	name: string;
+	children?: MenuItem[];
+	href?: string;
+};
+
+const menuItems: MenuItem[] = [
+	{
+		name: "Home",
+		href: "/",
+	},
+	{
+		name: "About Us",
+		children: [
+			{
+				name: "Community",
+				href: "/community",
+			},
+			{
+				name: "Events",
+				href: "/events",
+			},
+			{
+				name: "Our Organizations",
+				href: "/organizations",
+			},
+			{
+				name: "Partners",
+				href: "/partners",
+			},
+			{
+				name: "Leadership",
+				href: "/leadership",
+			},
+			{
+				name: "FAQ",
+				href: "/faq",
+			},
+			// {
+			// 	name: "Social Media",
+			// 	href: "/links",
+			// },
+		],
+	},
+	{
+		name: "Blog",
+		href: "/blog",
+	},
+	{
+		name: "Academic Resources",
+		children: [
+			{
+				name: "Essay Revision",
+				href: "/essay",
+			},
+			{
+				name: "Tutoring",
+				href: "/tutoring",
+			},
+			{
+				name: "Notes",
+				href: "/notes",
+			},
+			{
+				name: "Homework Help",
+				href: "/discord",
+			},
+			{
+				name: "SAT Prep",
+				href: "/sat",
+			},
+		],
+	},
+	{
+		name: "Programs",
+		children: [
+			{
+				name: "Chapters",
+				href: "/chapter",
+			},
+			{
+				name: "Student Activities",
+				href: "/activities",
+			},
+			{
+				name: "Editorial",
+				href: "/editorial",
+			},
+			{
+				name: "Programming Simplified",
+				href: "/",
+			},
+			// {
+			// 	name: "Accelerate Your Organization",
+			// 	href: "/npo",
+			// },
+		],
+	},
+	{
+		name: "Join Us",
+		href: "/join",
+	},
+	{
+		name: "Donate",
+		href: "/donate",
+	},
+	{
+		name: "Contact Us",
+		href: "/contact",
+	},
+];
+
 // eslint-disable-next-line import/no-default-export
 export default function Header(): JSX.Element {
-	const graceTime = 50;
-
 	return (
 		<>
 			<Container
@@ -34,9 +144,9 @@ export default function Header(): JSX.Element {
 					<Flex
 						justify="space-between"
 						align="center"
-						flexDir={{ base: "column", md: "row" }}
+						flexDir={{ base: "column", lg: "row" }}
 					>
-						<NextLink href="/" mb={{ base: 2, md: 0 }}>
+						<NextLink href="/" mb={{ base: 2, lg: 0 }}>
 							<Flex justify="center" align="center">
 								<Image
 									src="/logo.png"
@@ -54,136 +164,71 @@ export default function Header(): JSX.Element {
 							fontSize={{
 								base: 11,
 								sm: 14,
-								md: "initial",
+								md: null,
 							}}
+							flexWrap="wrap"
+							justifyContent="center"
 						>
-							<NextLink href="/">Home</NextLink>
-							{menuItems.map((menuItem) => {
-								const { isOpen, onOpen, onClose } =
-									useDisclosure();
-
-								let timeout: NodeJS.Timeout;
-
-								const onMouseEnter = (): void => {
-									if (timeout) {
-										clearTimeout(timeout);
-									}
-									onOpen();
-								};
-
-								const onMouseLeave = (): void => {
-									timeout = setTimeout(() => {
-										onClose();
-									}, graceTime);
-								};
-
-								return (
-									<Menu isOpen={isOpen} key={menuItem.name}>
-										<MenuButton
-											onMouseEnter={onMouseEnter}
-											onMouseLeave={onMouseLeave}
-										>
-											{menuItem.name}
-										</MenuButton>
-										<MenuList
-											onMouseEnter={onMouseEnter}
-											onMouseLeave={onMouseLeave}
-											onClick={onMouseLeave}
-										>
-											{menuItem.children.map((child) => (
-												<NextLink
-													href={child.href}
-													key={child.name}
-												>
-													<MenuItem>
-														{child.name}
-													</MenuItem>
-												</NextLink>
-											))}
-										</MenuList>
-									</Menu>
-								);
-							})}
-							<NextLink href="/volunteer">Volunteer</NextLink>
-							<NextLink href="/donate">Donate</NextLink>
-							<NextLink href="/contact">Contact Us</NextLink>
+							{menuItems.map((menuItem, idx: number) =>
+								menuItem.children ? (
+									<DropdownMenu
+										menuItem={menuItem}
+										key={"menuitem_" + idx}
+									/>
+								) : (
+									<NextLink
+										href={menuItem.href}
+										key={"menuitem_" + idx}
+									>
+										{menuItem.name}
+									</NextLink>
+								)
+							)}
 						</HStack>
 					</Flex>
 				</ContainerInside>
 			</Container>
-			<Box h={{ base: 78, sm: 83, md: 54 }} />
+			<Box h={{ base: 84, sm: 94, md: 83, lg: 54, xl: 62 }} />
 		</>
 	);
 }
 
-const menuItems = [
-	{
-		name: "About Us",
-		children: [
-			{
-				name: "Community",
-				href: "/community",
-			},
-			{
-				name: "Partners",
-				href: "/partners",
-			},
-			{
-				name: "Leadership",
-				href: "/leadership",
-			},
-			{
-				name: "FAQ",
-				href: "/faq",
-			},
-			{
-				name: "Social Media",
-				href: "/links",
-			},
-		],
-	},
-	{
-		name: "Resources",
-		children: [
-			{
-				name: "Notes",
-				href: "/notes",
-			},
-			{
-				name: "Tutoring",
-				href: "/tutoring",
-			},
+const graceTime = 50;
 
-			{
-				name: "Essay Revision",
-				href: "/essay",
-			},
+function DropdownMenu({ menuItem }: { menuItem: MenuItem }): JSX.Element {
+	const { isOpen, onOpen, onClose } = useDisclosure();
 
-			{
-				name: "Homework Help",
-				href: "/discord",
-			},
-			// {
-			// 	name: "Blogs & Articles",
-			// 	href: "/blog",
-			// },
-		],
-	},
-	{
-		name: "Programs",
-		children: [
-			{
-				name: "Accelerate Your Organization",
-				href: "/npo",
-			},
-			{
-				name: "Become a Chapter",
-				href: "/chapter",
-			},
-			{
-				name: "Student Activities",
-				href: "/activities",
-			},
-		],
-	},
-];
+	let timeout: NodeJS.Timeout;
+
+	const onMouseEnter = (): void => {
+		if (timeout) {
+			clearTimeout(timeout);
+		}
+		onOpen();
+	};
+
+	const onMouseLeave = (): void => {
+		timeout = setTimeout(() => {
+			onClose();
+		}, graceTime);
+	};
+
+	return (
+		<Menu isOpen={isOpen} key={menuItem.name}>
+			<MenuButton onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+				{menuItem.name}
+			</MenuButton>
+			<MenuList
+				onMouseEnter={onMouseEnter}
+				onMouseLeave={onMouseLeave}
+				onClick={onMouseLeave}
+			>
+				{menuItem.children.map((child) => (
+					<NextLink href={child.href} key={child.name}>
+						<MenuItem>{child.name}</MenuItem>
+					</NextLink>
+				))}
+			</MenuList>
+		</Menu>
+	);
+}

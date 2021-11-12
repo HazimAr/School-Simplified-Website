@@ -51,12 +51,16 @@ export default function Community({
 						textAlign="left"
 						direction={{ base: "column", md: "row-reverse" }}
 						spacing={{ base: 5, md: 10 }}
-						justifyContent="center"
+						justify="center"
 					>
-						<VStack flex={2} justifyContent="center">
+						<VStack
+							flex={2}
+							spacing={3}
+							justify="center"
+							align="flex-start"
+						>
 							<Heading size="2xl">Our Community</Heading>
-
-							<Text fontSize="lg">
+							<Text fontSize="lg" textAlign="justify">
 								Our organization features a global community of
 								over 60,000 teenagers. In this diverse,
 								open-minded, and inclusive community, you'll

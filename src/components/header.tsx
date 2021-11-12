@@ -58,10 +58,10 @@ const menuItems: MenuItem[] = [
 			// },
 		],
 	},
-	{
-		name: "Blog",
-		href: "/blog",
-	},
+	// {
+	// 	name: "Blog",
+	// 	href: "/blog",
+	// },
 	{
 		name: "Academic Resources",
 		children: [

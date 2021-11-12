@@ -19,6 +19,7 @@ export default function UnderConstruction(): JSX.Element {
 							Thanks for checking in! Timmy is working hard on
 							creating this webpage for everyone.
 						</Text>
+						<Text>We hope to work with you soon!</Text>
 						<NextChakraLink href="/" _hover={{ cursor: "auto" }}>
 							<Button _hover={{ cursor: "pointer" }}>
 								Return to Home

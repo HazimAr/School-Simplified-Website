@@ -9,13 +9,13 @@ export default function Resources({ subjects }: AllSubjects): JSX.Element {
 	return (
 		<>
 			<ContainerBackground src="/timmy/lofi_timmy.png">
-				<ContainerInside py="15vh" my={5}>
+				<ContainerInside py={24} my={5}>
 					<Box textAlign="center">
-						<Heading as="h1" mb={3} fontSize={100}>
+						<Heading as="h1" mb={3} size="3xl">
 							Notes
 						</Heading>
 						<Center>
-							<Text fontSize={30} maxW="30ch">
+							<Text fontSize={24} maxW="30ch">
 								All the top-notch notes you'll ever want for
 								your academic needs!
 							</Text>

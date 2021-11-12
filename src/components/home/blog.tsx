@@ -6,7 +6,7 @@ import { BlogListing } from "types";
 import NextChakraLink from "@components/nextChakra";
 
 export default function Blog({ listing }: { listing: BlogListing[] }) {
-	console.log(listing);
+	// console.log(listing);
 	return (
 		<ContainerBackground src="/blog.jpg" py="50px">
 			<ContainerInside>

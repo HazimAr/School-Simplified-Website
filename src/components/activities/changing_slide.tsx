@@ -122,34 +122,43 @@ export default function ChangingSlide(): JSX.Element {
 	);
 }
 
-function Panel({ src, clubName, clubDesc, link }: ActivitySlideProps): JSX.Element {
+function Panel({
+	src,
+	clubName,
+	clubDesc,
+	link,
+}: ActivitySlideProps): JSX.Element {
 	return (
 		<Box w="100%">
 			<ScaleFade in={true} unmountOnExit={false}>
-				<Flex flexDir={{ base: "column", md: "row" }}>
+				<Flex>
 					<Box
 						backgroundImage={src}
 						backgroundSize="cover"
 						backgroundPosition="center"
 						backgroundRepeat="no-repeat"
 						h="500px"
-						w="100%"
+						flex={1}
 						display={{ base: "none", lg: "block" }}
 						borderLeftRadius={{ base: rounded, lg: "50%" }}
 					/>
 					{/* <Image src={src} alt={clubName + " team logo"} w="100%" /> */}
 					<VStack
-						w="100%"
 						borderLeftRadius={{ base: rounded, lg: "none" }}
 						borderRightRadius={{ base: rounded, lg: "50%" }}
 						justify="center"
+						align={{ base: "center", lg: "flex-start" }}
 						bg="brand.transparent"
-						px={5}
+						py={5}
+						pl={10}
+						pr={5}
+						flex={1}
+						spacing={5}
 					>
-						<Heading p={15} size="xl" textAlign="left">
+						<Heading size="xl" textAlign="left">
 							{clubName}
 						</Heading>
-						<Text w="95%" p={15} textAlign="left" my={2}>
+						<Text w="95%" textAlign="justify">
 							{clubDesc}
 						</Text>
 
@@ -157,7 +166,6 @@ function Panel({ src, clubName, clubDesc, link }: ActivitySlideProps): JSX.Eleme
 							isExternal
 							href={link}
 							_hover={{ textDecoration: "none" }}
-							p={15}
 						>
 							<Button mt={3}>
 								Join <ExternalLinkIcon ml={2} />

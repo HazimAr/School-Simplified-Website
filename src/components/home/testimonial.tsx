@@ -1,4 +1,12 @@
-import { Box, Center, Divider, Flex, Heading, Text } from "@chakra-ui/react";
+import {
+	Box,
+	Center,
+	Divider,
+	Flex,
+	Heading,
+	Text,
+	Spacer,
+} from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 
@@ -21,9 +29,11 @@ export default function Intro() {
 			py={20}
 			bg="linear-gradient(180deg, rgba(161, 167, 237, 0.6) 0%, rgba(108, 125, 254, 0.6) 100%);"
 		>
-			<ContainerInside>
-				<Heading as="h1">Your Success is Our Success!</Heading>
-				<Text fontSize="xl" color="white">
+			<ContainerInside textAlign="left">
+				<Heading as="h1" mb={3}>
+					Your Success is Our Success!
+				</Heading>
+				<Text fontSize="xl" color="white" textAlign="justify">
 					School Simplified believes that quality education should be
 					accessible to everyone with equal opportunity. As an
 					organization run by students from around the world we know
@@ -31,8 +41,10 @@ export default function Intro() {
 					help us help you!
 				</Text>
 				<Divider bg="white" my="40px" />
-				<Heading as="h1">Don't Believe Us?</Heading>
-				<Text fontSize="lg" color="white">
+				<Heading as="h1" mb={3}>
+					Don't Believe Us?
+				</Heading>
+				<Text fontSize="lg" color="white" mb={5}>
 					Ask some of our students and hear what they have to say
 				</Text>
 				<Flex justify="center">
@@ -43,37 +55,43 @@ export default function Intro() {
 						maxW={{ base: 300, sm: 450, md: 600, lg: 1200 }}
 						alignItems="stretch"
 					>
-						<Box w="100%" my={{ base: 0, lg: 5 }}>
-							<Text>"{Reviews[0].review}"</Text>
-							<Box mt={4}>
-								<Heading as="h1" size="md">
-									{Reviews[0].name}
-								</Heading>
-								<Heading as="h2" size="xs" color="white">
-									{Reviews[0].title}
-								</Heading>
-							</Box>
-						</Box>
+						<Flex flex={1} my={{ base: 0, lg: 5 }} flexDir="column">
+							<Text textAlign="justify">
+								"{Reviews[0].review}"
+							</Text>
+							<Spacer />
+							<Heading as="h1" size="md" mt={4}>
+								{Reviews[0].name}
+							</Heading>
+							<Heading as="h2" size="xs" color="white">
+								{Reviews[0].title}
+							</Heading>
+						</Flex>
 
 						<Center
 							height="100%"
-							mx={20}
-							display={["none", "none", "none", "block"]}
+							mx={10}
+							display={{ base: "none", lg: "block" }}
 						>
 							<Divider orientation="vertical" bg="white" />
 						</Center>
 
-						<Box w="100%" my={{ base: 10, lg: 5 }}>
-							<Text>"{Reviews[1].review}"</Text>
-							<Box mt={4}>
-								<Heading as="h2" size="md">
-									{Reviews[1].name}
-								</Heading>
-								<Heading as="h3" size="xs" color="white">
-									{Reviews[1].title}
-								</Heading>
-							</Box>
-						</Box>
+						<Flex
+							flex={1}
+							my={{ base: 10, lg: 5 }}
+							flexDir="column"
+						>
+							<Text textAlign="justify">
+								"{Reviews[1].review}"
+							</Text>
+							<Spacer />
+							<Heading as="h2" size="md" mt={4}>
+								{Reviews[1].name}
+							</Heading>
+							<Heading as="h3" size="xs" color="white">
+								{Reviews[1].title}
+							</Heading>
+						</Flex>
 					</Flex>
 				</Flex>
 			</ContainerInside>

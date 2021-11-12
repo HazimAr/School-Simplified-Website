@@ -54,7 +54,7 @@ export default function Community({
 						justify="center"
 					>
 						<VStack
-							flex={2}
+							flex={5}
 							spacing={3}
 							justify="center"
 							align="flex-start"

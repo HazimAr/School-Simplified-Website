@@ -1,17 +1,21 @@
 import {
 	Box,
+	Center,
 	Checkbox,
 	Heading,
 	Image,
 	ListItem,
 	OrderedList,
 	Text,
+	Icon,
 	UnorderedList,
 	Divider,
+	HStack,
 } from "@chakra-ui/react";
 import NextLink from "@components/nextChakra";
 import "katex/dist/katex.min.css";
 import React, { cloneElement } from "react";
+import { FaPaperclip, FaRegFilePdf, FaVideo } from "react-icons/fa";
 import { InlineMath, BlockMath } from "react-katex"; // "react-latex" doesn't work for some odd reason
 import { BlogPage, FileObj } from "types";
 // import SyntaxHighlighter from "react-syntax-highlighter";
@@ -240,8 +244,7 @@ export function parseBlock(block: any): JSX.Element {
 		// 	</SyntaxHighlighter>
 		// );
 		case "image":
-			const imageFileType: string = block.image.type;
-			const imageFile: FileObj = block.image[imageFileType];
+			const imageFile: FileObj = getFile(block.image);
 			return (
 				<Box>
 					<Image src={imageFile.url} mx="auto" />
@@ -253,10 +256,66 @@ export function parseBlock(block: any): JSX.Element {
 					<BlockMath math={block.equation.expression} />
 				</Box>
 			);
-		case "video":
 		case "file":
+			const fileFile = getFile(block.file);
+			// console.log("filefileobj: ", fileFileObj);
+			return (
+				<NextLink href={fileFile.url}>
+					<HStack spacing={2}>
+						<Icon as={FaPaperclip} w={5} h={5} />
+						<Text>{getFileName(fileFile.url)}</Text>
+					</HStack>
+				</NextLink>
+			);
+		case "video":
+			const videoFile = getFile(block.video);
+			return (
+				<NextLink href={videoFile.url}>
+					<HStack spacing={2}>
+						<Icon as={FaVideo} w={5} h={5} />
+						<Text>{videoFile.url}</Text>
+					</HStack>
+				</NextLink>
+			);
 		case "pdf":
+			const pdfFile = getFile(block.pdf);
+			// console.log("filefileobj: ", fileFileObj);
+			return (
+				<NextLink href={pdfFile.url}>
+					<HStack spacing={2}>
+						<Icon as={FaRegFilePdf} w={5} h={5} />
+						<Text>{getFileName(pdfFile.url)}</Text>
+					</HStack>
+				</NextLink>
+			);
 		case "callout":
+			const icon = block.callout.icon;
+			if (icon.type === "emoji") {
+				return (
+					<HStack
+						spacing={3}
+						p={3}
+						borderRadius="lg"
+						backgroundColor="brand.transparent"
+					>
+						<Text>{icon.emoji}</Text>
+						<Text>{parsePlainText(block.callout.text)}</Text>
+					</HStack>
+				);
+			} else {
+				const calloutFile = getFile(icon);
+				return (
+					<HStack
+						spacing={3}
+						p={3}
+						borderRadius="lg"
+						backgroundColor="brand.transparent"
+					>
+						<Image src={calloutFile.url} maxW={5} maxH={5} />
+						<Text>{parsePlainText(block.callout.text)}</Text>
+					</HStack>
+				);
+			}
 
 		// we will not even TRY to implement the following:
 		case "table_of_contents":
@@ -274,6 +333,28 @@ export function parseBlock(block: any): JSX.Element {
 				</Text>
 			);
 	}
+}
+
+/**
+ * Parses the given block to get the FileObj stored inside of it
+ * @param block the block object to fetch the file object from
+ * @returns the internally stored FileObj
+ */
+export function getFile(block: any): FileObj {
+	return block[block.type];
+}
+
+/**
+ * Returns the last portion of the file path, presumably the name of the file.
+ * For example, for the string "test/egg/nice.txt", this function should return "nice.txt".
+ * @param filePath the path of the file, in string format
+ * @returns the name of the file given in the path
+ */
+function getFileName(filePath: string): string {
+	if (filePath.endsWith("/"))
+		filePath = filePath.substring(0, filePath.length - 1);
+
+	return filePath.substring(filePath.lastIndexOf("/") + 1);
 }
 
 /**

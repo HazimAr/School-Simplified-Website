@@ -110,19 +110,24 @@ export default function PartnersPage() {
 						spacingY={0}
 					>
 						{partners[partner].data.map((partnerData) => {
-							return (
+							const cell = (
+								<Cell
+									h="200px"
+									key={partnerData.name}
+									alt={partnerData.name}
+									src={partnerData.src}
+									desc={partnerData.description}
+								/>
+							);
+							return partnerData.link ? (
 								<NextLink
 									href={partnerData.link}
 									target="_blank"
 								>
-									<Cell
-										h="200px"
-										key={partnerData.name}
-										alt={partnerData.name}
-										src={partnerData.src}
-										desc={partnerData.description}
-									/>
+									{cell}
 								</NextLink>
+							) : (
+								cell
 							);
 						})}
 					</SimpleGrid>
@@ -132,7 +137,15 @@ export default function PartnersPage() {
 	);
 }
 
-const partners = [
+type PartnerGroup = { name: string; data: Partner[] };
+type Partner = {
+	name: string;
+	description?: string;
+	src: string;
+	link?: string;
+};
+
+const partners: PartnerGroup[] = [
 	{
 		name: "Academic Partners",
 		data: [

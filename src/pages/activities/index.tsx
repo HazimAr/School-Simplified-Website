@@ -45,13 +45,9 @@ export default function Activities() {
 							</Heading>
 							<Text textAlign="justify">
 								School Simplified offers virtual clubs for you
-								to connect with others
-								<br />
-								from around the world who share the samepassions
-								as you!
-								<br />
-								Explore your passions through the many clubs we
-								offer!
+								to connect with others from around the world who
+								share the samepassions as you! Explore your
+								passions through the many clubs we offer!
 							</Text>
 						</Stack>
 					</Center>

@@ -29,7 +29,7 @@ export default function Volunteering() {
 							spacing={{ base: 5, md: 10 }}
 							justifyContent={{ base: "left", md: "center" }}
 						>
-							<VStack flex={5} justifyContent="center">
+							<VStack flex={5} align="flex-start">
 								<Heading
 									size="xl"
 									width={{
@@ -41,7 +41,7 @@ export default function Volunteering() {
 									Join Our Team
 								</Heading>
 
-								<Text fontSize="lg">
+								<Text fontSize="lg" textAlign="justify">
 									<b>
 										As the largest teen led nonprofit in
 										North America, School Simplified

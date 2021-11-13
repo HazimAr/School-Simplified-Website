@@ -93,7 +93,7 @@ export default function Community({
 								Our Discord Server
 							</Heading>
 
-							<Text textAlign="left">
+							<Text textAlign="justify">
 								Our Discord server offers all of the features
 								above, and more! Our 60k members are high school
 								students who help each other with academics,

@@ -13,7 +13,7 @@ export default function UnderConstruction(): JSX.Element {
 					align="center"
 					direction={{ base: "column", sm: "row" }}
 				>
-					<VStack spacing={3}>
+					<VStack spacing={3} align="flex-start" textAlign="left">
 						<Heading>Under Construction</Heading>
 						<Text>
 							Thanks for checking in! Timmy is working hard on

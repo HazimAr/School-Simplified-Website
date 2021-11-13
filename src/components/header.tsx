@@ -106,10 +106,10 @@ const menuItems: MenuItem[] = [
 			// 	name: "Programming Simplified",
 			// 	href: "/",
 			// },
-			// {
-			// 	name: "Accelerate Your Organization",
-			// 	href: "/npo",
-			// },
+			{
+				name: "Accelerate Your Organization",
+				href: "/accelerate",
+			},
 		],
 	},
 	{

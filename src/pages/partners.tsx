@@ -263,7 +263,7 @@ function Cell({ h, src, alt, desc }): JSX.Element {
 	const { isOpen, onOpen, onClose } = useDisclosure();
 	let timeout: NodeJS.Timeout;
 	return (
-		<Popover isOpen={isOpen}>
+		<Popover isOpen={isOpen} placement="bottom">
 			<PopoverTrigger>
 				<Center
 					bg="#D8D6EC"

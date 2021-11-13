@@ -111,12 +111,18 @@ export default function PartnersPage() {
 					>
 						{partners[partner].data.map((partnerData) => {
 							return (
-								<Cell
-									key={partnerData.name}
-									alt={partnerData.name}
-									src={partnerData.src}
-									desc={partnerData.description}
-								/>
+								<NextLink
+									href={partnerData.link}
+									target="_blank"
+								>
+									<Cell
+										h="200px"
+										key={partnerData.name}
+										alt={partnerData.name}
+										src={partnerData.src}
+										desc={partnerData.description}
+									/>
+								</NextLink>
 							);
 						})}
 					</SimpleGrid>
@@ -135,17 +141,20 @@ const partners = [
 				description:
 					"Versatile Node is an organization geared towards providing cheap, fast and reliable hosting for all your needs! Versatile offers resources range from minecraft hosting, VPS hosting, to web hosting.",
 				src: "/partners/versatile.png",
+				link: "https://versatilenode.com/",
 			},
 			{
 				name: "Deloitte",
 				description:
 					"Deloitte US is the largest professional services organization in the United States. With more than 100,000 professionals, Deloitte provides audit and assurance, tax, consulting, and risk and financial advisory services to a broad cross-section of the largest corporations and governmental agencies.",
 				src: "/partners/deloitte.png",
+				link: "https://www.deloitte.com/us/en/",
 			},
 			{
 				name: "Hidaku",
 				description: "",
 				src: "/partners/Hidaku2.png",
+				link: "https://hidaku.com/",
 			},
 		],
 	},
@@ -235,7 +244,7 @@ function PartnerButton({ onClick, children, bg }) {
 	);
 }
 
-function Cell({ src, alt, desc }): JSX.Element {
+function Cell({ h, src, alt, desc }): JSX.Element {
 	const graceTime: number = 250;
 
 	const { isOpen, onOpen, onClose } = useDisclosure();
@@ -256,6 +265,7 @@ function Cell({ src, alt, desc }): JSX.Element {
 					}
 					overflow="hidden"
 					p={3}
+					height={h}
 				>
 					<Image src={src} alt={alt} />
 				</Center>

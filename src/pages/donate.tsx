@@ -11,8 +11,11 @@ export default function Donate() {
 						Donate
 					</Heading>
 					<Heading as="h2" size="md" color="white">
-						We doesn't charge anything for our services, so we rely
-						on your donations! Please consider donating to us.
+						We do not charge anything for our services, so we rely
+						on your donations!
+					</Heading>
+					<Heading as="h2" size="md" color="white">
+						Please consider donating to us.
 					</Heading>
 
 					<iframe

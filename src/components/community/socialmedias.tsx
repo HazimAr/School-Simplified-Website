@@ -29,7 +29,7 @@ export default function SocialMedias(): JSX.Element {
 						justify="center"
 						align="center"
 					>
-						{socials.slice(0, -1).map((social) => {
+						{socials.slice(0, 6).map((social) => {
 							return (
 								<NextLink
 									href={social.link}

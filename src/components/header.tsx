@@ -66,24 +66,24 @@ const menuItems: MenuItem[] = [
 		name: "Resources",
 		children: [
 			{
-				name: "Essay Revision",
-				href: "/essay",
+				name: "Notes",
+				href: "/notes",
 			},
 			{
 				name: "Tutoring",
 				href: "/tutoring",
 			},
 			{
-				name: "Notes",
-				href: "/notes",
-			},
-			{
-				name: "Homework Help",
-				href: "/discord",
+				name: "Essay Revision",
+				href: "/essay",
 			},
 			{
 				name: "SAT Prep",
 				href: "/sat",
+			},
+			{
+				name: "Homework Help",
+				href: "/discord",
 			},
 		],
 	},

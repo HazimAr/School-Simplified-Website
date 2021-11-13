@@ -145,7 +145,7 @@ const partners = [
 			{
 				name: "Hidaku",
 				description: "",
-				src: "/partners/Hidaku.png",
+				src: "/partners/Hidaku2.png",
 			},
 		],
 	},

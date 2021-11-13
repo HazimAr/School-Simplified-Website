@@ -31,8 +31,13 @@ const META: MetaType = {
 const socials: SocialMediaIcon[] = [
 	{
 		name: "Instagram",
-		link: "https://www.instagram.com/schoolsimplified/",
+		link: "https://www.instagram.com/school.simplified/",
 		icon: (props) => <FaInstagram {...props} />,
+	},
+	{
+		name: "TikTok",
+		link: "https://www.tiktok.com/@schoolsimplified",
+		icon: (props) => <FaTiktok {...props} />,
 	},
 	{
 		name: "Discord",
@@ -53,11 +58,6 @@ const socials: SocialMediaIcon[] = [
 		name: "Facebook",
 		link: "https://www.facebook.com/SchoolSimple",
 		icon: (props) => <FaFacebook {...props} />,
-	},
-	{
-		name: "TikTok",
-		link: "https://www.tiktok.com/@schoolsimplified",
-		icon: (props) => <FaTiktok {...props} />,
 	},
 ];
 

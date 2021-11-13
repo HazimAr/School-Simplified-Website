@@ -186,15 +186,15 @@ export default function Footer() {
 						align="center"
 						color="text.200"
 					>
-						<Text>
+						<Text fontSize="xs">
 							School Simplified © 2021 All Rights Reserved
 						</Text>
 						<VStack>
-							<Text>
+							<Text fontSize="xs">
 								School Simplified Inc. | 8 The Green, Dover, DE
 								19901
 							</Text>
-							<Text>
+							<Text fontSize="xs">
 								Made with 💖 by passionate{" "}
 								<NextLink href="https://github.com/HazimAr/School-Simplified">
 									{" "}

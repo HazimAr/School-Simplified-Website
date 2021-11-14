@@ -29,25 +29,17 @@ export default function Hero({ heading }) {
 
 			<HStack spacing={5}>
 				<Link
-					href="https://www.tiktok.com/@schoolsimplified?"
-					isExternal
-				>
-					<Icon as={fetchIcon("SiTiktok")} boxSize="25px" />
-				</Link>
-
-				<Link
-					href="https://www.instagram.com/school.simplified/"
+					href="https://www.instagram.com/schoolsimplified/"
 					isExternal
 				>
 					<Icon as={fetchIcon("SiInstagram")} boxSize="25px" />
 				</Link>
 
-				<Link href="https://twitter.com/schoolsimplify" isExternal>
-					<Icon as={fetchIcon("SiTwitter")} boxSize="25px" />
-				</Link>
-
-				<Link href="https://www.facebook.com/SchoolSimple/" isExternal>
-					<Icon as={fetchIcon("ImFacebook2")} boxSize="25px" />
+				<Link
+					href="https://www.tiktok.com/@schoolsimplified?"
+					isExternal
+				>
+					<Icon as={fetchIcon("SiTiktok")} boxSize="25px" />
 				</Link>
 
 				<Link href="https://discord.com/invite/school" isExternal>
@@ -59,6 +51,14 @@ export default function Hero({ heading }) {
 					isExternal
 				>
 					<Icon as={fetchIcon("SiLinkedin")} boxSize="28px" />
+				</Link>
+
+				<Link href="https://twitter.com/schoolsimplify" isExternal>
+					<Icon as={fetchIcon("SiTwitter")} boxSize="25px" />
+				</Link>
+
+				<Link href="https://www.facebook.com/SchoolSimple/" isExternal>
+					<Icon as={fetchIcon("ImFacebook2")} boxSize="25px" />
 				</Link>
 			</HStack>
 		</VStack>

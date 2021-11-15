@@ -140,12 +140,12 @@ function Panel({
 						h="500px"
 						flex={1}
 						display={{ base: "none", lg: "block" }}
-						borderLeftRadius={{ base: rounded, lg: "50%" }}
+						borderLeftRadius={{ base: rounded, lg: "full" }}
 					/>
 					{/* <Image src={src} alt={clubName + " team logo"} w="100%" /> */}
 					<VStack
 						borderLeftRadius={{ base: rounded, lg: "none" }}
-						borderRightRadius={{ base: rounded, lg: "50%" }}
+						borderRightRadius={{ base: rounded, lg: "full" }}
 						justify="center"
 						align={{ base: "center", lg: "flex-start" }}
 						bg="brand.transparent"

@@ -31,7 +31,7 @@ const META: MetaType = {
 const socials: SocialMediaIcon[] = [
 	{
 		name: "Instagram",
-		link: "https://www.instagram.com/school.simplified/",
+		link: "https://www.instagram.com/schoolsimplified/",
 		icon: (props) => <FaInstagram {...props} />,
 	},
 	{

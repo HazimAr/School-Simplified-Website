@@ -10,6 +10,7 @@ import {
 	VStack,
 	Grid,
 	Center,
+	VisuallyHidden,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -156,12 +157,19 @@ export default function Footer() {
 							</HStack>
 							<Spacer /> */}
 
-							<Grid templateColumns="repeat(3, 1fr)" gap={3} py={10} >
+							<Grid
+								templateColumns="repeat(3, 1fr)"
+								gap={3}
+								py={10}
+							>
 								{socials.map((item) => {
 									return (
 										<Center key={item.link}>
 											<NextLink href={item.link}>
 												<item.icon size={size} />
+												<VisuallyHidden>
+													Our {item.name}
+												</VisuallyHidden>
 											</NextLink>
 										</Center>
 									);
@@ -178,17 +186,21 @@ export default function Footer() {
 						align="center"
 						color="text.200"
 					>
-						<Text>
+						<Text fontSize="xs">
 							School Simplified © 2021 All Rights Reserved
 						</Text>
 						<VStack>
-							<Text>
+							<Text fontSize="xs">
 								School Simplified Inc. | 8 The Green, Dover, DE
 								19901
 							</Text>
-							<Text>
-								Made with 💖 by passionate <NextLink href="https://github.com/HazimAr/School-Simplified"> developers
-								</NextLink> and designers
+							<Text fontSize="xs">
+								Made with 💖 by passionate{" "}
+								<NextLink href="https://github.com/HazimAr/School-Simplified">
+									{" "}
+									developers
+								</NextLink>{" "}
+								and designers
 							</Text>
 						</VStack>
 					</Flex>

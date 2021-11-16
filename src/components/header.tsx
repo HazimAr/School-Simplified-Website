@@ -63,27 +63,27 @@ const menuItems: MenuItem[] = [
 	// 	href: "/blog",
 	// },
 	{
-		name: "Academic Resources",
+		name: "Resources",
 		children: [
 			{
-				name: "Essay Revision",
-				href: "/essay",
+				name: "Notes",
+				href: "/notes",
 			},
 			{
 				name: "Tutoring",
 				href: "/tutoring",
 			},
 			{
-				name: "Notes",
-				href: "/notes",
-			},
-			{
-				name: "Homework Help",
-				href: "/discord",
+				name: "Essay Revision",
+				href: "/essay",
 			},
 			{
 				name: "SAT Prep",
 				href: "/sat",
+			},
+			{
+				name: "Homework Help",
+				href: "/discord",
 			},
 		],
 	},
@@ -102,19 +102,19 @@ const menuItems: MenuItem[] = [
 				name: "Editorial",
 				href: "/editorial",
 			},
-			{
-				name: "Programming Simplified",
-				href: "/",
-			},
 			// {
-			// 	name: "Accelerate Your Organization",
-			// 	href: "/npo",
+			// 	name: "Programming Simplified",
+			// 	href: "/",
 			// },
+			{
+				name: "Accelerate Your Organization",
+				href: "/accelerate",
+			},
 		],
 	},
 	{
 		name: "Join Us",
-		href: "/join",
+		href: "/volunteer",
 	},
 	{
 		name: "Donate",

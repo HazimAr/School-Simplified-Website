@@ -71,7 +71,7 @@ const teams: VolunteerPanelProps[] = [
 		teamDesc:
 			"Joining our Technology Team will allow you to develop skills such as programming, web development, and quality management. Apply if you are knowledgeable in any of these areas!",
 		src: "timmy/itdept.png",
-		link: "https://forms.gle/fGtWW57DWevKyZdM8",
+		link: "https://timmy.schoolsimplified.org/tech-application",
 
 		//link: "https://forms.gle/xrZma1KjtZ6nzRxS8",
 		functions: [
@@ -233,7 +233,7 @@ VolunteerPanelProps): JSX.Element {
 							>
 								{teamName}
 							</Heading>
-							<Text textAlign="left" my={2}>
+							<Text textAlign="justify" my={2}>
 								{teamDesc}
 							</Text>
 
@@ -268,7 +268,6 @@ VolunteerPanelProps): JSX.Element {
 							}}
 							mt={{ base: 5, md: 0 }}
 							alt={teamName + " team logo"}
-
 							rounded="full"
 						/>
 					</Flex>

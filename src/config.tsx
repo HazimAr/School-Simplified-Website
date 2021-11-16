@@ -40,24 +40,24 @@ const socials: SocialMediaIcon[] = [
 		icon: (props) => <FaDiscord {...props} />,
 	},
 	{
-		name: "LinkedIn",
-		link: "https://www.linkedin.com/company/school-simplified",
-		icon: (props) => <FaLinkedinIn {...props} />,
-	},
-	{
 		name: "Twitter",
-		link: "https://twitter.com/SchoolSimplified",
+		link: "https://twitter.com/SchoolSimplify",
 		icon: (props) => <FaTwitter {...props} />,
-	},
-	{
-		name: "Facebook",
-		link: "https://www.facebook.com/SchoolSimplified",
-		icon: (props) => <FaFacebook {...props} />,
 	},
 	{
 		name: "TikTok",
 		link: "https://www.tiktok.com/@schoolsimplified",
 		icon: (props) => <FaTiktok {...props} />,
+	},
+	{
+		name: "LinkedIn",
+		link: "https://www.linkedin.com/company/school-simplified",
+		icon: (props) => <FaLinkedinIn {...props} />,
+	},
+	{
+		name: "Facebook",
+		link: "https://www.facebook.com/SchoolSimple",
+		icon: (props) => <FaFacebook {...props} />,
 	},
 ];
 

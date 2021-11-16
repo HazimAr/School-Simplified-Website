@@ -284,12 +284,11 @@ const execs: Person[] = [
 	// 	img: "/staff/NicholasZhang.jpg",
 	// },
 
-	// {
-	// 	name: "Soap E",
-	// 	// name: "Sophia Bhatia",
-	// 	title: "Vice President of Community Engagement",
-	// 	img: "/staff/soape.jpg",
-	// },
+	{
+		name: "Sophia Bhatia",
+		title: "Vice President of Community Engagement",
+		img: "/staff/soape.jpg",
+	},
 	// {
 	// 	name: "Noah Bondi",
 	// 	title: "National VP of Communications (Chapters)",

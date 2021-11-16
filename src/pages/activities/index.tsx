@@ -15,7 +15,7 @@ import NextLink from "@components/nextChakra";
 
 /**
  * The Activities page!
- * 
+ *
  * Describes what Student Activities are
  * Displays all SS Clubs and provides information on joining them
  * @returns the Activities page
@@ -27,35 +27,71 @@ export default function Activities() {
 			<Container my={50}>
 				<ContainerInside>
 					<Center>
-						<Image mr={5} src="/timmy/timmy_dino.png" w="300px" display={{ base: "none", md: "block" }} alt="Timmy with baseball bat" />
-					<Stack>
-						<Heading textAlign="left" my={5} fontWeight="extrabold" size="xl"><b>Join Our Clubs!</b></Heading>
-						<Text textAlign="left">School Simplified offers virtual clubs for you to connect with others<br/>
-						from around the world who share the same passions as you!<br/>
-						Explore your passions through the many clubs we offer!</Text>
-					</Stack>
+						<Image
+							mr={5}
+							src="/timmy/timmy_dino.png"
+							w="300px"
+							display={{ base: "none", md: "block" }}
+							alt="Timmy with baseball bat"
+						/>
+						<Stack>
+							<Heading
+								textAlign="left"
+								my={5}
+								fontWeight="extrabold"
+								size="xl"
+							>
+								<b>Join Our Clubs!</b>
+							</Heading>
+							<Text textAlign="justify">
+								School Simplified offers virtual clubs for you
+								to connect with others from around the world who
+								share the samepassions as you! Explore your
+								passions through the many clubs we offer!
+							</Text>
+						</Stack>
 					</Center>
 				</ContainerInside>
 			</Container>
 			<Container bg="linear-gradient(180deg, rgba(90, 96, 173, 0.71) 0%, rgba(108, 125, 254, 0.71) 100%);">
 				<ContainerInside w="100%" mb={21}>
-					<Heading py={30} >Our Clubs</Heading>
+					<Heading py={30}>Our Clubs</Heading>
 					<ChangingSlide />
 				</ContainerInside>
 			</Container>
 			<Container my={90}>
-				<ContainerInside> 
+				<ContainerInside>
 					<Center>
 						<HStack spacing={50}>
 							<VStack align="start">
-								<h2 style={{ fontSize:"40px", margin:"-20px 0px" }} >Don't see a club you want?</h2>
-								<h2 style={{ fontWeight:"bolder", fontSize:"50px" }}>Start Your Own!</h2>
-								<Text textAlign="left" maxWidth={500} fontSize={18}>
-									Connect with others who share the same passions as you by
-									starting your very own club. Start a club for whatever you
-									want, however you want, and become a club president today!
+								<h2
+									style={{
+										fontSize: "40px",
+										margin: "-20px 0px",
+									}}
+								>
+									Don't see a club you want?
+								</h2>
+								<h2
+									style={{
+										fontWeight: "bolder",
+										fontSize: "50px",
+									}}
+								>
+									Start Your Own!
+								</h2>
+								<Text
+									textAlign="justify"
+									maxWidth={500}
+									fontSize={18}
+								>
+									Connect with others who share the same
+									passions as you by starting your very own
+									club. Start a club for whatever you want,
+									however you want, and become a club
+									president today!
 								</Text>
-								<NextLink 
+								<NextLink
 									isExternal
 									href="https://forms.gle/EbmL1kKaib3DKA1U7"
 									_hover={{ textDecoration: "none" }}
@@ -64,7 +100,12 @@ export default function Activities() {
 									<Button>Apply</Button>
 								</NextLink>
 							</VStack>
-							<Image src="/timmy/timmy_sports.png" w="300px" display={{ base: "none", md: "block" }} alt="Timmy with sports balls" />
+							<Image
+								src="/timmy/timmy_sports.png"
+								w="300px"
+								display={{ base: "none", md: "block" }}
+								alt="Timmy with sports balls"
+							/>
 						</HStack>
 					</Center>
 				</ContainerInside>

@@ -30,7 +30,7 @@
 		"axios": "^0.24.0",
 		"framer-motion": "^5.2.0",
 		"fuzzaldrin-plus": "^0.6.0",
-		"next": "^12.0.1",
+		"next": "^12.0.4",
 		"react": "^17.0.2",
 		"react-countup": "^6.0.0",
 		"react-dom": "17.0.2",

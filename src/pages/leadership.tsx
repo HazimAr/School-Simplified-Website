@@ -16,7 +16,7 @@ import {
 	Thead,
 	Tr,
 	VStack,
-	Center,
+	// Center,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -26,7 +26,10 @@ import { useState } from "react";
 import { GovernanceDocument, GovernanceSection, Person } from "types";
 
 export default function About({ data }: { data: any }): JSX.Element {
-	const [senior, setSenior] = useState(true);
+	const [
+		senior,
+		//  setSenior
+	] = useState(true);
 	return (
 		<>
 			<Container>
@@ -37,7 +40,7 @@ export default function About({ data }: { data: any }): JSX.Element {
 						</Heading>
 
 						<Divider bg="white" />
-						<Center my={5}>
+						{/* <Center my={5}>
 							<ExecutiveButton
 								onClick={() => {
 									!senior && setSenior(true);
@@ -47,18 +50,18 @@ export default function About({ data }: { data: any }): JSX.Element {
 							>
 								Senior Executives
 							</ExecutiveButton>
-							{/* <ExecutiveButton
+							<ExecutiveButton
 								onClick={() => {
 									senior && setSenior(false);
 								}}
 								active={!senior}
 							>
 								Executives
-							</ExecutiveButton> */}
+							</ExecutiveButton>
 						</Center>
 						<Heading fontSize={30} mb={5}>
 							Executive Profiles
-						</Heading>
+						</Heading> */}
 						<Flex justifyContent="center" flexWrap="wrap">
 							{(senior ? seniorExecs : execs).map(
 								(staff: Person, i: number) => {

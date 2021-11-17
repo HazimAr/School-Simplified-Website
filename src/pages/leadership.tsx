@@ -377,29 +377,29 @@ const boardOfDirectors: Person[] = [
 	},
 ];
 
-function ExecutiveButton(props) {
-	const { children, onClick, left, active } = props;
-	return (
-		<Box
-			onClick={onClick}
-			maxW="200px"
-			py={3}
-			w="100%"
-			bg={
-				active
-					? "linear-gradient(90deg, #FFA270 0%, #e6c068 100%)"
-					: "brand.transparent"
-			}
-			borderLeftRadius={left ? "100px" : 0}
-			borderRightRadius={left ? 0 : "100PX"}
-			transition="all 0.1s ease-in"
-			_hover={{
-				bg: "brand.transparent2",
-				cursor: "pointer",
-			}}
-			{...props}
-		>
-			{children}
-		</Box>
-	);
-}
+// function ExecutiveButton(props) {
+// 	const { children, onClick, left, active } = props;
+// 	return (
+// 		<Box
+// 			onClick={onClick}
+// 			maxW="200px"
+// 			py={3}
+// 			w="100%"
+// 			bg={
+// 				active
+// 					? "linear-gradient(90deg, #FFA270 0%, #e6c068 100%)"
+// 					: "brand.transparent"
+// 			}
+// 			borderLeftRadius={left ? "100px" : 0}
+// 			borderRightRadius={left ? 0 : "100PX"}
+// 			transition="all 0.1s ease-in"
+// 			_hover={{
+// 				bg: "brand.transparent2",
+// 				cursor: "pointer",
+// 			}}
+// 			{...props}
+// 		>
+// 			{children}
+// 		</Box>
+// 	);
+// }

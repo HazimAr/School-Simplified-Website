@@ -47,14 +47,14 @@ export default function About({ data }: { data: any }): JSX.Element {
 							>
 								Senior Executives
 							</ExecutiveButton>
-							<ExecutiveButton
+							{/* <ExecutiveButton
 								onClick={() => {
 									senior && setSenior(false);
 								}}
 								active={!senior}
 							>
 								Executives
-							</ExecutiveButton>
+							</ExecutiveButton> */}
 						</Center>
 						<Heading fontSize={30} mb={5}>
 							Executive Profiles

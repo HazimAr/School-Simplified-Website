@@ -1,7 +1,10 @@
-import { Heading, Text, VStack, Center, Stack } from "@chakra-ui/react";
-import ContainerBackground from "@components/containerBackground";
+import { Heading, Text, 
+	// VStack, Center, Stack 
+} from "@chakra-ui/react";
+import Container from "@components/container";
+// import ContainerBackground from "@components/containerBackground";
 import ContainerInside from "@components/containerInside";
-import RotatingPanel from "@components/volunteering/rotating_panel";
+// import RotatingPanel from "@components/volunteering/rotating_panel";
 
 /**
  * The Volunteering page!
@@ -14,50 +17,60 @@ import RotatingPanel from "@components/volunteering/rotating_panel";
  */
 export default function Volunteering() {
 	return (
-		<>
-			<ContainerBackground src="/timmy/raining_timmy.png" py={100}>
-				<Center>
-					<ContainerInside
-						py={10}
-						pr={{ base: 2, sm: 2 }}
-						justifyContent="center"
-					>
-						<Stack
-							textAlign="left"
-							direction={{ base: "column", md: "row-reverse" }}
-							width={{ xl: "700px", lg: "300px", sm: "100x" }}
-							spacing={{ base: 5, md: 10 }}
-							justifyContent={{ base: "left", md: "center" }}
-						>
-							<VStack flex={5} align="flex-start">
-								<Heading
-									size="xl"
-									width={{
-										xl: "300px",
-										lg: "600px",
-										sm: "600x",
-									}}
-								>
-									Join Our Team
-								</Heading>
+		<Container>
+			<ContainerInside>
+				<Heading as="h1" >
+					Temporary Disabled
+				</Heading>
+				<Text>
+					 All applications are closed until next monday due to application maintenance
+				</Text>
+			</ContainerInside>
+		</Container>
+		// <>
+		// 	<ContainerBackground src="/timmy/raining_timmy.png" py={100}>
+		// 		<Center>
+		// 			<ContainerInside
+		// 				py={10}
+		// 				pr={{ base: 2, sm: 2 }}
+		// 				justifyContent="center"
+		// 			>
+		// 				<Stack
+		// 					textAlign="left"
+		// 					direction={{ base: "column", md: "row-reverse" }}
+		// 					width={{ xl: "700px", lg: "300px", sm: "100x" }}
+		// 					spacing={{ base: 5, md: 10 }}
+		// 					justifyContent={{ base: "left", md: "center" }}
+		// 				>
+		// 					<VStack flex={5} align="flex-start">
+		// 						<Heading
+		// 							size="xl"
+		// 							width={{
+		// 								xl: "300px",
+		// 								lg: "600px",
+		// 								sm: "600x",
+		// 							}}
+		// 						>
+		// 							Join Our Team
+		// 						</Heading>
 
-								<Text fontSize="lg" textAlign="justify">
-									<b>
-										As the largest teen led nonprofit in
-										North America, School Simplified
-										provides you with a variety of
-										opportunities. Become a part of our team
-										today and together we can build a better
-										future!
-									</b>
-								</Text>
-							</VStack>
-						</Stack>
-					</ContainerInside>
-				</Center>
-			</ContainerBackground>
+		// 						<Text fontSize="lg" textAlign="justify">
+		// 							<b>
+		// 								As the largest teen led nonprofit in
+		// 								North America, School Simplified
+		// 								provides you with a variety of
+		// 								opportunities. Become a part of our team
+		// 								today and together we can build a better
+		// 								future!
+		// 							</b>
+		// 						</Text>
+		// 					</VStack>
+		// 				</Stack>
+		// 			</ContainerInside>
+		// 		</Center>
+		// 	</ContainerBackground>
 
-			<RotatingPanel />
-		</>
+		// 	<RotatingPanel />
+		// </>
 	);
 }

@@ -20,7 +20,7 @@ export default function Volunteering() {
 		<Container>
 			<ContainerInside>
 				<Heading as="h1" >
-					Temporarily Disabled
+					Temporary Disabled
 				</Heading>
 				<Text>
 					 All applications are closed until next monday due to application maintenance

@@ -41,7 +41,7 @@ export default function Volunteering() {
 					<ModalCloseButton onClick={onClose} />
 					<ModalBody>
 						<Text fontWeight="bold" mb="1rem">
-							Hi there! Applications will be closed due to routine
+							Hi there! Applications are closed due to routine
 							maintenance. You can still explore our teams, but
 							please come back on December 1st to apply!
 						</Text>

@@ -147,7 +147,7 @@ type Partner = {
 
 const partners: PartnerGroup[] = [
 	{
-		name: "Academic Partners",
+		name: "Organization Partners",
 		data: [
 			{
 				name: "Versatile Node",
@@ -168,6 +168,13 @@ const partners: PartnerGroup[] = [
 				description: "",
 				src: "/partners/Hidaku2.png",
 				link: "https://hidaku.com/",
+			},
+			{
+				name: ".NGO",
+				description:
+					"NGO is the easiest and fastest way to start and sustain a nonprofit online. Quickly incorporate, accept tax-deductible donations with a 501c3 and store your funds in a bank account with our platform. Dot NGO assists School Simplified with their banking services in partnership with mercy bank and we highly recommend their services!",
+				src: "/partners/ngo.png",
+				link: "https://dot.ngo/join-beta",
 			},
 		],
 	},

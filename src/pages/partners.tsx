@@ -147,7 +147,7 @@ type Partner = {
 
 const partners: PartnerGroup[] = [
 	{
-		name: "Academic Partners",
+		name: "Organization Partners",
 		data: [
 			{
 				name: "Versatile Node",
@@ -168,6 +168,12 @@ const partners: PartnerGroup[] = [
 				description: "",
 				src: "/partners/Hidaku2.png",
 				link: "https://hidaku.com/",
+			},
+			{
+				name: ".NGO",
+				description: "",
+				src: "/partners/ngo.png",
+				link: "",
 			},
 		],
 	},

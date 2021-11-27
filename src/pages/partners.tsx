@@ -172,7 +172,7 @@ const partners: PartnerGroup[] = [
 			{
 				name: ".NGO",
 				description:
-					"NGO is the easiest and fastest way to start and sustain a nonprofit online. Quickly incorporate, accept tax-deductible donations with a 501c3 and store your funds in a bank account with our platform. Dot NGO assists School Simplified with their banking services in partnership with mercy bank and we highly recommend their services!",
+					"Dot NGO is the easiest and fastest way to start and sustain a nonprofit online. Quickly incorporate and accept tax-deductible donations with a 501c3 and store your funds in a bank account with this platform. Dot NGO provides banking services for School Simplified in partnership with Mercury Bank. We highly recommend Dot NGO!",
 				src: "/partners/ngo.png",
 				link: "https://dot.ngo/join-beta",
 			},

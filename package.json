@@ -26,7 +26,7 @@
 		"@chakra-ui/react": "^1.6.12",
 		"@chakra-ui/theme-tools": "^1.2.3",
 		"@emotion/react": "^11.4.1",
-		"@emotion/styled": "^11.3.0",
+		"@emotion/styled": "^11.6.0",
 		"axios": "^0.24.0",
 		"framer-motion": "^5.2.0",
 		"fuzzaldrin-plus": "^0.6.0",

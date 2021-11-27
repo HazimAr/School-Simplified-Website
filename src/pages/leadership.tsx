@@ -16,7 +16,7 @@ import {
 	Thead,
 	Tr,
 	VStack,
-	Center,
+	// Center,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -26,7 +26,10 @@ import { useState } from "react";
 import { GovernanceDocument, GovernanceSection, Person } from "types";
 
 export default function About({ data }: { data: any }): JSX.Element {
-	const [senior, setSenior] = useState(true);
+	const [
+		senior,
+		//  setSenior
+	] = useState(true);
 	return (
 		<>
 			<Container>
@@ -37,7 +40,7 @@ export default function About({ data }: { data: any }): JSX.Element {
 						</Heading>
 
 						<Divider bg="white" />
-						<Center my={5}>
+						{/* <Center my={5}>
 							<ExecutiveButton
 								onClick={() => {
 									!senior && setSenior(true);
@@ -58,7 +61,7 @@ export default function About({ data }: { data: any }): JSX.Element {
 						</Center>
 						<Heading fontSize={30} mb={5}>
 							Executive Profiles
-						</Heading>
+						</Heading> */}
 						<Flex justifyContent="center" flexWrap="wrap">
 							{(senior ? seniorExecs : execs).map(
 								(staff: Person, i: number) => {
@@ -374,29 +377,29 @@ const boardOfDirectors: Person[] = [
 	},
 ];
 
-function ExecutiveButton(props) {
-	const { children, onClick, left, active } = props;
-	return (
-		<Box
-			onClick={onClick}
-			maxW="200px"
-			py={3}
-			w="100%"
-			bg={
-				active
-					? "linear-gradient(90deg, #FFA270 0%, #e6c068 100%)"
-					: "brand.transparent"
-			}
-			borderLeftRadius={left ? "100px" : 0}
-			borderRightRadius={left ? 0 : "100PX"}
-			transition="all 0.1s ease-in"
-			_hover={{
-				bg: "brand.transparent2",
-				cursor: "pointer",
-			}}
-			{...props}
-		>
-			{children}
-		</Box>
-	);
-}
+// function ExecutiveButton(props) {
+// 	const { children, onClick, left, active } = props;
+// 	return (
+// 		<Box
+// 			onClick={onClick}
+// 			maxW="200px"
+// 			py={3}
+// 			w="100%"
+// 			bg={
+// 				active
+// 					? "linear-gradient(90deg, #FFA270 0%, #e6c068 100%)"
+// 					: "brand.transparent"
+// 			}
+// 			borderLeftRadius={left ? "100px" : 0}
+// 			borderRightRadius={left ? 0 : "100PX"}
+// 			transition="all 0.1s ease-in"
+// 			_hover={{
+// 				bg: "brand.transparent2",
+// 				cursor: "pointer",
+// 			}}
+// 			{...props}
+// 		>
+// 			{children}
+// 		</Box>
+// 	);
+// }

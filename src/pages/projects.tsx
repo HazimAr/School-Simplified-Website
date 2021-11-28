@@ -10,6 +10,7 @@ import {
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import Button from "@components/button";
+import NextChakraLink from "@components/nextChakra";
 
 export default function Four(): JSX.Element {
 	return (
@@ -131,11 +132,13 @@ function Questions({ title, text }: { title: string; text: string }) {
 function Winner({
 	image,
 	title,
+	link,
 	award,
 	winners,
 }: {
 	image: string;
 	title: string;
+	link: string;
 	award: string;
 	winners: string;
 }) {
@@ -148,7 +151,12 @@ function Winner({
 		>
 			<Image w="100%" src={image} />
 			<VStack align="start" p="15px">
-				<Heading fontSize="22px">{title}</Heading>
+				<NextChakraLink
+					target="_blank"
+					href="https://devpost.com/software/signslate"
+				>
+					<Heading fontSize="22px">{title}</Heading>
+				</NextChakraLink>
 				<Text textAlign="left" fontSize="18px">
 					{award}
 				</Text>

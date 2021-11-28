@@ -9,7 +9,7 @@ import React from "react";
 export default function Here() {
 	return (
 		<Container
-			bg="linear-gradient(180deg, rgba(167, 178, 255, 0.5) 0%, rgba(90, 96, 173, 0.25) 100%);"
+			bg="linear-gradient(180deg, rgba(90, 96, 173, 0.71) 0%, rgba(131, 145, 255, 0.71) 100%)"
 			py="50px"
 		>
 			<ContainerInside>

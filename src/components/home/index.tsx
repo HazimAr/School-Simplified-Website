@@ -5,4 +5,4 @@ import Testimonial from "./testimonial";
 import Blog from "./blog";
 import Clubs from "./clubs";
 
-export { Intro, Here, Testimonial, Code, Blog,Clubs };
+export { Intro, Here, Testimonial, Code, Blog, Clubs };

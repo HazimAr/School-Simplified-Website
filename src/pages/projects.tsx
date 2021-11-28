@@ -24,9 +24,11 @@ export default function Four(): JSX.Element {
 						<Heading fontSize="35px">
 							Start Your Project Today
 						</Heading>
-						<Button timmysrc="timmy/timmy_flying_icon.png">
-							Propose Project
-						</Button>
+						<Box>
+							<Button timmysrc="timmy/timmy_flying_icon.png">
+								Propose Project
+							</Button>
+						</Box>
 					</Stack>
 					<Text textAlign="left" fontSize="22px">
 						Take the chance to showcase your capability, creativity,

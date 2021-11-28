@@ -3,6 +3,14 @@
 /* eslint-disable import/no-default-export */
 import { Box, Center, Image, HStack } from "@chakra-ui/react";
 
+/**
+ * The button that can have an image before text (add the source to that
+ * image via the timmysrc property). Also has three styles to choose from:
+ * bright, calm, and outline (default).
+ *
+ * @param props an object that carries all the props to give the button.
+ * @returns the button
+ */
 export default function Button(props: Record<string, any>): JSX.Element {
 	let bg: string, borderColor: string;
 	switch (props.type) {
@@ -33,7 +41,11 @@ export default function Button(props: Record<string, any>): JSX.Element {
 			fontSize="14px"
 			fontWeight="semibold"
 			bg={bg}
+<<<<<<< HEAD
 			minW="205px"
+=======
+			minW={205}
+>>>>>>> e1d78cab37256e2f23bbee6f8c4793fca84412dd
 			borderWidth={borderColor ? 3 : 0}
 			borderColor={borderColor ?? null}
 			_hover={

@@ -52,7 +52,7 @@ export default function Here() {
 	);
 }
 
-function Card(props) {
+function Card(props: any) {
 	const { title, description, button, href, isExternal, ...rest } = props;
 	return (
 		<VStack
@@ -68,7 +68,7 @@ function Card(props) {
 			</Heading>
 			<Text>{description}</Text>
 			<NextLink href={href} isExternal={isExternal}>
-				<Button>{button}</Button>
+				<Button timmysrc="/timmy/25.png">{button}</Button>
 			</NextLink>
 		</VStack>
 	);

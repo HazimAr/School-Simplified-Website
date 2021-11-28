@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable import/no-default-export */
-import { Box } from "@chakra-ui/react";
+import { Box, Center, Image, HStack } from "@chakra-ui/react";
 
-export default function Button(props: any): JSX.Element {
+export default function Button(props: Record<string, any>): JSX.Element {
 	let bg: string, borderColor: string;
 	switch (props.type) {
 		// case "exciting":
@@ -19,18 +19,22 @@ export default function Button(props: any): JSX.Element {
 			bg = "transparent";
 			break;
 	}
+	delete props.type;
+
 	return (
 		<Box
-			px={4}
-			py={2}
+			pl={props.timmysrc ? 0.5 : 4}
+			pr={4}
+			py={props.timmysrc ? 0.5 : 2}
 			as="button"
 			// lineHeight="1.2"
 			transition="all 0.2s ease"
-			borderRadius="16px"
-			fontSize="16px"
+			borderRadius="md"
+			fontSize="14px"
 			fontWeight="semibold"
 			bg={bg}
-			borderWidth={borderColor ? 2 : 0}
+			minW={60}
+			borderWidth={borderColor ? 3 : 0}
 			borderColor={borderColor ?? null}
 			_hover={
 				borderColor
@@ -44,7 +48,12 @@ export default function Button(props: any): JSX.Element {
 			}
 			{...props}
 		>
-			{props.children}
+			<HStack>
+				{props.timmysrc ? (
+					<Image src={props.timmysrc} alt="A small Timmy" maxH={41} />
+				) : null}
+				<Center flex={1}>{props.children}</Center>
+			</HStack>
 		</Box>
 	);
 }

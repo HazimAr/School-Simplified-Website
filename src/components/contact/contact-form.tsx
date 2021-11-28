@@ -26,9 +26,9 @@ function StyledInput({
 }: StyledInputProps): JSX.Element {
 	return (
 		<Input
-			borderWidth="xl"
+			borderWidth={3}
 			borderRadius="xl"
-			borderColor="brand.purple.light"
+			borderColor="#5766D9"
 			focusBorderColor="brand.purple.dark"
 			placeholder={placeholder}
 			_placeholder={{ color: "#3f404e" }}
@@ -95,6 +95,7 @@ export default function ContactForm(): JSX.Element {
 			id="first-name"
 			isRequired
 			backgroundColor="white"
+			justify="space-between"			
 			color="#171717"
 			borderRadius="2.25rem"
 			p={10}
@@ -102,9 +103,9 @@ export default function ContactForm(): JSX.Element {
 		>
 			<Flex flexDirection="row" justify="space-between">
 				<Stack mr={2}>
-					<FormLabel>First Name</FormLabel>
+					<FormLabel mb={-1}>First Name</FormLabel>
 					<StyledInput
-						placeholder="First Name"
+						placeholder="First name . . ."
 						type=""
 						value={firstName}
 						onChange={(text) => {
@@ -116,9 +117,9 @@ export default function ContactForm(): JSX.Element {
 					/>
 				</Stack>
 				<Stack ml={2}>
-					<FormLabel>Last Name</FormLabel>
+					<FormLabel mb={-1}>Last Name</FormLabel>
 					<StyledInput
-						placeholder="Last Name"
+						placeholder="Last name . . ."
 						type=""
 						value={lastName}
 						onChange={(text) => {
@@ -130,31 +131,31 @@ export default function ContactForm(): JSX.Element {
 					/>
 				</Stack>
 			</Flex>
-			<FormLabel mt={3}>Email</FormLabel>
+			<FormLabel mt={3} mb={1}>Email</FormLabel>
 			<StyledInput
-				placeholder="Email"
+				placeholder="Email . . ."
 				type="email"
 				value={email}
 				onChange={(text) => {
 					dispatch({ type: "email", payload: text.target.value });
 				}}
 			/>
-			<FormLabel>Subject</FormLabel>
+			<FormLabel mb={1}>Subject</FormLabel>
 			<StyledInput
-				placeholder="Subject"
+				placeholder="Subject . . ."
 				type=""
 				value={subject}
 				onChange={(text) => {
 					dispatch({ type: "subject", payload: text.target.value });
 				}}
 			/>
-			<FormLabel>Your Message</FormLabel>
+			<FormLabel mb={1}>Your Message</FormLabel>
 			<Textarea
-				borderWidth="xl"
+				borderWidth={3}
 				borderRadius="xl"
-				borderColor="#5a60ad"
+				borderColor="#5766D9"
 				focusBorderColor="#5a60ad"
-				placeholder="Your Message"
+				placeholder="Your message . . ."
 				_placeholder={{ color: "#3f404e" }}
 				_hover={{ backgroundColor: "transparent" }}
 				mb={4}
@@ -179,10 +180,14 @@ export default function ContactForm(): JSX.Element {
 						setDisabled.off();
 					}, Math.random() * 1000 + 500);
 				}}
-				color="white"
+				color="#5A60AD"
+				borderWidth={3}
+				borderRadius="xl"
+				borderColor="#5766D9"
+				px={{ sm: 3, md: 3, lg: 3 }}
 				disabled={disabled}
 			>
-				Send
+				Send Message
 			</Button>
 		</FormControl>
 	);

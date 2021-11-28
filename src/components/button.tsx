@@ -4,15 +4,19 @@
 import { Box } from "@chakra-ui/react";
 
 export default function Button(props: any): JSX.Element {
-	let bg;
+	let bg: string, borderColor: string;
 	switch (props.type) {
 		// case "exciting":
-
 		case "calm":
 			bg = "linear-gradient(90deg, #a688ec 0%, #5a60ad 100%)";
 			break;
-		default:	
+		case "bright":
 			bg = "linear-gradient(90deg, #FFA270 0%, #e6c068 100%)";
+			break;
+		case "outline":
+		default:
+			borderColor = "white";
+			bg = "transparent";
 			break;
 	}
 	return (
@@ -26,10 +30,18 @@ export default function Button(props: any): JSX.Element {
 			fontSize="16px"
 			fontWeight="semibold"
 			bg={bg}
-			_hover={{ transform: "scale(0.95)", boxShadow: "md" }}
-			_active={{
-				transform: "scale(0.90)",
-			}}
+			borderWidth={borderColor ? 2 : 0}
+			borderColor={borderColor ?? null}
+			_hover={
+				borderColor
+					? { backgroundColor: "white", color: "brand.purple.dark" }
+					: { transform: "scale(0.95)", boxShadow: "md" }
+			}
+			_active={
+				borderColor
+					? { transform: "scale(0.90)", boxShadow: "md" }
+					: { transform: "scale(0.90)" }
+			}
 			{...props}
 		>
 			{props.children}

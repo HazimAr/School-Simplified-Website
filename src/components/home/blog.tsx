@@ -8,7 +8,11 @@ import NextChakraLink from "@components/nextChakra";
 export default function Blog({ listing }: { listing: BlogListing[] }) {
 	// console.log(listing);
 	return (
-		<ContainerBackground src="/blog.jpg" py="50px">
+		<ContainerBackground
+			// src="/blog.jpg"
+			background="linear-gradient(180deg, rgba(99, 115, 238, 0.55) 0%, rgba(197, 203, 255, 0.55) 100%)"
+			py="50px"
+		>
 			<ContainerInside>
 				<Stack textAlign="left" spacing={5}>
 					<Stack w={{ base: "100%", lg: "50%" }}>

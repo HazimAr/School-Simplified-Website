@@ -5,7 +5,11 @@ import CountUp from "react-countup";
 
 export default function Intro() {
 	return (
-		<ContainerBackground src="/timmy/lofi_timmy.png" py="50px">
+		<ContainerBackground
+			background="rgba(90, 96, 173, 0.71)"
+			src="/timmy/lofi_timmy.png"
+			py="50px"
+		>
 			<ContainerInside>
 				<Center>
 					<VStack spacing={5} maxW="60ch">

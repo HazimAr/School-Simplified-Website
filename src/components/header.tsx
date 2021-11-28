@@ -188,7 +188,7 @@ export default function Header(): JSX.Element {
 					</Flex>
 				</ContainerInside>
 			</Container>
-			<Box h={{ base: 84, sm: 94, md: 83, lg: 54, xl: 62 }} />
+			<Box h={{ base: 84, sm: 94, md: 83, lg: 54 }} />
 		</>
 	);
 }

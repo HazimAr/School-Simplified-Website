@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Image, Spacer} from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Spacer } from "@chakra-ui/react";
 import ContactForm from "@components/contact/contact-form";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -8,12 +8,21 @@ export default function Contact(): JSX.Element {
 		<Container py={19}>
 			<ContainerInside>
 				<Box my="20px">
-					<Heading as="h1" size="xl" mb={10}>
+					<Heading as="h1" size="xl" mb={2}>
 						Get in Touch
 					</Heading>
-					
+					<Heading
+						as="h3"
+						size="l"
+						mb={7}
+						color="white"
+						fontWeight="100"
+					>
+						If you have any questions, concerns, or suggestions,
+						feel free to contact us!
+					</Heading>
 				</Box>
-				<Flex justify="center">
+				<Flex width="100%" justify="center">
 					<Flex
 						flexDirection={{
 							base: "column-reverse",
@@ -33,8 +42,7 @@ export default function Contact(): JSX.Element {
 								src="/timmy/contact1.png"
 								alt="Contact Person"
 								h={{ base: "550px", "300px": "300px" }}
-								minW="50%"
-								maxH="550px"
+								minW="100%"
 								my={{ base: -5, sm: 5, lg: 0 }}
 							/>
 						</Box>

@@ -95,7 +95,7 @@ export default function ContactForm(): JSX.Element {
 			id="first-name"
 			isRequired
 			backgroundColor="white"
-			justify="space-between"			
+			justify="space-between"
 			color="#171717"
 			borderRadius="2.25rem"
 			p={10}
@@ -103,7 +103,9 @@ export default function ContactForm(): JSX.Element {
 		>
 			<Flex flexDirection="row" justify="space-between">
 				<Stack mr={2}>
-					<FormLabel mb={-1}>First Name</FormLabel>
+					<FormLabel fontWeight="700" color="#5A60AD" mb={-1}>
+						First Name
+					</FormLabel>
 					<StyledInput
 						placeholder="First name . . ."
 						type=""
@@ -117,7 +119,9 @@ export default function ContactForm(): JSX.Element {
 					/>
 				</Stack>
 				<Stack ml={2}>
-					<FormLabel mb={-1}>Last Name</FormLabel>
+					<FormLabel fontWeight="700" color="#5A60AD" mb={-1}>
+						Last Name
+					</FormLabel>
 					<StyledInput
 						placeholder="Last name . . ."
 						type=""
@@ -131,7 +135,9 @@ export default function ContactForm(): JSX.Element {
 					/>
 				</Stack>
 			</Flex>
-			<FormLabel mt={3} mb={1}>Email</FormLabel>
+			<FormLabel fontWeight="700" color="#5A60AD" mt={3} mb={1}>
+				Email
+			</FormLabel>
 			<StyledInput
 				placeholder="Email . . ."
 				type="email"
@@ -140,7 +146,9 @@ export default function ContactForm(): JSX.Element {
 					dispatch({ type: "email", payload: text.target.value });
 				}}
 			/>
-			<FormLabel mb={1}>Subject</FormLabel>
+			<FormLabel fontWeight="700" color="#5A60AD" mb={1}>
+				Subject
+			</FormLabel>
 			<StyledInput
 				placeholder="Subject . . ."
 				type=""
@@ -149,7 +157,9 @@ export default function ContactForm(): JSX.Element {
 					dispatch({ type: "subject", payload: text.target.value });
 				}}
 			/>
-			<FormLabel mb={1}>Your Message</FormLabel>
+			<FormLabel fontWeight="700" color="#5A60AD" mb={1}>
+				Your Message
+			</FormLabel>
 			<Textarea
 				borderWidth={3}
 				borderRadius="xl"

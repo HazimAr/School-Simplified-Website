@@ -33,7 +33,7 @@ export default function Button(props: Record<string, any>): JSX.Element {
 			fontSize="14px"
 			fontWeight="semibold"
 			bg={bg}
-			minW={60}
+			minW={50}
 			borderWidth={borderColor ? 3 : 0}
 			borderColor={borderColor ?? null}
 			_hover={

@@ -41,11 +41,7 @@ export default function Button(props: Record<string, any>): JSX.Element {
 			fontSize="14px"
 			fontWeight="semibold"
 			bg={bg}
-<<<<<<< HEAD
-			minW="205px"
-=======
 			minW={205}
->>>>>>> e1d78cab37256e2f23bbee6f8c4793fca84412dd
 			borderWidth={borderColor ? 3 : 0}
 			borderColor={borderColor ?? null}
 			_hover={

@@ -87,6 +87,7 @@ export default function Four(): JSX.Element {
 							title="Signslate"
 							award="1st Place Winner from June 2021"
 							winners="Ayush Agarwal, Krushay Bhavsar"
+							link="https://devpost.com/software/signslate"
 						/>
 						<VStack align="start" spacing={5}>
 							<Text fontSize="22px" textAlign="left">
@@ -151,10 +152,7 @@ function Winner({
 		>
 			<Image w="100%" src={image} />
 			<VStack align="start" p="15px">
-				<NextChakraLink
-					target="_blank"
-					href="https://devpost.com/software/signslate"
-				>
+				<NextChakraLink target="_blank" href={link}>
 					<Heading fontSize="22px">{title}</Heading>
 				</NextChakraLink>
 				<Text textAlign="left" fontSize="18px">

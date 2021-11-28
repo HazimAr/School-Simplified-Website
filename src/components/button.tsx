@@ -58,7 +58,12 @@ export default function Button(props: Record<string, any>): JSX.Element {
 		>
 			<HStack>
 				{props.timmysrc ? (
-					<Image src={props.timmysrc} alt="A small Timmy" maxH={41} />
+					<Image
+						src={props.timmysrc}
+						alt="A small Timmy"
+						maxH={41}
+						pl={1}
+					/>
 				) : null}
 				<Center flex={1}>{props.children}</Center>
 			</HStack>

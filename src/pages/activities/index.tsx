@@ -28,8 +28,8 @@ export default function Activities() {
 				<ContainerInside>
 					<Center>
 						<Image
-							mr={5}
-							src="/timmy/timmy_dino.png"
+							mr={10}
+							src="/timmy/sports_timmy_flip.png"
 							w="300px"
 							display={{ base: "none", md: "block" }}
 							alt="Timmy with baseball bat"
@@ -37,16 +37,23 @@ export default function Activities() {
 						<Stack>
 							<Heading
 								textAlign="left"
-								my={5}
 								fontWeight="extrabold"
 								size="xl"
 							>
-								<b>Join Our Clubs!</b>
+								<b>Join Our Clubs</b>
 							</Heading>
+							<Text
+								textAlign="left"
+								size="sm"
+								mb={5}
+								textColor="#ffd470"
+							>
+								Student Activities Program
+							</Text>
 							<Text textAlign="justify">
 								School Simplified offers virtual clubs for you
 								to connect with others from around the world who
-								share the samepassions as you! Explore your
+								share the same passions as you! Explore your
 								passions through the many clubs we offer!
 							</Text>
 						</Stack>

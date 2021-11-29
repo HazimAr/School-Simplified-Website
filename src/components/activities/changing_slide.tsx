@@ -17,6 +17,7 @@ import { rounded } from "@styles/theme";
 import React from "react";
 
 import { FaArrowLeft, FaArrowRight, FaCircle } from "react-icons/fa";
+//import { MdRoundedCorner } from "react-icons/md";
 import { ActivitySlideProps } from "types";
 
 const clubs: ActivitySlideProps[] = [

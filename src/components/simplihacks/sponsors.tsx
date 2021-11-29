@@ -72,7 +72,7 @@ export default function Sponsors(): JSX.Element {
 			<Container py={19} bg="brand.transparent">
 				<ContainerInside>
 					<Heading as="h1" m={5}>
-						Sponsors
+						Event Sponsors
 					</Heading>
 					<Flex justify="center" flexWrap="wrap">
 						{sponsors.map((sponsor, i: number) => {

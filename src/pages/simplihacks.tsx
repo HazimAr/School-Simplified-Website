@@ -1,5 +1,4 @@
 import {
-	Description,
 	FAQ,
 	Hero,
 	Sponsors,
@@ -11,7 +10,6 @@ export default function simpliHacks(): JSX.Element {
 	return (
 		<>
 			<Hero />
-			<Description />
 			<Winners />
 			<FAQ />
 			<Sponsors />

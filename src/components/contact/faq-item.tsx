@@ -22,7 +22,8 @@ export default function FaqItem({
 }: FaqItemProps): JSX.Element {
 	return (
 		<AccordionItem
-			borderRadius="3xl"
+			boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
+			borderRadius="10px"
 			backgroundColor="white"
 			color="#5a60ad"
 			px={2}

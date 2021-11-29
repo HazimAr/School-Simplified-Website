@@ -1,8 +1,8 @@
-import { Box, Flex, Heading } from "@chakra-ui/react";
+import { Box, Heading, SimpleGrid } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import React from "react";
-import SimplihacksCard from "@components/simplihacks/simplihackscard"
+import SimplihacksCard from "@components/simplihacks/simplihackscard";
 import { Person } from "types";
 
 const staff: Person[] = [
@@ -91,13 +91,15 @@ const staff: Person[] = [
 export default function Staff(): JSX.Element {
 	return (
 		<>
-			<Container py={19}>
+			<Container my="50px">
 				<ContainerInside>
-					<Box>
-						<Heading as="h1" m={5}>
-							Staff
-						</Heading>
-						<Flex justify="center" flexWrap="wrap">
+					<Box align="center">
+						<Heading m={5}>Staff</Heading>
+						<SimpleGrid
+							w={{ base: "auto", md: "850px" }}
+							columns={{ base: 2, md: 4 }}
+							spacingY="15px"
+						>
 							{staff.map((member, i: number) => {
 								return (
 									<SimplihacksCard
@@ -108,7 +110,7 @@ export default function Staff(): JSX.Element {
 									/>
 								);
 							})}
-						</Flex>
+						</SimpleGrid>
 					</Box>
 				</ContainerInside>
 			</Container>

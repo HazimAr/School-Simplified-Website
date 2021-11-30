@@ -1,4 +1,3 @@
-import { ExternalLinkIcon } from "@chakra-ui/icons";
 import {
 	Box,
 	Center,
@@ -9,11 +8,12 @@ import {
 	Text,
 	useControllableState,
 	VStack,
+	Image,
+	HStack
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import NextLink from "@components/nextChakra";
 import useInterval from "@hooks/useInterval";
-import { rounded } from "@styles/theme";
 import React from "react";
 
 import { FaArrowLeft, FaArrowRight, FaCircle } from "react-icons/fa";
@@ -138,18 +138,18 @@ function Panel({
 						backgroundSize="cover"
 						backgroundPosition="center"
 						backgroundRepeat="no-repeat"
-						h="500px"
+						h= "400px"
 						flex={1}
 						display={{ base: "none", lg: "block" }}
-						borderLeftRadius={{ base: rounded, lg: "full" }}
+						borderLeftRadius={{ base: "50px", lg: "50px" }}
 					/>
 					{/* <Image src={src} alt={clubName + " team logo"} w="100%" /> */}
 					<VStack
-						borderLeftRadius={{ base: rounded, lg: "none" }}
-						borderRightRadius={{ base: rounded, lg: "full" }}
+						borderLeftRadius={{ base: "50px", lg: "none" }}
+						borderRightRadius={{ base: "50px", lg: "50px" }}
 						justify="center"
 						align={{ base: "center", lg: "flex-start" }}
-						bg="brand.transparent"
+						bg="#5E65B7"
 						py={5}
 						pl={10}
 						pr={5}
@@ -169,7 +169,17 @@ function Panel({
 							_hover={{ textDecoration: "none" }}
 						>
 							<Button mt={3}>
-								Join <ExternalLinkIcon ml={2} />
+							<HStack>
+								<Image 
+									src="/timmy/tim_transparent_sporty.png" 
+									w="35px"
+								/>
+								<Center>
+									Join Club
+								</Center>
+							</HStack>
+								
+								 
 							</Button>
 						</NextLink>
 					</VStack>

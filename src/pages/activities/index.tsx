@@ -25,7 +25,7 @@ export default function Activities() {
 	return (
 		<>
 			<Container my={50}>
-				<ContainerInside>
+				<ContainerInside >
 					<Center>
 						<Image
 							mr={10}
@@ -60,9 +60,8 @@ export default function Activities() {
 					</Center>
 				</ContainerInside>
 			</Container>
-			<Container bg="linear-gradient(180deg, rgba(90, 96, 173, 0.71) 0%, rgba(108, 125, 254, 0.71) 100%);">
-				<ContainerInside w="100%" mb={21}>
-					<Heading py={30}>Our Clubs</Heading>
+			<Container bg="#8D95F9">
+				<ContainerInside w="100%" mb={21} mt={10}>
 					<ChangingSlide />
 				</ContainerInside>
 			</Container>

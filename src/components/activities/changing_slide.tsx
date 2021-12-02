@@ -8,8 +8,6 @@ import {
 	Text,
 	useControllableState,
 	VStack,
-	Image,
-	HStack
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import NextLink from "@components/nextChakra";
@@ -168,19 +166,8 @@ function Panel({
 							href={link}
 							_hover={{ textDecoration: "none" }}
 						>
-							<Button mt={3}>
-							<HStack>
-								<Image 
-									src="/timmy/tim_transparent_sporty.png" 
-									w="35px"
-								/>
-								<Center>
-									Join Club
-								</Center>
-							</HStack>
-								
-								 
-							</Button>
+							<Button timmysrc="/timmy/tim_transparent_sporty.png"> Join Club </Button>
+
 						</NextLink>
 					</VStack>
 				</Flex>

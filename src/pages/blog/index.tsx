@@ -11,6 +11,7 @@ import {
 	Text,
 	useBreakpointValue,
 	VStack,
+	Divider,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -117,56 +118,16 @@ export default function Blog({
 				</ContainerInside>
 			</Container>
 
-
 			<Container>
 				<ContainerInside my={5}>
-					<VStack spacing={3}>
+					<VStack spacing={5}>
+						<Divider orientation="horizontal" />
 						<Searchbar
 							size={inputGroupSize}
 							maxW={{ base: "initial", md: 350, lg: 500 }}
 							flexShrink={1}
 							callback={setSearchTerm}
 						/>
-						<HStack spacing={2} justifyContent="center">
-							<Center
-								onClick={() => {
-									if (pageNum > 0) setPageNum(pageNum - 1);
-								}}
-								w="fit-content"
-								cursor={pageNum === 0 ? "auto" : "pointer"}
-							>
-								<Icon
-									as={FaArrowLeft}
-									boxSize={5}
-									color={pageNum === 0 ? "gray.500" : "white"}
-								/>
-							</Center>
-							<Box as="span">
-								Page {pageNum + 1} / {totalPages}
-							</Box>
-							<Center
-								onClick={() => {
-									if (pageNum < totalPages - 1)
-										setPageNum(pageNum + 1);
-								}}
-								w="fit-content"
-								cursor={
-									pageNum === totalPages - 1
-										? "auto"
-										: "pointer"
-								}
-							>
-								<Icon
-									as={FaArrowRight}
-									boxSize={5}
-									color={
-										pageNum === totalPages - 1
-											? "gray.500"
-											: "white"
-									}
-								/>
-							</Center>
-						</HStack>
 					</VStack>
 				</ContainerInside>
 			</Container>
@@ -185,6 +146,45 @@ export default function Blog({
 								})
 							)}
 					</SimpleGrid>
+				</ContainerInside>
+			</Container>
+			<Container>
+				<ContainerInside my={5}>
+					<HStack spacing={2} justifyContent="center">
+						<Center
+							onClick={() => {
+								if (pageNum > 0) setPageNum(pageNum - 1);
+							}}
+							w="fit-content"
+							cursor={pageNum === 0 ? "auto" : "pointer"}
+						>
+							<Icon
+								as={FaArrowLeft}
+								boxSize={9}
+								color={pageNum === 0 ? "gray.500" : "white"}
+							/>
+						</Center>
+						<Center
+							onClick={() => {
+								if (pageNum < totalPages - 1)
+									setPageNum(pageNum + 1);
+							}}
+							w="fit-content"
+							cursor={
+								pageNum === totalPages - 1 ? "auto" : "pointer"
+							}
+						>
+							<Icon
+								as={FaArrowRight}
+								boxSize={9}
+								color={
+									pageNum === totalPages - 1
+										? "gray.500"
+										: "white"
+								}
+							/>
+						</Center>
+					</HStack>
 				</ContainerInside>
 			</Container>
 		</>

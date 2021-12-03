@@ -91,7 +91,6 @@ export default function Blog({
 							src="/timmy/blogtimmy.png"
 							maxW={{ base: 150, md: 300 }}
 						/>
-						<Box flex={1}>
 							<Box
 								bgImage={listings[0].icon}
 								bgSize="cover"
@@ -116,7 +115,8 @@ export default function Blog({
 					</Stack>
 				</ContainerInside>
 			</Container>
-			<Container bg="brand.transparent">
+			<Divider orientation='horizontal'/>
+			<Container>
 				<ContainerInside my={5}>
 					<VStack spacing={3}>
 						<Searchbar

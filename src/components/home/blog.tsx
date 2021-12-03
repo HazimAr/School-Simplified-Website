@@ -1,9 +1,21 @@
-import { Heading, HStack, Text, Stack, VStack, Center } from "@chakra-ui/react";
+import {
+	Box,
+	Center,
+	Flex,
+	Heading,
+	HStack,
+	Image,
+	Stack,
+	Text,
+	VStack,
+	useBreakpointValue,
+} from "@chakra-ui/react";
 import ContainerInside from "@components/containerInside";
 import Button from "@components/button";
 import ContainerBackground from "@components/containerBackground";
 import { BlogListing } from "types";
 import NextChakraLink from "@components/nextChakra";
+import { toAuthorAttribution } from "util/parse_notion";
 
 export default function Blog({ listing }: { listing: BlogListing[] }) {
 	// console.log(listing);
@@ -12,19 +24,57 @@ export default function Blog({ listing }: { listing: BlogListing[] }) {
 			// src="/blog.jpg"
 			background="linear-gradient(180deg, rgba(99, 115, 238, 0.55) 0%, rgba(197, 203, 255, 0.55) 100%)"
 			py="50px"
+			overflow="hidden"
 		>
 			<ContainerInside>
-				<Stack textAlign="left" spacing={5}>
+				<Flex position="absolute" direction="row" zIndex={-1}>
+					<Box flex="0 0 50%" />
+					<Center flex="0 0 50%">
+						<Image
+							src="/timmy/12.png"
+							opacity={0.3}
+							alt="Timmy holding a book"
+						/>
+					</Center>
+				</Flex>
+				<Flex direction="row">
+					<VStack spacing={8} flex="0 0 50%">
+						<VStack spacing={1} textAlign="left" align="flex-start">
+							<Heading size="lg">Check out</Heading>
+							<Heading fontWeight="bold">
+								The Latest Read!
+							</Heading>
+							<Text>
+								Check out the latest blog from our student
+								authors and read about what they have to say!
+							</Text>
+						</VStack>
+						<NextChakraLink href="/blog" alignSelf="flex-start">
+							<Button timmysrc="/timmy/17.png">Read More</Button>
+						</NextChakraLink>
+					</VStack>
+					<Box flex="0 0 50%" />
+				</Flex>
+				<Stack
+					direction={{ base: "column", md: "row" }}
+					mt={8}
+					spacing={{ base: 10, md: 4, lg: 10 }}
+					// justify="space-between"
+				>
+					{listing.map((blogListing) => (
+						<Card {...blogListing} key={blogListing.link} />
+					))}
+				</Stack>
+				{/* <Stack textAlign="left" spacing={5}>
 					<Stack w={{ base: "100%", lg: "50%" }}>
-						<Heading>
-							Check out <br /> The Latest Read!
-						</Heading>
+						<Heading size="lg">Check out</Heading>
+						<Heading fontWeight="bold">The Latest Read!</Heading>
 						<Text>
 							Check out the latest blog from our student authors
 							and read about what they have to say!
 						</Text>
 						<NextChakraLink href="/blog">
-							<Button w="fit-content">Read More</Button>
+							<Button timmysrc="/timmy/17.png">Read More</Button>
 						</NextChakraLink>
 					</Stack>
 					<HStack
@@ -50,83 +100,59 @@ export default function Blog({ listing }: { listing: BlogListing[] }) {
 							href={listing[2]?.link}
 						/>
 					</HStack>
-				</Stack>
-				{/* <Box py={5}>
-					<Flex
-						align="center"
-						justify="center"
-						flexDir={{ base: "column", md: "row" }}
-					>
-						<Box>
-							<Heading
-								textAlign={{ base: "center", md: "left" }}
-								fontSize="2xl"
-								mb={3}
-							>
-								Why Us?
-							</Heading>
-							<Text
-								textAlign={{ base: "center", md: "left" }}
-								maxW="60ch"
-							>
-								School Simplified believes that quality
-								education should be accessible to all students.
-								As an organization run by students and for
-								students, we want to help you succeed!
-							</Text>
-						</Box>
-						<Image
-							src="/timmy/25.png"
-							alt="Timmy with puzzle pieces"
-							w={{ base: 150, sm: 250, md: 300, lg: 400 }}
-							ml={{ base: 0, md: 8 }}
-							mt={{ base: 8, md: 0 }}
-						/>
-					</Flex>
-				</Box> */}
+				</Stack> */}
 			</ContainerInside>
 		</ContainerBackground>
 	);
 }
 
-function Card({ src, title, href }) {
+const dtFormatter = new Intl.DateTimeFormat("en-US");
+
+function Card(listing: BlogListing) {
+	const headingSize = useBreakpointValue({ base: "xs", md: "sm", lg: "md" });
 	return (
-		<VStack w="100%">
-			<NextChakraLink href={`/blog/${href ?? ""}`}>
-				<Center flexDir="column">
-					<Center
-						rounded={20}
+		<Box
+			flex={1}
+			style={{ aspectRatio: "1" }}
+			bgColor="#5A60ADCC"
+			rounded={10}
+			overflow="hidden"
+			transition="transform 0.2s ease-in"
+			_hover={{
+				transform: "scale(0.95)",
+			}}
+		>
+			<NextChakraLink href={`/blog/${listing.link ?? ""}`}>
+				<Flex flexDir="column" h="100%">
+					<Box
 						bg="brand.transparent"
-						boxSize={{
-							base: "125px",
-							sm: "140px",
-							md: "200px",
-							lg: "300px",
-						}}
-						backgroundImage={src}
+						flex={1}
+						backgroundImage={listing.icon}
 						backgroundSize="cover"
 						backgroundPosition="center"
-						transition="transform 0.2s ease-in"
-						_hover={{
-							transform: "scale(1.05)",
-						}}
+					/>
+					<Flex
+						bgColor="#5A60AD"
+						px={4}
+						py={2}
+						flexDir="column"
+						align="flex-start"
 					>
-						{/* <Image
-						src={src}
-						// width={100}
-						// height={100}
-						// layout="fill"
-					/> */}
-					</Center>
-
-					<Heading
-						textAlign="center"
-						fontSize={{ base: "sm", sm: "md", md: "lg", lg: "2xl" }}
-					>
-						{title}
-					</Heading>
-				</Center>
+						<Text as="i" fontSize={12}>
+							{dtFormatter.format(new Date(listing.created_time))}{" "}
+							| {listing.category}
+						</Text>
+						<Heading size={headingSize} textAlign="left">
+							{listing.title}
+						</Heading>
+						{listing.authors ? (
+							<Text fontSize={14}>
+								{toAuthorAttribution(listing.authors)}
+							</Text>
+						) : null}
+					</Flex>
+				</Flex>
 			</NextChakraLink>
-		</VStack>
+		</Box>
 	);
 }

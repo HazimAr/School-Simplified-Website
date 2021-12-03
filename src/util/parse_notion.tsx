@@ -16,7 +16,7 @@ import "katex/dist/katex.min.css";
 import React, { cloneElement } from "react";
 import { FaPaperclip, FaRegFilePdf, FaVideo } from "react-icons/fa";
 import { InlineMath, BlockMath } from "react-katex"; // "react-latex" doesn't work for some odd reason
-import { BlogPage, FileObj } from "types";
+import { Author, BlogPage, FileObj } from "types";
 // import SyntaxHighlighter from "react-syntax-highlighter";
 // import { atelierCaveDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
@@ -436,4 +436,30 @@ export function parsePage(page: BlogPage): JSX.Element {
 		);
 	}
 	return <>{elementList}</>;
+}
+
+export function toAuthorAttribution(authors: Author[]): string {
+	if (authors?.length) {
+		let authorNames: string;
+		authorNames = "Written by ";
+		switch (authors.length) {
+			case 1:
+				authorNames += authors[0].name;
+				break;
+			case 2:
+				authorNames += authors[0].name + " and " + authors[1].name;
+				break;
+			default:
+				authorNames +=
+					authors
+						.slice(0, authors.length - 1)
+						.map((author) => author.name)
+						.join(", ") +
+					", and " +
+					authors[authors.length - 1].name;
+		}
+		return authorNames;
+	}
+
+	return null;
 }

@@ -18,8 +18,8 @@ export async function getStaticProps() {
 	const listing: BlogListing[] = (await getBlogListing())
 		.sort(
 			(a, b) =>
-				new Date(a.created_time).getTime() -
-				new Date(b.created_time).getTime()
+				new Date(b.created_time).getTime() -
+				new Date(a.created_time).getTime()
 		)
 		.slice(0, 3);
 	return { props: { listing }, revalidate: 60 };

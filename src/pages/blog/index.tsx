@@ -20,35 +20,10 @@ import Searchbar from "@components/searchbar";
 import { filter } from "fuzzaldrin-plus";
 import { cloneElement, useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { Author, BlogListing } from "types";
+import { BlogListing } from "types";
+import { toAuthorAttribution } from "util/parse_notion";
 
 const dtFormatter = new Intl.DateTimeFormat("en-US");
-
-function toAuthorAttribution(authors: Author[]): string {
-	if (authors?.length) {
-		let authorNames: string;
-		authorNames = "Written by ";
-		switch (authors.length) {
-			case 1:
-				authorNames += authors[0].name;
-				break;
-			case 2:
-				authorNames += authors[0].name + " and " + authors[1].name;
-				break;
-			default:
-				authorNames +=
-					authors
-						.slice(0, authors.length - 1)
-						.map((author) => author.name)
-						.join(", ") +
-					", and " +
-					authors[authors.length - 1].name;
-		}
-		return authorNames;
-	}
-
-	return null;
-}
 
 export default function Blog({
 	listing: listings,

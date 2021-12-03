@@ -11,7 +11,6 @@ import {
 	Text,
 	useBreakpointValue,
 	VStack,
-	Divider,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -117,7 +116,8 @@ export default function Blog({
 					</Stack>
 				</ContainerInside>
 			</Container>
-			<Divider orientation='horizontal'/>
+
+
 			<Container>
 				<ContainerInside my={5}>
 					<VStack spacing={3}>

@@ -1,4 +1,4 @@
-import { Stack, Heading, Text, VStack, Center } from "@chakra-ui/react";
+import { Stack, Heading, Text, VStack, Center, Spacer } from "@chakra-ui/react";
 import ContainerBackground from "@components/containerBackground";
 import ContainerInside from "@components/containerInside";
 import CountUp from "react-countup";
@@ -12,18 +12,21 @@ export default function Intro() {
 		>
 			<ContainerInside>
 				<Center>
-					<VStack spacing={5} maxW="60ch">
-						<Heading fontWeight="extrabold" size="3xl">
+					<VStack spacing={2} align="stretch" textAlign="left">
+						<Heading fontWeight="bold" fontSize={55}>
 							School Simplified:
 						</Heading>
-						<Heading fontWeight="bold" size="2xl">
+						<Heading
+							fontWeight="bold"
+							fontSize={35}
+							fontStyle="italic"
+						>
 							We Inspire Learning
 						</Heading>
-						<Text my="10px">
+						<Spacer minH={65} />
+						<Text fontSize={22}>
 							Through learning, we empower the next generation to
-							revolutionize the future. School Simplified is a
-							nonprofit organization dedicated to learning done
-							equally, fairly and with meaning.
+							revolutionize the future.
 						</Text>
 					</VStack>
 				</Center>
@@ -33,10 +36,10 @@ export default function Intro() {
 					flexWrap="wrap"
 					direction={{ base: "column", sm: "row" }}
 					fontSize={{ base: "lg", md: "xl" }}
-					mt={16}
+					mt={10}
 				>
 					<VStack>
-						<Heading>
+						<Heading fontSize={25}>
 							<CountUp
 								end={500}
 								suffix="M+"
@@ -44,10 +47,12 @@ export default function Intro() {
 								duration={3}
 							/>
 						</Heading>
-						<Text pb={{ base: 0, sm: 5 }}>Impressions</Text>
+						<Text pb={{ base: 0, sm: 5, md: 0 }} fontSize={16}>
+							Impressions
+						</Text>
 					</VStack>
 					<VStack>
-						<Heading>
+						<Heading fontSize={25}>
 							<CountUp
 								end={62}
 								suffix="K+"
@@ -55,16 +60,16 @@ export default function Intro() {
 								useEasing
 							/>
 						</Heading>
-						<Text>Community Members</Text>
+						<Text fontSize={16}>Community Members</Text>
 					</VStack>
 					<VStack>
-						<Heading>
+						<Heading fontSize={25}>
 							<CountUp end={1} duration={3} useEasing />
 						</Heading>
-						<Text>Mission</Text>
+						<Text fontSize={16}>Mission</Text>
 					</VStack>
 					<VStack>
-						<Heading>
+						<Heading fontSize={25}>
 							<CountUp
 								end={500}
 								suffix="+"
@@ -72,13 +77,13 @@ export default function Intro() {
 								useEasing
 							/>
 						</Heading>
-						<Text>Staff Members</Text>
+						<Text fontSize={16}>Staff Members</Text>
 					</VStack>
 					<VStack>
-						<Heading>
+						<Heading fontSize={25}>
 							<CountUp end={147} duration={3} useEasing />
 						</Heading>
-						<Text>Countries</Text>
+						<Text fontSize={16}>Countries</Text>
 					</VStack>
 				</Stack>
 			</ContainerInside>

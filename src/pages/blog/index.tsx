@@ -11,6 +11,7 @@ import {
 	Text,
 	useBreakpointValue,
 	VStack,
+	Divider,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -91,6 +92,7 @@ export default function Blog({
 							src="/timmy/blogtimmy.png"
 							maxW={{ base: 150, md: 300 }}
 						/>
+						<Box flex={1} textAlign="left">
 							<Box
 								bgImage={listings[0].icon}
 								bgSize="cover"

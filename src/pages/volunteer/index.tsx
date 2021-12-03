@@ -43,7 +43,7 @@ export default function Volunteering() {
 						<Text fontWeight="bold" mb="1rem">
 							Hi there! Applications are closed due to routine
 							maintenance. You can still explore our teams, but
-							please come back on December 4th to apply!
+							please come back on December 7th to apply!
 						</Text>
 					</ModalBody>
 				</ModalContent>

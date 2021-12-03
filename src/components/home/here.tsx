@@ -1,9 +1,9 @@
-import { Flex, Heading, Text, VStack } from "@chakra-ui/react";
+import { Image } from "@chakra-ui/image";
+import { Heading, HStack, SimpleGrid, Text, VStack } from "@chakra-ui/layout";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import NextLink from "@components/nextChakra";
-import { rounded } from "@styles/theme";
+import NextChakraLink from "@components/nextChakra";
 import React from "react";
 
 export default function Here() {
@@ -13,63 +13,66 @@ export default function Here() {
 			py="50px"
 		>
 			<ContainerInside>
-				<Flex justify="center" flexDir={{ base: "column", lg: "row" }}>
-					<Card
-						title="Free Notes"
-						description="We offer extensive, regularly updated notes for a variety of classes!"
-						button="Get Notes"
-						href="/notes"
+				<HStack
+					spacing={{ base: 8, lg: 16 }}
+					mx={{ base: 8, sm: 24, md: 16, lg: 28 }}
+				>
+					<VStack spacing={4} align="stretch" textAlign="left">
+						<Heading size="lg">Getting Started</Heading>
+						<Text>
+							School Simplified is a digital nonprofit
+							organization run by high school volunteers dedicated
+							to learning done equally, fairly and with meaning.
+						</Text>
+						<SimpleGrid columns={{ base: 1, md: 2 }} gap={4}>
+							<NextChakraLink href="/" display="block">
+								<Button
+									timmysrc="/timmy/1.png"
+									w="100%"
+									h="100%"
+								>
+									Programs
+								</Button>
+							</NextChakraLink>
+							<NextChakraLink
+								href="/organizations"
+								display="block"
+							>
+								<Button
+									timmysrc="/timmy/timmy_flying_icon.png"
+									w="100%"
+									h="100%"
+								>
+									Organizations
+								</Button>
+							</NextChakraLink>
+							<NextChakraLink href="/" display="block">
+								<Button
+									timmysrc="/timmy/3.png"
+									w="100%"
+									h="100%"
+								>
+									Resources
+								</Button>
+							</NextChakraLink>
+							<NextChakraLink href="/community" display="block">
+								<Button
+									timmysrc="/timmy/27.png"
+									w="100%"
+									h="100%"
+								>
+									Community
+								</Button>
+							</NextChakraLink>
+						</SimpleGrid>
+					</VStack>
+					<Image
+						src="/timmy/homepage_getting_started.png"
+						alt="A Timmy with a graduation cap and book pointing towards the text on the left"
+						h={{ base: 0, md: 175, lg: "initial" }}
 					/>
-					<Card
-						title="Free Tutoring"
-						description="	We offer private, personalized tutoring for every
-							subject and AP!"
-						button="Sign Up"
-						href="/tutoring"
-						mt={{ base: "25px", lg: 0 }}
-						ml={{ base: 0, lg: "25px" }}
-					/>
-					<Card
-						title="Free Essay Revision"
-						description="We offer comprehensive proofreading for all types of writing!"
-						button="Submit Essay"
-						href="/essay"
-						mt={{ base: "25px", lg: 0 }}
-						ml={{ base: 0, lg: "25px" }}
-					/>
-					<Card
-						title="Free Homework Help"
-						description="We offer free tutoring to all students willing to learn"
-						button="Request Help"
-						isExternal
-						href="/discord"
-						mt={{ base: "25px", lg: 0 }}
-						ml={{ base: 0, lg: "25px" }}
-					/>
-				</Flex>
+				</HStack>
 			</ContainerInside>
 		</Container>
-	);
-}
-
-function Card(props: any) {
-	const { title, description, button, href, isExternal, ...rest } = props;
-	return (
-		<VStack
-			rounded={rounded}
-			bg="brand.transparent"
-			w="100%"
-			justify="space-evenly"
-			p={5}
-			{...rest}
-		>
-			<Heading as="h1" color="brand.purple.dark" size="lg">
-				{title}
-			</Heading>
-			<Text>{description}</Text>
-			<NextLink href={href} isExternal={isExternal}>
-				<Button timmysrc="/timmy/25.png">{button}</Button>
-			</NextLink>
-		</VStack>
 	);
 }

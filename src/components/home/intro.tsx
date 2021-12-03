@@ -16,11 +16,7 @@ export default function Intro() {
 						<Heading fontWeight="bold" fontSize={55}>
 							School Simplified:
 						</Heading>
-						<Heading
-							fontWeight="bold"
-							fontSize={35}
-							fontStyle="italic"
-						>
+						<Heading fontWeight="bold" size="lg" fontStyle="italic">
 							We Inspire Learning
 						</Heading>
 						<Spacer minH={65} />

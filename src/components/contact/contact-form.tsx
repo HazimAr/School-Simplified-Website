@@ -1,4 +1,5 @@
 import {
+	Button,
 	Flex,
 	FormControl,
 	FormLabel,
@@ -8,7 +9,6 @@ import {
 	useBoolean,
 	useToast,
 } from "@chakra-ui/react";
-import Button from "@components/button";
 import { useReducer } from "react";
 
 type StyledInputProps = {

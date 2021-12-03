@@ -1,7 +1,12 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable import/no-default-export */
-import { Box, Center, Image, HStack } from "@chakra-ui/react";
+import { Box, Center, Image, HStack, BoxProps } from "@chakra-ui/react";
+
+type ButtonProps = {
+	type?: string;
+	timmysrc?: string;
+} & BoxProps;
 
 /**
  * The button that can have an image before text (add the source to that
@@ -11,7 +16,7 @@ import { Box, Center, Image, HStack } from "@chakra-ui/react";
  * @param props an object that carries all the props to give the button.
  * @returns the button
  */
-export default function Button(props: Record<string, any>): JSX.Element {
+export default function Button(props: ButtonProps): JSX.Element {
 	let bg: string, borderColor: string;
 	switch (props.type) {
 		// case "exciting":
@@ -54,7 +59,7 @@ export default function Button(props: Record<string, any>): JSX.Element {
 					? { transform: "scale(0.90)", boxShadow: "md" }
 					: { transform: "scale(0.90)" }
 			}
-			{...props}
+			{...(props as BoxProps)}
 		>
 			<HStack>
 				{props.timmysrc ? (

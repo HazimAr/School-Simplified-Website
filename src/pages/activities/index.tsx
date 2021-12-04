@@ -103,7 +103,7 @@ export default function Activities() {
 									_hover={{ textDecoration: "none" }}
 									p={15}
 								>
-									<Button timmySrc="/timmy/10.png">
+									<Button timmysrc="/timmy/10.png">
 										{" "}
 										Apply Now{" "}
 									</Button>

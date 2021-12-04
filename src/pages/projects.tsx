@@ -27,7 +27,7 @@ export default function Four(): JSX.Element {
 							Start Your Project Today
 						</Heading>
 						<Box>
-							<Button timmySrc="timmy/timmy_flying_icon.png">
+							<Button timmysrc="timmy/timmy_flying_icon.png">
 								Propose Project
 							</Button>
 						</Box>
@@ -106,7 +106,7 @@ export default function Four(): JSX.Element {
 								apps? Or maybe you just want to learn how to
 								code for fun. We’ll help you do just that.
 							</Text>
-							<Button timmySrc="timmy/timmy_scroll_icon.png">
+							<Button timmysrc="timmy/timmy_scroll_icon.png">
 								More Information
 							</Button>
 						</VStack>

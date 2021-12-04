@@ -88,7 +88,7 @@ function Panel(props: ActivitySlideProps): JSX.Element {
 						href={props.link}
 						_hover={{ textDecoration: "none" }}
 					>
-						<Button timmySrc="/timmy/tim_transparent_sporty.png">
+						<Button timmysrc="/timmy/tim_transparent_sporty.png">
 							Join Club
 						</Button>
 					</NextLink>

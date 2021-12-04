@@ -27,7 +27,7 @@ export default function Projects(): JSX.Element {
 						<Heading size="lg" mb={{ base: 2, md: 0 }}>
 							Start Your Project Today
 						</Heading>
-						<Button timmySrc="/timmy/timmy_flying_icon.png">
+						<Button timmysrc="/timmy/timmy_flying_icon.png">
 							Propse Project
 						</Button>
 					</Flex>

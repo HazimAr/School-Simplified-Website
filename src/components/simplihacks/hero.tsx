@@ -63,7 +63,7 @@ export default function Hero(): JSX.Element {
 										>
 											<Button
 												m={3}
-												timmySrc={button.icon}
+												timmysrc={button.icon}
 											>
 												{button.text}
 											</Button>

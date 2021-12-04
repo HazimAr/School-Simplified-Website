@@ -5,7 +5,7 @@ import { Box, Center, Image, HStack, BoxProps } from "@chakra-ui/react";
 
 type ButtonProps = {
 	type?: string;
-	timmySrc?: string;
+	timmysrc?: string;
 } & BoxProps;
 
 /**
@@ -36,9 +36,9 @@ export default function Button(props: ButtonProps): JSX.Element {
 
 	return (
 		<Box
-			pl={props.timmySrc ? 0.5 : 4}
+			pl={props.timmysrc ? 0.5 : 4}
 			pr={4}
-			py={props.timmySrc ? 0.5 : 2}
+			py={props.timmysrc ? 0.5 : 2}
 			as="button"
 			// lineHeight="1.2"
 			transition="all 0.2s ease"
@@ -62,9 +62,9 @@ export default function Button(props: ButtonProps): JSX.Element {
 			{...(props as BoxProps)}
 		>
 			<HStack>
-				{props.timmySrc ? (
+				{props.timmysrc ? (
 					<Image
-						src={props.timmySrc}
+						src={props.timmysrc}
 						alt="A small Timmy"
 						maxH={41}
 						pl={1}

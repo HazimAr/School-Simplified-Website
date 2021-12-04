@@ -49,7 +49,7 @@ export default function Blog({ listing }: { listing: BlogListing[] }) {
 							</Text>
 						</VStack>
 						<NextChakraLink href="/blog" alignSelf="flex-start">
-							<Button timmySrc="/timmy/17.png">Read More</Button>
+							<Button timmysrc="/timmy/17.png">Read More</Button>
 						</NextChakraLink>
 					</VStack>
 					<Box flex="0 0 50%" />

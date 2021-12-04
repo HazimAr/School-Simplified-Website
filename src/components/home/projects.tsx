@@ -1,5 +1,6 @@
 import { Image } from "@chakra-ui/image";
 import { Box, Flex, Heading, Stack, Text, VStack } from "@chakra-ui/layout";
+import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 
@@ -9,17 +10,28 @@ export default function Projects(): JSX.Element {
 			py={16}
 			bg="linear-gradient(180deg, rgba(99, 106, 204, 0.9) 0%, rgba(126, 134, 230, 0.747) 100%, rgba(122, 131, 247, 0.9) 100%)"
 		>
-			<ContainerInside textAlign="left">
+			<ContainerInside textAlign={{ base: "justify", md: "left" }}>
 				<VStack spacing={3} align="stretch">
-					<Heading size="lg">Start Your Project Today</Heading>
-					<Text fontSize={20}>
+					<Flex
+						justify="space-between"
+						align="center"
+						flexDir={{ base: "column", md: "row" }}
+					>
+						<Heading size="lg" mb={{ base: 2, md: 0 }}>
+							Start Your Project Today
+						</Heading>
+						<Button timmysrc="/timmy/timmy_flying_icon.png">
+							Propse Project
+						</Button>
+					</Flex>
+					<Text fontSize={{ base: null, md: 20 }}>
 						Take the chance to showcase your capability, creativity,
 						and ideas while receiving community service hours and
 						possibly becoming a project manager!
 					</Text>
 					<Stack direction={{ base: "column", md: "row" }}>
 						<Image
-							src="/timmy/flying_timmy.png"
+							src="/timmy/timmy_flying.png"
 							alt="Timmy with a propeller hat and swirl blush"
 							alignSelf="center"
 							maxW={{ base: 200, md: "40%" }}
@@ -34,6 +46,7 @@ export default function Projects(): JSX.Element {
 								<Heading fontSize={25} mb={1}>
 									What is a project?
 								</Heading>
+
 								<Text>
 									A project is a temporary endeavor that
 									creates a unique product or service

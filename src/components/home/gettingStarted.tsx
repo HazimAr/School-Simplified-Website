@@ -24,7 +24,11 @@ export default function GettingStarted() {
 							organization run by high school volunteers dedicated
 							to learning done equally, fairly and with meaning.
 						</Text>
-						<SimpleGrid columns={{ base: 1, md: 2 }} gap={4}>
+						<SimpleGrid
+							columns={{ base: 1, md: 2 }}
+							spacingX={8}
+							spacingY={4}
+						>
 							<NextChakraLink href="/" display="block">
 								<Button
 									timmysrc="/timmy/1.png"

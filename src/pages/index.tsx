@@ -1,10 +1,11 @@
 import { getBlogListing } from "@api/notion";
 import {
+	AcademicServices,
+	Blog,
+	Clubs,
 	GettingStarted,
 	Intro,
 	Testimonial,
-	Clubs,
-	Blog,
 } from "@components/home/index";
 import { BlogListing } from "types";
 
@@ -14,6 +15,7 @@ export default function Home({ listing }: { listing: BlogListing[] }) {
 			<Intro />
 			<GettingStarted />
 			<Blog listing={listing} />
+			<AcademicServices />
 			<Testimonial />
 			<Clubs />
 		</>

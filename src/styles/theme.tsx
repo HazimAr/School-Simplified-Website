@@ -62,6 +62,9 @@ const theme = extendTheme({
 				color: "inherit",
 				textDecoration: "none",
 			},
+			"a:hover": {
+				textDecoration: "none !important",
+			},
 			ul: {
 				listStyle: "none",
 			},
@@ -77,8 +80,8 @@ const theme = extendTheme({
 
 			"::-webkit-scrollbar": {
 				width: "0.6em",
-				background: 
-				"#6C7DFE linear-gradient(180deg, #5A60AD 0%, #6C7DFE 20%, #8291fd 80%, #9fa8fc 100%)",
+				background:
+					"#6C7DFE linear-gradient(180deg, #5A60AD 0%, #6C7DFE 20%, #8291fd 80%, #9fa8fc 100%)",
 			},
 
 			"::-webkit-scrollbar-track": {

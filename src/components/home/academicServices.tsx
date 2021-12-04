@@ -1,13 +1,13 @@
-import { Image } from "@chakra-ui/image";
 import {
 	Box,
 	Flex,
 	Heading,
+	Image,
 	SimpleGrid,
 	Stack,
 	Text,
 	VStack,
-} from "@chakra-ui/layout";
+} from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 
@@ -61,7 +61,7 @@ export default function AcademicServices(): JSX.Element {
 					<Heading size="md" fontWeight="normal">
 						Digital Program
 					</Heading>
-					<Text mt={6}>
+					<Text mt={6} textAlign="justify">
 						Despite being mainly based in the United States, we have
 						an online community of over 60,000 where like-minded
 						teenagers can meet and form life-lasting connections. We

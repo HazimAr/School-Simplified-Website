@@ -65,15 +65,16 @@ export default function Blog({
 					>
 						<Image
 							src="/timmy/blogtimmy.png"
-							maxW={{ base: 150, md: 300 }}
+							boxSize="345px"
+							maxW={{ base: 150, md: 345 }}
 						/>
 						<Box flex={1} textAlign="left">
 							<Box
 								bgImage={listings[0].icon}
 								bgSize="cover"
-								borderRadius="3xl"
-								h={200}
-								w="100%"
+								borderRadius="45px"
+								h= {200}
+								w="647px"
 								mb={5}
 							/>
 							<NextLink href={"/blog/" + listings[0].link}>

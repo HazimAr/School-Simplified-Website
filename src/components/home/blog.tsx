@@ -57,7 +57,7 @@ export default function Blog({ listing }: { listing: BlogListing[] }) {
 					<Box flex="0 0 50%" />
 				</Flex>
 				<SimpleGrid
-					columns={{ base: 1, md: 3 }}
+					columns={{ base: 1, md: listing.length }}
 					mt={8}
 					mx={{ base: 12, sm: 24, md: 0 }}
 					gap={{ base: 10, md: 4, lg: 10 }}

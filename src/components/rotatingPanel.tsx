@@ -5,7 +5,7 @@ import {
 	useControllableState,
 	VStack,
 } from "@chakra-ui/react";
-import useInterval from "@hooks/useInterval";
+import { useEffect } from "react";
 import { FaArrowLeft, FaArrowRight, FaCircle } from "react-icons/fa";
 
 type RotatingPanelProps = StackProps & {
@@ -21,21 +21,36 @@ export default function RotatingPanel(props: RotatingPanelProps): JSX.Element {
 	const [index, setIndex] = useControllableState({
 		defaultValue: 0,
 	});
+	let prevInterval: NodeJS.Timer;
 
-	useInterval(() => {
-		setIndex(index === innerPanels.length - 1 ? 0 : index + 1);
-	}, 5000);
+	useEffect(() => {
+		prevInterval = setInterval(() => {
+			setIndex(index === innerPanels.length - 1 ? 0 : index + 1);
+		}, 5000);
+		// console.log("initial value:", prevInterval);
+
+		return () => clearTimeout(prevInterval);
+	}, [index]);
+
+	function resetInterval() {
+		clearInterval(prevInterval);
+		prevInterval = setInterval(() => {
+			setIndex(index === innerPanels.length - 1 ? 0 : index + 1);
+		}, 5000);
+		// console.log("new value: ", prevInterval);
+	}
 
 	return (
 		<VStack spacing={3}>
 			{innerPanels[index]}
 			<Center>
 				<Center
-					onClick={() =>
+					onClick={() => {
 						setIndex(
 							index === 0 ? innerPanels.length - 1 : index - 1
-						)
-					}
+						);
+						resetInterval();
+					}}
 					w="fit-content"
 					mx={2}
 					cursor="pointer"
@@ -52,7 +67,10 @@ export default function RotatingPanel(props: RotatingPanelProps): JSX.Element {
 									idx == index ? "white" : "brand.purple.dark"
 								}
 								mx={2}
-								onClick={() => setIndex(idx)}
+								onClick={() => {
+									setIndex(idx);
+									resetInterval();
+								}}
 								cursor="pointer"
 								opacity={0.7}
 							/>
@@ -60,11 +78,12 @@ export default function RotatingPanel(props: RotatingPanelProps): JSX.Element {
 					);
 				})}
 				<Center
-					onClick={() =>
+					onClick={() => {
 						setIndex(
 							index === innerPanels.length - 1 ? 0 : index + 1
-						)
-					}
+						);
+						resetInterval();
+					}}
 					w="fit-content"
 					mx={2}
 					cursor="pointer"

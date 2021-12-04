@@ -4,6 +4,7 @@ import Clubs from "./clubs";
 import Code from "./code";
 import GettingStarted from "./gettingStarted";
 import Intro from "./intro";
+import Projects from "./projects";
 import Testimonial from "./testimonial";
 
 export {
@@ -13,5 +14,6 @@ export {
 	Code,
 	GettingStarted,
 	Intro,
+	Projects,
 	Testimonial,
 };

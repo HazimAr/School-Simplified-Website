@@ -5,6 +5,7 @@ import {
 	Clubs,
 	GettingStarted,
 	Intro,
+	Projects,
 	Testimonial,
 } from "@components/home/index";
 import { BlogListing } from "types";
@@ -16,6 +17,7 @@ export default function Home({ listing }: { listing: BlogListing[] }) {
 			<GettingStarted />
 			<Blog listing={listing} />
 			<AcademicServices />
+			<Projects />
 			<Testimonial />
 			<Clubs />
 		</>

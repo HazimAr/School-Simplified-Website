@@ -1,13 +1,13 @@
-import { Image } from "@chakra-ui/image";
 import {
 	Box,
 	Flex,
 	Heading,
+	Image,
 	SimpleGrid,
 	Stack,
 	Text,
 	VStack,
-} from "@chakra-ui/layout";
+} from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 

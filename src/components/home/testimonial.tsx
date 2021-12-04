@@ -2,7 +2,7 @@ import { Center, Divider, Flex, Heading, Text, Spacer } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 
-const Reviews = [
+const reviews = [
 	{
 		review: "They helped me over the course of 3 days redo over 9 assignments to pass the year. I want everyone to know that they are so kind and always ready to help, they are always courteous and understanding. I want to say from the bottom of my heart, thank you!",
 		name: "Dak",
@@ -18,7 +18,7 @@ const Reviews = [
 export default function Intro() {
 	return (
 		<Container
-			py={20}
+			py={12}
 			bg="linear-gradient(180deg, rgba(161, 167, 237, 0.6) 0%, rgba(108, 125, 254, 0.6) 100%);"
 		>
 			<ContainerInside textAlign="left">
@@ -37,7 +37,7 @@ export default function Intro() {
 					Don't Believe Us?
 				</Heading>
 				<Text fontSize="lg" color="white" mb={5}>
-					Ask some of our students and hear what they have to say
+					Ask some of our students and hear what they have to say!
 				</Text>
 				<Flex justify="center">
 					<Flex
@@ -49,14 +49,14 @@ export default function Intro() {
 					>
 						<Flex flex={1} my={{ base: 0, lg: 5 }} flexDir="column">
 							<Text textAlign="justify">
-								"{Reviews[0].review}"
+								"{reviews[0].review}"
 							</Text>
 							<Spacer />
 							<Heading as="h1" size="md" mt={4}>
-								{Reviews[0].name}
+								{reviews[0].name}
 							</Heading>
 							<Heading as="h2" size="xs" color="white">
-								{Reviews[0].title}
+								{reviews[0].title}
 							</Heading>
 						</Flex>
 
@@ -74,14 +74,14 @@ export default function Intro() {
 							flexDir="column"
 						>
 							<Text textAlign="justify">
-								"{Reviews[1].review}"
+								"{reviews[1].review}"
 							</Text>
 							<Spacer />
 							<Heading as="h2" size="md" mt={4}>
-								{Reviews[1].name}
+								{reviews[1].name}
 							</Heading>
 							<Heading as="h3" size="xs" color="white">
-								{Reviews[1].title}
+								{reviews[1].title}
 							</Heading>
 						</Flex>
 					</Flex>

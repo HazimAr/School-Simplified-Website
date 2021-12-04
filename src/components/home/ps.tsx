@@ -41,7 +41,7 @@ export default function ProgrammingSimplified(): JSX.Element {
 							</Heading>
 						</Box>
 						<NextChakraLink href="https://programmingsimplified.org/">
-							<Button timmysrc="/timmy/29.png">Enroll Now</Button>
+							<Button timmySrc="/timmy/29.png">Enroll Now</Button>
 						</NextChakraLink>
 					</Flex>
 					<Box rounded={5} bgImg="/code.jpg" bgSize="cover">

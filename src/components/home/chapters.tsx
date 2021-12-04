@@ -39,7 +39,7 @@ export default function Chapters(): JSX.Element {
 								free to focus on one or more areas of interest.
 							</Text>
 							<NextChakraLink href="/chapter">
-								<Button timmysrc="/timmy/timmy_globe_icon.png">
+								<Button timmySrc="/timmy/timmy_globe_icon.png">
 									Apply Now
 								</Button>
 							</NextChakraLink>

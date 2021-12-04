@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 import ContainerBackground from "@components/containerBackground";
 import ContainerInside from "@components/containerInside";
-import RotatingPanel from "@components/volunteering/rotating_panel";
+import VolunteerRotatingPanel from "@components/volunteering/rotatingPanel";
 import { useEffect } from "react";
 
 /**
@@ -89,7 +89,7 @@ export default function Volunteering() {
 					</ContainerInside>
 				</Center>
 			</ContainerBackground>
-			<RotatingPanel />
+			<VolunteerRotatingPanel />
 		</>
 	);
 }

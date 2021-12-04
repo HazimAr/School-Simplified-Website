@@ -31,7 +31,7 @@ export default function GettingStarted() {
 						>
 							<NextChakraLink href="/" display="block">
 								<Button
-									timmysrc="/timmy/1.png"
+									timmySrc="/timmy/1.png"
 									w="100%"
 									h="100%"
 								>
@@ -43,7 +43,7 @@ export default function GettingStarted() {
 								display="block"
 							>
 								<Button
-									timmysrc="/timmy/timmy_flying_icon.png"
+									timmySrc="/timmy/timmy_flying_icon.png"
 									w="100%"
 									h="100%"
 								>
@@ -52,7 +52,7 @@ export default function GettingStarted() {
 							</NextChakraLink>
 							<NextChakraLink href="/" display="block">
 								<Button
-									timmysrc="/timmy/3.png"
+									timmySrc="/timmy/3.png"
 									w="100%"
 									h="100%"
 								>
@@ -61,7 +61,7 @@ export default function GettingStarted() {
 							</NextChakraLink>
 							<NextChakraLink href="/community" display="block">
 								<Button
-									timmysrc="/timmy/27.png"
+									timmySrc="/timmy/27.png"
 									w="100%"
 									h="100%"
 								>

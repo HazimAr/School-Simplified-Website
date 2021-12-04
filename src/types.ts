@@ -109,7 +109,7 @@ export type VolunteerPanelProps = {
 	teamName: string;
 	teamDesc: string;
 	link: string;
-	functions?: string[];
+	key: string;
 };
 
 export type ActivitySlideProps = {
@@ -118,6 +118,7 @@ export type ActivitySlideProps = {
 	clubName: string;
 	clubDesc: string;
 	link: string;
+	key: string;
 };
 
 export type BlogListing = {

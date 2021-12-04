@@ -1,6 +1,6 @@
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import Clubs from "@components/activities/changing_slide";
+import ActivitiesRotatingPanel from "@components/activities/rotatingPanel";
 import { Flex, Heading } from "@chakra-ui/layout";
 
 export default function Here() {
@@ -12,7 +12,7 @@ export default function Here() {
 					<Heading size="md" fontWeight="normal" mb={7}>
 						Student Activites Program
 					</Heading>
-					<Clubs />
+					<ActivitiesRotatingPanel />
 				</Flex>
 			</ContainerInside>
 		</Container>

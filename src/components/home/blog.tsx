@@ -5,7 +5,8 @@ import {
 	Heading,
 	HStack,
 	Image,
-	Stack,
+	Spacer,
+	SimpleGrid,
 	Text,
 	VStack,
 	useBreakpointValue,
@@ -55,16 +56,16 @@ export default function Blog({ listing }: { listing: BlogListing[] }) {
 					</VStack>
 					<Box flex="0 0 50%" />
 				</Flex>
-				<Stack
-					direction={{ base: "column", md: "row" }}
+				<SimpleGrid
+					columns={{ base: 1, md: 3 }}
 					mt={8}
-					spacing={{ base: 10, md: 4, lg: 10 }}
-					// justify="space-between"
+					mx={{ base: 12, sm: 24, md: 0 }}
+					gap={{ base: 10, md: 4, lg: 10 }}
 				>
 					{listing.map((blogListing) => (
 						<Card {...blogListing} key={blogListing.link} />
 					))}
-				</Stack>
+				</SimpleGrid>
 				{/* <Stack textAlign="left" spacing={5}>
 					<Stack w={{ base: "100%", lg: "50%" }}>
 						<Heading size="lg">Check out</Heading>
@@ -122,7 +123,7 @@ function Card(listing: BlogListing) {
 				transform: "scale(0.95)",
 			}}
 		>
-			<NextChakraLink href={`/blog/${listing.link ?? ""}`}>
+			<NextChakraLink href={`/blog/${listing.link ?? ""}`} h="100%">
 				<Flex flexDir="column" h="100%">
 					<Box
 						bg="brand.transparent"

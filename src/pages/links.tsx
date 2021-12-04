@@ -19,7 +19,7 @@ export default function Links({ buttons }: { buttons: LinkButtonProps[] }) {
 			</Container>
 
 			<Container>
-				<ContainerInside align="center" mt={8}>
+				<ContainerInside mt={8}>
 					<VStack spacing={5} maxW={560}>
 						{buttons.map((button) => {
 							return <LinkButton {...button} key={button.text} />;

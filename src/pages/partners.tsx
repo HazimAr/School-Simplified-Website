@@ -28,7 +28,7 @@ export default function PartnersPage() {
 	return (
 		<>
 			<Container>
-				<ContainerInside align="center">
+				<ContainerInside>
 					<Wrap justify="center" align="center" mt={50}>
 						<WrapItem>
 							<Box maxW="60ch" textAlign="left" mt={10}>

@@ -6,7 +6,7 @@ import ContainerInside from "@components/containerInside";
 import NextChakraLink from "@components/nextChakra";
 import React from "react";
 
-export default function Here() {
+export default function GettingStarted() {
 	return (
 		<Container
 			bg="linear-gradient(180deg, rgba(90, 96, 173, 0.71) 0%, rgba(131, 145, 255, 0.71) 100%)"

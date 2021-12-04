@@ -3,7 +3,7 @@ import { Button, Icon, VStack } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
-import React from "react";
+
 import { LinkButtonProps } from "types";
 import fetchIcon from "util/react_icon_fetcher";
 import Hero from "@components/volunteering/hero";

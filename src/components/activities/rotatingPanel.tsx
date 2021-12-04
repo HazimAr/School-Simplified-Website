@@ -2,7 +2,6 @@ import { Box, Flex, Heading, ScaleFade, Text, VStack } from "@chakra-ui/react";
 import Button from "@components/button";
 import NextLink from "@components/nextChakra";
 import RotatingPanel from "@components/rotatingPanel";
-import React from "react";
 //import { MdRoundedCorner } from "react-icons/md";
 import { ActivitySlideProps } from "types";
 

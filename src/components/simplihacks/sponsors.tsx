@@ -4,7 +4,7 @@ import { Flex, Heading, Image } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
-import React from "react";
+
 import { Sponsor } from "types";
 
 const sponsors: Sponsor[] = [

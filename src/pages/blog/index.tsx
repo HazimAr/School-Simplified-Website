@@ -95,7 +95,7 @@ export default function Blog({
 			<Container>
 				<ContainerInside my={5}>
 					<VStack spacing={5}>
-					<Divider bg="white" my="20px"/>
+						<Divider bg="white" my="20px" />
 						<Searchbar
 							size={inputGroupSize}
 							maxW={{ base: "initial", md: 350, lg: 500 }}

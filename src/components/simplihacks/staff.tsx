@@ -1,7 +1,7 @@
 import { Box, Heading, SimpleGrid } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import React from "react";
+
 import SimplihacksCard from "@components/simplihacks/simplihackscard";
 import { Person } from "types";
 

@@ -16,7 +16,7 @@ import ContainerBackground from "@components/containerBackground";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
 import { rounded } from "@styles/theme";
-import React from "react";
+
 import { ArtData, SpotifyLink } from "types";
 
 const mainPlaylists: SpotifyLink[] = [

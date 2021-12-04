@@ -1,7 +1,7 @@
 import { VStack, Flex, Heading } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import React from "react";
+
 import ProjectCard from "@components/simplihacks/projectcard";
 import { ProjectWinner } from "types";
 

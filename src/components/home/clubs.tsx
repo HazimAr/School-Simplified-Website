@@ -1,7 +1,7 @@
+import { Flex, Heading } from "@chakra-ui/react";
+import ActivitiesRotatingPanel from "@components/activities/rotatingPanel";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import ActivitiesRotatingPanel from "@components/activities/rotatingPanel";
-import { Flex, Heading } from "@chakra-ui/layout";
 
 export default function Here() {
 	return (

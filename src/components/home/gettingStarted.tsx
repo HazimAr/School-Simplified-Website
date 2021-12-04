@@ -1,5 +1,11 @@
-import { Image } from "@chakra-ui/image";
-import { Heading, HStack, SimpleGrid, Text, VStack } from "@chakra-ui/layout";
+import {
+	Heading,
+	HStack,
+	Image,
+	SimpleGrid,
+	Text,
+	VStack,
+} from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";

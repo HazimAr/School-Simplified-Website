@@ -42,7 +42,7 @@ import { Author, BlogPage, FileObj } from "types";
  * @param text an object like the one given above
  * @returns an element representing the text
  */
-export function parseText(text: any) {
+export function parseText(text: any): JSX.Element {
 	if (!text.plain_text?.length) {
 		return <></>;
 	}
@@ -438,6 +438,12 @@ export function parsePage(page: BlogPage): JSX.Element {
 	return <>{elementList}</>;
 }
 
+/**
+ * Converts the given list of authors into an attribution.
+ * Usually in the form "Written by Author A and Author B", and so on
+ * @param authors the author objects to convert to an attribution string
+ * @returns an attribution string that contains the information in the given list
+ */
 export function toAuthorAttribution(authors: Author[]): string {
 	if (authors?.length) {
 		let authorNames: string;

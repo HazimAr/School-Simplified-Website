@@ -66,7 +66,7 @@ export default function Button(props: ButtonProps): JSX.Element {
 					<Image
 						src={props.timmysrc}
 						alt="A small Timmy"
-						maxH={41}
+						h={41}
 						pl={1}
 					/>
 				) : null}

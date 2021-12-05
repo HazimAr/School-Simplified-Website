@@ -7,6 +7,7 @@ import {
 	Text,
 	UnorderedList,
 	VStack,
+	Center,
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import Art from "@components/community/art";
@@ -151,15 +152,17 @@ export default function Community({
 								We organize community events, often with prizes,
 								such as:
 							</Text>
-							<UnorderedList textAlign="left" pl={10}>
-								<ListItem>Competitions</ListItem>
-								<NextLink href="/simplihacks">
-									<ListItem>Hackathons</ListItem>
-								</NextLink>
-								<ListItem>Talent Shows</ListItem>
-								<ListItem>Movie Nights</ListItem>
-								<ListItem>Game Nights</ListItem>
-							</UnorderedList>
+							<Center>
+								<UnorderedList>
+									<ListItem>Competitions</ListItem>
+									<NextLink href="/simplihacks">
+										<ListItem>Hackathons</ListItem>
+									</NextLink>
+									<ListItem>Talent Shows</ListItem>
+									<ListItem>Movie Nights</ListItem>
+									<ListItem>Game Nights</ListItem>
+								</UnorderedList>
+							</Center>
 							{/* <Heading size="sm">
 									Join our discord server to participate in
 									these events!
@@ -179,21 +182,25 @@ export default function Community({
 								We curate playlists to help you study, with
 								genres like:
 							</Text>
-							<UnorderedList textAlign="left" pl={10}>
-								{mainPlaylists.map((playlist, i: number) => {
-									return (
-										<NextLink
-											href={playlist.link}
-											key={i}
-											isExternal
-										>
-											<ListItem>
-												{playlist.title}
-											</ListItem>
-										</NextLink>
-									);
-								})}
-							</UnorderedList>
+							<Center>
+								<UnorderedList>
+									{mainPlaylists.map(
+										(playlist, i: number) => {
+											return (
+												<NextLink
+													href={playlist.link}
+													key={i}
+													isExternal
+												>
+													<ListItem>
+														{playlist.title}
+													</ListItem>
+												</NextLink>
+											);
+										}
+									)}
+								</UnorderedList>
+							</Center>
 							{/* 
 								<Heading size="5px">
 									Check out our Spotify for the complete list!
@@ -213,13 +220,15 @@ export default function Community({
 								We release daily opportunities and
 								entertainment, such as:
 							</Text>
-							<UnorderedList textAlign="left" pl={10}>
-								<ListItem>Internships</ListItem>
-								<ListItem>Job Openings</ListItem>
-								<ListItem>Student Discounts</ListItem>
-								<ListItem>Motivational Quotes</ListItem>
-								<ListItem>Fun Questions</ListItem>
-							</UnorderedList>
+							<Center>
+								<UnorderedList>
+									<ListItem>Internships</ListItem>
+									<ListItem>Job Openings</ListItem>
+									<ListItem>Student Discounts</ListItem>
+									<ListItem>Motivational Quotes</ListItem>
+									<ListItem>Fun Questions</ListItem>
+								</UnorderedList>
+							</Center>
 						</Stack>
 					</Stack>
 				</ContainerInside>

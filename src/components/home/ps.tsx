@@ -84,7 +84,7 @@ function Card(props: CardProps): JSX.Element {
 			</Text>
 			<Box bgColor="#5A60AD" px={3.5} py={2.5}>
 				<Heading size="sm">{props.name}</Heading>
-				<Text>Taught by {props.instructor}</Text>
+				{/* <Text>Taught by {props.instructor}</Text> */}
 			</Box>
 		</VStack>
 	);

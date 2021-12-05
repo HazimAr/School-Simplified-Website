@@ -17,18 +17,18 @@ export default function Projects(): JSX.Element {
 			py={16}
 			bg="linear-gradient(180deg, rgba(99, 106, 204, 0.9) 0%, rgba(126, 134, 230, 0.747) 100%, rgba(122, 131, 247, 0.9) 100%)"
 		>
-			<ContainerInside textAlign={{ base: "justify", md: "left" }}>
+			<ContainerInside textAlign="left">
 				<VStack spacing={3} align="stretch">
 					<Flex
 						justify="space-between"
-						align="center"
+						align="flex-start"
 						flexDir={{ base: "column", md: "row" }}
 					>
 						<Heading size="lg" mb={{ base: 2, md: 0 }}>
 							Start Your Project Today
 						</Heading>
 						<Button timmysrc="/timmy/timmy_flying_icon.png">
-							Propse Project
+							Propose Project
 						</Button>
 					</Flex>
 					<Text fontSize={{ base: null, md: 20 }}>

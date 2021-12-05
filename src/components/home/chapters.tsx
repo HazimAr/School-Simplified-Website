@@ -13,7 +13,9 @@ export default function Chapters(): JSX.Element {
 						Bring School Simplified To Your Community
 					</Heading>
 					<Heading size="md" fontWeight="normal">
-						Chapters Program
+						<NextChakraLink href="/chapter">
+							Chapters Program
+						</NextChakraLink>
 					</Heading>
 					<Stack
 						direction={{ base: "column", lg: "row" }}

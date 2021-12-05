@@ -2,6 +2,7 @@ import { Flex, Heading } from "@chakra-ui/react";
 import ActivitiesRotatingPanel from "@components/activities/rotatingPanel";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
+import NextChakraLink from "@components/nextChakra";
 
 export default function Here() {
 	return (
@@ -10,7 +11,9 @@ export default function Here() {
 				<Flex flexDir="column" py={12}>
 					<Heading size="lg">Join Our Clubs</Heading>
 					<Heading size="md" fontWeight="normal" mb={7}>
-						Student Activites Program
+						<NextChakraLink href="/activities">
+							Student Activites Program
+						</NextChakraLink>
 					</Heading>
 					<ActivitiesRotatingPanel />
 				</Flex>

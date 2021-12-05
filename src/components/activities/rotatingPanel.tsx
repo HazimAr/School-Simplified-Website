@@ -75,13 +75,10 @@ function Panel(props: ActivitySlideProps): JSX.Element {
 					pr={5}
 					flex={1}
 					spacing={5}
+					textAlign="left"
 				>
-					<Heading size="xl" textAlign="left">
-						{props.clubName}
-					</Heading>
-					<Text w="95%" textAlign="justify">
-						{props.clubDesc}
-					</Text>
+					<Heading size="xl">{props.clubName}</Heading>
+					<Text>{props.clubDesc}</Text>
 
 					<NextLink
 						isExternal

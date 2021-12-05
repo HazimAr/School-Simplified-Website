@@ -35,7 +35,7 @@ export default function Intro() {
 				<Heading as="h1" mb={3}>
 					Your Success is Our Success!
 				</Heading>
-				<Text fontSize="xl" color="white" textAlign="justify">
+				<Text fontSize="xl" color="white">
 					School Simplified believes that quality education should be
 					accessible to everyone with equal opportunity. As an
 					organization run by students from around the world we know

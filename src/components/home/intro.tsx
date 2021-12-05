@@ -19,7 +19,7 @@ export default function Intro() {
 						<Heading fontWeight="bold" size="lg" fontStyle="italic">
 							We Inspire Learning
 						</Heading>
-						<Spacer minH={65} />
+						<Spacer minH={10} />
 						<Text fontSize={22}>
 							Through learning, we empower the next generation to
 							revolutionize the future.

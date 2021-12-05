@@ -10,12 +10,14 @@ import {
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
+import NextChakraLink from "@components/nextChakra";
 
 type CardProps = {
 	title: string;
 	content: string;
 	timmySrc: string;
 	onLeft: boolean;
+	href: string;
 };
 
 const cardProps: CardProps[] = [
@@ -25,6 +27,7 @@ const cardProps: CardProps[] = [
 			"Master your classes and be at the top of your tests with our notes! We offer extensive and simple notes for all your needs!",
 		timmySrc: "/timmy/17_cowboy.png",
 		onLeft: false,
+		href: "/notes",
 	},
 	{
 		title: "Essay Revision",
@@ -32,6 +35,7 @@ const cardProps: CardProps[] = [
 			"Get your essays proofread by the best of the best so that you can be at the top of your class all year round!",
 		timmySrc: "/timmy/29_cowboy.png",
 		onLeft: false,
+		href: "/essay",
 	},
 	{
 		title: "Tutoring",
@@ -39,6 +43,7 @@ const cardProps: CardProps[] = [
 			"Take a shot at our private tutoring, personalized and offered by top notch students for every subject you need!",
 		timmySrc: "/timmy/16_cowboy.png",
 		onLeft: true,
+		href: "/tutoring",
 	},
 	{
 		title: "School Help",
@@ -46,6 +51,7 @@ const cardProps: CardProps[] = [
 			"To help you reach your full potential, receive one-on-one help so you can focus on the the skills and knowledge that you need!",
 		timmySrc: "/timmy/24_cowboy.png",
 		onLeft: true,
+		href: "/discord",
 	},
 ];
 
@@ -87,34 +93,44 @@ export default function AcademicServices(): JSX.Element {
 
 function Card(props: CardProps): JSX.Element {
 	return (
-		<VStack
-			rounded={5}
-			bgColor="#5A60ADCC"
-			align="stretch"
-			overflow="hidden"
-			spacing={22}
+		<NextChakraLink
+			href={props.href}
+			display="block"
+			transition="transform 0.2s ease-in"
+			_hover={{
+				transform: "scale(0.95)",
+			}}
 		>
-			<Box px={8} py={4} bgColor="#5A60AD">
-				<Heading size="md">{props.title}</Heading>
-			</Box>
-			<Stack
-				direction={props.onLeft ? "row-reverse" : "row"}
-				pl={props.onLeft ? 2 : 22}
-				pr={props.onLeft ? 22 : 2}
-				flex={1}
+			<VStack
+				rounded={5}
+				bgColor="#5A60ADCC"
+				align="stretch"
+				overflow="hidden"
+				spacing={22}
+				h="100%"
 			>
-				<Text pb={4}>{props.content}</Text>
-				<Image
-					src={props.timmySrc}
-					alt={
-						"Timmy that accompanies the " +
-						props.title +
-						" section of academic sources."
-					}
-					alignSelf="flex-end"
-					maxW="45%"
-				/>
-			</Stack>
-		</VStack>
+				<Box px={8} py={4} bgColor="#5A60AD">
+					<Heading size="md">{props.title}</Heading>
+				</Box>
+				<Stack
+					direction={props.onLeft ? "row-reverse" : "row"}
+					pl={props.onLeft ? 2 : 22}
+					pr={props.onLeft ? 22 : 2}
+					flex={1}
+				>
+					<Text pb={4}>{props.content}</Text>
+					<Image
+						src={props.timmySrc}
+						alt={
+							"Timmy that accompanies the " +
+							props.title +
+							" section of academic sources."
+						}
+						alignSelf="flex-end"
+						maxW="45%"
+					/>
+				</Stack>
+			</VStack>
+		</NextChakraLink>
 	);
 }

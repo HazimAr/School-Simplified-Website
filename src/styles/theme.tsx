@@ -64,6 +64,7 @@ const theme = extendTheme({
 			},
 			"a:hover": {
 				textDecoration: "none !important",
+				cursor: "pointer",
 			},
 			ul: {
 				listStyle: "none",

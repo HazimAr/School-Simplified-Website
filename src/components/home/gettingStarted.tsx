@@ -19,7 +19,7 @@ export default function GettingStarted() {
 		>
 			<ContainerInside>
 				<HStack
-					spacing={{ base: 8, lg: 16 }}
+					spacing={{ base: 0, md: 8, lg: 16 }}
 					mx={{ base: 8, sm: 24, md: 16, lg: 28 }}
 				>
 					<VStack spacing={4} align="stretch" textAlign="left">

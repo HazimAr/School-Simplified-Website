@@ -36,8 +36,8 @@ export default function Blog({ listing }: { listing: BlogListing[] }) {
 						/>
 					</Center>
 				</Flex>
-				<Flex direction="row">
-					<VStack spacing={8} flex="0 0 50%">
+				<Flex direction="row" mx={{ base: 12, sm: 24, md: 0 }}>
+					<VStack spacing={8} flex={{ base: 1, md: "0 0 50%" }}>
 						<VStack spacing={1} textAlign="left" align="flex-start">
 							<Heading size="lg">Check out</Heading>
 							<Heading fontWeight="bold">
@@ -52,7 +52,7 @@ export default function Blog({ listing }: { listing: BlogListing[] }) {
 							<Button timmysrc="/timmy/17.png">Read More</Button>
 						</NextChakraLink>
 					</VStack>
-					<Box flex="0 0 50%" />
+					<Box flex={{ base: null, md: "0 0 50%" }} />
 				</Flex>
 				<SimpleGrid
 					columns={{ base: 1, md: listing.length }}

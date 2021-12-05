@@ -7,12 +7,10 @@ import {
 	UnorderedList,
 	useToken,
 	Stack,
-	VStack,
 	HStack,
 	Input,
 	Button,
 	Spacer,
-	Grid,
 	Center,
 	VisuallyHidden,
 } from "@chakra-ui/react";

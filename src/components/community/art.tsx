@@ -112,10 +112,6 @@ export default function Art({ artInfo }: { artInfo: ArtData }): JSX.Element {
 					</ModalContent>
 				</Modal>
 			</Stack>
-
-			<Text textAlign="center">
-				Winning artwork from the latest event!
-			</Text>
 		</Stack>
 	);
 }

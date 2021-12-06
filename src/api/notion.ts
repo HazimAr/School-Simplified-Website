@@ -8,6 +8,7 @@ import {
 	Class,
 	GovernanceDocument,
 	GovernanceSection,
+	JobPosting,
 	LinkButtonProps,
 	NotesProps,
 	QAPair,
@@ -17,6 +18,7 @@ import {
 	Subject,
 	Unit,
 } from "types";
+import { getFile } from "util/parse_notion";
 
 const notionConfig = {
 	headers: {
@@ -682,4 +684,25 @@ export async function getLinkButtons(): Promise<LinkButtonProps[]> {
 	if (current.text) output.push(current);
 
 	return output;
+}
+
+export async function getJobPostings(): Promise<JobPosting[]> {
+	const { data } = await axios.post(
+		"https://api.notion.com/v1/databases/221eb8e2d21b4094976a1038e8e03506/query",
+		{},
+		notionConfig
+	);
+
+	return data.results.map((page: any): JobPosting => {
+		const file0 = page.properties.Image.files[0];
+		return {
+			description: page.properties.Description.rich_text,
+			rank: page.properties.Rank.select?.name ?? null,
+			form: page.properties.Form.url ?? null,
+			program: page.properties.Program.select?.name ?? null,
+			image: file0 ? getFile(file0) : null,
+			area: page.properties.Area.select?.name ?? null,
+			name: page.properties.Name.title?.[0]?.plain_text ?? null,
+		};
+	});
 }

@@ -36,10 +36,10 @@ const menuItems: MenuItem[] = [
 				name: "Events",
 				href: "/events",
 			},
-			{
-				name: "Our Organizations",
-				href: "/organizations",
-			},
+			// {
+			// 	name: "Our Organizations",
+			// 	href: "/organizations",
+			// },
 			{
 				name: "Partners",
 				href: "/partners",
@@ -113,7 +113,7 @@ const menuItems: MenuItem[] = [
 		],
 	},
 	{
-		name: "Join Us",
+		name: "Volunteer",
 		href: "/volunteer",
 	},
 	{

@@ -11,11 +11,12 @@ import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import Button from "@components/button";
 import NextChakraLink from "@components/nextChakra";
+import { rounded } from "@styles/theme";
 
 export default function Four(): JSX.Element {
 	return (
 		<>
-			<Container p="50px">
+			<Container py="50px">
 				<ContainerInside>
 					<Stack
 						direction={{ base: "column", lg: "row" }}
@@ -39,7 +40,7 @@ export default function Four(): JSX.Element {
 				</ContainerInside>
 			</Container>
 			<Container
-				p="50px"
+				py="50px"
 				bg="linear-gradient(180deg, rgba(140, 147, 228, 0.4615) 0%, rgba(167, 178, 255, 0.71) 100%);"
 			>
 				<ContainerInside>
@@ -47,6 +48,7 @@ export default function Four(): JSX.Element {
 						<Image
 							display={{ base: "none", md: "block" }}
 							src="timmy/timmy_flying.png"
+							alt="Timmy with beanie"
 						/>
 						<VStack spacing={30}>
 							<Questions
@@ -117,7 +119,7 @@ export default function Four(): JSX.Element {
 
 function Questions({ title, text }: { title: string; text: string }) {
 	return (
-		<Box borderRadius="5px" bg="rgba(90, 96, 173, .8)">
+		<Box rounded={rounded} bg="rgba(90, 96, 173, .8)">
 			<Box w="100%" bg="rgba(90, 96, 173, 1)" p="15px" borderRadius="5px">
 				<Heading textAlign="left" fontSize="22px">
 					{title}

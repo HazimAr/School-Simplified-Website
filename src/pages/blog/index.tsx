@@ -11,6 +11,7 @@ import {
 	Text,
 	useBreakpointValue,
 	VStack,
+	Divider,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -19,35 +20,10 @@ import Searchbar from "@components/searchbar";
 import { filter } from "fuzzaldrin-plus";
 import { cloneElement, useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { Author, BlogListing } from "types";
+import { BlogListing } from "types";
+import { toAuthorAttribution } from "util/parse_notion";
 
 const dtFormatter = new Intl.DateTimeFormat("en-US");
-
-function toAuthorAttribution(authors: Author[]): string {
-	if (authors?.length) {
-		let authorNames: string;
-		authorNames = "Written by ";
-		switch (authors.length) {
-			case 1:
-				authorNames += authors[0].name;
-				break;
-			case 2:
-				authorNames += authors[0].name + " and " + authors[1].name;
-				break;
-			default:
-				authorNames +=
-					authors
-						.slice(0, authors.length - 1)
-						.map((author) => author.name)
-						.join(", ") +
-					", and " +
-					authors[authors.length - 1].name;
-		}
-		return authorNames;
-	}
-
-	return null;
-}
 
 export default function Blog({
 	listing: listings,
@@ -89,15 +65,17 @@ export default function Blog({
 					>
 						<Image
 							src="/timmy/blogtimmy.png"
-							maxW={{ base: 150, md: 300 }}
+							maxW={{ base: 150, md: 250, lg: 345 }}
 						/>
-						<Box flex={1}>
+						<Box flex={1} textAlign="left">
 							<Box
 								bgImage={listings[0].icon}
 								bgSize="cover"
-								borderRadius="3xl"
+								bgPosition="center"
+								borderRadius="45px"
 								h={200}
-								w="100%"
+								w={{ base: "initial", lg: 647 }}
+								maxW={{ base: "initial", lg: 647 }}
 								mb={5}
 							/>
 							<NextLink href={"/blog/" + listings[0].link}>
@@ -116,55 +94,16 @@ export default function Blog({
 					</Stack>
 				</ContainerInside>
 			</Container>
-			<Container bg="brand.transparent">
+			<Container>
 				<ContainerInside my={5}>
-					<VStack spacing={3}>
+					<VStack spacing={5}>
+						<Divider bg="white" my="20px" />
 						<Searchbar
 							size={inputGroupSize}
 							maxW={{ base: "initial", md: 350, lg: 500 }}
 							flexShrink={1}
 							callback={setSearchTerm}
 						/>
-						<HStack spacing={2} justifyContent="center">
-							<Center
-								onClick={() => {
-									if (pageNum > 0) setPageNum(pageNum - 1);
-								}}
-								w="fit-content"
-								cursor={pageNum === 0 ? "auto" : "pointer"}
-							>
-								<Icon
-									as={FaArrowLeft}
-									boxSize={5}
-									color={pageNum === 0 ? "gray.500" : "white"}
-								/>
-							</Center>
-							<Box as="span">
-								Page {pageNum + 1} / {totalPages}
-							</Box>
-							<Center
-								onClick={() => {
-									if (pageNum < totalPages - 1)
-										setPageNum(pageNum + 1);
-								}}
-								w="fit-content"
-								cursor={
-									pageNum === totalPages - 1
-										? "auto"
-										: "pointer"
-								}
-							>
-								<Icon
-									as={FaArrowRight}
-									boxSize={5}
-									color={
-										pageNum === totalPages - 1
-											? "gray.500"
-											: "white"
-									}
-								/>
-							</Center>
-						</HStack>
 					</VStack>
 				</ContainerInside>
 			</Container>
@@ -183,6 +122,45 @@ export default function Blog({
 								})
 							)}
 					</SimpleGrid>
+				</ContainerInside>
+			</Container>
+			<Container>
+				<ContainerInside my={5}>
+					<HStack spacing={2} justifyContent="center">
+						<Center
+							onClick={() => {
+								if (pageNum > 0) setPageNum(pageNum - 1);
+							}}
+							w="fit-content"
+							cursor={pageNum === 0 ? "auto" : "pointer"}
+						>
+							<Icon
+								as={FaArrowLeft}
+								boxSize={9}
+								color={pageNum === 0 ? "gray.500" : "white"}
+							/>
+						</Center>
+						<Center
+							onClick={() => {
+								if (pageNum < totalPages - 1)
+									setPageNum(pageNum + 1);
+							}}
+							w="fit-content"
+							cursor={
+								pageNum === totalPages - 1 ? "auto" : "pointer"
+							}
+						>
+							<Icon
+								as={FaArrowRight}
+								boxSize={9}
+								color={
+									pageNum === totalPages - 1
+										? "gray.500"
+										: "white"
+								}
+							/>
+						</Center>
+					</HStack>
 				</ContainerInside>
 			</Container>
 		</>

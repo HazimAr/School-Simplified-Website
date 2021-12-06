@@ -1,4 +1,4 @@
-import { Center, } from "@chakra-ui/react";
+import { Center } from "@chakra-ui/react";
 import ContainerInside from "@components/containerInside";
 import ContainerBackground from "@components/containerBackground";
 

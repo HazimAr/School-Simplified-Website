@@ -1,21 +1,27 @@
+import { getJobPostings } from "@api/notion";
 import {
-	Heading,
-	Text,
-	VStack,
 	Center,
-	Stack,
+	Heading,
 	Modal,
-	ModalOverlay,
-	ModalContent,
-	ModalHeader,
 	ModalBody,
 	ModalCloseButton,
+	ModalContent,
+	ModalHeader,
+	ModalOverlay,
+	Stack,
+	Text,
 	useDisclosure,
+	VStack,
 } from "@chakra-ui/react";
 import ContainerBackground from "@components/containerBackground";
 import ContainerInside from "@components/containerInside";
-import RotatingPanel from "@components/volunteering/rotating_panel";
+import VolunteerRotatingPanel from "@components/volunteering/rotatingPanel";
 import { useEffect } from "react";
+import { JobPosting } from "types";
+
+type VolunteeringProps = {
+	postings: JobPosting[];
+};
 
 /**
  * The Volunteering page!
@@ -26,7 +32,9 @@ import { useEffect } from "react";
  * Needs a couple Undraw images
  * @returns the Volunteering page
  */
-export default function Volunteering() {
+export default function Volunteering({ postings }: VolunteeringProps) {
+	console.log("postings recieved!", postings);
+
 	const { isOpen, onOpen, onClose } = useDisclosure();
 	useEffect(() => {
 		onOpen();
@@ -43,7 +51,7 @@ export default function Volunteering() {
 						<Text fontWeight="bold" mb="1rem">
 							Hi there! Applications are closed due to routine
 							maintenance. You can still explore our teams, but
-							please come back on December 4th to apply!
+							please come back on December 7th to apply!
 						</Text>
 					</ModalBody>
 				</ModalContent>
@@ -89,7 +97,12 @@ export default function Volunteering() {
 					</ContainerInside>
 				</Center>
 			</ContainerBackground>
-			<RotatingPanel />
+			<VolunteerRotatingPanel />
 		</>
 	);
+}
+
+export async function getStaticProps() {
+	const props: VolunteeringProps = { postings: await getJobPostings() };
+	return { props, revalidate: 60 };
 }

@@ -1,8 +1,23 @@
-import Code from "./code";
-import Here from "./here";
-import Intro from "./intro";
-import Testimonial from "./testimonial";
+import AcademicServices from "./academicServices";
 import Blog from "./blog";
+import Chapters from "./chapters";
 import Clubs from "./clubs";
+import Code from "./code";
+import GettingStarted from "./gettingStarted";
+import Intro from "./intro";
+import ProgrammingSimplified from "./ps";
+import Projects from "./projects";
+import Testimonial from "./testimonial";
 
-export { Intro, Here, Testimonial, Code, Blog, Clubs };
+export {
+	AcademicServices,
+	Blog,
+	Chapters,
+	Clubs,
+	Code,
+	GettingStarted,
+	Intro,
+	ProgrammingSimplified,
+	Projects,
+	Testimonial,
+};

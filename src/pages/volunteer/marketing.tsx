@@ -43,7 +43,6 @@ export default function Marketing() {
 									>
 										<Button
 											bg="#7283FE"
-											md="100px"
 											w="300px"
 											h="50px"
 											textAlign="left"
@@ -62,7 +61,6 @@ export default function Marketing() {
 									>
 										<Button
 											bg="#7283FE"
-											md="100px"
 											w="300px"
 											h="50px"
 											textAlign="left"
@@ -81,7 +79,6 @@ export default function Marketing() {
 									>
 										<Button
 											bg="#7283FE"
-											md="100px"
 											w="300px"
 											h="50px"
 											textAlign="left"
@@ -102,7 +99,6 @@ export default function Marketing() {
 									>
 										<Button
 											bg="#7283FE"
-											md="100px"
 											w="300px"
 											h="50px"
 											textAlign="left"
@@ -125,7 +121,6 @@ export default function Marketing() {
 									>
 										<Button
 											bg="#7283FE"
-											md="100px"
 											w="300px"
 											h="50px"
 											textAlign="left"
@@ -146,7 +141,6 @@ export default function Marketing() {
 									>
 										<Button
 											bg="#7283FE"
-											md="100px"
 											w="300px"
 											h="50px"
 											textAlign="left"
@@ -167,7 +161,6 @@ export default function Marketing() {
 									>
 										<Button
 											bg="#7283FE"
-											md="100px"
 											w="300px"
 											h="50px"
 											textAlign="left"
@@ -186,7 +179,6 @@ export default function Marketing() {
 									>
 										<Button
 											bg="#7283FE"
-											md="100px"
 											w="300px"
 											h="50px"
 											textAlign="left"

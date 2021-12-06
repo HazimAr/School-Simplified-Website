@@ -3,7 +3,7 @@ import { Button, Icon, VStack } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
-import React from "react";
+
 import { LinkButtonProps } from "types";
 import fetchIcon from "util/react_icon_fetcher";
 import Hero from "@components/volunteering/hero";
@@ -19,7 +19,7 @@ export default function Links({ buttons }: { buttons: LinkButtonProps[] }) {
 			</Container>
 
 			<Container>
-				<ContainerInside align="center" mt={8}>
+				<ContainerInside mt={8}>
 					<VStack spacing={5} maxW={560}>
 						{buttons.map((button) => {
 							return <LinkButton {...button} key={button.text} />;

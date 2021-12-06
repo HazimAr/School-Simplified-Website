@@ -10,7 +10,7 @@ import {
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import ChangingSlide from "@components/activities/changing_slide";
+import ActivitiesRotatingPanel from "@components/activities/rotatingPanel";
 import NextLink from "@components/nextChakra";
 
 /**
@@ -28,8 +28,8 @@ export default function Activities() {
 				<ContainerInside>
 					<Center>
 						<Image
-							mr={5}
-							src="/timmy/timmy_dino.png"
+							mr={10}
+							src="/timmy/sports_timmy_flip.png"
 							w="300px"
 							display={{ base: "none", md: "block" }}
 							alt="Timmy with baseball bat"
@@ -37,36 +37,42 @@ export default function Activities() {
 						<Stack>
 							<Heading
 								textAlign="left"
-								my={5}
 								fontWeight="extrabold"
 								size="xl"
 							>
-								<b>Join Our Clubs!</b>
+								<b>Join Our Clubs</b>
 							</Heading>
-							<Text textAlign="justify">
+							<Text
+								textAlign="left"
+								size="sm"
+								mb={5}
+								textColor="#ffd470"
+							>
+								Student Activities Program
+							</Text>
+							<Text textAlign="justify" width="80%">
 								School Simplified offers virtual clubs for you
 								to connect with others from around the world who
-								share the samepassions as you! Explore your
+								share the same passions as you! Explore your
 								passions through the many clubs we offer!
 							</Text>
 						</Stack>
 					</Center>
 				</ContainerInside>
 			</Container>
-			<Container bg="linear-gradient(180deg, rgba(90, 96, 173, 0.71) 0%, rgba(108, 125, 254, 0.71) 100%);">
-				<ContainerInside w="100%" mb={21}>
-					<Heading py={30}>Our Clubs</Heading>
-					<ChangingSlide />
+			<Container bg="#8D95F9">
+				<ContainerInside w="100%" mb={30} mt={10}>
+					<ActivitiesRotatingPanel />
 				</ContainerInside>
 			</Container>
 			<Container my={90}>
 				<ContainerInside>
 					<Center>
-						<HStack spacing={50}>
+						<HStack spacing={30}>
 							<VStack align="start">
 								<h2
 									style={{
-										fontSize: "40px",
+										fontSize: "30px",
 										margin: "-20px 0px",
 									}}
 								>
@@ -75,10 +81,10 @@ export default function Activities() {
 								<h2
 									style={{
 										fontWeight: "bolder",
-										fontSize: "50px",
+										fontSize: "40px",
 									}}
 								>
-									Start Your Own!
+									Start Your Own Club!
 								</h2>
 								<Text
 									textAlign="justify"
@@ -97,12 +103,16 @@ export default function Activities() {
 									_hover={{ textDecoration: "none" }}
 									p={15}
 								>
-									<Button>Apply</Button>
+									<Button timmysrc="/timmy/10.png">
+										{" "}
+										Apply Now{" "}
+									</Button>
 								</NextLink>
 							</VStack>
 							<Image
-								src="/timmy/timmy_sports.png"
-								w="300px"
+								src="/timmy/timmy_baseball_bg.png"
+								mx={{ md: "20px" }}
+								w={{ base: "300px", md: "300px", lg: "300px" }}
 								display={{ base: "none", md: "block" }}
 								alt="Timmy with sports balls"
 							/>

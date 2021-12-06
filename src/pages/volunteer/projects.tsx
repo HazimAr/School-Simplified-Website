@@ -43,7 +43,6 @@ export default function Projects() {
 								>
 									<Button
 										bg="#7283FE"
-										md="100px"
 										w="300px"
 										h="50px"
 										textAlign="left"
@@ -64,7 +63,6 @@ export default function Projects() {
 								>
 									<Button
 										bg="#7283FE"
-										md="100px"
 										w="300px"
 										h="50px"
 										textAlign="left"
@@ -83,7 +81,6 @@ export default function Projects() {
 								>
 									<Button
 										bg="#7283FE"
-										md="100px"
 										w="300px"
 										h="50px"
 										textAlign="left"

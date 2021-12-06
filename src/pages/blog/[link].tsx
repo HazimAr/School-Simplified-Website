@@ -136,11 +136,8 @@ export default function BlogPage_({
 													<Center key={index}>
 														<Image
 															src={
-																author
-																	.avatar_url
-																	?.length
-																	? author.avatar_url
-																	: "/staff/default.png"
+																author?.avatar_url ??
+																"/staff/default.png"
 															}
 															boxSize={30}
 															borderRadius={15}

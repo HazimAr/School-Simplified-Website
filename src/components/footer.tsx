@@ -7,8 +7,10 @@ import {
 	UnorderedList,
 	useToken,
 	Stack,
-	VStack,
-	Grid,
+	HStack,
+	Input,
+	Button,
+	Spacer,
 	Center,
 	VisuallyHidden,
 } from "@chakra-ui/react";
@@ -92,10 +94,10 @@ export default function Footer() {
 						</Stack>
 						<Stack>
 							<Heading as="h3" size="md">
-								Join Us
+								Programs
 							</Heading>
 							<UnorderedList styleType="none">
-								{join.map((item) => (
+								{programs.map((item) => (
 									<ListItem key={item.name}>
 										<NextLink href={item.link}>
 											<Text fontSize="xs">
@@ -140,26 +142,35 @@ export default function Footer() {
 								</UnorderedList>
 							</Stack>
 						</Stack>
+						{/* <Stack>
+							<Heading as="h3" size="md">
+								Newsletter
+							</Heading>
+							<Text fontSize="xs">
+								Join our newsletter to receive weekly news to
+								stay updated!
+							</Text>
+						</Stack> */}
 						<Stack>
-							{/* <Heading as="h3" size="md">
+							<Heading as="h3" size="md">
 								Newsletter
 							</Heading>
 							<Text fontSize="sm" maxW="40ch">
-								Join over 000,000 people who recieve weekly news
-								to stay updated!
+								Join our newsletter to receive weekly news to
+								stay updated!
 							</Text>
 							<HStack>
-								<Input placeholder="Your Email Here" />
+								<Input placeholder="Your email..." />
 
 								<Button rounded="10px" w="35%">
-									Subscribe
+									Sign Up
 								</Button>
 							</HStack>
-							<Spacer /> */}
+							<Spacer />
 
-							<Grid
+							<HStack
 								templateColumns="repeat(3, 1fr)"
-								gap={3}
+								gap={2}
 								py={10}
 							>
 								{socials.map((item) => {
@@ -174,7 +185,7 @@ export default function Footer() {
 										</Center>
 									);
 								})}
-							</Grid>
+							</HStack>
 						</Stack>
 					</Flex>
 				</ContainerInside>
@@ -185,24 +196,24 @@ export default function Footer() {
 						justify="space-between"
 						align="center"
 						color="text.200"
+						margin="20px"
 					>
 						<Text fontSize="xs">
 							School Simplified © 2021 All Rights Reserved
 						</Text>
-						<VStack>
-							<Text fontSize="xs">
-								School Simplified Inc. | 8 The Green, Dover, DE
-								19901
-							</Text>
-							<Text fontSize="xs">
-								Made with 💖 by passionate{" "}
-								<NextLink href="https://github.com/HazimAr/School-Simplified">
-									{" "}
-									developers
-								</NextLink>{" "}
-								and designers
-							</Text>
-						</VStack>
+
+						<Text fontSize="xs">
+							School Simplified Inc. | 8 The Green, Dover, DE
+							19901
+						</Text>
+						<Text fontSize="xs">
+							Made with love by passionate{" "}
+							<NextLink href="https://github.com/HazimAr/School-Simplified">
+								{" "}
+								developers
+							</NextLink>{" "}
+							and designers
+						</Text>
 					</Flex>
 				</ContainerInside>
 			</Container>
@@ -218,20 +229,24 @@ const about = [
 		link: "/",
 	},
 	{
-		name: "Leadership",
+		name: "Volunteer",
 		link: "/leadership",
 	},
-	// {
-	// 	name: "Our Organizations",
-	// 	link: "/organizations",
-	// },
 	{
 		name: "Community",
 		link: "/community",
 	},
 	{
+		name: "Organizations",
+		link: "/organizations",
+	},
+	{
 		name: "Partners",
 		link: "/partners",
+	},
+	{
+		name: "Leadership",
+		link: "/leadership",
 	},
 ];
 
@@ -245,8 +260,12 @@ const resources = [
 		link: "/tutoring",
 	},
 	{
-		name: "Essay Revisions",
+		name: "Essay Revision",
 		link: "/essay",
+	},
+	{
+		name: "SAT Prep",
+		link: "/sat",
 	},
 	{
 		name: "Homework Help",
@@ -282,28 +301,28 @@ const support = [
 	},
 ];
 
-const join = [
+const programs = [
 	{
-		name: "Volunteer",
-		link: "/volunteer",
-	},
-	{
-		name: "Become A Chapter",
+		name: "Chapters",
 		link: "/chapter",
-	},
-	{
-		name: "Accelerate Your Organization",
-		link: "/accelerate",
 	},
 	{
 		name: "Student Activities",
 		link: "/activities",
 	},
+	{
+		name: "Editorial",
+		link: "/editorial",
+	},
+	{
+		name: "Programming Simplified",
+		link: "https://programmingsimplified.org/",
+	},
 ];
 
 const advertise = [
 	{
-		name: "Brand Policy",
+		name: "Media Kit",
 		link: "https://drive.google.com/file/d/1vM3wyYe4J0x7_wZ91LpH480gISL10FIU/view?usp=sharing",
 	},
 	{

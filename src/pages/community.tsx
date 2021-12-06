@@ -7,6 +7,7 @@ import {
 	Text,
 	UnorderedList,
 	VStack,
+	Center,
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import Art from "@components/community/art";
@@ -15,8 +16,9 @@ import Container from "@components/container";
 import ContainerBackground from "@components/containerBackground";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
+import NextChakraLink from "@components/nextChakra";
 import { rounded } from "@styles/theme";
-import React from "react";
+
 import { ArtData, SpotifyLink } from "types";
 
 const mainPlaylists: SpotifyLink[] = [
@@ -67,6 +69,15 @@ export default function Community({
 								have opportunities to make new friends from all
 								around the world.
 							</Text>
+							<NextChakraLink href="/discord" display="block">
+								<Button
+									timmysrc="/timmy/27.png"
+									w="100%"
+									h="100%"
+								>
+									Join Now
+								</Button>
+							</NextChakraLink>
 						</VStack>
 						<Art artInfo={artInfo} />
 					</Stack>
@@ -80,7 +91,7 @@ export default function Community({
 				<ContainerInside>
 					<Stack
 						direction={{ base: "column", md: "row" }}
-						spacing={{ base: 5, md: 10 }}
+						spacing={{ base: 5, md: 20 }}
 						alignItems="center"
 					>
 						<VStack
@@ -92,136 +103,139 @@ export default function Community({
 							<Heading textAlign={{ base: "center", md: "left" }}>
 								Our Discord Server
 							</Heading>
-
-							<Text textAlign="justify">
+							<Text textAlign="justify" py={3}>
 								Our Discord server offers all of the features
-								above, and more! Our 60k members are high school
-								students who help each other with academics,
+								above, and more! We have 60k members, who are
+								mainly college, middle, and high school
+								students, which help each other with academics,
 								extracurricular activities, and general life.
+							</Text>
+							<Text textAlign="justify">
 								Communication is through text chat, voice calls,
 								and other methods!
 							</Text>
-
-							<NextLink
-								href="https://discord.com/invite/school"
-								isExternal
-								w="fit-content"
-							>
-								<Button>Join Our Discord</Button>
-							</NextLink>
 						</VStack>
 						<Stack
 							align={{ base: "center", md: "left" }}
 							flexDir={{ base: "column", md: "row" }}
 						>
 							<Image
-								src="/timmy/24.png"
-								alt="timmy holding a ticket"
-								w="300px"
-							/>
-							<Image
-								src="/timmy/25.png"
-								alt="timmy holding puzzle pieces"
+								src="timmy/timmy_dino.png"
+								alt="timmy dino"
 								w="300px"
 							/>
 						</Stack>
 					</Stack>
 					{/* <Divider size="1px" h="20px" /> */}
+				</ContainerInside>
+			</Container>
+
+			<Container bg="rgba(141, 149, 249, 0.71)">
+				<ContainerInside>
 					<Stack
 						direction={{ base: "column", md: "row" }}
 						justify="center"
 						spacing={10}
-						textAlign="center"
-						pt="80px"
+						textAlign={{ base: "center", md: "left" }}
+						py={20}
 					>
-						<VStack
+						<Stack
 							flex={1}
-							backgroundColor="brand.transparent"
+							backgroundColor="brand.purple.dark"
 							p={8}
 							rounded={rounded}
 							boxShadow="lg"
 							justify="center"
 						>
 							<Heading>Events</Heading>
-							<Heading size="sm" as="i">
+							<Text>
 								We organize community events, often with prizes,
 								such as:
-							</Heading>
-							<UnorderedList textAlign="left">
-								<ListItem>Competitions</ListItem>
-								<NextLink href="/simplihacks">
-									<ListItem>Hackathons</ListItem>
-								</NextLink>
-								<ListItem>Talent Shows</ListItem>
-								<ListItem>Movie Nights</ListItem>
-								<ListItem>Game Nights</ListItem>
-							</UnorderedList>
+							</Text>
+							<Center>
+								<UnorderedList>
+									<ListItem>Competitions</ListItem>
+									<NextLink href="/simplihacks">
+										<ListItem>Hackathons</ListItem>
+									</NextLink>
+									<ListItem>Talent Shows</ListItem>
+									<ListItem>Movie Nights</ListItem>
+									<ListItem>Game Nights</ListItem>
+								</UnorderedList>
+							</Center>
 							{/* <Heading size="sm">
 									Join our discord server to participate in
 									these events!
 								</Heading> */}
-						</VStack>
+						</Stack>
 
-						<VStack
+						<Stack
 							flex={1}
-							backgroundColor="brand.transparent"
+							backgroundColor="brand.purple.dark"
 							p={8}
 							rounded={rounded}
 							boxShadow="lg"
 							justify="center"
 						>
 							<Heading>Music</Heading>
-							<Heading size="sm" as="i">
+							<Text>
 								We curate playlists to help you study, with
 								genres like:
-							</Heading>
-							<UnorderedList textAlign="left">
-								{mainPlaylists.map((playlist, i: number) => {
-									return (
-										<NextLink
-											href={playlist.link}
-											key={i}
-											isExternal
-										>
-											<ListItem>
-												{playlist.title}
-											</ListItem>
-										</NextLink>
-									);
-								})}
-							</UnorderedList>
+							</Text>
+							<Center>
+								<UnorderedList>
+									{mainPlaylists.map(
+										(playlist, i: number) => {
+											return (
+												<NextLink
+													href={playlist.link}
+													key={i}
+													isExternal
+												>
+													<ListItem>
+														{playlist.title}
+													</ListItem>
+												</NextLink>
+											);
+										}
+									)}
+								</UnorderedList>
+							</Center>
 							{/* 
 								<Heading size="5px">
 									Check out our Spotify for the complete list!
 								</Heading> */}
-						</VStack>
+						</Stack>
 
-						<VStack
+						<Stack
 							flex={1}
-							backgroundColor="brand.transparent"
+							backgroundColor="brand.purple.dark"
 							p={8}
 							rounded={rounded}
 							boxShadow="lg"
 							justify="center"
 						>
 							<Heading>Daily</Heading>
-							<Heading size="sm" as="i">
+							<Text>
 								We release daily opportunities and
 								entertainment, such as:
-							</Heading>
-							<UnorderedList textAlign="left">
-								<ListItem>Internship/ Job Openings</ListItem>
-								<ListItem>Student Discounts</ListItem>
-								<ListItem>Motivational Quotes</ListItem>
-								<ListItem>Fun Questions</ListItem>
-							</UnorderedList>
-						</VStack>
+							</Text>
+							<Center>
+								<UnorderedList>
+									<ListItem>Internships</ListItem>
+									<ListItem>Job Openings</ListItem>
+									<ListItem>Student Discounts</ListItem>
+									<ListItem>Motivational Quotes</ListItem>
+									<ListItem>Fun Questions</ListItem>
+								</UnorderedList>
+							</Center>
+						</Stack>
 					</Stack>
 				</ContainerInside>
 			</Container>
 
-			<Container py={10}>
-				<ContainerInside></ContainerInside>
+			<Container>
+				<ContainerInside py={10}></ContainerInside>
 			</Container>
 
 			<SocialMedias />

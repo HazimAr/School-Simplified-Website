@@ -33,8 +33,8 @@ export default function PartnersPage() {
 						<WrapItem>
 							<Box maxW="60ch" textAlign="left" mt={10}>
 								<Heading mb={10}>
-									A network for you to become a part of the
-									journey
+									A Network for You to Become a Part of the
+									Journey
 								</Heading>
 								<Text my={5}>
 									Connect with us, take advantage of our
@@ -44,6 +44,29 @@ export default function PartnersPage() {
 								{/* <NextLink href="/notes">
 							<Button>Get Free Help</Button>
 						</NextLink> */}
+								<Center>
+									<NextLink
+										href="https://docs.google.com/forms/d/e/1FAIpQLScxSrndCBz1VUA-fv5TvfmEpdowUKws1euU4nuxMcSE51JiZA/viewform?usp=sf_link"
+										w="fit-content"
+									>
+										<StyledButton
+											display="block"
+											width={{
+												base: "50",
+												md: "50",
+												sm: "40",
+											}}
+										>
+											<Image
+												src="/timmy/23.png"
+												w="30px"
+												h="30px"
+												mr="10px"
+											/>
+											Apply To Partner
+										</StyledButton>
+									</NextLink>
+								</Center>
 							</Box>
 						</WrapItem>
 
@@ -51,24 +74,13 @@ export default function PartnersPage() {
 							<Box textAlign="left">
 								<Image
 									maxH={400}
-									src="/timmy/23.png"
+									src="/timmy/timmy_business.png"
 									alt="Timmy with graduation cap"
 									display={{ base: "none", md: "block" }}
 								/>
 							</Box>
 						</WrapItem>
 					</Wrap>
-					<NextLink
-						href="https://docs.google.com/forms/d/e/1FAIpQLScxSrndCBz1VUA-fv5TvfmEpdowUKws1euU4nuxMcSE51JiZA/viewform?usp=sf_link"
-						w="fit-content"
-					>
-						<StyledButton
-							display="block"
-							width={{ base: "50", md: "50", sm: "40" }}
-						>
-							Apply Now
-						</StyledButton>
-					</NextLink>
 
 					<Divider bg="white" my={10} />
 				</ContainerInside>
@@ -77,20 +89,14 @@ export default function PartnersPage() {
 			<Container>
 				<ContainerInside>
 					<Heading mb={10}>Our Partners</Heading>
-					<HStack
-						bg="brand.transparent"
-						borderRadius="25px"
-						spacing={0}
-					>
+					<HStack bg="#FFFFFFCC" borderRadius="25px" spacing={0}>
 						{partners.map((partnerMap, index) => {
 							return (
 								<PartnerButton
 									onClick={() => {
 										setPartner(index);
 									}}
-									bg={
-										partner == index && "brand.transparent2"
-									}
+									bg={partner == index && "#FFFFFFE5"}
 									key={partnerMap.name}
 								>
 									{partnerMap.name}
@@ -102,17 +108,17 @@ export default function PartnersPage() {
 						columns={{ sm: 2, md: 3 }}
 						spacing={6}
 						minChildWidth={{
-							base: 170,
-							sm: 140,
-							md: 250,
-							lg: 200,
+							base: 200,
+							sm: 170,
+							md: 280,
+							lg: 230,
 						}}
 						spacingY={0}
 					>
 						{partners[partner].data.map((partnerData) => {
 							const cell = (
 								<Cell
-									h="200px"
+									h="180px"
 									key={partnerData.name}
 									alt={partnerData.name}
 									src={partnerData.src}
@@ -147,7 +153,7 @@ type Partner = {
 
 const partners: PartnerGroup[] = [
 	{
-		name: "Organization Partners",
+		name: "Academic Partners",
 		data: [
 			{
 				name: "Versatile Node",
@@ -179,7 +185,7 @@ const partners: PartnerGroup[] = [
 		],
 	},
 	{
-		name: "Event Partners",
+		name: "Community Partners",
 		data: [
 			{
 				name: "Inspirit AI",
@@ -257,7 +263,10 @@ function PartnerButton({ onClick, children, bg }) {
 			_hover={{ background: "brand.transparent2" }}
 			transition="background 0.2s ease-in"
 			bg={bg}
-			borderRadius="25px"
+			borderRadius="15px"
+			color="#5A60ADCC"
+			fontWeight="bold"
+			fontSize="xl"
 		>
 			{children}
 		</Box>
@@ -274,7 +283,8 @@ function Cell({ h, src, alt, desc }): JSX.Element {
 			<PopoverTrigger>
 				<Center
 					bg="#D8D6EC"
-					rounded="lg"
+					//rounded="lg"
+					borderRadius="40px"
 					mt={10}
 					onMouseEnter={() => {
 						if (timeout) clearTimeout(timeout);

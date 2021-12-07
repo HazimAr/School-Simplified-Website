@@ -1,5 +1,6 @@
 import {
 	Center,
+	HStack,
 	Icon,
 	StackProps,
 	useControllableState,
@@ -43,7 +44,7 @@ export default function RotatingPanel(props: RotatingPanelProps): JSX.Element {
 	return (
 		<VStack spacing={3}>
 			{innerPanels[index]}
-			<Center>
+			<HStack spacing={4}>
 				<Center
 					onClick={() => {
 						setIndex(
@@ -52,31 +53,33 @@ export default function RotatingPanel(props: RotatingPanelProps): JSX.Element {
 						resetInterval();
 					}}
 					w="fit-content"
-					mx={2}
 					cursor="pointer"
 				>
 					<Icon as={FaArrowLeft} boxSize={5} />
 				</Center>
-				{props.innerPanelProps.map((props, idx: number) => {
-					return (
-						<Center key={props.key}>
-							<Icon
-								as={FaCircle}
-								boxSize={3}
-								color={
-									idx == index ? "white" : "brand.purple.dark"
-								}
-								mx={2}
-								onClick={() => {
-									setIndex(idx);
-									resetInterval();
-								}}
-								cursor="pointer"
-								opacity={0.7}
-							/>
-						</Center>
-					);
-				})}
+				<Center flexWrap="wrap">
+					{props.innerPanelProps.map((props, idx: number) => {
+						return (
+							<Center key={props.key} p={2}>
+								<Icon
+									as={FaCircle}
+									boxSize={3}
+									color={
+										idx == index
+											? "white"
+											: "brand.purple.dark"
+									}
+									onClick={() => {
+										setIndex(idx);
+										resetInterval();
+									}}
+									cursor="pointer"
+									opacity={0.7}
+								/>
+							</Center>
+						);
+					})}
+				</Center>
 				<Center
 					onClick={() => {
 						setIndex(
@@ -85,12 +88,11 @@ export default function RotatingPanel(props: RotatingPanelProps): JSX.Element {
 						resetInterval();
 					}}
 					w="fit-content"
-					mx={2}
 					cursor="pointer"
 				>
 					<Icon as={FaArrowRight} boxSize={5} />
 				</Center>
-			</Center>
+			</HStack>
 		</VStack>
 	);
 }

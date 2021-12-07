@@ -1,25 +1,25 @@
 import {
 	Box,
+	Button,
+	Center,
 	Flex,
 	Heading,
+	HStack,
+	Input,
 	ListItem,
+	Spacer,
+	Stack,
 	Text,
 	UnorderedList,
 	useToken,
-	Stack,
-	HStack,
-	Input,
-	Button,
-	Spacer,
-	Center,
 	VisuallyHidden,
+	VStack,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
-import Wave from "react-wavify";
-
 import { socials } from "config";
+import Wave from "react-wavify";
 
 export default function Footer() {
 	const purple = useToken("colors", "brand.purple.light");
@@ -39,12 +39,13 @@ export default function Footer() {
 			</Box>
 			<Container bg="brand.purple.light" mt="-8px">
 				<ContainerInside pb={5}>
-					<Flex
+					<Stack
 						justify="space-between"
-						flexDir={{ base: "column", sm: "row" }}
-						textAlign={{ base: "center", md: "left" }}
+						direction={{ base: "column", sm: "row" }}
+						textAlign={{ base: "center", sm: "left" }}
+						spacing={3}
 					>
-						<Stack>
+						<VStack align="stretch" spacing={1} flex={1}>
 							<Heading as="h3" size="md">
 								About
 							</Heading>
@@ -59,7 +60,7 @@ export default function Footer() {
 									</ListItem>
 								))}
 							</UnorderedList>
-						</Stack>
+						</VStack>
 						{/* <Stack>
 							<Heading as="h3" size="md">
 								Services
@@ -76,7 +77,7 @@ export default function Footer() {
 								))}
 							</UnorderedList>
 						</Stack> */}
-						<Stack>
+						<VStack align="stretch" spacing={1} flex={1}>
 							<Heading as="h3" size="md">
 								Resources
 							</Heading>
@@ -91,8 +92,8 @@ export default function Footer() {
 									</ListItem>
 								))}
 							</UnorderedList>
-						</Stack>
-						<Stack>
+						</VStack>
+						<VStack align="stretch" spacing={1} flex={1}>
 							<Heading as="h3" size="md">
 								Programs
 							</Heading>
@@ -107,41 +108,37 @@ export default function Footer() {
 									</ListItem>
 								))}
 							</UnorderedList>
-						</Stack>
-						<Stack>
-							<Stack>
-								<Heading as="h3" size="md">
-									Support
-								</Heading>
-								<UnorderedList styleType="none">
-									{support.map((item) => (
-										<ListItem key={item.name}>
-											<NextLink href={item.link}>
-												<Text fontSize="xs">
-													{item.name}
-												</Text>
-											</NextLink>
-										</ListItem>
-									))}
-								</UnorderedList>
-							</Stack>
-							<Stack>
-								<Heading as="h3" size="md">
-									Advertise
-								</Heading>
-								<UnorderedList styleType="none">
-									{advertise.map((item) => (
-										<ListItem key={item.name}>
-											<NextLink href={item.link}>
-												<Text fontSize="xs">
-													{item.name}
-												</Text>
-											</NextLink>
-										</ListItem>
-									))}
-								</UnorderedList>
-							</Stack>
-						</Stack>
+						</VStack>
+						<Flex flexDir="column" align="stretch" flex={1}>
+							<Heading as="h3" size="md" mb={1}>
+								Support
+							</Heading>
+							<UnorderedList styleType="none" mb={3} ml={0}>
+								{support.map((item) => (
+									<ListItem key={item.name}>
+										<NextLink href={item.link}>
+											<Text fontSize="xs">
+												{item.name}
+											</Text>
+										</NextLink>
+									</ListItem>
+								))}
+							</UnorderedList>
+							<Heading as="h3" size="md" mb={1}>
+								Advertise
+							</Heading>
+							<UnorderedList styleType="none" ml={0}>
+								{advertise.map((item) => (
+									<ListItem key={item.name}>
+										<NextLink href={item.link}>
+											<Text fontSize="xs">
+												{item.name}
+											</Text>
+										</NextLink>
+									</ListItem>
+								))}
+							</UnorderedList>
+						</Flex>
 						{/* <Stack>
 							<Heading as="h3" size="md">
 								Newsletter
@@ -151,15 +148,15 @@ export default function Footer() {
 								stay updated!
 							</Text>
 						</Stack> */}
-						<Stack>
+						<VStack align="stretch" spacing={1} flex={3}>
 							<Heading as="h3" size="md">
 								Newsletter
 							</Heading>
-							<Text fontSize="sm" maxW="40ch">
+							<Text fontSize="sm">
 								Join our newsletter to receive weekly news to
 								stay updated!
 							</Text>
-							<HStack>
+							<HStack pt={2}>
 								<Input placeholder="Your email..." />
 
 								<Button rounded="10px" w="35%">
@@ -168,11 +165,7 @@ export default function Footer() {
 							</HStack>
 							<Spacer />
 
-							<HStack
-								templateColumns="repeat(3, 1fr)"
-								gap={2}
-								py={10}
-							>
+							<HStack spacing={2} pt={5} justify="center">
 								{socials.map((item) => {
 									return (
 										<Center key={item.link}>
@@ -186,8 +179,8 @@ export default function Footer() {
 									);
 								})}
 							</HStack>
-						</Stack>
-					</Flex>
+						</VStack>
+					</Stack>
 				</ContainerInside>
 			</Container>
 			<Container bg="brand.purple.dark" py="10px">

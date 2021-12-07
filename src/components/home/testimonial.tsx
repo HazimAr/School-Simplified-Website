@@ -63,7 +63,7 @@ const reviews: Review[] = [
 		review: "I’ve had multiple experiences with School Simplified on Discord, and it has been great so far! I love how kind people are and the dedication each person has to help you into succeeding in your assignments/homework! They help you understand and guide you along the way!",
 		name: "Shania",
 		title: "Homework Help",
-		key: "S",
+		key: "Shanty",
 	},
 	{
 		review: "I wanna take all the math helpers honestly. You all are so unbelievably patient when it comes to helping with homework, and all my experiences with tutors were all extremely pleasant and helped me learn easily.",

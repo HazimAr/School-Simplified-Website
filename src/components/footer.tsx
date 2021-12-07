@@ -7,7 +7,7 @@ import {
 	HStack,
 	Input,
 	ListItem,
-	Spacer,
+	SimpleGrid,
 	Stack,
 	Text,
 	UnorderedList,
@@ -45,22 +45,121 @@ export default function Footer() {
 						textAlign={{ base: "center", sm: "left" }}
 						spacing={3}
 					>
-						<VStack align="stretch" spacing={1} flex={1}>
-							<Heading as="h3" size="md">
-								About
-							</Heading>
-							<UnorderedList styleType="none">
-								{about.map((item) => (
-									<ListItem key={item.name}>
-										<NextLink href={item.link}>
-											<Text fontSize="xs">
-												{item.name}
-											</Text>
-										</NextLink>
-									</ListItem>
-								))}
-							</UnorderedList>
-						</VStack>
+						<SimpleGrid
+							columns={{ base: 1, md: 2, lg: 4 }}
+							gap={3}
+							flex={{ base: 3, lg: 4 }}
+						>
+							<VStack
+								align="stretch"
+								spacing={1}
+								gridColumn={1}
+								gridRowStart={1}
+								gridRowEnd={{ base: 2, lg: 3 }}
+							>
+								<Heading as="h3" size="md">
+									About
+								</Heading>
+								<UnorderedList styleType="none">
+									{about.map((item) => (
+										<ListItem key={item.name}>
+											<NextLink href={item.link}>
+												<Text fontSize="xs">
+													{item.name}
+												</Text>
+											</NextLink>
+										</ListItem>
+									))}
+								</UnorderedList>
+							</VStack>
+							<VStack
+								align="stretch"
+								spacing={1}
+								gridColumn={{ base: 1, md: 2 }}
+								gridRowStart={{ base: 2, md: 1 }}
+								gridRowEnd={{ base: 3, md: 2, lg: 3 }}
+							>
+								<Heading as="h3" size="md">
+									Resources
+								</Heading>
+								<UnorderedList styleType="none">
+									{resources.map((item) => (
+										<ListItem key={item.name}>
+											<NextLink href={item.link}>
+												<Text fontSize="xs">
+													{item.name}
+												</Text>
+											</NextLink>
+										</ListItem>
+									))}
+								</UnorderedList>
+							</VStack>
+							<VStack
+								align="stretch"
+								spacing={1}
+								gridColumn={{ base: 1, lg: 3 }}
+								gridRowStart={{ base: 3, md: 2, lg: 1 }}
+								gridRowEnd={{ base: 4, lg: 3 }}
+							>
+								<Heading as="h3" size="md">
+									Programs
+								</Heading>
+								<UnorderedList styleType="none">
+									{programs.map((item) => (
+										<ListItem key={item.name}>
+											<NextLink href={item.link}>
+												<Text fontSize="xs">
+													{item.name}
+												</Text>
+											</NextLink>
+										</ListItem>
+									))}
+								</UnorderedList>
+							</VStack>
+							<VStack
+								align="stretch"
+								spacing={1}
+								gridColumn={{ base: 1, md: 2, lg: 4 }}
+								gridRow={{ base: 4, md: 2, lg: 1 }}
+							>
+								<Heading as="h3" size="md" mb={1}>
+									Support
+								</Heading>
+								<UnorderedList styleType="none" mb={3} ml={0}>
+									{support.map((item) => (
+										<ListItem key={item.name}>
+											<NextLink href={item.link}>
+												<Text fontSize="xs">
+													{item.name}
+												</Text>
+											</NextLink>
+										</ListItem>
+									))}
+								</UnorderedList>
+							</VStack>
+							<VStack
+								align="stretch"
+								spacing={1}
+								gridColumn={{ base: 1, md: 2, lg: 4 }}
+								gridRow={{ base: 5, md: 3, lg: 2 }}
+							>
+								<Heading as="h3" size="md" mb={1}>
+									Advertise
+								</Heading>
+								<UnorderedList styleType="none" ml={0}>
+									{advertise.map((item) => (
+										<ListItem key={item.name}>
+											<NextLink href={item.link}>
+												<Text fontSize="xs">
+													{item.name}
+												</Text>
+											</NextLink>
+										</ListItem>
+									))}
+								</UnorderedList>
+							</VStack>
+						</SimpleGrid>
+
 						{/* <Stack>
 							<Heading as="h3" size="md">
 								Services
@@ -77,68 +176,6 @@ export default function Footer() {
 								))}
 							</UnorderedList>
 						</Stack> */}
-						<VStack align="stretch" spacing={1} flex={1}>
-							<Heading as="h3" size="md">
-								Resources
-							</Heading>
-							<UnorderedList styleType="none">
-								{resources.map((item) => (
-									<ListItem key={item.name}>
-										<NextLink href={item.link}>
-											<Text fontSize="xs">
-												{item.name}
-											</Text>
-										</NextLink>
-									</ListItem>
-								))}
-							</UnorderedList>
-						</VStack>
-						<VStack align="stretch" spacing={1} flex={1}>
-							<Heading as="h3" size="md">
-								Programs
-							</Heading>
-							<UnorderedList styleType="none">
-								{programs.map((item) => (
-									<ListItem key={item.name}>
-										<NextLink href={item.link}>
-											<Text fontSize="xs">
-												{item.name}
-											</Text>
-										</NextLink>
-									</ListItem>
-								))}
-							</UnorderedList>
-						</VStack>
-						<Flex flexDir="column" align="stretch" flex={1}>
-							<Heading as="h3" size="md" mb={1}>
-								Support
-							</Heading>
-							<UnorderedList styleType="none" mb={3} ml={0}>
-								{support.map((item) => (
-									<ListItem key={item.name}>
-										<NextLink href={item.link}>
-											<Text fontSize="xs">
-												{item.name}
-											</Text>
-										</NextLink>
-									</ListItem>
-								))}
-							</UnorderedList>
-							<Heading as="h3" size="md" mb={1}>
-								Advertise
-							</Heading>
-							<UnorderedList styleType="none" ml={0}>
-								{advertise.map((item) => (
-									<ListItem key={item.name}>
-										<NextLink href={item.link}>
-											<Text fontSize="xs">
-												{item.name}
-											</Text>
-										</NextLink>
-									</ListItem>
-								))}
-							</UnorderedList>
-						</Flex>
 						{/* <Stack>
 							<Heading as="h3" size="md">
 								Newsletter
@@ -148,6 +185,7 @@ export default function Footer() {
 								stay updated!
 							</Text>
 						</Stack> */}
+
 						<VStack align="stretch" spacing={1} flex={3}>
 							<Heading as="h3" size="md">
 								Newsletter
@@ -163,9 +201,14 @@ export default function Footer() {
 									Sign Up
 								</Button>
 							</HStack>
-							<Spacer />
+							{/* <Spacer /> */}
 
-							<HStack spacing={2} pt={5} justify="center">
+							<HStack
+								spacing={2}
+								pt={5}
+								justify="center"
+								flexWrap={{ base: "wrap", sm: "nowrap" }}
+							>
 								{socials.map((item) => {
 									return (
 										<Center key={item.link}>

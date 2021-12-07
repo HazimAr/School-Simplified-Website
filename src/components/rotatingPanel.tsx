@@ -25,13 +25,13 @@ export default function RotatingPanel(props: RotatingPanelProps): JSX.Element {
 	let prevInterval: NodeJS.Timer;
 
 	useEffect(() => {
-		prevInterval = setInterval(() => {
+		prevInterval = setTimeout(() => {
 			setIndex(index === innerPanels.length - 1 ? 0 : index + 1);
 		}, 5000);
-		console.log("initial value: ", prevInterval);
+		// console.log("initial value: ", prevInterval);
 
 		return () => {
-			console.log("clearing value:", prevInterval);
+			// console.log("clearing value:", prevInterval);
 			clearTimeout(prevInterval);
 		};
 	}, [index]);

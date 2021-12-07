@@ -185,7 +185,7 @@ export async function getArtInfo(): Promise<ArtData> {
 	);
 
 	let image =
-			"https://www.thewrap.com/wp-content/uploads/2016/08/Rick-Astley-618x400.jpg", // default image
+		"https://www.thewrap.com/wp-content/uploads/2016/08/Rick-Astley-618x400.jpg", // default image
 		description = "It's Rick Astley", // default description
 		monthlyPrompt = "Legend of Internet History", // default monthly prompt
 		name = "Rick Astley", // default name
@@ -264,9 +264,9 @@ export async function getArtInfo(): Promise<ArtData> {
 								if (token.includes("\n")) {
 									// this entry is done
 									const miniToken = token.substring(
-											0,
-											token.indexOf("\n")
-										),
+										0,
+										token.indexOf("\n")
+									),
 										splitIdx = miniToken.indexOf(": ");
 									if (splitIdx === -1) {
 										console.warn(
@@ -696,7 +696,7 @@ export async function getJobPostings(): Promise<JobPosting[]> {
 	return data.results.map((page: any): JobPosting => {
 		const file0 = page.properties.Image.files[0];
 		return {
-			description: page.properties.Description.rich_text,
+			description: page.properties.Description.rich_text?.[0]?.plain_text ?? null,
 			rank: page.properties.Rank.select?.name ?? null,
 			form: page.properties.Form.url ?? null,
 			program: page.properties.Program.select?.name ?? null,

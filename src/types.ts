@@ -175,7 +175,7 @@ export type JobPosting = {
 	 * An array of rich text objects that represents the description of the posting.
 	 * Please use the parseText in notion.ts to convert this any[] into a React element
 	 */
-	description: any[];
+	description: string;
 	/**
 	 * The rank of this posting, as a string
 	 */

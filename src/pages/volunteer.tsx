@@ -2,26 +2,15 @@ import { getJobPostings } from "@api/notion";
 import {
 	Center,
 	Heading,
-	Modal,
-	ModalBody,
-	ModalCloseButton,
-	ModalContent,
-	ModalHeader,
-	ModalOverlay,
+	SimpleGrid,
 	Stack,
 	Text,
-	useDisclosure,
 	VStack,
 } from "@chakra-ui/react";
+import Container from "@components/container";
 import ContainerBackground from "@components/containerBackground";
 import ContainerInside from "@components/containerInside";
-import VolunteerRotatingPanel from "@components/volunteering/rotatingPanel";
-import { useEffect } from "react";
 import { JobPosting } from "types";
-
-type VolunteeringProps = {
-	postings: JobPosting[];
-};
 
 /**
  * The Volunteering page!
@@ -32,30 +21,11 @@ type VolunteeringProps = {
  * Needs a couple Undraw images
  * @returns the Volunteering page
  */
-export default function Volunteering({ postings }: VolunteeringProps) {
+export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 	console.log("postings recieved!", postings);
-
-	const { isOpen, onOpen, onClose } = useDisclosure();
-	useEffect(() => {
-		onOpen();
-	}, []);
 
 	return (
 		<>
-			<Modal blockScrollOnMount={false} isOpen={isOpen} onClose={onClose}>
-				<ModalOverlay />
-				<ModalContent>
-					<ModalHeader>Temporarily Closed</ModalHeader>
-					<ModalCloseButton onClick={onClose} />
-					<ModalBody>
-						<Text fontWeight="bold" mb="1rem">
-							Hi there! Applications are closed due to routine
-							maintenance. You can still explore our teams, but
-							please come back on December 7th to apply!
-						</Text>
-					</ModalBody>
-				</ModalContent>
-			</Modal>
 			<ContainerBackground src="/timmy/raining_timmy.png" py={100}>
 				<Center>
 					<ContainerInside
@@ -84,12 +54,13 @@ export default function Volunteering({ postings }: VolunteeringProps) {
 
 								<Text fontSize="lg" textAlign="justify">
 									<b>
-										As the largest teen led nonprofit in
+										As the largest student run nonprofit in
 										North America, School Simplified
 										provides you with a variety of
 										opportunities. Become a part of our team
 										today and together we can build a better
-										future!
+										future! To get started, filter using our
+										options below!
 									</b>
 								</Text>
 							</VStack>
@@ -97,12 +68,46 @@ export default function Volunteering({ postings }: VolunteeringProps) {
 					</ContainerInside>
 				</Center>
 			</ContainerBackground>
-			<VolunteerRotatingPanel />
+			<Container>
+				<ContainerInside>
+					<SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={5}>
+						{postings.map((posting) => (
+							<Stack
+								key={posting.description}
+								spacing={0}
+								textAlign="left"
+							>
+								<Stack
+									bg="brand.darkerBlue"
+									minH="200px"
+									p={5}
+									borderTopRadius="lg"
+								>
+									<Text>{posting.description}</Text>
+								</Stack>
+								<Stack
+									bg="brand.blue"
+									spacing={0}
+									px={4}
+									py={2}
+									borderBottomRadius="lg"
+								>
+									<Text fontSize="sm">{posting.area}</Text>
+									<Heading fontSize="lg">
+										{posting.name}
+									</Heading>
+									<Text fontSize="sm">{posting.program}</Text>
+								</Stack>
+							</Stack>
+						))}
+					</SimpleGrid>
+				</ContainerInside>
+			</Container>
 		</>
 	);
 }
 
 export async function getStaticProps() {
-	const props: VolunteeringProps = { postings: await getJobPostings() };
+	const props = { postings: await getJobPostings() };
 	return { props, revalidate: 60 };
 }

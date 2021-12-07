@@ -68,7 +68,7 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 					</ContainerInside>
 				</Center>
 			</ContainerBackground>
-			<Container>
+			<Container mt={20}>
 				<ContainerInside>
 					<SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={5}>
 						{postings.map((posting) => (

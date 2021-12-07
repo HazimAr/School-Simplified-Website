@@ -24,7 +24,7 @@ import NextLink from "@components/nextChakra";
 export default function Activities() {
 	return (
 		<>
-			<Container my={50}>
+			<Container py={50} bg="#5E65B7">
 				<ContainerInside>
 					<Center>
 						<Image
@@ -65,7 +65,7 @@ export default function Activities() {
 					<ActivitiesRotatingPanel />
 				</ContainerInside>
 			</Container>
-			<Container my={90}>
+			<Container py={90} >
 				<ContainerInside>
 					<Center>
 						<HStack spacing={30}>

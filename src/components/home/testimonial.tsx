@@ -125,6 +125,8 @@ function Testimony(props: Review): JSX.Element {
 				py={5}
 				rounded={20}
 				bgColor="#FFFFFFC0"
+				justify="center"
+				h={{ base: 550, sm: 400, md: 270, lg: 220, xl: 200 }}
 			>
 				<Text color="#5A60AD">"{props.review}"</Text>
 				<Box alignSelf="flex-end" textAlign="right">

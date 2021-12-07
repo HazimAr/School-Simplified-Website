@@ -28,18 +28,22 @@ export default function RotatingPanel(props: RotatingPanelProps): JSX.Element {
 		prevInterval = setInterval(() => {
 			setIndex(index === innerPanels.length - 1 ? 0 : index + 1);
 		}, 5000);
-		// console.log("initial value:", prevInterval);
+		console.log("initial value: ", prevInterval);
 
-		return () => clearTimeout(prevInterval);
+		return () => {
+			console.log("clearing value:", prevInterval);
+			clearTimeout(prevInterval);
+		};
 	}, [index]);
 
-	function resetInterval() {
-		clearInterval(prevInterval);
-		prevInterval = setInterval(() => {
-			setIndex(index === innerPanels.length - 1 ? 0 : index + 1);
-		}, 5000);
-		// console.log("new value: ", prevInterval);
-	}
+	// function resetInterval() {
+	// 	console.log("clearing value:", prevInterval);
+	// 	clearInterval(prevInterval);
+	// 	prevInterval = setInterval(() => {
+	// 		setIndex(index === innerPanels.length - 1 ? 0 : index + 1);
+	// 	}, 5000);
+	// 	console.log("new value:     ", prevInterval);
+	// }
 
 	return (
 		<VStack spacing={3}>
@@ -50,7 +54,7 @@ export default function RotatingPanel(props: RotatingPanelProps): JSX.Element {
 						setIndex(
 							index === 0 ? innerPanels.length - 1 : index - 1
 						);
-						resetInterval();
+						// resetInterval();
 					}}
 					w="fit-content"
 					cursor="pointer"
@@ -71,7 +75,7 @@ export default function RotatingPanel(props: RotatingPanelProps): JSX.Element {
 									}
 									onClick={() => {
 										setIndex(idx);
-										resetInterval();
+										// resetInterval();
 									}}
 									cursor="pointer"
 									opacity={0.7}
@@ -85,7 +89,7 @@ export default function RotatingPanel(props: RotatingPanelProps): JSX.Element {
 						setIndex(
 							index === innerPanels.length - 1 ? 0 : index + 1
 						);
-						resetInterval();
+						// resetInterval();
 					}}
 					w="fit-content"
 					cursor="pointer"

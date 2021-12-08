@@ -6,6 +6,8 @@ import {
 	Stack,
 	Text,
 	VStack,
+	Image,
+	Box,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerBackground from "@components/containerBackground";
@@ -77,14 +79,7 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 								spacing={0}
 								textAlign="left"
 							>
-								<Stack
-									bg="brand.darkerBlue"
-									minH="200px"
-									p={5}
-									borderTopRadius="lg"
-								>
-									<Text>{posting.description}</Text>
-								</Stack>
+								<FlipBox src={posting.image?.url} />
 								<Stack
 									bg="brand.blue"
 									spacing={0}
@@ -110,4 +105,44 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 export async function getStaticProps() {
 	const props = { postings: await getJobPostings() };
 	return { props, revalidate: 60 };
+}
+
+function FlipBox({ src }) {
+	return (
+		<Box
+			bg="transparent"
+			w="400px"
+			h="200px"
+			style={{ perspective: "1000px" }}
+		>
+			<Box
+				pos="relative"
+				w="100%"
+				h="100%"
+				textAlign="center"
+				transition="linear transform 0.8s"
+				style={{ transformStyle: "preserve-3d" }}
+				_hover={{ transform: "rotateY(180deg)" }}
+			>
+				<Box
+					pos="absolute"
+					w="100%"
+					h="100%"
+					style={{ backfaceVisibility: "hidden" }}
+				>
+					<Image src={src} alt="logo" w="400px" h="200px" />
+				</Box>
+				<Box
+					pos="absolute"
+					w="100%"
+					h="100%"
+					style={{ backfaceVisibility: "hidden" }}
+					transform="rotateY(180deg)"
+					bg="blue"
+				>
+					<Text>Back</Text>
+				</Box>
+			</Box>
+		</Box>
+	);
 }

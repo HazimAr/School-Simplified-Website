@@ -73,15 +73,24 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 			<Container mt={20}>
 				<ContainerInside>
 					<SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={5}>
-						{postings.map((posting) => (
+						{postings.map((posting: JobPosting) => (
 							<Stack
 								key={posting.description}
 								spacing={0}
 								textAlign="left"
 							>
-								<FlipBox src={posting.image?.url} />
+								{posting.image?.url ? (
+									<FlipBox
+										src={posting.image?.url}
+										description={posting.description}
+									/>
+								) : (
+									<Box minH="200px" bg="brand.blue">
+										<Text>{posting.description}</Text>
+									</Box>
+								)}
 								<Stack
-									bg="brand.blue"
+									bg="brand.darkerBlue"
 									spacing={0}
 									px={4}
 									py={2}
@@ -107,14 +116,9 @@ export async function getStaticProps() {
 	return { props, revalidate: 60 };
 }
 
-function FlipBox({ src }) {
+function FlipBox({ src, description }) {
 	return (
-		<Box
-			bg="transparent"
-			w="400px"
-			h="200px"
-			style={{ perspective: "1000px" }}
-		>
+		<Box w="100%" h="200px" style={{ perspective: "1000px" }}>
 			<Box
 				pos="relative"
 				w="100%"
@@ -129,8 +133,12 @@ function FlipBox({ src }) {
 					w="100%"
 					h="100%"
 					style={{ backfaceVisibility: "hidden" }}
+					bgImage={src}
+					bgSize="cover"
+					bgRepeat="no-repeat"
+					bgPos="center"
 				>
-					<Image src={src} alt="logo" w="400px" h="200px" />
+					{/* <Image src={src} alt="logo" w="400px" h="200px" /> */}
 				</Box>
 				<Box
 					pos="absolute"
@@ -138,9 +146,9 @@ function FlipBox({ src }) {
 					h="100%"
 					style={{ backfaceVisibility: "hidden" }}
 					transform="rotateY(180deg)"
-					bg="blue"
+					bg="brand.blue"
 				>
-					<Text>Back</Text>
+					<Text>{description}</Text>
 				</Box>
 			</Box>
 		</Box>

@@ -6,7 +6,7 @@ import {
 	Stack,
 	Text,
 	VStack,
-	Image,
+	// Image,
 	Box,
 } from "@chakra-ui/react";
 import Container from "@components/container";
@@ -72,23 +72,23 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 			</ContainerBackground>
 			<Container mt={20}>
 				<ContainerInside>
-					<SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={5}>
+					<SimpleGrid columns={{ base: 1, md: 2, xl: 3 }} spacing={5}>
 						{postings.map((posting: JobPosting) => (
 							<Stack
 								key={posting.description}
 								spacing={0}
 								textAlign="left"
 							>
-								{posting.image?.url ? (
+								{/* {posting.image?.url ? (
 									<FlipBox
 										src={posting.image?.url}
 										description={posting.description}
 									/>
-								) : (
-									<Box minH="200px" bg="brand.blue">
-										<Text>{posting.description}</Text>
-									</Box>
-								)}
+								) : ( */}
+								<Box minH="200px" bg="brand.blue" px={4} py={2}>
+									<Text>{posting.description}</Text>
+								</Box>
+								{/* )} */}
 								<Stack
 									bg="brand.darkerBlue"
 									spacing={0}

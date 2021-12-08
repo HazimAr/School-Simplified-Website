@@ -1,4 +1,5 @@
 /* eslint-disable import/no-default-export */
+import Link from "./components/Link";
 import { extendTheme } from "@chakra-ui/react";
 
 const theme = extendTheme({
@@ -37,6 +38,9 @@ const theme = extendTheme({
 	fonts: {
 		heading: "Montserrat-SemiBold",
 		body: "Montserrat-Regular",
+	},
+	components: {
+		Link,
 	},
 	styles: {
 		global: () => ({

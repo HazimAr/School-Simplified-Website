@@ -105,7 +105,7 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 			<Container mt={20}>
 				<ContainerInside>
 					<HStack justify="space-around" spacing={0}>
-						<VStack>
+						<VStack w="100%">
 							<Heading>Rank</Heading>
 							<Select
 								placeholder="All"
@@ -122,7 +122,7 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 								))}
 							</Select>
 						</VStack>
-						<VStack>
+						<VStack w="100%">
 							<Heading>Area of Work</Heading>
 							<Select
 								placeholder="All"
@@ -139,7 +139,7 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 								))}
 							</Select>
 						</VStack>
-						<VStack>
+						<VStack w="100%">
 							<Heading>Program</Heading>
 							<Select
 								placeholder="All"
@@ -168,7 +168,12 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 								isExternal
 								href={posting.form ?? ""}
 							>
-								{false && <FlipBox src={posting.image.url} description={posting.description} />}
+								{false && (
+									<FlipBox
+										src={posting.image.url}
+										description={posting.description}
+									/>
+								)}
 								<Stack
 									spacing={0}
 									textAlign="left"

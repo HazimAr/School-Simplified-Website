@@ -1,4 +1,4 @@
-import { Stack, Heading, Text, VStack, Center } from "@chakra-ui/react";
+import { Center, Heading, Stack, Text, VStack } from "@chakra-ui/react";
 import ContainerBackground from "@components/containerBackground";
 import ContainerInside from "@components/containerInside";
 import CountUp from "react-countup";
@@ -18,8 +18,8 @@ export default function Intro() {
 						<Text my="10px">
 							Through learning, we empower the next generation to
 							revolutionize the future. School Simplified is a
-							nonprofit organization dedicated to learning done
-							equally, fairly and with meaning.
+							501(c)3 nonprofit organization dedicated to learning
+							done equally, fairly and with meaning.
 						</Text>
 					</VStack>
 				</Center>

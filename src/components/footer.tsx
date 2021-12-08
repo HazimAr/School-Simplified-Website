@@ -186,8 +186,10 @@ export default function Footer() {
 						align="center"
 						color="text.200"
 					>
-						<Text fontSize="xs">
+						<Text fontSize="xs" textAlign="center">
 							School Simplified © 2021 All Rights Reserved
+							<br />
+							EIN: 86-3932154
 						</Text>
 						<VStack>
 							<Text fontSize="xs">

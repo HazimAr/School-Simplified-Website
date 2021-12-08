@@ -226,13 +226,16 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 	);
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 	const props = {
 		postings: (await getJobPostings()).sort((a, b) =>
 			a.name.localeCompare(b.name)
 		),
 	};
-	return { props, revalidate: 60 };
+	return { 
+		props, 
+		// revalidate: 60
+	};
 }
 
 function FlipBox({ src, description }) {

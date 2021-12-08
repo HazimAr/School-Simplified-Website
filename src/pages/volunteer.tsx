@@ -30,7 +30,6 @@ import NextChakraLink from "@components/nextChakra";
 
 export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 	console.log(postings);
-	const ogPostings = postings;
 	const rankOptions = [],
 		areaOptions = [],
 		programOptions = [];

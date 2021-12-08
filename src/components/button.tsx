@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable import/no-default-export */
-import { Box, Center, Image, HStack, BoxProps } from "@chakra-ui/react";
+import { Box, BoxProps, Center, HStack, Image } from "@chakra-ui/react";
 
 type ButtonProps = {
 	type?: string;

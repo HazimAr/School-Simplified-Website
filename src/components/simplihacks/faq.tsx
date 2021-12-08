@@ -1,8 +1,7 @@
 import { Box, Heading } from "@chakra-ui/react";
+import FaqList from "@components/contact/faq-list";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-
-import FaqList from "@components/contact/faq-list";
 
 const qaPairs = [
 	{

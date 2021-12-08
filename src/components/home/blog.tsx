@@ -6,20 +6,20 @@ import {
 	Image,
 	SimpleGrid,
 	Text,
-	VStack,
 	useBreakpointValue,
+	VStack,
 } from "@chakra-ui/react";
-import ContainerInside from "@components/containerInside";
 import Button from "@components/button";
-import ContainerBackground from "@components/containerBackground";
-import { BlogListing } from "types";
+import Container from "@components/container";
+import ContainerInside from "@components/containerInside";
 import NextChakraLink from "@components/nextChakra";
+import { BlogListing } from "types";
 import { toAuthorAttribution } from "util/parse_notion";
 
 export default function Blog({ listing }: { listing: BlogListing[] }) {
 	// console.log(listing);
 	return (
-		<ContainerBackground
+		<Container
 			// src="/blog.jpg"
 			background="linear-gradient(180deg, rgba(99, 115, 238, 0.55) 0%, rgba(197, 203, 255, 0.55) 100%)"
 			py="50px"
@@ -101,7 +101,7 @@ export default function Blog({ listing }: { listing: BlogListing[] }) {
 					</HStack>
 				</Stack> */}
 			</ContainerInside>
-		</ContainerBackground>
+		</Container>
 	);
 }
 

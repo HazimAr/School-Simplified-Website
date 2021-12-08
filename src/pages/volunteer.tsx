@@ -1,5 +1,6 @@
 import { getJobPostings } from "@api/notion";
 import {
+	Box,
 	Center,
 	Heading,
 	SimpleGrid,
@@ -54,16 +55,13 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 									Join Our Team
 								</Heading>
 
-								<Text fontSize="lg" textAlign="justify">
-									<b>
-										As the largest student run nonprofit in
-										North America, School Simplified
-										provides you with a variety of
-										opportunities. Become a part of our team
-										today and together we can build a better
-										future! To get started, filter using our
-										options below!
-									</b>
+								<Text fontSize="lg" textAlign="justify" as="b">
+									As the largest student run nonprofit in
+									North America, School Simplified provides
+									you with a variety of opportunities. Become
+									a part of our team today and together we can
+									build a better future! To get started,
+									filter using our options below!
 								</Text>
 							</VStack>
 						</Stack>
@@ -75,7 +73,11 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 					<SimpleGrid columns={{ base: 1, md: 2, xl: 3 }} spacing={5}>
 						{postings.map((posting: JobPosting) => (
 							<Stack
-								key={posting.description}
+								key={
+									posting.name +
+									posting.area +
+									posting.program
+								}
 								spacing={0}
 								textAlign="left"
 							>

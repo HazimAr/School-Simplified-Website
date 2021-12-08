@@ -1,10 +1,8 @@
-import { Heading, Stack, VStack, Text } from "@chakra-ui/react";
+import { Heading, Stack, Text, VStack } from "@chakra-ui/react";
 //import { Icon } from "@chakra-ui/react";
-
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
-
 import { socials } from "config";
 
 export default function SocialMedias(): JSX.Element {

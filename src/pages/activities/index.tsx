@@ -1,16 +1,16 @@
 import {
-	VStack,
+	Center,
 	Heading,
 	HStack,
 	Image,
-	Text,
-	Center,
 	Stack,
+	Text,
+	VStack,
 } from "@chakra-ui/react";
+import ActivitiesRotatingPanel from "@components/activities/rotatingPanel";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import ActivitiesRotatingPanel from "@components/activities/rotatingPanel";
 import NextLink from "@components/nextChakra";
 
 /**
@@ -65,7 +65,7 @@ export default function Activities() {
 					<ActivitiesRotatingPanel />
 				</ContainerInside>
 			</Container>
-			<Container py={90} >
+			<Container py={90}>
 				<ContainerInside>
 					<Center>
 						<HStack spacing={30}>

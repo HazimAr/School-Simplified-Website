@@ -1,5 +1,6 @@
 import { getArtInfo } from "@api/notion";
 import {
+	Center,
 	Heading,
 	Image,
 	ListItem,
@@ -7,7 +8,6 @@ import {
 	Text,
 	UnorderedList,
 	VStack,
-	Center,
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import Art from "@components/community/art";
@@ -15,10 +15,11 @@ import SocialMedias from "@components/community/socialmedias";
 import Container from "@components/container";
 import ContainerBackground from "@components/containerBackground";
 import ContainerInside from "@components/containerInside";
-import NextLink from "@components/nextChakra";
-import NextChakraLink from "@components/nextChakra";
+import {
+	default as NextChakraLink,
+	default as NextLink,
+} from "@components/nextChakra";
 import { rounded } from "@styles/theme";
-
 import { ArtData, SpotifyLink } from "types";
 
 const mainPlaylists: SpotifyLink[] = [

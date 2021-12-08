@@ -1,5 +1,5 @@
 /* eslint-disable import/no-default-export */
-import { VStack, Box, Heading, Text, Image } from "@chakra-ui/react";
+import { Box, Heading, Image, Text, VStack } from "@chakra-ui/react";
 
 type SimplihacksCard = {
 	name: string;

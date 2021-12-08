@@ -15,7 +15,6 @@ import {
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import NextLink from "@components/nextChakra";
-
 import { RiSpotifyLine } from "react-icons/ri";
 import { SpotifyLink } from "types";
 

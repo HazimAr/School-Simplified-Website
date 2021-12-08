@@ -1,21 +1,21 @@
-import { getJobPostings } from "@api/notion";
+import {  getJobPostings } from "@api/notion";
 import {
-	Box,
-	Center,
-	Heading,
-	SimpleGrid,
-	Stack,
-	Text,
-	VStack,
-	HStack,
-	Select 
+	 Box,
+	 Center,
+	 Heading,
+	 SimpleGrid,
+	 Stack,
+	 Text,
+	 VStack,
+	 HStack,
+	 Select,
 	// Image,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerBackground from "@components/containerBackground";
 import ContainerInside from "@components/containerInside";
-import { JobPosting } from "types";
-import { useState,useEffect } from "react";
+import {  JobPosting } from "types";
+import {  useState, useEffect } from "react";
 import NextChakraLink from "@components/nextChakra";
 
 /**
@@ -38,10 +38,13 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 	for (const posting of postings) {
 		if (!rankOptions.includes(posting.rank)) rankOptions.push(posting.rank);
 		if (!areaOptions.includes(posting.area)) areaOptions.push(posting.area);
-		if (!programOptions.includes(posting.program)) programOptions.push(posting.program);
+		if (!programOptions.includes(posting.program))
+			programOptions.push(posting.program);
 	}
 
-	const [postingsToDisplay, setPostingsToDisplay] = useState(postings.filter((posting) => posting.program == programOptions[1]));
+	const [postingsToDisplay, setPostingsToDisplay] = useState(
+		postings.filter((posting) => posting.program == programOptions[1])
+	);
 	const [filter, setFilter] = useState({
 		rank: null,
 		area: null,
@@ -49,13 +52,15 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 	});
 
 	useEffect(() => {
-		const tempPostings = ogPostings;
-		setPostingsToDisplay(postings.filter((posting) => {
-			if (filter.rank && posting.rank != filter.rank) return false;
-			if (filter.area && posting.area != filter.area) return false;
-			if (filter.program && posting.program != filter.program) return false;
-			return true;
-		}));
+		setPostingsToDisplay(
+			postings.filter((posting) => {
+				if (filter.rank && posting.rank != filter.rank) return false;
+				if (filter.area && posting.area != filter.area) return false;
+				if (filter.program && posting.program != filter.program)
+					return false;
+				return true;
+			})
+		);
 	}, [filter]);
 	return (
 		<>
@@ -164,6 +169,7 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 								isExternal
 								href={posting.form ?? ""}
 							>
+								{false && <FlipBox src={posting.image.url} description={posting.description} />}
 								<Stack
 									spacing={0}
 									textAlign="left"

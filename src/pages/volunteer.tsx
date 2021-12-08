@@ -8,13 +8,14 @@ import {
 	Text,
 	VStack,
 	HStack,
+	Select 
 	// Image,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerBackground from "@components/containerBackground";
 import ContainerInside from "@components/containerInside";
 import { JobPosting } from "types";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import NextChakraLink from "@components/nextChakra";
 
 /**
@@ -31,15 +32,31 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 	console.log(postings);
 	const ogPostings = postings;
 	const rankOptions = [],
-		areOptions = [],
+		areaOptions = [],
 		programOptions = [];
+
 	for (const posting of postings) {
 		if (!rankOptions.includes(posting.rank)) rankOptions.push(posting.rank);
-		if (!areOptions.includes(posting.area)) areOptions.push(posting.area);
+		if (!areaOptions.includes(posting.area)) areaOptions.push(posting.area);
 		if (!programOptions.includes(posting.program)) programOptions.push(posting.program);
 	}
-	const [postingsToDisplay, setPostingsToDisplay] = useState(postings);
 
+	const [postingsToDisplay, setPostingsToDisplay] = useState(postings.filter((posting) => posting.program == programOptions[1]));
+	const [filter, setFilter] = useState({
+		rank: null,
+		area: null,
+		program: null,
+	});
+
+	useEffect(() => {
+		const tempPostings = ogPostings;
+		setPostingsToDisplay(postings.filter((posting) => {
+			if (filter.rank && posting.rank != filter.rank) return false;
+			if (filter.area && posting.area != filter.area) return false;
+			if (filter.program && posting.program != filter.program) return false;
+			return true;
+		}));
+	}, [filter]);
 	return (
 		<>
 			<ContainerBackground src="/timmy/raining_timmy.png" py={100}>
@@ -86,6 +103,54 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 					<HStack justify="space-around" spacing={0}>
 						<VStack>
 							<Heading>Rank</Heading>
+							<Select
+								placeholder="All"
+								onChange={(e) => {
+									const tempFilter: any = { ...filter };
+									tempFilter.rank = e.target.value;
+									setFilter(tempFilter);
+								}}
+							>
+								{rankOptions.map((option) => (
+									<option key={option} value={option}>
+										{option}
+									</option>
+								))}
+							</Select>
+						</VStack>
+						<VStack>
+							<Heading>Area of Work</Heading>
+							<Select
+								placeholder="All"
+								onChange={(e) => {
+									const tempFilter: any = { ...filter };
+									tempFilter.area = e.target.value;
+									setFilter(tempFilter);
+								}}
+							>
+								{areaOptions.map((option) => (
+									<option key={option} value={option}>
+										{option}
+									</option>
+								))}
+							</Select>
+						</VStack>
+						<VStack>
+							<Heading>Program</Heading>
+							<Select
+								placeholder="All"
+								onChange={(e) => {
+									const tempFilter: any = { ...filter };
+									tempFilter.program = e.target.value;
+									setFilter(tempFilter);
+								}}
+							>
+								{programOptions.map((option) => (
+									<option key={option} value={option}>
+										{option}
+									</option>
+								))}
+							</Select>
 						</VStack>
 					</HStack>
 					<SimpleGrid columns={{ base: 1, md: 2, xl: 3 }} spacing={5}>

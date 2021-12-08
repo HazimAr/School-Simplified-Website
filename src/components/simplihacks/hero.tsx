@@ -1,4 +1,4 @@
-import { VStack, HStack, Stack, Heading, Image, Text } from "@chakra-ui/react";
+import { Heading, HStack, Image, Stack, Text, VStack } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";

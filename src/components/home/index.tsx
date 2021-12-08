@@ -5,8 +5,8 @@ import Clubs from "./clubs";
 import Code from "./code";
 import GettingStarted from "./gettingStarted";
 import Intro from "./intro";
-import ProgrammingSimplified from "./ps";
 import Projects from "./projects";
+import ProgrammingSimplified from "./ps";
 import Testimonial from "./testimonial";
 
 export {
@@ -17,7 +17,7 @@ export {
 	Code,
 	GettingStarted,
 	Intro,
-	ProgrammingSimplified,
 	Projects,
+	ProgrammingSimplified,
 	Testimonial,
 };

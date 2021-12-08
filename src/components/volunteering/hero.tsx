@@ -1,13 +1,4 @@
-import {
-	//Text,
-	Image,
-	Heading,
-	VStack,
-	HStack,
-	Link,
-	Icon,
-} from "@chakra-ui/react";
-
+import { Heading, HStack, Icon, Image, Link, VStack } from "@chakra-ui/react";
 import fetchIcon from "util/react_icon_fetcher";
 
 export default function Hero({ heading }) {

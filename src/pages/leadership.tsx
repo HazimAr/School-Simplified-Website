@@ -16,7 +16,6 @@ import {
 	Thead,
 	Tr,
 	VStack,
-	// Center,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";

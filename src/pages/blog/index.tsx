@@ -2,16 +2,16 @@ import { getBlogListing } from "@api/notion";
 import {
 	Box,
 	Center,
+	Divider,
 	Heading,
 	HStack,
 	Icon,
-	Stack,
 	Image,
 	SimpleGrid,
+	Stack,
 	Text,
 	useBreakpointValue,
 	VStack,
-	Divider,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";

@@ -1,15 +1,15 @@
 import {
+	Box,
 	Heading,
 	HStack,
-	VStack,
+	Image,
 	Stack,
 	Text,
-	Box,
-	Image,
+	VStack,
 } from "@chakra-ui/react";
+import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import Button from "@components/button";
 import NextChakraLink from "@components/nextChakra";
 import { rounded } from "@styles/theme";
 

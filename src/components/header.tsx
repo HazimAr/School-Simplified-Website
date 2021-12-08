@@ -1,4 +1,5 @@
 import {
+	Box,
 	Flex,
 	Heading,
 	HStack,
@@ -8,7 +9,6 @@ import {
 	MenuItem,
 	MenuList,
 	useDisclosure,
-	Box,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";

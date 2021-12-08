@@ -3,6 +3,7 @@ import {
 	Icon,
 	Input,
 	InputGroup,
+	InputGroupProps,
 	InputLeftElement,
 	InputRightElement,
 	Spinner,
@@ -14,7 +15,7 @@ import { FaSearch } from "react-icons/fa";
 type SearchbarProps = {
 	callback?: (arg0: string) => any;
 	size?: string;
-} & Record<string, any>;
+} & InputGroupProps;
 
 /**
  * Creates a Searchbar with the given SearchbarProps
@@ -25,7 +26,7 @@ export default function Searchbar(props: SearchbarProps): JSX.Element {
 	const [searchWait, setSearchWait] = useState<ReturnType<
 		typeof setTimeout
 	> | null>(null);
-	const [loading, _setLoading] = useBoolean(false);
+	const [loading, setLoading] = useBoolean(false);
 
 	const callbackFunction = props.callback;
 	const { callback, ...functionlessProps } = props;
@@ -45,12 +46,12 @@ export default function Searchbar(props: SearchbarProps): JSX.Element {
 				size="lg"
 				onChange={(e) => {
 					if (searchWait) clearTimeout(searchWait);
-					_setLoading.on();
+					setLoading.on();
 					setSearchWait(
 						setTimeout(() => {
 							// console.log("Invoked with " + e.target.value);
 							setSearchWait(null);
-							_setLoading.off();
+							setLoading.off();
 							if (callbackFunction)
 								callbackFunction(e.target.value.trim());
 						}, 500)

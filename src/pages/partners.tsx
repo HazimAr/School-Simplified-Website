@@ -10,11 +10,11 @@ import {
 	PopoverContent,
 	PopoverHeader,
 	PopoverTrigger,
+	SimpleGrid,
 	Text,
 	useDisclosure,
 	Wrap,
 	WrapItem,
-	SimpleGrid,
 } from "@chakra-ui/react";
 import StyledButton from "@components/button";
 import Container from "@components/container";

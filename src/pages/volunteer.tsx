@@ -8,7 +8,6 @@ import {
 	Text,
 	VStack,
 	// Image,
-	Box,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerBackground from "@components/containerBackground";

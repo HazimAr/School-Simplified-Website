@@ -7,12 +7,15 @@ import {
 	Stack,
 	Text,
 	VStack,
+	HStack,
 	// Image,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerBackground from "@components/containerBackground";
 import ContainerInside from "@components/containerInside";
 import { JobPosting } from "types";
+import { useState } from "react";
+import NextChakraLink from "@components/nextChakra";
 
 /**
  * The Volunteering page!
@@ -23,8 +26,19 @@ import { JobPosting } from "types";
  * Needs a couple Undraw images
  * @returns the Volunteering page
  */
+
 export default function Volunteering({ postings }: { postings: JobPosting[] }) {
-	console.log("postings recieved!", postings);
+	console.log(postings);
+	const ogPostings = postings;
+	const rankOptions = [],
+		areOptions = [],
+		programOptions = [];
+	for (const posting of postings) {
+		if (!rankOptions.includes(posting.rank)) rankOptions.push(posting.rank);
+		if (!areOptions.includes(posting.area)) areOptions.push(posting.area);
+		if (!programOptions.includes(posting.program)) programOptions.push(posting.program);
+	}
+	const [postingsToDisplay, setPostingsToDisplay] = useState(postings);
 
 	return (
 		<>
@@ -69,41 +83,66 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 			</ContainerBackground>
 			<Container mt={20}>
 				<ContainerInside>
+					<HStack justify="space-around" spacing={0}>
+						<VStack>
+							<Heading>Rank</Heading>
+						</VStack>
+					</HStack>
 					<SimpleGrid columns={{ base: 1, md: 2, xl: 3 }} spacing={5}>
-						{postings.map((posting: JobPosting) => (
-							<Stack
+						{postingsToDisplay.map((posting: JobPosting) => (
+							<NextChakraLink
 								key={
 									posting.name +
 									posting.area +
 									posting.program
 								}
-								spacing={0}
-								textAlign="left"
+								isExternal
+								href={posting.form ?? ""}
 							>
-								{/* {posting.image?.url ? (
+								<Stack
+									spacing={0}
+									textAlign="left"
+									transition="all 0.1s ease-in"
+									_hover={{
+										transform: "scale(1.05)",
+										cursor: "pointer",
+									}}
+								>
+									{/* {posting.image?.url ? (
 									<FlipBox
 										src={posting.image?.url}
 										description={posting.description}
 									/>
 								) : ( */}
-								<Box minH="200px" bg="brand.blue" px={4} py={2}>
-									<Text>{posting.description}</Text>
-								</Box>
-								{/* )} */}
-								<Stack
-									bg="brand.darkerBlue"
-									spacing={0}
-									px={4}
-									py={2}
-									borderBottomRadius="lg"
-								>
-									<Text fontSize="sm">{posting.area}</Text>
-									<Heading fontSize="lg">
-										{posting.name}
-									</Heading>
-									<Text fontSize="sm">{posting.program}</Text>
+									<Box
+										minH="200px"
+										bg="brand.blue"
+										px={4}
+										py={2}
+										borderTopRadius="lg"
+									>
+										<Text>{posting.description}</Text>
+									</Box>
+									{/* )} */}
+									<Stack
+										bg="brand.darkerBlue"
+										spacing={0}
+										px={4}
+										py={2}
+										borderBottomRadius="lg"
+									>
+										<Text fontSize="sm">
+											{posting.area}
+										</Text>
+										<Heading fontSize="lg">
+											{posting.name}
+										</Heading>
+										<Text fontSize="sm">
+											{posting.program}
+										</Text>
+									</Stack>
 								</Stack>
-							</Stack>
+							</NextChakraLink>
 						))}
 					</SimpleGrid>
 				</ContainerInside>
@@ -113,7 +152,11 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 }
 
 export async function getStaticProps() {
-	const props = { postings: await getJobPostings() };
+	const props = {
+		postings: (await getJobPostings()).sort((a, b) =>
+			a.name.localeCompare(b.name)
+		),
+	};
 	return { props, revalidate: 60 };
 }
 

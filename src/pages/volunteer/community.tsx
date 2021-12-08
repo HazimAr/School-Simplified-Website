@@ -34,7 +34,7 @@ export default function Community() {
 							<VStack spacing="20px">
 								<NextLink
 									isExternal
-									href="https://forms.gle/JaE31wNHXDcLE3jz6"
+									href="https://forms.gle/mt3DSRcXoC5Byjs7A"
 									_hover={{ textDecoration: "none" }}
 								>
 									<Button
@@ -53,7 +53,7 @@ export default function Community() {
 
 								<NextLink
 									isExternal
-									href="https://forms.gle/CpCKy8Fi2f4oz6kU6"
+									href="https://forms.gle/oAZeJFnUWeNZkr2TA"
 									_hover={{ textDecoration: "none" }}
 								>
 									<Button
@@ -72,7 +72,7 @@ export default function Community() {
 
 								<NextLink
 									isExternal
-									href="https://discord.gg/DVbhtXZjdA"
+									href="https://forms.gle/oj8u1i2Yyb5YbDUR7"
 									_hover={{ textDecoration: "none" }}
 								>
 									<HStack>
@@ -85,7 +85,7 @@ export default function Community() {
 										>
 											<HStack>
 												<RiGroupFill />
-												<Text>Advisor</Text>
+												<Text>Student Advisory</Text>
 											</HStack>
 										</Button>
 									</HStack>

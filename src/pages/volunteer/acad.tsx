@@ -35,7 +35,7 @@ export default function Acad() {
 							<VStack spacing="20px">
 								<NextLink
 									isExternal
-									href="https://forms.gle/71ffx3YBm7xjK54A9"
+									href="https://forms.gle/7MuPa9uF2ktknpzEA"
 									_hover={{ TextDecoration: "none" }}
 								>
 									<Button
@@ -54,7 +54,7 @@ export default function Acad() {
 
 								<NextLink
 									isExternal
-									href="https://forms.gle/y1uXnvQ1EHEAHocn8"
+									href="https://forms.gle/8JULsBWbcaXrk8xW9"
 									_hover={{ TextDecoration: "none" }}
 								>
 									<Button
@@ -73,7 +73,7 @@ export default function Acad() {
 
 								<NextLink
 									isExternal
-									href="https://forms.gle/y1uXnvQ1EHEAHocn8"
+									href="https://forms.gle/uEYaMZncmzxxLNfP6"
 									_hover={{ TextDecoration: "none" }}
 								>
 									<Button

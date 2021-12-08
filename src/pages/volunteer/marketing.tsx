@@ -38,7 +38,7 @@ export default function Marketing() {
 								<VStack spacing="20px">
 									<NextLink
 										isExternal
-										href="https://forms.gle/QnwAAWpPs5XcWfzr8"
+										href="https://forms.gle/UEQr6aLARkk6Y16YA"
 										_hover={{ TextDecoration: "none" }}
 									>
 										<Button
@@ -57,7 +57,7 @@ export default function Marketing() {
 
 									<NextLink
 										isExternal
-										href="https://forms.gle/TgNLPu9bYARxt8Ks5"
+										href="https://forms.gle/9Dz883shDn8vW5ft7"
 										_hover={{ TextDecoration: "none" }}
 									>
 										<Button
@@ -76,7 +76,7 @@ export default function Marketing() {
 
 									<NextLink
 										isExternal
-										href="https://forms.gle/e8EArXqZYXZj6vxr6"
+										href="https://forms.gle/H8zMBvzibH1msZma8"
 										_hover={{ TextDecoration: "none" }}
 									>
 										<Button
@@ -120,7 +120,7 @@ export default function Marketing() {
 								<VStack spacing="20px">
 									<NextLink
 										isExternal
-										href="https://forms.gle/qe4LaxJsnZNigP3c7"
+										href="https://forms.gle/DQ9HjS6rZvpuV6qE6"
 										_hover={{ TextDecoration: "none" }}
 									>
 										<Button
@@ -141,7 +141,7 @@ export default function Marketing() {
 
 									<NextLink
 										isExternal
-										href="https://forms.gle/qe4LaxJsnZNigP3c7"
+										href="https://forms.gle/DQ9HjS6rZvpuV6qE6"
 										_hover={{ TextDecoration: "none" }}
 									>
 										<Button

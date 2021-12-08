@@ -71,7 +71,7 @@ const teams: VolunteerPanelProps[] = [
 		teamDesc:
 			"Joining our Technology Team will allow you to develop skills such as programming, web development, and quality management. Apply if you are knowledgeable in any of these areas!",
 		src: "timmy/itdept.png",
-		link: "https://timmy.schoolsimplified.org/tech-application",
+		link: "https://forms.gle/stazrU4fEbWfc7eZ8",
 
 		//link: "https://forms.gle/xrZma1KjtZ6nzRxS8",
 		functions: [
@@ -103,7 +103,7 @@ const teams: VolunteerPanelProps[] = [
 		teamDesc:
 			"Our Human Resources Department primarily works on onboarding new members and overseeing the specific teams they are in the charge of. They also closely work with the managers to hire new staff for School Simplified.",
 		src: "timmy/hrdept.png",
-		link: "https://forms.gle/HnraGUWyPR59S35f9",
+		link: "https://forms.gle/3H6cz752Uc6rbB568",
 
 		//link: "https://forms.gle/xrZma1KjtZ6nzRxS8",
 		functions: [

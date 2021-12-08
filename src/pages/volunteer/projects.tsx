@@ -59,7 +59,7 @@ export default function Projects() {
 
 								<NextLink
 									isExternal
-									href="https://forms.gle/ptdYuHK3gDWguswT9"
+									href="https://forms.gle/qU13QTk2HpQYq5SF6"
 									_hover={{ TextDecoration: "none" }}
 								>
 									<Button
@@ -78,7 +78,7 @@ export default function Projects() {
 
 								<NextLink
 									isExternal
-									href="https://forms.gle/ptdYuHK3gDWguswT9"
+									href="https://forms.gle/RaCu7LJnQ1McNPkXA"
 									_hover={{ TextDecoration: "none" }}
 								>
 									<Button

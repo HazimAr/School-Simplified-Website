@@ -89,7 +89,7 @@ const legals = [
 		link: "https://drive.google.com/file/d/1_vlNmbDDmFEM298UxFP5IJTVvSn_egha/view?usp=sharing",
 	},
 	{
-		name: "Code of Ethics or WhistleBlower Policy",
+		name: "Code of Ethics and WhistleBlower Policy",
 		link: "https://drive.google.com/file/d/1_vlNmbDDmFEM298UxFP5IJTVvSn_egha/view?usp=sharing",
 	},
 	{

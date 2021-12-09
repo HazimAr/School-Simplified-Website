@@ -73,7 +73,7 @@ const legals = [
 		link: "https://drive.google.com/file/d/1v4IUPJLlCIIUQhQuaOjcBBWJgJbYBUb0/view?usp=sharing",
 	},
 	{
-		name: "Employee Identification Number",
+		name: "Employer Identification Number",
 		link: "https://drive.google.com/file/d/19qZLprsRDo25LjzT4Xq4H2Ows4M_MsI6/view?usp=sharing",
 	},
 	{

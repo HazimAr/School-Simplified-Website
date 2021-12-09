@@ -1,6 +1,5 @@
 import { getArtInfo } from "@api/notion";
 import {
-	Center,
 	Heading,
 	Image,
 	ListItem,

@@ -14,7 +14,6 @@ export default function Marketing() {
 					<Hero heading="School Simplified Legal" />
 				</ContainerInside>
 			</Container>
-
 			<Container bg="#8F9CFE" py={10}>
 				<ContainerInside>
 					<Center>

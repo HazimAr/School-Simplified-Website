@@ -223,6 +223,10 @@ const about = [
 		name: "Leadership",
 		link: "/leadership",
 	},
+	{
+		name: "Legal",
+		href: "/legal",
+	},
 	// {
 	// 	name: "Our Organizations",
 	// 	link: "/organizations",

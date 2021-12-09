@@ -85,11 +85,8 @@ export default function Community({
 				</ContainerInside>
 			</ContainerBackground>
 
-			<Container
-				py={10}
-				bg="linear-gradient(180deg, rgba(90, 96, 173, 0.71) 0%, rgba(108, 125, 254, 0.71) 100%)"
-			>
-				<ContainerInside>
+			<Container bg="linear-gradient(180deg, rgba(90, 96, 173, 0.71) 0%, rgba(108, 125, 254, 0.71) 100%)">
+				<ContainerInside py={20}>
 					<Stack
 						direction={{ base: "column", md: "row" }}
 						spacing={{ base: 5, md: 20 }}
@@ -101,20 +98,32 @@ export default function Community({
 							alignItems="stretch"
 							flex={2}
 						>
-							<Heading textAlign={{ base: "center", md: "left" }}>
+							<Heading
+								textAlign={{ base: "center", md: "left" }}
+								py={3}
+							>
 								Our Discord Server
 							</Heading>
-							<Text textAlign="justify" py={3}>
+							<Text textAlign="justify">
 								Our Discord server offers all of the features
 								above, and more! We have 60k members, who are
 								mainly college, middle, and high school
 								students, which help each other with academics,
 								extracurricular activities, and general life.
 							</Text>
-							<Text textAlign="justify">
+							<Text textAlign="justify" py={3}>
 								Communication is through text chat, voice calls,
 								and other methods!
 							</Text>
+							<NextChakraLink
+								href="/discord"
+								display="block"
+								alignSelf="flex-start"
+							>
+								<Button timmysrc="/timmy/27.png">
+									Join Now
+								</Button>
+							</NextChakraLink>
 						</VStack>
 						<Stack
 							align={{ base: "center", md: "left" }}
@@ -144,7 +153,7 @@ export default function Community({
 							flex={1}
 							backgroundColor="brand.purple.dark"
 							p={8}
-							rounded={rounded}
+							rounded="20px"
 							boxShadow="lg"
 							justify="center"
 						>
@@ -174,7 +183,7 @@ export default function Community({
 							flex={1}
 							backgroundColor="brand.purple.dark"
 							p={8}
-							rounded={rounded}
+							rounded="20px"
 							boxShadow="lg"
 							justify="center"
 						>
@@ -212,7 +221,7 @@ export default function Community({
 							flex={1}
 							backgroundColor="brand.purple.dark"
 							p={8}
-							rounded={rounded}
+							rounded="20px"
 							boxShadow="lg"
 							justify="center"
 						>

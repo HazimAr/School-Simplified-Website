@@ -19,7 +19,6 @@ import {
 	default as NextChakraLink,
 	default as NextLink,
 } from "@components/nextChakra";
-import { rounded } from "@styles/theme";
 import { ArtData, SpotifyLink } from "types";
 
 const mainPlaylists: SpotifyLink[] = [
@@ -72,7 +71,7 @@ export default function Community({
 							</Text>
 							<NextChakraLink href="/discord" display="block">
 								<Button
-									timmysrc="/timmy/27.png"
+									timmysrc="/timmy/4.png"
 									w="100%"
 									h="100%"
 								>
@@ -120,7 +119,7 @@ export default function Community({
 								display="block"
 								alignSelf="flex-start"
 							>
-								<Button timmysrc="/timmy/27.png">
+								<Button timmysrc="/timmy/timmy_happy.png">
 									Join Now
 								</Button>
 							</NextChakraLink>
@@ -132,7 +131,7 @@ export default function Community({
 							<Image
 								src="timmy/timmy_dino.png"
 								alt="timmy dino"
-								w="300px"
+								w="250px"
 							/>
 						</Stack>
 					</Stack>
@@ -146,7 +145,7 @@ export default function Community({
 						direction={{ base: "column", md: "row" }}
 						justify="center"
 						spacing={10}
-						textAlign={{ base: "center", md: "left" }}
+						textAlign="left"
 						py={20}
 					>
 						<Stack
@@ -162,7 +161,7 @@ export default function Community({
 								We organize community events, often with prizes,
 								such as:
 							</Text>
-							<Center>
+							<Stack pl={10}>
 								<UnorderedList>
 									<ListItem>Competitions</ListItem>
 									<NextLink href="/simplihacks">
@@ -172,7 +171,7 @@ export default function Community({
 									<ListItem>Movie Nights</ListItem>
 									<ListItem>Game Nights</ListItem>
 								</UnorderedList>
-							</Center>
+							</Stack>
 							{/* <Heading size="sm">
 									Join our discord server to participate in
 									these events!
@@ -192,7 +191,7 @@ export default function Community({
 								We curate playlists to help you study, with
 								genres like:
 							</Text>
-							<Center>
+							<Stack pl={10}>
 								<UnorderedList>
 									{mainPlaylists.map(
 										(playlist, i: number) => {
@@ -210,7 +209,7 @@ export default function Community({
 										}
 									)}
 								</UnorderedList>
-							</Center>
+							</Stack>
 							{/* 
 								<Heading size="5px">
 									Check out our Spotify for the complete list!
@@ -230,7 +229,7 @@ export default function Community({
 								We release daily opportunities and
 								entertainment, such as:
 							</Text>
-							<Center>
+							<Stack pl={10}>
 								<UnorderedList>
 									<ListItem>Internships</ListItem>
 									<ListItem>Job Openings</ListItem>
@@ -238,7 +237,7 @@ export default function Community({
 									<ListItem>Motivational Quotes</ListItem>
 									<ListItem>Fun Questions</ListItem>
 								</UnorderedList>
-							</Center>
+							</Stack>
 						</Stack>
 					</Stack>
 				</ContainerInside>

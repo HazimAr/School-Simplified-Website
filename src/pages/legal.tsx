@@ -15,7 +15,7 @@ export default function Marketing() {
 				</ContainerInside>
 			</Container>
 
-			<Container bg="#8F9CFE" h={{ base: "600px", md: "400px" }}>
+			<Container bg="#8F9CFE" py={10}>
 				<ContainerInside>
 					<Center>
 						<HStack
@@ -38,7 +38,7 @@ export default function Marketing() {
 											bg="#7283FE"
 											md="100px"
 											w="300px"
-											minH="50px"
+											minH="60px"
 											textAlign="left"
 										>
 											<HStack>
@@ -84,5 +84,13 @@ const legals = [
 	{
 		name: "Anti-Discrimination and Anti-Harassment Policy",
 		link: "https://drive.google.com/file/d/1Hio0Tst49m55VcT_8OPdXwSQyP7ANI2W/view?usp=sharing",
+	},
+	{
+		name: "Employee Identification Number",
+		link: "https://drive.google.com/file/d/19qZLprsRDo25LjzT4Xq4H2Ows4M_MsI6/view?usp=sharing",
+	},
+	{
+		name: "501(c)3 Determination Letter",
+		link: "https://drive.google.com/file/d/1v4IUPJLlCIIUQhQuaOjcBBWJgJbYBUb0/view?usp=sharing",
 	},
 ];

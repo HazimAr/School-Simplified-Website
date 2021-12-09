@@ -1,21 +1,7 @@
-import {
-	Heading,
-	Text,
-	VStack,
-	Center,
-	Stack,
-	Modal,
-	ModalOverlay,
-	ModalContent,
-	ModalHeader,
-	ModalBody,
-	ModalCloseButton,
-	useDisclosure,
-} from "@chakra-ui/react";
+import { Heading, Text, VStack, Center, Stack } from "@chakra-ui/react";
 import ContainerBackground from "@components/containerBackground";
 import ContainerInside from "@components/containerInside";
 import RotatingPanel from "@components/volunteering/rotating_panel";
-import { useEffect } from "react";
 
 /**
  * The Volunteering page!
@@ -27,27 +13,8 @@ import { useEffect } from "react";
  * @returns the Volunteering page
  */
 export default function Volunteering() {
-	const { isOpen, onOpen, onClose } = useDisclosure();
-	useEffect(() => {
-		onOpen();
-	}, []);
-
 	return (
 		<>
-			<Modal blockScrollOnMount={false} isOpen={isOpen} onClose={onClose}>
-				<ModalOverlay />
-				<ModalContent>
-					<ModalHeader>Temporarily Closed</ModalHeader>
-					<ModalCloseButton onClick={onClose} />
-					<ModalBody>
-						<Text fontWeight="bold" mb="1rem">
-							Hi there! Applications are closed due to routine
-							maintenance. You can still explore our teams, but
-							please come back on December 7th to apply!
-						</Text>
-					</ModalBody>
-				</ModalContent>
-			</Modal>
 			<ContainerBackground src="/timmy/raining_timmy.png" py={100}>
 				<Center>
 					<ContainerInside

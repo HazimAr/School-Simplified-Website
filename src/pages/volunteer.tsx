@@ -1,21 +1,21 @@
-import {  getJobPostings } from "@api/notion";
+import { getJobPostings } from "@api/notion";
 import {
-	 Box,
-	 Center,
-	 Heading,
-	 SimpleGrid,
-	 Stack,
-	 Text,
-	 VStack,
-	 HStack,
-	 Select,
+	Box,
+	Center,
+	Heading,
+	SimpleGrid,
+	Stack,
+	Text,
+	VStack,
+	HStack,
+	Select,
 	// Image,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerBackground from "@components/containerBackground";
 import ContainerInside from "@components/containerInside";
-import {  JobPosting } from "types";
-import {  useState, useEffect } from "react";
+import { JobPosting } from "types";
+import { useState, useEffect } from "react";
 import NextChakraLink from "@components/nextChakra";
 
 /**
@@ -104,7 +104,7 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 			</ContainerBackground>
 			<Container mt={20}>
 				<ContainerInside>
-					<HStack justify="space-around" spacing={0}>
+					<HStack justify="space-around" spacing={5}>
 						<VStack w="100%">
 							<Heading>Rank</Heading>
 							<Select
@@ -232,8 +232,8 @@ export async function getServerSideProps() {
 			a.name.localeCompare(b.name)
 		),
 	};
-	return { 
-		props, 
+	return {
+		props,
 		// revalidate: 60
 	};
 }

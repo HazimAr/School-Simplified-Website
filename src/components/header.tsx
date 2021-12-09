@@ -49,6 +49,10 @@ const menuItems: MenuItem[] = [
 				href: "/leadership",
 			},
 			{
+				name: "Legal",
+				href: "/legal",
+			},
+			{
 				name: "FAQ",
 				href: "/faq",
 			},

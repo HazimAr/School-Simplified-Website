@@ -62,6 +62,7 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 			})
 		);
 	}, [filter]);
+	
 	return (
 		<>
 			<ContainerBackground src="/timmy/raining_timmy.png" py={100}>

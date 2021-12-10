@@ -160,7 +160,7 @@ export default function BlogPage_({
 					</ContainerInside>
 				</Container>
 			</Box>
-			<Container backgroundColor="white" color="black">
+			<Container backgroundColor="#6b6ddd" color="white">
 				<ContainerInside my={5} mx={{ sm: 0, md: 3 }}>
 					<VStack
 						spacing={3}

@@ -44,6 +44,7 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 	const [postingsToDisplay, setPostingsToDisplay] = useState(
 		postings.filter((posting) => posting.program == programOptions[1])
 	);
+	
 	const [filter, setFilter] = useState({
 		rank: null,
 		area: null,
@@ -104,7 +105,7 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 			</ContainerBackground>
 			<Container mt={20}>
 				<ContainerInside>
-					<HStack justify="space-around" spacing={5}>
+					<HStack justify="space-around" spacing={5} mb={10}>
 						<VStack w="100%">
 							<Heading>Rank</Heading>
 							<Select

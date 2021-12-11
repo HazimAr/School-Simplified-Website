@@ -28,6 +28,7 @@ export default function Activities() {
 				<ContainerInside>
 					<Center>
 						<Image
+							ml={20}
 							mr={10}
 							src="/timmy/sports_timmy_flip.png"
 							w="300px"

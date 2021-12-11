@@ -46,6 +46,38 @@ const clubs: ActivitySlideProps[] = [
 		src: "/clubs/coding.png",
 		link: "https://forms.gle/ow5uPxxZkkQH9wC76",
 	},
+	{
+		clubName: "Mathematics Club",
+		key: "Mathematics Club",
+		clubDesc:
+			"In the Mathematics Club, you will learn about all the fundamentals concepts of mathematics! We regularly post math facts and questions, and you can feel free to suggest  even more. If that is not enough, we will also demonstrate applications and have tournaments that you can compete in!",
+		src: "/clubs/mathematics.png",
+		link: "https://forms.gle/wk5RN2zdQmtQkZb59",
+	},
+	{
+		clubName: "News Club",
+		key: "News Club",
+		clubDesc:
+			"The News Club will talk and write about current events around the world to inform people in the School Simplified community that may not follow the news as much or at all. Join now to stay updated with daily events and news!",
+		src: "/clubs/news.png",
+		link: "https://forms.gle/vEKxniQR1XL8thWN6",
+	},
+	{
+		clubName: "Electronics Club",
+		key: "Electronics Club",
+		clubDesc:
+			"Electronics club is a club for all the tinkerers and makers. It will cover a variety of topics including Basics, Arduino, IoT, and more. If you are someone who wants to kickstart their journey of learning and building amazing electronics, then this club is right for you!",
+		src: "/clubs/electronics.png",
+		link: "https://forms.gle/UpXZm6FwTHst4Ypz9",
+	},
+	{
+		clubName: "Art Club",
+		key: "Art Club",
+		clubDesc:
+			"In the Art Club, we will be talking about art in general, along with sharing current and past projects with each other! We will do events and activities related to art, and are open to all!",
+		src: "/clubs/arts.png",
+		link: "https://forms.gle/8AjuCavRfZFuzPE36",
+	},
 ];
 
 export default function ActivitiesRotatingPanel(): JSX.Element {

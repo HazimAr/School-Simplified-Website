@@ -187,11 +187,9 @@ export default function Footer() {
 						color="text.200"
 					>
 						<Text fontSize="xs" textAlign="center">
-							<NextLink href="/legal">
-								School Simplified © 2021 All Rights Reserved
-								<br />
-								EIN: 86-3932154
-							</NextLink>{" "}
+							School Simplified © 2021 All Rights Reserved
+							<br />
+							EIN: 86-3932154
 						</Text>
 						<VStack>
 							<Text fontSize="xs">
@@ -227,7 +225,7 @@ const about = [
 	},
 	{
 		name: "Legal",
-		href: "/legal",
+		link: "/legal",
 	},
 	// {
 	// 	name: "Our Organizations",

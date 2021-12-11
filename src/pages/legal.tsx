@@ -60,7 +60,7 @@ export default function Marketing() {
 const legals = [
 	{
 		name: "Bylaws",
-		link: "https://drive.google.com/file/d/1Xf8RyJoHZDWMuiWgnjbxEIkyoEbIpPiZ/view?usp=sharing",
+		link: "https://drive.google.com/file/d/1BpJG9vcxU4wLQ4U3YLVbkvaKcRFja1tH/view?usp=sharing",
 	},
 
 	{

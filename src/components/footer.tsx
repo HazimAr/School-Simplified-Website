@@ -225,7 +225,7 @@ const about = [
 	},
 	{
 		name: "Legal",
-		link: "/legal",
+		link: "https://schoolsimplified.org/legal",
 	},
 	// {
 	// 	name: "Our Organizations",

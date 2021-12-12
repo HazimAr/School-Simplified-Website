@@ -7,12 +7,12 @@ import { ActivitySlideProps } from "types";
 
 const clubs: ActivitySlideProps[] = [
 	{
-		clubName: "Chess Club",
-		key: "Chess Club",
+		clubName: "Coding Club",
+		key: "Coding Club",
 		clubDesc:
-			"We strive to help people learn and enjoy the game of chess, or to teach others the basics of the game. We also host tournaments for the game with other events at hand. We do have a couple rules, however; keep in mind that you must be 13+, follow all server rules, and have fun!",
-		src: "/clubs/chess.png",
-		link: "https://forms.gle/2fKVbWKTsXQYc54i6",
+			"In the Simplified Coding Club you’ll learn the basics of programming and how to apply your new skills in situations like contest programming, hackathons, and your own personal projects. Programming is an awesome skill to learn so we urge everyone of all skill levels to join! Not only will you be able to create projects relevant to what you want to do, but you can use them in real life as well.",
+		src: "/clubs/coding.png",
+		link: "https://forms.gle/ow5uPxxZkkQH9wC76",
 	},
 	{
 		clubName: "Cooking Club",
@@ -37,14 +37,6 @@ const clubs: ActivitySlideProps[] = [
 			"It takes a lot to stand up and make your voice heard. Are you up for that challenge? Join the Simplified Advocacy Club, and work alongside young students to make a difference and make your voice heard.",
 		src: "/clubs/advocacy.png",
 		link: "https://forms.gle/s8DnKtdafR6WZrFH7",
-	},
-	{
-		clubName: "Coding Club",
-		key: "Coding Club",
-		clubDesc:
-			"In the Simplified Coding Club you’ll learn the basics of programming and how to apply your new skills in situations like contest programming, hackathons, and your own personal projects. Programming is an awesome skill to learn so we urge everyone of all skill levels to join! Not only will you be able to create projects relevant to what you want to do, but you can use them in real life as well.",
-		src: "/clubs/coding.png",
-		link: "https://forms.gle/ow5uPxxZkkQH9wC76",
 	},
 	{
 		clubName: "Mathematics Club",
@@ -77,6 +69,14 @@ const clubs: ActivitySlideProps[] = [
 			"In the Art Club, we will be talking about art in general, along with sharing current and past projects with each other! We will do events and activities related to art, and are open to all!",
 		src: "/clubs/arts.png",
 		link: "https://forms.gle/8AjuCavRfZFuzPE36",
+	},
+	{
+		clubName: "Chess Club",
+		key: "Chess Club",
+		clubDesc:
+			"We strive to help people learn and enjoy the game of chess, or to teach others the basics of the game. We also host tournaments for the game with other events at hand. We do have a couple rules, however; keep in mind that you must be 13+, follow all server rules, and have fun!",
+		src: "/clubs/chess.png",
+		link: "https://forms.gle/2fKVbWKTsXQYc54i6",
 	},
 ];
 

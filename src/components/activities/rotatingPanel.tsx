@@ -87,13 +87,16 @@ export default function ActivitiesRotatingPanel(): JSX.Element {
 function Panel(props: ActivitySlideProps): JSX.Element {
 	return (
 		<ScaleFade in={true} unmountOnExit={false}>
-			<Flex rounded={50} overflow="hidden">
+			<Flex
+				rounded={50}
+				overflow="hidden"
+				h={{ base: 500, sm: 400, md: 350, lg: 400 }}
+			>
 				<Box
 					backgroundImage={props.src}
 					backgroundSize="cover"
 					backgroundPosition="center"
 					backgroundRepeat="no-repeat"
-					minH={400}
 					flex={1}
 					display={{ base: "none", lg: "block" }}
 				/>
@@ -107,10 +110,14 @@ function Panel(props: ActivitySlideProps): JSX.Element {
 					pr={5}
 					flex={1}
 					spacing={5}
-					textAlign="left"
 				>
-					<Heading size="xl">{props.clubName}</Heading>
-					<Text>{props.clubDesc}</Text>
+					<Heading
+						size="xl"
+						textAlign={{ base: "center", lg: "left" }}
+					>
+						{props.clubName}
+					</Heading>
+					<Text textAlign="left">{props.clubDesc}</Text>
 
 					<NextLink
 						isExternal

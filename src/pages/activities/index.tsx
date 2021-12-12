@@ -28,7 +28,7 @@ export default function Activities() {
 				<ContainerInside>
 					<Center>
 						<Image
-							ml={20}
+							ml={{ base: 160, md: 20, lg: 160}}
 							mr={10}
 							src="/timmy/sports_timmy_flip.png"
 							w="300px"

@@ -224,7 +224,11 @@ function DropdownMenu({ menuItem }: { menuItem: MenuItem }): JSX.Element {
 				onClick={onMouseLeave}
 			>
 				{menuItem.children.map((child) => (
-					<NextLink href={child.href} key={child.name}>
+					<NextLink
+						href={child.href}
+						_hover={{ background: "white-400" }}
+						key={child.name}
+					>
 						<MenuItem>{child.name}</MenuItem>
 					</NextLink>
 				))}

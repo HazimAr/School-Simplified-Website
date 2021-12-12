@@ -62,14 +62,6 @@ const theme = extendTheme({
 				backgroundAttachment: "fixed",
 				color: "white",
 			},
-			a: {
-				color: "inherit",
-				textDecoration: "none",
-			},
-			"a:hover": {
-				textDecoration: "none !important",
-				cursor: "pointer",
-			},
 			ul: {
 				listStyle: "none",
 			},

@@ -1,7 +1,7 @@
 export default {
 	// Styles for the base style
 	baseStyle: {
-		_hover: { textDecoration: "none" },
+		_hover: { textDecoration: "none", cursor: "pointer" },
 		_active: { boxShadow: "none" },
 		_focus: { boxShadow: "none" },
 	},

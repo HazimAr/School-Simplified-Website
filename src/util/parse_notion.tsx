@@ -151,7 +151,15 @@ function replaceNewlines(text: string): JSX.Element {
  * @returns the plaintext of all the text
  */
 export function parsePlainText(text: any[]): JSX.Element {
-	return <>{text.map((block) => replaceNewlines(block.plain_text))}</>;
+	return (
+		<Text>
+			{text.map((block) =>
+				cloneElement(replaceNewlines(block.plain_text), {
+					key: block.plain_text,
+				})
+			)}
+		</Text>
+	);
 }
 
 /**
@@ -173,7 +181,7 @@ export function parseBlock(block: any): JSX.Element {
 			return (
 				<Heading as="h1" size="lg" pt={3}>
 					{block.heading_1.text.map((item: any, idx: number) =>
-						cloneElement(parseText(item), { key: "text_" + idx })
+						cloneElement(parseText(item), { key: "h1_" + idx })
 					)}
 				</Heading>
 			);
@@ -181,7 +189,7 @@ export function parseBlock(block: any): JSX.Element {
 			return (
 				<Heading as="h2" size="md" pt={2}>
 					{block.heading_2.text.map((item: any, idx: number) =>
-						cloneElement(parseText(item), { key: "text_" + idx })
+						cloneElement(parseText(item), { key: "h2_" + idx })
 					)}
 				</Heading>
 			);
@@ -189,7 +197,7 @@ export function parseBlock(block: any): JSX.Element {
 			return (
 				<Heading as="h3" size="sm" pt={1}>
 					{block.heading_3.text.map((item: any, idx: number) =>
-						cloneElement(parseText(item), { key: "text_" + idx })
+						cloneElement(parseText(item), { key: "h3_" + idx })
 					)}
 				</Heading>
 			);
@@ -198,7 +206,7 @@ export function parseBlock(block: any): JSX.Element {
 			return (
 				<ListItem>
 					{block[block.type].text.map((item: any, idx: number) =>
-						cloneElement(parseText(item), { key: "text_" + idx })
+						cloneElement(parseText(item), { key: "li_" + idx })
 					)}
 				</ListItem>
 			);
@@ -206,7 +214,7 @@ export function parseBlock(block: any): JSX.Element {
 			return (
 				<Checkbox defaultChecked={block.checked} disabled>
 					{block.to_do.text.map((item: any, idx: number) =>
-						cloneElement(parseText(item), { key: "text_" + idx })
+						cloneElement(parseText(item), { key: "todo_" + idx })
 					)}
 				</Checkbox>
 			);
@@ -298,7 +306,7 @@ export function parseBlock(block: any): JSX.Element {
 						backgroundColor="brand.transparent"
 					>
 						<Text>{icon.emoji}</Text>
-						<Text>{parsePlainText(block.callout.text)}</Text>
+						{parsePlainText(block.callout.text)}
 					</HStack>
 				);
 			} else {
@@ -311,7 +319,7 @@ export function parseBlock(block: any): JSX.Element {
 						backgroundColor="brand.transparent"
 					>
 						<Image src={calloutFile.url} maxW={5} maxH={5} />
-						<Text>{parsePlainText(block.callout.text)}</Text>
+						{parsePlainText(block.callout.text)}
 					</HStack>
 				);
 			}

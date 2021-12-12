@@ -1,15 +1,14 @@
-import Hero from "@components/volunteering/hero";
-
-import { HStack, Center, Text, SimpleGrid } from "@chakra-ui/react";
+import { Center, SimpleGrid, Text } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
+import Hero from "@components/volunteering/hero";
 
-export default function Marketing() {
+export default function Legal() {
 	return (
 		<>
-			<Container h="300px">
+			<Container>
 				<ContainerInside>
 					<Hero heading="School Simplified Legal" />
 				</ContainerInside>
@@ -17,39 +16,57 @@ export default function Marketing() {
 			<Container bg="#8F9CFE" py={10}>
 				<ContainerInside>
 					<Center>
-						<HStack
-							flexDirection={{
-								base: "column",
-								md: "row",
-							}}
-						>
-							<SimpleGrid
-								spacing="20px"
-								columns={{ base: 1, lg: 2 }}
-							>
-								{legals.map((legal) => (
+						<SimpleGrid spacing={5} columns={{ base: 1, lg: 2 }}>
+							{legals.map((legal, idx: number) => {
+								const isLastOdd =
+									idx == legals.length - 1 &&
+									legals.length % 2 != 0;
+								console.log("making #", idx + 1, isLastOdd);
+								return isLastOdd ? (
+									<Center
+										gridColumnStart={1}
+										gridColumnEnd={{
+											base: 2,
+											lg: 3,
+										}}
+										key={legal.name}
+									>
+										<NextLink isExternal href={legal.link}>
+											<Button
+												bg="#585EAB"
+												w={300}
+												rounded={5}
+												minH={61}
+												shadow="lg"
+											>
+												{legal.name}
+											</Button>
+										</NextLink>
+									</Center>
+								) : (
 									<NextLink
 										isExternal
 										href={legal.link}
-										_hover={{ TextDecoration: "none" }}
+										key={legal.name}
+										h="100%"
 									>
 										<Button
 											bg="#585EAB"
-											md="100px"
-											w="300px"
+											w={300}
 											rounded={5}
-											minH="60px"
-											textAlign="left"
+											minH={61}
 											shadow="lg"
+											h="100%"
 										>
-											<HStack>
-												<Text>{legal.name}</Text>
-											</HStack>
+											<Text>
+												{idx == legals.length - 1}
+											</Text>
+											{legal.name}
 										</Button>
 									</NextLink>
-								))}
-							</SimpleGrid>
-						</HStack>
+								);
+							})}
+						</SimpleGrid>
 					</Center>
 				</ContainerInside>
 			</Container>
@@ -88,7 +105,7 @@ const legals = [
 		link: "https://drive.google.com/file/d/1_vlNmbDDmFEM298UxFP5IJTVvSn_egha/view?usp=sharing",
 	},
 	{
-		name: "Code of Ethics and WhistleBlower Policy",
+		name: "Code of Ethics and Whistle Blower Policy",
 		link: "https://drive.google.com/file/d/1_vlNmbDDmFEM298UxFP5IJTVvSn_egha/view?usp=sharing",
 	},
 	{

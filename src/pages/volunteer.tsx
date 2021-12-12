@@ -3,20 +3,19 @@ import {
 	Box,
 	Center,
 	Heading,
+	HStack,
+	Select,
 	SimpleGrid,
 	Stack,
 	Text,
 	VStack,
-	HStack,
-	Select,
-	// Image,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerBackground from "@components/containerBackground";
 import ContainerInside from "@components/containerInside";
-import { JobPosting } from "types";
-import { useState, useEffect } from "react";
 import NextChakraLink from "@components/nextChakra";
+import { useEffect, useState } from "react";
+import { JobPosting } from "types";
 
 /**
  * The Volunteering page!
@@ -44,7 +43,7 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 	const [postingsToDisplay, setPostingsToDisplay] = useState(
 		postings.filter((posting) => posting.program == programOptions[1])
 	);
-	
+
 	const [filter, setFilter] = useState({
 		rank: null,
 		area: null,
@@ -62,7 +61,7 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 			})
 		);
 	}, [filter]);
-	
+
 	return (
 		<>
 			<ContainerBackground src="/timmy/raining_timmy.png" py={100}>

@@ -234,8 +234,10 @@ export default function Footer() {
 						color="text.200"
 						margin="20px"
 					>
-						<Text fontSize="xs">
+						<Text fontSize="xs" textAlign="center">
 							School Simplified © 2021 All Rights Reserved
+							<br />
+							EIN: 86-3932154
 						</Text>
 
 						<Text fontSize="xs">

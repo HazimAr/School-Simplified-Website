@@ -4,6 +4,7 @@ import {
 	Center,
 	Heading,
 	HStack,
+	Image,
 	Select,
 	SimpleGrid,
 	Stack,
@@ -26,7 +27,6 @@ import { JobPosting } from "types";
  * Needs a couple Undraw images
  * @returns the Volunteering page
  */
-
 export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 	console.log(postings);
 	const rankOptions = [],
@@ -34,11 +34,16 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 		programOptions = [];
 
 	for (const posting of postings) {
-		if (!rankOptions.includes(posting.rank)) rankOptions.push(posting.rank);
-		if (!areaOptions.includes(posting.area)) areaOptions.push(posting.area);
-		if (!programOptions.includes(posting.program))
+		if (posting.rank && !rankOptions.includes(posting.rank))
+			rankOptions.push(posting.rank);
+		if (posting.area && !areaOptions.includes(posting.area))
+			areaOptions.push(posting.area);
+		if (posting.program && !programOptions.includes(posting.program))
 			programOptions.push(posting.program);
 	}
+	// rankOptions.sort();
+	// areaOptions.sort();
+	// programOptions.sort();
 
 	const [postingsToDisplay, setPostingsToDisplay] = useState(
 		postings.filter((posting) => posting.program == programOptions[1])
@@ -52,62 +57,60 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 
 	useEffect(() => {
 		setPostingsToDisplay(
-			postings.filter((posting) => {
-				if (filter.rank && posting.rank != filter.rank) return false;
-				if (filter.area && posting.area != filter.area) return false;
-				if (filter.program && posting.program != filter.program)
-					return false;
-				return true;
-			})
+			postings.filter(
+				(posting) =>
+					(!filter.rank || posting.rank == filter.rank) &&
+					(!filter.area || posting.area == filter.area) &&
+					(!filter.program || posting.program == filter.program)
+			)
 		);
 	}, [filter]);
 
 	return (
 		<>
-			<ContainerBackground src="/timmy/raining_timmy.png" py={100}>
-				<Center>
-					<ContainerInside
-						py={10}
-						pr={{ base: 2, sm: 2 }}
-						justifyContent="center"
-					>
+			<ContainerBackground
+				src="/timmy/raining_timmy.png"
+				// py={{ base: 5, md: 10 }}
+				pt={{ base: 12, md: 24 }}
+				pb={{ base: 5, md: 10 }}
+				px={{ base: 5, md: 10 }}
+			>
+				<ContainerInside>
+					<Center>
 						<Stack
 							textAlign="left"
-							direction={{ base: "column", md: "row-reverse" }}
-							width={{ xl: "700px", lg: "300px", sm: "100x" }}
+							direction={{ base: "column-reverse", md: "row" }}
 							spacing={{ base: 5, md: 10 }}
 							justifyContent={{ base: "left", md: "center" }}
+							align="center"
 						>
 							<VStack flex={5} align="flex-start">
-								<Heading
-									size="xl"
-									width={{
-										xl: "300px",
-										lg: "600px",
-										sm: "600x",
-									}}
-								>
-									Join Our Team
-								</Heading>
-
-								<Text fontSize="lg" textAlign="justify" as="b">
+								<Heading size="xl">Join Our Team</Heading>
+								<Text fontSize="lg">
 									As the largest student run nonprofit in
 									North America, School Simplified provides
 									you with a variety of opportunities. Become
 									a part of our team today and together we can
-									build a better future! To get started,
-									filter using our options below!
+									build a better future!
+								</Text>
+								<Text fontSize="lg" pt={4}>
+									To get started, filter using our options
+									below!
 								</Text>
 							</VStack>
+							<Image
+								src="/timmy/marketingdept.png"
+								alt="Timmy with a milk tea and a phone"
+							/>
 						</Stack>
-					</ContainerInside>
-				</Center>
+					</Center>
+				</ContainerInside>
 			</ContainerBackground>
 			<Container mt={20}>
 				<ContainerInside>
-					<HStack justify="space-around" spacing={5} mb={10}>
-						<VStack w="100%">
-							<Heading>Rank</Heading>
+					<HStack spacing={5} mb={10}>
+						<VStack flex={1}>
+							<Heading size="sm">Rank</Heading>
 							<Select
 								placeholder="All"
 								onChange={(e) => {
@@ -123,8 +126,8 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 								))}
 							</Select>
 						</VStack>
-						<VStack w="100%">
-							<Heading>Area of Work</Heading>
+						<VStack flex={1}>
+							<Heading size="sm">Area of Work</Heading>
 							<Select
 								placeholder="All"
 								onChange={(e) => {
@@ -140,8 +143,8 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 								))}
 							</Select>
 						</VStack>
-						<VStack w="100%">
-							<Heading>Program</Heading>
+						<VStack flex={1}>
+							<Heading size="sm">Program</Heading>
 							<Select
 								placeholder="All"
 								onChange={(e) => {
@@ -178,11 +181,14 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 								<Stack
 									spacing={0}
 									textAlign="left"
-									transition="all 0.1s ease-in"
+									transition="all 0.15s ease-in"
 									_hover={{
 										transform: "scale(1.05)",
-										cursor: "pointer",
+										// cursor: "pointer",
 									}}
+									h="100%"
+									borderRadius="lg"
+									overflow="hidden"
 								>
 									{/* {posting.image?.url ? (
 									<FlipBox
@@ -191,11 +197,10 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 									/>
 								) : ( */}
 									<Box
-										minH="200px"
-										bg="brand.blue"
-										px={4}
-										py={2}
-										borderTopRadius="lg"
+										h={160}
+										bgColor="#5A60ADCC"
+										p={4}
+										overflowY="hidden"
 									>
 										<Text>{posting.description}</Text>
 									</Box>
@@ -205,7 +210,8 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 										spacing={0}
 										px={4}
 										py={2}
-										borderBottomRadius="lg"
+										justify="center"
+										flex={1}
 									>
 										<Text fontSize="sm">
 											{posting.area}
@@ -230,7 +236,7 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 export async function getServerSideProps() {
 	const props = {
 		postings: (await getJobPostings()).sort((a, b) =>
-			a.name.localeCompare(b.name)
+			a.name.localeCompare(b.name, "en")
 		),
 	};
 	return {

@@ -78,7 +78,7 @@ export default function Donate() {
 							Thank you for your generosity in donating to School
 							Simplified!
 						</Text>
-						<Heading textAlign="left" fontSize="18px">
+						<Heading pt={15} textAlign="left" fontSize="18px">
 							Here is what your money will go towards:
 						</Heading>
 						<HStack h="150px" w="100%">
@@ -109,7 +109,7 @@ export default function Donate() {
 						position="absolute"
 						right="20vw"
 						top="10vh"
-						zIndex={0}
+						zIndex={-1}
 						src="timmy/timmy_rich_2.png"
 						w="300px"
 					/>

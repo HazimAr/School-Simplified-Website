@@ -91,6 +91,10 @@ const menuItems: MenuItem[] = [
 		name: "Programs",
 		children: [
 			{
+				name: "Projects",
+				href: "/projects",
+			},
+			{
 				name: "Chapters",
 				href: "/chapter",
 			},

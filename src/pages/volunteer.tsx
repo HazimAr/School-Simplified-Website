@@ -44,9 +44,7 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 	// areaOptions.sort();
 	// programOptions.sort();
 
-	const [postingsToDisplay, setPostingsToDisplay] = useState(
-		postings.filter((posting) => posting.program == programOptions[1])
-	);
+	const [postingsToDisplay, setPostingsToDisplay] = useState(postings);
 
 	const [filter, setFilter] = useState({
 		rank: null,

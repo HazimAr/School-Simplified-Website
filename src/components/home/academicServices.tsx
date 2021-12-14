@@ -103,13 +103,13 @@ function Card(props: CardProps): JSX.Element {
 		>
 			<VStack
 				rounded={5}
-				bgColor="#5A60ADCC"
+				bg="#5A60ADCC"
 				align="stretch"
 				overflow="hidden"
 				spacing={22}
 				h="100%"
 			>
-				<Box px={8} py={4} bgColor="#5A60AD">
+				<Box px={8} py={4} bg="#5A60AD">
 					<Heading size="md">{props.title}</Heading>
 				</Box>
 				<Stack

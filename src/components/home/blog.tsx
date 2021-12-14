@@ -113,7 +113,7 @@ function Card(listing: BlogListing) {
 		<Box
 			flex={1}
 			style={{ aspectRatio: "1" }}
-			bgColor="#5A60ADCC"
+			bg="#5A60ADCC"
 			rounded={10}
 			overflow="hidden"
 			transition="transform 0.2s ease-in"
@@ -131,7 +131,7 @@ function Card(listing: BlogListing) {
 						backgroundPosition="center"
 					/>
 					<Flex
-						bgColor="#5A60AD"
+						bg="#5A60AD"
 						px={4}
 						py={2}
 						flexDir="column"

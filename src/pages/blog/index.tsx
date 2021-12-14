@@ -172,7 +172,7 @@ function ListingElement(listing: BlogListing) {
 
 	return (
 		<VStack
-			bgColor="brand.darkerBlue"
+			bg="brand.darkerBlue"
 			alignItems="stretch"
 			overflow="hidden"
 			borderRadius="3xl"

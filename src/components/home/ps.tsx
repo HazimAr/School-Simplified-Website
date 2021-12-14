@@ -45,11 +45,7 @@ export default function ProgrammingSimplified(): JSX.Element {
 						</NextChakraLink>
 					</Flex>
 					<Box rounded={5} bgImg="/code.jpg" bgSize="cover">
-						<Text
-							bgColor="rgba(121, 128, 224, 0.71)"
-							px={3.5}
-							py={2.5}
-						>
+						<Text bg="rgba(121, 128, 224, 0.71)" px={3.5} py={2.5}>
 							Learn how to code and create your own real-life
 							applications from experienced instructors from all
 							around the world for free, forever!
@@ -73,7 +69,7 @@ export default function ProgrammingSimplified(): JSX.Element {
 function Card(props: CardProps): JSX.Element {
 	return (
 		<VStack
-			bgColor="#5A60ADCC"
+			bg="#5A60ADCC"
 			align="stretch"
 			rounded={5}
 			overflow="hidden"
@@ -82,7 +78,7 @@ function Card(props: CardProps): JSX.Element {
 			<Text px={3.5} py={2.5} flex={1}>
 				{props.description}
 			</Text>
-			<Box bgColor="#5A60AD" px={3.5} py={2.5}>
+			<Box bg="#5A60AD" px={3.5} py={2.5}>
 				<Heading size="sm">{props.name}</Heading>
 				{/* <Text>Taught by {props.instructor}</Text> */}
 			</Box>

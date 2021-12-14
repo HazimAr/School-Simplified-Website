@@ -124,7 +124,7 @@ function Testimony(props: Review): JSX.Element {
 				px={9}
 				py={5}
 				rounded={20}
-				bgColor="#FFFFFFC0"
+				bg="#FFFFFFC0"
 				justify="center"
 				h={{ base: 550, sm: 400, md: 270, lg: 220, xl: 200 }}
 			>

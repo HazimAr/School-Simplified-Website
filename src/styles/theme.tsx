@@ -56,6 +56,7 @@ const theme = extendTheme({
 				textAlign: "center",
 				background:
 					"#6C7DFE linear-gradient(180deg, #5866D3 0%, #6C7DFE 40%, #8C93E4 100%)",
+				// "white", // for debugging whether a background is showing up properly
 				backgroundSize: "cover",
 				backgroundPosition: "center",
 				backgroundRepeat: "no-repeat",

@@ -70,6 +70,7 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 		<>
 			<ContainerBackground
 				src="/timmy/raining_timmy.png"
+				bg="#5866D3CC"
 				// py={{ base: 5, md: 10 }}
 				pt={{ base: 12, md: 24 }}
 				pb={{ base: 5, md: 10 }}
@@ -106,7 +107,10 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 					</Center>
 				</ContainerInside>
 			</ContainerBackground>
-			<Container mt={20}>
+			<Container
+				pt={20}
+				bg="linear-gradient(180deg, #7683E7 0%, #A8B2FF 100%)"
+			>
 				<ContainerInside>
 					<HStack spacing={5} mb={10}>
 						<VStack flex={1}>
@@ -198,7 +202,7 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 								) : ( */}
 									<Box
 										h={160}
-										bgColor="#5A60ADCC"
+										bg="#5A60ADCC"
 										p={4}
 										overflowY="hidden"
 									>
@@ -229,6 +233,10 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 					</SimpleGrid>
 				</ContainerInside>
 			</Container>
+			<Box
+				h={100}
+				bg="linear-gradient(180deg, #A8B2FF 20%, transparent 100%)"
+			/>
 		</>
 	);
 }

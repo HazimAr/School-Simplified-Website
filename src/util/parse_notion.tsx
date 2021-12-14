@@ -231,7 +231,7 @@ export function parseBlock(block: any): JSX.Element {
 		case "code":
 			return (
 				<Box
-					bgColor="black"
+					bg="black"
 					color="white"
 					fontFamily="'Consolas', monospace"
 					p={2}

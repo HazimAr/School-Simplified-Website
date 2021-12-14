@@ -39,7 +39,7 @@
 		"react-wavify": "^1.5.4"
 	},
 	"devDependencies": {
-		"@babel/preset-typescript": "^7.15.0",
+		"@babel/preset-typescript": "^7.16.5",
 		"@types/babel__core": "^7.1.16",
 		"@types/fuzzaldrin-plus": "^0.6.2",
 		"@types/next": "^9.0.0",

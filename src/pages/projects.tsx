@@ -11,32 +11,41 @@ import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextChakraLink from "@components/nextChakra";
-import { rounded } from "@styles/theme";
 
 export default function Four(): JSX.Element {
 	return (
 		<>
 			<Container py="50px">
 				<ContainerInside>
-					<Stack
-						direction={{ base: "column", lg: "row" }}
-						mb="10px"
-						justify="space-between"
-					>
-						<Heading fontSize="35px">
-							Start Your Project Today
-						</Heading>
-						<Box>
-							<Button timmysrc="timmy/timmy_flying_icon.png">
-								Propose Project
-							</Button>
-						</Box>
-					</Stack>
-					<Text textAlign="left" fontSize="22px">
-						Take the chance to showcase your capability, creativity,
-						and ideas while receiving community service hours and
-						possibly becoming a project manager!
-					</Text>
+					<HStack>
+						<Image
+							display={{ base: "none", md: "block" }}
+							src="timmy/timmy_flying.png"
+							w="230px"
+							alt="Timmy with beanie"
+						/>
+						<VStack
+							textAlign="left"
+							align="start"
+							mb="10px"
+							justify="space-between"
+						>
+							<Heading fontSize="35px">
+								Start Your Project Today
+							</Heading>
+							<Text textAlign="left" fontSize="22px">
+								Take the chance to showcase your capability,
+								creativity, and ideas while receiving community
+								service hours and possibly becoming a project
+								manager!
+							</Text>
+							<Box pt="15px">
+								<Button timmysrc="timmy/timmy_paper_icon.svg">
+									Propose Project
+								</Button>
+							</Box>
+						</VStack>
+					</HStack>
 				</ContainerInside>
 			</Container>
 			<Container
@@ -45,21 +54,28 @@ export default function Four(): JSX.Element {
 			>
 				<ContainerInside>
 					<HStack>
-						<Image
-							display={{ base: "none", md: "block" }}
-							src="timmy/timmy_flying.png"
-							alt="Timmy with beanie"
-						/>
-						<VStack spacing={30}>
+						<VStack spacing={8}>
 							<Questions
 								title="What is a project?"
 								text="A project is a temporary endeavor that creates a unique product or service consistent with our mission of inspiring learning while fostering an environment attuned to adapting and improving through customer input."
+								image="timmy/timmy_ruler.png"
+								width="75%"
+								rounded={30}
 							/>
-							<Questions
-								title="Do I lead my own project?"
-								text="That is up to you! Once your proposal is approved, you can choose to be the project manager or recommend a friend to take over while you are in the team helping with the project.
-"
-							/>
+							<Stack direction={{ base: "column", md: "row" }}>
+								<Questions
+									title="What can my project be?"
+									text="Projects can include almost anything from hackathons, advocacy campaigns, competitive startups, and more!"
+									image={null}
+									width="100%"
+								/>
+								<Questions
+									title="Do I lead my own project?"
+									text="That is up to you! Once your proposal is approved, you can choose to be the project manager or recommend a friend to take over while you are in the team helping with the project."
+									image={null}
+									width="100%"
+								/>
+							</Stack>
 						</VStack>
 					</HStack>
 				</ContainerInside>
@@ -117,17 +133,28 @@ export default function Four(): JSX.Element {
 	);
 }
 
-function Questions({ title, text }: { title: string; text: string }) {
+function Questions({ title, text, image = null, ...props }) {
 	return (
-		<Box rounded={rounded} bg="rgba(90, 96, 173, .8)">
-			<Box w="100%" bg="rgba(90, 96, 173, 1)" p="15px" borderRadius="5px">
-				<Heading textAlign="left" fontSize="22px">
-					{title}
-				</Heading>
-			</Box>
-			<Text textAlign="left" m="20px" fontSize="18px">
-				{text}
-			</Text>
+		<Box
+			overflow="hidden"
+			mx="15px"
+			px="15px"
+			rounded={20}
+			bg="rgba(90, 96, 173, .8)"
+			boxShadow="0px 5px 5px rgba(0, 0, 0, 0.2)"
+			{...props}
+		>
+			<HStack align="end">
+				<VStack m="20px" align="start">
+					<Heading textAlign="left" fontSize="22px">
+						{title}
+					</Heading>
+					<Text textAlign="left" fontSize="18px">
+						{text}
+					</Text>
+				</VStack>
+				<Image display={{ base: "none", md: "block" }} src={image} />
+			</HStack>
 		</Box>
 	);
 }

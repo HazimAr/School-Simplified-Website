@@ -59,10 +59,13 @@ export default function Four(): JSX.Element {
 								title="What is a project?"
 								text="A project is a temporary endeavor that creates a unique product or service consistent with our mission of inspiring learning while fostering an environment attuned to adapting and improving through customer input."
 								image="timmy/timmy_ruler.png"
-								width="75%"
+								w={{ base: "100%", md: "75%" }}
 								rounded={30}
 							/>
-							<Stack direction={{ base: "column", md: "row" }}>
+							<Stack
+								spacing={8}
+								direction={{ base: "column", md: "row" }}
+							>
 								<Questions
 									title="What can my project be?"
 									text="Projects can include almost anything from hackathons, advocacy campaigns, competitive startups, and more!"
@@ -89,11 +92,11 @@ export default function Four(): JSX.Element {
 						Previous Projects
 					</Heading>
 					<Text py="15px" fontSize="22px" textAlign="left">
-						An example of a project would be our hackathon, which
-						was one of the largest ever in the US, earning over
-						$100k in prizes! It took three months of planning out
-						the factors that play into building a project, such as
-						cost, sponsorships, participants, platforms, and more.
+						An example would be Simplihacks, one of the largest
+						hackathons in the US that earned over $100k in prizes!
+						It is a 2-day virtual hackathon, brought to you by
+						School Simplified, that will re-occur in February of
+						2022 so stay tuned!
 					</Text>
 					<Stack
 						direction={{ base: "column-reverse", lg: "row" }}
@@ -109,18 +112,17 @@ export default function Four(): JSX.Element {
 						/>
 						<VStack align="start" spacing={5}>
 							<Text fontSize="22px" textAlign="left">
-								Simplihacks is a 2-day virtual hackathon,
-								brought to you by School Simplified. If this is
-								your first hackathon or you have no experience
-								with coding, do not worry! Participants of all
-								levels to compete are welcomed to join our great
-								workshops that can get you started on your
-								computer science journey.
+								If this is your first hackathon or you have no
+								experience with coding, do not worry!
+								Participants of all levels to compete are
+								welcomed to join our great workshops that can
+								get you started on your computer science
+								journey.
 								{<br />}
 								{<br />}
 								Want to learn how to make cool websites and
 								apps? Or maybe you just want to learn how to
-								code for fun. We’ll help you do just that.
+								code for fun. We will help you do just that.
 							</Text>
 							<Button timmysrc="timmy/timmy_scroll_icon.png">
 								More Information
@@ -137,8 +139,6 @@ function Questions({ title, text, image = null, ...props }) {
 	return (
 		<Box
 			overflow="hidden"
-			mx="15px"
-			px="15px"
 			rounded={20}
 			bg="rgba(90, 96, 173, .8)"
 			boxShadow="0px 5px 5px rgba(0, 0, 0, 0.2)"
@@ -153,7 +153,11 @@ function Questions({ title, text, image = null, ...props }) {
 						{text}
 					</Text>
 				</VStack>
-				<Image display={{ base: "none", md: "block" }} src={image} />
+				<Image
+					height="150px"
+					display={{ base: "none", md: "block" }}
+					src={image}
+				/>
 			</HStack>
 		</Box>
 	);

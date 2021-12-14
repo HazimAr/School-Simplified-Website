@@ -116,7 +116,20 @@ export default function PartnersPage() {
 						spacingY={0}
 					>
 						{partners[partner].data.map((partnerData) => {
-							const cell = (
+							return partnerData.link ? (
+								<NextLink
+									href={partnerData.link}
+									isExternal
+									key={partnerData.name}
+								>
+									<Cell
+										h="180px"
+										alt={partnerData.name}
+										src={partnerData.src}
+										desc={partnerData.description}
+									/>
+								</NextLink>
+							) : (
 								<Cell
 									h="180px"
 									key={partnerData.name}
@@ -124,16 +137,6 @@ export default function PartnersPage() {
 									src={partnerData.src}
 									desc={partnerData.description}
 								/>
-							);
-							return partnerData.link ? (
-								<NextLink
-									href={partnerData.link}
-									target="_blank"
-								>
-									{cell}
-								</NextLink>
-							) : (
-								cell
 							);
 						})}
 					</SimpleGrid>

@@ -145,14 +145,12 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 							<VStack flex={5} align="flex-start">
 								<Heading size="xl">Join Our Team</Heading>
 								<Text fontSize="lg">
-									Given that we are one of the largest
-									student-run nonprofits in the world and are
-									completely independent from other people,
-									organizations, and institutions, you will
-									have unprecedented freedom to create, learn,
-									and contribute. Join our team today and
-									empower our generation to revolutionize the
-									future.
+									We are one of the largest student-run nonprofits in 
+									the world, and our independence from other organizations 
+									and institutions will provide you with unprecedented 
+									freedom to create, learn, and contribute. Whether your 
+									interests lie in business, community, or academics, join us today 
+									and empower our generation to revolutionize our future!
 								</Text>
 							</VStack>
 							<Image

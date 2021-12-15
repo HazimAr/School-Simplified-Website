@@ -145,15 +145,15 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 							<VStack flex={5} align="flex-start">
 								<Heading size="xl">Join Our Team</Heading>
 								<Text fontSize="lg">
-									As the largest student run nonprofit in
-									North America, School Simplified provides
-									you with a variety of opportunities. Become
-									a part of our team today and together we can
-									build a better future!
-								</Text>
-								<Text fontSize="lg" pt={4}>
-									To get started, filter using our options
-									below!
+									Given that we are one of the largest
+									student-run nonprofits in the world and are
+									completely independent from other people,
+									organizations, and institutions, you will
+									have unprecedented freedom to create, learn,
+									and contribute. Join our team today and
+									empower the next (can we change this to our?
+									after all thats what our target is is it
+									not) generation to revolutionize the future.
 								</Text>
 							</VStack>
 							<Image

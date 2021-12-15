@@ -28,9 +28,9 @@ import { JobPosting } from "types";
  * @returns the Volunteering page
  */
 export default function Volunteering({ postings }: { postings: JobPosting[] }) {
-	const rankOptions = [],
-		areaOptions = [],
-		programOptions = [];
+	const rankOptions: string[] = [],
+		areaOptions: string[] = [],
+		programOptions: string[] = [];
 
 	for (const posting of postings) {
 		if (posting.rank && !rankOptions.includes(posting.rank))
@@ -52,6 +52,12 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 		program: null,
 	});
 
+	const [enabledOptions, setEnabledOptions] = useState({
+		rank: rankOptions,
+		area: areaOptions,
+		program: programOptions,
+	});
+
 	useEffect(() => {
 		setPostingsToDisplay(
 			postings.filter(
@@ -61,6 +67,60 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 					(!filter.program || posting.program == filter.program)
 			)
 		);
+
+		const tempOptions = {
+			rank: rankOptions,
+			area: areaOptions,
+			program: programOptions,
+		};
+		// finding valid ranks
+		if (filter.area || filter.program) {
+			tempOptions.rank = [];
+			postings
+				.filter(
+					(posting) =>
+						(!filter.area || filter.area == posting.area) &&
+						(!filter.program || filter.program == posting.program)
+				)
+				.forEach((posting) => {
+					if (!tempOptions.rank.includes(posting.rank)) {
+						tempOptions.rank.push(posting.rank);
+					}
+				});
+		}
+		// finding valid areas
+		if (filter.program || filter.rank) {
+			tempOptions.area = [];
+			postings
+				.filter(
+					(posting) =>
+						(!filter.program ||
+							filter.program == posting.program) &&
+						(!filter.rank || filter.rank == posting.rank)
+				)
+				.forEach((posting) => {
+					if (!tempOptions.area.includes(posting.area)) {
+						tempOptions.area.push(posting.area);
+					}
+				});
+		}
+		// finding valid programs
+		if (filter.area || filter.rank) {
+			tempOptions.program = [];
+			postings
+				.filter(
+					(posting) =>
+						(!filter.area || filter.area == posting.area) &&
+						(!filter.rank || filter.rank == posting.rank)
+				)
+				.forEach((posting) => {
+					if (!tempOptions.program.includes(posting.program)) {
+						tempOptions.program.push(posting.program);
+					}
+				});
+		}
+
+		setEnabledOptions(tempOptions);
 	}, [filter]);
 
 	return (
@@ -120,45 +180,19 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 									setFilter(tempFilter);
 								}}
 							>
-								{rankOptions.map((option) => {
-									let enabled = false;
-									postings
-										.filter((posting) => {
-											if (
-												filter.area &&
-												posting.area != filter.area
+								{rankOptions.map((option) => (
+									<option
+										key={option}
+										value={option}
+										disabled={
+											!enabledOptions.rank.includes(
+												option
 											)
-												return false;
-											if (
-												filter.program &&
-												posting.program !=
-													filter.program
-											)
-												return false;
-											return true;
-										})
-										.forEach((posting) => {
-											if (posting.rank == option) {
-												enabled = true;
-												console.log(option);
-												return;
-											}
-										});
-
-									return (
-										<option
-											key={option}
-											value={option}
-											style={{
-												color: enabled
-													? "white"
-													: "grey",
-											}}
-										>
-											{option}
-										</option>
-									);
-								})}
+										}
+									>
+										{option}
+									</option>
+								))}
 							</Select>
 						</VStack>
 						<VStack flex={1}>
@@ -171,44 +205,19 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 									setFilter(tempFilter);
 								}}
 							>
-								{areaOptions.map((option) => {
-									let enabled = false;
-									postings
-										.filter((posting) => {
-											if (
-												filter.rank &&
-												posting.rank != filter.rank
+								{areaOptions.map((option) => (
+									<option
+										key={option}
+										value={option}
+										disabled={
+											!enabledOptions.area.includes(
+												option
 											)
-												return false;
-											if (
-												filter.program &&
-												posting.program !=
-													filter.program
-											)
-												return false;
-											return true;
-										})
-										.forEach((posting) => {
-											if (posting.area == option) {
-												enabled = true;
-												console.log(option);
-												return;
-											}
-										});
-									return (
-										<option
-											key={option}
-											value={option}
-											style={{
-												color: enabled
-													? "white"
-													: "grey",
-											}}
-										>
-											{option}
-										</option>
-									);
-								})}
+										}
+									>
+										{option}
+									</option>
+								))}
 							</Select>
 						</VStack>
 						<VStack flex={1}>
@@ -221,43 +230,19 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 									setFilter(tempFilter);
 								}}
 							>
-								{programOptions.map((option) => {
-									let enabled = false;
-									postings
-										.filter((posting) => {
-											if (
-												filter.rank &&
-												posting.rank != filter.rank
+								{programOptions.map((option) => (
+									<option
+										key={option}
+										value={option}
+										disabled={
+											!enabledOptions.program.includes(
+												option
 											)
-												return false;
-											if (
-												filter.area &&
-												posting.area != filter.area
-											)
-												return false;
-											return true;
-										})
-										.forEach((posting) => {
-											if (posting.program == option) {
-												enabled = true;
-												console.log(option);
-												return;
-											}
-										});
-									return (
-										<option
-											key={option}
-											value={option}
-											style={{
-												color: enabled
-													? "white"
-													: "grey",
-											}}
-										>
-											{option}
-										</option>
-									);
-								})}
+										}
+									>
+										{option}
+									</option>
+								))}
 							</Select>
 						</VStack>
 					</HStack>

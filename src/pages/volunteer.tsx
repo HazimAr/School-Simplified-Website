@@ -151,9 +151,8 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 									organizations, and institutions, you will
 									have unprecedented freedom to create, learn,
 									and contribute. Join our team today and
-									empower the next (can we change this to our?
-									after all thats what our target is is it
-									not) generation to revolutionize the future.
+									empower our generation to revolutionize the
+									future.
 								</Text>
 							</VStack>
 							<Image

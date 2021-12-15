@@ -174,6 +174,8 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 							<Heading size="sm">Rank</Heading>
 							<Select
 								placeholder="All"
+								bg="#5a60adcc"
+								border="none"
 								onChange={(e) => {
 									const tempFilter: any = { ...filter };
 									tempFilter.rank = e.target.value;
@@ -199,6 +201,8 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 							<Heading size="sm">Area of Work</Heading>
 							<Select
 								placeholder="All"
+								bg="#5a60adcc"
+								border="none"
 								onChange={(e) => {
 									const tempFilter: any = { ...filter };
 									tempFilter.area = e.target.value;
@@ -224,6 +228,8 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 							<Heading size="sm">Program</Heading>
 							<Select
 								placeholder="All"
+								bg="#5a60adcc"
+								border="none"
 								onChange={(e) => {
 									const tempFilter: any = { ...filter };
 									tempFilter.program = e.target.value;

@@ -260,7 +260,7 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 								setProgram("");
 							}}
 						>
-							Reset
+							Reset Filters
 						</Button>
 					</Center>
 					<SimpleGrid columns={{ base: 1, md: 2, xl: 3 }} spacing={5}>

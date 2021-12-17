@@ -1,9 +1,9 @@
 import { getJobPostings } from "@api/notion";
 import {
 	Box,
+	Button,
 	Center,
 	Heading,
-	HStack,
 	Image,
 	Select,
 	SimpleGrid,
@@ -17,6 +17,8 @@ import ContainerInside from "@components/containerInside";
 import NextChakraLink from "@components/nextChakra";
 import { useEffect, useState } from "react";
 import { JobPosting } from "types";
+
+const defaultOption: string = "Any/All";
 
 /**
  * The Volunteering page!
@@ -46,11 +48,15 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 
 	const [postingsToDisplay, setPostingsToDisplay] = useState(postings);
 
-	const [filter, setFilter] = useState({
-		rank: null,
-		area: null,
-		program: null,
-	});
+	// const [filter, setFilter] = useState({
+	// 	rank: null,
+	// 	area: null,
+	// 	program: null,
+	// });
+
+	const [rank, setRank] = useState<string>(null);
+	const [area, setArea] = useState<string>(null);
+	const [program, setProgram] = useState<string>(null);
 
 	const [enabledOptions, setEnabledOptions] = useState({
 		rank: rankOptions,
@@ -62,9 +68,9 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 		setPostingsToDisplay(
 			postings.filter(
 				(posting) =>
-					(!filter.rank || posting.rank == filter.rank) &&
-					(!filter.area || posting.area == filter.area) &&
-					(!filter.program || posting.program == filter.program)
+					(!rank || posting.rank == rank) &&
+					(!area || posting.area == area) &&
+					(!program || posting.program == program)
 			)
 		);
 
@@ -74,13 +80,13 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 			program: programOptions,
 		};
 		// finding valid ranks
-		if (filter.area || filter.program) {
+		if (area || program) {
 			tempOptions.rank = [];
 			postings
 				.filter(
 					(posting) =>
-						(!filter.area || filter.area == posting.area) &&
-						(!filter.program || filter.program == posting.program)
+						(!area || area == posting.area) &&
+						(!program || program == posting.program)
 				)
 				.forEach((posting) => {
 					if (!tempOptions.rank.includes(posting.rank)) {
@@ -89,14 +95,13 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 				});
 		}
 		// finding valid areas
-		if (filter.program || filter.rank) {
+		if (program || rank) {
 			tempOptions.area = [];
 			postings
 				.filter(
 					(posting) =>
-						(!filter.program ||
-							filter.program == posting.program) &&
-						(!filter.rank || filter.rank == posting.rank)
+						(!program || program == posting.program) &&
+						(!rank || rank == posting.rank)
 				)
 				.forEach((posting) => {
 					if (!tempOptions.area.includes(posting.area)) {
@@ -105,13 +110,13 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 				});
 		}
 		// finding valid programs
-		if (filter.area || filter.rank) {
+		if (area || rank) {
 			tempOptions.program = [];
 			postings
 				.filter(
 					(posting) =>
-						(!filter.area || filter.area == posting.area) &&
-						(!filter.rank || filter.rank == posting.rank)
+						(!area || area == posting.area) &&
+						(!rank || rank == posting.rank)
 				)
 				.forEach((posting) => {
 					if (!tempOptions.program.includes(posting.program)) {
@@ -121,7 +126,7 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 		}
 
 		setEnabledOptions(tempOptions);
-	}, [filter]);
+	}, [rank, area, program]);
 
 	return (
 		<>
@@ -169,18 +174,18 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 				bg="linear-gradient(180deg, #7683E7 0%, #A8B2FF 100%)"
 			>
 				<ContainerInside>
-					<HStack spacing={5} mb={10}>
+					<Stack
+						direction={{ base: "column", md: "row" }}
+						spacing={5}
+					>
 						<VStack flex={1}>
 							<Heading size="sm">Rank</Heading>
 							<Select
-								placeholder="Any/All"
+								placeholder={defaultOption}
 								bg="#5a60adcc"
 								border="none"
-								onChange={(e) => {
-									const tempFilter: any = { ...filter };
-									tempFilter.rank = e.target.value;
-									setFilter(tempFilter);
-								}}
+								value={rank}
+								onChange={(e) => setRank(e.target.value)}
 							>
 								{rankOptions.map((option) => (
 									<option
@@ -200,14 +205,11 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 						<VStack flex={1}>
 							<Heading size="sm">Area of Work</Heading>
 							<Select
-								placeholder="Any/All"
+								placeholder={defaultOption}
 								bg="#5a60adcc"
 								border="none"
-								onChange={(e) => {
-									const tempFilter: any = { ...filter };
-									tempFilter.area = e.target.value;
-									setFilter(tempFilter);
-								}}
+								value={area}
+								onChange={(e) => setArea(e.target.value)}
 							>
 								{areaOptions.map((option) => (
 									<option
@@ -227,14 +229,11 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 						<VStack flex={1}>
 							<Heading size="sm">Program</Heading>
 							<Select
-								placeholder="Any/All"
+								placeholder={defaultOption}
 								bg="#5a60adcc"
 								border="none"
-								onChange={(e) => {
-									const tempFilter: any = { ...filter };
-									tempFilter.program = e.target.value;
-									setFilter(tempFilter);
-								}}
+								value={program}
+								onChange={(e) => setProgram(e.target.value)}
 							>
 								{programOptions.map((option) => (
 									<option
@@ -251,7 +250,19 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 								))}
 							</Select>
 						</VStack>
-					</HStack>
+					</Stack>
+					<Center mt={5} mb={10}>
+						<Button
+							disabled={!rank && !area && !program}
+							onClick={() => {
+								setRank("");
+								setArea("");
+								setProgram("");
+							}}
+						>
+							Reset
+						</Button>
+					</Center>
 					<SimpleGrid columns={{ base: 1, md: 2, xl: 3 }} spacing={5}>
 						{postingsToDisplay.map((posting: JobPosting) => (
 							<NextChakraLink

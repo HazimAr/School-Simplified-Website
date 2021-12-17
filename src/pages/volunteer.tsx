@@ -174,9 +174,24 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 				bg="linear-gradient(180deg, #7683E7 0%, #A8B2FF 100%)"
 			>
 				<ContainerInside>
+					<Center>
+						<Button
+							bg="#5a60adcc"
+							disabled={!rank && !area && !program}
+							onClick={() => {
+								setRank("");
+								setArea("");
+								setProgram("");
+							}}
+						>
+							Reset Filters
+						</Button>
+					</Center>
 					<Stack
 						direction={{ base: "column", md: "row" }}
 						spacing={5}
+						mt={5}
+						mb={10}
 					>
 						<VStack flex={1}>
 							<Heading size="sm">Rank</Heading>
@@ -251,18 +266,6 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 							</Select>
 						</VStack>
 					</Stack>
-					<Center mt={5} mb={10}>
-						<Button
-							disabled={!rank && !area && !program}
-							onClick={() => {
-								setRank("");
-								setArea("");
-								setProgram("");
-							}}
-						>
-							Reset Filters
-						</Button>
-					</Center>
 					<SimpleGrid columns={{ base: 1, md: 2, xl: 3 }} spacing={5}>
 						{postingsToDisplay.map((posting: JobPosting) => (
 							<NextChakraLink

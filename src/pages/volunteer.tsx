@@ -275,11 +275,13 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 									transition="all 0.15s ease-in"
 									_hover={{
 										transform: "scale(1.05)",
-										// cursor: "pointer",
 									}}
 									h="100%"
 									borderRadius="lg"
 									overflow="hidden"
+									bgImg={posting.image?.url ?? null}
+									bgSize="cover"
+									bgPos="center"
 								>
 									{/* {posting.image?.url ? (
 									<FlipBox
@@ -288,8 +290,8 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 									/>
 								) : ( */}
 									<Box
-										h={160}
 										bg="#5A60ADCC"
+										h={160}
 										p={4}
 										overflowY="hidden"
 									>

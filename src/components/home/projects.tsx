@@ -6,6 +6,7 @@ import {
 	Stack,
 	Text,
 	VStack,
+	Link,
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
@@ -25,7 +26,8 @@ export default function Projects(): JSX.Element {
 						flexDir={{ base: "column", md: "row" }}
 					>
 						<Heading size="lg" mb={{ base: 2, md: 0 }}>
-							Start Your Project Today
+							Start Your <Link href="/projects">Project</Link>{" "}
+							Today
 						</Heading>
 						<Button timmysrc="/timmy/timmy_flying_icon.png">
 							Propose Project
@@ -37,6 +39,40 @@ export default function Projects(): JSX.Element {
 						possibly becoming a project manager!
 					</Text>
 					<Stack direction={{ base: "column", md: "row" }}>
+						{/* <Box>
+							<Heading fontSize={25} mb={1}>
+								What is a project?
+							</Heading>
+							<Text>
+								A project is a temporary endeavor that creates a
+								unique product or service consistent with our
+								mission of inspiring learning while fostering an
+								environment attuned to adapting and improving
+								through customer input.
+								<br />
+								<br />
+								Projects can include almost anything from
+								hackathons, advocacy campaigns, competitive
+								startups, and more!
+							</Text>
+							<Link href="https://forms.gle/fyP8RPFqtWNC4AY68">
+								<Button timmysrc="/timmy/10.png">
+									Propose Project
+								</Button>
+							</Link>
+							<Link href="/projects">
+								<Button timmysrc="/timmy/17.png">
+									Learn More
+								</Button>
+							</Link>
+
+							<Image
+								src="/timmy/rules.png"
+								alt="Timmy with a checklist and ruler"
+								alignSelf="center"
+								maxW={{ base: 200, md: "40%" }}
+							/>
+						</Box> */}
 						<Image
 							src="/timmy/timmy_flying.png"
 							alt="Timmy with a propeller hat and swirl blush"

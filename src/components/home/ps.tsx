@@ -1,4 +1,12 @@
-import { Box, Flex, Heading, Stack, Text, VStack } from "@chakra-ui/react";
+import {
+	Box,
+	Flex,
+	Heading,
+	Stack,
+	Text,
+	VStack,
+	Link,
+} from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -13,15 +21,27 @@ type CardProps = {
 const cards: CardProps[] = [
 	{
 		description:
-			"Learn the basics of TypeScript, React, and Chakra UI to develop websites! Creating your own websites from scratch is a useful skill that can help foster creativity, help you understand code, and allow you to start your own personal projects.",
-		name: "Website Development with React & Next.js",
+			"Create your own websites from scratch by learning the basics of TypeScript, React, and Chakra UI!",
+		name: "Website Development with Next.js",
 		instructor: "Hazim Arafa",
 	},
 	{
 		description:
-			"Learn the basics of JavaScript, Discord API, and discord,js, a JavaScript library used for Discord bot development. With Discord bots being used in almost every server, knowledge of bot development will help students understand the utilities of bots and create their own!",
+			"Create an interactive Discord Bot using the latest features exposed by the discord API with TypeScript and NodeJS!",
 		name: "Discord: Bot Development",
 		instructor: "Max Morrow",
+	},
+	{
+		description:
+			"Discover the basics of object-oriented programming with the Java programming language!",
+		name: "Java 101: The Basics",
+		instructor: "Tachi Miura & Tachi Miura",
+	},
+	{
+		description:
+			"Form professional coding skills with the basics of Python and build a foundation that can be applied anywhere!",
+		name: "Python 101: The Basics",
+		instructor: "Hovhannes M & Rahul Datta",
 	},
 ];
 
@@ -36,11 +56,16 @@ export default function ProgrammingSimplified(): JSX.Element {
 					>
 						<Box mb={{ base: 3, md: 0 }}>
 							<Heading size="lg">Learn to apply code.</Heading>
-							<Heading size="md" fontWeight="normal">
-								Programming Simplified Program
-							</Heading>
+							<Link href="https://programmingsimplified.org/">
+								<Heading size="md" fontWeight="normal">
+									Programming Simplified Program
+								</Heading>
+							</Link>
 						</Box>
-						<NextChakraLink href="https://programmingsimplified.org/">
+						<NextChakraLink
+							href="https://programmingsimplified.org/"
+							target="_blank"
+						>
 							<Button timmysrc="/timmy/29.png">Enroll Now</Button>
 						</NextChakraLink>
 					</Flex>

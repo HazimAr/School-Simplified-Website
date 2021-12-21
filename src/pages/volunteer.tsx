@@ -309,11 +309,12 @@ type VolunteerPositionProps = JobPosting & StackProps;
 
 function VolunteerPosition(props: VolunteerPositionProps): JSX.Element {
 	const [hover, setHover] = useBoolean();
+	const transition = "all 0.15s ease-in";
 	return (
 		<Stack
 			spacing={0}
 			textAlign="left"
-			transition="all 0.15s ease-in"
+			transition={transition}
 			transform={hover ? "scale(1.05)" : null}
 			borderRadius="lg"
 			overflow="hidden"
@@ -327,7 +328,7 @@ function VolunteerPosition(props: VolunteerPositionProps): JSX.Element {
 				overflowY="hidden"
 				position="relative"
 				color={hover ? "white" : "transparent"}
-				transition="all 0.15s ease-in"
+				transition={transition}
 			>
 				<Box
 					position="absolute"
@@ -343,7 +344,7 @@ function VolunteerPosition(props: VolunteerPositionProps): JSX.Element {
 					bgSize="cover"
 					bgPos="center"
 					opacity={hover ? 0.2 : 1}
-					transition="all 0.15s ease-in"
+					transition={transition}
 				/>
 				<Text>{props.description}</Text>
 			</Box>

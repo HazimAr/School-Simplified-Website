@@ -8,7 +8,9 @@ import {
 	Select,
 	SimpleGrid,
 	Stack,
+	StackProps,
 	Text,
+	useBoolean,
 	VStack,
 } from "@chakra-ui/react";
 import Container from "@components/container";
@@ -54,9 +56,9 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 	// 	program: null,
 	// });
 
-	const [rank, setRank] = useState<string>(null);
-	const [area, setArea] = useState<string>(null);
-	const [program, setProgram] = useState<string>(null);
+	const [rank, setRank] = useState("");
+	const [area, setArea] = useState("");
+	const [program, setProgram] = useState("");
 
 	const [enabledOptions, setEnabledOptions] = useState({
 		rank: rankOptions,
@@ -277,60 +279,7 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 								isExternal
 								href={posting.form ?? ""}
 							>
-								{false && (
-									<FlipBox
-										src={posting.image.url}
-										description={posting.description}
-									/>
-								)}
-								<Stack
-									spacing={0}
-									textAlign="left"
-									transition="all 0.15s ease-in"
-									_hover={{
-										transform: "scale(1.05)",
-									}}
-									h="100%"
-									borderRadius="lg"
-									overflow="hidden"
-									bgImg={posting.image?.url ?? null}
-									bgSize="cover"
-									bgPos="center"
-								>
-									{/* {posting.image?.url ? (
-									<FlipBox
-										src={posting.image?.url}
-										description={posting.description}
-									/>
-								) : ( */}
-									<Box
-										bg="#5A60ADCC"
-										h={160}
-										p={4}
-										overflowY="hidden"
-									>
-										<Text>{posting.description}</Text>
-									</Box>
-									{/* )} */}
-									<Stack
-										bg="brand.darkerBlue"
-										spacing={0}
-										px={4}
-										py={2}
-										justify="center"
-										flex={1}
-									>
-										<Text fontSize="sm">
-											{posting.area}
-										</Text>
-										<Heading fontSize="lg">
-											{posting.name}
-										</Heading>
-										<Text fontSize="sm">
-											{posting.program}
-										</Text>
-									</Stack>
-								</Stack>
+								<VolunteerPosition {...posting} h="100%" />
 							</NextChakraLink>
 						))}
 					</SimpleGrid>
@@ -352,45 +301,97 @@ export async function getServerSideProps() {
 	};
 	return {
 		props,
-		// revalidate: 60
+		// revalidate: 360,
 	};
 }
 
-function FlipBox({ src, description }) {
+type VolunteerPositionProps = JobPosting & StackProps;
+
+function VolunteerPosition(props: VolunteerPositionProps): JSX.Element {
+	const [hover, setHover] = useBoolean();
 	return (
-		<Box w="100%" h="200px" style={{ perspective: "1000px" }}>
-			<Box
-				pos="relative"
-				w="100%"
-				h="100%"
-				textAlign="center"
-				transition="linear transform 0.8s"
-				style={{ transformStyle: "preserve-3d" }}
-				_hover={{ transform: "rotateY(180deg)" }}
-			>
+		<Stack
+			spacing={0}
+			textAlign="left"
+			transition="all 0.15s ease-in"
+			transform={hover ? "scale(1.05)" : null}
+			borderRadius="lg"
+			overflow="hidden"
+			bg="#5A60ADCC"
+			onMouseEnter={setHover.on}
+			onMouseLeave={setHover.off}
+		>
+			<Box h={160} p={4} overflowY="hidden" position="relative">
+				<Text>{props.description}</Text>
 				<Box
-					pos="absolute"
-					w="100%"
-					h="100%"
-					style={{ backfaceVisibility: "hidden" }}
-					bgImage={src}
+					position="absolute"
+					left={0}
+					top={0}
+					width="100%"
+					height="100%"
+					bg={
+						props.image?.url
+							? `url(${props.image?.url})`
+							: "#5A60ADCC"
+					}
 					bgSize="cover"
-					bgRepeat="no-repeat"
 					bgPos="center"
-				>
-					{/* <Image src={src} alt="logo" w="400px" h="200px" /> */}
-				</Box>
-				<Box
-					pos="absolute"
-					w="100%"
-					h="100%"
-					style={{ backfaceVisibility: "hidden" }}
-					transform="rotateY(180deg)"
-					bg="brand.blue"
-				>
-					<Text>{description}</Text>
-				</Box>
+					opacity={hover ? 0.2 : 1}
+					transition="all 0.15s ease-in"
+				/>
 			</Box>
-		</Box>
+			{/* )} */}
+			<Stack
+				bg="brand.darkerBlue"
+				spacing={0}
+				px={4}
+				py={2}
+				justify="center"
+				flex={1}
+			>
+				<Text fontSize="sm">{props.area}</Text>
+				<Heading fontSize="lg">{props.name}</Heading>
+				<Text fontSize="sm">{props.program}</Text>
+			</Stack>
+		</Stack>
 	);
 }
+
+// function FlipBox({ src, description }) {
+// 	return (
+// 		<Box w="100%" h="200px" style={{ perspective: "1000px" }}>
+// 			<Box
+// 				pos="relative"
+// 				w="100%"
+// 				h="100%"
+// 				textAlign="center"
+// 				transition="linear transform 0.8s"
+// 				style={{ transformStyle: "preserve-3d" }}
+// 				_hover={{ transform: "rotateY(180deg)" }}
+// 			>
+// 				<Box
+// 					pos="absolute"
+// 					w="100%"
+// 					h="100%"
+// 					style={{ backfaceVisibility: "hidden" }}
+// 					bgImage={src}
+// 					bgSize="cover"
+// 					bgRepeat="no-repeat"
+// 					bgPos="center"
+// 				>
+// 					{/* <Image src={src} alt="logo" w="400px" h="200px" /> */}
+// 				</Box>
+// 				<Box
+// 					pos="absolute"
+// 					w="100%"
+// 					h="100%"
+// 					style={{ backfaceVisibility: "hidden" }}
+// 					transform="rotateY(180deg)"
+// 					bg="brand.blue"
+// 				>
+// 					<Text>{description}</Text>
+// 				</Box>
+// 			</Box>
+// 		</Box>
+// 	);
+// }

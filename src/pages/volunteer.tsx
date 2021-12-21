@@ -293,7 +293,7 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 	);
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 	const props = {
 		postings: (await getJobPostings()).sort((a, b) =>
 			a.name.localeCompare(b.name, "en")
@@ -301,7 +301,7 @@ export async function getServerSideProps() {
 	};
 	return {
 		props,
-		// revalidate: 360,
+		revalidate: 360,
 	};
 }
 
@@ -321,8 +321,14 @@ function VolunteerPosition(props: VolunteerPositionProps): JSX.Element {
 			onMouseEnter={setHover.on}
 			onMouseLeave={setHover.off}
 		>
-			<Box h={160} p={4} overflowY="hidden" position="relative">
-				<Text>{props.description}</Text>
+			<Box
+				h={160}
+				p={4}
+				overflowY="hidden"
+				position="relative"
+				color={hover ? "white" : "transparent"}
+				transition="all 0.15s ease-in"
+			>
 				<Box
 					position="absolute"
 					left={0}
@@ -339,8 +345,8 @@ function VolunteerPosition(props: VolunteerPositionProps): JSX.Element {
 					opacity={hover ? 0.2 : 1}
 					transition="all 0.15s ease-in"
 				/>
+				<Text>{props.description}</Text>
 			</Box>
-			{/* )} */}
 			<Stack
 				bg="brand.darkerBlue"
 				spacing={0}

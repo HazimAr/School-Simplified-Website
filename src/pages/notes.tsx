@@ -1,5 +1,5 @@
 import { getSubjects } from "@api/notion";
-import { Box, Center, Heading, Text } from "@chakra-ui/react";
+import { Heading, HStack, Image, Stack, Text } from "@chakra-ui/react";
 import ContainerBackground from "@components/containerBackground";
 import ContainerInside from "@components/containerInside";
 import NotesSection from "@components/resources/notes_section";
@@ -10,17 +10,26 @@ export default function Resources({ subjects }: AllSubjects): JSX.Element {
 		<>
 			<ContainerBackground src="/timmy/lofi_timmy.png">
 				<ContainerInside py={24} my={5}>
-					<Box textAlign="center">
-						<Heading as="h1" mb={3} size="3xl">
-							Notes
-						</Heading>
-						<Center>
-							<Text fontSize={24} maxW="30ch">
+					<HStack spacing={8}>
+						<Image
+							src="/timmy/blogtimmy.png"
+							alt="Timmy holding a book"
+							h="33vw"
+						/>
+						<Stack textAlign="left" flex={1} spacing={4}>
+							<Heading as="h1" mb={3} size="3xl">
+								Notes
+							</Heading>
+							<Text fontSize={24}>
 								All the top-notch notes you'll ever want for
 								your academic needs!
 							</Text>
-						</Center>
-					</Box>
+							<Text fontSize={24}>
+								To get started, select a subject from the
+								buttons below!
+							</Text>
+						</Stack>
+					</HStack>
 				</ContainerInside>
 			</ContainerBackground>
 

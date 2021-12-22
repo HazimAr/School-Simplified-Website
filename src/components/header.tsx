@@ -103,13 +103,13 @@ const menuItems: MenuItem[] = [
 				href: "/activities",
 			},
 			{
+				name: "Programming Simplified",
+				href: "/programming",
+			},
+			{
 				name: "Editorial",
 				href: "/editorial",
 			},
-			// {
-			// 	name: "Programming Simplified",
-			// 	href: "/",
-			// },
 			{
 				name: "Accelerate Your Organization",
 				href: "/accelerate",

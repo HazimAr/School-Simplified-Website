@@ -349,12 +349,12 @@ const programs = [
 		link: "/activities",
 	},
 	{
-		name: "Editorial",
-		link: "/editorial",
+		name: "Programming Simplified",
+		link: "/programming",
 	},
 	{
-		name: "Programming Simplified",
-		link: "https://programmingsimplified.org/",
+		name: "Editorial",
+		link: "/editorial",
 	},
 ];
 

@@ -46,7 +46,7 @@ export default function PartnersPage() {
 						</NextLink> */}
 								<Center>
 									<NextLink
-										href="https://docs.google.com/forms/d/e/1FAIpQLScxSrndCBz1VUA-fv5TvfmEpdowUKws1euU4nuxMcSE51JiZA/viewform?usp=sf_link"
+										href="mailto:partners@schoolsimplified.org"
 										w="fit-content"
 									>
 										<StyledButton
@@ -63,7 +63,7 @@ export default function PartnersPage() {
 												h="30px"
 												mr="10px"
 											/>
-											Apply To Partner
+											Contact
 										</StyledButton>
 									</NextLink>
 								</Center>

@@ -15,9 +15,24 @@ import ContainerInside from "@components/containerInside";
 import NextChakraLink from "@components/nextChakra";
 import { BlogListing } from "types";
 import { toAuthorAttribution } from "util/parse_notion";
+import { motion } from "framer-motion";
 
 export default function Blog({ listing }: { listing: BlogListing[] }) {
 	// console.log(listing);
+	const slideInLeftVariants = {
+		initial: {
+			opacity: 0,
+			x: "-100",
+		},
+		onView: {
+			opacity: 1,
+			x: 0,
+			transition: {
+				duration: 1,
+				delay: 0.3,
+			},
+		},
+	};
 	return (
 		<Container
 			// src="/blog.jpg"
@@ -36,32 +51,64 @@ export default function Blog({ listing }: { listing: BlogListing[] }) {
 						/>
 					</Center>
 				</Flex>
-				<Flex direction="row" mx={{ base: 12, sm: 24, md: 0 }}>
-					<VStack spacing={8} flex={{ base: 1, md: "0 0 50%" }}>
-						<VStack spacing={1} textAlign="left" align="flex-start">
-							<Heading size="lg">Check out</Heading>
-							<Heading fontWeight="bold">
-								The Latest Read!
-							</Heading>
-							<Text>
-								Check out the latest blog from our student
-								authors and read about what they have to say!
-							</Text>
+				<motion.div
+					initial="initial"
+					whileInView="onView"
+					variants={slideInLeftVariants}
+				>
+					<Flex direction="row" mx={{ base: 12, sm: 24, md: 0 }}>
+						<VStack spacing={8} flex={{ base: 1, md: "0 0 50%" }}>
+							<VStack
+								spacing={1}
+								textAlign="left"
+								align="flex-start"
+							>
+								<Heading size="lg">Check out</Heading>
+								<Heading fontWeight="bold">
+									The Latest Read!
+								</Heading>
+								<Text>
+									Check out the latest blog from our student
+									authors and read about what they have to
+									say!
+								</Text>
+							</VStack>
+							<NextChakraLink href="/blog" alignSelf="flex-start">
+								<Button timmysrc="/timmy/17.png">
+									Read More
+								</Button>
+							</NextChakraLink>
 						</VStack>
-						<NextChakraLink href="/blog" alignSelf="flex-start">
-							<Button timmysrc="/timmy/17.png">Read More</Button>
-						</NextChakraLink>
-					</VStack>
-					<Box flex={{ base: null, md: "0 0 50%" }} />
-				</Flex>
+						<Box flex={{ base: null, md: "0 0 50%" }} />
+					</Flex>
+				</motion.div>
 				<SimpleGrid
 					columns={{ base: 1, md: listing.length }}
 					mt={8}
 					mx={{ base: 12, sm: 24, md: 0 }}
 					gap={{ base: 10, md: 4, lg: 10 }}
 				>
-					{listing.map((blogListing) => (
-						<Card {...blogListing} key={blogListing.link} />
+					{listing.map((blogListing, index) => (
+						<motion.div
+							initial="initial"
+							whileInView="onView"
+							variants={{
+								initial: {
+									opacity: 0,
+									y: "100",
+								},
+								onView: {
+									opacity: 1,
+									y: 0,
+									transition: {
+										duration: 1,
+										delay: index * 0.3,
+									},
+								},
+							}}
+						>
+							<Card {...blogListing} key={blogListing.link} />
+						</motion.div>
 					))}
 				</SimpleGrid>
 				{/* <Stack textAlign="left" spacing={5}>

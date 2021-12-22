@@ -45,15 +45,15 @@ export default function Button(props: ButtonProps): JSX.Element {
 			borderRadius="md"
 			fontSize="14px"
 			fontWeight="semibold"
-			bg={bg}
+			bgColor="white"
 			minW={205}
 			borderWidth={borderColor ? 3 : 0}
 			borderColor={borderColor ?? null}
-			_hover={
-				borderColor
-					? { backgroundColor: "white", color: "brand.purple.dark" }
-					: { transform: "scale(0.95)", boxShadow: "md" }
-			}
+			color="brand.purple.dark"
+			_hover={{
+				background: bg,
+				color: "white",
+			}}
 			_active={
 				borderColor
 					? { transform: "scale(0.90)", boxShadow: "md" }

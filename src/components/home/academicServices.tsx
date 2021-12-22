@@ -11,6 +11,7 @@ import {
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextChakraLink from "@components/nextChakra";
+import { motion } from "framer-motion";
 
 type CardProps = {
 	title: string;
@@ -56,6 +57,20 @@ const cardProps: CardProps[] = [
 ];
 
 export default function AcademicServices(): JSX.Element {
+	const slideInLeftVariants = {
+		initial: {
+			opacity: 0,
+			x: "-100",
+		},
+		onView: {
+			opacity: 1,
+			x: 0,
+			transition: {
+				duration: 1,
+				delay: 0.3,
+			},
+		},
+	};
 	return (
 		<Container
 			bg="linear-gradient(180deg, rgba(90, 104, 210, 0.7) 0%, rgba(167, 178, 255, 0.476) 100%)"
@@ -63,18 +78,25 @@ export default function AcademicServices(): JSX.Element {
 		>
 			<ContainerInside textAlign="left">
 				<Flex flexDir="column" align="stretch">
-					<Heading size="lg">Academic Services</Heading>
-					<Heading size="md" fontWeight="normal">
-						Digital Program
-					</Heading>
-					<Text mt={6} textAlign="justify">
-						Despite being mainly based in the United States, we have
-						an online community of over 60,000 where like-minded
-						teenagers can meet and form life-lasting connections. We
-						provide numerous free resources such as tutoring, essay
-						revision, notes, standarized testing preparation,
-						college preparation, and numerous more!
-					</Text>
+					<motion.div
+						initial="initial"
+						whileInView="onView"
+						variants={slideInLeftVariants}
+					>
+						<Heading size="lg">Academic Services</Heading>
+						<Heading size="md" fontWeight="normal">
+							Digital Program
+						</Heading>
+						<Text mt={6} textAlign="justify">
+							Despite being mainly based in the United States, we
+							have an online community of over 60,000 where
+							like-minded teenagers can meet and form life-lasting
+							connections. We provide numerous free resources such
+							as tutoring, essay revision, notes, standarized
+							testing preparation, college preparation, and
+							numerous more!
+						</Text>
+					</motion.div>
 					<SimpleGrid
 						columns={{ base: 1, md: 2 }}
 						mt={8}
@@ -82,7 +104,26 @@ export default function AcademicServices(): JSX.Element {
 						spacingY={39}
 					>
 						{cardProps.map((cardProp) => (
-							<Card {...cardProp} key={cardProp.title} />
+							<motion.div
+								initial="initial"
+								whileInView="onView"
+								variants={{
+									initial: {
+										opacity: 0,
+										x: cardProp.onLeft ? "-100" : "100",
+									},
+									onView: {
+										opacity: 1,
+										x: 0,
+										transition: {
+											duration: 1,
+											delay: 0.3,
+										},
+									},
+								}}
+							>
+								<Card {...cardProp} key={cardProp.title} />
+							</motion.div>
 						))}
 					</SimpleGrid>
 				</Flex>

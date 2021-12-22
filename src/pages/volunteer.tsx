@@ -307,7 +307,16 @@ export async function getStaticProps() {
 
 type VolunteerPositionProps = JobPosting & StackProps;
 
-function VolunteerPosition(props: VolunteerPositionProps): JSX.Element {
+function VolunteerPosition({
+	description,
+	rank,
+	form,
+	program,
+	image,
+	area,
+	name,
+	...stackProps
+}: VolunteerPositionProps): JSX.Element {
 	const [hover, setHover] = useBoolean();
 	const transition = "all 0.15s ease-in";
 	return (
@@ -321,6 +330,7 @@ function VolunteerPosition(props: VolunteerPositionProps): JSX.Element {
 			bg="#5A60ADCC"
 			onMouseEnter={setHover.on}
 			onMouseLeave={setHover.off}
+			{...stackProps}
 		>
 			<Box
 				h={160}
@@ -336,17 +346,13 @@ function VolunteerPosition(props: VolunteerPositionProps): JSX.Element {
 					top={0}
 					width="100%"
 					height="100%"
-					bg={
-						props.image?.url
-							? `url(${props.image?.url})`
-							: "#5A60ADCC"
-					}
+					bg={image?.url ? `url(${image?.url})` : "#5A60ADCC"}
 					bgSize="cover"
 					bgPos="center"
 					opacity={hover ? 0.2 : 1}
 					transition={transition}
 				/>
-				<Text>{props.description}</Text>
+				<Text>{description}</Text>
 			</Box>
 			<Stack
 				bg="brand.darkerBlue"
@@ -356,9 +362,9 @@ function VolunteerPosition(props: VolunteerPositionProps): JSX.Element {
 				justify="center"
 				flex={1}
 			>
-				<Text fontSize="sm">{props.area}</Text>
-				<Heading fontSize="lg">{props.name}</Heading>
-				<Text fontSize="sm">{props.program}</Text>
+				<Text fontSize="sm">{area}</Text>
+				<Heading fontSize="lg">{name}</Heading>
+				<Text fontSize="sm">{program}</Text>
 			</Stack>
 		</Stack>
 	);

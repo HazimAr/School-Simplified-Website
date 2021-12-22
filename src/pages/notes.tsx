@@ -2,14 +2,15 @@ import { getSubjects } from "@api/notion";
 import { Heading, HStack, Image, Stack, Text } from "@chakra-ui/react";
 import ContainerBackground from "@components/containerBackground";
 import ContainerInside from "@components/containerInside";
-import NotesSection from "@components/resources/notes_section";
+import NotesViewer from "@components/resources/notesViewer";
+// import NotesSection from "@components/resources/notes_section";
 import { AllSubjects } from "types";
 
 export default function Resources({ subjects }: AllSubjects): JSX.Element {
 	return (
 		<>
-			<ContainerBackground src="/timmy/lofi_timmy.png">
-				<ContainerInside py={24} my={5}>
+			<ContainerBackground src="/timmy/lofi_timmy.png" mb={8}>
+				<ContainerInside py={16}>
 					<HStack spacing={8}>
 						<Image
 							src="/timmy/blogtimmy.png"
@@ -33,7 +34,9 @@ export default function Resources({ subjects }: AllSubjects): JSX.Element {
 				</ContainerInside>
 			</ContainerBackground>
 
-			<NotesSection subjects={subjects} />
+			<NotesViewer subjects={subjects} />
+
+			{/* <NotesSection subjects={subjects} /> */}
 		</>
 	);
 }

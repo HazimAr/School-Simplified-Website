@@ -268,7 +268,7 @@ const about = [
 	},
 	{
 		name: "Volunteer",
-		link: "/leadership",
+		link: "/volunteer",
 	},
 	{
 		name: "Community",

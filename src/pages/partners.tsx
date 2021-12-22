@@ -59,14 +59,14 @@ export default function PartnersPage() {
 						</WrapItem>
 					</Wrap>
 					<NextLink
-						href="https://docs.google.com/forms/d/e/1FAIpQLScxSrndCBz1VUA-fv5TvfmEpdowUKws1euU4nuxMcSE51JiZA/viewform?usp=sf_link"
+						href="mailto:partners@schoolsimplified.org"
 						w="fit-content"
 					>
 						<StyledButton
 							display="block"
 							width={{ base: "50", md: "50", sm: "40" }}
 						>
-							Apply Now
+							Contact
 						</StyledButton>
 					</NextLink>
 

@@ -76,6 +76,15 @@ const theme = extendTheme({
 				color: "#ffd470",
 			},
 
+			a: {
+				color: "#ffd470",
+				textDecoration: "none",
+				transition: "color 0.2s ease-in-out",
+				"&:hover": {
+					color: "#fcd270",
+				},
+			},
+
 			"::-webkit-scrollbar": {
 				width: "0.6em",
 				background:

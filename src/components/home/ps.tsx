@@ -95,7 +95,7 @@ export default function ProgrammingSimplified(): JSX.Element {
 
 	return (
 		<Container bg="linear-gradient(180deg, rgba(96, 111, 230, 0.71) 0%, rgba(167, 178, 255, 0.71) 100%)">
-			<ContainerInside textAlign="left">
+			<ContainerInside overflow="hidden" textAlign="left">
 				<VStack align="stretch" spacing={5} my={20}>
 					<Flex
 						flexDir={{ base: "column", md: "row" }}

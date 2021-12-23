@@ -1,4 +1,4 @@
-import { Heading, HStack, SimpleGrid, Text, VStack } from "@chakra-ui/react";
+import { Heading, Stack, SimpleGrid, Text, VStack } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -39,10 +39,11 @@ export default function GettingStarted() {
 			bg="linear-gradient(180deg, rgba(90, 96, 173, 0.71) 0%, rgba(131, 145, 255, 0.71) 100%)"
 			py="50px"
 		>
-			<ContainerInside>
-				<HStack
+			<ContainerInside overflow="hidden">
+				<Stack
 					spacing={{ base: 0, md: 8, lg: 16 }}
 					mx={{ base: 8, sm: 24, md: 16, lg: 28 }}
+					direction={{ base: "column", md: "row" }}
 				>
 					<motion.div
 						initial="initial"
@@ -114,7 +115,7 @@ export default function GettingStarted() {
 						src="/timmy/homepage_getting_started.png"
 						alt="A Timmy with a graduation cap and book pointing towards the text on the left"
 					/>
-				</HStack>
+				</Stack>
 			</ContainerInside>
 		</Container>
 	);

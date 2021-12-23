@@ -76,7 +76,7 @@ export default function AcademicServices(): JSX.Element {
 			bg="linear-gradient(180deg, rgba(90, 104, 210, 0.7) 0%, rgba(167, 178, 255, 0.476) 100%)"
 			py={16}
 		>
-			<ContainerInside textAlign="left">
+			<ContainerInside overflow="hidden" textAlign="left">
 				<Flex flexDir="column" align="stretch">
 					<motion.div
 						initial="initial"

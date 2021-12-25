@@ -149,7 +149,7 @@ export default function Header(): JSX.Element {
 						<NextLink href="/" mb={{ base: 2, lg: 0 }}>
 							<Flex justify="center" align="center">
 								<Image
-									src="/SS_LOGO_FINAL_2_1.svg"
+									src="/ss_logo_final_svg.svg"
 									width={30}
 									height={30}
 									alt="logo"

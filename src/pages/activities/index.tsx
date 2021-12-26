@@ -51,7 +51,7 @@ export default function Activities() {
 							>
 								Student Activities Program
 							</Text>
-							<Text textAlign="justify" width="80%">
+							<Text textAlign="left" width="80%">
 								School Simplified offers virtual clubs for you
 								to connect with others from around the world who
 								share the same passions as you! Explore your
@@ -88,7 +88,7 @@ export default function Activities() {
 									Start Your Own Club!
 								</h2>
 								<Text
-									textAlign="justify"
+									textAlign="left"
 									maxWidth={500}
 									fontSize={18}
 								>

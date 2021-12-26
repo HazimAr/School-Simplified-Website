@@ -32,7 +32,7 @@ export default function Chapter() {
 							<Heading my={5}>
 								Taking Chapters to the Next Level.
 							</Heading>
-							<Text fontSize="18px" textAlign="justify">
+							<Text fontSize="18px" textAlign="left">
 								School Simplified chapters are the perfect blend
 								of flexibility and rigor. With the chapters
 								program, motivated students from around the

@@ -9,6 +9,7 @@ import {
 	SimpleGrid,
 	Box,
 	Stack,
+	Spacer,
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
@@ -54,16 +55,15 @@ const cardProps: CardProps[] = [
 export default function Programming(): JSX.Element {
 	return (
 		<>
-			<Container py={50} px={{ base: 20, lg: 60 }} bg="#5E65B7">
+			<Container py={50} px={{ base: 12, lg: 20 }} bg="#5E65B7">
 				<ContainerInside>
 					<Center>
-						<HStack spacing={{ md: 5, lg: 30 }}>
+						<HStack spacing={0}>
 							<VStack align="start" textAlign="left">
 								<Heading size="lg">Learn How to Code</Heading>
 								<NextLink
 									isExternal
 									href="https://programmingsimplified.org/"
-									_hover={{ textDecoration: "none" }}
 								>
 									<Heading size="sm" fontWeight="hairline">
 										Programming Simplified Program
@@ -108,9 +108,10 @@ export default function Programming(): JSX.Element {
 									</NextLink>
 								</Stack>
 							</VStack>
+							<Spacer maxW={{ md: 5, lg: 20 }} />
 							<Image
 								src="/timmy/pscomputer.png"
-								w={{ md: 200, lg: 300 }}
+								w={{ md: 200, lg: 250 }}
 								display={{ base: "none", md: "block" }}
 								alt="Timmy with a computer"
 							/>

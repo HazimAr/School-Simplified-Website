@@ -3,11 +3,11 @@ import {
 	Heading,
 	Image,
 	Text,
-	HStack,
 	VStack,
 	Flex,
 	SimpleGrid,
 	Box,
+	Stack,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -22,21 +22,21 @@ type CardTestimonial = {
 const cardTestimonial: CardTestimonial[] = [
 	{
 		name: "Devin S.",
-		title: "Website Dev Student",
+		title: "Website Development Student",
 		content:
-			"I was able to start making my own website with just React and Chakra UI. I'm so happy with it.",
+			"I was able to start my own website with just React and Chakra UI. I'm so happy with it.",
+	},
+	{
+		name: "Ally H.",
+		title: "Website Development Student",
+		content:
+			"I was able to get started with web development with zero prior knowledge on the subject!",
 	},
 	{
 		name: "Daniyal S.",
 		title: "Java 101 Student",
 		content:
 			"I'm so glad I found Programming Simplified. It's a great place to learn.",
-	},
-	{
-		name: "Ally H.",
-		title: "Website Dev Student",
-		content:
-			"I was able to get started with web development with zero prior knowledge on the subject!",
 	},
 	{
 		name: "Kaylee A.",
@@ -46,56 +46,53 @@ const cardTestimonial: CardTestimonial[] = [
 	},
 ];
 
-export default function PSTestimonials(): JSX.Element {
+export default function Testimonials(): JSX.Element {
 	return (
 		<>
 			<Container
 				bg="linear-gradient(180deg, rgba(90, 104, 210, 0.7) 0%, rgba(167, 178, 255, 0.476) 100%)"
 				py={10}
-				px={40}
+				px={{ base: 0, lg: 40 }}
 			>
 				<Center>
-					<ContainerInside overflow="hidden" textAlign="left">
-						<HStack>
-							<VStack>
-								<ContainerInside mx={7}>
+					<ContainerInside>
+						<Stack 					
+						direction={{ base: "column", lg: "row" }}
+						align="start"
+						spacing={5}
+					>
+							<Stack mx={30} overflow="hidden" textAlign="left" align="self-start">
 									<Image
 										src="/ps/commas.svg"
 										w={{
-											base: "55px",
-											md: "55px",
+											base: "40px",
+											md: "50px",
 											lg: "55px",
 										}}
-										display={{ base: "none", md: "block" }}
+										display={{ base: "block", md: "block" }}
 										alt="commas"
-										py={5}
+										py={3}
 									/>
 
-									<motion.div
-										initial="initial"
-										whileInView="onView"
-									>
 										<Heading size="lg">
 											Why Programming Simplified?
 										</Heading>
-										<Text my={4} textAlign="left">
+										<Text>
 											Programming Simplified is here to
 											help you learn, grow and succeed.
 										</Text>
-										<Text textAlign="left">
+										<Text>
 											Here are some testimonials from
 											students:
 										</Text>
-									</motion.div>
-								</ContainerInside>
-							</VStack>
-							<ContainerInside>
-								<Flex flexDir="column" align="stretch">
+							</Stack>
+								<Flex flexDir="column-reverse" align="stretch">
 									<SimpleGrid
 										columns={{ base: 1, lg: 2 }}
-										mt={8}
+										mt={2}
 										spacingX={26}
 										spacingY={39}
+										px={{ base: 5, lg: 10 }}
 									>
 										{cardTestimonial.map(
 											(cardTestimonial) => (
@@ -124,8 +121,7 @@ export default function PSTestimonials(): JSX.Element {
 										)}
 									</SimpleGrid>
 								</Flex>
-							</ContainerInside>
-						</HStack>
+						</Stack>
 					</ContainerInside>
 				</Center>
 			</Container>
@@ -149,7 +145,7 @@ function Card(props: CardTestimonial): JSX.Element {
 			<Box bg="#5A60AD" px={3.5} py={1.5} textAlign="left">
 				<Heading size="sm">{props.name}</Heading>
 
-				<Text flex={1} textAlign="left">
+				<Text flex={1} textAlign="left" fontSize={14}>
 					{props.title}
 				</Text>
 			</Box>

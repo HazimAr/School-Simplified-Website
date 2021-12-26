@@ -54,11 +54,11 @@ const cardProps: CardProps[] = [
 export default function Programming(): JSX.Element {
 	return (
 		<>
-			<Container py={50} px={{ base: 10, lg: 20 }} bg="#5E65B7">
+			<Container py={50} px={{ base: 20, lg: 60 }} bg="#5E65B7">
 				<ContainerInside>
 					<Center>
 						<HStack spacing={{ md: 5, lg: 30 }}>
-							<VStack align="start">
+							<VStack align="start" textAlign="left">
 								<Heading size="lg">Learn How to Code</Heading>
 								<NextLink
 									isExternal
@@ -121,8 +121,8 @@ export default function Programming(): JSX.Element {
 
 			<Container
 				bg="linear-gradient(180deg, rgba(90, 104, 210, 0.7) 0%, rgba(167, 178, 255, 0.476) 100%)"
-				py={16}
-				px={40}
+				py={14}
+				px={{ base: 5, lg: 40 }}
 			>
 				<ContainerInside overflow="hidden" textAlign="left">
 					<Flex flexDir="column" align="stretch">
@@ -133,7 +133,7 @@ export default function Programming(): JSX.Element {
 							<Text size="md" fontWeight="normal">
 								<b>Completion:</b> 4 to 12 weeks
 							</Text>
-							<Text mt={6} textAlign="left">
+							<Text mt={4} textAlign="left">
 								Learn at your own pace with professionally
 								recorded lessons. To receive the certificate of
 								completion at the end of a course, you will have
@@ -142,7 +142,7 @@ export default function Programming(): JSX.Element {
 						</motion.div>
 						<SimpleGrid
 							columns={{ base: 1, md: 2 }}
-							mt={8}
+							mt={6}
 							spacingX={26}
 							spacingY={39}
 						>

@@ -70,7 +70,7 @@ export default function ProgrammingSimplified(): JSX.Element {
 								<Heading size="lg">
 									Learn to apply code.
 								</Heading>
-								<Link href="https://programmingsimplified.org/">
+								<Link href="/programming">
 									<Heading size="md" fontWeight="normal">
 										Programming Simplified Program
 									</Heading>

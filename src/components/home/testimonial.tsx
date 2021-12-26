@@ -2,6 +2,7 @@ import { Box, Divider, Flex, Heading, ScaleFade, Text } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import RotatingPanel from "@components/rotatingPanel";
+import { fadeIn, slideInDown, slideInUp, widthIn } from "@styles/animations";
 import { motion } from "framer-motion";
 
 type Review = {
@@ -87,58 +88,6 @@ const reviews: Review[] = [
 ];
 
 export default function Intro() {
-	const fadeUpVariants = {
-		initial: {
-			opacity: 0,
-			y: 50,
-		},
-		onView: {
-			opacity: 1,
-			y: 0,
-			transition: {
-				duration: 1,
-				delay: 0.3,
-			},
-		},
-	};
-	const fadeDownVariants = {
-		initial: {
-			opacity: 0,
-			y: -50,
-		},
-		onView: {
-			opacity: 1,
-			y: 0,
-			transition: {
-				duration: 1,
-				delay: 0.3,
-			},
-		},
-	};
-	const widthVariants = {
-		initial: {
-			width: "0%",
-		},
-		onView: {
-			width: "100%",
-			transition: {
-				duration: 1,
-				delay: 0.3,
-			},
-		},
-	};
-	const fadeInVariant = {
-		initial: {
-			opacity: 0,
-		},
-		onView: {
-			opacity: 1,
-			transition: {
-				duration: 1,
-				delay: 0.3,
-			},
-		},
-	};
 	return (
 		<Container
 			py={12}
@@ -148,7 +97,7 @@ export default function Intro() {
 				<motion.div
 					initial="initial"
 					whileInView="onView"
-					variants={fadeDownVariants}
+					variants={slideInDown({ amount: 50 })}
 				>
 					<Heading as="h1" mb={3}>
 						Your Success is Our Success!
@@ -164,14 +113,14 @@ export default function Intro() {
 				<motion.div
 					initial="initial"
 					whileInView="onView"
-					variants={widthVariants}
+					variants={widthIn()}
 				>
 					<Divider bg="white" my="40px" />
 				</motion.div>
 				<motion.div
 					initial="initial"
 					whileInView="onView"
-					variants={fadeUpVariants}
+					variants={slideInUp({ amount: 50 })}
 				>
 					<Heading as="h1" mb={3}>
 						Don't Believe Us?
@@ -183,7 +132,7 @@ export default function Intro() {
 				<motion.div
 					initial="initial"
 					whileInView="onView"
-					variants={fadeInVariant}
+					variants={fadeIn()}
 				>
 					<RotatingPanel
 						Element={Testimony}

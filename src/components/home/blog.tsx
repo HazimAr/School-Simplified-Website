@@ -16,23 +16,10 @@ import NextChakraLink from "@components/nextChakra";
 import { BlogListing } from "types";
 import { toAuthorAttribution } from "util/parse_notion";
 import { motion } from "framer-motion";
+import { slideInLeft } from "@styles/animations";
 
 export default function Blog({ listing }: { listing: BlogListing[] }) {
 	// console.log(listing);
-	const slideInLeftVariants = {
-		initial: {
-			opacity: 0,
-			x: "-100",
-		},
-		onView: {
-			opacity: 1,
-			x: 0,
-			transition: {
-				duration: 1,
-				delay: 0.3,
-			},
-		},
-	};
 	return (
 		<Container
 			// src="/blog.jpg"
@@ -54,7 +41,7 @@ export default function Blog({ listing }: { listing: BlogListing[] }) {
 				<motion.div
 					initial="initial"
 					whileInView="onView"
-					variants={slideInLeftVariants}
+					variants={slideInLeft()}
 				>
 					<Flex direction="row" mx={{ base: 12, sm: 24, md: 0 }}>
 						<VStack spacing={8} flex={{ base: 1, md: "0 0 50%" }}>

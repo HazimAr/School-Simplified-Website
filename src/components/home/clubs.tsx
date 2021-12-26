@@ -3,30 +3,17 @@ import ActivitiesRotatingPanel from "@components/activities/rotatingPanel";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextChakraLink from "@components/nextChakra";
+import { slideInUp } from "@styles/animations";
 import { motion } from "framer-motion";
 
 export default function Here() {
-	const fadeUpVariants = {
-		initial: {
-			opacity: 0,
-			y: 50,
-		},
-		onView: {
-			opacity: 1,
-			y: 0,
-			transition: {
-				duration: 1,
-				delay: 0.3,
-			},
-		},
-	};
 	return (
 		<Container bg="linear-gradient(180deg, rgba(123, 139, 255, 0.6) 0%, rgba(197, 203, 255, 0.6) 100%)">
 			<ContainerInside textAlign="left">
 				<motion.div
 					initial="initial"
 					whileInView="onView"
-					variants={fadeUpVariants}
+					variants={slideInUp({ amount: 50 })}
 				>
 					<Flex flexDir="column" py={12}>
 						<Heading size="lg">Join Our Clubs</Heading>

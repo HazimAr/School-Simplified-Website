@@ -75,6 +75,12 @@ const theme = extendTheme({
 			h3: {
 				color: "#ffd470",
 			},
+			"a h1:hover": { color: "white" },
+			"a h2:hover": { color: "white" },
+			"a h3:hover": { color: "white" },
+			"h1 a:hover": { color: "white" },
+			"h2 a:hover": { color: "white" },
+			"h3 a:hover": { color: "white" },
 
 			a: {
 				color: "#ffd470",

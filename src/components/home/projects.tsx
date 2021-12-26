@@ -11,38 +11,10 @@ import {
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
+import { slideInDown, slideInUp } from "@styles/animations";
 import { motion } from "framer-motion";
 
 export default function Projects(): JSX.Element {
-	const slideInTopVariants = {
-		initial: {
-			opacity: 0,
-			y: "-100",
-		},
-		onView: {
-			opacity: 1,
-			y: 0,
-			transition: {
-				duration: 1,
-				delay: 0.3,
-			},
-		},
-	};
-	const slideInBotVariants = {
-		initial: {
-			opacity: 0,
-			y: "100",
-		},
-		onView: {
-			opacity: 1,
-			y: 0,
-			transition: {
-				duration: 1,
-				delay: 0.3,
-			},
-		},
-	};
-
 	return (
 		<Container
 			py={16}
@@ -53,12 +25,13 @@ export default function Projects(): JSX.Element {
 					<motion.div
 						initial="initial"
 						whileInView="onView"
-						variants={slideInTopVariants}
+						variants={slideInDown()}
 					>
 						<Flex
 							justify="space-between"
 							align="flex-start"
 							flexDir={{ base: "column", md: "row" }}
+							mb={3}
 						>
 							<Heading size="lg" mb={{ base: 2, md: 0 }}>
 								Start Your <Link href="/projects">Project</Link>{" "}
@@ -78,7 +51,7 @@ export default function Projects(): JSX.Element {
 					<motion.div
 						initial="initial"
 						whileInView="onView"
-						variants={slideInBotVariants}
+						variants={slideInUp()}
 					>
 						<Stack direction={{ base: "column", md: "row" }}>
 							{/* <Box>

@@ -11,6 +11,7 @@ import {
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextChakraLink from "@components/nextChakra";
+import { slideInLeft } from "@styles/animations";
 import { motion } from "framer-motion";
 
 type CardProps = {
@@ -57,20 +58,6 @@ const cardProps: CardProps[] = [
 ];
 
 export default function AcademicServices(): JSX.Element {
-	const slideInLeftVariants = {
-		initial: {
-			opacity: 0,
-			x: "-100",
-		},
-		onView: {
-			opacity: 1,
-			x: 0,
-			transition: {
-				duration: 1,
-				delay: 0.3,
-			},
-		},
-	};
 	return (
 		<Container
 			bg="linear-gradient(180deg, rgba(90, 104, 210, 0.7) 0%, rgba(167, 178, 255, 0.476) 100%)"
@@ -81,7 +68,7 @@ export default function AcademicServices(): JSX.Element {
 					<motion.div
 						initial="initial"
 						whileInView="onView"
-						variants={slideInLeftVariants}
+						variants={slideInLeft()}
 					>
 						<Heading size="lg">Academic Services</Heading>
 						<Heading size="md" fontWeight="normal">

@@ -3,25 +3,9 @@ import ContainerBackground from "@components/containerBackground";
 import ContainerInside from "@components/containerInside";
 import CountUp from "react-countup";
 import { motion } from "framer-motion";
+import { slideInUp } from "@styles/animations";
 
 export default function Intro() {
-	const fadeUpVariants = (delay) => {
-		return {
-			initial: {
-				opacity: 0,
-				y: "50",
-			},
-			onView: {
-				y: 0,
-				opacity: 1,
-				transition: {
-					duration: 1,
-					delay: delay,
-				},
-			},
-		};
-	};
-
 	return (
 		<ContainerBackground
 			background="rgba(90, 96, 173, 0.71)"
@@ -55,7 +39,7 @@ export default function Intro() {
 					<motion.div
 						initial="initial"
 						whileInView="onView"
-						variants={fadeUpVariants(0.3)}
+						variants={slideInUp({ amount: 50, delay: 0.3 })}
 					>
 						<VStack>
 							<Heading fontSize={25}>
@@ -75,7 +59,7 @@ export default function Intro() {
 					<motion.div
 						initial="initial"
 						whileInView="onView"
-						variants={fadeUpVariants(0.6)}
+						variants={slideInUp({ amount: 50, delay: 0.6 })}
 					>
 						<VStack>
 							<Heading fontSize={25}>
@@ -93,7 +77,7 @@ export default function Intro() {
 					<motion.div
 						initial="initial"
 						whileInView="onView"
-						variants={fadeUpVariants(0.9)}
+						variants={slideInUp({ amount: 50, delay: 0.9 })}
 					>
 						<VStack>
 							<Heading fontSize={25}>
@@ -105,7 +89,7 @@ export default function Intro() {
 					<motion.div
 						initial="initial"
 						whileInView="onView"
-						variants={fadeUpVariants(1.2)}
+						variants={slideInUp({ amount: 50, delay: 1.2 })}
 					>
 						<VStack>
 							<Heading fontSize={25}>
@@ -123,7 +107,7 @@ export default function Intro() {
 					<motion.div
 						initial="initial"
 						whileInView="onView"
-						variants={fadeUpVariants(1.5)}
+						variants={slideInUp({ amount: 50, delay: 1.5 })}
 					>
 						<VStack>
 							<Heading fontSize={25}>

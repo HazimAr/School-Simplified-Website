@@ -3,37 +3,10 @@ import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextChakraLink from "@components/nextChakra";
+import { slideInLeft, slideInRight } from "@styles/animations";
 import { motion } from "framer-motion";
 
 export default function GettingStarted() {
-	const slideInLeftVariants = {
-		initial: {
-			opacity: 0,
-			x: "-100",
-		},
-		onView: {
-			opacity: 1,
-			x: 0,
-			transition: {
-				duration: 1,
-				delay: 0.3,
-			},
-		},
-	};
-	const slideInRightVariants = {
-		initial: {
-			opacity: 0,
-			x: "100",
-		},
-		onView: {
-			opacity: 1,
-			x: 0,
-			transition: {
-				duration: 1,
-				delay: 0.3,
-			},
-		},
-	};
 	return (
 		<Container
 			bg="linear-gradient(180deg, rgba(90, 96, 173, 0.71) 0%, rgba(131, 145, 255, 0.71) 100%)"
@@ -48,7 +21,7 @@ export default function GettingStarted() {
 					<motion.div
 						initial="initial"
 						whileInView="onView"
-						variants={slideInLeftVariants}
+						variants={slideInLeft()}
 					>
 						<VStack spacing={4} align="stretch" textAlign="left">
 							<Heading size="lg">Getting Started</Heading>
@@ -111,7 +84,7 @@ export default function GettingStarted() {
 					<motion.img
 						initial="initial"
 						whileInView="onView"
-						variants={slideInRightVariants}
+						variants={slideInRight()}
 						src="/timmy/homepage_getting_started.png"
 						alt="A Timmy with a graduation cap and book pointing towards the text on the left"
 					/>

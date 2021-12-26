@@ -11,6 +11,12 @@ import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextChakraLink from "@components/nextChakra";
+import {
+	fadeIn,
+	slideInLeft,
+	slideInRight,
+	slideInUp,
+} from "@styles/animations";
 import { motion } from "framer-motion";
 
 type CardProps = {
@@ -52,47 +58,6 @@ const cards: CardProps[] = [
 ];
 
 export default function ProgrammingSimplified(): JSX.Element {
-	const fadeInVariant = {
-		initial: {
-			opacity: 0,
-		},
-		onView: {
-			opacity: 1,
-			transition: {
-				duration: 1,
-				delay: 0.3,
-			},
-		},
-	};
-	const slideInLeftVariant = {
-		initial: {
-			opacity: 0,
-			x: "-100",
-		},
-		onView: {
-			opacity: 1,
-			x: 0,
-			transition: {
-				duration: 1,
-				delay: 0.3,
-			},
-		},
-	};
-	const slideInRightVariant = {
-		initial: {
-			opacity: 0,
-			x: "100",
-		},
-		onView: {
-			opacity: 1,
-			x: 0,
-			transition: {
-				duration: 1,
-				delay: 0.3,
-			},
-		},
-	};
-
 	return (
 		<Container bg="linear-gradient(180deg, rgba(96, 111, 230, 0.71) 0%, rgba(167, 178, 255, 0.71) 100%)">
 			<ContainerInside overflow="hidden" textAlign="left">
@@ -104,7 +69,7 @@ export default function ProgrammingSimplified(): JSX.Element {
 						<motion.div
 							initial="initial"
 							whileInView="onView"
-							variants={slideInLeftVariant}
+							variants={slideInLeft()}
 						>
 							<Box mb={{ base: 3, md: 0 }}>
 								<Heading size="lg">
@@ -120,7 +85,7 @@ export default function ProgrammingSimplified(): JSX.Element {
 						<motion.div
 							initial="initial"
 							whileInView="onView"
-							variants={slideInRightVariant}
+							variants={slideInRight()}
 						>
 							<NextChakraLink
 								href="https://programmingsimplified.org/"
@@ -135,7 +100,7 @@ export default function ProgrammingSimplified(): JSX.Element {
 					<motion.div
 						initial="initial"
 						whileInView="onView"
-						variants={fadeInVariant}
+						variants={fadeIn()}
 					>
 						<Box rounded={5} bgImg="/code.jpg" bgSize="cover">
 							<Text
@@ -164,29 +129,12 @@ export default function ProgrammingSimplified(): JSX.Element {
 	);
 }
 
-const fadeUpVariants = (delay) => {
-	return {
-		initial: {
-			opacity: 0,
-			y: "50",
-		},
-		onView: {
-			y: 0,
-			opacity: 1,
-			transition: {
-				duration: 1,
-				delay: delay,
-			},
-		},
-	};
-};
-
 function Card(props: CardProps): JSX.Element {
 	return (
 		<motion.div
 			initial="initial"
 			whileInView="onView"
-			variants={fadeUpVariants(props.index * 0.3)}
+			variants={slideInUp({ amount: 50, delay: props.index * 0.3 })}
 		>
 			<VStack
 				bg="#5A60ADCC"
@@ -194,6 +142,7 @@ function Card(props: CardProps): JSX.Element {
 				rounded={5}
 				overflow="hidden"
 				flex={1}
+				h="100%"
 			>
 				<Text px={3.5} py={2.5} flex={1}>
 					{props.description}

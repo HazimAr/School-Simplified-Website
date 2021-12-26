@@ -3,37 +3,10 @@ import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextChakraLink from "@components/nextChakra";
+import { slideInLeft, slideInUp } from "@styles/animations";
 import { motion } from "framer-motion";
 
 export default function Chapters(): JSX.Element {
-	const slideInLeftVariants = {
-		initial: {
-			opacity: 0,
-			x: "-100",
-		},
-		onView: {
-			opacity: 1,
-			x: 0,
-			transition: {
-				duration: 1,
-				delay: 0.3,
-			},
-		},
-	};
-	const slideInUpVariants = {
-		initial: {
-			opacity: 0,
-			y: "100",
-		},
-		onView: {
-			opacity: 1,
-			y: 0,
-			transition: {
-				duration: 1,
-				delay: 0.3,
-			},
-		},
-	};
 	return (
 		<Container bg="linear-gradient(180deg, rgba(90, 104, 221, 0.7) 0%, rgba(132, 143, 255, 0.7) 100%)">
 			<ContainerInside textAlign="left">
@@ -41,7 +14,7 @@ export default function Chapters(): JSX.Element {
 					<motion.div
 						initial="initial"
 						whileInView="onView"
-						variants={slideInLeftVariants}
+						variants={slideInLeft()}
 					>
 						<Heading size="lg">
 							Bring School Simplified To Your Community
@@ -55,7 +28,7 @@ export default function Chapters(): JSX.Element {
 					<motion.div
 						initial="initial"
 						whileInView="onView"
-						variants={slideInUpVariants}
+						variants={slideInUp()}
 					>
 						<Stack
 							direction={{ base: "column", lg: "row" }}

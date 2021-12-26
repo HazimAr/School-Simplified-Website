@@ -8,11 +8,13 @@ import {
 	Flex,
 	SimpleGrid,
 	Box,
+	Stack,
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
+import { fadeIn } from "@styles/animations";
 import { motion } from "framer-motion";
 
 type CardProps = {
@@ -52,20 +54,21 @@ const cardProps: CardProps[] = [
 export default function Programming(): JSX.Element {
 	return (
 		<>
-			<Container py={50} px={60} bg="#5E65B7">
+			<Container py={50} px={{ base: 10, lg: 20 }} bg="#5E65B7">
 				<ContainerInside>
 					<Center>
-						<HStack spacing={30}>
+						<HStack spacing={{ md: 5, lg: 30 }}>
 							<VStack align="start">
 								<Heading size="lg">Learn How to Code</Heading>
-								<NextLink 
+								<NextLink
 									isExternal
 									href="https://programmingsimplified.org/"
-									_hover={{ textDecoration: "none" }}>
-										<Heading size="sm" fontWeight="hairline">
-											Programming Simplified Program
-										</Heading>
-									</NextLink>
+									_hover={{ textDecoration: "none" }}
+								>
+									<Heading size="sm" fontWeight="hairline">
+										Programming Simplified Program
+									</Heading>
+								</NextLink>
 								<Text mt={6} textAlign="left">
 									Want to create, launch, and produce
 									projects? Want to gain coding skills through
@@ -78,37 +81,36 @@ export default function Programming(): JSX.Element {
 									projects!
 								</Text>
 
-								<HStack>
-									<Center>
-										<NextLink
-											isExternal
-											href="https://programmingsimplified.org/"
-											_hover={{ textDecoration: "none" }}
-											p={15}
-										>
-											<Button timmysrc="/timmy/17.png">
-												{" "}
-												Learn More{" "}
-											</Button>
-										</NextLink>
+								<Stack
+									direction={{ base: "column", sm: "row" }}
+									spacing={15}
+									p={15}
+								>
+									<NextLink
+										isExternal
+										href="https://programmingsimplified.org/"
+										_hover={{ textDecoration: "none" }}
+									>
+										<Button timmysrc="/timmy/17.png">
+											Learn More
+										</Button>
+									</NextLink>
 
-										<NextLink
-											isExternal
-											href="https://discord.com/invite/s6HAveWMCg"
-											_hover={{ textDecoration: "none" }}
-											p={15}
-										>
-											<Button timmysrc="/timmy/22.png">
-												{" "}
-												Join Now{" "}
-											</Button>
-										</NextLink>
-									</Center>
-								</HStack>
+									<NextLink
+										isExternal
+										href="https://discord.com/invite/s6HAveWMCg"
+										_hover={{ textDecoration: "none" }}
+									>
+										<Button timmysrc="/timmy/22.png">
+											{" "}
+											Join Now{" "}
+										</Button>
+									</NextLink>
+								</Stack>
 							</VStack>
 							<Image
 								src="/timmy/pscomputer.png"
-								w={{ base: "300px", md: "300px", lg: "300px" }}
+								w={{ md: 200, lg: 300 }}
 								display={{ base: "none", md: "block" }}
 								alt="Timmy with a computer"
 							/>
@@ -144,22 +146,14 @@ export default function Programming(): JSX.Element {
 							spacingX={26}
 							spacingY={39}
 						>
-							{cardProps.map((cardProp) => (
+							{cardProps.map((cardProp, index) => (
 								<motion.div
 									initial="initial"
 									whileInView="onView"
-									variants={{
-										onView: {
-											opacity: 1,
-											x: 0,
-											transition: {
-												duration: 1,
-												delay: 0.3,
-											},
-										},
-									}}
+									variants={fadeIn({ delay: index * 0.3 })}
+									key={cardProp.title}
 								>
-									<Card {...cardProp} key={cardProp.title} />
+									<Card {...cardProp} />
 								</motion.div>
 							))}
 						</SimpleGrid>
@@ -178,6 +172,8 @@ function Card(props: CardProps): JSX.Element {
 			rounded={5}
 			overflow="hidden"
 			flex={1}
+			h="100%"
+			w="100%"
 		>
 			<Text px={3.5} py={2.5} flex={1}>
 				<b>{props.subtitle}</b>

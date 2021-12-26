@@ -1,4 +1,4 @@
-import { Box, Heading } from "@chakra-ui/react";
+import { Heading } from "@chakra-ui/react";
 import FaqList from "@components/contact/faq-list";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -17,7 +17,15 @@ const qaPairs = [
 		question: "How do I get started with courses?",
 		answer: [
 			{
-				text: "To get started, log in with your Discord account and navigate to the Courses page of Programming Simplified. There, you will have full access to all of our curriculums.",
+				text: "To get started, log in with your Discord account and navigate to the Courses page of ",
+				link: "",
+			},
+			{
+				text: "Programming Simplified",
+				link: "https://programmingsimplified.org/",
+			},
+			{
+				text: ". There, you will have full access to all of our curriculums.",
 				link: "",
 			},
 		],
@@ -53,15 +61,13 @@ const qaPairs = [
 
 export default function FAQ(): JSX.Element {
 	return (
-		<Box px={40}>
-			<Container py={15}>
-				<ContainerInside textAlign="left">
-					<Heading size="lg" my={7}>
-						Frequently Asked Questions
-					</Heading>
-					<FaqList list={qaPairs} />
-				</ContainerInside>
-			</Container>
-		</Box>
+		<Container py={15} px={{ base: 0, lg: 40 }}>
+			<ContainerInside textAlign="left">
+				<Heading size="lg" my={7}>
+					Frequently Asked Questions
+				</Heading>
+				<FaqList list={qaPairs} />
+			</ContainerInside>
+		</Container>
 	);
 }

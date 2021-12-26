@@ -78,10 +78,11 @@ export default function PSTestimonials(): JSX.Element {
 										<Heading size="lg">
 											Why Programming Simplified?
 										</Heading>
-										<Text mt={4} textAlign="left" size="md">
+										<Text my={4} textAlign="left">
 											Programming Simplified is here to
 											help you learn, grow and succeed.
-											<br /> <br />
+										</Text>
+										<Text textAlign="left">
 											Here are some testimonials from
 											students:
 										</Text>
@@ -91,7 +92,7 @@ export default function PSTestimonials(): JSX.Element {
 							<ContainerInside>
 								<Flex flexDir="column" align="stretch">
 									<SimpleGrid
-										columns={{ base: 1, md: 2 }}
+										columns={{ base: 1, lg: 2 }}
 										mt={8}
 										spacingX={26}
 										spacingY={39}

@@ -11,7 +11,7 @@ import {
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextChakraLink from "@components/nextChakra";
-import { slideInLeft } from "@styles/animations";
+import { slideInLeft, slideInRight } from "@styles/animations";
 import { motion } from "framer-motion";
 
 type CardProps = {
@@ -94,20 +94,12 @@ export default function AcademicServices(): JSX.Element {
 							<motion.div
 								initial="initial"
 								whileInView="onView"
-								variants={{
-									initial: {
-										opacity: 0,
-										x: cardProp.onLeft ? "-100" : "100",
-									},
-									onView: {
-										opacity: 1,
-										x: 0,
-										transition: {
-											duration: 1,
-											delay: 0.3,
-										},
-									},
-								}}
+								variants={
+									cardProp.onLeft
+										? slideInLeft()
+										: slideInRight()
+								}
+								key={cardProp.title}
 							>
 								<Card {...cardProp} key={cardProp.title} />
 							</motion.div>

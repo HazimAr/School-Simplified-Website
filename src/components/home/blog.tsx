@@ -16,7 +16,7 @@ import NextChakraLink from "@components/nextChakra";
 import { BlogListing } from "types";
 import { toAuthorAttribution } from "util/parse_notion";
 import { motion } from "framer-motion";
-import { slideInLeft } from "@styles/animations";
+import { slideInLeft, slideInUp } from "@styles/animations";
 
 export default function Blog({ listing }: { listing: BlogListing[] }) {
 	// console.log(listing);
@@ -79,20 +79,8 @@ export default function Blog({ listing }: { listing: BlogListing[] }) {
 						<motion.div
 							initial="initial"
 							whileInView="onView"
-							variants={{
-								initial: {
-									opacity: 0,
-									y: "100",
-								},
-								onView: {
-									opacity: 1,
-									y: 0,
-									transition: {
-										duration: 1,
-										delay: index * 0.3,
-									},
-								},
-							}}
+							variants={slideInUp({ delay: 0.3 * index })}
+							key={blogListing.link}
 						>
 							<Card {...blogListing} key={blogListing.link} />
 						</motion.div>

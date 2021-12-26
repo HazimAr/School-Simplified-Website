@@ -2,10 +2,10 @@ import {
 	Box,
 	Flex,
 	Heading,
-	Stack,
+	Link,
+	SimpleGrid,
 	Text,
 	VStack,
-	Link,
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
@@ -23,7 +23,6 @@ type CardProps = {
 	description: string;
 	name: string;
 	instructor: string;
-	index: number;
 };
 
 const cards: CardProps[] = [
@@ -32,28 +31,24 @@ const cards: CardProps[] = [
 			"Create your own websites from scratch by learning the basics of TypeScript, React, and Chakra UI!",
 		name: "Website Development with Next.js",
 		instructor: "Hazim Arafa",
-		index: 0,
 	},
 	{
 		description:
 			"Create an interactive Discord Bot using the latest features exposed by the discord API with TypeScript and NodeJS!",
 		name: "Discord: Bot Development",
 		instructor: "Max Morrow",
-		index: 1,
 	},
 	{
 		description:
 			"Discover the basics of object-oriented programming with the Java programming language!",
 		name: "Java 101: The Basics",
 		instructor: "Tachi Miura & Tachi Miura",
-		index: 2,
 	},
 	{
 		description:
 			"Form professional coding skills with the basics of Python and build a foundation that can be applied anywhere!",
 		name: "Python 101: The Basics",
 		instructor: "Hovhannes M & Rahul Datta",
-		index: 3,
 	},
 ];
 
@@ -114,15 +109,31 @@ export default function ProgrammingSimplified(): JSX.Element {
 							</Text>
 						</Box>
 					</motion.div>
-					<Stack
+					{/* <Stack
 						direction={{ base: "column", md: "row" }}
 						spacing={{ base: 3, md: 12 }}
 						align="stretch"
 					>
-						{cards.map((card) => (
-							<Card {...card} key={card.name} />
+						
+					</Stack> */}
+					<SimpleGrid
+						columns={{ base: 1, sm: 2, lg: 4 }}
+						gap={{ base: 2, sm: 4, lg: 12 }}
+					>
+						{cards.map((card, index) => (
+							<motion.div
+								initial="initial"
+								whileInView="onView"
+								variants={slideInUp({
+									amount: 50,
+									delay: index * 0.3,
+								})}
+								key={card.name}
+							>
+								<Card {...card} />
+							</motion.div>
 						))}
-					</Stack>
+					</SimpleGrid>
 				</VStack>
 			</ContainerInside>
 		</Container>
@@ -131,27 +142,22 @@ export default function ProgrammingSimplified(): JSX.Element {
 
 function Card(props: CardProps): JSX.Element {
 	return (
-		<motion.div
-			initial="initial"
-			whileInView="onView"
-			variants={slideInUp({ amount: 50, delay: props.index * 0.3 })}
+		<VStack
+			bg="#5A60ADCC"
+			align="stretch"
+			rounded={5}
+			overflow="hidden"
+			flex={1}
+			h="100%"
+			w="100%"
 		>
-			<VStack
-				bg="#5A60ADCC"
-				align="stretch"
-				rounded={5}
-				overflow="hidden"
-				flex={1}
-				h="100%"
-			>
-				<Text px={3.5} py={2.5} flex={1}>
-					{props.description}
-				</Text>
-				<Box bg="#5A60AD" px={3.5} py={2.5}>
-					<Heading size="sm">{props.name}</Heading>
-					{/* <Text>Taught by {props.instructor}</Text> */}
-				</Box>
-			</VStack>
-		</motion.div>
+			<Text px={3.5} py={2.5} flex={1}>
+				{props.description}
+			</Text>
+			<Box bg="#5A60AD" px={3.5} py={2.5}>
+				<Heading size="sm">{props.name}</Heading>
+				{/* <Text>Taught by {props.instructor}</Text> */}
+			</Box>
+		</VStack>
 	);
 }

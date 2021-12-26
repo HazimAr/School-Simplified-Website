@@ -28,10 +28,10 @@ const cardTestimonial: CardTestimonial[] = [
 			"I was able to start my own website with just React and Chakra UI. I'm so happy with it.",
 	},
 	{
-		name: "Ally H.",
-		title: "Website Development Student",
+		name: "Kaylee A.",
+		title: "Python 101 Student",
 		content:
-			"I was able to get started with web development with zero prior knowledge on the subject!",
+			"I've learned so much from this course! I'm so excited to continue learning!",
 	},
 	{
 		name: "Daniyal S.",
@@ -40,10 +40,10 @@ const cardTestimonial: CardTestimonial[] = [
 			"I'm so glad I found Programming Simplified. It's a great place to learn.",
 	},
 	{
-		name: "Kaylee A.",
-		title: "Python 101 Student",
+		name: "Ally H.",
+		title: "Website Development Student",
 		content:
-			"I've learned so much from this course! I'm so excited to continue learning!",
+			"I was able to get started with web development with zero prior knowledge on the subject!",
 	},
 ];
 
@@ -90,10 +90,11 @@ export default function Testimonials(): JSX.Element {
 								maxW={{ lg: 0 }}
 							/>
 							<SimpleGrid
-								columns={{ base: 1, lg: 2 }}
-								mt={2}
+								columns={{ base: 1, md: 1, lg: 2 }}
 								spacingX={26}
-								spacingY={{ base: 6, lg: 39 }}
+								spacingY={{ base: 6, lg: 30 }}
+								mt={6}
+								width={{base: "%100", lg: "82%"}}
 							>
 								{cardTestimonial.map((cardTestimonial) => (
 									<motion.div
@@ -122,10 +123,9 @@ function Card(props: CardTestimonial): JSX.Element {
 			rounded={10}
 			overflow="hidden"
 			flex={1}
-			w="100%"
-			h="100%"
+
 		>
-			<Text px={3.5} py={2.5} flex={1} textAlign="left">
+			<Text px={3.5} py={3} flex={1} textAlign="left" fontSize={15}>
 				{props.content}
 			</Text>
 

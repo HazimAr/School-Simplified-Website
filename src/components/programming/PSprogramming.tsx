@@ -55,8 +55,8 @@ const cardProps: CardProps[] = [
 export default function Programming(): JSX.Element {
 	return (
 		<>
-			<Container py={50} px={{ base: 12, lg: 10 }} bg="#5E65B7">
-				<ContainerInside>
+			<Container py={50} px={{ base: 0, lg: 10 }} bg="#5E65B7">
+				<ContainerInside maxWidth={800}>
 					<Center>
 						<HStack spacing={0}>
 							<VStack align="start" textAlign="left">
@@ -72,8 +72,9 @@ export default function Programming(): JSX.Element {
 								<Text mt={6} textAlign="left">
 									Want to create, launch, and produce
 									projects? Want to gain coding skills through
-									an innovative way of learning? <br />
-									<br />
+									an innovative way of learning? 
+								</Text>
+								<Text mt={6} textAlign="left">
 									Programming Simplified will help you do just
 									that! It is a program designed to help
 									beginner programmers learn the necessary
@@ -123,7 +124,7 @@ export default function Programming(): JSX.Element {
 			<Container
 				bg="linear-gradient(180deg, rgba(90, 104, 210, 0.7) 0%, rgba(167, 178, 255, 0.476) 100%)"
 				py={14}
-				px={{ base: 5, lg: 40 }}
+				px={{ base: 0, lg: 40 }}
 			>
 				<ContainerInside overflow="hidden" textAlign="left">
 					<Flex flexDir="column" align="stretch">

@@ -77,7 +77,7 @@ const qaPairs = [
 
 export default function FAQ(): JSX.Element {
 	return (
-		<Container py={15} px={{ base: 5, lg: 40 }}>
+		<Container py={15} px={{ base: 0, lg: 40 }}>
 			<ContainerInside textAlign="left">
 				<Heading size="lg" my={7}>
 					Frequently Asked Questions

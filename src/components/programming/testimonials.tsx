@@ -132,7 +132,7 @@ function Card(props: CardTestimonial): JSX.Element {
 			<Box bg="#5A60AD" px={3.5} py={1.5} textAlign="left">
 				<Heading size="sm">{props.name}</Heading>
 
-				<Text flex={1} textAlign="left" fontSize={14}>
+				<Text flex={1} textAlign="left" fontSize={13}>
 					{props.title}
 				</Text>
 			</Box>

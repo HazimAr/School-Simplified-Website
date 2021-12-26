@@ -55,7 +55,7 @@ const cardProps: CardProps[] = [
 export default function Programming(): JSX.Element {
 	return (
 		<>
-			<Container py={50} px={{ base: 12, lg: 20 }} bg="#5E65B7">
+			<Container py={50} px={{ base: 12, lg: 10 }} bg="#5E65B7">
 				<ContainerInside>
 					<Center>
 						<HStack spacing={0}>

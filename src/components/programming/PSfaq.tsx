@@ -52,7 +52,23 @@ const qaPairs = [
 		question: "How can I contact you?",
 		answer: [
 			{
-				text: "If you have any questions, concers or suggestions, please email programmingsimplified@gmail.com or contact us on our Discord server!",
+				text: "If you have any questions, concers or suggestions, please email ",
+				link: "",
+			},
+			{
+				text: "programmingsimplified@gmail.com",
+				link: "mailto:programmingsimplified@gmail.com",
+			},
+			{
+				text: " or contact us on our ",
+				link: "",
+			},
+			{
+				text: "Discord server",
+				link: "https://discord.com/invite/s6HAveWMCg",
+			},
+			{
+				text: "!",
 				link: "",
 			},
 		],
@@ -61,7 +77,7 @@ const qaPairs = [
 
 export default function FAQ(): JSX.Element {
 	return (
-		<Container py={15} px={{ base: 0, lg: 40 }}>
+		<Container py={15} px={{ base: 5, lg: 40 }}>
 			<ContainerInside textAlign="left">
 				<Heading size="lg" my={7}>
 					Frequently Asked Questions

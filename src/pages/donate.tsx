@@ -1,12 +1,4 @@
-import {
-	Heading,
-	Stack,
-	HStack,
-	VStack,
-	Text,
-	Box,
-	Image,
-} from "@chakra-ui/react";
+import { Heading, Stack, VStack, Text, Box, Image } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 
@@ -27,14 +19,14 @@ export default function Donate() {
 	];
 
 	return (
-		<Container my="100px">
+		<Container my="100px" mx="25px">
 			<ContainerInside>
 				<Stack
 					direction={{ base: "column-reverse", md: "row" }}
 					align="center"
-					spacing="45px"
+					spacing={{ base: "200px", md: "45px" }}
 				>
-					<Stack display={{ base: "block", md: "none" }}>
+					<Stack display={{ base: "inline-block", md: "none" }}>
 						<iframe
 							src="https://master.d3o53wn77q6k5v.amplifyapp.com/"
 							frameBorder="0"
@@ -81,7 +73,11 @@ export default function Donate() {
 						<Heading pt={15} textAlign="left" fontSize="18px">
 							Here is what your money will go towards:
 						</Heading>
-						<HStack h="150px" w="100%">
+						<Stack
+							direction={{ base: "column", md: "row" }}
+							h="150px"
+							w="100%"
+						>
 							{reasons.map((reason, index) => {
 								return (
 									<Box
@@ -93,7 +89,10 @@ export default function Donate() {
 										h="100%"
 										align="start"
 									>
-										<Text color="brand.yellow" fontSize="16px">
+										<Text
+											color="brand.yellow"
+											fontSize="16px"
+										>
 											{reason.title}
 										</Text>
 										<Text mt={2} fontSize="14px">
@@ -102,7 +101,7 @@ export default function Donate() {
 									</Box>
 								);
 							})}
-						</HStack>
+						</Stack>
 					</VStack>
 					<Image
 						display={{ base: "none", md: "block" }}

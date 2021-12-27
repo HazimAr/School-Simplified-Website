@@ -1,4 +1,4 @@
-function slideFade({ delay = 0.3, x = 0, y = 0 } = {}) {
+function slideFade({ delay = 0.1, x = 0, y = 0 } = {}) {
 	return {
 		initial: {
 			opacity: 0,
@@ -10,24 +10,24 @@ function slideFade({ delay = 0.3, x = 0, y = 0 } = {}) {
 			x: 0,
 			y: 0,
 			transition: {
-				duration: 1,
+				duration: 0.5,
 				delay,
 			},
 		},
 	};
 }
 
-const slideInLeft = ({ amount = 100, delay = 0.3 } = {}) =>
+const slideInLeft = ({ amount = 100, delay = 0.1 } = {}) =>
 	slideFade({ delay, x: -amount });
-const slideInRight = ({ amount = 100, delay = 0.3 } = {}) =>
+const slideInRight = ({ amount = 100, delay = 0.1 } = {}) =>
 	slideFade({ delay, x: amount });
-const slideInUp = ({ amount = 100, delay = 0.3 } = {}) =>
+const slideInUp = ({ amount = 100, delay = 0.1 } = {}) =>
 	slideFade({ delay, y: amount });
-const slideInDown = ({ amount = 100, delay = 0.3 } = {}) =>
+const slideInDown = ({ amount = 100, delay = 0.1 } = {}) =>
 	slideFade({ delay, y: -amount });
-const fadeIn = ({ delay = 0.3 } = {}) => slideFade({ delay });
+const fadeIn = ({ delay = 0.1 } = {}) => slideFade({ delay });
 
-function widthIn({ delay = 0.3 } = {}) {
+function widthIn({ delay = 0.1 } = {}) {
 	return {
 		initial: {
 			width: "0%",
@@ -35,7 +35,7 @@ function widthIn({ delay = 0.3 } = {}) {
 		onView: {
 			width: "100%",
 			transition: {
-				duration: 1,
+				duration: 0.5,
 				delay,
 			},
 		},

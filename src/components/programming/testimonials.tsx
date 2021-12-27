@@ -25,7 +25,7 @@ const cardTestimonial: CardTestimonial[] = [
 		name: "Devin S.",
 		title: "Website Development Student",
 		content:
-			"I was able to start my own website with just React and Chakra UI. I'm so happy with it.",
+			"I was able to start making my own website with just React and Chakra UI. I'm so happy with the result.",
 	},
 	{
 		name: "Kaylee A.",
@@ -123,7 +123,7 @@ function Card(props: CardTestimonial): JSX.Element {
 			rounded={10}
 			overflow="hidden"
 			flex={1}
-
+			h="100%"
 		>
 			<Text px={3.5} py={3} flex={1} textAlign="left" fontSize={15}>
 				{props.content}

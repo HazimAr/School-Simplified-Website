@@ -36,28 +36,9 @@ export default function GettingStarted() {
 								spacingX={8}
 								spacingY={4}
 							>
-								<NextChakraLink href="/" display="block">
-									<Button
-										timmysrc="/timmy/1.png"
-										w="100%"
-										h="100%"
-									>
-										Programs
-									</Button>
-								</NextChakraLink>
-								<NextChakraLink
-									href="/organizations"
-									display="block"
-								>
-									<Button
-										timmysrc="/timmy/timmy_flying_icon.png"
-										w="100%"
-										h="100%"
-									>
-										Organizations
-									</Button>
-								</NextChakraLink>
-								<NextChakraLink href="/" display="block">
+								<NextChakraLink 
+									href="/academicServices" 
+									display="block">
 									<Button
 										timmysrc="/timmy/3.png"
 										w="100%"
@@ -76,6 +57,29 @@ export default function GettingStarted() {
 										h="100%"
 									>
 										Community
+									</Button>
+								</NextChakraLink>
+								<NextChakraLink 
+									href="/volunteer" 
+									display="block">
+									<Button
+										timmysrc="/timmy/timmy_flying_icon.png"
+										w="100%"
+										h="100%"
+									>
+										Volunteer
+									</Button>
+								</NextChakraLink>
+								<NextChakraLink
+									href="/faq"
+									display="block"
+								>
+									<Button
+										timmysrc="/timmy/1.png"
+										w="100%"
+										h="100%"
+									>
+										FAQs
 									</Button>
 								</NextChakraLink>
 							</SimpleGrid>

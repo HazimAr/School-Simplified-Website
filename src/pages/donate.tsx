@@ -13,16 +13,16 @@ import ContainerInside from "@components/containerInside";
 export default function Donate() {
 	const reasons = [
 		{
-			title: "A",
-			desc: "Text Text Text",
+			title: "Education",
+			desc: "Supporting your child's or your education by improving the quality of our services!",
 		},
 		{
-			title: "B",
-			desc: "Text Text Text",
+			title: "Opportunity",
+			desc: "Creating opportunities and fascilitating information access for students!",
 		},
 		{
-			title: "C",
-			desc: "Text Text Text",
+			title: "Innovation",
+			desc: "Initiating new programs to support students in their pursuit of learning!",
 		},
 	];
 
@@ -93,10 +93,10 @@ export default function Donate() {
 										h="100%"
 										align="start"
 									>
-										<Heading fontSize="16px">
+										<Text color="brand.yellow" fontSize="16px">
 											{reason.title}
-										</Heading>
-										<Text fontSize="12px">
+										</Text>
+										<Text mt={2} fontSize="14px">
 											{reason.desc}
 										</Text>
 									</Box>

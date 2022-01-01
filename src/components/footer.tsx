@@ -11,7 +11,6 @@ import {
 	Stack,
 	Text,
 	UnorderedList,
-	useToken,
 	VisuallyHidden,
 	VStack,
 } from "@chakra-ui/react";
@@ -19,13 +18,13 @@ import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
 import { socials } from "config";
-import Wave from "react-wavify";
+// import Wave from "react-wavify";
 
 export default function Footer() {
-	const purple = useToken("colors", "brand.purple.light");
+	// const purple = useToken("colors", "brand.purple.light");
 	return (
 		<Box as="footer">
-			<Box zIndex={-1}>
+			{/* <Box zIndex={-1}>
 				<Wave
 					fill={purple}
 					// paused
@@ -36,8 +35,8 @@ export default function Footer() {
 						points: 3,
 					}}
 				/>
-			</Box>
-			<Container bg="brand.purple.light" mt="-8px">
+			</Box> */}
+			<Container bg="brand.purple.light" mt="-8px" p={4}>
 				<ContainerInside pb={5}>
 					<Stack
 						justify="space-between"
@@ -80,10 +79,10 @@ export default function Footer() {
 								gridRowEnd={{ base: 3, md: 2, lg: 3 }}
 							>
 								<Heading as="h3" size="md">
-									Resources
+									Services
 								</Heading>
 								<UnorderedList styleType="none">
-									{resources.map((item) => (
+									{services.map((item) => (
 										<ListItem key={item.name}>
 											<NextLink href={item.link}>
 												<Text fontSize="xs">
@@ -102,10 +101,10 @@ export default function Footer() {
 								gridRowEnd={{ base: 4, lg: 3 }}
 							>
 								<Heading as="h3" size="md">
-									Programs
+									Resources
 								</Heading>
 								<UnorderedList styleType="none">
-									{programs.map((item) => (
+									{resources.map((item) => (
 										<ListItem key={item.name}>
 											<NextLink href={item.link}>
 												<Text fontSize="xs">
@@ -186,13 +185,13 @@ export default function Footer() {
 							</Text>
 						</Stack> */}
 
-						<VStack align="stretch" spacing={1} flex={3}>
+						<VStack align="stretch" spacing={1} flex={1}>
 							<Heading as="h3" size="md">
 								Newsletter
 							</Heading>
 							<Text fontSize="sm">
-								Join our newsletter to receive weekly news to
-								stay updated!
+								Join over 000,000 people who receive weekly news
+								to stay updated!
 							</Text>
 							<HStack pt={2}>
 								<Input placeholder="Your email..." />
@@ -206,7 +205,7 @@ export default function Footer() {
 							<HStack
 								spacing={2}
 								pt={5}
-								justify="center"
+								justify="left"
 								flexWrap={{ base: "wrap", sm: "nowrap" }}
 							>
 								{socials.map((item) => {
@@ -235,23 +234,21 @@ export default function Footer() {
 						margin="20px"
 					>
 						<Text fontSize="xs" textAlign="center">
-							School Simplified © 2021 All Rights Reserved
-							<br />
-							EIN: 86-3932154
+							School Simplified © 2022 All Rights Reserved
 						</Text>
 
 						<Text fontSize="xs">
 							School Simplified Inc. | 8 The Green, Dover, DE
-							19901
+							19901 | EIN: 86-3932154
 						</Text>
-						<Text fontSize="xs">
+						{/* <Text fontSize="xs">
 							Made with love by passionate{" "}
 							<NextLink href="https://github.com/HazimAr/School-Simplified">
 								{" "}
 								developers
 							</NextLink>{" "}
 							and designers
-						</Text>
+						</Text> */}
 					</Flex>
 				</ContainerInside>
 			</Container>
@@ -267,32 +264,24 @@ const about = [
 		link: "/",
 	},
 	{
-		name: "Volunteer",
-		link: "/volunteer",
+		name: "Leadership",
+		link: "/leadership",
+	},
+	{
+		name: "Our Organizations",
+		link: "/organizations",
 	},
 	{
 		name: "Community",
 		link: "/community",
 	},
 	{
-		name: "Organizations",
-		link: "/organizations",
-	},
-	{
 		name: "Partners",
 		link: "/partners",
 	},
-	{
-		name: "Leadership",
-		link: "/leadership",
-	},
 ];
 
-const resources = [
-	{
-		name: "Notes",
-		link: "/notes",
-	},
+const services = [
 	{
 		name: "Tutoring",
 		link: "/tutoring",
@@ -302,25 +291,16 @@ const resources = [
 		link: "/essay",
 	},
 	{
-		name: "SAT Prep",
-		link: "/sat",
-	},
-	{
 		name: "Homework Help",
 		link: "/homework",
 	},
+	{
+		name: "Notes & Resources",
+		link: "/notes",
+	},
 	// {
-	// 	name: "Blogs & Articles",
-	// 	link: "/blog",
-	// },
-	// {
-	// 	name: "Programs",
-	// 	link: "/programs",
-	// },
-
-	// {
-	// 	name: "Internships",
-	// 	link: "/internships",
+	// 	name: "SAT Prep",
+	// 	link: "/sat",
 	// },
 ];
 
@@ -330,7 +310,7 @@ const support = [
 		link: "/contact",
 	},
 	{
-		name: "Donate",
+		name: "Support Us",
 		link: "/donate",
 	},
 	{
@@ -339,23 +319,47 @@ const support = [
 	},
 ];
 
-const programs = [
+const resources = [
 	{
-		name: "Chapters",
-		link: "/chapter",
+		name: "Volunteer",
+		link: "/volunteer",
 	},
 	{
-		name: "Student Activities",
-		link: "/activities",
+		name: "Leadership Opportunities",
+		link: "/volunteer",
 	},
 	{
-		name: "Programming Simplified",
-		link: "/programming",
+		name: "Programs",
+		link: "/programs",
 	},
 	{
-		name: "Editorial",
-		link: "/editorial",
+		name: "Internships",
+		link: "/internships",
 	},
+	{
+		name: "Blog",
+		link: "/blog",
+	},
+	{
+		name: "Events",
+		link: "/events",
+	},
+	// {
+	// 	name: "Chapters",
+	// 	link: "/chapter",
+	// },
+	// {
+	// 	name: "Student Activities",
+	// 	link: "/activities",
+	// },
+	// {
+	// 	name: "Programming Simplified",
+	// 	link: "/programming",
+	// },
+	// {
+	// 	name: "Editorial",
+	// 	link: "/editorial",
+	// },
 ];
 
 const advertise = [

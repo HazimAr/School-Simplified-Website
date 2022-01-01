@@ -5,6 +5,7 @@ import {
 	FaInstagram,
 	FaLinkedinIn,
 	FaTiktok,
+	FaSpotify,
 } from "react-icons/fa";
 import { SocialMediaIcon } from "types";
 
@@ -30,19 +31,14 @@ const META: MetaType = {
 
 const socials: SocialMediaIcon[] = [
 	{
+		name: "Spotify",
+		link: "https://open.spotify.com/user/5lkgh8ryszqens1ywo58m5lv8?si=e7557f7aad5c49c8",
+		icon: (props) => <FaSpotify {...props} />,
+	},
+	{
 		name: "Instagram",
 		link: "https://www.instagram.com/schoolsimplified/",
 		icon: (props) => <FaInstagram {...props} />,
-	},
-	{
-		name: "Discord",
-		link: "https://discord.gg/school",
-		icon: (props) => <FaDiscord {...props} />,
-	},
-	{
-		name: "Twitter",
-		link: "https://twitter.com/SchoolSimplify",
-		icon: (props) => <FaTwitter {...props} />,
 	},
 	{
 		name: "TikTok",
@@ -50,14 +46,24 @@ const socials: SocialMediaIcon[] = [
 		icon: (props) => <FaTiktok {...props} />,
 	},
 	{
-		name: "LinkedIn",
-		link: "https://www.linkedin.com/company/school-simplified",
-		icon: (props) => <FaLinkedinIn {...props} />,
+		name: "Discord",
+		link: "https://discord.gg/school",
+		icon: (props) => <FaDiscord {...props} />,
 	},
 	{
 		name: "Facebook",
 		link: "https://www.facebook.com/SchoolSimple",
 		icon: (props) => <FaFacebook {...props} />,
+	},
+	{
+		name: "Twitter",
+		link: "https://twitter.com/SchoolSimplify",
+		icon: (props) => <FaTwitter {...props} />,
+	},
+	{
+		name: "LinkedIn",
+		link: "https://www.linkedin.com/company/school-simplified",
+		icon: (props) => <FaLinkedinIn {...props} />,
 	},
 ];
 

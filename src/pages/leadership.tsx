@@ -204,11 +204,11 @@ const seniorExecs: Person[] = [
 		title: "Senior Vice President of Global Marketing",
 		img: "/staff/MasaMurry.jpg",
 	},
-	{
-		name: "Jason Mei",
-		title: "Executive Vice President of Information Technology",
-		img: "/staff/JasonMei.jpg",
-	},
+	// {
+	// 	name: "Jason Mei",
+	// 	title: "Executive Vice President of Information Technology",
+	// 	img: "/staff/JasonMei.jpg",
+	// },
 	{
 		name: "Diana Zheng",
 		title: "Corporate Treasurer",

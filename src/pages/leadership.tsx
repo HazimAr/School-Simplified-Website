@@ -200,6 +200,11 @@ const seniorExecs: Person[] = [
 		img: "/staff/ParamPatil.jpg",
 	},
 	{
+		name: "Anncine Lin",
+		title: "Chief Human Resources Officer",
+		img: "/staff/AnncineLin.jpg",
+	},
+	{
 		name: "Harry Chow",
 		title: "Chief Marketing Officer",
 		img: "/staff/HarryChow.jpg",
@@ -213,11 +218,6 @@ const seniorExecs: Person[] = [
 		name: "Diana Zheng",
 		title: "Corporate Treasurer",
 		img: "/staff/DianaZheng.jpg",
-	},
-	{
-		name: "Anncine Lin",
-		title: "Chief Human Resources Officer",
-		img: "/staff/AnncineLin.jpg",
 	},
 	{
 		name: "Bhavyasri Suggula",

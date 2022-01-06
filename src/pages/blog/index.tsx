@@ -65,7 +65,7 @@ export default function Blog({
 					>
 						<Image
 							src="/timmy/blogtimmy.png"
-							maxW={{ base: 150, md: 250, lg: 345 }}
+							maxW={{ base: 0, md: 250, lg: 345 }}
 						/>
 						<Box flex={1} textAlign="left">
 							<Box

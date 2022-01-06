@@ -37,7 +37,7 @@ export default function GettingStarted() {
 								spacingY={4}
 							>
 								<NextChakraLink 
-									href="/academicServices" 
+									href="/#acad" 
 									display="block">
 									<Button
 										timmysrc="/timmy/3.png"

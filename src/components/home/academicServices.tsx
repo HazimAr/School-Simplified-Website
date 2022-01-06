@@ -60,6 +60,7 @@ const cardProps: CardProps[] = [
 export default function AcademicServices(): JSX.Element {
 	return (
 		<Container
+			id="acad"
 			bg="linear-gradient(180deg, rgba(90, 104, 210, 0.7) 0%, rgba(167, 178, 255, 0.476) 100%)"
 			py={16}
 		>

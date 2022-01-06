@@ -342,7 +342,7 @@ const programs = [
 	},
 	{
 		name: "Editorial",
-		link: "/editorial",
+		link: "/blog",
 	},
 	// {
 	// 	name: "Volunteer",

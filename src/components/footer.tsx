@@ -79,10 +79,10 @@ export default function Footer() {
 								gridRowEnd={{ base: 3, md: 2, lg: 3 }}
 							>
 								<Heading as="h3" size="md">
-									Services
+									Resources
 								</Heading>
 								<UnorderedList styleType="none">
-									{services.map((item) => (
+									{resources.map((item) => (
 										<ListItem key={item.name}>
 											<NextLink href={item.link}>
 												<Text fontSize="xs">
@@ -101,10 +101,10 @@ export default function Footer() {
 								gridRowEnd={{ base: 4, lg: 3 }}
 							>
 								<Heading as="h3" size="md">
-									Resources
+									Programs
 								</Heading>
 								<UnorderedList styleType="none">
-									{resources.map((item) => (
+									{programs.map((item) => (
 										<ListItem key={item.name}>
 											<NextLink href={item.link}>
 												<Text fontSize="xs">
@@ -264,24 +264,32 @@ const about = [
 		link: "/",
 	},
 	{
-		name: "Leadership",
-		link: "/leadership",
-	},
-	{
-		name: "Our Organizations",
-		link: "/organizations",
+		name: "Volunteer",
+		link: "/volunteer",
 	},
 	{
 		name: "Community",
 		link: "/community",
 	},
 	{
+		name: "Organizations",
+		link: "/organizations",
+	},
+	{
 		name: "Partners",
 		link: "/partners",
 	},
+	{
+		name: "Leadership",
+		link: "/leadership",
+	},
 ];
 
-const services = [
+const resources = [
+	{
+		name: "Notes",
+		link: "/notes",
+	},
 	{
 		name: "Tutoring",
 		link: "/tutoring",
@@ -290,18 +298,14 @@ const services = [
 		name: "Essay Revision",
 		link: "/essay",
 	},
-	{
-		name: "Homework Help",
-		link: "/homework",
-	},
-	{
-		name: "Notes & Resources",
-		link: "/notes",
-	},
 	// {
 	// 	name: "SAT Prep",
 	// 	link: "/sat",
 	// },
+	{
+		name: "Homework Help",
+		link: "/homework",
+	},
 ];
 
 const support = [
@@ -319,46 +323,50 @@ const support = [
 	},
 ];
 
-const resources = [
+const programs = [
 	{
-		name: "Volunteer",
-		link: "/volunteer",
+		name: "Projects",
+		link: "/projects",
 	},
 	{
-		name: "Leadership Opportunities",
-		link: "/volunteer",
+		name: "Chapters",
+		link: "/chapter",
 	},
 	{
-		name: "Programs",
-		link: "/programs",
+		name: "Student Activities",
+		link: "/activities",
 	},
 	{
-		name: "Internships",
-		link: "/internships",
+		name: "Programming Simplified",
+		link: "/programming",
 	},
 	{
-		name: "Blog",
-		link: "/blog",
-	},
-	{
-		name: "Events",
-		link: "/events",
+		name: "Editorial",
+		link: "/editorial",
 	},
 	// {
-	// 	name: "Chapters",
-	// 	link: "/chapter",
+	// 	name: "Volunteer",
+	// 	link: "/volunteer",
 	// },
 	// {
-	// 	name: "Student Activities",
-	// 	link: "/activities",
+	// 	name: "Leadership Opportunities",
+	// 	link: "/volunteer",
 	// },
 	// {
-	// 	name: "Programming Simplified",
-	// 	link: "/programming",
+	// 	name: "Programs",
+	// 	link: "/programs",
 	// },
 	// {
-	// 	name: "Editorial",
-	// 	link: "/editorial",
+	// 	name: "Internships",
+	// 	link: "/internships",
+	// },
+	// {
+	// 	name: "Blog",
+	// 	link: "/blog",
+	// },
+	// {
+	// 	name: "Events",
+	// 	link: "/events",
 	// },
 ];
 

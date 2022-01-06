@@ -77,10 +77,10 @@ const menuItems: MenuItem[] = [
 				name: "Essay Revision",
 				href: "/essay",
 			},
-			{
-				name: "SAT Prep",
-				href: "/sat",
-			},
+			// {
+			// 	name: "SAT Prep",
+			// 	href: "/sat",
+			// },
 			{
 				name: "Homework Help",
 				href: "/discord",
@@ -110,10 +110,10 @@ const menuItems: MenuItem[] = [
 				name: "Editorial",
 				href: "/blog",
 			},
-			{
-				name: "Accelerate Your Organization",
-				href: "/accelerate",
-			},
+			// {
+			// 	name: "Accelerate Your Organization",
+			// 	href: "/accelerate",
+			// },
 		],
 	},
 	{

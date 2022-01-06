@@ -5,7 +5,6 @@ import {
 	FaInstagram,
 	FaLinkedinIn,
 	FaTiktok,
-	FaSpotify,
 } from "react-icons/fa";
 import { SocialMediaIcon } from "types";
 
@@ -30,11 +29,11 @@ const META: MetaType = {
 };
 
 const socials: SocialMediaIcon[] = [
-	{
-		name: "Spotify",
-		link: "https://open.spotify.com/user/5lkgh8ryszqens1ywo58m5lv8?si=e7557f7aad5c49c8",
-		icon: (props) => <FaSpotify {...props} />,
-	},
+	// {
+	// 	name: "Spotify",
+	// 	link: "https://open.spotify.com/user/5lkgh8ryszqens1ywo58m5lv8?si=e7557f7aad5c49c8",
+	// 	icon: (props) => <FaSpotify {...props} />,
+	// },
 	{
 		name: "Instagram",
 		link: "https://www.instagram.com/schoolsimplified/",

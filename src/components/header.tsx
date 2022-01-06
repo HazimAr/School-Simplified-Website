@@ -108,7 +108,7 @@ const menuItems: MenuItem[] = [
 			},
 			{
 				name: "Editorial",
-				href: "/editorial",
+				href: "/blog",
 			},
 			{
 				name: "Accelerate Your Organization",

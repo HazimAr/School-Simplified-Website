@@ -10,6 +10,7 @@ import {
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
+import NextLink from "@components/nextChakra";
 import NextChakraLink from "@components/nextChakra";
 
 export default function Four(): JSX.Element {
@@ -39,11 +40,18 @@ export default function Four(): JSX.Element {
 								service hours and possibly becoming a project
 								manager!
 							</Text>
-							<Box pt="15px">
-								<Button timmysrc="timmy/timmy_paper_icon.svg">
-									Propose Project
-								</Button>
-							</Box>
+
+							<NextLink
+							isExternal
+							href="https://docs.google.com/forms/d/e/1FAIpQLSfq0RJcSs6WYufT-YcKo4J1V5GvCTidmoYZ-GUv9G2oaN1Oag/viewform"
+							_hover={{ textDecoration: "none"}}
+							>
+								<Box pt="15px">
+									<Button timmysrc="timmy/timmy_paper_icon.svg">
+										Propose Project
+									</Button>
+								</Box>
+							</NextLink>
 						</VStack>
 					</HStack>
 				</ContainerInside>
@@ -124,9 +132,16 @@ export default function Four(): JSX.Element {
 								apps? Or maybe you just want to learn how to
 								code for fun. We will help you do just that.
 							</Text>
-							<Button timmysrc="timmy/timmy_scroll_icon.png">
+							<NextLink
+							isExternal
+							href="/simplihacks"
+							_hover={{ textDecoration: "none"}}
+							>
+								<Button timmysrc="timmy/timmy_scroll_icon.png">
 								More Information
-							</Button>
+								</Button>
+							</NextLink>
+							
 						</VStack>
 					</Stack>
 				</ContainerInside>

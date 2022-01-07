@@ -113,7 +113,11 @@ function NotesDropdown({
 						<Accordion bg="#5A60ADCC" allowMultiple>
 							{clazz.content.map((unit) => (
 								<AccordionItem border="none" key={unit.title}>
-									<AccordionButton p={1.5} bg="#585EAB">
+									<AccordionButton
+										py={1.5}
+										px={3}
+										bg="#585EAB"
+									>
 										<Text fontSize={16} textAlign="left">
 											{unit.title}
 										</Text>

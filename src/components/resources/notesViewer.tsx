@@ -26,8 +26,14 @@ import NextChakraLink from "@components/nextChakra";
 import { useContainerDimensions } from "@hooks/useContainerDimensions";
 import { useEffect, useRef, useState } from "react";
 import { FaFileDownload } from "react-icons/fa";
-import { Document, Page } from "react-pdf";
+import { Document, Page, pdfjs } from "react-pdf";
 import { AllSubjects, NotesProps, Subject } from "types";
+import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+
+// use minified worker file
+// for more documentation on this package, visit
+// https://github.com/wojtekmaj/react-pdf
+pdfjs.GlobalWorkerOptions.workerSrc = "pdf.worker.min.js";
 
 type NotesViewerProps = AllSubjects & BoxProps;
 
@@ -199,6 +205,8 @@ function NotesPreview({
 						file={pdfURL}
 						onLoadSuccess={onDocumentLoadSuccess}
 						onLoadError={console.error}
+						error="Sorry, we were unable to load the document."
+						externalLinkTarget="_blank"
 					>
 						<Box
 							overflowX="hidden"
@@ -206,19 +214,16 @@ function NotesPreview({
 							style={{ aspectRatio: "17/22" }}
 						>
 							<Stack overflow="visible" ref={pdfBox}>
-								{(() => {
-									const output = [];
-									for (let i = 1; i <= numPages; i++) {
-										output.push(
-											<Page
-												pageNumber={i}
-												width={width}
-												key={i}
-											/>
-										);
-									}
-									return output;
-								})()}
+								{[...Array(numPages).keys()].map((i) => (
+									<Page
+										pageIndex={i}
+										width={width}
+										error={`Sorry, we were unable to load page #${
+											i + 1
+										}.`}
+										key={i}
+									/>
+								))}
 							</Stack>
 						</Box>
 					</Document>

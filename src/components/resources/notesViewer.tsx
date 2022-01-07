@@ -153,17 +153,15 @@ function NotesPreview({
 	...stackProps
 }: NotesPreviewProps): JSX.Element {
 	const [numPages, setNumPages] = useState(null);
-	const [pageNumber, setPageNumber] = useState(1);
 	const pdfBox = useRef<HTMLDivElement>();
 	const { width } = useContainerDimensions(pdfBox);
 	useEffect(() => {
 		setNumPages(null);
-		setPageNumber(1);
 	}, [pdfURL]);
 
-	function onDocumentLoadSuccess(egg: any) {
-		// console.log("loaded successfully!", egg);
-		setNumPages(egg.numPages);
+	function onDocumentLoadSuccess(success: any) {
+		// console.log("loaded successfully!", success);
+		setNumPages(success.numPages);
 	}
 
 	return (
@@ -197,47 +195,33 @@ function NotesPreview({
 			</HStack>
 			<Box bg="#5A60ADCC" px={8} py={3} borderBottomRadius={5}>
 				{pdfURL ? (
-					<Box position="relative" ref={pdfBox}>
-						<Document
-							file={pdfURL}
-							onLoadSuccess={onDocumentLoadSuccess}
-							onLoadError={console.error}
+					<Document
+						file={pdfURL}
+						onLoadSuccess={onDocumentLoadSuccess}
+						onLoadError={console.error}
+					>
+						<Box
+							overflowX="hidden"
+							overflowY="scroll"
+							style={{ aspectRatio: "17/22" }}
 						>
-							<Page pageNumber={pageNumber} width={width} />
-						</Document>
-						<Box
-							position="absolute"
-							top={0}
-							left={0}
-							h="100%"
-							w="50%"
-							onClick={() => {
-								// console.log(
-								// 	"left clicked",
-								// 	pageNumber,
-								// 	numPages
-								// );
-								if (pageNumber > 1)
-									setPageNumber(pageNumber - 1);
-							}}
-						/>
-						<Box
-							position="absolute"
-							top={0}
-							right={0}
-							h="100%"
-							w="50%"
-							onClick={() => {
-								// console.log(
-								// 	"right clicked",
-								// 	pageNumber,
-								// 	numPages
-								// );
-								if (pageNumber < numPages)
-									setPageNumber(pageNumber + 1);
-							}}
-						/>
-					</Box>
+							<Stack overflow="visible" ref={pdfBox}>
+								{(() => {
+									const output = [];
+									for (let i = 1; i <= numPages; i++) {
+										output.push(
+											<Page
+												pageNumber={i}
+												width={width}
+												key={i}
+											/>
+										);
+									}
+									return output;
+								})()}
+							</Stack>
+						</Box>
+					</Document>
 				) : (
 					<Text as="i">Please select a file from the left!</Text>
 				)}

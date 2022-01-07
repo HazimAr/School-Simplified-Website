@@ -10,12 +10,12 @@ export const useContainerDimensions = (myRef: { current: any }) => {
 
 	useEffect(() => {
 		const handleResize = () => {
-			setDimensions(getDimensions());
+			if (myRef.current) {
+				setDimensions(getDimensions());
+			}
 		};
 
-		if (myRef.current) {
-			setDimensions(getDimensions());
-		}
+		handleResize();
 
 		window.addEventListener("resize", handleResize);
 

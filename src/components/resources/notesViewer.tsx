@@ -40,7 +40,7 @@ export default function NotesViewer({
 	return (
 		<Container {...boxProps}>
 			<ContainerInside>
-				<SimpleGrid gap={3} columns={subjects.length}>
+				<SimpleGrid gap={3} columns={{ base: 1, md: subjects.length }}>
 					{subjects.map((s: Subject) => (
 						<Button
 							key={s.title}
@@ -60,7 +60,7 @@ export default function NotesViewer({
 				</SimpleGrid>
 				<Divider mt={8} mb={14} borderColor="white" />
 				{subject ? (
-					<SimpleGrid gap={6} columns={2}>
+					<SimpleGrid gap={6} columns={{ base: 1, md: 2 }}>
 						<NotesDropdown
 							subject={subjects.find(
 								(value) => value.title === subject

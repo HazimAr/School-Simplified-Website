@@ -26,10 +26,9 @@ export default function GettingStarted() {
 						<VStack spacing={4} align="stretch" textAlign="left">
 							<Heading size="lg">Getting Started</Heading>
 							<Text>
-								School Simplified is a digital nonprofit
-								organization run by high school volunteers
-								dedicated to learning done equally, fairly and
-								with meaning.
+								School Simplified is a 501(c)3 nonprofit
+								organization dedicated to learning done 
+								equally, fairly and	with meaning.
 							</Text>
 							<SimpleGrid
 								columns={{ base: 1, md: 2 }}

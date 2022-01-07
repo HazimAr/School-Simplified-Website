@@ -59,5 +59,23 @@ export default function Resources({ subjects }: AllSubjects): JSX.Element {
 
 export async function getStaticProps() {
 	const props = await getAllSubjects();
+	// for caching results of costly computations
+	const valueCache = {};
+	props.subjects.sort((a, b) => {
+		// find number of notes in each subject
+		const aNotes: number =
+			valueCache[a.title] || // fetch cached value
+			(valueCache[a.title] = a.content // or generate new value and store it
+				.flatMap((value) => value.content)
+				.flatMap((value) => value.content).length);
+		const bNotes: number =
+			valueCache[b.title] || // same as with aNotes
+			(valueCache[b.title] = b.content
+				.flatMap((value) => value.content)
+				.flatMap((value) => value.content).length);
+
+		// simple comparison for descending sort
+		return bNotes - aNotes;
+	});
 	return { props, revalidate: 60 };
 }

@@ -7,19 +7,25 @@ import {
 	Box,
 	BoxProps,
 	Button,
+	Center,
 	Divider,
 	Heading,
+	HStack,
+	Icon,
 	SimpleGrid,
 	Spacer,
 	Stack,
 	StackProps,
 	Text,
+	VisuallyHidden,
 	VStack,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
+import NextChakraLink from "@components/nextChakra";
 import { useContainerDimensions } from "@hooks/useContainerDimensions";
 import { useEffect, useRef, useState } from "react";
+import { FaFileDownload } from "react-icons/fa";
 import { Document, Page } from "react-pdf";
 import { AllSubjects, NotesProps, Subject } from "types";
 
@@ -105,15 +111,11 @@ function NotesDropdown({
 										<Text fontSize={16} textAlign="left">
 											{unit.title}
 										</Text>
-										<Spacer />
+										<Spacer minW={10} />
 										<AccordionIcon />
 									</AccordionButton>
-									<AccordionPanel
-										bg="#656BB8CC"
-										px={4}
-										py={2}
-									>
-										<Stack spacing={1}>
+									<AccordionPanel bg="#656BB8CC" p={2}>
+										<Stack spacing={0}>
 											{unit.content.map((notes) => (
 												<Box
 													onClick={() =>
@@ -126,6 +128,8 @@ function NotesDropdown({
 														cursor: "pointer",
 													}}
 													key={notes.title}
+													px={2}
+													py={0.5}
 												>
 													{notes.title}
 												</Box>
@@ -170,9 +174,27 @@ function NotesPreview({
 			rounded={5}
 			overflow="hidden"
 		>
-			<Heading bg="brand.darkerBlue" size="sm" p={3}>
-				Notes Preview
-			</Heading>
+			<HStack p={3} bg="brand.darkerBlue">
+				<Heading size="sm">Notes Preview</Heading>
+				<Spacer />
+				{pdfURL ? (
+					<NextChakraLink href={pdfURL} isExternal>
+						<Center>
+							<Icon
+								as={FaFileDownload}
+								color="brand.yellow"
+								transition="all 0.2s ease"
+								_hover={{
+									color: "white",
+									transform: "scale(1.15)",
+								}}
+								_active={{ transform: "scale(1)" }}
+							/>
+							<VisuallyHidden>Download</VisuallyHidden>
+						</Center>
+					</NextChakraLink>
+				) : null}
+			</HStack>
 			<Box bg="#5A60ADCC" px={8} py={3} borderBottomRadius={5}>
 				{pdfURL ? (
 					<Box position="relative" ref={pdfBox}>

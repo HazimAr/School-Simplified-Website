@@ -1,5 +1,6 @@
 import axios from "axios";
 import {
+	AllSubjects,
 	AnswerPart,
 	ArtData,
 	Author,
@@ -27,6 +28,7 @@ const notionConfig = {
 	},
 };
 
+// THIS IS A LEGACY FUNCTION
 export async function getSubjects(): Promise<Subject[]> {
 	const { data: dictData } = await axios.post(
 		`https://api.notion.com/v1/databases/b2009721bf4d47aa8fa99a6528db7843/query`,
@@ -68,6 +70,7 @@ export async function getSubjects(): Promise<Subject[]> {
 	return subjects;
 }
 
+// THIS IS A LEGACY FUNCTION
 async function getClasses(
 	subjectData: any,
 	subjectIndex: number
@@ -91,6 +94,7 @@ async function getClasses(
 	);
 }
 
+// THIS IS A LEGACY FUNCTION
 async function getUnits(
 	currentSubject: any,
 	currentClass: any,
@@ -157,7 +161,8 @@ async function getUnits(
 					if (href.length && notesTitle.length) {
 						const note: NotesProps = {
 							title: notesTitle,
-							href: href,
+							// href: href,
+							file: null,
 						};
 
 						notes.push(note);
@@ -178,6 +183,51 @@ async function getUnits(
 		});
 }
 
+export async function getAllSubjects(): Promise<AllSubjects> {
+	const { data } = await axios.post(
+		"https://api.notion.com/v1/databases/b2009721bf4d47aa8fa99a6528db7843/query",
+		{},
+		notionConfig
+	);
+	const subjectsPromises: Promise<Subject>[] = data.results.map(
+		async (page: any): Promise<Subject> => {
+			const content = await getSubjectData(page.id);
+			const title: string = page?.properties?.Name?.title?.[0].plain_text;
+			return {
+				title,
+				content,
+			};
+		}
+	);
+	return {
+		subjects: await Promise.all(subjectsPromises),
+	};
+}
+
+async function getSubjectData(subjectID: string): Promise<Class[]> {
+	const { data } = await axios.get(
+		`https://api.notion.com/v1/blocks/${subjectID}/children`,
+		notionConfig
+	);
+	const classPromises: Promise<Class>[] = data.results
+		.filter((page: any) => {
+			if (page?.object !== "block" || page?.type !== "child_page") {
+				console.warn(
+					`There is a ${page?.object} object of type ${page?.type} in the subject ${subjectID}`
+				);
+				return false;
+			}
+
+			return true;
+		})
+		.map((page: any): Promise<Class> => getClass(page.id));
+	return await Promise.all(classPromises);
+}
+
+async function getClass(classID: string): Promise<Class> {
+	return null;
+}
+
 export async function getArtInfo(): Promise<ArtData> {
 	const { data: artPageData } = await axios.get(
 		`https://api.notion.com/v1/blocks/fcfaa8ea3a2041cf91ec958db799026e/children`,
@@ -185,7 +235,7 @@ export async function getArtInfo(): Promise<ArtData> {
 	);
 
 	let image =
-		"https://www.thewrap.com/wp-content/uploads/2016/08/Rick-Astley-618x400.jpg", // default image
+			"https://www.thewrap.com/wp-content/uploads/2016/08/Rick-Astley-618x400.jpg", // default image
 		description = "It's Rick Astley", // default description
 		monthlyPrompt = "Legend of Internet History", // default monthly prompt
 		name = "Rick Astley", // default name
@@ -264,9 +314,9 @@ export async function getArtInfo(): Promise<ArtData> {
 								if (token.includes("\n")) {
 									// this entry is done
 									const miniToken = token.substring(
-										0,
-										token.indexOf("\n")
-									),
+											0,
+											token.indexOf("\n")
+										),
 										splitIdx = miniToken.indexOf(": ");
 									if (splitIdx === -1) {
 										console.warn(
@@ -696,7 +746,8 @@ export async function getJobPostings(): Promise<JobPosting[]> {
 	return data.results.map((page: any): JobPosting => {
 		const file0 = page.properties.Image.files[0];
 		return {
-			description: page.properties.Description.rich_text?.[0]?.plain_text ?? null,
+			description:
+				page.properties.Description.rich_text?.[0]?.plain_text ?? null,
 			rank: page.properties.Rank.select?.name ?? null,
 			form: page.properties.Form.url ?? null,
 			program: page.properties.Program.select?.name ?? null,

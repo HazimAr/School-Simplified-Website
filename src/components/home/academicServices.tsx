@@ -121,6 +121,7 @@ function Card(props: CardProps): JSX.Element {
 			_hover={{
 				transform: "scale(0.95)",
 			}}
+			h="100%"
 		>
 			<VStack
 				rounded={5}

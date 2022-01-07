@@ -255,22 +255,14 @@ function NotesGrid({
 				{searchTerm.length ? (
 					filteredTerms?.length ? (
 						filteredTerms.map((note: NotesProps, idx: number) => (
-							<NotesBox
-								title={note.title}
-								href={note.href}
-								key={"note_" + idx}
-							/>
+							<NotesBox {...note} key={"note_" + idx} />
 						))
 					) : (
 						<Text as="i">No matches found</Text>
 					)
 				) : content?.content?.length ? (
 					content.content.map((note, idx: number) => (
-						<NotesBox
-							title={note.title}
-							href={note.href}
-							key={"note_" + idx}
-						/>
+						<NotesBox {...note} key={"note_" + idx} />
 					))
 				) : (
 					<Text as="i">
@@ -298,7 +290,7 @@ function NotesBox(props: NotesProps): JSX.Element {
 
 	return (
 		<NextLink
-			href={props.href}
+			href={props.file.url}
 			isExternal
 			_hover={{ textDecoration: "none", cursor: "auto" }}
 		>

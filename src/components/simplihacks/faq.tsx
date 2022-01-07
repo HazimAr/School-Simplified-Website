@@ -1,8 +1,7 @@
-import { Box, Heading, Divider } from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/react";
+import FaqList from "@components/contact/faq-list";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import React from "react";
-import FaqList from "@components/contact/faq-list";
 
 const qaPairs = [
 	{
@@ -100,11 +99,10 @@ const qaPairs = [
 export default function FAQ(): JSX.Element {
 	return (
 		<Box py={3}>
-			<Divider bg="white" />
 			<Container py={19}>
 				<ContainerInside>
 					<Heading as="h1" m={5}>
-						FAQ
+						Frequently Asked Questions
 					</Heading>
 					<FaqList list={qaPairs} />
 				</ContainerInside>

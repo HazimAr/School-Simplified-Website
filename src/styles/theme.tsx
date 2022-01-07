@@ -1,4 +1,5 @@
 /* eslint-disable import/no-default-export */
+import Link from "./components/Link";
 import { extendTheme } from "@chakra-ui/react";
 
 const theme = extendTheme({
@@ -38,6 +39,9 @@ const theme = extendTheme({
 		heading: "Montserrat-SemiBold",
 		body: "Montserrat-Regular",
 	},
+	components: {
+		Link,
+	},
 	styles: {
 		global: () => ({
 			html: {
@@ -52,15 +56,12 @@ const theme = extendTheme({
 				textAlign: "center",
 				background:
 					"#6C7DFE linear-gradient(180deg, #5866D3 0%, #6C7DFE 40%, #8C93E4 100%)",
+				// "white", // for debugging whether a background is showing up properly
 				backgroundSize: "cover",
 				backgroundPosition: "center",
 				backgroundRepeat: "no-repeat",
 				backgroundAttachment: "fixed",
 				color: "white",
-			},
-			a: {
-				color: "inherit",
-				textDecoration: "none",
 			},
 			ul: {
 				listStyle: "none",
@@ -74,11 +75,26 @@ const theme = extendTheme({
 			h3: {
 				color: "#ffd470",
 			},
+			"a h1:hover": { color: "white" },
+			"a h2:hover": { color: "white" },
+			"a h3:hover": { color: "white" },
+			"h1 a:hover": { color: "white" },
+			"h2 a:hover": { color: "white" },
+			"h3 a:hover": { color: "white" },
+
+			a: {
+				color: "#ffd470",
+				textDecoration: "none",
+				transition: "color 0.2s ease-in-out",
+				"&:hover": {
+					color: "#fcd270",
+				},
+			},
 
 			"::-webkit-scrollbar": {
 				width: "0.6em",
-				background: 
-				"#6C7DFE linear-gradient(180deg, #5A60AD 0%, #6C7DFE 20%, #8291fd 80%, #9fa8fc 100%)",
+				background:
+					"#6C7DFE linear-gradient(180deg, #5A60AD 0%, #6C7DFE 20%, #8291fd 80%, #9fa8fc 100%)",
 			},
 
 			"::-webkit-scrollbar-track": {

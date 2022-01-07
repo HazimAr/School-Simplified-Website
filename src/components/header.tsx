@@ -1,4 +1,5 @@
 import {
+	Box,
 	Flex,
 	Heading,
 	HStack,
@@ -8,7 +9,6 @@ import {
 	MenuItem,
 	MenuList,
 	useDisclosure,
-	Box,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -36,10 +36,10 @@ const menuItems: MenuItem[] = [
 				name: "Events",
 				href: "/events",
 			},
-			{
-				name: "Our Organizations",
-				href: "/organizations",
-			},
+			// {
+			// 	name: "Our Organizations",
+			// 	href: "/organizations",
+			// },
 			{
 				name: "Partners",
 				href: "/partners",
@@ -77,10 +77,10 @@ const menuItems: MenuItem[] = [
 				name: "Essay Revision",
 				href: "/essay",
 			},
-			{
-				name: "SAT Prep",
-				href: "/sat",
-			},
+			// {
+			// 	name: "SAT Prep",
+			// 	href: "/sat",
+			// },
 			{
 				name: "Homework Help",
 				href: "/discord",
@@ -91,6 +91,10 @@ const menuItems: MenuItem[] = [
 		name: "Programs",
 		children: [
 			{
+				name: "Projects",
+				href: "/projects",
+			},
+			{
 				name: "Chapters",
 				href: "/chapter",
 			},
@@ -99,21 +103,21 @@ const menuItems: MenuItem[] = [
 				href: "/activities",
 			},
 			{
+				name: "Programming Simplified",
+				href: "/programming",
+			},
+			{
 				name: "Editorial",
-				href: "/editorial",
+				href: "/blog",
 			},
 			// {
-			// 	name: "Programming Simplified",
-			// 	href: "/",
+			// 	name: "Accelerate Your Organization",
+			// 	href: "/accelerate",
 			// },
-			{
-				name: "Accelerate Your Organization",
-				href: "/accelerate",
-			},
 		],
 	},
 	{
-		name: "Join Us",
+		name: "Volunteer",
 		href: "/volunteer",
 	},
 	{
@@ -188,7 +192,7 @@ export default function Header(): JSX.Element {
 					</Flex>
 				</ContainerInside>
 			</Container>
-			<Box h={{ base: 84, sm: 94, md: 83, lg: 54, xl: 62 }} />
+			<Box h={{ base: 84, sm: 94, md: 83, lg: 54 }} />
 		</>
 	);
 }
@@ -224,7 +228,11 @@ function DropdownMenu({ menuItem }: { menuItem: MenuItem }): JSX.Element {
 				onClick={onMouseLeave}
 			>
 				{menuItem.children.map((child) => (
-					<NextLink href={child.href} key={child.name}>
+					<NextLink
+						href={child.href}
+						_hover={{ background: "white-400" }}
+						key={child.name}
+					>
 						<MenuItem>{child.name}</MenuItem>
 					</NextLink>
 				))}

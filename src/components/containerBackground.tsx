@@ -1,6 +1,7 @@
+import { BoxProps } from "@chakra-ui/react";
 import Container from "./container";
 
-export default function ContainerBackground(props) {
+export default function ContainerBackground(props: BoxProps & { src: string }) {
 	return (
 		<Container
 			position="relative"

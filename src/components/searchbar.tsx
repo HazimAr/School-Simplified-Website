@@ -3,6 +3,7 @@ import {
 	Icon,
 	Input,
 	InputGroup,
+	InputGroupProps,
 	InputLeftElement,
 	InputRightElement,
 	Spinner,
@@ -14,21 +15,21 @@ import { FaSearch } from "react-icons/fa";
 type SearchbarProps = {
 	callback?: (arg0: string) => any;
 	size?: string;
-} & Record<string, any>;
+} & InputGroupProps;
 
 /**
  * Creates a Searchbar with the given SearchbarProps
  * @param props the props to pass to the component, namely, an optional callback function (a function that accepts a string) and optional size
  * @returns the Searchbar component
  */
-export default function Searchbar(props: SearchbarProps): JSX.Element {
+export default function Searchbar({
+	callback,
+	...functionlessProps
+}: SearchbarProps): JSX.Element {
 	const [searchWait, setSearchWait] = useState<ReturnType<
 		typeof setTimeout
 	> | null>(null);
-	const [loading, _setLoading] = useBoolean(false);
-
-	const callbackFunction = props.callback;
-	const { callback, ...functionlessProps } = props;
+	const [loading, setLoading] = useBoolean(false);
 
 	return (
 		<InputGroup {...functionlessProps}>
@@ -45,14 +46,13 @@ export default function Searchbar(props: SearchbarProps): JSX.Element {
 				size="lg"
 				onChange={(e) => {
 					if (searchWait) clearTimeout(searchWait);
-					_setLoading.on();
+					setLoading.on();
 					setSearchWait(
 						setTimeout(() => {
 							// console.log("Invoked with " + e.target.value);
 							setSearchWait(null);
-							_setLoading.off();
-							if (callbackFunction)
-								callbackFunction(e.target.value.trim());
+							setLoading.off();
+							if (callback) callback(e.target.value.trim());
 						}, 500)
 					);
 				}}
@@ -61,7 +61,7 @@ export default function Searchbar(props: SearchbarProps): JSX.Element {
 				pointerEvents="none"
 				children={
 					<Center h="100%">
-						<Spinner size={props.size} />
+						<Spinner size={functionlessProps.size} />
 					</Center>
 				}
 				display={loading ? "block" : "none"}

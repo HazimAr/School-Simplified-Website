@@ -16,7 +16,6 @@ import {
 	Thead,
 	Tr,
 	VStack,
-	// Center,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -185,6 +184,11 @@ const seniorExecs: Person[] = [
 		img: "/staff/EthanHsu.jpg",
 	},
 	{
+		name: "Masa Murry",
+		title: "Chief Operating Officer",
+		img: "/staff/MasaMurry.jpg",
+	},
+	{
 		name: "Lauren Hsieh",
 		title: "Chief of Staff & Corporate Secretary ",
 		img: "/staff/LaurenHsieh.jpg",
@@ -201,24 +205,19 @@ const seniorExecs: Person[] = [
 		img: "/staff/HarryChow.jpg",
 	},
 	{
-		name: "Masa Murry",
-		title: "Senior Vice President of Global Marketing",
-		img: "/staff/MasaMurry.jpg",
+		name: "Anncine Lin",
+		title: "Chief Human Resources Officer",
+		img: "/staff/AnncineLin.jpg",
 	},
-	{
-		name: "Jason Mei",
-		title: "Executive Vice President of Information Technology",
-		img: "/staff/JasonMei.jpg",
-	},
+	// {
+	// 	name: "Jason Mei",
+	// 	title: "Executive Vice President of Information Technology",
+	// 	img: "/staff/JasonMei.jpg",
+	// },
 	{
 		name: "Diana Zheng",
 		title: "Corporate Treasurer",
 		img: "/staff/DianaZheng.jpg",
-	},
-	{
-		name: "Anncine Lin",
-		title: "Chief Human Resources Officer",
-		img: "/staff/AnncineLin.jpg",
 	},
 	{
 		name: "Bhavyasri Suggula",

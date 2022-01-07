@@ -1,7 +1,5 @@
 /* eslint-disable import/no-default-export */
-import { Box, Center, Flex, Heading, Text, Avatar } from "@chakra-ui/react";
-import { rounded } from "@styles/theme";
-import React from "react";
+import { Box, Heading, Image, Text, VStack } from "@chakra-ui/react";
 
 type SimplihacksCard = {
 	name: string;
@@ -15,30 +13,28 @@ export default function SimplihacksCard({
 	img,
 }: SimplihacksCard): JSX.Element {
 	return (
-		<Flex
-			flexDir="column"
-			p="15px"
-			m="10px"
-			align="center"
-			backgroundColor="brand.transparent"
-			rounded={rounded}
-			w="170px"
-			shadow="lg"
-		>
-			<Center w="100px" h="150px">
-				<Avatar
+		<VStack>
+			<Box
+				flexDir="column"
+				p="15px"
+				align="center"
+				backgroundColor="brand.transparent"
+				rounded="20px"
+				mb="10px"
+				minW="150px"
+				shadow="lg"
+			>
+				<Image
 					display="block"
-					boxSize="135px"
+					rounded="20px"
 					alt="staff member"
+					maxW="125px"
+					w="100%"
 					src={img}
 				/>
-			</Center>
-			<Box maxW="150px" py="5px">
-				<Heading size="md">{name}</Heading>
-				<Text size="sm" flexWrap="nowrap">
-					{title}
-				</Text>
 			</Box>
-		</Flex>
+			<Heading fontSize="18px">{name}</Heading>
+			<Text m="0">{title}</Text>
+		</VStack>
 	);
 }

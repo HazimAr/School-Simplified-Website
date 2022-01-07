@@ -1,35 +1,81 @@
-import { getSubjects } from "@api/notion";
-import { Box, Center, Heading, Text } from "@chakra-ui/react";
-import ContainerBackground from "@components/containerBackground";
+import { getAllSubjects } from "@api/notion";
+import {
+	Center,
+	Container,
+	Flex,
+	Heading,
+	HStack,
+	Image,
+	Spacer,
+	Stack,
+	Text,
+} from "@chakra-ui/react";
 import ContainerInside from "@components/containerInside";
-import NotesSection from "@components/resources/notes_section";
+import NotesViewer from "@components/resources/notesViewer";
+// import NotesSection from "@components/resources/notes_section";
 import { AllSubjects } from "types";
 
 export default function Resources({ subjects }: AllSubjects): JSX.Element {
 	return (
 		<>
-			<ContainerBackground src="/timmy/lofi_timmy.png">
-				<ContainerInside py={24} my={5}>
-					<Box textAlign="center">
-						<Heading as="h1" mb={3} size="3xl">
-							Notes
-						</Heading>
-						<Center>
-							<Text fontSize={24} maxW="30ch">
-								All the top-notch notes you'll ever want for
-								your academic needs!
-							</Text>
-						</Center>
-					</Box>
+			<Container
+				maxW="%100"
+				py={10}
+				bg="linear-gradient(180deg, rgba(90, 96, 173, 0.71) 0%, rgba(131, 145, 255, 0.71) 100%)"
+			>
+				<ContainerInside mb={8} maxW="%80">
+					<Center>
+						<HStack>
+							<Image
+								src="/timmy/blogtimmy.png"
+								alt="Timmy holding a book"
+								w={{ sm: 80, md: 120, lg: 180 }}
+								display={{ base: "none", md: "block" }}
+							/>
+							<Spacer maxW={{ md: 5, lg: 20 }} />
+							<Flex align="stretch">
+								<Stack align="start" textAlign="left">
+									<Heading size="lg">Notes</Heading>
+									<Text mt={6}>
+										All the top-notch notes you'll ever want
+										for your academic needs!
+									</Text>
+									<Text mt={6}>
+										To get started, select a subject from
+										the buttons below!
+									</Text>
+								</Stack>
+							</Flex>
+						</HStack>
+					</Center>
 				</ContainerInside>
-			</ContainerBackground>
+				<NotesViewer subjects={subjects} />
+			</Container>
 
-			<NotesSection subjects={subjects} />
+			{/* <NotesSection subjects={subjects} /> */}
 		</>
 	);
 }
 
 export async function getStaticProps() {
-	const subjects = await getSubjects();
-	return { props: { subjects }, revalidate: 60 };
+	const props = await getAllSubjects();
+	// for caching results of costly computations
+	const valueCache = {};
+	props.subjects.sort((a, b) => {
+		// find number of notes in each subject
+		const aNotes: number =
+			valueCache[a.title] || // fetch cached value
+			(valueCache[a.title] = a.content // or generate new value and store it
+				.flatMap((value) => value.content)
+				.flatMap((value) => value.content).length);
+		const bNotes: number =
+			valueCache[b.title] || // same as with aNotes
+			(valueCache[b.title] = b.content
+				.flatMap((value) => value.content)
+				.flatMap((value) => value.content).length);
+
+		// simple comparison for descending sort
+		return bNotes - aNotes;
+	});
+	return { props, revalidate: 60 };
 }

@@ -1,6 +1,6 @@
 export type NotesProps = {
 	title: string;
-	href: string;
+	file: FileObj;
 };
 
 export type Subject = {
@@ -109,7 +109,7 @@ export type VolunteerPanelProps = {
 	teamName: string;
 	teamDesc: string;
 	link: string;
-	functions?: string[];
+	key: string;
 };
 
 export type ActivitySlideProps = {
@@ -118,6 +118,7 @@ export type ActivitySlideProps = {
 	clubName: string;
 	clubDesc: string;
 	link: string;
+	key: string;
 };
 
 export type BlogListing = {
@@ -149,10 +150,18 @@ export type LinkButtonProps = {
 	text: string;
 };
 
+/**
+ * A representation of Notion's file object.
+ * See more at https://developers.notion.com/reference/file-object
+ */
 export type FileObj = {
+	/**
+	 * The URL to the file that this object describes
+	 */
 	url: string;
 	/**
-	 * in ISO 8601 date time
+	 * The time when this file object's URL will expire, in ISO 8601 date time
+	 * Only applicable when the file is hosted on Notion's servers
 	 */
 	expiry_time?: string;
 };

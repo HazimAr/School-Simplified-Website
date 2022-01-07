@@ -1,10 +1,8 @@
-import { Heading, Stack, VStack } from "@chakra-ui/react";
+import { Heading, Stack, Text, VStack } from "@chakra-ui/react";
 //import { Icon } from "@chakra-ui/react";
-
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
-import React from "react";
 import { socials } from "config";
 
 export default function SocialMedias(): JSX.Element {
@@ -15,10 +13,10 @@ export default function SocialMedias(): JSX.Element {
 					<VStack spacing={4}>
 						<Heading>Our Socials</Heading>
 						<Container>
-							<Heading size="md" mb={10} color="white">
+							<Text size="md" color="white">
 								Check out our socials for tips, entertainment,
 								music, podcasts, opportunities, and more!
-							</Heading>
+							</Text>
 						</Container>
 					</VStack>
 

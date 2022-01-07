@@ -1,22 +1,33 @@
-import { Heading, HStack, Text, VStack, Image } from "@chakra-ui/react";
-import Container from "@components/container";
-import Button from "@components/button";
-import ContainerInside from "@components/containerInside";
-import NextLink from "@components/nextChakra";
+// import { Heading, HStack, Image, Text, VStack } from "@chakra-ui/react";
+// import Button from "@components/button";
+// import Container from "@components/container";
+// import ContainerInside from "@components/containerInside";
+// import NextLink from "@components/nextChakra";
 
-export default function Chapter() {
+import { Chapters, Testimonials, FAQ } from "@components/chapters/index";
+
+export default function Chapter(): JSX.Element {
 	return (
 		<>
-			<Container>
+			<Chapters />
+			<Testimonials />
+			<FAQ />
+			{/* <Container>
 				<ContainerInside>
-					<Heading mt="10vh">Start Your Own Chapter</Heading>
+					<Heading mt="10vh" textAlign="left">
+						Start Your Own Chapter
+					</Heading>
+					<Text textAlign="left">
+						School Simplified chapters are the perfect blend of
+						flexibility and rigor.{" "}
+					</Text>
 					<NextLink
 						isExternal
 						href="https://docs.google.com/forms/d/e/1FAIpQLSfs8_MYtRqA2vq5X5hm9hu-QjLb7PczSJ6wCBTz6vuXOkVKjg/viewform?usp=sf_link"
 						_hover={{ textDecoration: "none" }}
 						p={15}
 					>
-						<Button mt="2vh">Applications</Button>
+						<Button mt="2vh">Apply Now</Button>
 					</NextLink>
 				</ContainerInside>
 			</Container>
@@ -32,7 +43,7 @@ export default function Chapter() {
 							<Heading my={5}>
 								Taking Chapters to the Next Level.
 							</Heading>
-							<Text fontSize="18px" textAlign="justify">
+							<Text fontSize="18px" textAlign="left">
 								School Simplified chapters are the perfect blend
 								of flexibility and rigor. With the chapters
 								program, motivated students from around the
@@ -51,7 +62,7 @@ export default function Chapter() {
 						/>
 					</HStack>
 				</ContainerInside>
-			</Container>
+			</Container> */}
 		</>
 	);
 }

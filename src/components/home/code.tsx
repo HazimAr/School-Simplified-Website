@@ -1,5 +1,6 @@
 import {
 	Box,
+	Center,
 	Flex,
 	Heading,
 	HStack,
@@ -7,7 +8,6 @@ import {
 	Stack,
 	Text,
 	VStack,
-	Center,
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import ContainerBackground from "@components/containerBackground";

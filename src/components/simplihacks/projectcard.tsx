@@ -1,4 +1,4 @@
-import { Flex, Heading, Image, Text, VStack } from "@chakra-ui/react";
+import { Box, Heading, Image, Text, VStack } from "@chakra-ui/react";
 import NextLink from "@components/nextChakra";
 
 type ProjectCard = {
@@ -18,27 +18,27 @@ export default function ProjectCard({
 }: ProjectCard): JSX.Element {
 	return (
 		<>
-			<Flex
+			<Box
+				boxShadow="0px 4px 8px rgba(0, 0, 0, 0.25)"
 				maxW={320}
 				m={3}
-				rounded={10}
-				backgroundColor="brand.transparent"
-				flexDir="column"
-				align="center"
-				shadow="lg"
-				overflow="hidden"
+				rounded={5}
+				backgroundColor="brand.purple.dark"
+				minW="350px"
 			>
-				<Image src={img} alt={title + " project image"} />
-				<VStack m={3} justifyContent="center" flex={1}>
+				<Image w="100%" src={img} alt={title + " project image"} />
+				<VStack align="start" p="15px">
 					<NextLink href={link} target="_blank">
 						<Heading fontSize={24}>{title}</Heading>
 					</NextLink>
-					<Heading fontSize={20} color="brand.purple.light">
+					<Text textAlign="left" fontSize="14px">
 						{prize}
+					</Text>
+					<Heading textAlign="left" fontSize="16px">
+						{names}
 					</Heading>
-					<Text as="b">{names}</Text>
 				</VStack>
-			</Flex>
+			</Box>
 		</>
 	);
 }

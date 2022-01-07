@@ -1,22 +1,21 @@
-import { Box, Flex, Heading } from "@chakra-ui/react"
+import { Flex, Heading, VStack } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import React from "react";
 import ProjectCard from "@components/simplihacks/projectcard";
-import { ProjectWinner } from "types"
+import { ProjectWinner } from "types";
 
 const winners: ProjectWinner[] = [
 	{
 		names: "Ayush Agarwal, Krushay Bhavsar",
 		title: "Signslate",
-		prize: "1st Place",
+		prize: "1st Place Winner",
 		link: "https://devpost.com/software/signslate",
 		img: "/simplihacks/winners/signslate.png",
 	},
 	{
 		names: "Ananya Jajoo, Angelina Tsuboi, Bhavya Modi",
 		title: "Pocket CPR",
-		prize: "2nd Place",
+		prize: "2nd Place Winner",
 		link: "https://devpost.com/software/pocket-cpr-ros5qh",
 		img: "/simplihacks/winners/pocketcpr.png",
 	},
@@ -42,7 +41,7 @@ const winners: ProjectWinner[] = [
 		img: "/simplihacks/winners/xtrack.png",
 	},
 	{
-		names: "Hazim Arafa, Connie Z, bonnie :p, Loid :)",
+		names: "Hazim Arafa, Connie Z, Bonnie, Loid",
 		title: "Anon-Therapy",
 		prize: "Best Beginner",
 		link: "https://devpost.com/software/anon-therapy",
@@ -54,18 +53,21 @@ const winners: ProjectWinner[] = [
 		prize: "Best Solo Project",
 		link: "https://devpost.com/software/seniorsafety",
 		img: "/simplihacks/winners/seniorsafety.png",
-	}
+	},
 ];
 
 export default function Winners(): JSX.Element {
 	return (
-		<Container py={19}>
+		<Container
+			bg="linear-gradient(180deg, #7683E7 0%, #A8B2FF 100%);"
+			py="50px"
+		>
 			<ContainerInside>
-				<Box>
-					<Heading as="h1" my={7}>
-						Winners
+				<VStack align="start">
+					<Heading fontSize="35px" my={7}>
+						Winners from June 2021
 					</Heading>
-					<Flex justify="center" flexWrap="wrap">
+					<Flex w="100%" justify="center" flexWrap="wrap">
 						{winners.map((project, i: number) => {
 							return (
 								<ProjectCard
@@ -79,7 +81,7 @@ export default function Winners(): JSX.Element {
 							);
 						})}
 					</Flex>
-				</Box>
+				</VStack>
 			</ContainerInside>
 		</Container>
 	);

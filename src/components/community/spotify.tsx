@@ -15,7 +15,6 @@ import {
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import NextLink from "@components/nextChakra";
-import React from "react";
 import { RiSpotifyLine } from "react-icons/ri";
 import { SpotifyLink } from "types";
 
@@ -95,7 +94,7 @@ export default function Spotify(): JSX.Element {
 					<ModalHeader>Spotify</ModalHeader>
 					<ModalCloseButton />
 					<ModalBody>
-						<Button variant="outline" mb={3}>
+						<Button mb={3}>
 							<NextLink
 								href="https://open.spotify.com/user/5lkgh8ryszqens1ywo58m5lv8?si=e3b58782d2e94498"
 								isExternal

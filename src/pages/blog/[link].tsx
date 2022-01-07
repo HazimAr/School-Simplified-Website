@@ -130,29 +130,22 @@ export default function BlogPage_({
 								<Box>
 									<Text fontSize={18}>Written by:</Text>
 									<VStack spacing={1}>
-										{listing.authors.map(
-											(author, index: number) => {
-												return (
-													<Center key={index}>
-														<Image
-															src={
-																author
-																	.avatar_url
-																	?.length
-																	? author.avatar_url
-																	: "/staff/default.png"
-															}
-															boxSize={30}
-															borderRadius={15}
-															mr={2}
-														/>
-														<Text>
-															{author.name}
-														</Text>
-													</Center>
-												);
-											}
-										)}
+										{listing.authors.map((author) => {
+											return (
+												<Center key={author.name}>
+													<Image
+														src={
+															author?.avatar_url ??
+															"/staff/default.png"
+														}
+														boxSize={30}
+														borderRadius={15}
+														mr={2}
+													/>
+													<Text>{author.name}</Text>
+												</Center>
+											);
+										})}
 									</VStack>
 								</Box>
 							) : null}
@@ -163,13 +156,13 @@ export default function BlogPage_({
 					</ContainerInside>
 				</Container>
 			</Box>
-			<Container>
+			<Container backgroundColor="#4d59b6" color="white">
 				<ContainerInside my={5} mx={{ sm: 0, md: 3 }}>
 					<VStack
 						spacing={3}
 						alignItems="stretch"
 						textAlign="left"
-						mx={{ base: 19, sm: 30, md: 50 }}
+						mx={{ base: 19, sm: 78, md: 125, lg: 200 }}
 					>
 						{parsePage(page)}
 					</VStack>

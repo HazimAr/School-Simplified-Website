@@ -16,7 +16,7 @@ import "katex/dist/katex.min.css";
 import React, { cloneElement } from "react";
 import { FaPaperclip, FaRegFilePdf, FaVideo } from "react-icons/fa";
 import { InlineMath, BlockMath } from "react-katex"; // "react-latex" doesn't work for some odd reason
-import { BlogPage, FileObj } from "types";
+import { Author, BlogPage, FileObj } from "types";
 // import SyntaxHighlighter from "react-syntax-highlighter";
 // import { atelierCaveDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
@@ -42,7 +42,7 @@ import { BlogPage, FileObj } from "types";
  * @param text an object like the one given above
  * @returns an element representing the text
  */
-export function parseText(text: any) {
+export function parseText(text: any): JSX.Element {
 	if (!text.plain_text?.length) {
 		return <></>;
 	}
@@ -121,7 +121,7 @@ export function parseText(text: any) {
 }
 
 /**
- * Converts a plain string to a JSX psuedoelement with \n and \r replaced with <br />.
+ * Converts a plain string to a JSX psuedoelement with \n and \r replaced with &lt;br /&gt;.
  * @param text the text to convert to a JSX psuedoelement
  * @returns the converted element
  */
@@ -151,7 +151,15 @@ function replaceNewlines(text: string): JSX.Element {
  * @returns the plaintext of all the text
  */
 export function parsePlainText(text: any[]): JSX.Element {
-	return <>{text.map((block) => replaceNewlines(block.plain_text))}</>;
+	return (
+		<Text>
+			{text.map((block) =>
+				cloneElement(replaceNewlines(block.plain_text), {
+					key: block.plain_text,
+				})
+			)}
+		</Text>
+	);
 }
 
 /**
@@ -173,7 +181,7 @@ export function parseBlock(block: any): JSX.Element {
 			return (
 				<Heading as="h1" size="lg" pt={3}>
 					{block.heading_1.text.map((item: any, idx: number) =>
-						cloneElement(parseText(item), { key: "text_" + idx })
+						cloneElement(parseText(item), { key: "h1_" + idx })
 					)}
 				</Heading>
 			);
@@ -181,7 +189,7 @@ export function parseBlock(block: any): JSX.Element {
 			return (
 				<Heading as="h2" size="md" pt={2}>
 					{block.heading_2.text.map((item: any, idx: number) =>
-						cloneElement(parseText(item), { key: "text_" + idx })
+						cloneElement(parseText(item), { key: "h2_" + idx })
 					)}
 				</Heading>
 			);
@@ -189,7 +197,7 @@ export function parseBlock(block: any): JSX.Element {
 			return (
 				<Heading as="h3" size="sm" pt={1}>
 					{block.heading_3.text.map((item: any, idx: number) =>
-						cloneElement(parseText(item), { key: "text_" + idx })
+						cloneElement(parseText(item), { key: "h3_" + idx })
 					)}
 				</Heading>
 			);
@@ -198,7 +206,7 @@ export function parseBlock(block: any): JSX.Element {
 			return (
 				<ListItem>
 					{block[block.type].text.map((item: any, idx: number) =>
-						cloneElement(parseText(item), { key: "text_" + idx })
+						cloneElement(parseText(item), { key: "li_" + idx })
 					)}
 				</ListItem>
 			);
@@ -206,7 +214,7 @@ export function parseBlock(block: any): JSX.Element {
 			return (
 				<Checkbox defaultChecked={block.checked} disabled>
 					{block.to_do.text.map((item: any, idx: number) =>
-						cloneElement(parseText(item), { key: "text_" + idx })
+						cloneElement(parseText(item), { key: "todo_" + idx })
 					)}
 				</Checkbox>
 			);
@@ -223,7 +231,7 @@ export function parseBlock(block: any): JSX.Element {
 		case "code":
 			return (
 				<Box
-					bgColor="black"
+					bg="black"
 					color="white"
 					fontFamily="'Consolas', monospace"
 					p={2}
@@ -298,7 +306,7 @@ export function parseBlock(block: any): JSX.Element {
 						backgroundColor="brand.transparent"
 					>
 						<Text>{icon.emoji}</Text>
-						<Text>{parsePlainText(block.callout.text)}</Text>
+						{parsePlainText(block.callout.text)}
 					</HStack>
 				);
 			} else {
@@ -311,7 +319,7 @@ export function parseBlock(block: any): JSX.Element {
 						backgroundColor="brand.transparent"
 					>
 						<Image src={calloutFile.url} maxW={5} maxH={5} />
-						<Text>{parsePlainText(block.callout.text)}</Text>
+						{parsePlainText(block.callout.text)}
 					</HStack>
 				);
 			}
@@ -436,4 +444,36 @@ export function parsePage(page: BlogPage): JSX.Element {
 		);
 	}
 	return <>{elementList}</>;
+}
+
+/**
+ * Converts the given list of authors into an attribution.
+ * Usually in the form "Written by Author A and Author B", and so on
+ * @param authors the author objects to convert to an attribution string
+ * @returns an attribution string that contains the information in the given list
+ */
+export function toAuthorAttribution(authors: Author[]): string {
+	if (authors?.length) {
+		let authorNames: string;
+		authorNames = "Written by ";
+		switch (authors.length) {
+			case 1:
+				authorNames += authors[0].name;
+				break;
+			case 2:
+				authorNames += authors[0].name + " and " + authors[1].name;
+				break;
+			default:
+				authorNames +=
+					authors
+						.slice(0, authors.length - 1)
+						.map((author) => author.name)
+						.join(", ") +
+					", and " +
+					authors[authors.length - 1].name;
+		}
+		return authorNames;
+	}
+
+	return null;
 }

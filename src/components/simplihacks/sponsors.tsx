@@ -4,7 +4,6 @@ import { Flex, Heading, Image } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
-import React from "react";
 import { Sponsor } from "types";
 
 const sponsors: Sponsor[] = [
@@ -72,7 +71,7 @@ export default function Sponsors(): JSX.Element {
 			<Container py={19} bg="brand.transparent">
 				<ContainerInside>
 					<Heading as="h1" m={5}>
-						Sponsors
+						Event Sponsors
 					</Heading>
 					<Flex justify="center" flexWrap="wrap">
 						{sponsors.map((sponsor, i: number) => {

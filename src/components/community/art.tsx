@@ -18,7 +18,6 @@ import {
 import Button from "@components/button";
 import NextLink from "@components/nextChakra";
 import { rounded } from "@styles/theme";
-import React from "react";
 import { ArtData } from "types";
 
 export default function Art({ artInfo }: { artInfo: ArtData }): JSX.Element {
@@ -113,10 +112,6 @@ export default function Art({ artInfo }: { artInfo: ArtData }): JSX.Element {
 					</ModalContent>
 				</Modal>
 			</Stack>
-
-			<Text textAlign="center">
-				Winning artwork from the latest event!
-			</Text>
 		</Stack>
 	);
 }

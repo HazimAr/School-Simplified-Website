@@ -1,29 +1,30 @@
 import {
 	Box,
+	Button,
+	Center,
 	Flex,
 	Heading,
+	HStack,
+	Input,
 	ListItem,
+	SimpleGrid,
+	Stack,
 	Text,
 	UnorderedList,
-	useToken,
-	Stack,
-	VStack,
-	Grid,
-	Center,
 	VisuallyHidden,
+	VStack,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
-import Wave from "react-wavify";
-
 import { socials } from "config";
+// import Wave from "react-wavify";
 
 export default function Footer() {
-	const purple = useToken("colors", "brand.purple.light");
+	// const purple = useToken("colors", "brand.purple.light");
 	return (
 		<Box as="footer">
-			<Box zIndex={-1}>
+			{/* <Box zIndex={-1}>
 				<Wave
 					fill={purple}
 					// paused
@@ -34,30 +35,130 @@ export default function Footer() {
 						points: 3,
 					}}
 				/>
-			</Box>
-			<Container bg="brand.purple.light" mt="-8px">
+			</Box> */}
+			<Container bg="brand.purple.light" mt="-8px" p={4}>
 				<ContainerInside pb={5}>
-					<Flex
+					<Stack
 						justify="space-between"
-						flexDir={{ base: "column", sm: "row" }}
-						textAlign={{ base: "center", md: "left" }}
+						direction={{ base: "column", sm: "row" }}
+						textAlign={{ base: "center", sm: "left" }}
+						spacing={3}
 					>
-						<Stack>
-							<Heading as="h3" size="md">
-								About
-							</Heading>
-							<UnorderedList styleType="none">
-								{about.map((item) => (
-									<ListItem key={item.name}>
-										<NextLink href={item.link}>
-											<Text fontSize="xs">
-												{item.name}
-											</Text>
-										</NextLink>
-									</ListItem>
-								))}
-							</UnorderedList>
-						</Stack>
+						<SimpleGrid
+							columns={{ base: 1, md: 2, lg: 4 }}
+							gap={3}
+							flex={{ base: 3, lg: 4 }}
+						>
+							<VStack
+								align="stretch"
+								spacing={1}
+								gridColumn={1}
+								gridRowStart={1}
+								gridRowEnd={{ base: 2, lg: 3 }}
+							>
+								<Heading as="h3" size="md">
+									About
+								</Heading>
+								<UnorderedList styleType="none">
+									{about.map((item) => (
+										<ListItem key={item.name}>
+											<NextLink href={item.link}>
+												<Text fontSize="xs">
+													{item.name}
+												</Text>
+											</NextLink>
+										</ListItem>
+									))}
+								</UnorderedList>
+							</VStack>
+							<VStack
+								align="stretch"
+								spacing={1}
+								gridColumn={{ base: 1, md: 2 }}
+								gridRowStart={{ base: 2, md: 1 }}
+								gridRowEnd={{ base: 3, md: 2, lg: 3 }}
+							>
+								<Heading as="h3" size="md">
+									Resources
+								</Heading>
+								<UnorderedList styleType="none">
+									{resources.map((item) => (
+										<ListItem key={item.name}>
+											<NextLink href={item.link}>
+												<Text fontSize="xs">
+													{item.name}
+												</Text>
+											</NextLink>
+										</ListItem>
+									))}
+								</UnorderedList>
+							</VStack>
+							<VStack
+								align="stretch"
+								spacing={1}
+								gridColumn={{ base: 1, lg: 3 }}
+								gridRowStart={{ base: 3, md: 2, lg: 1 }}
+								gridRowEnd={{ base: 4, lg: 3 }}
+							>
+								<Heading as="h3" size="md">
+									Programs
+								</Heading>
+								<UnorderedList styleType="none">
+									{programs.map((item) => (
+										<ListItem key={item.name}>
+											<NextLink href={item.link}>
+												<Text fontSize="xs">
+													{item.name}
+												</Text>
+											</NextLink>
+										</ListItem>
+									))}
+								</UnorderedList>
+							</VStack>
+							<VStack
+								align="stretch"
+								spacing={1}
+								gridColumn={{ base: 1, md: 2, lg: 4 }}
+								gridRow={{ base: 4, md: 2, lg: 1 }}
+							>
+								<Heading as="h3" size="md" mb={1}>
+									Support
+								</Heading>
+								<UnorderedList styleType="none" mb={3} ml={0}>
+									{support.map((item) => (
+										<ListItem key={item.name}>
+											<NextLink href={item.link}>
+												<Text fontSize="xs">
+													{item.name}
+												</Text>
+											</NextLink>
+										</ListItem>
+									))}
+								</UnorderedList>
+							</VStack>
+							<VStack
+								align="stretch"
+								spacing={1}
+								gridColumn={{ base: 1, md: 2, lg: 4 }}
+								gridRow={{ base: 5, md: 3, lg: 2 }}
+							>
+								<Heading as="h3" size="md" mb={1}>
+									Advertise
+								</Heading>
+								<UnorderedList styleType="none" ml={0}>
+									{advertise.map((item) => (
+										<ListItem key={item.name}>
+											<NextLink href={item.link}>
+												<Text fontSize="xs">
+													{item.name}
+												</Text>
+											</NextLink>
+										</ListItem>
+									))}
+								</UnorderedList>
+							</VStack>
+						</SimpleGrid>
+
 						{/* <Stack>
 							<Heading as="h3" size="md">
 								Services
@@ -74,93 +175,38 @@ export default function Footer() {
 								))}
 							</UnorderedList>
 						</Stack> */}
-						<Stack>
+						{/* <Stack>
 							<Heading as="h3" size="md">
-								Resources
-							</Heading>
-							<UnorderedList styleType="none">
-								{resources.map((item) => (
-									<ListItem key={item.name}>
-										<NextLink href={item.link}>
-											<Text fontSize="xs">
-												{item.name}
-											</Text>
-										</NextLink>
-									</ListItem>
-								))}
-							</UnorderedList>
-						</Stack>
-						<Stack>
-							<Heading as="h3" size="md">
-								Join Us
-							</Heading>
-							<UnorderedList styleType="none">
-								{join.map((item) => (
-									<ListItem key={item.name}>
-										<NextLink href={item.link}>
-											<Text fontSize="xs">
-												{item.name}
-											</Text>
-										</NextLink>
-									</ListItem>
-								))}
-							</UnorderedList>
-						</Stack>
-						<Stack>
-							<Stack>
-								<Heading as="h3" size="md">
-									Support
-								</Heading>
-								<UnorderedList styleType="none">
-									{support.map((item) => (
-										<ListItem key={item.name}>
-											<NextLink href={item.link}>
-												<Text fontSize="xs">
-													{item.name}
-												</Text>
-											</NextLink>
-										</ListItem>
-									))}
-								</UnorderedList>
-							</Stack>
-							<Stack>
-								<Heading as="h3" size="md">
-									Advertise
-								</Heading>
-								<UnorderedList styleType="none">
-									{advertise.map((item) => (
-										<ListItem key={item.name}>
-											<NextLink href={item.link}>
-												<Text fontSize="xs">
-													{item.name}
-												</Text>
-											</NextLink>
-										</ListItem>
-									))}
-								</UnorderedList>
-							</Stack>
-						</Stack>
-						<Stack>
-							{/* <Heading as="h3" size="md">
 								Newsletter
 							</Heading>
-							<Text fontSize="sm" maxW="40ch">
-								Join over 000,000 people who recieve weekly news
+							<Text fontSize="xs">
+								Join our newsletter to receive weekly news to
+								stay updated!
+							</Text>
+						</Stack> */}
+
+						<VStack align="stretch" spacing={1} flex={1}>
+							<Heading as="h3" size="md">
+								Newsletter
+							</Heading>
+							<Text fontSize="sm">
+								Join over 000,000 people who receive weekly news
 								to stay updated!
 							</Text>
-							<HStack>
-								<Input placeholder="Your Email Here" />
+							<HStack pt={2}>
+								<Input placeholder="Your email..." />
 
 								<Button rounded="10px" w="35%">
-									Subscribe
+									Sign Up
 								</Button>
 							</HStack>
-							<Spacer /> */}
+							{/* <Spacer /> */}
 
-							<Grid
-								templateColumns="repeat(3, 1fr)"
-								gap={3}
-								py={10}
+							<HStack
+								spacing={2}
+								pt={5}
+								justify="left"
+								flexWrap={{ base: "wrap", sm: "nowrap" }}
 							>
 								{socials.map((item) => {
 									return (
@@ -174,9 +220,9 @@ export default function Footer() {
 										</Center>
 									);
 								})}
-							</Grid>
-						</Stack>
-					</Flex>
+							</HStack>
+						</VStack>
+					</Stack>
 				</ContainerInside>
 			</Container>
 			<Container bg="brand.purple.dark" py="10px">
@@ -185,26 +231,24 @@ export default function Footer() {
 						justify="space-between"
 						align="center"
 						color="text.200"
+						margin="20px"
 					>
 						<Text fontSize="xs" textAlign="center">
-							School Simplified © 2021 All Rights Reserved
-							<br />
-							EIN: 86-3932154
+							School Simplified © 2022 All Rights Reserved
 						</Text>
-						<VStack>
-							<Text fontSize="xs">
-								School Simplified Inc. | 8 The Green, Dover, DE
-								19901
-							</Text>
-							<Text fontSize="xs">
-								Made with 💖 by passionate{" "}
-								<NextLink href="https://github.com/HazimAr/School-Simplified">
-									{" "}
-									developers
-								</NextLink>{" "}
-								and designers
-							</Text>
-						</VStack>
+
+						<Text fontSize="xs">
+							School Simplified Inc. | 8 The Green, Dover, DE
+							19901 | EIN: 86-3932154
+						</Text>
+						{/* <Text fontSize="xs">
+							Made with love by passionate{" "}
+							<NextLink href="https://github.com/HazimAr/School-Simplified">
+								{" "}
+								developers
+							</NextLink>{" "}
+							and designers
+						</Text> */}
 					</Flex>
 				</ContainerInside>
 			</Container>
@@ -220,24 +264,24 @@ const about = [
 		link: "/",
 	},
 	{
-		name: "Leadership",
-		link: "/leadership",
+		name: "Volunteer",
+		link: "/volunteer",
 	},
-	{
-		name: "Legal",
-		link: "https://schoolsimplified.org/legal",
-	},
-	// {
-	// 	name: "Our Organizations",
-	// 	link: "/organizations",
-	// },
 	{
 		name: "Community",
 		link: "/community",
 	},
 	{
+		name: "Organizations",
+		link: "/organizations",
+	},
+	{
 		name: "Partners",
 		link: "/partners",
+	},
+	{
+		name: "Leadership",
+		link: "/leadership",
 	},
 ];
 
@@ -251,26 +295,17 @@ const resources = [
 		link: "/tutoring",
 	},
 	{
-		name: "Essay Revisions",
+		name: "Essay Revision",
 		link: "/essay",
 	},
+	// {
+	// 	name: "SAT Prep",
+	// 	link: "/sat",
+	// },
 	{
 		name: "Homework Help",
 		link: "/homework",
 	},
-	// {
-	// 	name: "Blogs & Articles",
-	// 	link: "/blog",
-	// },
-	// {
-	// 	name: "Programs",
-	// 	link: "/programs",
-	// },
-
-	// {
-	// 	name: "Internships",
-	// 	link: "/internships",
-	// },
 ];
 
 const support = [
@@ -279,7 +314,7 @@ const support = [
 		link: "/contact",
 	},
 	{
-		name: "Donate",
+		name: "Support Us",
 		link: "/donate",
 	},
 	{
@@ -288,28 +323,56 @@ const support = [
 	},
 ];
 
-const join = [
+const programs = [
 	{
-		name: "Volunteer",
-		link: "/volunteer",
+		name: "Projects",
+		link: "/projects",
 	},
 	{
-		name: "Become A Chapter",
+		name: "Chapters",
 		link: "/chapter",
-	},
-	{
-		name: "Accelerate Your Organization",
-		link: "/accelerate",
 	},
 	{
 		name: "Student Activities",
 		link: "/activities",
 	},
+	{
+		name: "Programming Simplified",
+		link: "/programming",
+	},
+	{
+		name: "Editorial",
+		link: "/blog",
+	},
+	// {
+	// 	name: "Volunteer",
+	// 	link: "/volunteer",
+	// },
+	// {
+	// 	name: "Leadership Opportunities",
+	// 	link: "/volunteer",
+	// },
+	// {
+	// 	name: "Programs",
+	// 	link: "/programs",
+	// },
+	// {
+	// 	name: "Internships",
+	// 	link: "/internships",
+	// },
+	// {
+	// 	name: "Blog",
+	// 	link: "/blog",
+	// },
+	// {
+	// 	name: "Events",
+	// 	link: "/events",
+	// },
 ];
 
 const advertise = [
 	{
-		name: "Brand Policy",
+		name: "Media Kit",
 		link: "https://drive.google.com/file/d/1vM3wyYe4J0x7_wZ91LpH480gISL10FIU/view?usp=sharing",
 	},
 	{

@@ -18,11 +18,10 @@ import {
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import { useEffect, useState } from "react";
+import { useContainerDimensions } from "@hooks/useContainerDimensions";
+import { useEffect, useRef, useState } from "react";
 import { Document, Page } from "react-pdf";
-// import { Document, Page } from "react-pdf/dist/umd/entry.parcel";
 import { AllSubjects, NotesProps, Subject } from "types";
-// import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 
 type NotesViewerProps = AllSubjects & BoxProps;
 
@@ -60,7 +59,7 @@ export default function NotesViewer({
 							subject={subjects.find(
 								(value) => value.title === subject
 							)}
-							onNotesSelect={(notes) => setPdfURL(notes.href)}
+							onNotesSelect={(notes) => setPdfURL(notes.file.url)}
 						/>
 						<NotesPreview pdfURL={pdfURL} />
 					</SimpleGrid>
@@ -151,12 +150,16 @@ function NotesPreview({
 }: NotesPreviewProps): JSX.Element {
 	const [numPages, setNumPages] = useState(null);
 	const [pageNumber, setPageNumber] = useState(1);
+	const pdfBox = useRef<HTMLDivElement>();
+	const { width } = useContainerDimensions(pdfBox);
 	useEffect(() => {
 		setNumPages(null);
+		setPageNumber(1);
 	}, [pdfURL]);
 
-	function onDocumentLoadSuccess({ numPages }) {
-		setNumPages(numPages);
+	function onDocumentLoadSuccess(egg: any) {
+		// console.log("loaded successfully!", egg);
+		setNumPages(egg.numPages);
 	}
 
 	return (
@@ -172,13 +175,13 @@ function NotesPreview({
 			</Heading>
 			<Box bg="#5A60ADCC" px={8} py={3} borderBottomRadius={5}>
 				{pdfURL ? (
-					<Box position="relative">
+					<Box position="relative" ref={pdfBox}>
 						<Document
 							file={pdfURL}
 							onLoadSuccess={onDocumentLoadSuccess}
 							onLoadError={console.error}
 						>
-							<Page pageNumber={pageNumber} />
+							<Page pageNumber={pageNumber} width={width} />
 						</Document>
 						<Box
 							position="absolute"
@@ -187,7 +190,13 @@ function NotesPreview({
 							h="100%"
 							w="50%"
 							onClick={() => {
-								if (numPages > 0) setPageNumber(numPages - 1);
+								// console.log(
+								// 	"left clicked",
+								// 	pageNumber,
+								// 	numPages
+								// );
+								if (pageNumber > 1)
+									setPageNumber(pageNumber - 1);
 							}}
 						/>
 						<Box
@@ -197,8 +206,13 @@ function NotesPreview({
 							h="100%"
 							w="50%"
 							onClick={() => {
-								if (numPages < numPages - 1)
-									setPageNumber(numPages + 1);
+								// console.log(
+								// 	"right clicked",
+								// 	pageNumber,
+								// 	numPages
+								// );
+								if (pageNumber < numPages)
+									setPageNumber(pageNumber + 1);
 							}}
 						/>
 					</Box>

@@ -7,6 +7,7 @@ import {
 	BlogListing,
 	BlogPage,
 	Class,
+	FileObj,
 	GovernanceDocument,
 	GovernanceSection,
 	JobPosting,
@@ -184,48 +185,151 @@ async function getUnits(
 }
 
 export async function getAllSubjects(): Promise<AllSubjects> {
+	// fetch from main database
 	const { data } = await axios.post(
 		"https://api.notion.com/v1/databases/b2009721bf4d47aa8fa99a6528db7843/query",
 		{},
 		notionConfig
 	);
+
+	// map the Notion page objects into subject-returning promises
 	const subjectsPromises: Promise<Subject>[] = data.results.map(
 		async (page: any): Promise<Subject> => {
+			// get all classes from this subject subpage
 			const content = await getSubjectData(page.id);
-			const title: string = page?.properties?.Name?.title?.[0].plain_text;
-			return {
-				title,
-				content,
-			};
+			// get the title (help)
+			const title: string = page.properties.Name.title?.[0]?.plain_text;
+			return { title, content };
 		}
 	);
+
+	// convert all promises into an array of subjects, put into object
 	return {
 		subjects: await Promise.all(subjectsPromises),
 	};
 }
 
 async function getSubjectData(subjectID: string): Promise<Class[]> {
+	// fetch children from given page as a block
 	const { data } = await axios.get(
 		`https://api.notion.com/v1/blocks/${subjectID}/children`,
 		notionConfig
 	);
+
+	// maps each child page into a class-returning promise
 	const classPromises: Promise<Class>[] = data.results
 		.filter((page: any) => {
+			// validates that this is a child page
 			if (page?.object !== "block" || page?.type !== "child_page") {
 				console.warn(
-					`There is a ${page?.object} object of type ${page?.type} in the subject ${subjectID}`
+					`There is a ${page?.object} object of type ${page?.type} in the subject ${subjectID}\n(${page.id})`
 				);
 				return false;
 			}
 
 			return true;
 		})
-		.map((page: any): Promise<Class> => getClass(page.id));
+		.map(async (page: any): Promise<Class> => {
+			// gets all units from this class subpage
+			const content = await getClassData(page.id);
+			// gets the title of this class
+			const title: string = page.child_page.title;
+			return { title, content };
+		});
+
+	// convert all promises into an array of classes
 	return await Promise.all(classPromises);
 }
 
-async function getClass(classID: string): Promise<Class> {
-	return null;
+async function getClassData(classID: string): Promise<Unit[]> {
+	// fetch children from given page as a block
+	const { data } = await axios.get(
+		`https://api.notion.com/v1/blocks/${classID}/children`,
+		notionConfig
+	);
+
+	// go through page data and construct all units
+	const output: Unit[] = [];
+	let title: string = null;
+	let notes: NotesProps[] = [];
+	let note: NotesProps = null;
+	for (const block of data.results) {
+		// validate that this object is a valid block object
+		if (block?.object !== "block" || !block?.type) {
+			console.log(
+				`Mystery ${
+					block?.type || block?.object
+				} in ${classID}/${title}\n(${block.id})`
+			);
+			continue;
+		}
+
+		if (block.type.startsWith("heading")) {
+			// for headings, end the previous (if any) unit
+			if (title) {
+				output.push({ title, content: notes });
+				notes = [];
+			}
+
+			// start the next one
+			// read unit name
+			const newTitle: string = block[block.type].text?.[0]?.plain_text;
+			if (newTitle) {
+				title = newTitle;
+			} else {
+				console.log(
+					`No-text header under ${classID}/${title}\n(${block.id})`
+				);
+			}
+		} else if (block.type === "paragraph") {
+			// for paragraphs, create a new note
+			// get note name from first block
+			const name: string = block.paragraph.text?.[0]?.plain_text;
+			if (!name) {
+				// invalid data, skip to next block
+				console.warn(
+					`Notes name ${classID}/${title}/${block.id} is malformed!`
+				);
+				continue;
+			}
+
+			// validate there is no previous note
+			if (note) {
+				console.warn(
+					`Data just before ${classID}/${title}/${name} may have been deleted!`
+				);
+			}
+			// create new note
+			note = { title: name, file: null };
+		} else if (block.type === "file") {
+			// for files, get file object
+			const file: FileObj = getFile(block.file);
+
+			// make sure note object exists
+			if (!note) {
+				console.warn(
+					`Lone file under ${classID}/${title} was not included\n(${block.id})`
+				);
+				continue;
+			}
+
+			// add file object to note
+			note.file = file;
+
+			// add the note in
+			notes.push(note);
+			note = null;
+		} else {
+			console.log(
+				`Extra ${block.type} in ${classID}/${title}\n(${block.id})`
+			);
+		}
+	}
+
+	// clean up last unit
+	output.push({ title, content: notes });
+
+	return output;
 }
 
 export async function getArtInfo(): Promise<ArtData> {

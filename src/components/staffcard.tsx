@@ -41,9 +41,7 @@ export default function StaffCard({
 			</Center>
 			<Box maxW={width} py="5px">
 				<Heading size="md">{name}</Heading>
-				<Text size="sm" flexWrap="wrap">
-					{title}
-				</Text>
+				<Text flexWrap="wrap">{title}</Text>
 			</Box>
 		</Flex>
 	);

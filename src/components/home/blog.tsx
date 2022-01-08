@@ -131,7 +131,6 @@ export default function Blog({ listing }: { listing: BlogListing[] }) {
 const dtFormatter = new Intl.DateTimeFormat("en-US");
 
 function Card(listing: BlogListing) {
-	const headingSize = useBreakpointValue({ base: "xs", md: "sm", lg: "md" });
 	return (
 		<Box
 			flex={1}
@@ -164,7 +163,7 @@ function Card(listing: BlogListing) {
 							{dtFormatter.format(new Date(listing.created_time))}{" "}
 							| {listing.category}
 						</Text>
-						<Heading size={headingSize} textAlign="left">
+						<Heading size="sm" textAlign="left">
 							{listing.title}
 						</Heading>
 						{listing.authors ? (

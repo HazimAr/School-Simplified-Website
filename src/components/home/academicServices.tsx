@@ -26,7 +26,7 @@ const cardProps: CardProps[] = [
 	{
 		title: "Notes",
 		content:
-			"Master your classes with our extensive notes. We release new notes every week, so even if we don't have what you need now, they may be added in the future!",
+			"Master your classes with our extensive notes. We release new notes every week, so even if we do not have what you need now, they may be added in the future! ",
 		timmySrc: "/timmy/17_cowboy.png",
 		onLeft: false,
 		href: "/notes",
@@ -50,7 +50,7 @@ const cardProps: CardProps[] = [
 	{
 		title: "School Help",
 		content:
-			"Homework is hard, but we've got your back through 24/7 through help via private messaging!",
+			"Homework is hard, but we've got your back 24/7 with help via private messaging!",
 		timmySrc: "/timmy/24_cowboy.png",
 		onLeft: true,
 		href: "/discord",

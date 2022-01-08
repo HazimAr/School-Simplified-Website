@@ -26,7 +26,7 @@ const cardProps: CardProps[] = [
 	{
 		title: "Notes",
 		content:
-			"Master your classes and be at the top of your tests with our notes! We offer extensive and simple notes for all your needs!",
+			"Master your classes with our extensive notes. We release new notes every week, so even if we don't have what you need now, they may be added in the future!",
 		timmySrc: "/timmy/17_cowboy.png",
 		onLeft: false,
 		href: "/notes",
@@ -34,7 +34,7 @@ const cardProps: CardProps[] = [
 	{
 		title: "Essay Revision",
 		content:
-			"Get your essays proofread by the best of the best so that you can be at the top of your class all year round!",
+			"Hard classes? Not a problem. Scholarships? Not a problem. A creative paper? Not a problem. Our essay revision services are open to everyone year-round!",
 		timmySrc: "/timmy/29_cowboy.png",
 		onLeft: false,
 		href: "/essay",
@@ -50,7 +50,7 @@ const cardProps: CardProps[] = [
 	{
 		title: "School Help",
 		content:
-			"To help you reach your full potential, receive one-on-one help so you can focus on the the skills and knowledge that you need!",
+			"Homework is hard, but we've got your back through 24/7 through help via private messaging!",
 		timmySrc: "/timmy/24_cowboy.png",
 		onLeft: true,
 		href: "/discord",
@@ -76,13 +76,12 @@ export default function AcademicServices(): JSX.Element {
 							Digital Program
 						</Heading>
 						<Text mt={6} textAlign="justify">
-							Despite being mainly based in the United States, we
-							have an online community of over 60,000 where
-							like-minded teenagers can meet and form life-lasting
-							connections. We provide numerous free resources such
-							as tutoring, essay revision, notes, standarized
-							testing preparation, college preparation, and
-							numerous more!
+							We provide a broad selection of free resources to
+							including tutoring, essay revision, notes,
+							standardized testing preparation, college
+							preparation, and numerous more. Additionally, with
+							an international community of over 60,000 students,
+							anyone can carve out a home at School Simplified.
 						</Text>
 					</motion.div>
 					<SimpleGrid

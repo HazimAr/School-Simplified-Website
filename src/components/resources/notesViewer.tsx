@@ -18,7 +18,7 @@ import {
 	StackProps,
 	Text,
 	VisuallyHidden,
-	VStack,
+	VStack
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -27,8 +27,8 @@ import { useContainerDimensions } from "@hooks/useContainerDimensions";
 import { useEffect, useRef, useState } from "react";
 import { FaFileDownload } from "react-icons/fa";
 import { Document, Page, pdfjs } from "react-pdf";
-import { AllSubjects, NotesProps, Subject } from "types";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+import { AllSubjects, NotesProps, Subject } from "types";
 
 // use minified worker file
 // for more documentation on this package, visit

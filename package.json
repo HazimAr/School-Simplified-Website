@@ -1,16 +1,17 @@
 {
-	"name": "template",
-	"version": "0.1.0",
+	"name": "schoolsimplified",
+	"version": "1.0.0",
 	"author": "Hazim Arafa <hazimarafa80@gmail.com>",
+	"description": "School Simplified is a digital nonprofit whose mission is to spread educational equality by providing free academic services, products, and opportunities for teenagers.",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/HazimAr/"
+		"url": "https://github.com/HazimAr/School-Simplified/"
 	},
 	"keywords": [
-		"NextJS",
-		"ChakraUI",
-		"Boilerplate"
+		"School",
+		"Simplified",
+		"Education"
 	],
 	"scripts": {
 		"dev": "next dev -p 6969",

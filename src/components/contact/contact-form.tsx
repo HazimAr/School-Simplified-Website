@@ -99,7 +99,7 @@ export default function ContactForm(): JSX.Element {
 						})
 						.catch(console.warn)
 						.then(() => {
-							// actions.resetForm();
+							actions.resetForm();
 							actions.setSubmitting(false);
 						});
 				}}

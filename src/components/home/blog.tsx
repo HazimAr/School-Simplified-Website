@@ -53,9 +53,7 @@ export default function Blog({ listing }: { listing: BlogListing[] }) {
 									The Latest Read!
 								</Heading>
 								<Text>
-									Check out the latest blog from our student
-									authors and read about what they have to
-									say!
+									Our blogs are written by student authors representing our generation in countries around the world. Check out what they have to say!
 								</Text>
 							</VStack>
 							<NextChakraLink href="/blog" alignSelf="flex-start">

@@ -36,7 +36,7 @@ export default function Footer() {
 					}}
 				/>
 			</Box> */}
-			<Container bg="brand.purple.light" mt="-8px" p={4}>
+			<Container bg="brand.purple.light" p={4}>
 				<ContainerInside pb={5}>
 					<Stack
 						justify="space-between"

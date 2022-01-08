@@ -12,7 +12,7 @@ export default function Contact({
 }): JSX.Element {
 	return (
 		<Container>
-			<ContainerInside>
+			<ContainerInside py={5}>
 				<Flex flexDirection="column" align="stretch">
 					<Heading as="h1" size="xl" my={5}>
 						FAQ

@@ -242,10 +242,6 @@ export default function Community({
 				</ContainerInside>
 			</Container>
 
-			<Container>
-				<ContainerInside py={10}></ContainerInside>
-			</Container>
-
 			<SocialMedias />
 		</>
 	);

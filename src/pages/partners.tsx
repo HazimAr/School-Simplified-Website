@@ -173,6 +173,26 @@ const partners: PartnerGroup[] = [
 				name: "Grammarly",
 				src: "https://www.grammarly.com/press/media-resources/docs/logo-grammarly.png",
 			},
+			{
+				name: "Deloitte",
+				description:
+					"Deloitte US is the largest professional services organization in the United States. With more than 100,000 professionals, Deloitte provides audit and assurance, tax, consulting, and risk and financial advisory services to a broad cross-section of the largest corporations and governmental agencies.",
+				src: "/partners/deloitte.png",
+				link: "https://www.deloitte.com/us/en/",
+			},
+			{
+				name: "Hidaku",
+				// description: "",
+				src: "/partners/Hidaku2.png",
+				link: "https://hidaku.com/",
+			},
+			{
+				name: ".NGO",
+				description:
+					"Dot NGO is the easiest and fastest way to start and sustain a nonprofit online. Quickly incorporate and accept tax-deductible donations with a 501c3 and store your funds in a bank account with this platform. Dot NGO provides banking services for School Simplified in partnership with Mercury Bank. We highly recommend Dot NGO!",
+				src: "/partners/ngo.png",
+				link: "https://dot.ngo/join-beta",
+			},
 		],
 	},
 	{
@@ -235,26 +255,6 @@ const partners: PartnerGroup[] = [
 			{
 				name: "Product Hunt",
 				src: "/simplihacks/sponsors/producthunt.png",
-			},
-			{
-				name: "Deloitte",
-				description:
-					"Deloitte US is the largest professional services organization in the United States. With more than 100,000 professionals, Deloitte provides audit and assurance, tax, consulting, and risk and financial advisory services to a broad cross-section of the largest corporations and governmental agencies.",
-				src: "/partners/deloitte.png",
-				link: "https://www.deloitte.com/us/en/",
-			},
-			{
-				name: "Hidaku",
-				description: "",
-				src: "/partners/Hidaku2.png",
-				link: "https://hidaku.com/",
-			},
-			{
-				name: ".NGO",
-				description:
-					"Dot NGO is the easiest and fastest way to start and sustain a nonprofit online. Quickly incorporate and accept tax-deductible donations with a 501c3 and store your funds in a bank account with this platform. Dot NGO provides banking services for School Simplified in partnership with Mercury Bank. We highly recommend Dot NGO!",
-				src: "/partners/ngo.png",
-				link: "https://dot.ngo/join-beta",
 			},
 		],
 	},

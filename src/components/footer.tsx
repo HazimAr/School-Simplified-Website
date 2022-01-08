@@ -306,6 +306,10 @@ const resources = [
 		name: "Homework Help",
 		link: "https://discord.gg/school",
 	},
+	{
+		name: "Blog",
+		link: "/blog",
+	},
 ];
 
 const support = [
@@ -339,10 +343,6 @@ const programs = [
 	{
 		name: "Programming Simplified",
 		link: "/programming",
-	},
-	{
-		name: "Editorial",
-		link: "/blog",
 	},
 	// {
 	// 	name: "Volunteer",

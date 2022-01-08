@@ -86,6 +86,10 @@ const menuItems: MenuItem[] = [
 				name: "Homework Help",
 				href: "/discord",
 			},
+			{
+				name: "Blog",
+				href: "/blog",
+			},
 		],
 	},
 	{
@@ -106,10 +110,6 @@ const menuItems: MenuItem[] = [
 			{
 				name: "Programming Simplified",
 				href: "/programming",
-			},
-			{
-				name: "Editorial",
-				href: "/blog",
 			},
 			// {
 			// 	name: "Accelerate Your Organization",

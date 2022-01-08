@@ -9,13 +9,13 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 			{
 				children: [
 					{
-						type: "paragraph",
-						paragraph: {
+						type: "to_do",
+						to_do: {
 							text: [
 								{
 									type: "text",
 									text: {
-										content: "eggo",
+										content: `${req.body.firstName} ${req.body.lastName} <${req.body.email}>\nSubject: ${req.body.subject}\n\n${req.body.message}`,
 									},
 									annotations: {
 										bold: false,
@@ -34,7 +34,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 			},
 			notionConfig
 		);
-		res.status(200).json({ response: "Success!", data: req.body });
+		res.status(200).json({ response: "Success!" });
 	} else {
 		res.status(500);
 	}

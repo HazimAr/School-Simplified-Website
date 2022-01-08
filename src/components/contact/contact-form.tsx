@@ -85,7 +85,7 @@ export default function ContactForm(): JSX.Element {
 					// egg
 					console.log(values);
 					axios
-						.post("/message", values)
+						.post("/api/message", values)
 						.then((success) => {
 							console.log(success);
 							toast({
@@ -99,7 +99,7 @@ export default function ContactForm(): JSX.Element {
 						})
 						.catch(console.warn)
 						.then(() => {
-							actions.resetForm();
+							// actions.resetForm();
 							actions.setSubmitting(false);
 						});
 				}}

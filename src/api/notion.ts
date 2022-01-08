@@ -22,7 +22,7 @@ import {
 } from "types";
 import { getFile } from "util/parse_notion";
 
-const notionConfig = {
+export const notionConfig = {
 	headers: {
 		Authorization: "Bearer " + process.env.NOTION_API_KEY,
 		"Notion-Version": "2021-08-16",

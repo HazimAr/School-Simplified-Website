@@ -295,8 +295,9 @@ async function getClassData(classID: string): Promise<Unit[]> {
 
 			// validate there is no previous note
 			if (note) {
-				console.warn(
-					`Data just before ${classID}/${title}/${name} may have been deleted!`
+				notes.push(note);
+				console.log(
+					`Data for ${classID}/${title}/${name} is incomplete!`
 				);
 			}
 			// create new note

@@ -42,7 +42,7 @@ export default function NotesViewer({
 	...boxProps
 }: NotesViewerProps): JSX.Element {
 	const [subject, setSubject] = useState("");
-	const [pdfURL, setPdfURL] = useState("");
+	const [pdfURL, setPdfURL] = useState(null);
 	return (
 		<Container {...boxProps}>
 			<ContainerInside>
@@ -52,7 +52,7 @@ export default function NotesViewer({
 							key={s.title}
 							onClick={() => {
 								setSubject(s.title);
-								setPdfURL("");
+								setPdfURL(null);
 							}}
 							bg={subject === s.title ? "white" : "transparent"}
 							color={subject === s.title ? "brand.blue" : "white"}
@@ -71,7 +71,9 @@ export default function NotesViewer({
 							subject={subjects.find(
 								(value) => value.title === subject
 							)}
-							onNotesSelect={(notes) => setPdfURL(notes.file.url)}
+							onNotesSelect={(notes) =>
+								setPdfURL(notes.file?.url ?? "")
+							}
 						/>
 						<NotesPreview pdfURL={pdfURL} />
 					</SimpleGrid>
@@ -243,8 +245,13 @@ function NotesPreview({
 							</Stack>
 						</Box>
 					</Document>
+				) : pdfURL === "" ? (
+					<Text as="i">
+						We are working on this particular set of notes. Please
+						check back later!
+					</Text>
 				) : (
-					<Text as="i">Please select a file from the left!</Text>
+					<Text as="i">Please select a document from the left!</Text>
 				)}
 			</Box>
 		</Stack>

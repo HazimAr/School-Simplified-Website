@@ -20,7 +20,7 @@ const reviews: Review[] = [
 		key: "F",
 	},
 	{
-		review: "The tutoring she gives are just hella helpful and I’ve actually been able to understand what we're doing in my science class which is usually not normal. Because of her lessons I would understand a lot of assignments like a month or 2 worth of work which is why my grade went from a C+ to an A- so it really helps. I got a perfect score on my quiz btw.",
+		review: "Because of her lessons I would understand a lot of assignments like a month or 2 worth of work which is why my grade went from a C+ to an A- and I got a perfect score on my quiz, so it really helps!",
 		name: "Biscuit",
 		title: "Tutoring, Science",
 		key: "B",

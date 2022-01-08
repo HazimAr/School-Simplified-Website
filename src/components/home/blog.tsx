@@ -6,17 +6,16 @@ import {
 	Image,
 	SimpleGrid,
 	Text,
-	useBreakpointValue,
 	VStack,
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextChakraLink from "@components/nextChakra";
+import { slideInLeft, slideInUp } from "@styles/animations";
+import { motion } from "framer-motion";
 import { BlogListing } from "types";
 import { toAuthorAttribution } from "util/parse_notion";
-import { motion } from "framer-motion";
-import { slideInLeft, slideInUp } from "@styles/animations";
 
 export default function Blog({ listing }: { listing: BlogListing[] }) {
 	// console.log(listing);

@@ -23,7 +23,7 @@ export default function FaqItem({
 	return (
 		<AccordionItem
 			boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
-			borderRadius="10px"
+			rounded={10}
 			backgroundColor="white"
 			color="#5a60ad"
 			px={2}

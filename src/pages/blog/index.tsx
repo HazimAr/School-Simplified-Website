@@ -72,7 +72,7 @@ export default function Blog({
 								bgImage={listings[0].icon}
 								bgSize="cover"
 								bgPosition="center"
-								borderRadius="45px"
+								rounded={45}
 								h={200}
 								w={{ base: "initial", lg: 647 }}
 								maxW={{ base: "initial", lg: 647 }}

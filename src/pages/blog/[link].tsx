@@ -139,7 +139,7 @@ export default function BlogPage_({
 															"/staff/default.png"
 														}
 														boxSize={30}
-														borderRadius={15}
+														rounded={15}
 														mr={2}
 													/>
 													<Text>{author.name}</Text>

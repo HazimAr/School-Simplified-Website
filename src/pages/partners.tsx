@@ -156,7 +156,7 @@ type Partner = {
 
 const partners: PartnerGroup[] = [
 	{
-		name: "Academic Partners",
+		name: "Product Partners",
 		data: [
 			{
 				name: "Versatile Node",
@@ -166,29 +166,17 @@ const partners: PartnerGroup[] = [
 				link: "https://versatilenode.com/",
 			},
 			{
-				name: "Deloitte",
-				description:
-					"Deloitte US is the largest professional services organization in the United States. With more than 100,000 professionals, Deloitte provides audit and assurance, tax, consulting, and risk and financial advisory services to a broad cross-section of the largest corporations and governmental agencies.",
-				src: "/partners/deloitte.png",
-				link: "https://www.deloitte.com/us/en/",
+				name: "Tech Soup",
+				src: "https://www.techsoup.org/_layouts/15/TechSoupRWD/ui/images/tslogo.svg",
 			},
 			{
-				name: "Hidaku",
-				description: "",
-				src: "/partners/Hidaku2.png",
-				link: "https://hidaku.com/",
-			},
-			{
-				name: ".NGO",
-				description:
-					"Dot NGO is the easiest and fastest way to start and sustain a nonprofit online. Quickly incorporate and accept tax-deductible donations with a 501c3 and store your funds in a bank account with this platform. Dot NGO provides banking services for School Simplified in partnership with Mercury Bank. We highly recommend Dot NGO!",
-				src: "/partners/ngo.png",
-				link: "https://dot.ngo/join-beta",
+				name: "Grammarly",
+				src: "https://www.grammarly.com/press/media-resources/docs/logo-grammarly.png",
 			},
 		],
 	},
 	{
-		name: "Community Partners",
+		name: "Sponsors and Donors",
 		data: [
 			{
 				name: "Inspirit AI",
@@ -248,11 +236,27 @@ const partners: PartnerGroup[] = [
 				name: "Product Hunt",
 				src: "/simplihacks/sponsors/producthunt.png",
 			},
+			{
+				name: "Deloitte",
+				description:
+					"Deloitte US is the largest professional services organization in the United States. With more than 100,000 professionals, Deloitte provides audit and assurance, tax, consulting, and risk and financial advisory services to a broad cross-section of the largest corporations and governmental agencies.",
+				src: "/partners/deloitte.png",
+				link: "https://www.deloitte.com/us/en/",
+			},
+			{
+				name: "Hidaku",
+				description: "",
+				src: "/partners/Hidaku2.png",
+				link: "https://hidaku.com/",
+			},
+			{
+				name: ".NGO",
+				description:
+					"Dot NGO is the easiest and fastest way to start and sustain a nonprofit online. Quickly incorporate and accept tax-deductible donations with a 501c3 and store your funds in a bank account with this platform. Dot NGO provides banking services for School Simplified in partnership with Mercury Bank. We highly recommend Dot NGO!",
+				src: "/partners/ngo.png",
+				link: "https://dot.ngo/join-beta",
+			},
 		],
-	},
-	{
-		name: "Donors & Sponsors",
-		data: [],
 	},
 ];
 
@@ -266,7 +270,7 @@ function PartnerButton({ onClick, children, bg }) {
 			_hover={{ background: "brand.transparent2" }}
 			transition="background 0.2s ease-in"
 			bg={bg}
-			borderRadius="15px"
+			rounded={15}
 			color="#5A60ADCC"
 			fontWeight="bold"
 			fontSize="xl"
@@ -277,25 +281,17 @@ function PartnerButton({ onClick, children, bg }) {
 }
 
 function Cell({ h, src, alt, desc }): JSX.Element {
-	const graceTime: number = 250;
-
 	const { isOpen, onOpen, onClose } = useDisclosure();
-	let timeout: NodeJS.Timeout;
 	return (
 		<Popover isOpen={isOpen} placement="bottom">
 			<PopoverTrigger>
 				<Center
 					bg="#D8D6EC"
 					//rounded="lg"
-					borderRadius="40px"
+					rounded={40}
 					mt={10}
-					onMouseEnter={() => {
-						if (timeout) clearTimeout(timeout);
-						onOpen();
-					}}
-					onMouseLeave={() =>
-						(timeout = setTimeout(onClose, graceTime))
-					}
+					onMouseEnter={onOpen}
+					onMouseLeave={onClose}
 					overflow="hidden"
 					p={3}
 					height={h}
@@ -304,18 +300,8 @@ function Cell({ h, src, alt, desc }): JSX.Element {
 				</Center>
 			</PopoverTrigger>
 			<PopoverContent bg="#D8D6EC" color="#8287BE">
-				<Box
-					onMouseEnter={() => {
-						if (timeout) clearTimeout(timeout);
-						onOpen();
-					}}
-					onMouseLeave={() =>
-						(timeout = setTimeout(onClose, graceTime))
-					}
-				>
-					<PopoverHeader fontWeight={700}>{alt}</PopoverHeader>
-					{desc ? <PopoverBody>{desc}</PopoverBody> : null}
-				</Box>
+				<PopoverHeader fontWeight={700}>{alt}</PopoverHeader>
+				{desc ? <PopoverBody>{desc}</PopoverBody> : null}
 			</PopoverContent>
 		</Popover>
 	);

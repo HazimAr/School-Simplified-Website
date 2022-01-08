@@ -42,9 +42,9 @@ export default function Four(): JSX.Element {
 							</Text>
 
 							<NextLink
-							isExternal
-							href="https://docs.google.com/forms/d/e/1FAIpQLSfq0RJcSs6WYufT-YcKo4J1V5GvCTidmoYZ-GUv9G2oaN1Oag/viewform"
-							_hover={{ textDecoration: "none"}}
+								isExternal
+								href="https://docs.google.com/forms/d/e/1FAIpQLSfq0RJcSs6WYufT-YcKo4J1V5GvCTidmoYZ-GUv9G2oaN1Oag/viewform"
+								_hover={{ textDecoration: "none" }}
 							>
 								<Box pt="15px">
 									<Button timmysrc="timmy/timmy_paper_icon.svg">
@@ -133,15 +133,14 @@ export default function Four(): JSX.Element {
 								code for fun. We will help you do just that.
 							</Text>
 							<NextLink
-							isExternal
-							href="/simplihacks"
-							_hover={{ textDecoration: "none"}}
+								isExternal
+								href="/simplihacks"
+								_hover={{ textDecoration: "none" }}
 							>
 								<Button timmysrc="timmy/timmy_scroll_icon.png">
-								More Information
+									More Information
 								</Button>
 							</NextLink>
-							
 						</VStack>
 					</Stack>
 				</ContainerInside>
@@ -192,12 +191,7 @@ function Winner({
 	winners: string;
 }) {
 	return (
-		<Box
-			w="100%"
-			minW="350px"
-			borderRadius="5px"
-			bg="rgba(90, 96, 173, .8)"
-		>
+		<Box w="100%" minW="350px" rounded={5} bg="rgba(90, 96, 173, .8)">
 			<Image w="100%" src={image} />
 			<VStack align="start" p="15px">
 				<NextChakraLink target="_blank" href={link}>

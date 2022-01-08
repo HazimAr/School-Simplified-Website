@@ -209,7 +209,19 @@ function NotesPreview({
 						file={pdfURL}
 						onLoadSuccess={onDocumentLoadSuccess}
 						onLoadError={console.error}
-						error="Sorry, we were unable to load the document."
+						error={
+							<Text>
+								Sorry, we were unable to load a preview of the
+								document.
+								<br />
+								You can still access the file using the button
+								in the top right corner or by clicking{" "}
+								<NextChakraLink href={pdfURL} isExternal>
+									<Text as="u">here</Text>
+								</NextChakraLink>
+								.
+							</Text>
+						}
 						externalLinkTarget="_blank"
 					>
 						<Box

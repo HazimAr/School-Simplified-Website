@@ -1,16 +1,17 @@
 {
-	"name": "template",
-	"version": "0.1.0",
+	"name": "schoolsimplified",
+	"version": "1.0.0",
 	"author": "Hazim Arafa <hazimarafa80@gmail.com>",
+	"description": "School Simplified is a digital nonprofit whose mission is to spread educational equality by providing free academic services, products, and opportunities for teenagers.",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/HazimAr/"
+		"url": "https://github.com/HazimAr/School-Simplified/"
 	},
 	"keywords": [
-		"NextJS",
-		"ChakraUI",
-		"Boilerplate"
+		"School",
+		"Simplified",
+		"Education"
 	],
 	"scripts": {
 		"dev": "next dev -p 6969",
@@ -39,7 +40,9 @@
 		"react-katex": "^2.0.2",
 		"react-pdf": "^5.6.0",
 		"react-wavify": "^1.5.4",
-		"stylis": "^4.0.13"
+		"stylis": "^3.5.4",
+		"webpack": "^5.65.0",
+		"worker-loader": "^3.0.8"
 	},
 	"devDependencies": {
 		"@babel/preset-typescript": "^7.16.7",

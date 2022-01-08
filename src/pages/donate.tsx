@@ -61,14 +61,12 @@ export default function Donate() {
 							Support School Simplified
 						</Heading>
 						<Text fontSize="18px" textAlign="left">
-							We do not charge anything for our services, and your
-							support helps to further our mission to empower the
-							next generation to revolutionize the future through
-							learning.
+							Since we do not charge anything for our services,
+							your support allows us to continue fighting for your
+							needs and helping students from around the world.
 						</Text>
 						<Text fontSize="18px" textAlign="left">
-							Thank you for your generosity in donating to School
-							Simplified!
+							Our team thanks you, for your generosity!
 						</Text>
 						<Heading pt={15} textAlign="left" fontSize="18px">
 							Here is what your money will go towards:

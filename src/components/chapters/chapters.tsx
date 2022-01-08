@@ -131,10 +131,9 @@ export default function Chapters(): JSX.Element {
 										</Heading>
 										<Text textAlign="left" color="#5E65B7">
 											Each geographical region is divided
-											into districts, with a district
-											governor heading each district.
-											Governors are appointed by the
-											National Staff, and will be
+											into districts. Governors administer
+											each district and are appointed by
+											the National Staff, and will be
 											appointed on a rolling basis.
 										</Text>
 									</VStack>

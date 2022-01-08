@@ -5,7 +5,8 @@ import {
 	Heading,
 	Image,
 	SimpleGrid,
-	Text, VStack
+	Text,
+	VStack,
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";

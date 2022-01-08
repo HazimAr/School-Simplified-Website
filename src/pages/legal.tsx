@@ -33,7 +33,6 @@ export default function Legal() {
 									>
 										<NextLink isExternal href={legal.link}>
 											<Button
-												bg="#585EAB"
 												w={300}
 												rounded={5}
 												minH={61}
@@ -51,7 +50,6 @@ export default function Legal() {
 										h="100%"
 									>
 										<Button
-											bg="#585EAB"
 											w={300}
 											rounded={5}
 											minH={61}

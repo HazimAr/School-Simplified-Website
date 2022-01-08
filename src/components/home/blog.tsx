@@ -5,18 +5,16 @@ import {
 	Heading,
 	Image,
 	SimpleGrid,
-	Text,
-	useBreakpointValue,
-	VStack,
+	Text, VStack
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextChakraLink from "@components/nextChakra";
+import { slideInLeft, slideInUp } from "@styles/animations";
+import { motion } from "framer-motion";
 import { BlogListing } from "types";
 import { toAuthorAttribution } from "util/parse_notion";
-import { motion } from "framer-motion";
-import { slideInLeft, slideInUp } from "@styles/animations";
 
 export default function Blog({ listing }: { listing: BlogListing[] }) {
 	// console.log(listing);
@@ -130,7 +128,6 @@ export default function Blog({ listing }: { listing: BlogListing[] }) {
 const dtFormatter = new Intl.DateTimeFormat("en-US");
 
 function Card(listing: BlogListing) {
-	const headingSize = useBreakpointValue({ base: "xs", md: "sm", lg: "md" });
 	return (
 		<Box
 			flex={1}
@@ -163,7 +160,7 @@ function Card(listing: BlogListing) {
 							{dtFormatter.format(new Date(listing.created_time))}{" "}
 							| {listing.category}
 						</Text>
-						<Heading size={headingSize} textAlign="left">
+						<Heading size="sm" textAlign="left">
 							{listing.title}
 						</Heading>
 						{listing.authors ? (

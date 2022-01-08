@@ -190,8 +190,8 @@ export default function Footer() {
 								Newsletter
 							</Heading>
 							<Text fontSize="sm">
-								Join over 000,000 people who receive weekly news
-								to stay updated!
+								Stay up-to-date by joining our newsletter to
+								receive weekly news!
 							</Text>
 							<HStack pt={2}>
 								<Input placeholder="Your email..." />

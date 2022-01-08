@@ -28,7 +28,7 @@ export default function Activities() {
 				<ContainerInside>
 					<Center>
 						<Image
-							ml={{ base: 160, md: 20, lg: 160}}
+							ml={{ base: 160, md: 20, lg: 160 }}
 							mr={10}
 							src="/timmy/sports_timmy_flip.png"
 							w="300px"
@@ -43,12 +43,7 @@ export default function Activities() {
 							>
 								<b>Join Our Clubs</b>
 							</Heading>
-							<Text
-								textAlign="left"
-								size="sm"
-								mb={5}
-								textColor="#ffd470"
-							>
+							<Text textAlign="left" mb={5} textColor="#ffd470">
 								Student Activities Program
 							</Text>
 							<Text textAlign="left" width="80%">

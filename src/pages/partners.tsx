@@ -87,7 +87,7 @@ export default function PartnersPage() {
 			</Container>
 
 			<Container>
-				<ContainerInside>
+				<ContainerInside pb={10}>
 					<Heading mb={10}>Our Partners</Heading>
 					<HStack bg="#FFFFFFCC" borderRadius="25px" spacing={0}>
 						{partners.map((partnerMap, index) => {

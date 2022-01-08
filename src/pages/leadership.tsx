@@ -33,13 +33,12 @@ export default function About({ data }: { data: any }): JSX.Element {
 		<>
 			<Container>
 				<ContainerInside>
-					<Box>
-						<Heading size="2xl" my={7}>
-							Leadership
-						</Heading>
+					<Heading size="2xl" my={7}>
+						Leadership
+					</Heading>
 
-						<Divider bg="white" />
-						{/* <Center my={5}>
+					<Divider bg="white" />
+					{/* <Center my={5}>
 							<ExecutiveButton
 								onClick={() => {
 									!senior && setSenior(true);
@@ -61,76 +60,75 @@ export default function About({ data }: { data: any }): JSX.Element {
 						<Heading fontSize={30} mb={5}>
 							Executive Profiles
 						</Heading> */}
-						<Flex justifyContent="center" flexWrap="wrap">
-							{(senior ? seniorExecs : execs).map(
-								(staff: Person, i: number) => {
-									return (
-										<StaffCard
-											title={staff.title}
-											name={staff.name}
-											img={staff.img}
-											key={i}
-										/>
-									);
-								}
-							)}
-						</Flex>
+					<Flex justifyContent="center" flexWrap="wrap">
+						{(senior ? seniorExecs : execs).map(
+							(staff: Person, i: number) => {
+								return (
+									<StaffCard
+										title={staff.title}
+										name={staff.name}
+										img={staff.img}
+										key={i}
+									/>
+								);
+							}
+						)}
+					</Flex>
 
-						<Divider bg="white" />
+					<Divider bg="white" />
 
-						<Box mt={5}>
-							<Heading fontSize={30}>Board of Directors</Heading>
-						</Box>
-						<Table variant="simple" colorScheme="whiteAlpha">
-							<Thead>
-								<Tr>
-									<Th>
-										<Heading fontSize={17}>Name</Heading>
-									</Th>
-									<Th>
-										<Heading fontSize={17}>Title</Heading>
-									</Th>
-								</Tr>
-							</Thead>
-							<Tbody>
-								{boardOfDirectors.map((staff) => (
-									<Tr key={staff.name}>
-										<Td fontWeight="bold" fontSize={20}>
-											{staff.name}
-										</Td>
-										<Td fontSize={20}>{staff.title}</Td>
-									</Tr>
-								))}
-							</Tbody>
-						</Table>
-						<Divider bg="white" />
-
-						<VStack py={5}>
-							<Heading fontSize={30}>Founders</Heading>
-							<HStack
-								py={2}
-								spacing={{ base: 0, sm: 10 }}
-								flexDir={{ base: "column", sm: "row" }}
-							>
-								<Text fontSize={20} fontWeight="bold">
-									Ethan Wu
-								</Text>
-								<Text fontSize={20} fontWeight="bold">
-									Nathanael Ma
-								</Text>
-								<Text fontSize={20} fontWeight="bold">
-									Ethan Hsu
-								</Text>
-								<Text fontSize={20} fontWeight="bold">
-									Jason Mei
-								</Text>
-							</HStack>
-						</VStack>
+					<Box mt={5}>
+						<Heading fontSize={30}>Board of Directors</Heading>
 					</Box>
+					<Table variant="simple" colorScheme="whiteAlpha">
+						<Thead>
+							<Tr>
+								<Th>
+									<Heading fontSize={17}>Name</Heading>
+								</Th>
+								<Th>
+									<Heading fontSize={17}>Title</Heading>
+								</Th>
+							</Tr>
+						</Thead>
+						<Tbody>
+							{boardOfDirectors.map((staff) => (
+								<Tr key={staff.name}>
+									<Td fontWeight="bold" fontSize={20}>
+										{staff.name}
+									</Td>
+									<Td fontSize={20}>{staff.title}</Td>
+								</Tr>
+							))}
+						</Tbody>
+					</Table>
+					<Divider bg="white" />
+
+					<VStack py={5}>
+						<Heading fontSize={30}>Founders</Heading>
+						<HStack
+							py={2}
+							spacing={{ base: 0, sm: 10 }}
+							flexDir={{ base: "column", sm: "row" }}
+						>
+							<Text fontSize={20} fontWeight="bold">
+								Ethan Wu
+							</Text>
+							<Text fontSize={20} fontWeight="bold">
+								Nathanael Ma
+							</Text>
+							<Text fontSize={20} fontWeight="bold">
+								Ethan Hsu
+							</Text>
+							<Text fontSize={20} fontWeight="bold">
+								Jason Mei
+							</Text>
+						</HStack>
+					</VStack>
 				</ContainerInside>
 			</Container>
 			<Container>
-				<ContainerInside>
+				<ContainerInside pb={7}>
 					<Divider bg="white" />
 					<Flex
 						textAlign={{ base: "center", sm: "left" }}

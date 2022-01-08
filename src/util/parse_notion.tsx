@@ -121,7 +121,7 @@ export function parseText(text: any): JSX.Element {
 }
 
 /**
- * Converts a plain string to a JSX psuedoelement with \n and \r replaced with <br />.
+ * Converts a plain string to a JSX psuedoelement with \n and \r replaced with &lt;br /&gt;.
  * @param text the text to convert to a JSX psuedoelement
  * @returns the converted element
  */

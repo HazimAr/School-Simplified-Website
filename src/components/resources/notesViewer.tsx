@@ -7,22 +7,33 @@ import {
 	Box,
 	BoxProps,
 	Button,
+	Center,
 	Divider,
 	Heading,
+	HStack,
+	Icon,
 	SimpleGrid,
 	Spacer,
 	Stack,
 	StackProps,
 	Text,
+	VisuallyHidden,
 	VStack,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import { useEffect, useState } from "react";
-import { Document, Page } from "react-pdf";
-// import { Document, Page } from "react-pdf/dist/umd/entry.parcel";
+import NextChakraLink from "@components/nextChakra";
+import { useContainerDimensions } from "@hooks/useContainerDimensions";
+import { useEffect, useRef, useState } from "react";
+import { FaFileDownload } from "react-icons/fa";
+import { Document, Page, pdfjs } from "react-pdf";
 import { AllSubjects, NotesProps, Subject } from "types";
-// import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+
+// use minified worker file
+// for more documentation on this package, visit
+// https://github.com/wojtekmaj/react-pdf
+pdfjs.GlobalWorkerOptions.workerSrc = "pdf.worker.min.js";
 
 type NotesViewerProps = AllSubjects & BoxProps;
 
@@ -35,7 +46,7 @@ export default function NotesViewer({
 	return (
 		<Container {...boxProps}>
 			<ContainerInside>
-				<SimpleGrid gap={3} columns={subjects.length}>
+				<SimpleGrid gap={3} columns={{ base: 1, md: subjects.length }}>
 					{subjects.map((s: Subject) => (
 						<Button
 							key={s.title}
@@ -55,12 +66,12 @@ export default function NotesViewer({
 				</SimpleGrid>
 				<Divider mt={8} mb={14} borderColor="white" />
 				{subject ? (
-					<SimpleGrid gap={6} columns={2}>
+					<SimpleGrid gap={6} columns={{ base: 1, md: 2 }}>
 						<NotesDropdown
 							subject={subjects.find(
 								(value) => value.title === subject
 							)}
-							onNotesSelect={(notes) => setPdfURL(notes.href)}
+							onNotesSelect={(notes) => setPdfURL(notes.file.url)}
 						/>
 						<NotesPreview pdfURL={pdfURL} />
 					</SimpleGrid>
@@ -102,19 +113,19 @@ function NotesDropdown({
 						<Accordion bg="#5A60ADCC" allowMultiple>
 							{clazz.content.map((unit) => (
 								<AccordionItem border="none" key={unit.title}>
-									<AccordionButton p={1.5} bg="#585EAB">
+									<AccordionButton
+										py={1.5}
+										px={3}
+										bg="#585EAB"
+									>
 										<Text fontSize={16} textAlign="left">
 											{unit.title}
 										</Text>
-										<Spacer />
+										<Spacer minW={10} />
 										<AccordionIcon />
 									</AccordionButton>
-									<AccordionPanel
-										bg="#656BB8CC"
-										px={4}
-										py={2}
-									>
-										<Stack spacing={1}>
+									<AccordionPanel bg="#656BB8CC" p={2}>
+										<Stack spacing={0}>
 											{unit.content.map((notes) => (
 												<Box
 													onClick={() =>
@@ -127,6 +138,8 @@ function NotesDropdown({
 														cursor: "pointer",
 													}}
 													key={notes.title}
+													px={2}
+													py={0.5}
 												>
 													{notes.title}
 												</Box>
@@ -150,13 +163,15 @@ function NotesPreview({
 	...stackProps
 }: NotesPreviewProps): JSX.Element {
 	const [numPages, setNumPages] = useState(null);
-	const [pageNumber, setPageNumber] = useState(1);
+	const pdfBox = useRef<HTMLDivElement>();
+	const { width } = useContainerDimensions(pdfBox);
 	useEffect(() => {
 		setNumPages(null);
 	}, [pdfURL]);
 
-	function onDocumentLoadSuccess({ numPages }) {
-		setNumPages(numPages);
+	function onDocumentLoadSuccess(success: any) {
+		// console.log("loaded successfully!", success);
+		setNumPages(success.numPages);
 	}
 
 	return (
@@ -167,41 +182,67 @@ function NotesPreview({
 			rounded={5}
 			overflow="hidden"
 		>
-			<Heading bg="brand.darkerBlue" size="sm" p={3}>
-				Notes Preview
-			</Heading>
+			<HStack p={3} bg="brand.darkerBlue">
+				<Heading size="sm">Notes Preview</Heading>
+				<Spacer />
+				{pdfURL ? (
+					<NextChakraLink href={pdfURL} isExternal>
+						<Center>
+							<Icon
+								as={FaFileDownload}
+								color="brand.yellow"
+								transition="all 0.2s ease"
+								_hover={{
+									color: "white",
+									transform: "scale(1.15)",
+								}}
+								_active={{ transform: "scale(1)" }}
+							/>
+							<VisuallyHidden>Download</VisuallyHidden>
+						</Center>
+					</NextChakraLink>
+				) : null}
+			</HStack>
 			<Box bg="#5A60ADCC" px={8} py={3} borderBottomRadius={5}>
 				{pdfURL ? (
-					<Box position="relative">
-						<Document
-							file={pdfURL}
-							onLoadSuccess={onDocumentLoadSuccess}
-							onLoadError={console.error}
+					<Document
+						file={pdfURL}
+						onLoadSuccess={onDocumentLoadSuccess}
+						onLoadError={console.error}
+						error={
+							<Text>
+								Sorry, we were unable to load a preview of the
+								document.
+								<br />
+								You can still access the file using the button
+								in the top right corner or by clicking{" "}
+								<NextChakraLink href={pdfURL} isExternal>
+									<Text as="u">here</Text>
+								</NextChakraLink>
+								.
+							</Text>
+						}
+						externalLinkTarget="_blank"
+					>
+						<Box
+							overflowX="hidden"
+							overflowY="scroll"
+							style={{ aspectRatio: "17/22" }}
 						>
-							<Page pageNumber={pageNumber} />
-						</Document>
-						<Box
-							position="absolute"
-							top={0}
-							left={0}
-							h="100%"
-							w="50%"
-							onClick={() => {
-								if (numPages > 0) setPageNumber(numPages - 1);
-							}}
-						/>
-						<Box
-							position="absolute"
-							top={0}
-							right={0}
-							h="100%"
-							w="50%"
-							onClick={() => {
-								if (numPages < numPages - 1)
-									setPageNumber(numPages + 1);
-							}}
-						/>
-					</Box>
+							<Stack overflow="visible" ref={pdfBox}>
+								{[...Array(numPages).keys()].map((i) => (
+									<Page
+										pageIndex={i}
+										width={width}
+										error={`Sorry, we were unable to load page #${
+											i + 1
+										}.`}
+										key={i}
+									/>
+								))}
+							</Stack>
+						</Box>
+					</Document>
 				) : (
 					<Text as="i">Please select a file from the left!</Text>
 				)}

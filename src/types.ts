@@ -1,6 +1,6 @@
 export type NotesProps = {
 	title: string;
-	href: string;
+	file: FileObj;
 };
 
 export type Subject = {

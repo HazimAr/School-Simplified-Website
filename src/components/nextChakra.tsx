@@ -6,7 +6,7 @@ import NextLink from "next/link";
 // eslint-disable-next-line import/no-default-export
 export default function NextChakraLink(props: LinkProps): JSX.Element {
 	return (
-		<NextLink href={props.href} passHref>
+		<NextLink href={props.href ?? ""} passHref>
 			<Link outline="none" {...props}>
 				{props.children}
 			</Link>

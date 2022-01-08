@@ -19,14 +19,14 @@ export default function Donate() {
 	];
 
 	return (
-		<Container my="100px" mx="25px">
+		<Container my={24} mx={6}>
 			<ContainerInside>
 				<Stack
-					direction={{ base: "column-reverse", md: "row" }}
+					direction={{ base: "column-reverse", lg: "row" }}
 					align="center"
-					spacing={{ base: "200px", md: "45px" }}
+					spacing={{ base: 50, md: 10 }}
 				>
-					<Stack display={{ base: "inline-block", md: "none" }}>
+					<Box display={{ base: "inline-block", lg: "none" }}>
 						<iframe
 							src="https://master.d3o53wn77q6k5v.amplifyapp.com/"
 							frameBorder="0"
@@ -34,13 +34,13 @@ export default function Donate() {
 							height="600px"
 							scrolling="no"
 						/>
-					</Stack>
+					</Box>
 					<Box
 						rounded={15}
 						bg="brand.purple.dark"
 						height="600px"
 						width="900px"
-						display={{ base: "none", md: "block" }}
+						display={{ base: "none", lg: "block" }}
 					>
 						<Image
 							position="relative"
@@ -65,8 +65,8 @@ export default function Donate() {
 							support helps to further our mission to empower the
 							next generation to revolutionize the future through
 							learning.
-							{<br />}
-							{<br />}
+						</Text>
+						<Text fontSize="18px" textAlign="left">
 							Thank you for your generosity in donating to School
 							Simplified!
 						</Text>
@@ -75,18 +75,17 @@ export default function Donate() {
 						</Heading>
 						<Stack
 							direction={{ base: "column", md: "row" }}
-							h="150px"
 							w="100%"
 						>
-							{reasons.map((reason, index) => {
+							{reasons.map((reason) => {
 								return (
 									<Box
 										bg="brand.purple.dark"
 										p={15}
 										rounded={10}
-										key={index}
+										key={reason.title}
 										w="100%"
-										h="100%"
+										// h="100%"
 										align="start"
 									>
 										<Text

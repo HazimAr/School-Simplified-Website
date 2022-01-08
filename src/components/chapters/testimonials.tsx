@@ -92,16 +92,20 @@ export default function Testimonials(): JSX.Element {
 								mt={6}
 								width={{ base: "%100", lg: "82%" }}
 							>
-								{cardTestimonial.map((cardTestimonial) => (
-									<motion.div
-										initial="initial"
-										whileInView="onView"
-										variants={fadeIn()}
-										key={cardTestimonial.name}
-									>
-										<Card {...cardTestimonial} />
-									</motion.div>
-								))}
+								{cardTestimonial.map(
+									(cardTestimonial, index) => (
+										<motion.div
+											initial="initial"
+											whileInView="onView"
+											variants={fadeIn({
+												delay: index * 0.3,
+											})}
+											key={cardTestimonial.name}
+										>
+											<Card {...cardTestimonial} />
+										</motion.div>
+									)
+								)}
 							</SimpleGrid>
 						</Stack>
 					</ContainerInside>

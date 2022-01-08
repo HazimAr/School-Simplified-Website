@@ -8,12 +8,12 @@ import { socials } from "config";
 export default function SocialMedias(): JSX.Element {
 	return (
 		<Container>
-			<ContainerInside>
+			<ContainerInside py={10}>
 				<VStack>
 					<VStack spacing={4}>
 						<Heading>Our Socials</Heading>
 						<Container>
-							<Text size="md" color="white">
+							<Text fontSize={18} color="white">
 								Check out our socials for tips, entertainment,
 								music, podcasts, opportunities, and more!
 							</Text>

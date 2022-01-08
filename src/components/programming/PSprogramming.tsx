@@ -72,7 +72,7 @@ export default function Programming(): JSX.Element {
 								<Text mt={6} textAlign="left">
 									Want to create, launch, and produce
 									projects? Want to gain coding skills through
-									an innovative way of learning? 
+									an innovative way of learning?
 								</Text>
 								<Text mt={6} textAlign="left">
 									Programming Simplified will help you do just
@@ -132,7 +132,7 @@ export default function Programming(): JSX.Element {
 							<Heading size="lg">
 								Courses in Programming Simplified
 							</Heading>
-							<Text size="md" fontWeight="normal">
+							<Text fontSize={18} fontWeight="normal">
 								<b>Completion:</b> 4 to 12 weeks
 							</Text>
 							<Text mt={4} textAlign="left">

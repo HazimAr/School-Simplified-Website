@@ -19,8 +19,8 @@ export default function Links({ buttons }: { buttons: LinkButtonProps[] }) {
 			</Container>
 
 			<Container>
-				<ContainerInside mt={8}>
-					<VStack spacing={5} maxW={560}>
+				<ContainerInside py={8}>
+					<VStack spacing={5}>
 						{buttons.map((button) => {
 							return <LinkButton {...button} key={button.text} />;
 						})}
@@ -33,7 +33,13 @@ export default function Links({ buttons }: { buttons: LinkButtonProps[] }) {
 
 function LinkButton(props: LinkButtonProps) {
 	return (
-		<NextLink href={props.href} isExternal w="100%" cursor="auto">
+		<NextLink
+			href={props.href}
+			isExternal
+			w="100%"
+			cursor="auto"
+			maxW={560}
+		>
 			<Button
 				w="100%"
 				height={62.4}

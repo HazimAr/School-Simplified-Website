@@ -304,7 +304,7 @@ const resources = [
 	// },
 	{
 		name: "Homework Help",
-		link: "/homework",
+		link: "https://discord.gg/school",
 	},
 ];
 

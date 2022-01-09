@@ -243,6 +243,16 @@ const seniorExecs: Person[] = [
 		title: "Executive Assisstant to CEO and CHRO",
 		img: "/staff/SabrinaZhang.jpg",
 	},
+	{
+		name: "Annette Lin",
+		title: "President of Simplifieditorial",
+		img: "/staff/AnnetteLin.jpg",
+	},
+	{
+		name: "Zach Martin",
+		title: "President of School Simplified Digital",
+		img: "/staff/ZachMartin.jpg",
+	},
 ];
 
 const execs: Person[] = [

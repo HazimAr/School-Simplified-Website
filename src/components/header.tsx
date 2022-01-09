@@ -18,6 +18,7 @@ type MenuItem = {
 	name: string;
 	children?: MenuItem[];
 	href?: string;
+	isBold?: boolean;
 };
 
 const menuItems: MenuItem[] = [
@@ -85,6 +86,10 @@ const menuItems: MenuItem[] = [
 				name: "Homework Help",
 				href: "/discord",
 			},
+			{
+				name: "Blog",
+				href: "/blog",
+			},
 		],
 	},
 	{
@@ -106,10 +111,6 @@ const menuItems: MenuItem[] = [
 				name: "Programming Simplified",
 				href: "/programming",
 			},
-			{
-				name: "Editorial",
-				href: "/blog",
-			},
 			// {
 			// 	name: "Accelerate Your Organization",
 			// 	href: "/accelerate",
@@ -121,12 +122,13 @@ const menuItems: MenuItem[] = [
 		href: "/volunteer",
 	},
 	{
-		name: "Donate",
-		href: "/donate",
-	},
-	{
 		name: "Contact Us",
 		href: "/contact",
+	},
+	{
+		name: "Donate",
+		href: "/donate",
+		isBold: true,
 	},
 ];
 
@@ -184,7 +186,11 @@ export default function Header(): JSX.Element {
 										href={menuItem.href}
 										key={"menuitem_" + idx}
 									>
-										{menuItem.name}
+										{menuItem.isBold ? (
+											<b>{menuItem.name}</b>
+										) : (
+											menuItem.name
+										)}
 									</NextLink>
 								)
 							)}
@@ -220,7 +226,7 @@ function DropdownMenu({ menuItem }: { menuItem: MenuItem }): JSX.Element {
 	return (
 		<Menu isOpen={isOpen} key={menuItem.name}>
 			<MenuButton onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-				{menuItem.name}
+				{menuItem.isBold ? <b>{menuItem.name}</b> : menuItem.name}
 			</MenuButton>
 			<MenuList
 				onMouseEnter={onMouseEnter}
@@ -233,7 +239,9 @@ function DropdownMenu({ menuItem }: { menuItem: MenuItem }): JSX.Element {
 						_hover={{ background: "white-400" }}
 						key={child.name}
 					>
-						<MenuItem>{child.name}</MenuItem>
+						<MenuItem>
+							{child.isBold ? <b>{child.name}</b> : child.name}
+						</MenuItem>
 					</NextLink>
 				))}
 			</MenuList>

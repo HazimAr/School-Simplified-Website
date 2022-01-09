@@ -8,6 +8,7 @@ import Intro from "./intro";
 import Projects from "./projects";
 import ProgrammingSimplified from "./ps";
 import Testimonial from "./testimonial";
+import PopUp from "./popup";
 
 export {
 	AcademicServices,
@@ -20,4 +21,5 @@ export {
 	Projects,
 	ProgrammingSimplified,
 	Testimonial,
+	PopUp,
 };

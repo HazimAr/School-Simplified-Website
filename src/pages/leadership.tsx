@@ -238,6 +238,11 @@ const seniorExecs: Person[] = [
 		title: "President of Student Activities",
 		img: "/staff/AarushGoradia.jpg",
 	},
+	{
+		name: "Sabrina Zhang",
+		title: "Executive Assisstant to CEO and CHRO",
+		img: "/staff/SabrinaZhang.jpg",
+	},
 ];
 
 const execs: Person[] = [

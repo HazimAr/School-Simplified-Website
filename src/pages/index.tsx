@@ -9,16 +9,15 @@ import {
 	ProgrammingSimplified,
 	Projects,
 	Testimonial,
-	PopUp,
 } from "@components/home/index";
-import { BlogListing } from "types";
-import { motion } from "framer-motion";
 import { fadeIn } from "@styles/animations";
+import { motion } from "framer-motion";
+import { BlogListing } from "types";
 
 export default function Home({ listing }: { listing: BlogListing[] }) {
 	return (
 		<>
-			<PopUp />
+			{/* <PopUp /> */}
 			<motion.div
 				initial="initial"
 				whileInView="onView"

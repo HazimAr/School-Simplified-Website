@@ -18,6 +18,7 @@ import {
 	Stack,
 	StackProps,
 	Text,
+	useBreakpointValue,
 	VisuallyHidden,
 } from "@chakra-ui/react";
 import Container from "@components/container";
@@ -46,7 +47,14 @@ export default function NotesViewer({
 	return (
 		<Container {...boxProps}>
 			<ContainerInside>
-				<SimpleGrid gap={3} columns={{ base: 1, md: subjects.length }}>
+				<SimpleGrid
+					gap={3}
+					columns={{
+						base: 1,
+						sm: subjects.length / 2,
+						lg: subjects.length,
+					}}
+				>
 					{subjects.map((s: Subject) => (
 						<Button
 							key={s.title}
@@ -95,6 +103,8 @@ function NotesDropdown({
 	onNotesSelect,
 	...stackProps
 }: NotesDropdownProps): JSX.Element {
+	const classHeadingSize = useBreakpointValue({ base: "xs", sm: "sm" });
+
 	return (
 		<Stack
 			{...stackProps}
@@ -134,8 +144,10 @@ function NotesDropdown({
 							) : (
 								<Box w="1.25em" />
 							)}
-							<Heading size="sm">{clazz.title}</Heading>
-							<Spacer minW={10} />
+							<Heading size={classHeadingSize} textAlign="left">
+								{clazz.title}
+							</Heading>
+							<Spacer minW={{ base: 0, sm: 5, md: 10 }} />
 							<AccordionIcon />
 						</AccordionButton>
 						<AccordionPanel px={0} pt={0} pb={1.5}>

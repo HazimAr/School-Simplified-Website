@@ -4,8 +4,9 @@ export type NotesProps = {
 };
 
 export type Subject = {
-	title: string;
+	title: string; // may be null
 	content: Class[];
+	icon: string | FileObj; // may be null
 };
 
 export type Sponsor = {

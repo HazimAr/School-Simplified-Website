@@ -21,7 +21,7 @@ export default function Legal() {
 								const isLastOdd =
 									idx == legals.length - 1 &&
 									legals.length % 2 != 0;
-								console.log("making #", idx + 1, isLastOdd);
+								// console.log("making #", idx + 1, isLastOdd);
 								return isLastOdd ? (
 									<Center
 										gridColumnStart={1}

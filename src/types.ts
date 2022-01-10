@@ -6,7 +6,6 @@ export type NotesProps = {
 export type Subject = {
 	title: string; // may be null
 	content: Class[];
-	icon: string | FileObj; // may be null
 };
 
 export type Sponsor = {
@@ -15,8 +14,13 @@ export type Sponsor = {
 };
 
 export type Class = {
-	title: string;
+	title: string; // may be null
 	content: Unit[];
+	icon: {
+		type: string;
+		emoji?: string;
+		file?: FileObj;
+	}; // may be null
 };
 
 export type Unit = {

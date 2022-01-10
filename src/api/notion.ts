@@ -39,7 +39,14 @@ export async function getAllSubjects(): Promise<AllSubjects> {
 
 	// map the Notion page objects into subject-returning promises
 	const subjectsPromises: Promise<Subject>[] = data.results.map(
-		async (page: any): Promise<Subject> => getSubjectData(page.id)
+		async (page: any): Promise<Subject> => {
+			// get all classes from this subject subpage
+			const content = await getSubjectData(page.id);
+			// get the title (help)
+			const title: string =
+				page.properties.Name.title?.[0]?.plain_text ?? null;
+			return { title, content };
+		}
 	);
 
 	// convert all promises into an array of subjects, put into object
@@ -48,7 +55,7 @@ export async function getAllSubjects(): Promise<AllSubjects> {
 	};
 }
 
-async function getSubjectData(subjectID: string): Promise<Subject> {
+async function getSubjectData(subjectID: string): Promise<Class[]> {
 	// fetch children from given page as a block
 	const { data } = await axios.get(
 		`https://api.notion.com/v1/blocks/${subjectID}/children`,
@@ -68,30 +75,13 @@ async function getSubjectData(subjectID: string): Promise<Subject> {
 
 			return true;
 		})
-		.map(async (page: any): Promise<Class> => {
-			// gets all units from this class subpage
-			const content = await getClassData(page.id);
-			// gets the title of this class
-			const title: string = page.child_page.title;
-			return { title, content };
-		});
-	// save results
-	const content = await Promise.all(classPromises);
+		.map(async (page: any): Promise<Class> => getClassData(page.id));
 
-	// get other page data (e.g. title, icon)
-	const { data: pageData } = await axios.get(
-		`https://api.notion.com/v1/pages/${subjectID}`,
-		notionConfig
-	);
-	// console.log(pageData);
-	const title = pageData.properties.Name.title?.[0]?.plain_text ?? null;
-	const icon = pageData.icon ? pageData.icon[pageData.icon.type] : null;
-
-	// convert all promises into an array of classes
-	return { content, title, icon };
+	// return results
+	return await Promise.all(classPromises);
 }
 
-async function getClassData(classID: string): Promise<Unit[]> {
+async function getClassData(classID: string): Promise<Class> {
 	// fetch children from given page as a block
 	const { data } = await axios.get(
 		`https://api.notion.com/v1/blocks/${classID}/children`,
@@ -180,7 +170,16 @@ async function getClassData(classID: string): Promise<Unit[]> {
 	// clean up last unit
 	output.push({ title, content: notes });
 
-	return output;
+	// get other page data (e.g. title, icon)
+	const { data: pageData } = await axios.get(
+		`https://api.notion.com/v1/pages/${classID}`,
+		notionConfig
+	);
+	// console.log(pageData);
+	const pageTitle = pageData.properties.title.title?.[0]?.plain_text ?? null;
+
+	// convert all promises into an array of classes
+	return { content: output, title: pageTitle, icon: pageData.icon };
 }
 
 export async function getArtInfo(): Promise<ArtData> {

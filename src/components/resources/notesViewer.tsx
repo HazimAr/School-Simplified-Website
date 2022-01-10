@@ -12,6 +12,7 @@ import {
 	Heading,
 	HStack,
 	Icon,
+	Image,
 	SimpleGrid,
 	Spacer,
 	Stack,
@@ -112,6 +113,27 @@ function NotesDropdown({
 						borderColor="brand.darkerBlue"
 					>
 						<AccordionButton p={2} bg="#53599F">
+							{clazz.icon?.type === "emoji" ? (
+								<Center h="1.25em" lineHeight={1.25} mr={2}>
+									<Text
+										w="1.25em"
+										role="img"
+										textAlign="center"
+									>
+										{clazz.icon.emoji}
+									</Text>
+								</Center>
+							) : clazz.icon?.type === "file" ? (
+								<Center h="1.25em" mr={2}>
+									<Image
+										w="1.25em"
+										src={clazz.icon.file.url}
+										alt={`Icon for ${clazz.title}`}
+									/>
+								</Center>
+							) : (
+								<Box w="1.25em" />
+							)}
 							<Heading size="sm">{clazz.title}</Heading>
 							<Spacer minW={10} />
 							<AccordionIcon />
@@ -148,7 +170,7 @@ function NotesDropdown({
 														fontSize={14}
 														transition="all 0.2s ease"
 														_hover={{
-															background: "#fff5",
+															background: "#fff3",
 															cursor: "pointer",
 														}}
 														key={notes.title}

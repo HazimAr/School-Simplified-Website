@@ -83,7 +83,7 @@ async function getSubjectData(subjectID: string): Promise<Subject> {
 		`https://api.notion.com/v1/pages/${subjectID}`,
 		notionConfig
 	);
-	console.log(pageData);
+	// console.log(pageData);
 	const title = pageData.properties.Name.title?.[0]?.plain_text ?? null;
 	const icon = pageData.icon ? pageData.icon[pageData.icon.type] : null;
 

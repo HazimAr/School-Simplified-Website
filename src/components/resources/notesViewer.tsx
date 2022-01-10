@@ -18,7 +18,6 @@ import {
 	StackProps,
 	Text,
 	VisuallyHidden,
-	VStack
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -106,54 +105,68 @@ function NotesDropdown({
 			<Heading size="md" p={3} bg="brand.darkerBlue">
 				{subject.title}
 			</Heading>
-			<VStack bg="#5A60ADCC" px={8} py={3} align="stretch" spacing={1.5}>
+			<Accordion bg="#5A60ADCC" px={8} py={3} allowMultiple>
 				{subject.content.map((clazz) => (
-					<Box key={clazz.title}>
-						<Heading size="sm" p={2} bg="#53599F" mb={1.5}>
-							{clazz.title}
-						</Heading>
-						<Accordion bg="#5A60ADCC" allowMultiple>
-							{clazz.content.map((unit) => (
-								<AccordionItem border="none" key={unit.title}>
-									<AccordionButton
-										py={1.5}
-										px={3}
-										bg="#585EAB"
+					<AccordionItem
+						key={clazz.title}
+						borderColor="brand.darkerBlue"
+					>
+						<AccordionButton p={2} bg="#53599F">
+							<Heading size="sm">{clazz.title}</Heading>
+							<Spacer minW={10} />
+							<AccordionIcon />
+						</AccordionButton>
+						<AccordionPanel px={0} pt={0} pb={1.5}>
+							<Accordion bg="#5A60ADCC" allowMultiple>
+								{clazz.content.map((unit) => (
+									<AccordionItem
+										borderColor="#656BB8CC"
+										key={unit.title}
 									>
-										<Text fontSize={16} textAlign="left">
-											{unit.title}
-										</Text>
-										<Spacer minW={10} />
-										<AccordionIcon />
-									</AccordionButton>
-									<AccordionPanel bg="#656BB8CC" p={2}>
-										<Stack spacing={0}>
-											{unit.content.map((notes) => (
-												<Box
-													onClick={() =>
-														onNotesSelect(notes)
-													}
-													fontSize={14}
-													transition="all 0.2s ease"
-													_hover={{
-														background: "#fff5",
-														cursor: "pointer",
-													}}
-													key={notes.title}
-													px={2}
-													py={0.5}
-												>
-													{notes.title}
-												</Box>
-											))}
-										</Stack>
-									</AccordionPanel>
-								</AccordionItem>
-							))}
-						</Accordion>
-					</Box>
+										<AccordionButton
+											py={1.5}
+											px={3}
+											bg="#585EAB"
+											_hover={{ bg: "#fff1" }}
+										>
+											<Text
+												fontSize={16}
+												textAlign="left"
+											>
+												{unit.title}
+											</Text>
+											<Spacer minW={10} />
+											<AccordionIcon />
+										</AccordionButton>
+										<AccordionPanel bg="#656BB8CC" p={2}>
+											<Stack spacing={0}>
+												{unit.content.map((notes) => (
+													<Box
+														onClick={() =>
+															onNotesSelect(notes)
+														}
+														fontSize={14}
+														transition="all 0.2s ease"
+														_hover={{
+															background: "#fff5",
+															cursor: "pointer",
+														}}
+														key={notes.title}
+														px={2}
+														py={0.5}
+													>
+														{notes.title}
+													</Box>
+												))}
+											</Stack>
+										</AccordionPanel>
+									</AccordionItem>
+								))}
+							</Accordion>
+						</AccordionPanel>
+					</AccordionItem>
 				))}
-			</VStack>
+			</Accordion>
 		</Stack>
 	);
 }

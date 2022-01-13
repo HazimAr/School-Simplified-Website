@@ -1,8 +1,10 @@
-# Read me
+# School Simplified
 
-Proper Readme will follow
+## _Through learning, we empower the next generation to revolutionize the future._
 
-## Stack
+Come visit us at <https://schoolsimplified.org/>!
+
+### Powered by
 
 -   Typescript
 -   ChakraUI
@@ -12,17 +14,18 @@ Proper Readme will follow
 -   ESLint
 -   React Icons
 
-## Setup
+## Spinning up local instance
 
-click on the green `code` button and open with github desktop or clone the
-repository onto your computer
+0. Ensure you have node.js installed on your machine.
+1. Clone this repository to your machine.
+2. Install all dependencies with `npm i`.
+3. Run the development server with `npm run dev`.
+4. To simulate a production server, create a production build with
+   `npm run build` and start it with `npm run start`.
 
-install dependencies `npm i` or `yarn`
+## Contributing
 
-install prettier globally `npm i -g prettier`
-
-## Commands
-
-To run on local development server `npm run dev`
-
-To format with prettier `npm run clean`
+If you would like to contribute to our website, place consider joining our web
+team!  
+You can find a list of all our open positions
+[here](https://schoolsimplified.org/volunteer).

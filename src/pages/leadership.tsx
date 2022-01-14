@@ -245,13 +245,23 @@ const seniorExecs: Person[] = [
 	},
 	{
 		name: "Annette Lin",
-		title: "President of Simplifieditorial",
+		title: "Editor in Chief",
 		img: "/staff/AnnetteLin.jpg",
 	},
 	{
 		name: "Zach Martin",
 		title: "President of School Simplified Digital",
 		img: "/staff/ZachMartin.jpg",
+	},
+	{
+		name: "Maya Murry",
+		title: "President of Research Simplified",
+		img: "/staff/MayaMurry.jpg",
+	},
+	{
+		name: "Brandon Woo",
+		title: "Chief Information Officer",
+		img: "/staff/BrandonWoo.jpg",
 	},
 ];
 

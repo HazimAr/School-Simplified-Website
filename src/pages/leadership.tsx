@@ -240,7 +240,7 @@ const seniorExecs: Person[] = [
 	},
 	{
 		name: "Sabrina Zhang",
-		title: "Executive Assisstant to CEO and CHRO",
+		title: "Executive Assisstant to CEO",
 		img: "/staff/SabrinaZhang.jpg",
 	},
 	{

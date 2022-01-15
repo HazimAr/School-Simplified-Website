@@ -5,7 +5,7 @@ import { SiInstagram, SiLinkedin, SiTiktok, SiTwitter } from "react-icons/si";
 
 export default function Hero({ heading }) {
 	return (
-		<VStack spacing={3} py="50px">
+		<VStack spacing={3} py={50}>
 			<Image
 				src="\logos\ss_logo.png"
 				alt="school simplified logo"

@@ -263,6 +263,16 @@ const seniorExecs: Person[] = [
 		title: "Chief Information Officer",
 		img: "/staff/BrandonWoo.jpg",
 	},
+	{
+		name: "Kyle Chen",
+		title: "Chief Financial Officer",
+		img: "/staff/KyleChen.jpg",
+	},
+	{
+		name: "Krishanu Datta",
+		title: "Senior Vice President of IT",
+		img: "/staff/KrishanuDatta.jpg",
+	},
 ];
 
 const execs: Person[] = [

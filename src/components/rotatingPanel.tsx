@@ -37,47 +37,32 @@ export default function RotatingPanel({
 	animationProps = {},
 	...props
 }: RotatingPanelProps): JSX.Element {
-	// const [index, setIndex] = useControllableState({
-	// 	defaultValue: 0,
-	// 	onChange: (newIndex) => {
-	// 		console.log("from", index, "to", newIndex);
-
-	// 		// determine order of movement (less to more or more to less)
-	// 		const isLess = newIndex < index;
-	// 		// find the index of the new panel if moving in either direction
-	// 		const leftBound = isLess ? index - innerPanelProps.length : index;
-	// 		const rightBound = isLess ? index : index + innerPanelProps.length;
-	// 		// find the distance to that panel
-	// 		const leftDist = newIndex - leftBound;
-	// 		const rightDist = rightBound - newIndex;
-	// 		// use distances to figure out the best direction of travel
-	// 		// true = to the right, false = to the left
-	// 		const direction =
-	// 			leftDist == rightDist ? isLess : leftDist < rightDist;
-	// 		console.log("direction:", direction);
-	// 	},
-	// });
-
 	const [index, setIndex] = useReducer(
 		(oldIndex: number, newIndex: number) => {
-			// console.log("from", oldIndex, "to", newIndex);
+			console.log("from", oldIndex, "to", newIndex);
 
-			// determine order of movement (less to more or more to less)
-			const isLess = newIndex < oldIndex;
-			// find the index of the new panel if moving in either direction
-			const leftBound = isLess
-				? oldIndex - innerPanelProps.length
-				: oldIndex;
-			const rightBound = isLess
-				? oldIndex
-				: oldIndex + innerPanelProps.length;
-			// find the distance to that panel
-			const leftDist = newIndex - leftBound;
-			const rightDist = rightBound - newIndex;
-			// use distances to figure out the best direction of travel
-			// true = to the right, false = to the left
+			// // determine order of movement (less to more or more to less)
+			// const isLess = newIndex < oldIndex;
+			// // find the index of the new panel if moving in either direction
+			// const leftBound = isLess
+			// 	? oldIndex - innerPanelProps.length
+			// 	: oldIndex;
+			// const rightBound = isLess
+			// 	? oldIndex
+			// 	: oldIndex + innerPanelProps.length;
+			// // find the distance to that panel
+			// const leftDist = newIndex - leftBound;
+			// const rightDist = rightBound - newIndex;
+			// // use distances to figure out the best direction of travel
+			// // true = to the right, false = to the left
+			// const direction =
+			// 	leftDist == rightDist ? isLess : leftDist < rightDist;
+
+			// equivalent to above calculations
 			const direction =
-				leftDist == rightDist ? isLess : leftDist < rightDist;
+				newIndex < oldIndex
+					? innerPanelProps.length <= 2 * oldIndex - 2 * newIndex
+					: innerPanelProps.length > 2 * newIndex - 2 * oldIndex;
 			console.log("direction:", direction);
 
 			return newIndex;

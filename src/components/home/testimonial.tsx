@@ -1,4 +1,12 @@
-import { Box, Divider, Flex, Heading, Text, FlexProps } from "@chakra-ui/react";
+import {
+	Box,
+	Divider,
+	Fade,
+	Flex,
+	FlexProps,
+	Heading,
+	Text,
+} from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import RotatingPanel from "@components/rotatingPanel";
@@ -126,6 +134,10 @@ export default function Intro() {
 							lg: 220,
 							xl: 200,
 						}}
+						AnimationElement={Fade}
+						animationProps={{
+							unmountOnExit: false,
+						}}
 					/>
 				</motion.div>
 			</ContainerInside>
@@ -133,7 +145,7 @@ export default function Intro() {
 	);
 }
 
-function Testimony({review, name, title, ...props}: Review): JSX.Element {
+function Testimony({ review, name, title, ...props }: Review): JSX.Element {
 	return (
 		// <ScaleFade in={true} unmountOnExit={false}>
 		<Flex

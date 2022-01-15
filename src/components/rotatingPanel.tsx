@@ -10,6 +10,7 @@ import {
 	StackProps,
 	useControllableState,
 	VStack,
+	CollapseProps,
 } from "@chakra-ui/react";
 import { Token } from "@chakra-ui/styled-system/dist/declarations/src/utils";
 import * as CSS from "csstype";
@@ -21,7 +22,12 @@ type RotatingPanelProps = StackProps & {
 	Element: (r: Record<string, any>) => JSX.Element;
 	viewPortHeight: Token<CSS.Property.Height | number, "sizes">;
 	AnimationElement?: (r: Record<string, any>) => JSX.Element;
-	animationProps?: FadeProps | ScaleFadeProps | SlideProps | SlideFadeProps;
+	animationProps?:
+		| FadeProps
+		| ScaleFadeProps
+		| SlideProps
+		| SlideFadeProps
+		| CollapseProps;
 };
 
 export default function RotatingPanel({
@@ -50,22 +56,25 @@ export default function RotatingPanel({
 	}, [index]);
 
 	return (
-		<VStack spacing={3} {...props}>
-			<Box>
+		<VStack spacing={3} align="stretch" {...props}>
+			<Box h={viewPortHeight} position="relative">
 				{innerPanelProps.map(({ key, ...props }, idx) =>
 					AnimationElement ? (
-						<AnimationElement
-							in={idx === index}
-							{...animationProps}
-						>
-							<Box h={viewPortHeight} key={key}>
-								<Element {...props} h="100%" />
-							</Box>
-						</AnimationElement>
+						<Box key={key} position="absolute">
+							<AnimationElement
+								in={idx === index}
+								{...animationProps}
+							>
+								<Box h={viewPortHeight}>
+									<Element {...props} h="100%" />
+								</Box>
+							</AnimationElement>
+						</Box>
 					) : (
 						<Box
 							h={viewPortHeight}
 							display={idx !== index && "none"}
+							position="absolute"
 							key={key}
 						>
 							<Element {...props} h="100%" />
@@ -73,7 +82,7 @@ export default function RotatingPanel({
 					)
 				)}
 			</Box>
-			<HStack spacing={4}>
+			<HStack justify="center" spacing={4}>
 				<Center
 					onClick={() => {
 						setIndex(

@@ -20,7 +20,7 @@ type RotatingPanelProps = StackProps & {
 	// animationProps?: Record<string, any>;
 };
 
-type AnimationType = "slide";
+type AnimationType = "slide" | "fade";
 type RotatingAnimation = {
 	enter: Variant;
 	center: Variant;
@@ -35,7 +35,7 @@ function getVariant(variant: AnimationType | AnimationData): AnimationData {
 	// const duration = "1s";
 	switch (variant) {
 		case "slide":
-			const animation: RotatingAnimation = {
+			let animation: RotatingAnimation = {
 				enter: (direction: boolean) => ({
 					x: direction ? -1000 : 1000,
 					opacity: 0,
@@ -52,12 +52,22 @@ function getVariant(variant: AnimationType | AnimationData): AnimationData {
 					opacity: 0,
 				}),
 			};
-			const transition: Transition = {
+			let transition: Transition = {
 				x: {
 					type: "spring",
 					stiffness: 300,
 					damping: 30,
 				},
+				opacity: { duration: 0.2 },
+			};
+			return { animation, transition };
+		case "fade":
+			animation = {
+				enter: { opacity: 0 },
+				center: { opacity: 1, zIndex: 1 },
+				exit: { opacity: 0, zIndex: 0, position: "absolute" },
+			};
+			transition = {
 				opacity: { duration: 0.2 },
 			};
 			return { animation, transition };
@@ -143,22 +153,14 @@ export default function RotatingPanel({
 							exit="exit"
 							transition={variant.transition}
 						>
-							<Box h={viewPortHeight}>
-								<Element {...innerPanelProps[index]} h="100%" />
-							</Box>
+							<Element
+								{...innerPanelProps[index]}
+								h={viewPortHeight}
+							/>
 						</motion.div>
 					</AnimatePresence>
 				) : (
-					innerPanelProps.map(({ key, ...props }, idx) => (
-						<Box
-							h={viewPortHeight}
-							display={idx !== index && "none"}
-							position="absolute"
-							key={key}
-						>
-							<Element {...props} h="100%" />
-						</Box>
-					))
+					<Element {...innerPanelProps[index]} h={viewPortHeight} />
 				)}
 			</Box>
 			<HStack justify="center" spacing={4}>

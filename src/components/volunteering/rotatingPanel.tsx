@@ -79,7 +79,11 @@ export default function VolunteerRotatingPanel(): JSX.Element {
 	return (
 		<Container>
 			<ContainerInside py={8}>
-				<RotatingPanel Element={Panel} innerPanelProps={teams} />
+				<RotatingPanel
+					Element={Panel}
+					innerPanelProps={teams}
+					viewPortHeight={null}
+				/>
 			</ContainerInside>
 		</Container>
 	);

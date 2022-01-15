@@ -1,4 +1,5 @@
 import {
+	Box,
 	Center,
 	HStack,
 	Icon,
@@ -6,19 +7,22 @@ import {
 	useControllableState,
 	VStack,
 } from "@chakra-ui/react";
+import { Token } from "@chakra-ui/styled-system/dist/declarations/src/utils";
+import * as CSS from "csstype";
 import { useEffect } from "react";
 import { FaArrowLeft, FaArrowRight, FaCircle } from "react-icons/fa";
 
 type RotatingPanelProps = StackProps & {
 	innerPanelProps: (Record<string, any> & { key: any })[];
 	Element: (r: Record<string, any>) => JSX.Element;
+	viewPortHeight: Token<CSS.Property.Height | number, "sizes">;
 };
 
-export default function RotatingPanel(props: RotatingPanelProps): JSX.Element {
-	const innerPanels = props.innerPanelProps.map((v) => {
-		return <props.Element {...v} />;
-	});
-
+export default function RotatingPanel({
+	innerPanelProps,
+	Element,
+	viewPortHeight,
+}: RotatingPanelProps): JSX.Element {
 	const [index, setIndex] = useControllableState({
 		defaultValue: 0,
 	});
@@ -26,7 +30,7 @@ export default function RotatingPanel(props: RotatingPanelProps): JSX.Element {
 
 	useEffect(() => {
 		prevInterval = setTimeout(() => {
-			setIndex(index === innerPanels.length - 1 ? 0 : index + 1);
+			setIndex(index === innerPanelProps.length - 1 ? 0 : index + 1);
 		}, 3333);
 		// console.log("initial value: ", prevInterval);
 
@@ -38,12 +42,27 @@ export default function RotatingPanel(props: RotatingPanelProps): JSX.Element {
 
 	return (
 		<VStack spacing={3}>
-			{innerPanels[index]}
+			{/* <Box h={viewPortHeight}>
+				{innerPanels.map((innerPanel, idx) =>
+					idx === index
+						? innerPanel
+						: cloneElement(innerPanel, { display: "none" })
+				)}
+			</Box> */}
+			{innerPanelProps.map(({ key, ...props }, idx) => (
+				<Box
+					h={viewPortHeight}
+					display={idx !== index && "none"}
+					key={key}
+				>
+					<Element {...props} />
+				</Box>
+			))}
 			<HStack spacing={4}>
 				<Center
 					onClick={() => {
 						setIndex(
-							index === 0 ? innerPanels.length - 1 : index - 1
+							index === 0 ? innerPanelProps.length - 1 : index - 1
 						);
 						// resetInterval();
 					}}
@@ -53,7 +72,7 @@ export default function RotatingPanel(props: RotatingPanelProps): JSX.Element {
 					<Icon as={FaArrowLeft} boxSize={5} />
 				</Center>
 				<Center flexWrap="wrap">
-					{props.innerPanelProps.map((props, idx: number) => {
+					{innerPanelProps.map((props, idx: number) => {
 						return (
 							<Center key={props.key} p={2}>
 								<Icon
@@ -78,7 +97,7 @@ export default function RotatingPanel(props: RotatingPanelProps): JSX.Element {
 				<Center
 					onClick={() => {
 						setIndex(
-							index === innerPanels.length - 1 ? 0 : index + 1
+							index === innerPanelProps.length - 1 ? 0 : index + 1
 						);
 						// resetInterval();
 					}}

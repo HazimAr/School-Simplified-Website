@@ -10,7 +10,7 @@ const clubs: ActivitySlideProps[] = [
 		clubName: "Coding Club",
 		key: "Coding Club",
 		clubDesc:
-			"In the Simplified Coding Club you’ll learn the basics of programming and how to apply your new skills in situations like contest programming, hackathons, and your own personal projects. Programming is an awesome skill to learn so we urge everyone of all skill levels to join! Not only will you be able to create projects relevant to what you want to do, but you can use them in real life as well.",
+			"In the Simplified Coding Club you'll learn the basics of programming and how to apply your new skills in situations like contest programming, hackathons, and your own personal projects. Programming is an awesome skill to learn so we urge everyone of all skill levels to join! Not only will you be able to create projects relevant to what you want to do, but you can use them in real life as well.",
 		src: "/clubs/coding.png",
 		link: "https://forms.gle/YUYZZrtFGzaCXDhNA",
 	},
@@ -81,16 +81,18 @@ const clubs: ActivitySlideProps[] = [
 ];
 
 export default function ActivitiesRotatingPanel(): JSX.Element {
-	return <RotatingPanel innerPanelProps={clubs} Element={Panel} />;
+	return (
+		<RotatingPanel
+			innerPanelProps={clubs}
+			Element={Panel}
+			viewPortHeight={{ base: 500, sm: 400, md: 350, lg: 400 }}
+		/>
+	);
 }
 
 function Panel(props: ActivitySlideProps): JSX.Element {
 	return (
-		<Flex
-			rounded={50}
-			overflow="hidden"
-			h={{ base: 500, sm: 400, md: 350, lg: 400 }}
-		>
+		<Flex rounded={50} overflow="hidden" h="100%">
 			<Box
 				backgroundImage={props.src}
 				backgroundSize="cover"

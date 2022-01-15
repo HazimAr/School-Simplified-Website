@@ -24,7 +24,7 @@ const reviews: Review[] = [
 		name: "Biscuit",
 		title: "Tutoring, Science",
 		key: "B",
-	},	
+	},
 	{
 		review: "I wanna thank all the math helpers honestly. You all are so unbelievably patient when it comes to helping with homework, and all my experiences with tutors were all extremely pleasant and helped me learn easily.",
 		name: "Gosu Ligaya",
@@ -32,13 +32,13 @@ const reviews: Review[] = [
 		key: "G",
 	},
 	{
-		review: "Our tutoring sessions have been very informative and fun, and they’ve really helped me understand certain topics which I was confused about prior.",
+		review: "Our tutoring sessions have been very informative and fun, and they've really helped me understand certain topics which I was confused about prior.",
 		name: "KakA",
 		title: "Tutoring",
 		key: "k",
 	},
 	{
-		review: "I’ve had multiple experiences with School Simplified on Discord, and it has been great so far! I love how kind people are and the dedication each person has to help you into succeeding in your assignments/homework! They help you understand and guide you along the way!",
+		review: "I've had multiple experiences with School Simplified on Discord, and it has been great so far! I love how kind people are and the dedication each person has to help you into succeeding in your assignments/homework! They help you understand and guide you along the way!",
 		name: "Shania",
 		title: "Homework Help",
 		key: "Shanty",
@@ -56,7 +56,7 @@ const reviews: Review[] = [
 		key: "C",
 	},
 	{
-		review: "I don’t have a specific person to thank and I rarely talk here but thank you for this whole community of helpful and welcoming people that even if a person is struggling on a specific subject, you go out of your way to help them when they are in need. Thanks to the helpers for being so awesome and being there when you need it. Thanks to the moderators for keeping the server in check and allowing no negativity in this wonderful and learning environment. Thank you so much you guys!!",
+		review: "I don't have a specific person to thank and I rarely talk here but thank you for this whole community of helpful and welcoming people that even if a person is struggling on a specific subject, you go out of your way to help them when they are in need. Thanks to the helpers for being so awesome and being there when you need it. Thanks to the moderators for keeping the server in check and allowing no negativity in this wonderful and learning environment. Thank you so much you guys!!",
 		name: "",
 		title: "Community",
 		key: "",
@@ -119,6 +119,13 @@ export default function Intro() {
 					<RotatingPanel
 						Element={Testimony}
 						innerPanelProps={reviews}
+						viewPortHeight={{
+							base: 550,
+							sm: 400,
+							md: 270,
+							lg: 220,
+							xl: 200,
+						}}
 					/>
 				</motion.div>
 			</ContainerInside>
@@ -136,7 +143,7 @@ function Testimony(props: Review): JSX.Element {
 				rounded={20}
 				bg="#FFFFFFC0"
 				justify="center"
-				h={{ base: 550, sm: 400, md: 270, lg: 220, xl: 200 }}
+				h="100%"
 			>
 				<Text color="#5A60AD">"{props.review}"</Text>
 				<Box alignSelf="flex-end" textAlign="right">

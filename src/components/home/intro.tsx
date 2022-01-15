@@ -59,7 +59,7 @@ export default function Intro() {
 					<motion.div
 						initial="initial"
 						whileInView="onView"
-						variants={slideInUp({ amount: 50, delay: 0.25 })}
+						variants={slideInUp({ amount: 50, delay: 0.27 })}
 					>
 						<VStack>
 							<Heading fontSize={25}>
@@ -77,7 +77,7 @@ export default function Intro() {
 					<motion.div
 						initial="initial"
 						whileInView="onView"
-						variants={slideInUp({ amount: 50, delay: 0.3 })}
+						variants={slideInUp({ amount: 50, delay: 0.35 })}
 					>
 						<VStack>
 							<Heading fontSize={25}>
@@ -89,7 +89,7 @@ export default function Intro() {
 					<motion.div
 						initial="initial"
 						whileInView="onView"
-						variants={slideInUp({ amount: 50, delay: 0.35 })}
+						variants={slideInUp({ amount: 50, delay: 0.42 })}
 					>
 						<VStack>
 							<Heading fontSize={25}>
@@ -107,7 +107,7 @@ export default function Intro() {
 					<motion.div
 						initial="initial"
 						whileInView="onView"
-						variants={slideInUp({ amount: 50, delay: 0.4 })}
+						variants={slideInUp({ amount: 50, delay: 0.5 })}
 					>
 						<VStack>
 							<Heading fontSize={25}>

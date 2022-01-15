@@ -1,49 +1,76 @@
 import {
 	Box,
 	Center,
-	CollapseProps,
-	FadeProps,
 	HStack,
 	Icon,
-	ScaleFadeProps,
-	SlideFadeProps,
-	SlideProps,
 	StackProps,
 	VStack,
 } from "@chakra-ui/react";
 import { Token } from "@chakra-ui/styled-system/dist/declarations/src/utils";
 import * as CSS from "csstype";
-import { useState } from "react";
-import { useEffect, useReducer } from "react";
+import { AnimatePresence, motion, Variant } from "framer-motion";
+import { useEffect, useReducer, useState } from "react";
 import { FaArrowLeft, FaArrowRight, FaCircle } from "react-icons/fa";
 
 type RotatingPanelProps = StackProps & {
 	innerPanelProps: (Record<string, any> & { key: any })[];
 	Element: (r: Record<string, any>) => JSX.Element;
 	viewPortHeight: Token<CSS.Property.Height | number, "sizes">;
-	AnimationElement?: (r: Record<string, any>) => JSX.Element;
-	animationProps?:
-		| FadeProps
-		| ScaleFadeProps
-		| SlideProps
-		| SlideFadeProps
-		| CollapseProps;
+	animationType?: AnimationVariantName | AnimationVariant;
+	// animationProps?: Record<string, any>;
 };
+
+type AnimationVariantName = "slide";
+type AnimationVariant = {
+	enter: Variant;
+	center: Variant;
+	exit: Variant;
+};
+
+function getVariant(
+	variant: AnimationVariantName | AnimationVariant
+): AnimationVariant {
+	// const duration = "1s";
+	switch (variant) {
+		case "slide":
+			return {
+				enter: (direction: boolean) => ({
+					x: direction ? -1000 : 1000,
+					opacity: 0,
+				}),
+				center: {
+					zIndex: 1,
+					x: 0,
+					opacity: 1,
+				},
+				exit: (direction: boolean) => ({
+					position: "absolute",
+					zIndex: 0,
+					x: direction ? 1000 : -1000,
+					opacity: 0,
+				}),
+			};
+	}
+
+	// not valid name, just return itself
+	return variant;
+}
 
 export default function RotatingPanel({
 	innerPanelProps,
 	Element,
 	viewPortHeight,
-	AnimationElement,
-	animationProps = {},
+	animationType,
 	...props
 }: RotatingPanelProps): JSX.Element {
+	const variant: AnimationVariant = getVariant(animationType);
+
 	// keeps track of which direction the rotating panel is rotating
 	// true = to the right, false = to the left
-	const [_direction, setDirection] = useState(true);
+	const [direction, setDirection] = useState(true);
 	const [index, setIndex] = useReducer(
 		(oldIndex: number, newIndex: number) => {
-			console.log("from", oldIndex, "to", newIndex);
+			// console.log("from", oldIndex, "to", newIndex);
 
 			// // determine order of movement (less to more or more to less)
 			// const isLess = newIndex < oldIndex;
@@ -67,8 +94,9 @@ export default function RotatingPanel({
 				newIndex < oldIndex
 					? innerPanelProps.length <= 2 * oldIndex - 2 * newIndex
 					: innerPanelProps.length > 2 * newIndex - 2 * oldIndex;
-			console.log("direction:", direction);
+			// console.log("direction:", direction);
 			setDirection(direction);
+			// controls.start(direction ? "enterLeft" : "enterRight");
 
 			return newIndex;
 		},
@@ -79,7 +107,7 @@ export default function RotatingPanel({
 		let prevInterval: NodeJS.Timer;
 		prevInterval = setTimeout(() => {
 			setIndex(index === innerPanelProps.length - 1 ? 0 : index + 1);
-		}, 3333);
+		}, 20000);
 		// console.log("initial value: ", prevInterval);
 
 		return () => {
@@ -91,19 +119,31 @@ export default function RotatingPanel({
 	return (
 		<VStack spacing={3} align="stretch" {...props}>
 			<Box h={viewPortHeight} position="relative">
-				{innerPanelProps.map(({ key, ...props }, idx) =>
-					AnimationElement ? (
-						<Box key={key} position="absolute">
-							<AnimationElement
-								in={idx === index}
-								{...animationProps}
-							>
-								<Box h={viewPortHeight}>
-									<Element {...props} h="100%" />
-								</Box>
-							</AnimationElement>
-						</Box>
-					) : (
+				{animationType ? (
+					<AnimatePresence initial={false} custom={direction}>
+						<motion.div
+							key={innerPanelProps[index].key}
+							custom={direction}
+							variants={variant}
+							initial="enter"
+							animate="center"
+							exit="exit"
+							transition={{
+								x: {
+									type: "spring",
+									stiffness: 300,
+									damping: 30,
+								},
+								opacity: { duration: 0.2 },
+							}}
+						>
+							<Box h={viewPortHeight}>
+								<Element {...innerPanelProps[index]} h="100%" />
+							</Box>
+						</motion.div>
+					</AnimatePresence>
+				) : (
+					innerPanelProps.map(({ key, ...props }, idx) => (
 						<Box
 							h={viewPortHeight}
 							display={idx !== index && "none"}
@@ -112,7 +152,7 @@ export default function RotatingPanel({
 						>
 							<Element {...props} h="100%" />
 						</Box>
-					)
+					))
 				)}
 			</Box>
 			<HStack justify="center" spacing={4}>

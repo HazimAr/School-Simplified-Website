@@ -33,9 +33,11 @@ type AnimationData = {
 
 function getVariant(variant: AnimationType | AnimationData): AnimationData {
 	// const duration = "1s";
+	let animation: RotatingAnimation;
+	let transition: Transition;
 	switch (variant) {
 		case "slide":
-			let animation: RotatingAnimation = {
+			animation = {
 				enter: (direction: boolean) => ({
 					x: direction ? -1000 : 1000,
 					opacity: 0,
@@ -52,7 +54,7 @@ function getVariant(variant: AnimationType | AnimationData): AnimationData {
 					opacity: 0,
 				}),
 			};
-			let transition: Transition = {
+			transition = {
 				x: {
 					type: "spring",
 					stiffness: 300,

@@ -1,4 +1,4 @@
-import { Box, Divider, Flex, Heading, ScaleFade, Text } from "@chakra-ui/react";
+import { Box, Divider, Flex, Heading, Text, FlexProps } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import RotatingPanel from "@components/rotatingPanel";
@@ -10,7 +10,7 @@ type Review = {
 	name: string;
 	title: string;
 	key: string;
-};
+} & FlexProps;
 
 const reviews: Review[] = [
 	{
@@ -133,26 +133,26 @@ export default function Intro() {
 	);
 }
 
-function Testimony(props: Review): JSX.Element {
+function Testimony({review, name, title, ...props}: Review): JSX.Element {
 	return (
-		<ScaleFade in={true} unmountOnExit={false}>
-			<Flex
-				flexDir="column"
-				px={9}
-				py={5}
-				rounded={20}
-				bg="#FFFFFFC0"
-				justify="center"
-				h="100%"
-			>
-				<Text color="#5A60AD">"{props.review}"</Text>
-				<Box alignSelf="flex-end" textAlign="right">
-					<Heading as="h1" size="md" mt={4} color="#5A60AD">
-						{props.name}
-					</Heading>
-					<Text color="#5A60AD">{props.title}</Text>
-				</Box>
-			</Flex>
-		</ScaleFade>
+		// <ScaleFade in={true} unmountOnExit={false}>
+		<Flex
+			flexDir="column"
+			px={9}
+			py={5}
+			rounded={20}
+			bg="#FFFFFFC0"
+			justify="center"
+			{...props}
+		>
+			<Text color="#5A60AD">"{review}"</Text>
+			<Box alignSelf="flex-end" textAlign="right">
+				<Heading as="h1" size="md" mt={4} color="#5A60AD">
+					{name}
+				</Heading>
+				<Text color="#5A60AD">{title}</Text>
+			</Box>
+		</Flex>
+		// </ScaleFade>
 	);
 }

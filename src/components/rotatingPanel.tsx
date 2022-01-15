@@ -1,8 +1,12 @@
 import {
 	Box,
 	Center,
+	FadeProps,
 	HStack,
 	Icon,
+	ScaleFadeProps,
+	SlideFadeProps,
+	SlideProps,
 	StackProps,
 	useControllableState,
 	VStack,
@@ -16,12 +20,16 @@ type RotatingPanelProps = StackProps & {
 	innerPanelProps: (Record<string, any> & { key: any })[];
 	Element: (r: Record<string, any>) => JSX.Element;
 	viewPortHeight: Token<CSS.Property.Height | number, "sizes">;
+	AnimationElement?: (r: Record<string, any>) => JSX.Element;
+	animationProps?: FadeProps | ScaleFadeProps | SlideProps | SlideFadeProps;
 };
 
 export default function RotatingPanel({
 	innerPanelProps,
 	Element,
 	viewPortHeight,
+	AnimationElement,
+	animationProps = {},
 	...props
 }: RotatingPanelProps): JSX.Element {
 	const [index, setIndex] = useControllableState({
@@ -44,15 +52,26 @@ export default function RotatingPanel({
 	return (
 		<VStack spacing={3} {...props}>
 			<Box>
-				{innerPanelProps.map(({ key, ...props }, idx) => (
-					<Box
-						h={viewPortHeight}
-						display={idx !== index && "none"}
-						key={key}
-					>
-						<Element {...props} />
-					</Box>
-				))}
+				{innerPanelProps.map(({ key, ...props }, idx) =>
+					AnimationElement ? (
+						<AnimationElement
+							in={idx === index}
+							{...animationProps}
+						>
+							<Box h={viewPortHeight} key={key}>
+								<Element {...props} h="100%" />
+							</Box>
+						</AnimationElement>
+					) : (
+						<Box
+							h={viewPortHeight}
+							display={idx !== index && "none"}
+							key={key}
+						>
+							<Element {...props} h="100%" />
+						</Box>
+					)
+				)}
 			</Box>
 			<HStack spacing={4}>
 				<Center

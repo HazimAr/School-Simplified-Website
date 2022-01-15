@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { Token } from "@chakra-ui/styled-system/dist/declarations/src/utils";
 import * as CSS from "csstype";
-import { AnimatePresence, motion, Variant } from "framer-motion";
+import { AnimatePresence, motion, Transition, Variant } from "framer-motion";
 import { useEffect, useReducer, useState } from "react";
 import { FaArrowLeft, FaArrowRight, FaCircle } from "react-icons/fa";
 
@@ -16,24 +16,26 @@ type RotatingPanelProps = StackProps & {
 	innerPanelProps: (Record<string, any> & { key: any })[];
 	Element: (r: Record<string, any>) => JSX.Element;
 	viewPortHeight: Token<CSS.Property.Height | number, "sizes">;
-	animationType?: AnimationVariantName | AnimationVariant;
+	animationType?: AnimationType | AnimationData;
 	// animationProps?: Record<string, any>;
 };
 
-type AnimationVariantName = "slide";
-type AnimationVariant = {
+type AnimationType = "slide";
+type RotatingAnimation = {
 	enter: Variant;
 	center: Variant;
 	exit: Variant;
 };
+type AnimationData = {
+	animation: RotatingAnimation;
+	transition: Transition;
+};
 
-function getVariant(
-	variant: AnimationVariantName | AnimationVariant
-): AnimationVariant {
+function getVariant(variant: AnimationType | AnimationData): AnimationData {
 	// const duration = "1s";
 	switch (variant) {
 		case "slide":
-			return {
+			const animation: RotatingAnimation = {
 				enter: (direction: boolean) => ({
 					x: direction ? -1000 : 1000,
 					opacity: 0,
@@ -50,6 +52,15 @@ function getVariant(
 					opacity: 0,
 				}),
 			};
+			const transition: Transition = {
+				x: {
+					type: "spring",
+					stiffness: 300,
+					damping: 30,
+				},
+				opacity: { duration: 0.2 },
+			};
+			return { animation, transition };
 	}
 
 	// not valid name, just return itself
@@ -63,7 +74,7 @@ export default function RotatingPanel({
 	animationType,
 	...props
 }: RotatingPanelProps): JSX.Element {
-	const variant: AnimationVariant = getVariant(animationType);
+	const variant: AnimationData = getVariant(animationType);
 
 	// keeps track of which direction the rotating panel is rotating
 	// true = to the right, false = to the left
@@ -105,9 +116,11 @@ export default function RotatingPanel({
 
 	useEffect(() => {
 		let prevInterval: NodeJS.Timer;
-		prevInterval = setTimeout(() => {
-			setIndex(index === innerPanelProps.length - 1 ? 0 : index + 1);
-		}, 20000);
+		prevInterval = setTimeout(
+			() =>
+				setIndex(index === innerPanelProps.length - 1 ? 0 : index + 1),
+			3333
+		);
 		// console.log("initial value: ", prevInterval);
 
 		return () => {
@@ -124,18 +137,11 @@ export default function RotatingPanel({
 						<motion.div
 							key={innerPanelProps[index].key}
 							custom={direction}
-							variants={variant}
+							variants={variant.animation}
 							initial="enter"
 							animate="center"
 							exit="exit"
-							transition={{
-								x: {
-									type: "spring",
-									stiffness: 300,
-									damping: 30,
-								},
-								opacity: { duration: 0.2 },
-							}}
+							transition={variant.transition}
 						>
 							<Box h={viewPortHeight}>
 								<Element {...innerPanelProps[index]} h="100%" />
@@ -157,12 +163,11 @@ export default function RotatingPanel({
 			</Box>
 			<HStack justify="center" spacing={4}>
 				<Center
-					onClick={() => {
+					onClick={() =>
 						setIndex(
 							index === 0 ? innerPanelProps.length - 1 : index - 1
-						);
-						// resetInterval();
-					}}
+						)
+					}
 					w="fit-content"
 					cursor="pointer"
 				>

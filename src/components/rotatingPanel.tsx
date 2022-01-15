@@ -20,7 +20,7 @@ type RotatingPanelProps = StackProps & {
 	// animationProps?: Record<string, any>;
 };
 
-type AnimationType = "slide" | "fade";
+type AnimationType = "slide" | "fade" | "carousel";
 type RotatingAnimation = {
 	enter: Variant;
 	center: Variant;
@@ -66,6 +66,31 @@ function getVariant(variant: AnimationType | AnimationData): AnimationData {
 				enter: { opacity: 0 },
 				center: { opacity: 1, zIndex: 1 },
 				exit: { opacity: 0, zIndex: 0, position: "absolute" },
+			};
+			transition = {
+				opacity: { duration: 0.2 },
+			};
+			return { animation, transition };
+		case "carousel":
+			animation = {
+				enter: (direction) => ({
+					opacity: 0,
+					x: direction ? "-50%" : "50%",
+					scale: 0.2,
+				}),
+				center: {
+					opacity: 1,
+					x: 0,
+					scale: 1,
+					zIndex: 1,
+				},
+				exit: (direction) => ({
+					position: "absolute",
+					opacity: 0,
+					x: direction ? "50%" : "-50%",
+					scale: 0.2,
+					zIndex: 0,
+				}),
 			};
 			transition = {
 				opacity: { duration: 0.2 },

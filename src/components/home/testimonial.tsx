@@ -126,11 +126,7 @@ export default function Intro() {
 							lg: 220,
 							xl: 200,
 						}}
-						animationType="slide"
-						// AnimationElement={Fade}
-						// animationProps={{
-						// 	unmountOnExit: false,
-						// }}
+						animationType="carousel"
 					/>
 				</motion.div>
 			</ContainerInside>
@@ -140,7 +136,6 @@ export default function Intro() {
 
 function Testimony({ review, name, title, ...props }: Review): JSX.Element {
 	return (
-		// <ScaleFade in={true} unmountOnExit={false}>
 		<Flex
 			flexDir="column"
 			px={9}
@@ -158,6 +153,5 @@ function Testimony({ review, name, title, ...props }: Review): JSX.Element {
 				<Text color="#5A60AD">{title}</Text>
 			</Box>
 		</Flex>
-		// </ScaleFade>
 	);
 }

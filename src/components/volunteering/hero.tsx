@@ -1,5 +1,7 @@
 import { Heading, HStack, Icon, Image, Link, VStack } from "@chakra-ui/react";
-import fetchIcon from "util/react_icon_fetcher";
+import { FaDiscord } from "react-icons/fa";
+import { ImFacebook2 } from "react-icons/im";
+import { SiInstagram, SiLinkedin, SiTiktok, SiTwitter } from "react-icons/si";
 
 export default function Hero({ heading }) {
 	return (
@@ -23,33 +25,33 @@ export default function Hero({ heading }) {
 					href="https://www.instagram.com/schoolsimplified/"
 					isExternal
 				>
-					<Icon as={fetchIcon("SiInstagram")} boxSize="25px" />
+					<Icon as={SiInstagram} boxSize="25px" />
 				</Link>
 
 				<Link
 					href="https://www.tiktok.com/@schoolsimplified?"
 					isExternal
 				>
-					<Icon as={fetchIcon("SiTiktok")} boxSize="25px" />
+					<Icon as={SiTiktok} boxSize="25px" />
 				</Link>
 
 				<Link href="https://discord.com/invite/school" isExternal>
-					<Icon as={fetchIcon("FaDiscord")} boxSize="29px" mt="3px" />
+					<Icon as={FaDiscord} boxSize="29px" mt="3px" />
 				</Link>
 
 				<Link
 					href="https://www.linkedin.com/company/school-simplified"
 					isExternal
 				>
-					<Icon as={fetchIcon("SiLinkedin")} boxSize="28px" />
+					<Icon as={SiLinkedin} boxSize="28px" />
 				</Link>
 
 				<Link href="https://twitter.com/schoolsimplify" isExternal>
-					<Icon as={fetchIcon("SiTwitter")} boxSize="25px" />
+					<Icon as={SiTwitter} boxSize="25px" />
 				</Link>
 
 				<Link href="https://www.facebook.com/SchoolSimple/" isExternal>
-					<Icon as={fetchIcon("ImFacebook2")} boxSize="25px" />
+					<Icon as={ImFacebook2} boxSize="25px" />
 				</Link>
 			</HStack>
 		</VStack>

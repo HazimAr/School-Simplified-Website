@@ -43,7 +43,7 @@ const iconList: Record<string, IconType>[] = [
 	CgIcons,
 ];
 
-export default function fetchIcon(iconName: string) {
+export default function fetchIcon(iconName: string): IconType {
 	for (const iconCollection of iconList) {
 		const temp = iconCollection[iconName];
 		if (temp) return temp;

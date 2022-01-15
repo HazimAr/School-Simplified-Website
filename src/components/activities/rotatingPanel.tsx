@@ -86,7 +86,7 @@ export default function ActivitiesRotatingPanel(): JSX.Element {
 			innerPanelProps={clubs}
 			Element={Panel}
 			viewPortHeight={{ base: 500, sm: 400, md: 350, lg: 400 }}
-			animationType="fade"
+			// animationType="fade"
 		/>
 	);
 }

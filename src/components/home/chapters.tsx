@@ -5,10 +5,15 @@ import ContainerInside from "@components/containerInside";
 import NextChakraLink from "@components/nextChakra";
 import { slideInLeft, slideInRight } from "@styles/animations";
 import { motion } from "framer-motion";
+import { MotionDiv } from ".";
 
 export default function Chapters(): JSX.Element {
 	return (
-		<Container bg="linear-gradient(180deg, rgba(90, 104, 221, 0.7) 0%, rgba(132, 143, 255, 0.7) 100%)">
+		<Container
+			bg="linear-gradient(180deg, rgba(90, 104, 221, 0.7) 0%, rgba(132, 143, 255, 0.7) 100%)"
+			position="relative"
+			overflow="hidden"
+		>
 			<ContainerInside textAlign="left">
 				<Flex flexDir="column" my={16}>
 					<motion.div
@@ -37,7 +42,7 @@ export default function Chapters(): JSX.Element {
 							alt="A map representing the presence of School Simplified around the United States"
 							alignSelf="center"
 						/>
-						<motion.div
+						<MotionDiv
 							initial="initial"
 							whileInView="onView"
 							variants={slideInRight()}
@@ -64,7 +69,7 @@ export default function Chapters(): JSX.Element {
 									</Button>
 								</NextChakraLink>
 							</VStack>
-						</motion.div>
+						</MotionDiv>
 					</Stack>
 				</Flex>
 			</ContainerInside>

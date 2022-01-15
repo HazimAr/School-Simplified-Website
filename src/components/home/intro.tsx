@@ -2,8 +2,8 @@ import { Center, Heading, Spacer, Stack, Text, VStack } from "@chakra-ui/react";
 import ContainerBackground from "@components/containerBackground";
 import ContainerInside from "@components/containerInside";
 import CountUp from "react-countup";
-import { motion } from "framer-motion";
 import { slideInUp } from "@styles/animations";
+import { motion } from "framer-motion";
 
 export default function Intro() {
 	return (

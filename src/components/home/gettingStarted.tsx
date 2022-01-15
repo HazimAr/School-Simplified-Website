@@ -1,4 +1,4 @@
-import { Heading, Stack, SimpleGrid, Text, VStack } from "@chakra-ui/react";
+import { Heading, SimpleGrid, Stack, Text, VStack } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -27,17 +27,15 @@ export default function GettingStarted() {
 							<Heading size="lg">Getting Started</Heading>
 							<Text>
 								School Simplified is a 501(c)3 nonprofit
-								organization dedicated to learning done 
-								equally, fairly and	with meaning.
+								organization dedicated to learning done equally,
+								fairly and with meaning.
 							</Text>
 							<SimpleGrid
 								columns={{ base: 1, md: 2 }}
 								spacingX={8}
 								spacingY={4}
 							>
-								<NextChakraLink 
-									href="/#acad" 
-									display="block">
+								<NextChakraLink href="/#acad" display="block">
 									<Button
 										timmysrc="/timmy/3.png"
 										w="100%"
@@ -58,9 +56,10 @@ export default function GettingStarted() {
 										Community
 									</Button>
 								</NextChakraLink>
-								<NextChakraLink 
-									href="/volunteer" 
-									display="block">
+								<NextChakraLink
+									href="/volunteer"
+									display="block"
+								>
 									<Button
 										timmysrc="/timmy/timmy_flying_icon.png"
 										w="100%"
@@ -69,10 +68,7 @@ export default function GettingStarted() {
 										Volunteer
 									</Button>
 								</NextChakraLink>
-								<NextChakraLink
-									href="/faq"
-									display="block"
-								>
+								<NextChakraLink href="/faq" display="block">
 									<Button
 										timmysrc="/timmy/1.png"
 										w="100%"
@@ -96,3 +92,17 @@ export default function GettingStarted() {
 		</Container>
 	);
 }
+
+// function MotionImg({ src, alt, ...props }) {
+// 	return (
+// 		<SimpleGrid position="relative">
+// 			<Image src={src} alt={alt} opacity={0} zIndex={-1} />
+// 			<motion.img
+// 				src={src}
+// 				alt={alt}
+// 				{...props}
+// 				style={{ position: "absolute", gridColumn: 1, gridRow: 1 }}
+// 			/>
+// 		</SimpleGrid>
+// 	);
+// }

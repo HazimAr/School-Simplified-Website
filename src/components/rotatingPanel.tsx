@@ -22,13 +22,14 @@ export default function RotatingPanel({
 	innerPanelProps,
 	Element,
 	viewPortHeight,
+	...props
 }: RotatingPanelProps): JSX.Element {
 	const [index, setIndex] = useControllableState({
 		defaultValue: 0,
 	});
-	let prevInterval: NodeJS.Timer;
 
 	useEffect(() => {
+		let prevInterval: NodeJS.Timer;
 		prevInterval = setTimeout(() => {
 			setIndex(index === innerPanelProps.length - 1 ? 0 : index + 1);
 		}, 3333);
@@ -41,23 +42,18 @@ export default function RotatingPanel({
 	}, [index]);
 
 	return (
-		<VStack spacing={3}>
-			{/* <Box h={viewPortHeight}>
-				{innerPanels.map((innerPanel, idx) =>
-					idx === index
-						? innerPanel
-						: cloneElement(innerPanel, { display: "none" })
-				)}
-			</Box> */}
-			{innerPanelProps.map(({ key, ...props }, idx) => (
-				<Box
-					h={viewPortHeight}
-					display={idx !== index && "none"}
-					key={key}
-				>
-					<Element {...props} />
-				</Box>
-			))}
+		<VStack spacing={3} {...props}>
+			<Box>
+				{innerPanelProps.map(({ key, ...props }, idx) => (
+					<Box
+						h={viewPortHeight}
+						display={idx !== index && "none"}
+						key={key}
+					>
+						<Element {...props} />
+					</Box>
+				))}
+			</Box>
 			<HStack spacing={4}>
 				<Center
 					onClick={() => {

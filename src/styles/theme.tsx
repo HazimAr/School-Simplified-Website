@@ -64,6 +64,7 @@ const theme = extendTheme({
 				color: "white",
 				position: "relative",
 				overflowX: "hidden",
+				// width: "100%",
 			},
 			ul: {
 				listStyle: "none",

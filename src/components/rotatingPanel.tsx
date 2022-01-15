@@ -77,7 +77,7 @@ function getVariant(variant: AnimationType | AnimationData): AnimationData {
 			animation = {
 				enter: (direction) => ({
 					opacity: 0,
-					x: direction ? "-50%" : "50%",
+					x: direction ? "-40%" : "40%",
 					scale: 0.2,
 				}),
 				center: {
@@ -89,7 +89,7 @@ function getVariant(variant: AnimationType | AnimationData): AnimationData {
 				exit: (direction) => ({
 					position: "absolute",
 					opacity: 0,
-					x: direction ? "50%" : "-50%",
+					x: direction ? "40%" : "-40%",
 					scale: 0.2,
 					zIndex: 0,
 				}),

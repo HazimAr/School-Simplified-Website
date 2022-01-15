@@ -13,6 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { Token } from "@chakra-ui/styled-system/dist/declarations/src/utils";
 import * as CSS from "csstype";
+import { useState } from "react";
 import { useEffect, useReducer } from "react";
 import { FaArrowLeft, FaArrowRight, FaCircle } from "react-icons/fa";
 
@@ -37,6 +38,9 @@ export default function RotatingPanel({
 	animationProps = {},
 	...props
 }: RotatingPanelProps): JSX.Element {
+	// keeps track of which direction the rotating panel is rotating
+	// true = to the right, false = to the left
+	const [_direction, setDirection] = useState(true);
 	const [index, setIndex] = useReducer(
 		(oldIndex: number, newIndex: number) => {
 			console.log("from", oldIndex, "to", newIndex);
@@ -64,6 +68,7 @@ export default function RotatingPanel({
 					? innerPanelProps.length <= 2 * oldIndex - 2 * newIndex
 					: innerPanelProps.length > 2 * newIndex - 2 * oldIndex;
 			console.log("direction:", direction);
+			setDirection(direction);
 
 			return newIndex;
 		},

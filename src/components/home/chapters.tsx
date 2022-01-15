@@ -3,7 +3,7 @@ import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextChakraLink from "@components/nextChakra";
-import { slideInLeft, slideInUp } from "@styles/animations";
+import { slideInLeft, slideInRight } from "@styles/animations";
 import { motion } from "framer-motion";
 
 export default function Chapters(): JSX.Element {
@@ -25,22 +25,23 @@ export default function Chapters(): JSX.Element {
 							</NextChakraLink>
 						</Heading>
 					</motion.div>
-					<motion.div
-						initial="initial"
-						whileInView="onView"
-						variants={slideInUp()}
+
+					<Stack
+						direction={{ base: "column", lg: "row" }}
+						mt={6}
+						spacing={10}
+						align="flex-start"
 					>
-						<Stack
-							direction={{ base: "column", lg: "row" }}
-							mt={6}
-							spacing={10}
-							align="flex-start"
+						<Image
+							src="/map.png"
+							alt="A map representing the presence of School Simplified around the United States"
+							alignSelf="center"
+						/>
+						<motion.div
+							initial="initial"
+							whileInView="onView"
+							variants={slideInRight()}
 						>
-							<Image
-								src="/map.png"
-								alt="A map representing the presence of School Simplified around the United States"
-								alignSelf="center"
-							/>
 							<VStack spacing={7} align="flex-start">
 								<Text>
 									Motivated students from around the world are
@@ -54,14 +55,17 @@ export default function Chapters(): JSX.Element {
 									chapter is free to focus on one or more
 									areas of interest.
 								</Text>
-								<NextChakraLink href="https://docs.google.com/forms/d/e/1FAIpQLSfs8_MYtRqA2vq5X5hm9hu-QjLb7PczSJ6wCBTz6vuXOkVKjg/closedform" isExternal> 
+								<NextChakraLink
+									href="https://docs.google.com/forms/d/e/1FAIpQLSfs8_MYtRqA2vq5X5hm9hu-QjLb7PczSJ6wCBTz6vuXOkVKjg/closedform"
+									isExternal
+								>
 									<Button timmysrc="/timmy/timmy_globe_icon.png">
 										Apply Now
 									</Button>
 								</NextChakraLink>
 							</VStack>
-						</Stack>
-					</motion.div>
+						</motion.div>
+					</Stack>
 				</Flex>
 			</ContainerInside>
 		</Container>

@@ -10,7 +10,7 @@ function slideFade({ delay = 0.1, x = 0, y = 0 } = {}) {
 			x: 0,
 			y: 0,
 			transition: {
-				duration: 0.75,
+				duration: 0.5,
 				delay,
 			},
 		},
@@ -35,7 +35,7 @@ function widthIn({ delay = 0.1 } = {}) {
 		onView: {
 			width: "100%",
 			transition: {
-				duration: 0.75,
+				duration: 0.5,
 				delay,
 			},
 		},

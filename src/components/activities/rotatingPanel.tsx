@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, ScaleFade, Text, VStack } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text, VStack } from "@chakra-ui/react";
 import Button from "@components/button";
 import NextLink from "@components/nextChakra";
 import RotatingPanel from "@components/rotatingPanel";
@@ -10,7 +10,7 @@ const clubs: ActivitySlideProps[] = [
 		clubName: "Coding Club",
 		key: "Coding Club",
 		clubDesc:
-			"In the Simplified Coding Club you’ll learn the basics of programming and how to apply your new skills in situations like contest programming, hackathons, and your own personal projects. Programming is an awesome skill to learn so we urge everyone of all skill levels to join! Not only will you be able to create projects relevant to what you want to do, but you can use them in real life as well.",
+			"In the Simplified Coding Club you'll learn the basics of programming and how to apply your new skills in situations like contest programming, hackathons, and your own personal projects. Programming is an awesome skill to learn so we urge everyone of all skill levels to join! Not only will you be able to create projects relevant to what you want to do, but you can use them in real life as well.",
 		src: "/clubs/coding.png",
 		link: "https://forms.gle/YUYZZrtFGzaCXDhNA",
 	},
@@ -81,55 +81,54 @@ const clubs: ActivitySlideProps[] = [
 ];
 
 export default function ActivitiesRotatingPanel(): JSX.Element {
-	return <RotatingPanel innerPanelProps={clubs} Element={Panel} />;
+	return (
+		<RotatingPanel
+			innerPanelProps={clubs}
+			Element={Panel}
+			viewPortHeight={{ base: 500, sm: 400, md: 350, lg: 400 }}
+		/>
+	);
 }
 
-function Panel(props: ActivitySlideProps): JSX.Element {
+function Panel({
+	clubName,
+	clubDesc,
+	src,
+	link,
+	...props
+}: ActivitySlideProps): JSX.Element {
 	return (
-		<ScaleFade in={true} unmountOnExit={false}>
-			<Flex
-				rounded={50}
-				overflow="hidden"
-				h={{ base: 500, sm: 400, md: 350, lg: 400 }}
+		<Flex rounded={50} overflow="hidden" {...props}>
+			<Box
+				backgroundImage={src}
+				backgroundSize="cover"
+				backgroundPosition="center"
+				backgroundRepeat="no-repeat"
+				flex={1}
+				display={{ base: "none", lg: "block" }}
+			/>
+			{/* <Image src={src} alt={clubName + " team logo"} w="100%" /> */}
+			<VStack
+				justify="center"
+				align={{ base: "center", lg: "flex-start" }}
+				bg="#5E65B7"
+				py={5}
+				pl={{ base: 5, lg: 10 }}
+				pr={5}
+				flex={1}
+				spacing={5}
 			>
-				<Box
-					backgroundImage={props.src}
-					backgroundSize="cover"
-					backgroundPosition="center"
-					backgroundRepeat="no-repeat"
-					flex={1}
-					display={{ base: "none", lg: "block" }}
-				/>
-				{/* <Image src={src} alt={clubName + " team logo"} w="100%" /> */}
-				<VStack
-					justify="center"
-					align={{ base: "center", lg: "flex-start" }}
-					bg="#5E65B7"
-					py={5}
-					pl={{ base: 5, lg: 10 }}
-					pr={5}
-					flex={1}
-					spacing={5}
-				>
-					<Heading
-						size="xl"
-						textAlign={{ base: "center", lg: "left" }}
-					>
-						{props.clubName}
-					</Heading>
-					<Text textAlign="left">{props.clubDesc}</Text>
+				<Heading size="xl" textAlign={{ base: "center", lg: "left" }}>
+					{clubName}
+				</Heading>
+				<Text textAlign="left">{clubDesc}</Text>
 
-					<NextLink
-						isExternal
-						href={props.link}
-						_hover={{ textDecoration: "none" }}
-					>
-						<Button timmysrc="/timmy/tim_transparent_sporty.png">
-							Join Club
-						</Button>
-					</NextLink>
-				</VStack>
-			</Flex>
-		</ScaleFade>
+				<NextLink isExternal href={link}>
+					<Button timmysrc="/timmy/tim_transparent_sporty.png">
+						Join Club
+					</Button>
+				</NextLink>
+			</VStack>
+		</Flex>
 	);
 }

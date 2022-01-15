@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, ScaleFade, Text, VStack } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text, VStack } from "@chakra-ui/react";
 import Button from "@components/button";
 import NextLink from "@components/nextChakra";
 import RotatingPanel from "@components/rotatingPanel";
@@ -86,50 +86,41 @@ export default function ActivitiesRotatingPanel(): JSX.Element {
 
 function Panel(props: ActivitySlideProps): JSX.Element {
 	return (
-		<ScaleFade in={true} unmountOnExit={false}>
-			<Flex
-				rounded={50}
-				overflow="hidden"
-				h={{ base: 500, sm: 400, md: 350, lg: 400 }}
+		<Flex
+			rounded={50}
+			overflow="hidden"
+			h={{ base: 500, sm: 400, md: 350, lg: 400 }}
+		>
+			<Box
+				backgroundImage={props.src}
+				backgroundSize="cover"
+				backgroundPosition="center"
+				backgroundRepeat="no-repeat"
+				flex={1}
+				display={{ base: "none", lg: "block" }}
+			/>
+			{/* <Image src={src} alt={clubName + " team logo"} w="100%" /> */}
+			<VStack
+				justify="center"
+				align={{ base: "center", lg: "flex-start" }}
+				bg="#5E65B7"
+				py={5}
+				pl={{ base: 5, lg: 10 }}
+				pr={5}
+				flex={1}
+				spacing={5}
 			>
-				<Box
-					backgroundImage={props.src}
-					backgroundSize="cover"
-					backgroundPosition="center"
-					backgroundRepeat="no-repeat"
-					flex={1}
-					display={{ base: "none", lg: "block" }}
-				/>
-				{/* <Image src={src} alt={clubName + " team logo"} w="100%" /> */}
-				<VStack
-					justify="center"
-					align={{ base: "center", lg: "flex-start" }}
-					bg="#5E65B7"
-					py={5}
-					pl={{ base: 5, lg: 10 }}
-					pr={5}
-					flex={1}
-					spacing={5}
-				>
-					<Heading
-						size="xl"
-						textAlign={{ base: "center", lg: "left" }}
-					>
-						{props.clubName}
-					</Heading>
-					<Text textAlign="left">{props.clubDesc}</Text>
+				<Heading size="xl" textAlign={{ base: "center", lg: "left" }}>
+					{props.clubName}
+				</Heading>
+				<Text textAlign="left">{props.clubDesc}</Text>
 
-					<NextLink
-						isExternal
-						href={props.link}
-						_hover={{ textDecoration: "none" }}
-					>
-						<Button timmysrc="/timmy/tim_transparent_sporty.png">
-							Join Club
-						</Button>
-					</NextLink>
-				</VStack>
-			</Flex>
-		</ScaleFade>
+				<NextLink isExternal href={props.link}>
+					<Button timmysrc="/timmy/tim_transparent_sporty.png">
+						Join Club
+					</Button>
+				</NextLink>
+			</VStack>
+		</Flex>
 	);
 }

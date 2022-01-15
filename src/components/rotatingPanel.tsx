@@ -27,7 +27,7 @@ export default function RotatingPanel(props: RotatingPanelProps): JSX.Element {
 	useEffect(() => {
 		prevInterval = setTimeout(() => {
 			setIndex(index === innerPanels.length - 1 ? 0 : index + 1);
-		}, 5000);
+		}, 3333);
 		// console.log("initial value: ", prevInterval);
 
 		return () => {
@@ -35,15 +35,6 @@ export default function RotatingPanel(props: RotatingPanelProps): JSX.Element {
 			clearTimeout(prevInterval);
 		};
 	}, [index]);
-
-	// function resetInterval() {
-	// 	console.log("clearing value:", prevInterval);
-	// 	clearInterval(prevInterval);
-	// 	prevInterval = setInterval(() => {
-	// 		setIndex(index === innerPanels.length - 1 ? 0 : index + 1);
-	// 	}, 5000);
-	// 	console.log("new value:     ", prevInterval);
-	// }
 
 	return (
 		<VStack spacing={3}>

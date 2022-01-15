@@ -12,13 +12,14 @@ import {
 	Heading,
 	HStack,
 	Icon,
+	Image,
 	SimpleGrid,
 	Spacer,
 	Stack,
 	StackProps,
 	Text,
+	useBreakpointValue,
 	VisuallyHidden,
-	VStack
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -46,7 +47,14 @@ export default function NotesViewer({
 	return (
 		<Container {...boxProps}>
 			<ContainerInside>
-				<SimpleGrid gap={3} columns={{ base: 1, md: subjects.length }}>
+				<SimpleGrid
+					gap={3}
+					columns={{
+						base: 1,
+						sm: subjects.length / 2,
+						lg: subjects.length,
+					}}
+				>
 					{subjects.map((s: Subject) => (
 						<Button
 							key={s.title}
@@ -95,6 +103,8 @@ function NotesDropdown({
 	onNotesSelect,
 	...stackProps
 }: NotesDropdownProps): JSX.Element {
+	const classHeadingSize = useBreakpointValue({ base: "xs", sm: "sm" });
+
 	return (
 		<Stack
 			{...stackProps}
@@ -106,54 +116,91 @@ function NotesDropdown({
 			<Heading size="md" p={3} bg="brand.darkerBlue">
 				{subject.title}
 			</Heading>
-			<VStack bg="#5A60ADCC" px={8} py={3} align="stretch" spacing={1.5}>
+			<Accordion bg="#5A60ADCC" px={8} py={3} allowMultiple>
 				{subject.content.map((clazz) => (
-					<Box key={clazz.title}>
-						<Heading size="sm" p={2} bg="#53599F" mb={1.5}>
-							{clazz.title}
-						</Heading>
-						<Accordion bg="#5A60ADCC" allowMultiple>
-							{clazz.content.map((unit) => (
-								<AccordionItem border="none" key={unit.title}>
-									<AccordionButton
-										py={1.5}
-										px={3}
-										bg="#585EAB"
+					<AccordionItem
+						key={clazz.title}
+						borderColor="brand.darkerBlue"
+					>
+						<AccordionButton p={2} bg="#53599F">
+							{clazz.icon?.type === "emoji" ? (
+								<Center h="1.25em" lineHeight={1.25} mr={2}>
+									<Text
+										w="1.25em"
+										role="img"
+										textAlign="center"
 									>
-										<Text fontSize={16} textAlign="left">
-											{unit.title}
-										</Text>
-										<Spacer minW={10} />
-										<AccordionIcon />
-									</AccordionButton>
-									<AccordionPanel bg="#656BB8CC" p={2}>
-										<Stack spacing={0}>
-											{unit.content.map((notes) => (
-												<Box
-													onClick={() =>
-														onNotesSelect(notes)
-													}
-													fontSize={14}
-													transition="all 0.2s ease"
-													_hover={{
-														background: "#fff5",
-														cursor: "pointer",
-													}}
-													key={notes.title}
-													px={2}
-													py={0.5}
-												>
-													{notes.title}
-												</Box>
-											))}
-										</Stack>
-									</AccordionPanel>
-								</AccordionItem>
-							))}
-						</Accordion>
-					</Box>
+										{clazz.icon.emoji}
+									</Text>
+								</Center>
+							) : clazz.icon?.type === "file" ? (
+								<Center h="1.25em" mr={2}>
+									<Image
+										w="1.25em"
+										src={clazz.icon.file.url}
+										alt={`Icon for ${clazz.title}`}
+									/>
+								</Center>
+							) : (
+								<Box w="1.25em" />
+							)}
+							<Heading size={classHeadingSize} textAlign="left">
+								{clazz.title}
+							</Heading>
+							<Spacer minW={{ base: 0, sm: 5, md: 10 }} />
+							<AccordionIcon />
+						</AccordionButton>
+						<AccordionPanel px={0} pt={0} pb={1.5}>
+							<Accordion bg="#5A60ADCC" allowMultiple>
+								{clazz.content.map((unit) => (
+									<AccordionItem
+										borderColor="#656BB8CC"
+										key={unit.title}
+									>
+										<AccordionButton
+											py={1.5}
+											px={3}
+											bg="#585EAB"
+											_hover={{ bg: "#fff1" }}
+										>
+											<Text
+												fontSize={16}
+												textAlign="left"
+											>
+												{unit.title}
+											</Text>
+											<Spacer minW={10} />
+											<AccordionIcon />
+										</AccordionButton>
+										<AccordionPanel bg="#656BB8CC" p={2}>
+											<Stack spacing={0}>
+												{unit.content.map((notes) => (
+													<Box
+														onClick={() =>
+															onNotesSelect(notes)
+														}
+														fontSize={14}
+														transition="all 0.2s ease"
+														_hover={{
+															background: "#fff3",
+															cursor: "pointer",
+														}}
+														key={notes.title}
+														px={2}
+														py={0.5}
+													>
+														{notes.title}
+													</Box>
+												))}
+											</Stack>
+										</AccordionPanel>
+									</AccordionItem>
+								))}
+							</Accordion>
+						</AccordionPanel>
+					</AccordionItem>
 				))}
-			</VStack>
+			</Accordion>
 		</Stack>
 	);
 }

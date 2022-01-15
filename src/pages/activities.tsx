@@ -20,7 +20,6 @@ import NextLink from "@components/nextChakra";
  * Displays all SS Clubs and provides information on joining them
  * @returns the Activities page
  */
-
 export default function Activities() {
 	return (
 		<>

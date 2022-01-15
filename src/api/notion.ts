@@ -29,161 +29,6 @@ export const notionConfig = {
 	},
 };
 
-// THIS IS A LEGACY FUNCTION
-export async function getSubjects(): Promise<Subject[]> {
-	const { data: dictData } = await axios.post(
-		`https://api.notion.com/v1/databases/b2009721bf4d47aa8fa99a6528db7843/query`,
-		{},
-		notionConfig
-	);
-	//@ts-ignore
-	const subjectPromises = dictData.results.map((page: any) => {
-		return axios.get(
-			`https://api.notion.com/v1/blocks/${page.id}/children`,
-			notionConfig
-		);
-	});
-
-	//@ts-ignore
-	let subjects: Subject[] = await Promise.all(subjectPromises)
-		.then((subjectData) => {
-			//@ts-ignore
-			return dictData.results.map(
-				async (currentSubject: any, currentSubjectIndex: number) => {
-					let content = await getClasses(
-						subjectData,
-						currentSubjectIndex
-					);
-					return {
-						title: currentSubject.properties.Name.title[0]
-							.plain_text,
-						content: content,
-					};
-				}
-			);
-		})
-		.then((newPromises) => Promise.all(newPromises));
-
-	subjects = subjects.sort((a: any, b: any) => {
-		return a.title.localeCompare(b.title);
-	});
-
-	return subjects;
-}
-
-// THIS IS A LEGACY FUNCTION
-async function getClasses(
-	subjectData: any,
-	subjectIndex: number
-): Promise<Class[]> {
-	const currentSubject = subjectData[subjectIndex].data.results;
-	//@ts-ignore
-	return Promise.all(
-		currentSubject
-			.filter((currentClass: any) => currentClass?.child_page?.title)
-			.map(async (currentClass: any, classIndex: number) => {
-				const content = await getUnits(
-					currentSubject,
-					currentClass,
-					classIndex
-				);
-				return {
-					title: currentClass.child_page.title,
-					content: content,
-				};
-			})
-	);
-}
-
-// THIS IS A LEGACY FUNCTION
-async function getUnits(
-	currentSubject: any,
-	currentClass: any,
-	classIndex: number
-): Promise<Unit[]> {
-	const promises2 = currentSubject.map(() => {
-		return axios.get(
-			`https://api.notion.com/v1/blocks/${currentClass.id}/children`,
-			notionConfig
-		);
-	});
-	return Promise.all(promises2)
-		.then((allPromises) => {
-			//@ts-ignore
-			return allPromises[classIndex].data.results;
-		})
-		.then((blocks) => {
-			let title: string = "";
-			let units: Unit[] = [];
-			let notes: NotesProps[] = [];
-
-			// go through every block in the page
-			blocks.forEach((block: any) => {
-				if (block.type.startsWith("heading")) {
-					const blockType = block.type;
-					if (block[blockType].text.length) {
-						// title exists
-						const titleText =
-							block[blockType].text[0]?.plain_text?.trim();
-						if (titleText) {
-							// valid title
-							// push previous section
-							if (title.length) {
-								units.push({ title: title, content: notes });
-							}
-
-							title = titleText;
-							notes = [];
-						} else {
-							console.warn(
-								`Title ${block.id} in class "${currentClass?.child_page?.title}" is malformed!`
-							);
-						}
-					}
-				} else if (block.type === "paragraph") {
-					// treat as a notes object until implemented
-					let href: string = "",
-						notesTitle: string = "";
-					for (const text of block.paragraph.text) {
-						if (text.href) {
-							if (text.href.length) {
-								href = text.href;
-								if (notesTitle.length) break;
-							}
-						} else if (text.plain_text) {
-							const temp = text.plain_text.trim();
-							if (temp.length) {
-								notesTitle = temp;
-								if (href.length) break;
-							}
-						}
-					}
-
-					if (href.length && notesTitle.length) {
-						const note: NotesProps = {
-							title: notesTitle,
-							// href: href,
-							file: null,
-						};
-
-						notes.push(note);
-					} else if (title.length) {
-						console.warn(
-							`ID ${block.id} in section "${title}" in class "${currentClass?.child_page?.title}" is malformed!`
-						);
-					}
-				}
-			});
-
-			// push last section
-			if (title.length) {
-				units.push({ title: title, content: notes });
-			}
-
-			return units;
-		});
-}
-
 export async function getAllSubjects(): Promise<AllSubjects> {
 	// fetch from main database
 	const { data } = await axios.post(
@@ -198,7 +43,8 @@ export async function getAllSubjects(): Promise<AllSubjects> {
 			// get all classes from this subject subpage
 			const content = await getSubjectData(page.id);
 			// get the title (help)
-			const title: string = page.properties.Name.title?.[0]?.plain_text;
+			const title: string =
+				page.properties.Name.title?.[0]?.plain_text ?? null;
 			return { title, content };
 		}
 	);
@@ -229,19 +75,13 @@ async function getSubjectData(subjectID: string): Promise<Class[]> {
 
 			return true;
 		})
-		.map(async (page: any): Promise<Class> => {
-			// gets all units from this class subpage
-			const content = await getClassData(page.id);
-			// gets the title of this class
-			const title: string = page.child_page.title;
-			return { title, content };
-		});
+		.map(async (page: any): Promise<Class> => getClassData(page.id));
 
-	// convert all promises into an array of classes
+	// return results
 	return await Promise.all(classPromises);
 }
 
-async function getClassData(classID: string): Promise<Unit[]> {
+async function getClassData(classID: string): Promise<Class> {
 	// fetch children from given page as a block
 	const { data } = await axios.get(
 		`https://api.notion.com/v1/blocks/${classID}/children`,
@@ -330,7 +170,16 @@ async function getClassData(classID: string): Promise<Unit[]> {
 	// clean up last unit
 	output.push({ title, content: notes });
 
-	return output;
+	// get other page data (e.g. title, icon)
+	const { data: pageData } = await axios.get(
+		`https://api.notion.com/v1/pages/${classID}`,
+		notionConfig
+	);
+	// console.log(pageData);
+	const pageTitle = pageData.properties.title.title?.[0]?.plain_text ?? null;
+
+	// convert all promises into an array of classes
+	return { content: output, title: pageTitle, icon: pageData.icon };
 }
 
 export async function getArtInfo(): Promise<ArtData> {

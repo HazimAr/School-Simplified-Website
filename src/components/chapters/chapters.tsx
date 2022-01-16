@@ -13,6 +13,7 @@ import {
 	Box,
 	UnorderedList,
 	ListItem,
+	AspectRatio,
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
@@ -99,13 +100,30 @@ export default function Chapters(): JSX.Element {
 									h={{ base: 400, sm: 300, md: 250, lg: 230 }}
 									maxW={900}
 								>
-									<Box
+									{/* <Box
 										backgroundImage="/SS_Chapters_Map.png"
 										backgroundSize="cover"
 										backgroundPosition="center"
 										flex={1}
 										display={{ base: "none", lg: "block" }}
-									/>
+									/> */}
+									<Box
+										backgroundSize="cover"
+										backgroundPosition="center"
+										flex={1}
+										display={{
+											base: "none",
+											lg: "block",
+										}}
+									>
+										<iframe
+											src="https://www.google.com/maps/d/embed?mid=1FAgyAhinh_vkevQ7EN1HVUxUlS4GG-_4&ehbc=2E312F"
+											width="450"
+											height="480"
+											alt="Chapters Google Maps with States Highlighted"
+										/>
+										{/* https://www.google.com/maps/d/u/1/edit?mid=1FAgyAhinh_vkevQ7EN1HVUxUlS4GG-_4&usp=sharing */}
+									</Box>
 									<VStack
 										justify="center"
 										align={{

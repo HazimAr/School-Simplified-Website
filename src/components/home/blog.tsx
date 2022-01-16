@@ -69,23 +69,22 @@ export default function Blog({ listing }: { listing: BlogListing[] }) {
 						<Box flex={{ base: null, md: "0 0 50%" }} />
 					</Flex>
 				</motion.div>
-				<SimpleGrid
-					columns={{ base: 1, md: listing.length }}
-					mt={8}
-					mx={{ base: 12, sm: 24, md: 0 }}
-					gap={{ base: 10, md: 4, lg: 10 }}
+				<motion.div
+					initial="initial"
+					whileInView="onView"
+					variants={slideInUp()}
 				>
-					{listing.map((blogListing, index) => (
-						<motion.div
-							initial="initial"
-							whileInView="onView"
-							variants={slideInUp({ delay: 0.3 * index })}
-							key={blogListing.link}
-						>
+					<SimpleGrid
+						columns={{ base: 1, md: listing.length }}
+						mt={8}
+						mx={{ base: 12, sm: 24, md: 0 }}
+						gap={{ base: 10, md: 4, lg: 10 }}
+					>
+						{listing.map((blogListing) => (
 							<Card {...blogListing} key={blogListing.link} />
-						</motion.div>
-					))}
-				</SimpleGrid>
+						))}
+					</SimpleGrid>
+				</motion.div>
 				{/* <Stack textAlign="left" spacing={5}>
 					<Stack w={{ base: "100%", lg: "50%" }}>
 						<Heading size="lg">Check out</Heading>

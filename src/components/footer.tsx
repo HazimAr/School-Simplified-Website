@@ -37,7 +37,7 @@ export default function Footer() {
 				/>
 			</Box> */}
 			<Container bg="brand.purple.light" p={4}>
-				<ContainerInside pb={5}>
+				<ContainerInside py={5}>
 					<Stack
 						justify="space-between"
 						direction={{ base: "column", sm: "row" }}

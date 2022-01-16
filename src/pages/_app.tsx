@@ -40,7 +40,7 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 				<title>
 					School Simplified | {/* @ts-ignore */}
 					{title.charAt(0).toUpperCase() + title.slice(1) ||
-						"Education Help"}
+						"Home Page"}
 				</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>

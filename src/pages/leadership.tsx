@@ -240,18 +240,38 @@ const seniorExecs: Person[] = [
 	},
 	{
 		name: "Sabrina Zhang",
-		title: "Executive Assisstant to CEO and CHRO",
+		title: "Executive Assisstant to CEO",
 		img: "/staff/SabrinaZhang.jpg",
 	},
 	{
 		name: "Annette Lin",
-		title: "President of Simplifieditorial",
+		title: "Editor in Chief",
 		img: "/staff/AnnetteLin.jpg",
 	},
 	{
 		name: "Zach Martin",
 		title: "President of School Simplified Digital",
 		img: "/staff/ZachMartin.jpg",
+	},
+	{
+		name: "Maya Murry",
+		title: "President of Research Simplified",
+		img: "/staff/MayaMurry.jpg",
+	},
+	{
+		name: "Brandon Woo",
+		title: "Chief Information Officer",
+		img: "/staff/BrandonWoo.jpg",
+	},
+	{
+		name: "Kyle Chen",
+		title: "Chief Financial Officer",
+		img: "/staff/KyleChen.jpg",
+	},
+	{
+		name: "Krishanu Datta",
+		title: "Senior Vice President of IT",
+		img: "/staff/KrishanuDatta.jpg",
 	},
 ];
 

@@ -126,7 +126,7 @@ export default function ProgrammingSimplified(): JSX.Element {
 								whileInView="onView"
 								variants={slideInUp({
 									amount: 50,
-									delay: index * 0.3,
+									delay: index * 0.07,
 								})}
 								key={card.name}
 							>

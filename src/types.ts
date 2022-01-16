@@ -1,3 +1,5 @@
+import { FlexProps } from "@chakra-ui/layout";
+
 export type NotesProps = {
 	title: string;
 	file: FileObj;
@@ -124,7 +126,7 @@ export type ActivitySlideProps = {
 	clubDesc: string;
 	link: string;
 	key: string;
-};
+} & FlexProps;
 
 export type BlogListing = {
 	title: string;

@@ -2,8 +2,8 @@ import { Center, Heading, Spacer, Stack, Text, VStack } from "@chakra-ui/react";
 import ContainerBackground from "@components/containerBackground";
 import ContainerInside from "@components/containerInside";
 import CountUp from "react-countup";
-import { motion } from "framer-motion";
 import { slideInUp } from "@styles/animations";
+import { motion } from "framer-motion";
 
 export default function Intro() {
 	return (
@@ -39,7 +39,7 @@ export default function Intro() {
 					<motion.div
 						initial="initial"
 						whileInView="onView"
-						variants={slideInUp({ amount: 50, delay: 0.3 })}
+						variants={slideInUp({ amount: 50, delay: 0.2 })}
 					>
 						<VStack>
 							<Heading fontSize={25}>
@@ -59,7 +59,7 @@ export default function Intro() {
 					<motion.div
 						initial="initial"
 						whileInView="onView"
-						variants={slideInUp({ amount: 50, delay: 0.6 })}
+						variants={slideInUp({ amount: 50, delay: 0.27 })}
 					>
 						<VStack>
 							<Heading fontSize={25}>
@@ -77,7 +77,7 @@ export default function Intro() {
 					<motion.div
 						initial="initial"
 						whileInView="onView"
-						variants={slideInUp({ amount: 50, delay: 0.9 })}
+						variants={slideInUp({ amount: 50, delay: 0.35 })}
 					>
 						<VStack>
 							<Heading fontSize={25}>
@@ -89,7 +89,7 @@ export default function Intro() {
 					<motion.div
 						initial="initial"
 						whileInView="onView"
-						variants={slideInUp({ amount: 50, delay: 1.2 })}
+						variants={slideInUp({ amount: 50, delay: 0.42 })}
 					>
 						<VStack>
 							<Heading fontSize={25}>
@@ -107,7 +107,7 @@ export default function Intro() {
 					<motion.div
 						initial="initial"
 						whileInView="onView"
-						variants={slideInUp({ amount: 50, delay: 1.5 })}
+						variants={slideInUp({ amount: 50, delay: 0.5 })}
 					>
 						<VStack>
 							<Heading fontSize={25}>

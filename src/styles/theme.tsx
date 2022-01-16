@@ -62,6 +62,9 @@ const theme = extendTheme({
 				backgroundRepeat: "no-repeat",
 				backgroundAttachment: "fixed",
 				color: "white",
+				position: "relative",
+				overflowX: "hidden",
+				// width: "100%",
 			},
 			ul: {
 				listStyle: "none",

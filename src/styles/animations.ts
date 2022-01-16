@@ -1,19 +1,25 @@
+import { Variant } from "framer-motion";
+
 function slideFade({ delay = 0.1, x = 0, y = 0 } = {}) {
+	const initial: Variant = {
+		opacity: 0,
+		x,
+		y,
+		// position: "absolute",
+	};
+	const onView: Variant = {
+		opacity: 1,
+		x: 0,
+		y: 0,
+		// position: "static",
+		transition: {
+			duration: 0.5,
+			delay,
+		},
+	};
 	return {
-		initial: {
-			opacity: 0,
-			x,
-			y,
-		},
-		onView: {
-			opacity: 1,
-			x: 0,
-			y: 0,
-			transition: {
-				duration: 0.75,
-				delay,
-			},
-		},
+		initial,
+		onView,
 	};
 }
 
@@ -35,7 +41,7 @@ function widthIn({ delay = 0.1 } = {}) {
 		onView: {
 			width: "100%",
 			transition: {
-				duration: 0.75,
+				duration: 0.5,
 				delay,
 			},
 		},

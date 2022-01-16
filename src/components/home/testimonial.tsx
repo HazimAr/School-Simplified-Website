@@ -1,4 +1,4 @@
-import { Box, Divider, Flex, Heading, ScaleFade, Text } from "@chakra-ui/react";
+import { Box, Divider, Flex, FlexProps, Heading, Text } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import RotatingPanel from "@components/rotatingPanel";
@@ -10,7 +10,7 @@ type Review = {
 	name: string;
 	title: string;
 	key: string;
-};
+} & FlexProps;
 
 const reviews: Review[] = [
 	{
@@ -24,7 +24,7 @@ const reviews: Review[] = [
 		name: "Biscuit",
 		title: "Tutoring, Science",
 		key: "B",
-	},	
+	},
 	{
 		review: "I wanna thank all the math helpers honestly. You all are so unbelievably patient when it comes to helping with homework, and all my experiences with tutors were all extremely pleasant and helped me learn easily.",
 		name: "Gosu Ligaya",
@@ -32,13 +32,13 @@ const reviews: Review[] = [
 		key: "G",
 	},
 	{
-		review: "Our tutoring sessions have been very informative and fun, and they’ve really helped me understand certain topics which I was confused about prior.",
+		review: "Our tutoring sessions have been very informative and fun, and they've really helped me understand certain topics which I was confused about prior.",
 		name: "KakA",
 		title: "Tutoring",
 		key: "k",
 	},
 	{
-		review: "I’ve had multiple experiences with School Simplified on Discord, and it has been great so far! I love how kind people are and the dedication each person has to help you into succeeding in your assignments/homework! They help you understand and guide you along the way!",
+		review: "I've had multiple experiences with School Simplified on Discord, and it has been great so far! I love how kind people are and the dedication each person has to help you into succeeding in your assignments/homework! They help you understand and guide you along the way!",
 		name: "Shania",
 		title: "Homework Help",
 		key: "Shanty",
@@ -56,10 +56,10 @@ const reviews: Review[] = [
 		key: "C",
 	},
 	{
-		review: "I don’t have a specific person to thank and I rarely talk here but thank you for this whole community of helpful and welcoming people that even if a person is struggling on a specific subject, you go out of your way to help them when they are in need. Thanks to the helpers for being so awesome and being there when you need it. Thanks to the moderators for keeping the server in check and allowing no negativity in this wonderful and learning environment. Thank you so much you guys!!",
+		review: "I don't have a specific person to thank and I rarely talk here but thank you for this whole community of helpful and welcoming people that even if a person is struggling on a specific subject, you go out of your way to help them when they are in need. Thanks to the helpers for being so awesome and being there when you need it. Thanks to the moderators for keeping the server in check and allowing no negativity in this wonderful and learning environment. Thank you so much you guys!!",
 		name: "",
 		title: "Community",
-		key: "",
+		key: "bvnv ",
 	},
 	{
 		review: "Sabrina's been a really great tutor for me. She takes valuable time to customize the lessons in a way where I learn best and always asks to make sure it's working for me. She's also gone above and beyond and made customized homework sheets like how my teacher does at school which really helps me learn. She's very reliable and nice and I'm very grateful for her tutoring. Overall I'd say she's an amazing tutor and I'm very grateful to be learning from her.",
@@ -119,6 +119,14 @@ export default function Intro() {
 					<RotatingPanel
 						Element={Testimony}
 						innerPanelProps={reviews}
+						viewPortHeight={{
+							base: 550,
+							sm: 400,
+							md: 270,
+							lg: 220,
+							xl: 200,
+						}}
+						animationType="carousel"
 					/>
 				</motion.div>
 			</ContainerInside>
@@ -126,26 +134,24 @@ export default function Intro() {
 	);
 }
 
-function Testimony(props: Review): JSX.Element {
+function Testimony({ review, name, title, ...props }: Review): JSX.Element {
 	return (
-		<ScaleFade in={true} unmountOnExit={false}>
-			<Flex
-				flexDir="column"
-				px={9}
-				py={5}
-				rounded={20}
-				bg="#FFFFFFC0"
-				justify="center"
-				h={{ base: 550, sm: 400, md: 270, lg: 220, xl: 200 }}
-			>
-				<Text color="#5A60AD">"{props.review}"</Text>
-				<Box alignSelf="flex-end" textAlign="right">
-					<Heading as="h1" size="md" mt={4} color="#5A60AD">
-						{props.name}
-					</Heading>
-					<Text color="#5A60AD">{props.title}</Text>
-				</Box>
-			</Flex>
-		</ScaleFade>
+		<Flex
+			flexDir="column"
+			px={9}
+			py={5}
+			rounded={20}
+			bg="#FFFFFFC0"
+			justify="center"
+			{...props}
+		>
+			<Text color="#5A60AD">"{review}"</Text>
+			<Box alignSelf="flex-end" textAlign="right">
+				<Heading as="h1" size="md" mt={4} color="#5A60AD">
+					{name}
+				</Heading>
+				<Text color="#5A60AD">{title}</Text>
+			</Box>
+		</Flex>
 	);
 }

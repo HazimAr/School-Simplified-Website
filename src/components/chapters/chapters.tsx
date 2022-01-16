@@ -100,7 +100,7 @@ export default function Chapters(): JSX.Element {
 									maxW={900}
 								>
 									<Box
-										backgroundImage="/map.png"
+										backgroundImage="/SS_Chapters_Map.png"
 										backgroundSize="cover"
 										backgroundPosition="center"
 										flex={1}

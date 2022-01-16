@@ -7,7 +7,7 @@ Come visit us at <https://schoolsimplified.org/>!
 ### Powered by
 
 -   Typescript
--   ChakraUI
+-   Chakra UI
 -   NextJS
 -   Lightweight
 -   Google Analytics

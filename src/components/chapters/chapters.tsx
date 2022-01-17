@@ -1,19 +1,18 @@
 import {
+	Box,
 	Center,
-	Heading,
-	Image,
-	Text,
-	HStack,
-	VStack,
+	Divider,
 	Flex,
+	Heading,
+	HStack,
+	Image,
+	ListItem,
+	ScaleFade,
 	Spacer,
 	Stack,
-	Divider,
-	ScaleFade,
-	Box,
+	Text,
 	UnorderedList,
-	ListItem,
-	AspectRatio,
+	VStack,
 } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
@@ -108,8 +107,8 @@ export default function Chapters(): JSX.Element {
 										display={{ base: "none", lg: "block" }}
 									/> */}
 									<Box
-										backgroundSize="cover"
-										backgroundPosition="center"
+										// backgroundSize="cover"
+										// backgroundPosition="center"
 										flex={1}
 										display={{
 											base: "none",
@@ -120,7 +119,7 @@ export default function Chapters(): JSX.Element {
 											src="https://www.google.com/maps/d/embed?mid=1FAgyAhinh_vkevQ7EN1HVUxUlS4GG-_4&ehbc=2E312F"
 											width="450"
 											height="480"
-											alt="Chapters Google Maps with States Highlighted"
+											// alt="Chapters Google Maps with States Highlighted"
 										/>
 										{/* https://www.google.com/maps/d/u/1/edit?mid=1FAgyAhinh_vkevQ7EN1HVUxUlS4GG-_4&usp=sharing */}
 									</Box>

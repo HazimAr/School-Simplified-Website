@@ -1,4 +1,4 @@
-import { Flex, Heading, Image, Stack, Text, VStack } from "@chakra-ui/react";
+import { Box, Flex, Heading, Stack, Text, VStack } from "@chakra-ui/react";
 import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -14,7 +14,7 @@ export default function Chapters(): JSX.Element {
 			position="relative"
 			overflow="hidden"
 		>
-			<ContainerInside textAlign="left">
+			<ContainerInside textAlign="left" px={25}>
 				<Flex flexDir="column" my={16}>
 					<motion.div
 						initial="initial"
@@ -36,12 +36,21 @@ export default function Chapters(): JSX.Element {
 						mt={6}
 						spacing={10}
 						align="flex-start"
+						position="relative"
 					>
-						<Image
+						{/* <Image
 							src="/map.png"
 							alt="A map representing the presence of School Simplified around the United States"
 							alignSelf="center"
-						/>
+						/> */}
+						<Box flex={1} overflowX="hidden" maxW="100%" minW="450">
+							<iframe
+								src="https://www.google.com/maps/d/embed?mid=1FAgyAhinh_vkevQ7EN1HVUxUlS4GG-_4&ehbc=2E312F"
+								width="450"
+								height="300"
+								// alt="Chapters Google Maps with States Highlighted"
+							/>
+						</Box>
 						<MotionDiv
 							initial="initial"
 							whileInView="onView"

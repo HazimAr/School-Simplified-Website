@@ -318,7 +318,7 @@ function VolunteerPosition({
 	description,
 	rank,
 	form,
-	programs: program,
+	programs,
 	image,
 	area,
 	name,
@@ -371,7 +371,7 @@ function VolunteerPosition({
 			>
 				<Text fontSize="sm">{area}</Text>
 				<Heading fontSize="lg">{name}</Heading>
-				<Text fontSize="sm">{program}</Text>
+				<Text fontSize="sm">{programs.join(", ")}</Text>
 			</Stack>
 		</Stack>
 	);

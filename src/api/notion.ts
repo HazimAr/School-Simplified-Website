@@ -699,12 +699,15 @@ export async function getJobPostings(): Promise<JobPosting[]> {
 
 	return data.results.map((page: any): JobPosting => {
 		const file0 = page.properties.Image.files[0];
+		const programs = page.properties.Program.multi_select.map(
+			({ name }) => name
+		);
 		return {
 			description:
 				page.properties.Description.rich_text?.[0]?.plain_text ?? null,
 			rank: page.properties.Rank.select?.name ?? null,
 			form: page.properties.Form.url ?? null,
-			program: page.properties.Program.select?.name ?? null,
+			programs,
 			image: file0 ? getFile(file0) : null,
 			area: page.properties.Area.select?.name ?? null,
 			name: page.properties.Name.title?.[0]?.plain_text ?? null,

@@ -192,9 +192,9 @@ export type JobPosting = {
 	 */
 	form: string;
 	/**
-	 * The program that this posting's job is a part of, as a string
+	 * The programs that this posting's job is a part of, as a string
 	 */
-	program: string;
+	programs: string[];
 	/**
 	 * An image that accompanies this posting.
 	 * Stored as a Notion file object

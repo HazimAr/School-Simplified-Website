@@ -41,8 +41,14 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 			rankOptions.push(posting.rank);
 		if (posting.area && !areaOptions.includes(posting.area))
 			areaOptions.push(posting.area);
-		if (posting.program && !programOptions.includes(posting.program))
-			programOptions.push(posting.program);
+		if (posting.programs) {
+			for (const program of posting.programs) {
+				if (!programOptions.includes(program))
+					programOptions.push(program);
+			}
+		}
+		// if (posting.programs && !programOptions.includes(posting.programs))
+		// 	programOptions.push(posting.programs);
 	}
 	// rankOptions.sort();
 	// areaOptions.sort();
@@ -72,7 +78,7 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 				(posting) =>
 					(!rank || posting.rank == rank) &&
 					(!area || posting.area == area) &&
-					(!program || posting.program == program)
+					(!program || posting.programs.includes(program))
 			)
 		);
 
@@ -88,7 +94,7 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 				.filter(
 					(posting) =>
 						(!area || area == posting.area) &&
-						(!program || program == posting.program)
+						(!program || posting.programs.includes(program))
 				)
 				.forEach((posting) => {
 					if (!tempOptions.rank.includes(posting.rank)) {
@@ -102,7 +108,7 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 			postings
 				.filter(
 					(posting) =>
-						(!program || program == posting.program) &&
+						(!program || posting.programs.includes(program)) &&
 						(!rank || rank == posting.rank)
 				)
 				.forEach((posting) => {
@@ -120,9 +126,10 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 						(!area || area == posting.area) &&
 						(!rank || rank == posting.rank)
 				)
-				.forEach((posting) => {
-					if (!tempOptions.program.includes(posting.program)) {
-						tempOptions.program.push(posting.program);
+				.flatMap((posting) => posting.programs)
+				.forEach((program) => {
+					if (!tempOptions.program.includes(program)) {
+						tempOptions.program.push(program);
 					}
 				});
 		}
@@ -274,7 +281,7 @@ export default function Volunteering({ postings }: { postings: JobPosting[] }) {
 								key={
 									posting.name +
 									posting.area +
-									posting.program
+									posting.programs
 								}
 								isExternal
 								href={posting.form ?? ""}
@@ -311,7 +318,7 @@ function VolunteerPosition({
 	description,
 	rank,
 	form,
-	program,
+	programs: program,
 	image,
 	area,
 	name,

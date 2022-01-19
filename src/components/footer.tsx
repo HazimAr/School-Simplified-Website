@@ -240,7 +240,12 @@ export default function Footer() {
 						<Text fontSize="xs">
 							School Simplified Inc. | 8 The Green, Dover, DE
 							19901 | EIN: 86-3932154
+							<br />
+							<NextLink href="/legal">
+								<Text fontSize="xs">Legal</Text>
+							</NextLink>
 						</Text>
+
 						{/* <Text fontSize="xs">
 							Made with love by passionate{" "}
 							<NextLink href="https://github.com/HazimAr/School-Simplified">

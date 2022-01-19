@@ -75,7 +75,7 @@ export default function Legal() {
 const legals = [
 	{
 		name: "Bylaws",
-		link: "https://drive.google.com/file/d/1BpJG9vcxU4wLQ4U3YLVbkvaKcRFja1tH/view?usp=sharing",
+		link: "https://drive.google.com/file/d/1BpJG9vcxU4wLQ4U3YLVbkvaKcRFja1tH/view?usp=drivesdk",
 	},
 	{
 		name: "Articles of Incorporation",

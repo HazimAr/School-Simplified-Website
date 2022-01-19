@@ -77,7 +77,6 @@ const legals = [
 		name: "Bylaws",
 		link: "https://drive.google.com/file/d/1BpJG9vcxU4wLQ4U3YLVbkvaKcRFja1tH/view?usp=sharing",
 	},
-
 	{
 		name: "Articles of Incorporation",
 		link: "https://drive.google.com/file/d/1KJsKqbk3Q78yPrCCMM16f3pYO6fnlDoh/view?usp=sharing",

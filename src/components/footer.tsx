@@ -16,6 +16,7 @@ import {
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
+import NextChakraLink from "@components/nextChakra";
 import NextLink from "@components/nextChakra";
 import { socials } from "config";
 // import Wave from "react-wavify";
@@ -234,7 +235,8 @@ export default function Footer() {
 						margin="20px"
 					>
 						<Text fontSize="xs" textAlign="center">
-							School Simplified © 2022 All Rights Reserved
+							School Simplified © 2022 All Rights Reserved |{" "}
+							<NextChakraLink href="/legal">Legal</NextChakraLink>
 						</Text>
 
 						<Text fontSize="xs">

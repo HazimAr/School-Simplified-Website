@@ -80,7 +80,7 @@ const legals = [
 
 	{
 		name: "Articles of Incorporation",
-		link: "https://drive.google.com/file/d/1Hio0Tst49m55VcT_8OPdXwSQyP7ANI2W/view?usp=sharing",
+		link: "https://drive.google.com/file/d/1KJsKqbk3Q78yPrCCMM16f3pYO6fnlDoh/view?usp=sharing",
 	},
 	{
 		name: "501(c)3 Determination Letter",

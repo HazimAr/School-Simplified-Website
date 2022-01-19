@@ -59,7 +59,7 @@ const menuItems: MenuItem[] = [
 			// },
 			{
 				name: "Legal",
-				link: "/legal",
+				href: "/legal",
 			},
 		],
 	},

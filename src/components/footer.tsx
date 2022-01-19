@@ -283,6 +283,10 @@ const about = [
 		name: "Leadership",
 		link: "/leadership",
 	},
+	{
+		name: "Legal",
+		link: "/legal",
+	},
 ];
 
 const resources = [

@@ -57,6 +57,10 @@ const menuItems: MenuItem[] = [
 			// 	name: "Social Media",
 			// 	href: "/links",
 			// },
+			{
+				name: "Legal",
+				link: "/legal",
+			},
 		],
 	},
 	// {

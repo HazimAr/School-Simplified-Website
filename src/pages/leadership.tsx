@@ -186,11 +186,11 @@ const seniorExecs: Person[] = [
 		title: "Chief Operating Officer",
 		img: "/staff/MasaMurry.jpg",
 	},
-	{
-		name: "Lauren Hsieh",
-		title: "Chief of Staff & Corporate Secretary ",
-		img: "/staff/LaurenHsieh.jpg",
-	},
+	// {
+	// 	name: "Lauren Hsieh",
+	// 	title: "Chief of Staff & Corporate Secretary ",
+	// 	img: "/staff/LaurenHsieh.jpg",
+	// },
 
 	{
 		name: "Param Patil",
@@ -212,11 +212,11 @@ const seniorExecs: Person[] = [
 	// 	title: "Executive Vice President of Information Technology",
 	// 	img: "/staff/JasonMei.jpg",
 	// },
-	{
-		name: "Diana Zheng",
-		title: "Corporate Treasurer",
-		img: "/staff/DianaZheng.jpg",
-	},
+	// {
+	// 	name: "Diana Zheng",
+	// 	title: "Corporate Treasurer",
+	// 	img: "/staff/DianaZheng.jpg",
+	// },
 	{
 		name: "Bhavyasri Suggula",
 		title: "Executive Projects Director",
@@ -232,7 +232,6 @@ const seniorExecs: Person[] = [
 		title: "President of National Chapters",
 		img: "/staff/DavidSun.jpg",
 	},
-
 	{
 		name: "Aarush Goradia",
 		title: "President of Student Activities",
@@ -248,11 +247,11 @@ const seniorExecs: Person[] = [
 		title: "Editor in Chief",
 		img: "/staff/AnnetteLin.jpg",
 	},
-	{
-		name: "Zach Martin",
-		title: "President of School Simplified Digital",
-		img: "/staff/ZachMartin.jpg",
-	},
+	// {
+	// 	name: "Zach Martin",
+	// 	title: "President of School Simplified Digital",
+	// 	img: "/staff/ZachMartin.jpg",
+	// },
 	{
 		name: "Maya Murry",
 		title: "President of Research Simplified",
@@ -369,7 +368,7 @@ const boardOfDirectors: Person[] = [
 	},
 	{
 		name: "Lauren Hsieh",
-		title: "Director",
+		title: "Secretary",
 		img: "/staff/default.png",
 	},
 	{

@@ -92,7 +92,7 @@ const legals = [
 	},
 	{
 		name: "Nomination Committee",
-		link: "https://drive.google.com/file/d/11atdu7GLWbEp22IAUty2Im7ombjO-DnA/view?usp=sharing",
+		link: "https://drive.google.com/file/d/1ynayW82DEB7Xc1CMGJ0kvr0hzJeg5Pvg/view?usp=sharing",
 	},
 	{
 		name: "Conflict of Interest",
@@ -104,7 +104,7 @@ const legals = [
 	},
 	{
 		name: "Code of Ethics and Whistle Blower Policy",
-		link: "https://drive.google.com/file/d/1_vlNmbDDmFEM298UxFP5IJTVvSn_egha/view?usp=sharing",
+		link: "https://drive.google.com/file/d/1alMJ6t5zoQ0LNXYu8KGEvXIFgw82nnF_/view?usp=sharing",
 	},
 	{
 		name: "Anti-Discrimination and Anti-Harassment Policy",

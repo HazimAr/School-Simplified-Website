@@ -12,11 +12,15 @@ import {
 } from "@components/home/index";
 import { fadeIn } from "@styles/animations";
 import { motion } from "framer-motion";
+import Head from "next/head";
 import { BlogListing } from "types";
 
 export default function Home({ listing }: { listing: BlogListing[] }) {
 	return (
 		<>
+			<Head>
+				<title>School Simplified | Home Page</title>
+			</Head>
 			{/* <PopUp /> */}
 			<motion.div
 				initial="initial"

@@ -3,6 +3,7 @@
 import { getGovernanceData } from "@api/notion";
 import {
 	Box,
+	Center,
 	Divider,
 	Flex,
 	Heading,
@@ -17,6 +18,7 @@ import {
 	Tr,
 	VStack,
 } from "@chakra-ui/react";
+import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
@@ -25,10 +27,7 @@ import { useState } from "react";
 import { GovernanceDocument, GovernanceSection, Person } from "types";
 
 export default function About({ data }: { data: any }): JSX.Element {
-	const [
-		senior,
-		//  setSenior
-	] = useState(true);
+	const [senior, setSenior] = useState(true);
 	return (
 		<>
 			<Container>
@@ -38,30 +37,30 @@ export default function About({ data }: { data: any }): JSX.Element {
 					</Heading>
 
 					<Divider bg="white" />
-					{/* <Center my={5}>
-							<ExecutiveButton
-								onClick={() => {
-									!senior && setSenior(true);
-								}}
-								left
-								active={senior}
-							>
-								Senior Executives
-							</ExecutiveButton>
-							<ExecutiveButton
-								onClick={() => {
-									senior && setSenior(false);
-								}}
-								active={!senior}
-							>
-								Executives
-							</ExecutiveButton>
-						</Center>
-						<Heading fontSize={30} mb={5}>
-							Executive Profiles
-						</Heading> */}
+					<Center my={5}>
+						<Button
+							onClick={() => {
+								!senior && setSenior(true);
+							}}
+							left
+							active={senior}
+						>
+							Corporate Officers
+						</Button>
+						<Button
+							onClick={() => {
+								senior && setSenior(false);
+							}}
+							active={!senior}
+						>
+							Division Presidents
+						</Button>
+					</Center>
+					<Heading fontSize={30} mb={5}>
+						Executive Profiles
+					</Heading>
 					<Flex justifyContent="center" flexWrap="wrap">
-						{(senior ? seniorExecs : execs).map(
+						{(senior ? corporateOfficers : divisionPresidents).map(
 							(staff: Person, i: number) => {
 								return (
 									<StaffCard
@@ -175,7 +174,7 @@ export async function getServerSideProps() {
 	};
 }
 
-const seniorExecs: Person[] = [
+const corporateOfficers: Person[] = [
 	{
 		name: "Ethan Hsu",
 		title: "Chief Executive Officer & President",
@@ -273,7 +272,7 @@ const seniorExecs: Person[] = [
 	},
 ];
 
-const execs: Person[] = [
+const divisionPresidents: Person[] = [
 	{
 		name: "Jiahao Zhang",
 		title: "Global Vice President of Advancement",

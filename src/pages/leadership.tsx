@@ -191,7 +191,6 @@ const seniorExecs: Person[] = [
 	// 	title: "Chief of Staff & Corporate Secretary ",
 	// 	img: "/staff/LaurenHsieh.jpg",
 	// },
-
 	{
 		name: "Param Patil",
 		title: "Chief Advancements Officer ",
@@ -381,16 +380,16 @@ const boardOfDirectors: Person[] = [
 		title: "Director",
 		img: "/staff/default.png",
 	},
-	{
-		name: "Rohit Choudhary",
-		title: "Director",
-		img: "/staff/default.png",
-	},
-	{
-		name: "Atsi Gupta",
-		title: "Director",
-		img: "/staff/default.png",
-	},
+	// {
+	// 	name: "Rohit Choudhary",
+	// 	title: "Director",
+	// 	img: "/staff/default.png",
+	// },
+	// {
+	// 	name: "Atsi Gupta",
+	// 	title: "Director",
+	// 	img: "/staff/default.png",
+	// },
 	{
 		name: "Isaias Vilato",
 		title: "Director",

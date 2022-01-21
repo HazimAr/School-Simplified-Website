@@ -42,8 +42,6 @@ export default function About({ data }: { data: any }): JSX.Element {
 							onClick={() => {
 								!senior && setSenior(true);
 							}}
-							left
-							active={senior}
 						>
 							Corporate Officers
 						</Button>
@@ -51,7 +49,6 @@ export default function About({ data }: { data: any }): JSX.Element {
 							onClick={() => {
 								senior && setSenior(false);
 							}}
-							active={!senior}
 						>
 							Division Presidents
 						</Button>

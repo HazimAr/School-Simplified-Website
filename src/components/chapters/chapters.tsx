@@ -36,7 +36,7 @@ export default function Chapters(): JSX.Element {
 						</Text>
 						<NextLink
 							isExternal
-							href="https://docs.google.com/forms/d/e/1FAIpQLSfs8_MYtRqA2vq5X5hm9hu-QjLb7PczSJ6wCBTz6vuXOkVKjg/closedform"
+							href="https://docs.google.com/forms/d/e/1FAIpQLSesSX3Lislu9m6j_Cgwu3eALgAm0RJ1iTvxcGih82B0J0iXmg/viewform?usp=sf_link"
 							_hover={{ textDecoration: "none" }}
 						>
 							<Button

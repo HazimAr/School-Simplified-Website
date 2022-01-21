@@ -46,7 +46,7 @@ export default function Hero({ heading }) {
 					<Icon as={SiLinkedin} boxSize="28px" />
 				</Link>
 
-				<Link href="https://twitter.com/schoolsimplify" isExternal>
+				<Link href="https://twitter.com/SchoolSimplifed" isExternal>
 					<Icon as={SiTwitter} boxSize="25px" />
 				</Link>
 

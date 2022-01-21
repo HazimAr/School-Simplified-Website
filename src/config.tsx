@@ -56,7 +56,7 @@ const socials: SocialMediaIcon[] = [
 	},
 	{
 		name: "Twitter",
-		link: "https://twitter.com/SchoolSimplify",
+		link: "https://twitter.com/SchoolSimplifed",
 		icon: (props) => <FaTwitter {...props} />,
 	},
 	{

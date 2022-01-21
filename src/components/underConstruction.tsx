@@ -21,10 +21,8 @@ export default function UnderConstruction(): JSX.Element {
 							creating this webpage for everyone.
 						</Text>
 						<Text>We hope to work with you soon!</Text>
-						<NextChakraLink href="/" _hover={{ cursor: "auto" }}>
-							<Button _hover={{ cursor: "pointer" }}>
-								Return to Home
-							</Button>
+						<NextChakraLink href="/">
+							<Button>Return to Home</Button>
 						</NextChakraLink>
 					</VStack>
 					<Image

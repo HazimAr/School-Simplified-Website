@@ -58,13 +58,13 @@ export default function About({ data }: { data: any }): JSX.Element {
 					</Heading>
 					<Flex justifyContent="center" flexWrap="wrap">
 						{(senior ? corporateOfficers : divisionPresidents).map(
-							(staff: Person, i: number) => {
+							(staff: Person) => {
 								return (
 									<StaffCard
 										title={staff.title}
 										name={staff.name}
 										img={staff.img}
-										key={i}
+										key={staff.img}
 									/>
 								);
 							}

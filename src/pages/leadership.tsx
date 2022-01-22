@@ -32,8 +32,7 @@ import { GovernanceDocument, GovernanceSection, Person } from "types";
 export default function About({ data }: { data: any }): JSX.Element {
 	// const [senior, setSenior] = useState(true);
 	const [groupIdx, setGroupIdx] = useState(0);
-	const activeButtonRow = useBreakpointValue({ base: groupIdx + 1, md: 1 });
-	const activeButtonCol = useBreakpointValue({ base: 1, md: groupIdx + 1 });
+	const isVertical = useBreakpointValue({ base: true, md: false });
 	return (
 		<>
 			<Container>
@@ -80,27 +79,33 @@ export default function About({ data }: { data: any }): JSX.Element {
 									paddingInlineEnd: "var(--chakra-space-12)",
 									paddingTop: "var(--chakra-space-3\\.5)",
 									paddingBottom: "var(--chakra-space-3\\.5)",
-									fontFamily: "var(--chakra-fonts-heading)",
-									fontWeight: "bold",
-									fontSize: "var(--chakra-fontSizes-xl)",
-									lineHeight: "1.2",
 									zIndex: 5,
-									gridRow: activeButtonRow,
-									gridColumn: activeButtonCol,
+									gridRow: isVertical ? groupIdx + 1 : 1,
+									gridColumn: isVertical ? 1 : groupIdx + 1,
 								}}
-								initial={{
-									color: "transparent",
-								}}
-								animate={{
-									color: "var(--chakra-colors-brand-purple-dark)",
-								}}
-								exit={{
-									color: "transparent",
-								}}
-								transition={{ duration: 2 }}
+								transition={{ duration: 0.7 }}
 								layout
 							>
-								{peopleGroups[groupIdx].name}
+								<AnimatePresence exitBeforeEnter>
+									<motion.h3
+										style={{
+											fontFamily:
+												"var(--chakra-fonts-heading)",
+											fontWeight: "bold",
+											fontSize:
+												"var(--chakra-fontSizes-xl)",
+											lineHeight: "1.2",
+											color: "var(--chakra-colors-brand-purple-dark)",
+										}}
+										initial={{ opacity: 0 }}
+										animate={{ opacity: 1 }}
+										exit={{ opacity: 0 }}
+										key={peopleGroups[groupIdx].name}
+										transition={{ duration: 0.3 }}
+									>
+										{peopleGroups[groupIdx].name}
+									</motion.h3>
+								</AnimatePresence>
 							</motion.div>
 						</SimpleGrid>
 					</Center>

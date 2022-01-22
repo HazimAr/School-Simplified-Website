@@ -3,11 +3,13 @@
 import { getGovernanceData } from "@api/notion";
 import {
 	Box,
+	BoxProps,
 	Center,
 	Divider,
 	Flex,
 	Heading,
 	HStack,
+	SimpleGrid,
 	Stack,
 	Table,
 	Tbody,
@@ -18,16 +20,17 @@ import {
 	Tr,
 	VStack,
 } from "@chakra-ui/react";
-import Button from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
 import StaffCard from "@components/staffcard";
+import { motion } from "framer-motion";
 import { useState } from "react";
 import { GovernanceDocument, GovernanceSection, Person } from "types";
 
 export default function About({ data }: { data: any }): JSX.Element {
-	const [senior, setSenior] = useState(true);
+	// const [senior, setSenior] = useState(true);
+	const [group, setGroup] = useState<PeopleGroup>(null);
 	return (
 		<>
 			<Container>
@@ -38,7 +41,48 @@ export default function About({ data }: { data: any }): JSX.Element {
 
 					<Divider bg="white" />
 					<Center my={5}>
-						<Button
+						<SimpleGrid
+							columns={peopleGroups.length}
+							rounded="full"
+							borderColor="white"
+							borderWidth={3}
+						>
+							{peopleGroups.map((personGroup) => (
+								<Box key={personGroup.name} position="relative">
+									{group &&
+									personGroup.name === group.name ? (
+										<motion.div
+											layoutId="background"
+											style={{
+												width: "100%",
+												height: "100%",
+												zIndex: -1,
+												top: 0,
+												position: "absolute",
+												background: "white",
+												borderRadius: "9999px",
+											}}
+										/>
+									) : null}
+									<ExecutiveButton
+										onClick={() => setGroup(personGroup)}
+										selected={
+											group &&
+											personGroup.name === group.name
+										}
+									>
+										<Heading
+											color="inherit"
+											size="md"
+											as="h3"
+										>
+											{personGroup.name}
+										</Heading>
+									</ExecutiveButton>
+								</Box>
+							))}
+						</SimpleGrid>
+						{/* <Button
 							onClick={() => {
 								!senior && setSenior(true);
 							}}
@@ -51,24 +95,24 @@ export default function About({ data }: { data: any }): JSX.Element {
 							}}
 						>
 							Division Presidents
-						</Button>
+						</Button> */}
 					</Center>
 					<Heading fontSize={30} mb={5}>
 						Executive Profiles
 					</Heading>
 					<Flex justifyContent="center" flexWrap="wrap">
-						{(senior ? corporateOfficers : divisionPresidents).map(
-							(staff: Person) => {
-								return (
-									<StaffCard
-										title={staff.title}
-										name={staff.name}
-										img={staff.img}
-										key={staff.img}
-									/>
-								);
-							}
-						)}
+						{group
+							? group.people.map((staff: Person) => {
+									return (
+										<StaffCard
+											title={staff.title}
+											name={staff.name}
+											img={staff.img}
+											key={staff.img}
+										/>
+									);
+							  })
+							: null}
 					</Flex>
 
 					<Divider bg="white" />
@@ -170,6 +214,11 @@ export async function getServerSideProps() {
 		},
 	};
 }
+
+type PeopleGroup = {
+	name: string;
+	people: Person[];
+};
 
 const corporateOfficers: Person[] = [
 	{
@@ -345,6 +394,11 @@ const divisionPresidents: Person[] = [
 	// },
 ];
 
+const peopleGroups: PeopleGroup[] = [
+	{ name: "Corporate Officers", people: corporateOfficers },
+	{ name: "Divison Presidents", people: divisionPresidents },
+];
+
 const boardOfDirectors: Person[] = [
 	{
 		name: "Ethan Hsu",
@@ -429,3 +483,26 @@ const boardOfDirectors: Person[] = [
 // 		</Box>
 // 	);
 // }
+
+function ExecutiveButton({
+	children,
+	selected,
+	...props
+}: BoxProps & { selected: boolean }) {
+	return (
+		<Box
+			as="button"
+			px={4}
+			py={2}
+			transition="all 0.2s ease"
+			fontSize="14px"
+			fontWeight="semibold"
+			background="transparent"
+			color={selected ? "brand.purple.dark" : "white"}
+			minW={205}
+			{...props}
+		>
+			{children}
+		</Box>
+	);
+}

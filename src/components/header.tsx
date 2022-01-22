@@ -33,10 +33,10 @@ const menuItems: MenuItem[] = [
 				name: "Community",
 				href: "/community",
 			},
-			{
-				name: "Events",
-				href: "/events",
-			},
+			// {
+			// 	name: "Events",
+			// 	href: "/events",
+			// },
 			// {
 			// 	name: "Our Organizations",
 			// 	href: "/organizations",

@@ -42,8 +42,8 @@ export default function About({ data }: { data: any }): JSX.Element {
 					<Divider bg="white" />
 					<Center my={5}>
 						<SimpleGrid
-							columns={peopleGroups.length}
-							rounded={25}
+							columns={{ base: 1, md: peopleGroups.length }}
+							rounded={24}
 							background="#FFFC"
 							boxShadow="inset 0px 4px 4px rgba(0, 0, 0, 0.25)"
 							zIndex={0}
@@ -57,11 +57,11 @@ export default function About({ data }: { data: any }): JSX.Element {
 											style={{
 												width: "100%",
 												height: "100%",
-												zIndex: 1,
 												top: 0,
 												position: "absolute",
 												background: "white",
-												borderRadius: "9999px",
+												borderRadius:
+													"var(--chakra-radii-full)",
 												paddingInlineStart:
 													"var(--chakra-space-12)",
 												paddingInlineEnd:

@@ -60,8 +60,7 @@ export default function About({ data }: { data: any }): JSX.Element {
 												top: 0,
 												position: "absolute",
 												background: "white",
-												borderRadius:
-													"var(--chakra-radii-full)",
+												borderRadius: "24px",
 												paddingInlineStart:
 													"var(--chakra-space-12)",
 												paddingInlineEnd:
@@ -70,35 +69,26 @@ export default function About({ data }: { data: any }): JSX.Element {
 													"var(--chakra-space-3\\.5)",
 												paddingBottom:
 													"var(--chakra-space-3\\.5)",
+												fontFamily:
+													"var(--chakra-fonts-heading)",
+												fontWeight: "bold",
+												fontSize:
+													"var(--chakra-fontSizes-xl)",
+												lineHeight: "1.2",
+												zIndex: 5,
 											}}
+											initial={{
+												color: "transparent",
+											}}
+											animate={{
+												color: "var(--chakra-colors-brand-purple-dark)",
+											}}
+											exit={{
+												color: "transparent",
+											}}
+											transition={{ duration: 2 }}
 										>
-											{/* <Heading
-												color="brand.purple.dark"
-												size="md"
-												as="h3"
-											>
-												{personGroup.name}
-											</Heading> */}
-											<motion.h3
-												style={{
-													fontFamily:
-														"var(--chakra-fonts-heading)",
-													fontWeight: "bold",
-													fontSize:
-														"var(--chakra-fontSizes-xl)",
-													lineHeight: "1.2",
-													color: "var(--chakra-colors-brand-purple-dark)",
-												}}
-												initial={{ opacity: 0 }}
-												animate={{ opacity: 1 }}
-												// exit={{ opacity: 0 }}
-												transition={{
-													duration: 0.3,
-												}}
-												// layoutId="activeHeader"
-											>
-												{personGroup.name}
-											</motion.h3>
+											{personGroup.name}
 										</motion.div>
 									) : null}
 									<ExecutiveButton

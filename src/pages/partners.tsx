@@ -18,8 +18,8 @@ import {
 import StyledButton from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import { AnimatePresence, motion } from "framer-motion";
 import NextLink from "@components/nextChakra";
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 
 export default function PartnersPage() {
@@ -113,8 +113,7 @@ export default function PartnersPage() {
 												top: 0,
 												position: "absolute",
 												background: "white",
-												borderRadius:
-													"var(--chakra-radii-full)",
+												borderRadius: "24px",
 												paddingInlineStart:
 													"var(--chakra-space-12)",
 												paddingInlineEnd:
@@ -123,28 +122,26 @@ export default function PartnersPage() {
 													"var(--chakra-space-3\\.5)",
 												paddingBottom:
 													"var(--chakra-space-3\\.5)",
+												fontFamily:
+													"var(--chakra-fonts-heading)",
+												fontWeight: "bold",
+												fontSize:
+													"var(--chakra-fontSizes-xl)",
+												lineHeight: "1.2",
+												zIndex: 5,
 											}}
+											initial={{
+												color: "transparent",
+											}}
+											animate={{
+												color: "var(--chakra-colors-brand-purple-dark)",
+											}}
+											exit={{
+												color: "transparent",
+											}}
+											transition={{ duration: 2 }}
 										>
-											<motion.h3
-												style={{
-													fontFamily:
-														"var(--chakra-fonts-heading)",
-													fontWeight: "bold",
-													fontSize:
-														"var(--chakra-fontSizes-xl)",
-													lineHeight: "1.2",
-													color: "var(--chakra-colors-brand-purple-dark)",
-												}}
-												initial={{ opacity: 0 }}
-												animate={{ opacity: 1 }}
-												// exit={{ opacity: 0 }}
-												transition={{
-													duration: 0.3,
-												}}
-												// layoutId="activeHeader"
-											>
-												{partnerGroup.name}
-											</motion.h3>
+											{partnerGroup.name}
 										</motion.div>
 									) : null}
 									<PartnerButton

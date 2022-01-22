@@ -117,20 +117,6 @@ export default function About({ data }: { data: any }): JSX.Element {
 								</Box>
 							))}
 						</SimpleGrid>
-						{/* <Button
-							onClick={() => {
-								!senior && setSenior(true);
-							}}
-						>
-							Corporate Officers
-						</Button>
-						<Button
-							onClick={() => {
-								senior && setSenior(false);
-							}}
-						>
-							Division Presidents
-						</Button> */}
 					</Center>
 					<Heading fontSize={30} mb={5}>
 						Executive Profiles
@@ -273,7 +259,7 @@ const corporateOfficers: Person[] = [
 	// },
 	{
 		name: "Param Patil",
-		title: "Chief Advancements Officer ",
+		title: "Chief Advancements Officer",
 		img: "/staff/ParamPatil.jpg",
 	},
 	{
@@ -302,21 +288,6 @@ const corporateOfficers: Person[] = [
 		img: "/staff/BhavyasriSuggula.jpg",
 	},
 	{
-		name: "Hazim Arafa",
-		title: "President of Programming Simplified",
-		img: "/staff/HazimArafa.jpg",
-	},
-	{
-		name: "David Sun",
-		title: "President of National Chapters",
-		img: "/staff/DavidSun.jpg",
-	},
-	{
-		name: "Aarush Goradia",
-		title: "President of Student Activities",
-		img: "/staff/AarushGoradia.jpg",
-	},
-	{
 		name: "Sabrina Zhang",
 		title: "Executive Assisstant to CEO",
 		img: "/staff/SabrinaZhang.jpg",
@@ -332,11 +303,6 @@ const corporateOfficers: Person[] = [
 	// 	img: "/staff/ZachMartin.jpg",
 	// },
 	{
-		name: "Maya Murry",
-		title: "President of Research Simplified",
-		img: "/staff/MayaMurry.jpg",
-	},
-	{
 		name: "Brandon Woo",
 		title: "Chief Information Officer",
 		img: "/staff/BrandonWoo.jpg",
@@ -346,46 +312,66 @@ const corporateOfficers: Person[] = [
 		title: "Chief Financial Officer",
 		img: "/staff/KyleChen.jpg",
 	},
-	{
-		name: "Krishanu Datta",
-		title: "Senior Vice President of IT",
-		img: "/staff/KrishanuDatta.jpg",
-	},
+	// {
+	// 	name: "Krishanu Datta",
+	// 	title: "Senior Vice President of IT",
+	// 	img: "/staff/KrishanuDatta.jpg",
+	// },
 ];
 
 const divisionPresidents: Person[] = [
 	{
-		name: "Jiahao Zhang",
-		title: "Global Vice President of Advancement",
-		img: "/staff/JiahaoZhang.jpg",
+		name: "Hazim Arafa",
+		title: "President of Programming Simplified",
+		img: "/staff/HazimArafa.jpg",
 	},
 	{
-		name: "Yasmeen Elkheir",
-		title: "Vice President of Operations, Programming Simplified",
-		img: "/staff/YasmeenElkheir.jpg",
+		name: "David Sun",
+		title: "President of National Chapters",
+		img: "/staff/DavidSun.jpg",
 	},
 	{
-		name: "Isamar Zhu",
-		title: "Vice President of Staff, Programming Simplified",
-		img: "/staff/IsamarZhu.jpg",
+		name: "Aarush Goradia",
+		title: "President of Student Activities",
+		img: "/staff/AarushGoradia.jpg",
 	},
 	{
-		name: "Josh Schram",
-		// name: "Josh Schram",
-		title: "Vice President of Academics, Digital",
-		img: "/staff/JoshSchram.jpg",
+		name: "Maya Murry",
+		title: "President of Research Simplified",
+		img: "/staff/MayaMurry.jpg",
 	},
-	{
-		name: "Rohit Choudhary",
-		title: "Vice President of Academics, Digital",
-		img: "/staff/RohitChoudhary.jpg",
-	},
+	// {
+	// 	name: "Jiahao Zhang",
+	// 	title: "Global Vice President of Advancement",
+	// 	img: "/staff/JiahaoZhang.jpg",
+	// },
+	// {
+	// 	name: "Yasmeen Elkheir",
+	// 	title: "Vice President of Operations, Programming Simplified",
+	// 	img: "/staff/YasmeenElkheir.jpg",
+	// },
+	// {
+	// 	name: "Isamar Zhu",
+	// 	title: "Vice President of Staff, Programming Simplified",
+	// 	img: "/staff/IsamarZhu.jpg",
+	// },
+	// {
+	// 	name: "Josh Schram",
+	// 	// name: "Josh Schram",
+	// 	title: "Vice President of Academics, Digital",
+	// 	img: "/staff/JoshSchram.jpg",
+	// },
+	// {
+	// 	name: "Rohit Choudhary",
+	// 	title: "Vice President of Academics, Digital",
+	// 	img: "/staff/RohitChoudhary.jpg",
+	// },
 
-	{
-		name: "Rohit Penta",
-		title: "Vice President of Technology, Digital",
-		img: "/staff/RohitPenta.jpg",
-	},
+	// {
+	// 	name: "Rohit Penta",
+	// 	title: "Vice President of Technology, Digital",
+	// 	img: "/staff/RohitPenta.jpg",
+	// },
 	// {
 	// 	name: "Max Konzerowsky",
 	// 	title: "Vice President of Information-Technology, School Simplified Digital",
@@ -397,31 +383,31 @@ const divisionPresidents: Person[] = [
 	// 	img: "/staff/NicholasZhang.jpg",
 	// },
 
-	{
-		name: "Sophia Bhatia",
-		title: "Vice President of Community Engagement",
-		img: "/staff/soape.jpg",
-	},
+	// {
+	// 	name: "Sophia Bhatia",
+	// 	title: "Vice President of Community Engagement",
+	// 	img: "/staff/soape.jpg",
+	// },
 	// {
 	// 	name: "Noah Bondi",
 	// 	title: "National VP of Communications (Chapters)",
 	// 	img: "/staff/NoahBondi.jpg",
 	// },
-	{
-		name: "Vivek Anandh",
-		title: "Vice President of Information-Technology, National Chapters",
-		img: "/staff/VivekAnandh.jpg",
-	},
-	{
-		name: "Gavin Hecock",
-		title: "Vice President of Student Activities",
-		img: "/staff/GavinHecock.jpg",
-	},
-	{
-		name: "Christina Dong",
-		title: "Vice President of Marketing, National Chapters",
-		img: "/staff/ChristinaDong.jpg",
-	},
+	// {
+	// 	name: "Vivek Anandh",
+	// 	title: "Vice President of Information-Technology, National Chapters",
+	// 	img: "/staff/VivekAnandh.jpg",
+	// },
+	// {
+	// 	name: "Gavin Hecock",
+	// 	title: "Vice President of Student Activities",
+	// 	img: "/staff/GavinHecock.jpg",
+	// },
+	// {
+	// 	name: "Christina Dong",
+	// 	title: "Vice President of Marketing, National Chapters",
+	// 	img: "/staff/ChristinaDong.jpg",
+	// },
 	// {
 	// 	name: "Adrian Sucahyo",
 	// 	title: "Vice President of Operations, Chapters",
@@ -491,33 +477,6 @@ const boardOfDirectors: Person[] = [
 		img: "/staff/default.png",
 	},
 ];
-
-// function ExecutiveButton(props) {
-// 	const { children, onClick, left, active } = props;
-// 	return (
-// 		<Box
-// 			onClick={onClick}
-// 			maxW="200px"
-// 			py={3}
-// 			w="100%"
-// 			bg={
-// 				active
-// 					? "linear-gradient(90deg, #FFA270 0%, #e6c068 100%)"
-// 					: "brand.transparent"
-// 			}
-// 			borderLeftRadius={left ? "100px" : 0}
-// 			borderRightRadius={left ? 0 : "100PX"}
-// 			transition="all 0.1s ease-in"
-// 			_hover={{
-// 				bg: "brand.transparent2",
-// 				cursor: "pointer",
-// 			}}
-// 			{...props}
-// 		>
-// 			{children}
-// 		</Box>
-// 	);
-// }
 
 function ExecutiveButton({ children, ...props }: BoxProps) {
 	return (

@@ -11,6 +11,7 @@ import {
 	PopoverTrigger,
 	SimpleGrid,
 	Text,
+	useBreakpointValue,
 	useDisclosure,
 	Wrap,
 	WrapItem,
@@ -23,7 +24,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 
 export default function PartnersPage() {
-	const [partner, setPartner] = useState<PartnerGroup>(partnerGroups?.[0]);
+	const [groupIdx, setGroupIdx] = useState(0);
+	const isVertical = useBreakpointValue({ base: true, md: false });
 
 	return (
 		<>
@@ -97,68 +99,64 @@ export default function PartnersPage() {
 							background="#FFFC"
 							boxShadow="inset 0px 4px 4px rgba(0, 0, 0, 0.25)"
 							zIndex={0}
+							position="relative"
 						>
-							{partnerGroups.map((partnerGroup) => (
-								<Box
-									key={partnerGroup.name}
-									position="relative"
+							{partnerGroups.map((personGroup, idx) => (
+								<PartnerButton
+									onClick={() => setGroupIdx(idx)}
+									key={personGroup.name}
 								>
-									{partner &&
-									partnerGroup.name === partner.name ? (
-										<motion.div
-											layoutId="activeButton"
-											style={{
-												width: "100%",
-												height: "100%",
-												top: 0,
-												position: "absolute",
-												background: "white",
-												borderRadius: "24px",
-												paddingInlineStart:
-													"var(--chakra-space-12)",
-												paddingInlineEnd:
-													"var(--chakra-space-12)",
-												paddingTop:
-													"var(--chakra-space-3\\.5)",
-												paddingBottom:
-													"var(--chakra-space-3\\.5)",
-												fontFamily:
-													"var(--chakra-fonts-heading)",
-												fontWeight: "bold",
-												fontSize:
-													"var(--chakra-fontSizes-xl)",
-												lineHeight: "1.2",
-												zIndex: 5,
-											}}
-											initial={{
-												color: "transparent",
-											}}
-											animate={{
-												color: "var(--chakra-colors-brand-purple-dark)",
-											}}
-											exit={{
-												color: "transparent",
-											}}
-											transition={{ duration: 2 }}
+									<AnimatePresence>
+										<Heading
+											color="inherit"
+											size="md"
+											as="h3"
 										>
-											{partnerGroup.name}
-										</motion.div>
-									) : null}
-									<PartnerButton
-										onClick={() => setPartner(partnerGroup)}
-									>
-										<AnimatePresence>
-											<Heading
-												color="inherit"
-												size="md"
-												as="h3"
-											>
-												{partnerGroup.name}
-											</Heading>
-										</AnimatePresence>
-									</PartnerButton>
-								</Box>
+											{personGroup.name}
+										</Heading>
+									</AnimatePresence>
+								</PartnerButton>
 							))}
+							<motion.div
+								// layoutId="activeButton"
+								style={{
+									top: 0,
+									position: "absolute",
+									background: "white",
+									borderRadius: "24px",
+									paddingInlineStart:
+										"var(--chakra-space-12)",
+									paddingInlineEnd: "var(--chakra-space-12)",
+									paddingTop: "var(--chakra-space-3\\.5)",
+									paddingBottom: "var(--chakra-space-3\\.5)",
+									zIndex: 5,
+									gridRow: isVertical ? groupIdx + 1 : 1,
+									gridColumn: isVertical ? 1 : groupIdx + 1,
+								}}
+								transition={{ duration: 0.7 }}
+								layout
+							>
+								<AnimatePresence exitBeforeEnter>
+									<motion.h3
+										style={{
+											fontFamily:
+												"var(--chakra-fonts-heading)",
+											fontWeight: "bold",
+											fontSize:
+												"var(--chakra-fontSizes-xl)",
+											lineHeight: "1.2",
+											color: "var(--chakra-colors-brand-purple-dark)",
+										}}
+										initial={{ opacity: 0 }}
+										animate={{ opacity: 1 }}
+										exit={{ opacity: 0 }}
+										key={partnerGroups[groupIdx].name}
+										transition={{ duration: 0.3 }}
+									>
+										{partnerGroups[groupIdx].name}
+									</motion.h3>
+								</AnimatePresence>
+							</motion.div>
 						</SimpleGrid>
 					</Center>
 
@@ -173,32 +171,30 @@ export default function PartnersPage() {
 						}}
 						spacingY={0}
 					>
-						{partner
-							? partner.data.map((partnerData) => {
-									return partnerData.link ? (
-										<NextLink
-											href={partnerData.link}
-											isExternal
-											key={partnerData.name}
-										>
-											<Cell
-												h="180px"
-												alt={partnerData.name}
-												src={partnerData.src}
-												desc={partnerData.description}
-											/>
-										</NextLink>
-									) : (
-										<Cell
-											h="180px"
-											key={partnerData.name}
-											alt={partnerData.name}
-											src={partnerData.src}
-											desc={partnerData.description}
-										/>
-									);
-							  })
-							: null}
+						{partnerGroups[groupIdx].data.map((partnerData) => {
+							return partnerData.link ? (
+								<NextLink
+									href={partnerData.link}
+									isExternal
+									key={partnerData.name}
+								>
+									<Cell
+										h="180px"
+										alt={partnerData.name}
+										src={partnerData.src}
+										desc={partnerData.description}
+									/>
+								</NextLink>
+							) : (
+								<Cell
+									h="180px"
+									key={partnerData.name}
+									alt={partnerData.name}
+									src={partnerData.src}
+									desc={partnerData.description}
+								/>
+							);
+						})}
 					</SimpleGrid>
 				</ContainerInside>
 			</Container>

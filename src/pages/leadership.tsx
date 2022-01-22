@@ -30,7 +30,6 @@ import { useState } from "react";
 import { GovernanceDocument, GovernanceSection, Person } from "types";
 
 export default function About({ data }: { data: any }): JSX.Element {
-	// const [senior, setSenior] = useState(true);
 	const [groupIdx, setGroupIdx] = useState(0);
 	const isVertical = useBreakpointValue({ base: true, md: false });
 	return (

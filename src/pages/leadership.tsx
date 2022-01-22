@@ -18,6 +18,7 @@ import {
 	Th,
 	Thead,
 	Tr,
+	useBreakpointValue,
 	VStack,
 } from "@chakra-ui/react";
 import Container from "@components/container";
@@ -30,7 +31,9 @@ import { GovernanceDocument, GovernanceSection, Person } from "types";
 
 export default function About({ data }: { data: any }): JSX.Element {
 	// const [senior, setSenior] = useState(true);
-	const [group, setGroup] = useState<PeopleGroup>(peopleGroups?.[0]);
+	const [groupIdx, setGroupIdx] = useState(0);
+	const activeButtonRow = useBreakpointValue({ base: groupIdx + 1, md: 1 });
+	const activeButtonCol = useBreakpointValue({ base: 1, md: groupIdx + 1 });
 	return (
 		<>
 			<Container>
@@ -47,83 +50,74 @@ export default function About({ data }: { data: any }): JSX.Element {
 							background="#FFFC"
 							boxShadow="inset 0px 4px 4px rgba(0, 0, 0, 0.25)"
 							zIndex={0}
+							position="relative"
 						>
-							{peopleGroups.map((personGroup) => (
-								<Box key={personGroup.name} position="relative">
-									{group &&
-									personGroup.name === group.name ? (
-										<motion.div
-											layoutId="activeButton"
-											style={{
-												width: "100%",
-												height: "100%",
-												top: 0,
-												position: "absolute",
-												background: "white",
-												borderRadius: "24px",
-												paddingInlineStart:
-													"var(--chakra-space-12)",
-												paddingInlineEnd:
-													"var(--chakra-space-12)",
-												paddingTop:
-													"var(--chakra-space-3\\.5)",
-												paddingBottom:
-													"var(--chakra-space-3\\.5)",
-												fontFamily:
-													"var(--chakra-fonts-heading)",
-												fontWeight: "bold",
-												fontSize:
-													"var(--chakra-fontSizes-xl)",
-												lineHeight: "1.2",
-												zIndex: 5,
-											}}
-											initial={{
-												color: "transparent",
-											}}
-											animate={{
-												color: "var(--chakra-colors-brand-purple-dark)",
-											}}
-											exit={{
-												color: "transparent",
-											}}
-											transition={{ duration: 2 }}
+							{peopleGroups.map((personGroup, idx) => (
+								<ExecutiveButton
+									onClick={() => setGroupIdx(idx)}
+									key={personGroup.name}
+								>
+									<AnimatePresence>
+										<Heading
+											color="inherit"
+											size="md"
+											as="h3"
 										>
 											{personGroup.name}
-										</motion.div>
-									) : null}
-									<ExecutiveButton
-										onClick={() => setGroup(personGroup)}
-									>
-										<AnimatePresence>
-											<Heading
-												color="inherit"
-												size="md"
-												as="h3"
-											>
-												{personGroup.name}
-											</Heading>
-										</AnimatePresence>
-									</ExecutiveButton>
-								</Box>
+										</Heading>
+									</AnimatePresence>
+								</ExecutiveButton>
 							))}
+							<motion.div
+								// layoutId="activeButton"
+								style={{
+									top: 0,
+									position: "absolute",
+									background: "white",
+									borderRadius: "24px",
+									paddingInlineStart:
+										"var(--chakra-space-12)",
+									paddingInlineEnd: "var(--chakra-space-12)",
+									paddingTop: "var(--chakra-space-3\\.5)",
+									paddingBottom: "var(--chakra-space-3\\.5)",
+									fontFamily: "var(--chakra-fonts-heading)",
+									fontWeight: "bold",
+									fontSize: "var(--chakra-fontSizes-xl)",
+									lineHeight: "1.2",
+									zIndex: 5,
+									gridRow: activeButtonRow,
+									gridColumn: activeButtonCol,
+								}}
+								initial={{
+									color: "transparent",
+								}}
+								animate={{
+									color: "var(--chakra-colors-brand-purple-dark)",
+								}}
+								exit={{
+									color: "transparent",
+								}}
+								transition={{ duration: 2 }}
+								layout
+							>
+								{peopleGroups[groupIdx].name}
+							</motion.div>
 						</SimpleGrid>
 					</Center>
 					<Heading fontSize={30} mb={5}>
 						Executive Profiles
 					</Heading>
 					<Flex justifyContent="center" flexWrap="wrap">
-						{group
-							? group.people.map((staff: Person) => {
-									return (
-										<StaffCard
-											title={staff.title}
-											name={staff.name}
-											img={staff.img}
-											key={staff.img}
-										/>
-									);
-							  })
-							: null}
+						{peopleGroups[groupIdx].people.map((staff: Person) => {
+							return (
+								<StaffCard
+									title={staff.title}
+									name={staff.name}
+									img={staff.img}
+									key={staff.img}
+								/>
+							);
+						})}
 					</Flex>
 
 					<Divider bg="white" />

@@ -283,11 +283,6 @@ const corporateOfficers: Person[] = [
 	// 	img: "/staff/DianaZheng.jpg",
 	// },
 	{
-		name: "Bhavyasri Suggula",
-		title: "Executive Projects Director",
-		img: "/staff/BhavyasriSuggula.jpg",
-	},
-	{
 		name: "Sabrina Zhang",
 		title: "Executive Assisstant to CEO",
 		img: "/staff/SabrinaZhang.jpg",
@@ -320,6 +315,11 @@ const corporateOfficers: Person[] = [
 ];
 
 const divisionPresidents: Person[] = [
+	{
+		name: "Bhavyasri Suggula",
+		title: "Executive Projects Director",
+		img: "/staff/BhavyasriSuggula.jpg",
+	},
 	{
 		name: "Hazim Arafa",
 		title: "President of Programming Simplified",

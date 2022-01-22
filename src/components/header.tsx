@@ -22,10 +22,10 @@ type MenuItem = {
 };
 
 const menuItems: MenuItem[] = [
-	{
-		name: "Home",
-		href: "/",
-	},
+	// {
+	// 	name: "Home",
+	// 	href: "/",
+	// },
 	{
 		name: "About Us",
 		children: [

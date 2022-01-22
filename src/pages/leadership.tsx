@@ -24,13 +24,13 @@ import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import NextLink from "@components/nextChakra";
 import StaffCard from "@components/staffcard";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { GovernanceDocument, GovernanceSection, Person } from "types";
 
 export default function About({ data }: { data: any }): JSX.Element {
 	// const [senior, setSenior] = useState(true);
-	const [group, setGroup] = useState<PeopleGroup>(null);
+	const [group, setGroup] = useState<PeopleGroup>(peopleGroups?.[0]);
 	return (
 		<>
 			<Container>
@@ -43,41 +43,76 @@ export default function About({ data }: { data: any }): JSX.Element {
 					<Center my={5}>
 						<SimpleGrid
 							columns={peopleGroups.length}
-							rounded="full"
-							borderColor="white"
-							borderWidth={3}
+							rounded={25}
+							background="#FFFC"
+							boxShadow="inset 0px 4px 4px rgba(0, 0, 0, 0.25)"
+							zIndex={0}
 						>
 							{peopleGroups.map((personGroup) => (
 								<Box key={personGroup.name} position="relative">
 									{group &&
 									personGroup.name === group.name ? (
 										<motion.div
-											layoutId="background"
+											layoutId="activeButton"
 											style={{
 												width: "100%",
 												height: "100%",
-												zIndex: -1,
+												zIndex: 1,
 												top: 0,
 												position: "absolute",
 												background: "white",
 												borderRadius: "9999px",
+												paddingInlineStart:
+													"var(--chakra-space-12)",
+												paddingInlineEnd:
+													"var(--chakra-space-12)",
+												paddingTop:
+													"var(--chakra-space-3\\.5)",
+												paddingBottom:
+													"var(--chakra-space-3\\.5)",
 											}}
-										/>
+										>
+											{/* <Heading
+												color="brand.purple.dark"
+												size="md"
+												as="h3"
+											>
+												{personGroup.name}
+											</Heading> */}
+											<motion.h3
+												style={{
+													fontFamily:
+														"var(--chakra-fonts-heading)",
+													fontWeight: "bold",
+													fontSize:
+														"var(--chakra-fontSizes-xl)",
+													lineHeight: "1.2",
+													color: "var(--chakra-colors-brand-purple-dark)",
+												}}
+												initial={{ opacity: 0 }}
+												animate={{ opacity: 1 }}
+												// exit={{ opacity: 0 }}
+												transition={{
+													duration: 0.3,
+												}}
+												// layoutId="activeHeader"
+											>
+												{personGroup.name}
+											</motion.h3>
+										</motion.div>
 									) : null}
 									<ExecutiveButton
 										onClick={() => setGroup(personGroup)}
-										selected={
-											group &&
-											personGroup.name === group.name
-										}
 									>
-										<Heading
-											color="inherit"
-											size="md"
-											as="h3"
-										>
-											{personGroup.name}
-										</Heading>
+										<AnimatePresence>
+											<Heading
+												color="inherit"
+												size="md"
+												as="h3"
+											>
+												{personGroup.name}
+											</Heading>
+										</AnimatePresence>
 									</ExecutiveButton>
 								</Box>
 							))}
@@ -484,21 +519,17 @@ const boardOfDirectors: Person[] = [
 // 	);
 // }
 
-function ExecutiveButton({
-	children,
-	selected,
-	...props
-}: BoxProps & { selected: boolean }) {
+function ExecutiveButton({ children, ...props }: BoxProps) {
 	return (
 		<Box
 			as="button"
-			px={4}
-			py={2}
+			px={12}
+			py={3.5}
 			transition="all 0.2s ease"
 			fontSize="14px"
 			fontWeight="semibold"
 			background="transparent"
-			color={selected ? "brand.purple.dark" : "white"}
+			color="#5A60ADCC"
 			minW={205}
 			{...props}
 		>

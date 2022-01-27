@@ -41,7 +41,7 @@
 		"react-katex": "^2.0.2",
 		"react-pdf": "^5.7.0",
 		"react-wavify": "^1.5.4",
-		"stylis": "^3.5.4",
+		"stylis": "^4.0.13",
 		"webpack": "^5.67.0",
 		"worker-loader": "^3.0.8"
 	},

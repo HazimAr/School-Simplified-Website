@@ -55,7 +55,7 @@
 		"@types/react": "^17.0.38",
 		"@types/react-icons": "^3.0.0",
 		"@types/react-pdf": "^5.0.9",
-		"eslint": "^8.6.0",
+		"eslint": "^8.7.0",
 		"prettier": "^2.5.1",
 		"typescript": "^4.5.5"
 	}

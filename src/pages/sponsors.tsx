@@ -1,6 +1,5 @@
 import {
 	Box,
-	BoxProps,
 	Center,
 	Divider,
 	Heading,
@@ -12,7 +11,6 @@ import {
 	PopoverTrigger,
 	SimpleGrid,
 	Text,
-	useBreakpointValue,
 	useDisclosure,
 	Wrap,
 	WrapItem,
@@ -20,13 +18,12 @@ import {
 import StyledButton from "@components/button";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
-import NextLink from "@components/nextChakra";
 import { AnimatePresence, motion } from "framer-motion";
+import NextLink from "@components/nextChakra";
 import { useState } from "react";
 
 export default function PartnersPage() {
-	const [groupIdx, setGroupIdx] = useState(0);
-	const isVertical = useBreakpointValue({ base: true, md: false });
+	const [partner, setPartner] = useState<PartnerGroup>(partnerGroups?.[0]);
 
 	return (
 		<>
@@ -100,59 +97,71 @@ export default function PartnersPage() {
 							background="#FFFC"
 							boxShadow="inset 0px 4px 4px rgba(0, 0, 0, 0.25)"
 							zIndex={0}
-							position="relative"
 						>
-							{partnerGroups.map((partnerGroup, idx) => (
-								<PartnerButton
-									onClick={() => setGroupIdx(idx)}
-									key={partnerGroup.name}
-									gridRow={isVertical ? idx + 1 : 1}
-									gridColumn={isVertical ? 1 : idx + 1}
-								>
-									<AnimatePresence>
-										<Heading
-											color="inherit"
-											size="md"
-											as="h3"
-										>
-											{partnerGroup.name}
-										</Heading>
-									</AnimatePresence>
-								</PartnerButton>
-							))}
-							<motion.div
-								style={{
-									gridRow: isVertical ? groupIdx + 1 : 1,
-									gridColumn: isVertical ? 1 : groupIdx + 1,
-								}}
-								transition={{ duration: 0.7 }}
-								layout
-							>
+							{partnerGroups.map((partnerGroup) => (
 								<Box
-									background="white"
-									rounded={24}
-									px={12}
-									py={3.5}
+									key={partnerGroup.name}
+									position="relative"
 								>
-									<AnimatePresence exitBeforeEnter>
+									{partner &&
+									partnerGroup.name === partner.name ? (
 										<motion.div
-											initial={{ opacity: 0 }}
-											animate={{ opacity: 1 }}
-											exit={{ opacity: 0 }}
-											key={partnerGroups[groupIdx].name}
-											transition={{ duration: 0.3 }}
+											layoutId="activeButton"
+											style={{
+												width: "100%",
+												height: "100%",
+												top: 0,
+												position: "absolute",
+												background: "white",
+												borderRadius:
+													"var(--chakra-radii-full)",
+												paddingInlineStart:
+													"var(--chakra-space-12)",
+												paddingInlineEnd:
+													"var(--chakra-space-12)",
+												paddingTop:
+													"var(--chakra-space-3\\.5)",
+												paddingBottom:
+													"var(--chakra-space-3\\.5)",
+											}}
 										>
-											<Heading
-												as="h3"
-												size="md"
-												color="brand.darkerBlue"
+											<motion.h3
+												style={{
+													fontFamily:
+														"var(--chakra-fonts-heading)",
+													fontWeight: "bold",
+													fontSize:
+														"var(--chakra-fontSizes-xl)",
+													lineHeight: "1.2",
+													color: "var(--chakra-colors-brand-purple-dark)",
+												}}
+												initial={{ opacity: 0 }}
+												animate={{ opacity: 1 }}
+												// exit={{ opacity: 0 }}
+												transition={{
+													duration: 0.3,
+												}}
+												// layoutId="activeHeader"
 											>
-												{partnerGroups[groupIdx].name}
-											</Heading>
+												{partnerGroup.name}
+											</motion.h3>
 										</motion.div>
-									</AnimatePresence>
+									) : null}
+									<PartnerButton
+										onClick={() => setPartner(partnerGroup)}
+									>
+										<AnimatePresence>
+											<Heading
+												color="inherit"
+												size="md"
+												as="h3"
+											>
+												{partnerGroup.name}
+											</Heading>
+										</AnimatePresence>
+									</PartnerButton>
 								</Box>
-							</motion.div>
+							))}
 						</SimpleGrid>
 					</Center>
 
@@ -167,30 +176,32 @@ export default function PartnersPage() {
 						}}
 						spacingY={0}
 					>
-						{partnerGroups[groupIdx].data.map((partnerData) => {
-							return partnerData.link ? (
-								<NextLink
-									href={partnerData.link}
-									isExternal
-									key={partnerData.name}
-								>
-									<Cell
-										h="180px"
-										alt={partnerData.name}
-										src={partnerData.src}
-										desc={partnerData.description}
-									/>
-								</NextLink>
-							) : (
-								<Cell
-									h="180px"
-									key={partnerData.name}
-									alt={partnerData.name}
-									src={partnerData.src}
-									desc={partnerData.description}
-								/>
-							);
-						})}
+						{partner
+							? partner.data.map((partnerData) => {
+									return partnerData.link ? (
+										<NextLink
+											href={partnerData.link}
+											isExternal
+											key={partnerData.name}
+										>
+											<Cell
+												h="180px"
+												alt={partnerData.name}
+												src={partnerData.src}
+												desc={partnerData.description}
+											/>
+										</NextLink>
+									) : (
+										<Cell
+											h="180px"
+											key={partnerData.name}
+											alt={partnerData.name}
+											src={partnerData.src}
+											desc={partnerData.description}
+										/>
+									);
+							  })
+							: null}
 					</SimpleGrid>
 				</ContainerInside>
 			</Container>
@@ -310,7 +321,7 @@ const partnerGroups: PartnerGroup[] = [
 	{ name: "Sponsors and Donors", data: sponsorsAndDonors },
 ];
 
-function PartnerButton({ children, ...props }: BoxProps) {
+function PartnerButton({ children, ...props }) {
 	return (
 		<Box
 			as="button"

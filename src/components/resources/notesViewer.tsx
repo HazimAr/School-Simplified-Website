@@ -174,24 +174,38 @@ function NotesDropdown({
 										</AccordionButton>
 										<AccordionPanel bg="#656BB8CC" p={2}>
 											<Stack spacing={0}>
-												{unit.content.map((notes) => (
-													<Box
-														onClick={() =>
-															onNotesSelect(notes)
-														}
-														fontSize={14}
-														transition="all 0.2s ease"
-														_hover={{
-															background: "#fff3",
-															cursor: "pointer",
-														}}
-														key={notes.title}
-														px={2}
-														py={0.5}
-													>
-														{notes.title}
-													</Box>
-												))}
+												{unit.content.length ? (
+													unit.content.map(
+														(notes) => (
+															<Box
+																onClick={() =>
+																	onNotesSelect(
+																		notes
+																	)
+																}
+																fontSize={14}
+																transition="all 0.2s ease"
+																_hover={{
+																	background:
+																		"#fff3",
+																	cursor: "pointer",
+																}}
+																key={
+																	notes.title
+																}
+																px={2}
+																py={0.5}
+															>
+																{notes.title}
+															</Box>
+														)
+													)
+												) : (
+													<Text as="i" fontSize={14}>
+														No notes here yet!
+														Please check back later.
+													</Text>
+												)}
 											</Stack>
 										</AccordionPanel>
 									</AccordionItem>

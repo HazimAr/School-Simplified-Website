@@ -18,6 +18,7 @@ import {
 	Th,
 	Thead,
 	Tr,
+	useBreakpointValue,
 	VStack,
 } from "@chakra-ui/react";
 import Container from "@components/container";
@@ -29,8 +30,8 @@ import { useState } from "react";
 import { GovernanceDocument, GovernanceSection, Person } from "types";
 
 export default function About({ data }: { data: any }): JSX.Element {
-	// const [senior, setSenior] = useState(true);
-	const [group, setGroup] = useState<PeopleGroup>(peopleGroups?.[0]);
+	const [groupIdx, setGroupIdx] = useState(0);
+	const isVertical = useBreakpointValue({ base: true, md: false });
 	return (
 		<>
 			<Container>
@@ -47,93 +48,75 @@ export default function About({ data }: { data: any }): JSX.Element {
 							background="#FFFC"
 							boxShadow="inset 0px 4px 4px rgba(0, 0, 0, 0.25)"
 							zIndex={0}
+							position="relative"
 						>
-							{peopleGroups.map((personGroup) => (
-								<Box key={personGroup.name} position="relative">
-									{group &&
-									personGroup.name === group.name ? (
-										<motion.div
-											layoutId="activeButton"
-											style={{
-												width: "100%",
-												height: "100%",
-												top: 0,
-												position: "absolute",
-												background: "white",
-												borderRadius:
-													"var(--chakra-radii-full)",
-												paddingInlineStart:
-													"var(--chakra-space-12)",
-												paddingInlineEnd:
-													"var(--chakra-space-12)",
-												paddingTop:
-													"var(--chakra-space-3\\.5)",
-												paddingBottom:
-													"var(--chakra-space-3\\.5)",
-											}}
+							{peopleGroups.map((personGroup, idx) => (
+								<ExecutiveButton
+									onClick={() => setGroupIdx(idx)}
+									key={personGroup.name}
+									gridRow={isVertical ? idx + 1 : 1}
+									gridColumn={isVertical ? 1 : idx + 1}
+								>
+									<AnimatePresence>
+										<Heading
+											color="inherit"
+											size="md"
+											as="h3"
 										>
-											{/* <Heading
-												color="brand.purple.dark"
-												size="md"
-												as="h3"
-											>
-												{personGroup.name}
-											</Heading> */}
-											<motion.h3
-												style={{
-													fontFamily:
-														"var(--chakra-fonts-heading)",
-													fontWeight: "bold",
-													fontSize:
-														"var(--chakra-fontSizes-xl)",
-													lineHeight: "1.2",
-													color: "var(--chakra-colors-brand-purple-dark)",
-												}}
-												initial={{ opacity: 0 }}
-												animate={{ opacity: 1 }}
-												// exit={{ opacity: 0 }}
-												transition={{
-													duration: 0.3,
-												}}
-												// layoutId="activeHeader"
-											>
-												{personGroup.name}
-											</motion.h3>
-										</motion.div>
-									) : null}
-									<ExecutiveButton
-										onClick={() => setGroup(personGroup)}
-									>
-										<AnimatePresence>
-											<Heading
-												color="inherit"
-												size="md"
-												as="h3"
-											>
-												{personGroup.name}
-											</Heading>
-										</AnimatePresence>
-									</ExecutiveButton>
-								</Box>
+											{personGroup.name}
+										</Heading>
+									</AnimatePresence>
+								</ExecutiveButton>
 							))}
+							<motion.div
+								style={{
+									gridRow: isVertical ? groupIdx + 1 : 1,
+									gridColumn: isVertical ? 1 : groupIdx + 1,
+								}}
+								transition={{ duration: 0.7 }}
+								layout
+							>
+								<Box
+									background="white"
+									rounded={24}
+									px={12}
+									py={3.5}
+								>
+									<AnimatePresence exitBeforeEnter>
+										<motion.div
+											initial={{ opacity: 0 }}
+											animate={{ opacity: 1 }}
+											exit={{ opacity: 0 }}
+											key={peopleGroups[groupIdx].name}
+											transition={{ duration: 0.3 }}
+										>
+											<Heading
+												as="h3"
+												size="md"
+												color="brand.darkerBlue"
+											>
+												{peopleGroups[groupIdx].name}
+											</Heading>
+										</motion.div>
+									</AnimatePresence>
+								</Box>
+							</motion.div>
 						</SimpleGrid>
 					</Center>
 					<Heading fontSize={30} mb={5}>
 						Executive Profiles
 					</Heading>
 					<Flex justifyContent="center" flexWrap="wrap">
-						{group
-							? group.people.map((staff: Person) => {
-									return (
-										<StaffCard
-											title={staff.title}
-											name={staff.name}
-											img={staff.img}
-											key={staff.img}
-										/>
-									);
-							  })
-							: null}
+						{peopleGroups[groupIdx].people.map((staff: Person) => {
+							return (
+								<StaffCard
+									title={staff.title}
+									name={staff.name}
+									img={staff.img}
+									key={staff.img}
+								/>
+							);
+						})}
 					</Flex>
 
 					<Divider bg="white" />

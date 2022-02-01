@@ -54,6 +54,8 @@ export default function About({ data }: { data: any }): JSX.Element {
 								<ExecutiveButton
 									onClick={() => setGroupIdx(idx)}
 									key={personGroup.name}
+									gridRow={isVertical ? idx + 1 : 1}
+									gridColumn={isVertical ? 1 : idx + 1}
 								>
 									<AnimatePresence>
 										<Heading
@@ -67,44 +69,37 @@ export default function About({ data }: { data: any }): JSX.Element {
 								</ExecutiveButton>
 							))}
 							<motion.div
-								// layoutId="activeButton"
 								style={{
-									top: 0,
-									position: "absolute",
-									background: "white",
-									borderRadius: "24px",
-									paddingInlineStart:
-										"var(--chakra-space-12)",
-									paddingInlineEnd: "var(--chakra-space-12)",
-									paddingTop: "var(--chakra-space-3\\.5)",
-									paddingBottom: "var(--chakra-space-3\\.5)",
-									zIndex: 5,
 									gridRow: isVertical ? groupIdx + 1 : 1,
 									gridColumn: isVertical ? 1 : groupIdx + 1,
 								}}
 								transition={{ duration: 0.7 }}
 								layout
 							>
-								<AnimatePresence exitBeforeEnter>
-									<motion.h3
-										style={{
-											fontFamily:
-												"var(--chakra-fonts-heading)",
-											fontWeight: "bold",
-											fontSize:
-												"var(--chakra-fontSizes-xl)",
-											lineHeight: "1.2",
-											color: "var(--chakra-colors-brand-purple-dark)",
-										}}
-										initial={{ opacity: 0 }}
-										animate={{ opacity: 1 }}
-										exit={{ opacity: 0 }}
-										key={peopleGroups[groupIdx].name}
-										transition={{ duration: 0.3 }}
-									>
-										{peopleGroups[groupIdx].name}
-									</motion.h3>
-								</AnimatePresence>
+								<Box
+									background="white"
+									rounded={24}
+									px={12}
+									py={3.5}
+								>
+									<AnimatePresence exitBeforeEnter>
+										<motion.div
+											initial={{ opacity: 0 }}
+											animate={{ opacity: 1 }}
+											exit={{ opacity: 0 }}
+											key={peopleGroups[groupIdx].name}
+											transition={{ duration: 0.3 }}
+										>
+											<Heading
+												as="h3"
+												size="md"
+												color="brand.darkerBlue"
+											>
+												{peopleGroups[groupIdx].name}
+											</Heading>
+										</motion.div>
+									</AnimatePresence>
+								</Box>
 							</motion.div>
 						</SimpleGrid>
 					</Center>

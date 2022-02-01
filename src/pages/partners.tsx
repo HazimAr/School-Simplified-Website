@@ -102,10 +102,10 @@ export default function PartnersPage() {
 							zIndex={0}
 							position="relative"
 						>
-							{partnerGroups.map((personGroup, idx) => (
+							{partnerGroups.map((partnerGroup, idx) => (
 								<PartnerButton
 									onClick={() => setGroupIdx(idx)}
-									key={personGroup.name}
+									key={partnerGroup.name}
 									gridRow={isVertical ? idx + 1 : 1}
 									gridColumn={isVertical ? 1 : idx + 1}
 								>
@@ -115,7 +115,7 @@ export default function PartnersPage() {
 											size="md"
 											as="h3"
 										>
-											{personGroup.name}
+											{partnerGroup.name}
 										</Heading>
 									</AnimatePresence>
 								</PartnerButton>
@@ -142,7 +142,11 @@ export default function PartnersPage() {
 											key={partnerGroups[groupIdx].name}
 											transition={{ duration: 0.3 }}
 										>
-											<Heading as="h3">
+											<Heading
+												as="h3"
+												size="md"
+												color="brand.darkerBlue"
+											>
 												{partnerGroups[groupIdx].name}
 											</Heading>
 										</motion.div>

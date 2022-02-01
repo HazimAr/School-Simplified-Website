@@ -179,16 +179,16 @@ export default function Header(): JSX.Element {
 							flexWrap="wrap"
 							justifyContent="center"
 						>
-							{menuItems.map((menuItem, idx: number) =>
+							{menuItems.map((menuItem) =>
 								menuItem.children ? (
 									<DropdownMenu
 										menuItem={menuItem}
-										key={"menuitem_" + idx}
+										key={menuItem.name}
 									/>
 								) : (
 									<NextLink
 										href={menuItem.href}
-										key={"menuitem_" + idx}
+										key={menuItem.name}
 									>
 										{menuItem.isBold ? (
 											<b>{menuItem.name}</b>

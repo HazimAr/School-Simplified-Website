@@ -1,5 +1,6 @@
 import {
 	Box,
+	BoxProps,
 	Center,
 	Divider,
 	Heading,
@@ -105,6 +106,8 @@ export default function PartnersPage() {
 								<PartnerButton
 									onClick={() => setGroupIdx(idx)}
 									key={personGroup.name}
+									gridRow={isVertical ? idx + 1 : 1}
+									gridColumn={isVertical ? 1 : idx + 1}
 								>
 									<AnimatePresence>
 										<Heading
@@ -121,7 +124,7 @@ export default function PartnersPage() {
 								// layoutId="activeButton"
 								style={{
 									top: 0,
-									position: "absolute",
+									// position: "absolute",
 									background: "white",
 									borderRadius: "24px",
 									paddingInlineStart:
@@ -314,7 +317,7 @@ const partnerGroups: PartnerGroup[] = [
 	{ name: "Sponsors and Donors", data: sponsorsAndDonors },
 ];
 
-function PartnerButton({ children, ...props }) {
+function PartnerButton({ children, ...props }: BoxProps) {
 	return (
 		<Box
 			as="button"

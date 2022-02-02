@@ -21,7 +21,7 @@ export default function StaffCard({
 	name,
 	img,
 }: StaffCard): JSX.Element {
-	const width = useBreakpointValue({ base: 200, lg: 300 });
+	const width = useBreakpointValue({ base: 200, lg: 300 }) || 200;
 	return (
 		<Flex flexDir="column" p="15px" m="5px" align="center">
 			<Center
@@ -32,11 +32,11 @@ export default function StaffCard({
 			>
 				<Image
 					rounded="30px"
-					boxSize={{ base: 165, lg: 265 }}
+					boxSize={width - 35}
 					objectFit="cover"
 					backgroundPosition="top"
-					alt="staff member"
-					src={img}
+					alt={"Picture of " + name}
+					src={img ?? "/staff/default.png"}
 				/>
 			</Center>
 			<Box maxW={width} py="5px">

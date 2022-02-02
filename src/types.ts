@@ -209,3 +209,43 @@ export type JobPosting = {
 	 */
 	name: string;
 };
+
+/**
+ * A type that represents an executive of School Simplified.
+ * Contains all data that is necessary to display to the /leadership page
+ */
+export type Executive = {
+	// ID is not included
+	/**
+	 * Their name, likely as a title case string in Latin letters
+	 */
+	name: string;
+	/**
+	 * Their title (e.g. Director or President of Research Simplified)
+	 */
+	title: string;
+	/**
+	 * A file for their image
+	 * Try to keep this as a SS website link for optimal loading
+	 */
+	image?: FileObj;
+	/**
+	 * NOTE: NOT YET FULLY IMPLEMENTED
+	 * A copy/paste of the Notion-style rich text objects that compose their bio
+	 */
+	biography?: any;
+};
+
+/**
+ * A group of executives
+ */
+export type ExecutiveGroup = {
+	/**
+	 * The name of this group/category
+	 */
+	name: string;
+	/**
+	 * A list of executives under this group/category
+	 */
+	executives: Executive[];
+};

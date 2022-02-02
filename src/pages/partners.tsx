@@ -96,7 +96,7 @@ export default function PartnersPage() {
 					<Center my={5}>
 						<SimpleGrid
 							columns={{ base: 1, md: partnerGroups.length }}
-							rounded={24}
+							rounded={{ base: 24, md: "full" }}
 							background="#FFFC"
 							boxShadow="inset 0px 4px 4px rgba(0, 0, 0, 0.25)"
 							zIndex={0}
@@ -130,7 +130,7 @@ export default function PartnersPage() {
 							>
 								<Box
 									background="white"
-									rounded={24}
+									rounded={{ base: 24, md: "full" }}
 									px={12}
 									py={3.5}
 								>

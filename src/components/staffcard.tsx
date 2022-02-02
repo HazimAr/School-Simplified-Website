@@ -2,47 +2,48 @@
 import {
 	Box,
 	Center,
-	Flex,
 	Heading,
 	Image,
+	Stack,
+	StackProps,
 	Text,
-	useBreakpointValue,
 } from "@chakra-ui/react";
+import React from "react";
+import { Executive } from "types";
+import { parseText } from "util/parse_notion";
 // import { RiBoxingLine } from "react-icons/ri";
 
-type StaffCard = {
-	name: string;
-	title: string;
-	img: string;
-};
+type StaffCardProps = {
+	staff: Executive;
+} & StackProps;
 
 export default function StaffCard({
-	title,
-	name,
-	img,
-}: StaffCard): JSX.Element {
-	const width = useBreakpointValue({ base: 200, lg: 300 }) || 200;
+	staff: { name, image, title, biography },
+	...props
+}: StaffCardProps): JSX.Element {
 	return (
-		<Flex flexDir="column" p="15px" m="5px" align="center">
-			<Center
-				w={width}
-				h={width}
-				backgroundColor="brand.transparent"
-				rounded="50px"
-			>
+		<Stack p={4} m={1} spacing={2} maxW={{ base: 200, lg: 300 }} {...props}>
+			<Center p={17} backgroundColor="brand.transparent" rounded={50}>
 				<Image
-					rounded="30px"
-					boxSize={width - 35}
-					objectFit="cover"
-					backgroundPosition="top"
+					rounded={30}
+					style={{ aspectRatio: "1" }}
 					alt={"Picture of " + name}
-					src={img ?? "/staff/default.png"}
+					objectFit="cover"
+					// objectPosition="top"
+					src={image?.url ?? "/staff/default.png"}
 				/>
 			</Center>
-			<Box maxW={width} py="5px">
+			<Box>
 				<Heading size="md">{name}</Heading>
 				<Text flexWrap="wrap">{title}</Text>
 			</Box>
-		</Flex>
+			{biography && (
+				<Text fontSize={14}>
+					{biography.map((s) =>
+						React.cloneElement(parseText(s), { key: s.plain_text })
+					)}
+				</Text>
+			)}
+		</Stack>
 	);
 }

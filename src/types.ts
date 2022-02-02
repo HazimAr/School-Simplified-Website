@@ -233,7 +233,7 @@ export type Executive = {
 	 * NOTE: NOT YET FULLY IMPLEMENTED
 	 * A copy/paste of the Notion-style rich text objects that compose their bio
 	 */
-	biography?: any;
+	biography?: any[];
 };
 
 /**

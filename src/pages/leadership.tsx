@@ -124,9 +124,7 @@ export default function Leadership({
 						{executives[groupIdx].executives.map((staff) => {
 							return (
 								<StaffCard
-									title={staff.title}
-									name={staff.name}
-									img={staff.image?.url}
+									staff={staff}
 									key={staff.image?.url || staff.name}
 								/>
 							);

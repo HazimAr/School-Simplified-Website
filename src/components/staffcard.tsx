@@ -33,10 +33,12 @@ export default function StaffCard({
 					<Image
 						alt={"Picture of " + name}
 						objectFit="cover"
+						h="100%"
+						w="100%"
 						// objectPosition="top"
 						src={image?.url ?? "/staff/default.png"}
 					/>
-					{biography?.length && (
+					{biography?.length ? (
 						<Center
 							position="absolute"
 							h="100%"
@@ -51,25 +53,29 @@ export default function StaffCard({
 							<Text fontSize={14}>
 								{biography.map((s) =>
 									React.cloneElement(parseText(s), {
-										key: s.plain_text,
+										key:
+											s.plain_text +
+											JSON.stringify(s.annotations),
 									})
 								)}
 							</Text>
 						</Center>
-					)}
+					) : null}
 				</Box>
 			</Center>
 			<Box>
 				<Heading size="md">{name}</Heading>
 				<Text flexWrap="wrap">{title}</Text>
 			</Box>
-			{tagline?.length && (
+			{tagline?.length ? (
 				<Text fontSize={14}>
 					{tagline.map((s) =>
-						React.cloneElement(parseText(s), { key: s.plain_text })
+						React.cloneElement(parseText(s), {
+							key: s.plain_text + JSON.stringify(s.annotations),
+						})
 					)}
 				</Text>
-			)}
+			) : null}
 		</Stack>
 	);
 }

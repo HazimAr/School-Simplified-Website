@@ -24,6 +24,7 @@ const META: MetaType = {
 	lang: "en-us",
 	// description:
 	// 	"School Simplified is a virtually run nonprofit that aims to spread educational equality by providing free educational services, products, and opportunities for teenagers. We provide free tutoring, free Essay Revision, free notes, free college preparation, and a community where like-minded teenagers can meet and form life-lasting connections.",
+	description: null,
 	url: "https://schoolsimplified.tech",
 	img: "/logo.png",
 };

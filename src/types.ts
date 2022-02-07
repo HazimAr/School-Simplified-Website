@@ -230,7 +230,10 @@ export type Executive = {
 	 */
 	image?: FileObj;
 	/**
-	 * NOTE: NOT YET FULLY IMPLEMENTED
+	 * A copy/paste of the Notino-style rich text object that compose their tagline
+	 */
+	tagline?: any[];
+	/**
 	 * A copy/paste of the Notion-style rich text objects that compose their bio
 	 */
 	biography?: any[];

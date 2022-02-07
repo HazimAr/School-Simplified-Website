@@ -18,28 +18,54 @@ type StaffCardProps = {
 } & StackProps;
 
 export default function StaffCard({
-	staff: { name, image, title, biography },
+	staff: { name, image, title, tagline, biography },
 	...props
 }: StaffCardProps): JSX.Element {
 	return (
 		<Stack p={4} m={1} spacing={2} maxW={{ base: 200, lg: 300 }} {...props}>
 			<Center p={17} backgroundColor="brand.transparent" rounded={50}>
-				<Image
+				<Box
 					rounded={30}
+					overflow="hidden"
+					position="relative"
 					style={{ aspectRatio: "1" }}
-					alt={"Picture of " + name}
-					objectFit="cover"
-					// objectPosition="top"
-					src={image?.url ?? "/staff/default.png"}
-				/>
+				>
+					<Image
+						alt={"Picture of " + name}
+						objectFit="cover"
+						// objectPosition="top"
+						src={image?.url ?? "/staff/default.png"}
+					/>
+					{biography?.length && (
+						<Center
+							position="absolute"
+							h="100%"
+							w="100%"
+							top={0}
+							left={0}
+							opacity={0}
+							background="#0007"
+							transition="0.2s ease all"
+							_hover={{ opacity: 1 }}
+						>
+							<Text fontSize={14}>
+								{biography.map((s) =>
+									React.cloneElement(parseText(s), {
+										key: s.plain_text,
+									})
+								)}
+							</Text>
+						</Center>
+					)}
+				</Box>
 			</Center>
 			<Box>
 				<Heading size="md">{name}</Heading>
 				<Text flexWrap="wrap">{title}</Text>
 			</Box>
-			{biography && (
+			{tagline?.length && (
 				<Text fontSize={14}>
-					{biography.map((s) =>
+					{tagline.map((s) =>
 						React.cloneElement(parseText(s), { key: s.plain_text })
 					)}
 				</Text>

@@ -57,7 +57,7 @@ export default function Leadership({
 					<Divider bg="white" />
 					<Center my={5}>
 						<SimpleGrid
-							columns={{ base: 1, md: executives.length }}
+							// columns={{ base: 1, md: executives.length }}
 							rounded={{ base: 24, md: "full" }}
 							background="#FFFC"
 							boxShadow="inset 0px 4px 4px rgba(0, 0, 0, 0.25)"
@@ -68,8 +68,8 @@ export default function Leadership({
 								<ExecutiveButton
 									onClick={() => setGroupIdx(idx)}
 									key={executiveGroup.name}
-									gridRow={isVertical ? idx + 1 : 1}
-									gridColumn={isVertical ? 1 : idx + 1}
+									gridRow={{ base: idx + 1, md: 1 }}
+									gridColumn={{ base: 1, md: idx + 1 }}
 								>
 									<AnimatePresence>
 										<Heading

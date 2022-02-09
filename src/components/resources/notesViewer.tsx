@@ -15,11 +15,13 @@ import {
 	Image,
 	SimpleGrid,
 	Spacer,
+	Spinner,
 	Stack,
 	StackProps,
 	Text,
 	useBreakpointValue,
 	VisuallyHidden,
+	VStack,
 } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
@@ -285,6 +287,19 @@ function NotesPreview({
 								.
 							</Text>
 						}
+						loading={
+							<Center
+								bgColor="white"
+								style={{ aspectRatio: "17/22" }}
+							>
+								<VStack>
+									<Text as="i" color="black">
+										Loading PDF...
+									</Text>
+									<Spinner color="brand.darkerBlue" />
+								</VStack>
+							</Center>
+						}
 						externalLinkTarget="_blank"
 					>
 						<Box
@@ -297,9 +312,27 @@ function NotesPreview({
 									<Page
 										pageIndex={i}
 										width={width}
-										error={`Sorry, we were unable to load page #${
-											i + 1
-										}.`}
+										error={
+											<Center
+												bgColor="white"
+												style={{ aspectRatio: "17/22" }}
+											>
+												<Text as="i" color="black">
+													Sorry, we were unable to
+													load page {i + 1}.
+												</Text>
+											</Center>
+										}
+										loading={
+											<Center
+												bgColor="white"
+												style={{ aspectRatio: "17/22" }}
+											>
+												<Text as="i" color="black">
+													Loading page {i + 1}...
+												</Text>
+											</Center>
+										}
 										key={i}
 									/>
 								))}

@@ -136,7 +136,7 @@ export default function StaffCard({
 									<Text as="i">{title}</Text>
 									{taglineElement}
 								</VStack>
-								<Box flex={2}>
+								<Box flex={2} maxH="75vh" overflowY="auto">
 									{biography.map((s) =>
 										React.cloneElement(parseText(s), {
 											key:

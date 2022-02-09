@@ -12,7 +12,6 @@ import {
 	ModalFooter,
 	ModalHeader,
 	ModalOverlay,
-	Stack,
 	StackProps,
 	Text,
 	useDisclosure,
@@ -36,11 +35,22 @@ export default function StaffCard({
 
 	const taglineElement = tagline?.length ? (
 		<Text
-			fontSize={14}
 			as="q"
 			position="relative"
-			_before={{ position: "absolute", top: 0, left: 0 }}
-			_after={{ position: "absolute", bottom: "-0.8em", right: 0 }}
+			_before={{
+				position: "absolute",
+				top: "-0.3em",
+				left: 0,
+				fontSize: 22,
+			}}
+			_after={{
+				position: "absolute",
+				bottom: "-0.9em",
+				right: 0,
+				fontSize: 22,
+			}}
+			fontSize={14}
+			p={2}
 		>
 			{tagline.map((s) =>
 				React.cloneElement(parseText(s), {
@@ -51,7 +61,13 @@ export default function StaffCard({
 	) : null;
 
 	return (
-		<Stack p={4} m={1} spacing={2} maxW={{ base: 200, lg: 300 }} {...props}>
+		<VStack
+			p={4}
+			m={1}
+			spacing={2}
+			maxW={{ base: 200, lg: 300 }}
+			{...props}
+		>
 			<Center p={17} backgroundColor="brand.transparent" rounded={50}>
 				{biography?.length ? (
 					<Box rounded={30} overflow="hidden">
@@ -106,7 +122,7 @@ export default function StaffCard({
 
 						<ModalBody>
 							<HStack spacing={5}>
-								<VStack flex={1} align="stretch">
+								<VStack flex={1}>
 									<Image
 										alt={"Picture of " + name}
 										objectFit="cover"
@@ -138,6 +154,6 @@ export default function StaffCard({
 					</ModalContent>
 				</Modal>
 			) : null}
-		</Stack>
+		</VStack>
 	);
 }

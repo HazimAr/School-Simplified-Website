@@ -3,7 +3,6 @@ import {
 	Box,
 	Center,
 	Heading,
-	HStack,
 	Image,
 	Modal,
 	ModalBody,
@@ -12,6 +11,7 @@ import {
 	ModalFooter,
 	ModalHeader,
 	ModalOverlay,
+	Stack,
 	StackProps,
 	Text,
 	useDisclosure,
@@ -112,7 +112,7 @@ export default function StaffCard({
 					isOpen={isOpen}
 					onClose={onClose}
 					motionPreset="slideInBottom"
-					size="3xl"
+					size="6xl"
 					isCentered
 				>
 					<ModalOverlay />
@@ -121,22 +121,39 @@ export default function StaffCard({
 						<ModalCloseButton />
 
 						<ModalBody>
-							<HStack spacing={5}>
-								<VStack flex={1}>
+							<Stack
+								spacing={5}
+								direction={{ base: "column", md: "row" }}
+								maxH="75vh"
+								justify="stretch"
+								// maxW="100%"
+							>
+								<Stack
+									flex={1}
+									spacing={4}
+									direction={{ base: "row", md: "column" }}
+									align="center"
+								>
 									<Image
 										alt={"Picture of " + name}
 										objectFit="cover"
 										rounded={30}
 										style={{ aspectRatio: "1" }}
 										src={image?.url ?? "/staff/default.png"}
+										maxW={{ base: "33%", md: "100%" }}
 									/>
-									<Heading size="lg" pt={4}>
-										{name}
-									</Heading>
-									<Text as="i">{title}</Text>
-									{taglineElement}
-								</VStack>
-								<Box flex={2} maxH="75vh" overflowY="auto">
+									<VStack>
+										<Heading size="lg">{name}</Heading>
+										<Text as="i">{title}</Text>
+										{taglineElement}
+									</VStack>
+								</Stack>
+								<Box
+									flex={2}
+									overflowY="auto"
+									pr={2}
+									textAlign="justify"
+								>
 									{biography.map((s) =>
 										React.cloneElement(parseText(s), {
 											key:
@@ -145,7 +162,7 @@ export default function StaffCard({
 										})
 									)}
 								</Box>
-							</HStack>
+							</Stack>
 						</ModalBody>
 						<ModalFooter>
 							{/* <Button>Other action</Button> */}

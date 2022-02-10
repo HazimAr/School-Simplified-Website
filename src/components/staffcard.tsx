@@ -68,26 +68,31 @@ export default function StaffCard({
 			maxW={{ base: 200, lg: 300 }}
 			{...props}
 		>
-			<Center p={17} backgroundColor="brand.transparent" rounded={50}>
-				{biography?.length ? (
-					<Box rounded={30} overflow="hidden">
-						<Image
-							alt={"Picture of " + name}
-							objectFit="cover"
-							// overflow="hidden"
-							// position="relative"
-							style={{ aspectRatio: "1" }}
-							// objectPosition="top"
-							src={image?.url ?? "/staff/default.png"}
-							transition="0.25s ease transform"
-							_hover={{
-								transform: "scale(1.1)",
-								cursor: "pointer",
-							}}
-							onClick={onOpen}
-						/>
-					</Box>
-				) : (
+			{biography?.length ? (
+				<Center
+					p={17}
+					backgroundColor="brand.transparent"
+					rounded={50}
+					transition="0.25s ease transform"
+					_hover={{
+						transform: "scale(0.95)",
+						cursor: "pointer",
+					}}
+					onClick={onOpen}
+				>
+					<Image
+						alt={"Picture of " + name}
+						objectFit="cover"
+						// overflow="hidden"
+						// position="relative"
+						style={{ aspectRatio: "1" }}
+						// objectPosition="top"
+						src={image?.url ?? "/staff/default.png"}
+						rounded={30}
+					/>
+				</Center>
+			) : (
+				<Center p={17} backgroundColor="brand.transparent" rounded={50}>
 					<Image
 						alt={"Picture of " + name}
 						objectFit="cover"
@@ -99,8 +104,8 @@ export default function StaffCard({
 						src={image?.url ?? "/staff/default.png"}
 						onClick={onOpen}
 					/>
-				)}
-			</Center>
+				</Center>
+			)}
 			<Box>
 				<Heading size="md">{name}</Heading>
 				<Text flexWrap="wrap">{title}</Text>

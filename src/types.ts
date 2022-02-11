@@ -108,6 +108,7 @@ export type ScholarshipProps = {
 	open_date: string;
 	closing_date: string;
 	notes: string;
+	key: string;
 };
 
 export type VolunteerPanelProps = {

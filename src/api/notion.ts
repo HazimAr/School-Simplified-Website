@@ -543,8 +543,9 @@ export async function getScholarshipData(): Promise<ScholarshipProps[]> {
 	//@ts-ignore
 	for (const entry of data.results) {
 		// for each category in the entry
-		output.push({
+		const item = {
 			title: parseAppropriateData(entry, "Name", "title"),
+			key: parseAppropriateData(entry, "Name", "title"),
 			link: parseAppropriateData(entry, "Link", "url"),
 			value: parseAppropriateData(entry, "Value", "rich_text"),
 			international_or_domestic: parseAppropriateData(
@@ -569,7 +570,8 @@ export async function getScholarshipData(): Promise<ScholarshipProps[]> {
 				"Additional Things to Note",
 				"rich_text"
 			),
-		});
+		};
+		output.push(item);
 	}
 
 	return output;

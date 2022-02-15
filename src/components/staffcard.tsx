@@ -156,7 +156,8 @@ export default function StaffCard({
 								<Box
 									flex={2}
 									overflowY="auto"
-									pr={2}
+									pr={12}
+									pl={10}
 									textAlign="justify"
 								>
 									{biography.map((s) =>

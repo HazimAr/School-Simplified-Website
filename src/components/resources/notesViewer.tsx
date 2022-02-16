@@ -30,8 +30,9 @@ import { useContainerDimensions } from "@hooks/useContainerDimensions";
 import { useEffect, useRef, useState } from "react";
 import { FaFileDownload } from "react-icons/fa";
 import { Document, Page, pdfjs } from "react-pdf";
-import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+// import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import { AllSubjects, NotesProps, Subject } from "types";
+import Head from "next/head";
 
 // use minified worker file
 // for more documentation on this package, visit
@@ -47,51 +48,66 @@ export default function NotesViewer({
 	const [subject, setSubject] = useState("");
 	const [pdfURL, setPdfURL] = useState(null);
 	return (
-		<Container {...boxProps}>
-			<ContainerInside>
-				<SimpleGrid
-					gap={3}
-					columns={{
-						base: 1,
-						sm: subjects.length / 2,
-						lg: subjects.length,
-					}}
-				>
-					{subjects.map((s: Subject) => (
-						<Button
-							key={s.title}
-							onClick={() => {
-								setSubject(s.title);
-								setPdfURL(null);
-							}}
-							bg={subject === s.title ? "white" : "transparent"}
-							color={subject === s.title ? "brand.blue" : "white"}
-							borderWidth={3}
-							borderColor="white"
-							pointerEvents={subject === s.title ? "none" : null}
-						>
-							{s.title}
-						</Button>
-					))}
-				</SimpleGrid>
-				<Divider mt={8} mb={14} borderColor="white" />
-				{subject ? (
-					<SimpleGrid gap={6} columns={{ base: 1, md: 2 }}>
-						<NotesDropdown
-							subject={subjects.find(
-								(value) => value.title === subject
-							)}
-							onNotesSelect={(notes) =>
-								setPdfURL(notes.file?.url ?? "")
-							}
-						/>
-						<NotesPreview pdfURL={pdfURL} />
+		<>
+			<Head>
+				<link type="stylesheet" href="/AnnotationLayer.css" />
+			</Head>
+			<Container {...boxProps}>
+				<ContainerInside>
+					<SimpleGrid
+						gap={3}
+						columns={{
+							base: 1,
+							sm: subjects.length / 2,
+							lg: subjects.length,
+						}}
+					>
+						{subjects.map((s: Subject) => (
+							<Button
+								key={s.title}
+								onClick={() => {
+									setSubject(s.title);
+									setPdfURL(null);
+								}}
+								bg={
+									subject === s.title
+										? "white"
+										: "transparent"
+								}
+								color={
+									subject === s.title ? "brand.blue" : "white"
+								}
+								borderWidth={3}
+								borderColor="white"
+								pointerEvents={
+									subject === s.title ? "none" : null
+								}
+							>
+								{s.title}
+							</Button>
+						))}
 					</SimpleGrid>
-				) : (
-					<Text as="i">Select a subject above to get started!</Text>
-				)}
-			</ContainerInside>
-		</Container>
+					<Divider mt={8} mb={14} borderColor="white" />
+					{subject ? (
+						<SimpleGrid gap={6} columns={{ base: 1, md: 2 }}>
+							<NotesDropdown
+								subject={subjects.find(
+									(value) => value.title === subject
+								)}
+								onNotesSelect={(notes) =>
+									setPdfURL(notes.file?.url ?? "")
+								}
+							/>
+							<NotesPreview pdfURL={pdfURL} />
+						</SimpleGrid>
+					) : (
+						<Text as="i">
+							Select a subject above to get started!
+						</Text>
+					)}
+				</ContainerInside>
+			</Container>
+		</>
 	);
 }
 

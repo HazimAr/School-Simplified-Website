@@ -3,6 +3,7 @@ import {
 	Box,
 	Center,
 	Heading,
+	HStack,
 	Image,
 	Modal,
 	ModalBody,
@@ -11,7 +12,6 @@ import {
 	ModalFooter,
 	ModalHeader,
 	ModalOverlay,
-	Stack,
 	StackProps,
 	Text,
 	useDisclosure,
@@ -117,48 +117,52 @@ export default function StaffCard({
 					isOpen={isOpen}
 					onClose={onClose}
 					motionPreset="slideInBottom"
-					size="6xl"
-					isCentered
+					size="3xl"
+					scrollBehavior="inside"
 				>
 					<ModalOverlay />
-					<ModalContent>
+					<ModalContent bg="brand.darkerBlue">
 						<ModalHeader>{name}'s Bio</ModalHeader>
 						<ModalCloseButton />
 
-						<ModalBody>
-							<Stack
-								spacing={5}
-								direction={{ base: "column", md: "row" }}
-								maxH="75vh"
-								justify="stretch"
-								// maxW="100%"
-							>
-								<Stack
+						<ModalBody py={0}>
+							<VStack spacing={5}>
+								<HStack
 									flex={1}
 									spacing={4}
-									direction={{ base: "row", md: "column" }}
 									align="center"
+									position="sticky"
+									top={0}
+									bg="brand.darkerBlue"
+									py={2}
 								>
-									<Image
-										alt={"Picture of " + name}
-										objectFit="cover"
+									<Box
 										rounded={30}
 										style={{ aspectRatio: "1" }}
-										src={image?.url ?? "/staff/default.png"}
-										maxW={{ base: "33%", md: "100%" }}
-									/>
-									<VStack>
+										flex={1}
+										overflow="hidden"
+									>
+										<Image
+											alt={"Picture of " + name}
+											objectFit="cover"
+											src={
+												image?.url ??
+												"/staff/default.png"
+											}
+										/>
+									</Box>
+									<VStack flex={3}>
 										<Heading size="lg">{name}</Heading>
 										<Text as="i">{title}</Text>
 										{taglineElement}
 									</VStack>
-								</Stack>
+								</HStack>
 								<Box
 									flex={2}
-									overflowY="auto"
-									pr={12}
-									pl={10}
+									px={8}
 									textAlign="justify"
+									overflowY="auto"
+									mb={2}
 								>
 									{biography.map((s) =>
 										React.cloneElement(parseText(s), {
@@ -168,7 +172,7 @@ export default function StaffCard({
 										})
 									)}
 								</Box>
-							</Stack>
+							</VStack>
 						</ModalBody>
 						<ModalFooter>
 							{/* <Button>Other action</Button> */}

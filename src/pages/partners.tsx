@@ -242,6 +242,12 @@ const productPartners: Partner[] = [
 		src: "/partners/ngo.png",
 		link: "https://dot.ngo/join-beta",
 	},
+	{
+		name: "Atlassian",
+		description: "",
+		src: "/partners/atlassian.png",
+		link: "https://www.atlassian.com/",
+	},
 ];
 
 const sponsorsAndDonors: Partner[] = [

@@ -4,6 +4,7 @@ import {
 	Center,
 	Heading,
 	HStack,
+	Icon,
 	Image,
 	Modal,
 	ModalBody,
@@ -18,9 +19,12 @@ import {
 	VStack,
 } from "@chakra-ui/react";
 import React from "react";
+import { FaLinkedinIn } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 import { Executive } from "types";
 import { parseText } from "util/parse_notion";
 import Button from "./button";
+import NextChakraLink from "./nextChakra";
 // import { RiBoxingLine } from "react-icons/ri";
 
 type StaffCardProps = {
@@ -28,36 +32,25 @@ type StaffCardProps = {
 } & StackProps;
 
 export default function StaffCard({
-	staff: { name, image, title, tagline, biography },
+	staff: { name, image, title, email, linkedin, biography },
 	...props
 }: StaffCardProps): JSX.Element {
 	const { isOpen, onOpen, onClose } = useDisclosure();
 
-	const taglineElement = tagline?.length ? (
-		<Text
-			as="q"
-			position="relative"
-			_before={{
-				position: "absolute",
-				top: "-0.3em",
-				left: 0,
-				fontSize: 22,
-			}}
-			_after={{
-				position: "absolute",
-				bottom: "-0.9em",
-				right: 0,
-				fontSize: 22,
-			}}
-			fontSize={14}
-			p={2}
-		>
-			{tagline.map((s) =>
-				React.cloneElement(parseText(s), {
-					key: s.plain_text + JSON.stringify(s.annotations),
-				})
-			)}
-		</Text>
+	const contactMeChildren = [];
+	if (email?.length) {
+		contactMeChildren.push(
+			<ContactMeIcon href={"mailto:" + email} icon={MdEmail} key="mail" />
+		);
+	}
+	if (linkedin?.length) {
+		contactMeChildren.push(
+			<ContactMeIcon href={linkedin} icon={FaLinkedinIn} key="linkedin" />
+		);
+	}
+
+	const contactMeElement = contactMeChildren.length ? (
+		<HStack>{contactMeChildren}</HStack>
 	) : null;
 
 	return (
@@ -111,7 +104,7 @@ export default function StaffCard({
 				<Text flexWrap="wrap">{title}</Text>
 			</Box>
 
-			{taglineElement}
+			{contactMeElement}
 			{biography?.length ? (
 				<Modal
 					isOpen={isOpen}
@@ -154,7 +147,7 @@ export default function StaffCard({
 									<VStack flex={3}>
 										<Heading size="lg">{name}</Heading>
 										<Text as="i">{title}</Text>
-										{taglineElement}
+										{contactMeElement}
 									</VStack>
 								</HStack>
 								<Box
@@ -182,5 +175,21 @@ export default function StaffCard({
 				</Modal>
 			) : null}
 		</VStack>
+	);
+}
+
+function ContactMeIcon({ icon, href, ...other }) {
+	return (
+		<NextChakraLink href={href} {...other}>
+			<Center>
+				<Icon
+					as={icon}
+					color="white"
+					boxSize={6}
+					_hover={{ color: "grey" }}
+					transition="color ease 0.2s"
+				/>
+			</Center>
+		</NextChakraLink>
 	);
 }

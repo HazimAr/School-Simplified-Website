@@ -233,7 +233,15 @@ export type Executive = {
 	/**
 	 * A copy/paste of the Notino-style rich text object that compose their tagline
 	 */
-	tagline?: any[];
+	// tagline?: any[];
+	/**
+	 * An email that is connected with this person, if applicable
+	 */
+	email?: string;
+	/**
+	 * A URL that leads to this person's LinkedIn, if applicable.
+	 */
+	linkedin?: string;
 	/**
 	 * A copy/paste of the Notion-style rich text objects that compose their bio
 	 */

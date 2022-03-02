@@ -112,22 +112,24 @@ export default function StaffCard({
 					motionPreset="slideInBottom"
 					size="3xl"
 					scrollBehavior="inside"
+					isCentered
 				>
 					<ModalOverlay />
 					<ModalContent bg="brand.darkerBlue">
-						<ModalHeader>{name}'s Bio</ModalHeader>
+						<ModalHeader />
 						<ModalCloseButton />
 
 						<ModalBody py={0}>
-							<VStack spacing={5}>
+							<VStack spacing={5} px={8} align="stretch">
 								<HStack
 									flex={1}
-									spacing={4}
+									spacing={8}
 									align="center"
 									position="sticky"
 									top={0}
 									bg="brand.darkerBlue"
-									py={2}
+									pt={2}
+									pb={6}
 								>
 									<Box
 										rounded={30}
@@ -144,16 +146,21 @@ export default function StaffCard({
 											}
 										/>
 									</Box>
-									<VStack flex={3}>
-										<Heading size="lg">{name}</Heading>
+									<VStack
+										flex={3}
+										align="stretch"
+										textAlign="left"
+									>
+										<Heading size="lg">
+											About {name}
+										</Heading>
 										<Text as="i">{title}</Text>
 										{contactMeElement}
 									</VStack>
 								</HStack>
 								<Box
 									flex={2}
-									px={8}
-									textAlign="justify"
+									textAlign="left"
 									overflowY="auto"
 									mb={2}
 								>

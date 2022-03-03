@@ -24,7 +24,7 @@
 		"@babel/core": "^7.17.3",
 		"@badrap/bar-of-progress": "^0.1.2",
 		"@chakra-ui/icons": "^1.1.5",
-		"@chakra-ui/react": "^1.8.3",
+		"@chakra-ui/react": "^1.8.6",
 		"@chakra-ui/theme-tools": "^1.3.4",
 		"@emotion/react": "^11.7.1",
 		"@emotion/styled": "^11.6.0",

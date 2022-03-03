@@ -15,12 +15,13 @@ import {
 	ModalOverlay,
 	StackProps,
 	Text,
+	useBreakpointValue,
 	useDisclosure,
 	VStack,
 } from "@chakra-ui/react";
 import React from "react";
 import { FaLinkedinIn } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
+import { RiMailFill } from "react-icons/ri";
 import { Executive } from "types";
 import { parseText } from "util/parse_notion";
 import Button from "./button";
@@ -40,7 +41,11 @@ export default function StaffCard({
 	const contactMeChildren = [];
 	if (email?.length) {
 		contactMeChildren.push(
-			<ContactMeIcon href={"mailto:" + email} icon={MdEmail} key="mail" />
+			<ContactMeIcon
+				href={"mailto:" + email}
+				icon={RiMailFill}
+				key="mail"
+			/>
 		);
 	}
 	if (linkedin?.length) {
@@ -50,8 +55,10 @@ export default function StaffCard({
 	}
 
 	const contactMeElement = contactMeChildren.length ? (
-		<HStack>{contactMeChildren}</HStack>
+		<HStack justify="flex-start">{contactMeChildren}</HStack>
 	) : null;
+
+	const headingSize = useBreakpointValue({ base: "md", md: "lg" });
 
 	return (
 		<VStack
@@ -120,7 +127,11 @@ export default function StaffCard({
 						<ModalCloseButton />
 
 						<ModalBody py={0}>
-							<VStack spacing={5} px={8} align="stretch">
+							<VStack
+								spacing={5}
+								px={{ base: 0, sm: 8 }}
+								align="stretch"
+							>
 								<HStack
 									flex={1}
 									spacing={8}
@@ -151,7 +162,7 @@ export default function StaffCard({
 										align="stretch"
 										textAlign="left"
 									>
-										<Heading size="lg">
+										<Heading size={headingSize}>
 											About {name}
 										</Heading>
 										<Text as="i">{title}</Text>
@@ -193,7 +204,7 @@ function ContactMeIcon({ icon, href, ...other }) {
 					as={icon}
 					color="white"
 					boxSize={6}
-					_hover={{ color: "grey" }}
+					_hover={{ color: "brand.gold" }}
 					transition="color ease 0.2s"
 				/>
 			</Center>

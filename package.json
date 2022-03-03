@@ -21,7 +21,7 @@
 		"clean": "npx prettier --write ."
 	},
 	"dependencies": {
-		"@babel/core": "^7.17.3",
+		"@babel/core": "^7.17.5",
 		"@badrap/bar-of-progress": "^0.1.2",
 		"@chakra-ui/icons": "^1.1.5",
 		"@chakra-ui/react": "^1.8.3",

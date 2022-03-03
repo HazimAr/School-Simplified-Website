@@ -27,9 +27,7 @@ export default function Chapters(): JSX.Element {
 			<Container pt={50} px={{ base: 0, lg: 10 }} bg="#5E65B7">
 				<ContainerInside maxWidth={780}>
 					<Stack align="start" textAlign="left">
-						<Heading size="lg" align="start">
-							Start Your Own Chapter
-						</Heading>
+						<Heading size="lg">Start Your Own Chapter</Heading>
 						<Text mt={3}>
 							School Simplified chapters are the perfect blend of
 							flexibility and rigor.

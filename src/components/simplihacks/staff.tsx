@@ -1,4 +1,4 @@
-import { Box, Heading, SimpleGrid } from "@chakra-ui/react";
+import { Center, Heading, SimpleGrid } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
 import SimplihacksCard from "@components/simplihacks/simplihackscard";
@@ -92,7 +92,7 @@ export default function Staff(): JSX.Element {
 		<>
 			<Container my="50px">
 				<ContainerInside>
-					<Box align="center">
+					<Center>
 						<Heading m={5}>Staff</Heading>
 						<SimpleGrid
 							w={{ base: "auto", md: "850px" }}
@@ -110,7 +110,7 @@ export default function Staff(): JSX.Element {
 								);
 							})}
 						</SimpleGrid>
-					</Box>
+					</Center>
 				</ContainerInside>
 			</Container>
 		</>

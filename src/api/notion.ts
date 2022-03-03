@@ -7,6 +7,8 @@ import {
 	BlogListing,
 	BlogPage,
 	Class,
+	Executive,
+	ExecutiveGroup,
 	FileObj,
 	GovernanceDocument,
 	GovernanceSection,
@@ -541,8 +543,9 @@ export async function getScholarshipData(): Promise<ScholarshipProps[]> {
 	//@ts-ignore
 	for (const entry of data.results) {
 		// for each category in the entry
-		output.push({
+		const item = {
 			title: parseAppropriateData(entry, "Name", "title"),
+			key: parseAppropriateData(entry, "Name", "title"),
 			link: parseAppropriateData(entry, "Link", "url"),
 			value: parseAppropriateData(entry, "Value", "rich_text"),
 			international_or_domestic: parseAppropriateData(
@@ -567,7 +570,8 @@ export async function getScholarshipData(): Promise<ScholarshipProps[]> {
 				"Additional Things to Note",
 				"rich_text"
 			),
-		});
+		};
+		output.push(item);
 	}
 
 	return output;
@@ -713,4 +717,41 @@ export async function getJobPostings(): Promise<JobPosting[]> {
 			name: page.properties.Name.title?.[0]?.plain_text ?? null,
 		};
 	});
+}
+
+export async function getLeadership(): Promise<ExecutiveGroup[]> {
+	const { data } = await axios.post(
+		"https://api.notion.com/v1/databases/c32136aa4541462d9c81ba4fe33efbcd/query",
+		{},
+		notionConfig
+	);
+
+	const allExecs = data.results.sort(
+		(obj1: any, obj2: any) =>
+			obj1.properties.ID.number - obj2.properties.ID.number
+	);
+	const output: ExecutiveGroup[] = [];
+
+	for (const exec of allExecs) {
+		const file0 = exec.properties.Image.files?.[0];
+		const newExec: Executive = {
+			name: exec.properties.Name.title?.[0]?.plain_text ?? null,
+			title: exec.properties.Title.rich_text?.[0]?.plain_text ?? null,
+			email: exec.properties.Email.email,
+			linkedin: exec.properties.LinkedIn.url,
+			biography: exec.properties.Biography.rich_text,
+			image: file0 ? getFile(file0) : null,
+		};
+
+		for (const category of exec.properties.Categories.multi_select) {
+			const group = output.find((group) => group.name === category.name);
+			if (group) {
+				group.executives.push(newExec);
+			} else {
+				output.push({ name: category.name, executives: [newExec] });
+			}
+		}
+	}
+
+	return output;
 }

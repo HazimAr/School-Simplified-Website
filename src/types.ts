@@ -108,6 +108,7 @@ export type ScholarshipProps = {
 	open_date: string;
 	closing_date: string;
 	notes: string;
+	key: string;
 };
 
 export type VolunteerPanelProps = {
@@ -208,4 +209,55 @@ export type JobPosting = {
 	 * The name of the job for this posting, as a string
 	 */
 	name: string;
+};
+
+/**
+ * A type that represents an executive of School Simplified.
+ * Contains all data that is necessary to display to the /leadership page
+ */
+export type Executive = {
+	// ID is not included
+	/**
+	 * Their name, likely as a title case string in Latin letters
+	 */
+	name: string;
+	/**
+	 * Their title (e.g. Director or President of Research Simplified)
+	 */
+	title: string;
+	/**
+	 * A file for their image
+	 * Try to keep this as a SS website link for optimal loading
+	 */
+	image?: FileObj;
+	/**
+	 * A copy/paste of the Notino-style rich text object that compose their tagline
+	 */
+	// tagline?: any[];
+	/**
+	 * An email that is connected with this person, if applicable
+	 */
+	email?: string;
+	/**
+	 * A URL that leads to this person's LinkedIn, if applicable.
+	 */
+	linkedin?: string;
+	/**
+	 * A copy/paste of the Notion-style rich text objects that compose their bio
+	 */
+	biography?: any[];
+};
+
+/**
+ * A group of executives
+ */
+export type ExecutiveGroup = {
+	/**
+	 * The name of this group/category
+	 */
+	name: string;
+	/**
+	 * A list of executives under this group/category
+	 */
+	executives: Executive[];
 };

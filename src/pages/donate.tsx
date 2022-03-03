@@ -84,7 +84,6 @@ export default function Donate() {
 										key={reason.title}
 										w="100%"
 										// h="100%"
-										align="start"
 									>
 										<Text
 											color="brand.yellow"

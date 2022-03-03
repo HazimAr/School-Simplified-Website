@@ -1,8 +1,11 @@
 import { getScholarshipData } from "@api/notion";
-import { Flex, Heading, Text } from "@chakra-ui/react";
+import { Heading, Text, VStack } from "@chakra-ui/react";
 import Container from "@components/container";
 import ContainerInside from "@components/containerInside";
+import NextChakraLink from "@components/nextChakra";
+import RotatingPanel from "@components/rotatingPanel";
 import { ScholarshipProps } from "types";
+import Four from "@pages/404";
 
 export default function Scholarship({
 	scholarshipData,
@@ -10,44 +13,61 @@ export default function Scholarship({
 	scholarshipData: ScholarshipProps[];
 }): JSX.Element {
 	return (
-		<Container py={19}>
-			<ContainerInside>
-				<Heading>This page is temporary lol how did u find it</Heading>
-				{scholarshipData.map((entry, i: number) => {
-					return (
-						<Flex key={i} py={2}>
-							<Text width="100%" fontSize={10}>
-								{entry.title}
-							</Text>
-							<Text width="100%" fontSize={10}>
-								{entry.link}
-							</Text>
-							<Text width="100%" fontSize={10}>
-								{entry.value}
-							</Text>
-							<Text width="100%" fontSize={10}>
-								{entry.international_or_domestic}
-							</Text>
-							<Text width="100%" fontSize={10}>
-								{entry.state}
-							</Text>
-							<Text width="100%" fontSize={10}>
-								{entry.eligible_grades}
-							</Text>
-							<Text width="100%" fontSize={10}>
-								{entry.open_date}
-							</Text>
-							<Text width="100%" fontSize={10}>
-								{entry.closing_date}
-							</Text>
-							<Text width="100%" fontSize={10}>
-								{entry.notes}
-							</Text>
-						</Flex>
-					);
-				})}
-			</ContainerInside>
-		</Container>
+		<Four></Four> || (
+			<Container py={19}>
+				<ContainerInside>
+					<Heading>Scholarships</Heading>
+					<Text as="i">This page should be invisible...</Text>
+
+					{/* <Table size="sm">
+					<Tbody>
+						{scholarshipData.map((entry) => {
+							return (
+								<Tr key={entry.link} maxW="100%" fontSize={10}>
+									<Td>
+										<NextChakraLink href={entry.link}>
+											{entry.title}
+										</NextChakraLink>
+									</Td>
+									<Td>{entry.value}</Td>
+									<Td>{entry.international_or_domestic}</Td>
+									<Td>{entry.state}</Td>
+									<Td>{entry.eligible_grades}</Td>
+									<Td>{entry.open_date}</Td>
+									<Td>{entry.closing_date}</Td>
+									<Td>{entry.notes}</Td>
+								</Tr>
+							);
+						})}
+					</Tbody>
+				</Table> */}
+
+					<RotatingPanel
+						Element={Panel}
+						innerPanelProps={scholarshipData}
+						viewPortHeight={500}
+						mt={16}
+					/>
+				</ContainerInside>
+			</Container>
+		)
+	);
+}
+
+function Panel(props: ScholarshipProps) {
+	return (
+		<NextChakraLink href={props.link}>
+			<VStack>
+				<Heading size="sm">{props.title}</Heading>
+				<Text>{props.value}</Text>
+				<Text>{props.international_or_domestic}</Text>
+				<Text>{props.state}</Text>
+				<Text>{props.eligible_grades}</Text>
+				<Text>{props.open_date}</Text>
+				<Text>{props.closing_date}</Text>
+				<Text>{props.notes}</Text>
+			</VStack>
+		</NextChakraLink>
 	);
 }
 

@@ -83,10 +83,7 @@ export default function StaffCard({
 					<Image
 						alt={"Picture of " + name}
 						objectFit="cover"
-						// overflow="hidden"
-						// position="relative"
 						style={{ aspectRatio: "1" }}
-						// objectPosition="top"
 						src={image?.url ?? "/staff/default.png"}
 						rounded={30}
 					/>
@@ -97,10 +94,7 @@ export default function StaffCard({
 						alt={"Picture of " + name}
 						objectFit="cover"
 						rounded={30}
-						// overflow="hidden"
-						// position="relative"
 						style={{ aspectRatio: "1" }}
-						// objectPosition="top"
 						src={image?.url ?? "/staff/default.png"}
 						onClick={onOpen}
 					/>

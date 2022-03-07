@@ -1,4 +1,4 @@
-# School Simplified
+# School Simplified 
 
 ## _Through learning, we empower the next generation to revolutionize the future._
 

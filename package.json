@@ -42,7 +42,7 @@
 		"react-katex": "^2.0.2",
 		"react-pdf": "^5.7.1",
 		"stylis": "^3.5.4",
-		"webpack": "^5.69.0",
+		"webpack": "^5.70.0",
 		"worker-loader": "^3.0.8"
 	},
 	"devDependencies": {

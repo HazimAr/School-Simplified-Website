@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 import { SocialMediaIcon } from "types";
 
-const GA_TRACKING_ID = "G-VGBJF1CZMF";
+const GA_TRACKING_ID = "G-BM27XKVN6C";
 const IS_PRODUCTION = process.env.NODE_ENV === "production";
 
 type MetaType = {
